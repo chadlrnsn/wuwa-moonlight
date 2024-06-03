@@ -1,2 +1,6 @@
-# ww-moonlight
+# wuwa-moonlight
 Development of wuthering waves cheat
+
+## Todo
+- [x] Imgui menu
+- [ ] Cheat SDK
