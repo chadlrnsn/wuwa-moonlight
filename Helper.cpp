@@ -72,17 +72,21 @@ uintptr_t Helper::GetAddressFromSignature(vector<int> signature) {
 	if (this->pBaseAddress == NULL || this->processHandle == NULL) {
 		return NULL;
 	}
-	std::vector<byte> memBuffer(this->pSize);
+
+	// ISO C++ 20 std::byte
+	std::vector<std::byte> memBuffer(this->pSize);
 	if (!ReadProcessMemory(this->processHandle, (LPCVOID)(this->pBaseAddress), memBuffer.data(), this->pSize, NULL)) {
 		std::cout << GetLastError() << std::endl;
 		return NULL;
 	}
 	for (int i = 0; i < this->pSize; i++) {
 		for (uintptr_t j = 0; j < signature.size(); j++) {
-			if (signature.at(j) != -1 && signature[j] != memBuffer[i + j])
+
+			// ISO C++ 20 std::to_integer<int>
+			if (signature.at(j) != -1 && signature[j] != std::to_integer<int>(memBuffer[i + j]))
 				//std::cout << std::hex << signature.at(j) << std::hex << memBuffer[i + j] << std::endl;
 				break;
-			if (signature[j] == memBuffer[i + j] && j > 0)
+			if (signature[j] == std::to_integer<int>(memBuffer[i + j]) && j > 0)
 				std::cout << std::hex << int(signature[j]) << std::hex << int(memBuffer[i + j]) << j << std::endl;
 			if (j + 1 == signature.size())
 				return this->pBaseAddress + i;

@@ -65,7 +65,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 			return oPresent(pSwapChain, SyncInterval, Flags);
 	}
 
-	// Получаем размеры окна
+	// Get Window size
 	int windowWidth, windowHeight;
 	GetWindowClientSize(window, windowWidth, windowHeight);
 	float pwindowSize[2] = { windowWidth / 2, windowHeight / 3 };
@@ -91,7 +91,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	if (Menu::IsOpened)
 		Menu::Init();
 
-	// Ограничение позиции окна ImGui
+	// Limiting the position of the ImGui window
 	ImVec2 windowPos = ImGui::GetWindowPos();
 	ImVec2 windowSize = ImGui::GetWindowSize();
 	bool updatePos = false;
@@ -129,16 +129,10 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 DWORD WINAPI HackThread(HMODULE hModule)
 {
-
-
-	// Тут консоль бы не помешала
 	//AllocConsole();
 	//FILE* f;
 	//freopen_s(&f, "CONOUT$", "w", stdout);
 	//freopen_s(&f, "CONOUT$", "w", stderr);
-
-
-	// Закрываем консоль при завершении работы потока
 	//FreeConsole();
 	FreeLibraryAndExitThread(hModule, 0);
 	return 0;
