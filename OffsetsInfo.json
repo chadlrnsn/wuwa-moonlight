@@ -1,0 +1,30 @@
+{
+  "data": [
+    [
+      "OFFSET_GOBJECTS",
+      131065064
+    ],
+    [
+      "OFFSET_APPENDSTRING",
+      36997520
+    ],
+    [
+      "OFFSET_GNAMES",
+      130832896
+    ],
+    [
+      "OFFSET_GWORLD",
+      129879376
+    ],
+    [
+      "OFFSET_PROCESSEVENT",
+      39105632
+    ],
+    [
+      "INDEX_PROCESSEVENT",
+      73
+    ]
+  ],
+  "updated_at": "1717271082351",
+  "version": 10201
+}
