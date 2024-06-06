@@ -33,7 +33,7 @@ namespace UIWaterMark
             ImGuiWindowFlags_::ImGuiWindowFlags_NoNav
         );
      
-        ImGui::Text("By chadlrnsn | discord: chadlrnsn | %s", std::ctime(&formatedtime));
+        ImGui::Text("By chadlrnsn | Moonlight | %s", std::ctime(&formatedtime));
         ImGui::End();
     }
 

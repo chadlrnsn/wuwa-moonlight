@@ -49,14 +49,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)\output\$(Platform)\$(Configuration)</OutDir>
-    <IntDir>$(SolutionDir)\output\intermediates$(Platform)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(PlatformShortName)\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)-$(PlatformShortName)\obj\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -72,10 +72,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -83,6 +84,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Console\Console.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Helper.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
@@ -100,6 +102,9 @@
     <ClCompile Include="kiero\minhook\src\trampoline.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Console\Console.hpp" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Features\UnloadDLL.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
@@ -118,14 +123,15 @@
     <ClInclude Include="kiero\minhook\src\hde\table32.h" />
     <ClInclude Include="kiero\minhook\src\hde\table64.h" />
     <ClInclude Include="kiero\minhook\src\trampoline.h" />
-    <ClInclude Include="Menu\Globals.h" />
+    <ClInclude Include="Globals.h" />
     <ClInclude Include="Menu\Menu.h" />
     <ClInclude Include="Menu\Settings.h" />
     <ClInclude Include="Menu\Watermark.h" />
-    <ClInclude Include="PropertyFixup.hpp" />
-    <ClInclude Include="SDK\Engine.h" />
+    <ClInclude Include="SDK\Classes.hpp" />
+    <ClInclude Include="SDK\Offsets.hpp" />
     <ClInclude Include="SDK\SDK.hpp" />
-    <ClInclude Include="UnrealContainers.hpp" />
+    <ClInclude Include="SDK\Structs.hpp" />
+    <ClInclude Include="SDK\Utils.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="kiero\minhook\dll_resources\MinHook.def" />

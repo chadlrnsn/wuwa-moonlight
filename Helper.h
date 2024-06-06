@@ -21,10 +21,19 @@ public:
 	void SetpBaseAddress(char moduleName[]);
 	DWORD GetpID();
 	HANDLE GetprocessHandle();
+	uintptr_t GetBaseAddress(const HANDLE hProcess);
+	uintptr_t GetBaseModuleAddress( LPCSTR name );
 
+	bool UnloadModule(LPCSTR name);
+
+	// todo
+	HMODULE GetCurrentModuleName();
+
+	
 private:
 	DWORD pID;
 	DWORD pBaseAddress; //Base Address of exe
 	DWORD pSize;		//Size of exe module
 	HANDLE processHandle;
+	LPCSTR moduleName = "Client-Win64-Shipping.exe";
 };
