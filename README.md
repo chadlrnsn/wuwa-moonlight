@@ -18,3 +18,11 @@ Development of wuthering waves cheat
 - [ ] Multihit
 - [ ] Fly
 - [ ] Save configs
+
+### 07.06.24
+- Added support for cursor capture when there is no cursor in the game
+- Added console
+- Implemented SDK package
+- Added function of dll upload from memory while it's still a bit buggy
+- Added prevention of menu going out of window edges
+- The project was almost completely refactored
