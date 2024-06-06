@@ -2,8 +2,9 @@
 
 Helper::Helper()
 {
-	pID = NULL;
-	processHandle = NULL;
+	this->pID = NULL;
+	this->processHandle = NULL;
+	this->pBaseAddress = (uintptr_t)GetModuleHandleA(0);
 }
 
 Helper::Helper(DWORD pID) {

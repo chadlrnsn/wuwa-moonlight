@@ -1,33 +1,25 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <windows.h>
 #include "../imgui/imgui_internal.h"
 #include "../imgui/imgui.h"
-#include <windows.h>
-#include "../kiero/kiero.h"
-#include "Settings.h"
 #include "../SDK/SDK.hpp"
-#include "../Features/UnloadDLL.h"
 
 using namespace UnrealEngine;
 
-void GetWindowClientSize(HWND hwnd, int& width, int& height)
-{
-    RECT rect;
-    GetClientRect(hwnd, &rect);
-    width = rect.right - rect.left;
-    height = rect.bottom - rect.top;
-}
 
 template <typename T>
 ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall) {
     return ImVec2(size.x * mulwide, size.y * multall);
 }
 
-namespace Menu 
+class Menu 
 {
-    bool IsOpened = true;
-    static int page = 0;
+private:
+    bool IsOpen;
+    int page;
+    bool bWatermark;
 
     struct Button {
         const char* btnLable;
@@ -35,7 +27,7 @@ namespace Menu
         char* lastupd;
     };
 
-    static std::vector<Button> Buttons = {
+    std::vector<Button> Buttons = {
         { "Player", "", nullptr },
         { "ESP", "", nullptr },
         { "Misc", "", nullptr },
@@ -43,12 +35,17 @@ namespace Menu
         { "Debug", "", nullptr }
     };
 
+public:
+    Menu();
+    ~Menu();
+    bool IsOpened();
+    bool SetIsOpen(bool boolean);
     void RealCursorShow();
     void SetUpColors(ImGuiStyle& style, ImVec4* colors, float windowSize[]);
-    void StyleColorsOrangeDark(ImGuiStyle& style, ImVec4* colors, float windowSize[1]);
+    void StyleColors(ImGuiStyle& style, ImVec4* colors, ImVec2 windowSize);
 
     // https://github.com/ocornut/imgui/issues/4356#issuecomment-1535547717
     void PreventMoveOutOfWndBounds(const char* wndName);
 
-    void Init();
+    void Render();
 };

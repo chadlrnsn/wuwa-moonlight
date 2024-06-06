@@ -10,6 +10,13 @@ using namespace std;
 
 class Helper
 {
+private:
+	DWORD pID;
+	DWORD pBaseAddress; //Base Address of exe
+	DWORD pSize;		//Size of exe module
+	HANDLE processHandle;
+	LPCSTR moduleName = "Client-Win64-Shipping.exe";
+
 public:
 	Helper();
 	Helper(DWORD pID);
@@ -29,11 +36,4 @@ public:
 	// todo
 	HMODULE GetCurrentModuleName();
 
-	
-private:
-	DWORD pID;
-	DWORD pBaseAddress; //Base Address of exe
-	DWORD pSize;		//Size of exe module
-	HANDLE processHandle;
-	LPCSTR moduleName = "Client-Win64-Shipping.exe";
 };

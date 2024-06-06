@@ -1,6 +1,5 @@
 #pragma once
 #include <thread>
-#include "Menu/Menu.h"
 #include <Windows.h>
 #include <d3d11.h>
 #include <dxgi.h>
@@ -8,14 +7,18 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_win32.h"
 #include "imgui/imgui_impl_dx11.h"
-#include "Menu/Watermark.h"
-#include "Console/Console.hpp"
+#include "Menu/Menu.hpp"
+#include <thread>
 #include "Helper.h"
+#include "Console/Console.hpp"
 #include "Globals.h"
+#include "Menu/Watermark.h"
 
 #define BaseModule L"Client-Win64-Shipping.exe"
 #define MenuKey VK_INSERT
 #define QuitKey VK_END
+
+using namespace Globals;
 
 typedef HRESULT(__stdcall* Present) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 typedef LRESULT(CALLBACK* WNDPROC)(HWND, UINT, WPARAM, LPARAM);
@@ -47,6 +50,7 @@ ID3D11RenderTargetView* mainRenderTargetView;
 uintptr_t BaseAddr;
 HMODULE hModule;
 
+Menu menu;
 void InitImGui()
 {
 	ImGui::CreateContext();
@@ -58,11 +62,11 @@ void InitImGui()
 
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
-	if (Menu::IsOpened && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam)) {
+	if (menu.IsOpened() && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam)) {
 		return true;
 	}
 
-	return Menu::IsOpened ? Menu::IsOpened : CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
+	return menu.IsOpened() ? menu.IsOpened() : CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
 }
 
 bool init = false;
@@ -89,16 +93,16 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 			return oPresent(pSwapChain, SyncInterval, Flags);
 	}
 
-	// Get Window size
-	int windowWidth, windowHeight;
-	GetWindowClientSize(window, windowWidth, windowHeight);
-	float pwindowSize[2] = { windowWidth / 2, windowHeight / 3 };
-
+	// to improve
+	ImGuiIO& io = ImGui::GetIO();
+	ImVec2 whole_content_size = io.DisplaySize;
+	whole_content_size.x = whole_content_size.x * 0.3;
+	whole_content_size.y = whole_content_size.y * 0.2;
 
 	ImGuiStyle& style = ImGui::GetStyle();
 	ImVec4* colors = style.Colors;
 
-	Menu::StyleColorsOrangeDark(style, colors, pwindowSize);
+	menu.StyleColors(style, colors, whole_content_size);
 
 	bool showSettingsWindow = true;
 	bool showAnotherWindow = false;
@@ -108,16 +112,17 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	ImGui_ImplWin32_NewFrame();
 
 	// show real cursor
-	Menu::RealCursorShow();
+	menu.RealCursorShow();
 
 	ImGui::NewFrame();
 
-	UIWaterMark::Watermark();
+	WM wm;
+	wm.Watermark();
 
-	Menu::PreventMoveOutOfWndBounds(" ");
+	menu.PreventMoveOutOfWndBounds(" ");
 
-	if (Menu::IsOpened)
-		Menu::Init();
+	if (menu.IsOpened())
+		menu.Render();
 
 	ImGui::Render();
 
@@ -132,7 +137,7 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 	while (true) {
 
 		if (GetAsyncKeyState(VK_INSERT) & 1)
-			Menu::IsOpened = !Menu::IsOpened;
+			menu.SetIsOpen(!menu.IsOpened());
 
 
 		if (GetAsyncKeyState(VK_END) & 1) {
@@ -142,7 +147,7 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 			return 0;
 		}
 
-		std::this_thread::sleep_for(100ms);
+		Sleep(100);
 	}
 
 	return TRUE;

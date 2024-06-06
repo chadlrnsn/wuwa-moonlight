@@ -12,7 +12,7 @@ using namespace UC;
 namespace UnrealEngine
 {
 	namespace Variables {
-		uintptr_t UWorld, PersistentLevel, OwningGameInstance, LocalPlayer, PlayerController, AcknowledgedPawn, PlayerCameraManager, MyHUD;
+		extern uintptr_t UWorld, PersistentLevel, OwningGameInstance, LocalPlayer, PlayerController, AcknowledgedPawn, PlayerCameraManager, MyHUD;
 	}
 
 	namespace SDK

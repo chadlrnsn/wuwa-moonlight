@@ -1,10 +1,34 @@
-#include "Menu.h"
+#include "Menu.hpp"
+
+Menu::Menu()
+{
+    this->IsOpen = true;
+    this->page = 0;
+    this->bWatermark = true;
+}
+
+Menu::~Menu()
+{
+    this->IsOpen = false;
+    this->page = 0;
+}
+
+bool Menu::IsOpened()
+{
+    return this->IsOpen;
+}
+
+bool Menu::SetIsOpen(bool boolean)
+{
+    this->IsOpen = boolean;
+    return this->IsOpened();
+}
 
 void Menu::RealCursorShow() {
     ImGui::GetMouseCursor();
     ImGui::SetMouseCursor(ImGuiMouseCursor_Arrow);
-    ImGui::GetIO().WantCaptureMouse = Menu::IsOpened;
-    ImGui::GetIO().MouseDrawCursor = Menu::IsOpened;
+    ImGui::GetIO().WantCaptureMouse = this->IsOpened();
+    ImGui::GetIO().MouseDrawCursor = this->IsOpened();
 }
 
 void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors, float windowSize[]) {
@@ -37,7 +61,7 @@ void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors, float windowSize[]) {
     style.ChildRounding = 5.0f;
 }
 
-void Menu::StyleColorsOrangeDark(ImGuiStyle& style, ImVec4* colors, float windowSize[1]) {
+void Menu::StyleColors(ImGuiStyle& style, ImVec4* colors, ImVec2 windowSize) {
     // Colors
     colors[ImGuiCol_Text] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
     colors[ImGuiCol_TextDisabled] = ImVec4(0.50f, 0.50f, 0.50f, 1.00f);
@@ -102,7 +126,7 @@ void Menu::StyleColorsOrangeDark(ImGuiStyle& style, ImVec4* colors, float window
     style.GrabRounding = 2.3f;
     style.TabRounding = 2.3f;
 
-    style.WindowMinSize = ImVec2(windowSize[0], windowSize[1]);
+    style.WindowMinSize = windowSize;
     style.ChildRounding = 5.0f;
 }
 
@@ -139,89 +163,4 @@ void Menu::PreventMoveOutOfWndBounds(const char* wndName) {
             ImGui::SetNextWindowPos(targetPos, ImGuiCond_Always);
         }
     }
-}
-
-
-void Menu::Init() {
-    if (ImGui::Begin(" ", 0, ImGuiWindowFlags_NoTitleBar /*  | ImGuiWindowFlags_NoResize */)) {
-        ImGui::PushStyleColor(ImGuiCol_Border, ImColor(0, 0, 0, 255).Value);
-        if (ImGui::BeginChild("##LeftSide", ImVec2(120, ImGui::GetContentRegionAvail().y), 1))
-        {
-
-            for (unsigned int i = 0; i < Buttons.size(); ++i) {
-
-                bool selected = (page == i);
-                auto windowvars = ImGuiStyleVar_SelectableTextAlign;
-
-                ImGui::PushStyleVar(windowvars, ImVec2(0.5f, 0.5f));
-
-                if (ImGui::Selectable(Buttons[i].btnLable, &selected, 0, ImVec2(ImGui::GetContentRegionAvail().x, 20)))
-                    page = i;
-
-                ImGui::PopStyleVar();
-
-                if (selected)
-                    ImGui::SetItemDefaultFocus();
-
-            }
-        }
-
-        ImGui::EndChild();
-
-        ImGui::SameLine(0);
-        ImGui::SeparatorEx(ImGuiSeparatorFlags_Vertical);
-        ImGui::SameLine(0);
-
-        ImGui::BeginChild("##RightSide", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), true);
-
-        switch (page) {
-
-        case 0: // Player
-            ImGui::Checkbox("GodMode", &Settings::Player::god);
-            ImGui::Checkbox("RapidFire", &Settings::Player::Rapidfire::enabled);
-            ImGui::Checkbox("SpeedHack", &Settings::Player::Speed::enabled);
-
-            // Speedhack
-            if (Settings::Player::Speed::enabled) {
-
-                ImGui::SliderFloat("TimeDilation",
-                    &Settings::Player::Speed::speed,
-                    Settings::Player::Speed::min,
-                    Settings::Player::Speed::max,
-                    "%.3f");
-            }
-
-            break;
-
-        case 1: // Esp
-            ImGui::Text("in dev.");
-            break;
-
-        case 2: // Misc
-            ImGui::Text("in dev.");
-            break;
-
-        case 3: // Config 
-            ImGui::Text("in dev.");
-
-            // Fix closing window after unloading dll
-
-            /*
-            if (ImGui::Button("Unload dll", ResponsiveSize(windowSize, 0.2, 0.1))) {
-                unload_dll("wuwa-moonlight.dll");
-            }
-            */
-            break;
-
-        case 4: // Debug
-            ImGui::Text("in dev.");
-            break;
-
-        } // Switch
-
-        ImGui::EndChild();
-        ImGui::PopStyleColor();
-
-    } // Begin
-    ImGui::End(); // Render end
 }

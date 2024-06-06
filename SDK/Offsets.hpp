@@ -1,7 +1,7 @@
 #pragma once
 #pragma once
 
-enum Offsets
+extern enum Offsets
 {
 	UworldOffset = 0x129879376, /* ViewPort->World, GameImageBase + Uworld */
 	PersistentLevelOffset = 0x38, /* UWorld->PersistentLevel *ULevel */
