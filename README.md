@@ -1,23 +1,25 @@
 # wuwa-moonlight
 Development of wuthering waves cheat
 
-![preview](https://media.discordapp.net/attachments/1029473278303146158/1246885728592465920/image.png?ex=665ead13&is=665d5b93&hm=f7c48fdc80414e333370207546b256649b8c398a2611f69c41df99ea526f324a&=&format=webp&quality=lossless&width=810&height=468)
+![preview](https://media.discordapp.net/attachments/1248362246342574121/1249114617087791236/image.png?ex=66662024&is=6664cea4&hm=62c2ff8f89b918090aa0137085465d24e945ae6a454e269b53149815f8838c4e&=&format=webp&quality=lossless&width=800&height=468)
 
 ## Todo
 - [x] Imgui menu
 - [ ] Cheat SDK
+- [ ] Features
 - [x] Github MSBuild
-- [ ] ESP
 - [ ] Save configs
 - [ ] Simple debug
 
 ## Implemented functions
-- [ ] GodMode
-- [ ] Speedhack (Time Dilation)
+- [x] GodMode
+- [x] Speedhack (Time Dilation)
 - [ ] Rapidfire
 - [ ] Multihit
-- [ ] Fly
+- [x] Fly
 - [ ] Save configs
+- [ ] Autoloot
+- [ ] Quest teleport
 
 ### 07.06.24
 - Added support for cursor capture when there is no cursor in the game
@@ -26,3 +28,13 @@ Development of wuthering waves cheat
 - Added function of dll upload from memory while it's still a bit buggy
 - Added prevention of menu going out of window edges
 - The project was almost completely refactored
+
+### 08.06.24
+- Fixed Debug build
+- Update README.md
+- Temporarily removed console class
+- Fixed bootloop on injection before pressing Insert
+- Implemented ResizeBuffers support
+- Reworked feature creation
+- Menu has been repainted
+- And other minor changes
