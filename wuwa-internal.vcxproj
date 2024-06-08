@@ -11,7 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Console\Console.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Features\ESP.cpp" />
     <ClCompile Include="Features\Fly.cpp" />
@@ -31,12 +30,9 @@
     <ClCompile Include="kiero\minhook\src\hde\hde64.c" />
     <ClCompile Include="kiero\minhook\src\hook.c" />
     <ClCompile Include="kiero\minhook\src\trampoline.c" />
-    <ClCompile Include="Menu\GUI.cpp" />
     <ClCompile Include="Menu\Menu.cpp" />
-    <ClCompile Include="Menu\Watermark.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Console\Console.hpp" />
     <ClInclude Include="Features\Bindings.h" />
     <ClInclude Include="Features\ESP.h" />
     <ClInclude Include="Features\Feature.h" />
@@ -63,14 +59,8 @@
     <ClInclude Include="kiero\minhook\src\hde\table32.h" />
     <ClInclude Include="kiero\minhook\src\hde\table64.h" />
     <ClInclude Include="kiero\minhook\src\trampoline.h" />
-    <ClInclude Include="Menu\GUI.h" />
     <ClInclude Include="Menu\Menu.hpp" />
-    <ClInclude Include="Menu\Watermark.h" />
-    <ClInclude Include="SDK\Classes.hpp" />
     <ClInclude Include="SDK\Offsets.hpp" />
-    <ClInclude Include="SDK\SDK.hpp" />
-    <ClInclude Include="SDK\Structs.hpp" />
-    <ClInclude Include="SDK\Utils.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="kiero\minhook\dll_resources\MinHook.def" />
@@ -126,6 +116,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

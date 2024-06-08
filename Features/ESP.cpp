@@ -1,32 +1,28 @@
 #include "ESP.h"
 
-ESP::ESP()
+void ESP::Run(void** args, size_t numArgs)
 {
-    this->m_enabled     = false;
-    this->m_distance    = 10000.f;
-    this->m_min         = 1000.f;
-    this->m_max         = 100000.f;
-}
+	if (!Initalized)
+		return;
 
-ESP::~ESP()
-{
-    this->m_enabled     = false;
-    this->m_distance    = 0.f;
-    this->m_min         = 0.f;
-    this->m_max         = 0.f;
-}
+	if (numArgs != 1)
+	{
+		//std::cout << "Too many or too little args passed to GodMode, Destryoing...\n";
+		Destroy();
+		return;
+	}
 
-void ESP::Enable()
-{
-	this->m_enabled = true;
-}
+	//CG::AActor* AcknowledgedPawn = (CG::AActor*)args[0];
 
-void ESP::Disable()
-{
-	this->m_enabled = false;
-}
+	//if (bGodMode && AcknowledgedPawn)
+	//{
+	//	AcknowledgedPawn->bCanBeDamaged = false;
+	//	bOnce = false;
+	//}
 
-void ESP::IsEnable()
-{
-	this->m_enabled;
+	//if (!bGodMode && AcknowledgedPawn && !bOnce)
+	//{
+	//	AcknowledgedPawn->bCanBeDamaged = true;
+	//	bOnce = true;
+	//}
 }

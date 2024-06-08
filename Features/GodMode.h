@@ -6,7 +6,7 @@ private:
 	bool Initalized = false;
 
 public:
-	bool bGodMode = true;
+	bool bGodMode = false;
 
 private:
 	bool bOnce = false;
