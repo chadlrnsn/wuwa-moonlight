@@ -11,6 +11,7 @@
 #include <thread>
 #include "Helper.h"
 #include "Globals.h"
+#include "SDK.hpp";
 
 // Unused yet!
 #define BaseModule L"Client-Win64-Shipping.exe"
@@ -209,12 +210,12 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	freopen_s(&dummy, "CONOUT$", "w", stdout);
 	//freopen("CONOUT$", "w", stderr);
 
-
 	HANDLE hProc = GetCurrentProcess();
 	Helper proc;
 
 	BaseAddr = proc.GetBaseModuleAddress("Client-Win64-Shipping.exe");
 	std::cout << "Base address: " << BaseAddr << " hex: " << std::hex << BaseAddr << std::endl;
+
 		
 	bool init_hook = false;
 	do

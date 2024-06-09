@@ -5,7 +5,7 @@ Development of wuthering waves cheat
 
 ## Todo
 - [x] Imgui menu
-- [ ] Cheat SDK
+- [x] Cheat SDK
 - [ ] Features
 - [x] Github MSBuild
 - [ ] Save configs
@@ -38,3 +38,6 @@ Development of wuthering waves cheat
 - Reworked feature creation
 - Menu has been repainted
 - And other minor changes
+
+### 10.06.24
+- Done and working SDK

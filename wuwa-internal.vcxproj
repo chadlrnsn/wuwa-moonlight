@@ -31,6 +31,9 @@
     <ClCompile Include="kiero\minhook\src\hook.c" />
     <ClCompile Include="kiero\minhook\src\trampoline.c" />
     <ClCompile Include="Menu\Menu.cpp" />
+    <ClCompile Include="SDK\Basic.cpp" />
+    <ClCompile Include="SDK\CoreUObject_functions.cpp" />
+    <ClCompile Include="SDK\Engine_functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Features\Bindings.h" />
@@ -60,10 +63,32 @@
     <ClInclude Include="kiero\minhook\src\hde\table64.h" />
     <ClInclude Include="kiero\minhook\src\trampoline.h" />
     <ClInclude Include="Menu\Menu.hpp" />
+    <ClInclude Include="PropertyFixup.hpp" />
+    <ClInclude Include="SDK.hpp" />
+    <ClInclude Include="SDK\AudioPlatformConfiguration_structs.hpp" />
+    <ClInclude Include="SDK\Basic.hpp" />
+    <ClInclude Include="SDK\Chaos_structs.hpp" />
+    <ClInclude Include="SDK\CoreUObject_classes.hpp" />
+    <ClInclude Include="SDK\CoreUObject_parameters.hpp" />
+    <ClInclude Include="SDK\CoreUObject_structs.hpp" />
+    <ClInclude Include="SDK\DeveloperSettings_classes.hpp" />
+    <ClInclude Include="SDK\Engine_classes.hpp" />
+    <ClInclude Include="SDK\Engine_parameters.hpp" />
+    <ClInclude Include="SDK\Engine_structs.hpp" />
+    <ClInclude Include="SDK\InputCore_classes.hpp" />
+    <ClInclude Include="SDK\InputCore_structs.hpp" />
     <ClInclude Include="SDK\Offsets.hpp" />
+    <ClInclude Include="SDK\PacketHandler_classes.hpp" />
+    <ClInclude Include="SDK\PhysicsCore_classes.hpp" />
+    <ClInclude Include="SDK\PhysicsCore_structs.hpp" />
+    <ClInclude Include="SDK\PropertyAccess_structs.hpp" />
+    <ClInclude Include="SDK\SlateCore_structs.hpp" />
+    <ClInclude Include="SDK\Slate_structs.hpp" />
+    <ClInclude Include="UnrealContainers.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="kiero\minhook\dll_resources\MinHook.def" />
+    <None Include="NameCollisions.inl" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="kiero\minhook\dll_resources\MinHook.rc" />
@@ -120,7 +145,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -132,7 +157,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
