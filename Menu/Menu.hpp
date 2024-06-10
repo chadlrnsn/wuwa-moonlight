@@ -7,7 +7,6 @@
 #include "../imgui/imgui.h"
 #include "../Features/Features.h"
 
-
 template <typename T>
 ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall) {
     return ImVec2(size.x * mulwide, size.y * multall);
@@ -47,6 +46,8 @@ public:
 
     void Render();
     void RenderWatermark();
+    // Title, Text to show, submit text, bool open
+    //void ShowCenteredPopupSubmit(const char* title, const char* text, const char* submit_text, bool* open);
 };
 
 

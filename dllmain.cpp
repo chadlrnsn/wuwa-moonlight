@@ -10,15 +10,13 @@
 #include "Menu/Menu.hpp"
 #include <thread>
 #include "Helper.h"
-#include "Globals.h"
-#include "SDK.hpp";
+
 
 // Unused yet!
 #define BaseModule L"Client-Win64-Shipping.exe"
 #define MenuKey VK_INSERT
 #define QuitKey VK_END
 
-using namespace Globals;
 
 typedef HRESULT(__stdcall* Present) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 typedef LRESULT(CALLBACK* WNDPROC)(HWND, UINT, WPARAM, LPARAM);
@@ -85,6 +83,7 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
 	static bool init = false;
+	static bool AlertMessage = true;
 	if (!init) {
 		if (SUCCEEDED(pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&pDevice))) {
 			pDevice->GetImmediateContext(&pContext);
@@ -128,6 +127,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	menu.RenderWatermark();
 	menu.PreventMoveOutOfWndBounds(" ");
 
+	//menu.ShowCenteredPopupSubmit("ALERT", "This cheat is opensource if you purchase it from someone u got scammed!", "Ok", &AlertMessage);
 	if (menu.IsOpened())
 		menu.Render();
 

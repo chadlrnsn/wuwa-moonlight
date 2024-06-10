@@ -222,10 +222,8 @@ void Menu::Render()
             break;
 
         case 4: // Debug
-            ImGui::Text("in dev.");
-            ImGui::SameLine();
-            //ImGui::Text("GWorld %s", SDK::__UWorld());
-            //ImGui::Text()
+            ImGui::Text("Debug Page");
+            DebugMenu::DebugMainPage();
             break;
 
         } // Switch
@@ -265,3 +263,26 @@ void Menu::RenderWatermark()
     ImGui::Text("By chadlrnsn | Moonlight | %s", std::ctime(&formatedtime));
     ImGui::End();
 }
+
+//void Menu::ShowCenteredPopupSubmit(const char* title, const char* text, const char* submit_text,  bool* open)
+//{
+//    if (*open) {
+//        ImGui::OpenPopup(title);
+//    }
+//
+//    if (ImGui::BeginPopupModal(title, NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
+//        ImGuiIO& io = ImGui::GetIO();
+//        ImVec2 window_size = ImGui::GetWindowSize();
+//        ImVec2 window_pos = ImVec2((io.DisplaySize.x - window_size.x) / 2, (io.DisplaySize.y - window_size.y) / 2);
+//
+//        ImGui::SetWindowPos(window_pos);
+//
+//        ImGui::Text(text);
+//        if (ImGui::Button(submit_text)) {
+//            ImGui::CloseCurrentPopup();
+//            *open = false;
+//        }
+//
+//        ImGui::EndPopup();
+//    }
+//}

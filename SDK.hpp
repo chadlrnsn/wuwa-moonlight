@@ -24,6 +24,8 @@
 #include "SDK/PhysicsCore_classes.hpp"
 #include "SDK/PropertyAccess_structs.hpp"
 #include "SDK/Engine_classes.hpp"
+
+
 /*
 #include "SDK/EFightCameraType_structs.hpp"
 #include "SDK/GameplayTags_structs.hpp"
@@ -1609,4 +1611,5 @@
 #include "SDK/KuroSceneInteraction_142_classes.hpp"
 #include "SDK/KuroSceneInteraction_150_classes.hpp"
 #include "SDK/KuroSceneInteraction_154_classes.hpp"
-#include "SDK/KuroSceneInteraction_158_classes.hpp"*/
+#include "SDK/KuroSceneInteraction_158_classes.hpp"
+*/

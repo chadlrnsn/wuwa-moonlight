@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Features\Debug_menu.cpp" />
     <ClCompile Include="Features\ESP.cpp" />
     <ClCompile Include="Features\Fly.cpp" />
     <ClCompile Include="Features\GodMode.cpp" />
@@ -37,13 +38,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Features\Bindings.h" />
+    <ClInclude Include="Features\Debug_menu.h" />
     <ClInclude Include="Features\ESP.h" />
     <ClInclude Include="Features\Feature.h" />
     <ClInclude Include="Features\Features.h" />
     <ClInclude Include="Features\GodMode.h" />
     <ClInclude Include="Features\SpeedHack.h" />
     <ClInclude Include="Features\Fly.h" />
-    <ClInclude Include="Globals.h" />
     <ClInclude Include="Helper.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
