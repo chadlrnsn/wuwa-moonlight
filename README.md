@@ -5,6 +5,11 @@ Development of wuthering waves cheat
 
 ![preview](https://i.imgur.com/z2rZc3Y.png)
 
+## How to use
+- Compile project in x64-Release
+- Open Moonlight.exe and enjoy
+- **See [How to use](HowToUse.md) if you are a beginner**
+
 ## Todo
 - [x] Imgui menu
 - [x] Cheat SDK
@@ -27,4 +32,4 @@ Development of wuthering waves cheat
 ## Thanks to
 [kiero hook](https://github.com/rdbo/ImGui-DirectX-11-Kiero-Hook)</br>
 [Dumper-7](https://github.com/Encryqed/Dumper-7)</br>
-Old Akebi❤️
+Old Akebi❤️</br>
