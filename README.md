@@ -1,20 +1,30 @@
-# wuwa-moonlight
+﻿<div align="center">
+<h1>wuwa-moonlight🌘</h1>
 Development of wuthering waves cheat
+</div>
 
-![preview](https://media.discordapp.net/attachments/1029473278303146158/1246885728592465920/image.png?ex=665ead13&is=665d5b93&hm=f7c48fdc80414e333370207546b256649b8c398a2611f69c41df99ea526f324a&=&format=webp&quality=lossless&width=810&height=468)
+![preview](https://i.imgur.com/z2rZc3Y.png)
 
 ## Todo
 - [x] Imgui menu
-- [ ] Cheat SDK
-- [ ] Github MSBuild
-- [ ] ESP
+- [x] Cheat SDK
+- [ ] Features
+- [x] Github MSBuild
 - [ ] Save configs
 - [ ] Simple debug
 
 ## Implemented functions
-- [ ] GodMode
-- [ ] Speedhack (Time Dilation)
+- [x] GodMode
+- [x] Speedhack (Time Dilation)
 - [ ] Rapidfire
 - [ ] Multihit
-- [ ] Fly
+- [x] Fly
 - [ ] Save configs
+- [ ] Autoloot
+- [ ] Quest teleport
+
+
+## Thanks to
+[kiero hook](https://github.com/rdbo/ImGui-DirectX-11-Kiero-Hook)</br>
+[Dumper-7](https://github.com/Encryqed/Dumper-7)</br>
+Old Akebi❤️
