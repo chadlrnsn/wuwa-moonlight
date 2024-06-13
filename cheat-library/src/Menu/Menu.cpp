@@ -194,20 +194,6 @@ void Menu::Render()
             god.DrawMenuItems();
             speedhack.DrawMenuItems();
 
-            //ImGui::Checkbox("GodMode", &MenuFeatures::godmode);
-            //ImGui::Checkbox("RapidFire", &Settings::Player::Rapidfire::enabled);
-            //ImGui::Checkbox("SpeedHack", &Settings::Player::Speed::enabled);
-
-            // Speedhack
-            //if (Settings::Player::Speed::enabled) {
-
-            //    ImGui::SliderFloat("TimeDilation",
-            //        &Settings::Player::Speed::speed,
-            //        Settings::Player::Speed::min,
-            //        Settings::Player::Speed::max,
-            //        "%.3f");
-            //}
-
             break;
 
         case 1: // Esp
@@ -218,11 +204,17 @@ void Menu::Render()
             ImGui::Text("in dev.");
             break;
 
-        case 3: // Config 
+        case 3: // Movement
+            gravityScale.DrawMenuItems();   
+            walkFloorZ.DrawMenuItems();
+            walkFloorAngle.DrawMenuItems();
+            break;
+
+        case 4: // Config 
             ImGui::Text("in dev.");
             break;
 
-        case 4: // Debug
+        case 5: // Debug
             ImGui::Text("Debug Page");
             DebugMenu::DebugMainPage();
             break;

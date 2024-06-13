@@ -13,7 +13,7 @@ ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall) {
 }
 
 
-class Menu 
+class Menu
 {
 private:
     bool IsOpen = false;
@@ -30,8 +30,9 @@ private:
         { "Player", "", nullptr },
         { "ESP", "", nullptr },
         { "Misc", "", nullptr },
+        { "Movement", "", nullptr },
         { "Config", "", nullptr },
-        { "Debug", "", nullptr }
+        { "Debug", "", nullptr },
     };
 
 public:
