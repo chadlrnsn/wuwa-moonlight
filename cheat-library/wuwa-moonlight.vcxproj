@@ -29,20 +29,20 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -145,6 +145,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\dllmain.h" />
+    <ClInclude Include="src\Features\Config.h" />
     <ClInclude Include="src\Features\Bindings.h" />
     <ClInclude Include="src\Features\Debug_menu.h" />
     <ClInclude Include="src\Features\ESP.h" />
@@ -156,6 +158,7 @@
     <ClInclude Include="src\Features\SpeedHack.h" />
     <ClInclude Include="src\Features\WalkableFloorAngle.h" />
     <ClInclude Include="src\Features\WalkableFloorZ.h" />
+    <ClInclude Include="src\globals.h" />
     <ClInclude Include="src\Helper.h" />
     <ClInclude Include="vendor\imgui\imconfig.h" />
     <ClInclude Include="vendor\imgui\imgui.h" />
@@ -198,6 +201,7 @@
     <ClInclude Include="vendor\UnrealEngine\UnrealContainers.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Features\Config.cpp" />
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\Features\Debug_menu.cpp" />
     <ClCompile Include="src\Features\ESP.cpp" />
@@ -207,6 +211,7 @@
     <ClCompile Include="src\Features\SpeedHack.cpp" />
     <ClCompile Include="src\Features\WalkableFloorAngle.cpp" />
     <ClCompile Include="src\Features\WalkableFloorZ.cpp" />
+    <ClCompile Include="src\globals.cpp" />
     <ClCompile Include="src\Helper.cpp" />
     <ClCompile Include="vendor\imgui\imgui.cpp" />
     <ClCompile Include="vendor\imgui\imgui_demo.cpp" />

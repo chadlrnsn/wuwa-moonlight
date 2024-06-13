@@ -1,58 +1,9 @@
 #pragma once
-#include <thread>
-#include <Windows.h>
-#include <d3d11.h>
-#include <dxgi.h>
-#include <kiero.h>
-#include <imgui.h>
-#include <imgui_impl_win32.h>
-#include <imgui_impl_dx11.h>
-#include "Menu/Menu.hpp"
-#include <thread>
-#include "Helper.h"
-
-
-// Unused yet!
-#define BaseModule L"Client-Win64-Shipping.exe"
+#include "dllmain.h"
 #define MenuKey VK_INSERT
 #define QuitKey VK_END
 
-
-typedef HRESULT(__stdcall* Present) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
-typedef LRESULT(CALLBACK* WNDPROC)(HWND, UINT, WPARAM, LPARAM);
-typedef uintptr_t PTR;
-
-// to unload dll
-typedef BOOL(WINAPI* PFreeLibrary)(_In_ HMODULE hModule);
-typedef VOID(WINAPI* PExitThread)(_In_ DWORD dwExitCode);
-typedef unsigned int (WINAPI* PTHREADPROC)(LPVOID lParam);
-
-typedef struct _DLLUNLOADINFO
-{
-	PFreeLibrary	m_fpFreeLibrary;
-	PExitThread		m_fpExitThread;
-	HMODULE		    m_hFreeModule;
-}DLLUNLOADINFO, * PDLLUNLOADINFO;
-
-unsigned int WINAPI DllUnloadThreadProc(LPVOID lParam);
-void DllSelfUnloading(_In_ const HMODULE hModule);
-
-extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-HRESULT ResizeSwapChain(IDXGISwapChain* pSwapChain, ID3D11Device* pDevice, ID3D11DeviceContext* pContext,
-	ID3D11RenderTargetView** pRenderTargetView, UINT Width, UINT Height);
-
-volatile bool g_bUnload = false;
-Present oPresent;
-HWND window = NULL;
-WNDPROC oWndProc;
-ID3D11Device* pDevice = NULL;
-ID3D11DeviceContext* pContext = NULL;
-ID3D11RenderTargetView* mainRenderTargetView;
-IDXGISwapChain* pSwapChain;
-HMODULE hModule;
-
-uintptr_t BaseAddr;
-Menu menu;
+using namespace SDK;
 
 void InitImGui()
 {
@@ -183,12 +134,13 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 
 	while (!g_bUnload) {
 
-		if (GetAsyncKeyState(VK_INSERT) & 1)
+		if (GetAsyncKeyState(MenuKey) & 1)
 			menu.SetIsOpen(!menu.IsOpened());
 
 
-		if (GetAsyncKeyState(VK_END) & 1) {
+		if (GetAsyncKeyState(QuitKey) & 1) {
 			kiero::shutdown();
+			ExitProcess(EXIT_SUCCESS);
 
 			// Temporary disabled due to crash
 			//DllSelfUnloading((HMODULE)hModule);
@@ -202,29 +154,81 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 	return TRUE;
 }
 
-DWORD WINAPI HackThread(LPVOID lpReserved)
+void WINAPI HackThread(LPVOID lpReserved)
 {
+	UWorld* mWorld = nullptr;
+	SDK::UEngine* mEngine = nullptr;
+	UGameInstance* mGameInstance = nullptr;
+	ULocalPlayer* mLocalPlayer = nullptr;
+	AGameStateBase* mGameState = nullptr;
+	ULevel* mLevel = nullptr;
+	APlayerController* mPlayerControler;
+	APawn* mAcknowledgePawn;
+	bool SettedUp = false;
+
 	while (!g_bUnload)
 	{
-		//speedhack.Run();
+		mEngine = SDK::UEngine::GetEngine();
+		if ( !mEngine )
+			continue;
+
+		mWorld = SDK::UWorld::GetWorld();
+		if ( !mWorld )
+			continue;
+
+		mGameInstance = mWorld->OwningGameInstance;
+		if ( !mGameInstance )
+			continue;
+
+		mLocalPlayer = mGameInstance->LocalPlayers[0];
+		if ( !mLocalPlayer )
+			continue;
+
+		mPlayerControler = mLocalPlayer->PlayerController;
+		if (!mPlayerControler)
+			continue;
+
+		mAcknowledgePawn = mPlayerControler->AcknowledgedPawn;
+		if (!mAcknowledgePawn)
+			continue;
+
+		mLevel = mAcknowledgePawn->GetLevel();
+		if (!mLevel && !mLevel->bIsVisible)
+			continue;
+
+		if (!SettedUp)
+		{
+			speedhack.Setup();
+			god.Setup();
+			SettedUp = true;
+		}
+
+		void* AcknowledgePawn[1] = {mLocalPlayer->PlayerController->AcknowledgedPawn};
+		printf( "LocalPlayer->PlayerController->AcknowledgedPawn -> %p\n", mLocalPlayer->PlayerController->AcknowledgedPawn);
+		printf( "AcknowledgePawn -> %p\n", AcknowledgePawn );
+		printf( "CustomTimeDilation -> %p\n", mLocalPlayer->PlayerController->AcknowledgedPawn->CustomTimeDilation);
+		speedhack.Run(AcknowledgePawn, 1 );
+		god.Run(AcknowledgePawn, 1);
+
+		std::this_thread::sleep_for(100ms);
 	}
-	
-	return TRUE;
+	return;
 }
 
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 {
 
-	//AllocConsole();
-	//FILE* dummy;
-	//freopen_s(&dummy, "CONOUT$", "w", stdout);
-	//freopen("CONOUT$", "w", stderr);
+	AllocConsole();
+	FILE* dummy;
+	freopen_s(&dummy, "CONOUT$", "w", stdout);
+	freopen("CONOUT$", "w", stderr);
 
 	HANDLE hProc = GetCurrentProcess();
 	Helper proc;
 
 	BaseAddr = proc.GetBaseModuleAddress("Client-Win64-Shipping.exe");
 	std::cout << "Base address: " << BaseAddr << " hex: " << std::hex << BaseAddr << std::endl;
+	std::cout << "Builded at " << BuildInfo << std::endl;
 
 		
 	bool init_hook = false;
@@ -247,53 +251,52 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 
 // TO FIX CRASH
 // https://www.unknowncheats.me/forum/c-and-c-/146497-release-source-self-unloading-dll.html
-unsigned int WINAPI DllUnloadThreadProc(LPVOID lParam)
-{
-	PDLLUNLOADINFO pDllUnloadInfo = (PDLLUNLOADINFO)lParam;
-
-	//  
-	// FreeLibrary dll  
-	//  
-	(pDllUnloadInfo->m_fpFreeLibrary)(pDllUnloadInfo->m_hFreeModule);
-
-	//
-	// Exit Thread
-	// This thread return value is freed memory.
-	// So you don't have to return this thread.
-	//
-	pDllUnloadInfo->m_fpExitThread(0);
-	return 0;
-}
-
-
-VOID DllSelfUnloading(_In_ const HMODULE hModule)
-{
-	PVOID pMemory = NULL;
-	ULONG ulFuncSize;
-	unsigned int uintThreadId = 0;
-
-	pMemory = VirtualAlloc(NULL, 0x1000, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
-	if (pMemory != NULL)
-	{
-		ulFuncSize = (ULONG_PTR)DllUnloadThreadProc - (ULONG_PTR)DllSelfUnloading;
-		if ((ulFuncSize >> 31) & 0x01)
-		{
-			ulFuncSize = (ULONG_PTR)DllSelfUnloading - (ULONG_PTR)DllUnloadThreadProc;
-		}
-
-		memcpy(pMemory, DllUnloadThreadProc, ulFuncSize);
-
-		((PDLLUNLOADINFO)(((ULONG_PTR)pMemory) + 0x500))->m_fpFreeLibrary =
-			(PFreeLibrary)GetProcAddress(GetModuleHandle(_T("kernel32.dll")), "FreeLibrary");
-
-		((PDLLUNLOADINFO)(((ULONG_PTR)pMemory) + 0x500))->m_fpExitThread =
-			(PExitThread)GetProcAddress(GetModuleHandle(_T("kernel32.dll")), "ExitThread");
-
-		((PDLLUNLOADINFO)(((ULONG_PTR)pMemory) + 0x500))->m_hFreeModule = hModule;
-
-		_beginthreadex(NULL, 0, (PTHREADPROC)pMemory, (PVOID)(((ULONG_PTR)pMemory) + 0x500), 0, &uintThreadId);
-	}
-}
+//unsigned int WINAPI DllUnloadThreadProc(LPVOID lParam)
+//{
+//	PDLLUNLOADINFO pDllUnloadInfo = (PDLLUNLOADINFO)lParam;
+//
+//	//  
+//	// FreeLibrary dll  
+//	//  
+//	(pDllUnloadInfo->m_fpFreeLibrary)(pDllUnloadInfo->m_hFreeModule);
+//
+//	//
+//	// Exit Thread
+//	// This thread return value is freed memory.
+//	// So you don't have to return this thread.
+//	//
+//	pDllUnloadInfo->m_fpExitThread(0);
+//	return 0;
+//}
+//
+//VOID DllSelfUnloading(_In_ const HMODULE hModule)
+//{
+//	PVOID pMemory = NULL;
+//	ULONG ulFuncSize;
+//	unsigned int uintThreadId = 0;
+//
+//	pMemory = VirtualAlloc(NULL, 0x1000, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+//	if (pMemory != NULL)
+//	{
+//		ulFuncSize = (ULONG_PTR)DllUnloadThreadProc - (ULONG_PTR)DllSelfUnloading;
+//		if ((ulFuncSize >> 31) & 0x01)
+//		{
+//			ulFuncSize = (ULONG_PTR)DllSelfUnloading - (ULONG_PTR)DllUnloadThreadProc;
+//		}
+//
+//		memcpy(pMemory, DllUnloadThreadProc, ulFuncSize);
+//
+//		((PDLLUNLOADINFO)(((ULONG_PTR)pMemory) + 0x500))->m_fpFreeLibrary =
+//			(PFreeLibrary)GetProcAddress(GetModuleHandle(_T("kernel32.dll")), "FreeLibrary");
+//
+//		((PDLLUNLOADINFO)(((ULONG_PTR)pMemory) + 0x500))->m_fpExitThread =
+//			(PExitThread)GetProcAddress(GetModuleHandle(_T("kernel32.dll")), "ExitThread");
+//
+//		((PDLLUNLOADINFO)(((ULONG_PTR)pMemory) + 0x500))->m_hFreeModule = hModule;
+//
+//		_beginthreadex(NULL, 0, (PTHREADPROC)pMemory, (PVOID)(((ULONG_PTR)pMemory) + 0x500), 0, &uintThreadId);
+//	}
+//}
 
 BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 {
@@ -304,14 +307,12 @@ BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 	case DLL_PROCESS_ATTACH:
 		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, nullptr);
 		CreateThread(nullptr, 0, KeyHandler, hMod, 0, nullptr);
-		CreateThread(nullptr, 0, HackThread, hMod, 0, nullptr);
+		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)HackThread, hMod, 0, nullptr);
 		hModule = hMod;
 		break;
 
 	case DLL_PROCESS_DETACH:
-		g_bUnload = true;
 		kiero::shutdown();
-		//FreeLibraryAndExitThread(hMod, EXIT_SUCCESS);
 		break;
 	}
 

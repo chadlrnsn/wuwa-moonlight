@@ -1,6 +1,7 @@
 #include "Debug_menu.h"
 
 #include <SDK.hpp>
+#include <globals.h>
 
 
 
@@ -26,6 +27,7 @@ void DebugMenu::DebugMainPage()
 
 	//SDK::ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
 
+	ImGui::Text("Build %s", &BuildInfo);
 	if (World != nullptr && World->OwningGameInstance != nullptr) 
 	{
 		//SDK::AActor Actor = SDK::AActor::IsA(SDK::ULocalPlayer::StaticClass())

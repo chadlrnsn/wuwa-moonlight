@@ -8,6 +8,7 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wuwa-injector", "cheat-injector\wuwa-injector.vcxproj", "{FBF8460D-4332-423F-90EC-31FCBD064243}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9295C555-4E22-4EB5-BFAD-2F45685D6114} = {9295C555-4E22-4EB5-BFAD-2F45685D6114}
+		{0D43EDA3-149F-4726-8707-C657C4511242} = {0D43EDA3-149F-4726-8707-C657C4511242}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wuwa-base", "cheat-base\wuwa-base.vcxproj", "{0D43EDA3-149F-4726-8707-C657C4511242}"

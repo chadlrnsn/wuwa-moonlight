@@ -12,10 +12,10 @@ void SpeedHack::Run(void** args, size_t numArgs)
 		return;
 	}
 
-	SDK::UWorld* World = SDK::UWorld::GetWorld();
-	SDK::AActor* AcknowledgedPawn = World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn;
 
-	//CG::AActor* AcknowledgedPawn = (CG::AActor*)args[0];
+	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
+
+	ImGui::Text("TimeDilation %d", AcknowledgedPawn->CustomTimeDilation);
 
 	if (bEnable && AcknowledgedPawn)
 	{

@@ -253,7 +253,7 @@ void Menu::RenderWatermark()
         ImGuiWindowFlags_::ImGuiWindowFlags_NoNav
     );
 
-    ImGui::Text("By chadlrnsn | Moonlight | %s", std::ctime(&formatedtime));
+    ImGui::Text("By chadlrnsn | Moonlight | %s | %s", std::ctime(&formatedtime), BuildInfo);
     ImGui::End();
 }
 

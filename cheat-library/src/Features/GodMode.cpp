@@ -12,8 +12,8 @@ void GodMode::Run(void** args, size_t numArgs)
 		return;
 	}
 
-	SDK::UWorld* World = SDK::UWorld::GetWorld();
-	SDK::AActor* AcknowledgedPawn = World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn;
+	SDK::AActor* AcknowledgedPawn = (SDK::AActor*)args[0];
+	printf("AcknowledgePawn[GOD] -> %p", AcknowledgedPawn);
 
 	if (bGodMode && AcknowledgedPawn)
 	{

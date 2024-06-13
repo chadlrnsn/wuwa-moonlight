@@ -6,6 +6,7 @@
 #include <imgui_internal.h>
 #include <imgui.h>
 #include <Features/Features.h>
+#include <globals.h>
 
 template <typename T>
 ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall) {
@@ -34,6 +35,9 @@ private:
         { "Config", "", nullptr },
         { "Debug", "", nullptr },
     };
+public:
+    bool bShowBuild = true;
+
 
 public:
     bool IsOpened();
@@ -50,3 +54,5 @@ public:
     // Title, Text to show, submit text, bool open
     //void ShowCenteredPopupSubmit(const char* title, const char* text, const char* submit_text, bool* open);
 };
+
+
