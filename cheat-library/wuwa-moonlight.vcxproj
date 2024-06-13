@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -152,7 +152,10 @@
     <ClInclude Include="src\Features\Features.h" />
     <ClInclude Include="src\Features\Fly.h" />
     <ClInclude Include="src\Features\GodMode.h" />
+    <ClInclude Include="src\Features\GravityScale.h" />
     <ClInclude Include="src\Features\SpeedHack.h" />
+    <ClInclude Include="src\Features\WalkableFloorAngle.h" />
+    <ClInclude Include="src\Features\WalkableFloorZ.h" />
     <ClInclude Include="src\Helper.h" />
     <ClInclude Include="vendor\imgui\imconfig.h" />
     <ClInclude Include="vendor\imgui\imgui.h" />
@@ -200,7 +203,10 @@
     <ClCompile Include="src\Features\ESP.cpp" />
     <ClCompile Include="src\Features\Fly.cpp" />
     <ClCompile Include="src\Features\GodMode.cpp" />
+    <ClCompile Include="src\Features\GravityScale.cpp" />
     <ClCompile Include="src\Features\SpeedHack.cpp" />
+    <ClCompile Include="src\Features\WalkableFloorAngle.cpp" />
+    <ClCompile Include="src\Features\WalkableFloorZ.cpp" />
     <ClCompile Include="src\Helper.cpp" />
     <ClCompile Include="vendor\imgui\imgui.cpp" />
     <ClCompile Include="vendor\imgui\imgui_demo.cpp" />

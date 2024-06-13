@@ -21,145 +21,61 @@
     <ClInclude Include="vendor\SimpleIni\SimpleIni.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\conversions\from_json.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\conversions\to_chars.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\conversions\to_json.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\input\binary_reader.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\input\input_adapters.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\input\json_sax.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\input\lexer.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\input\parser.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\input\position_t.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\iterators\internal_iterator.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\iterators\iter_impl.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\iterators\iteration_proxy.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\iterators\iterator_traits.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\iterators\json_reverse_iterator.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\iterators\primitive_iterator.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\meta\call_std\begin.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\meta\call_std\end.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\meta\cpp_future.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\meta\detected.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\meta\identity_tag.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\meta\is_sax.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\meta\std_fs.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\meta\type_traits.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\meta\void_t.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\output\binary_writer.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\output\output_adapters.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\output\serializer.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\abi_macros.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\exceptions.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\hash.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\json_custom_base_class.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\json_pointer.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\json_ref.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\macro_scope.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\macro_unscope.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\string_concat.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\string_escape.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\detail\value_t.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\thirdparty\hedley\hedley.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\thirdparty\hedley\hedley_undef.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\adl_serializer.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\byte_container_with_subtype.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\json.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\json_fwd.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\nlohmann\ordered_map.hpp">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="src\wuwa-base\inject\load-library.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="src\wuwa-base\inject\manual-map.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\event.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\handlers\abstracteventhandler.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\handlers\eventhandlerptr.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\handlers\functoreventhandler.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\handlers\handlercast.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\handlers\helpers\innerholder.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\handlers\helpers\objectsaver.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\handlers\methodeventhandler.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\helpers\is_equatable.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\joins\abstracteventjoin.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\joins\eventjoinwrapper.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\joins\eventjoinwrapper.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\joins\handlereventjoin.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\events\joins\handlereventjoin.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\framework\framework.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\framework\pch.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wuwa-base\Logger.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -171,6 +87,18 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\wuwa-base\inject\manual-map.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wuwa-base\events\joins\abstracteventjoin.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wuwa-base\events\joins\eventjoinwrapper.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wuwa-base\framework\pch.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wuwa-base\Logger.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
