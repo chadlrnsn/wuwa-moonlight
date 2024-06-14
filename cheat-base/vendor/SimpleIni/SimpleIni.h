@@ -1,3 +1,4 @@
+#pragma once
 /** @mainpage
 
     <table>

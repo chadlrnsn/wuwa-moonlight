@@ -11,6 +11,8 @@
 #include <thread>
 #include <Helper.h>
 #include <globals.h>
+#include <wuwa-base/Logger.h>
+#include <wuwa-base/util.h>
 
 typedef HRESULT(__stdcall* Present) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 typedef LRESULT(CALLBACK* WNDPROC)(HWND, UINT, WPARAM, LPARAM);
@@ -57,6 +59,6 @@ HRESULT ResizeSwapChain(IDXGISwapChain* pSwapChain, ID3D11Device* pDevice, ID3D1
 
 // Hack stuff
 DWORD WINAPI KeyHandler(LPVOID lpReserved);
-void WINAPI HackThread(LPVOID lpReserved);
+void WINAPI FeaturesThread(LPVOID lpReserved);
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved);
 BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved);

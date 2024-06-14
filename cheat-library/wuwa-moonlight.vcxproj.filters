@@ -266,6 +266,9 @@
     <ClCompile Include="src\globals.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="src\Features\Features.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\UnrealEngine\NameCollisions.inl">

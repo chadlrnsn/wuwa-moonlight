@@ -15,8 +15,6 @@ void SpeedHack::Run(void** args, size_t numArgs)
 
 	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
 
-	ImGui::Text("TimeDilation %d", AcknowledgedPawn->CustomTimeDilation);
-
 	if (bEnable && AcknowledgedPawn)
 	{
 		AcknowledgedPawn->CustomTimeDilation = fSpeed;

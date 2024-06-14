@@ -135,13 +135,14 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\kiero;$(ProjectDir)\vendor\UnrealEngine</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\kiero;$(ProjectDir)\vendor\UnrealEngine;$(SolutionDir)\cheat-base\src;$(SolutionDir)\cheat-base\vendor</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)bin\$(Configuration)-$(PlatformShortName)\wuwa-base.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -205,6 +206,7 @@
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\Features\Debug_menu.cpp" />
     <ClCompile Include="src\Features\ESP.cpp" />
+    <ClCompile Include="src\Features\Features.cpp" />
     <ClCompile Include="src\Features\Fly.cpp" />
     <ClCompile Include="src\Features\GodMode.cpp" />
     <ClCompile Include="src\Features\GravityScale.cpp" />

@@ -4,11 +4,15 @@
 #include <memory>
 #include <optional>
 #include <vector>
-//#include <wuwa-base/Logger.h>
+#include <wuwa-base/Logger.h>
 
 #include <filesystem>
-#include <SimpleIni.h>
+#include <SimpleIni/SimpleIni.h>
 
+// for logs in console basicly
+#include <cstdio>
+#include <io.h>
+#include <fcntl.h>
 
 
 #define LOG_LAST_ERROR(fmt, ...) util::LogLastError(__FILE__, __LINE__, fmt, __VA_ARGS__)
@@ -75,3 +79,5 @@ namespace util
 		//Logger::Log(Logger::Level::Error, filepath, line, newFmt.c_str(), args ...);
 	}
 }
+
+

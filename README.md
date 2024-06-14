@@ -1,5 +1,12 @@
 ﻿<div align="center">
-<h1>wuwa-moonlight🌘</h1>
+<h1>wuwa-moonlight🌘</h1></br>
+<img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/chadlrnsn/wuwa-moonlight/msbuild.yml?branch=master">
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/chadlrnsn/wuwa-moonlight">
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/chadlrnsn/wuwa-moonlight">
+<img alt="GitHub License" src="https://img.shields.io/github/license/chadlrnsn/wuwa-moonlight">
+<img alt="GitHub Release" src="https://img.shields.io/github/v/release/chadlrnsn/wuwa-moonlight">
+<img alt="Discord" src="https://img.shields.io/discord/1246834050119893064?logo=discord">
+
 </div>
 
 
@@ -9,25 +16,10 @@
 - Download also this [bypass](https://cdn.discordapp.com/attachments/1250821466593689660/1250835850254614700/bypass.dll?ex=666c632a&is=666b11aa&hm=5bb4b9abbc2e2d5a80f73434b33eb730258ef7de6b1af02618f0a2ce5619f298& "this is pipsi's bypass") and put it to same direcory as `Moonlight.exe`
 - **See [How to use](HowToUse.md) if you are a beginner**
 
+> [!IMPORTANT]\
+> Developers are not responsible for your actions, you do everything at your own risk!
+
 > if link doestn't work just join to our [discord server](https://discord.gg/XyAeK3E9MW), verify yourself and go to links->downloads
-
-## Todo
-- [x] Imgui menu
-- [x] Cheat SDK
-- [ ] Features
-- [x] Github MSBuild
-- [ ] Save configs
-- [ ] Simple debug
-
-## Implemented functions
-- [x] GodMode
-- [x] Speedhack (Time Dilation)
-- [ ] Rapidfire
-- [ ] Multihit
-- [x] Fly
-- [ ] Save configs
-- [ ] Autoloot
-- [ ] Quest teleport
 
 ![preview](https://i.imgur.com/z2rZc3Y.png)
 

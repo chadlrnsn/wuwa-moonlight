@@ -154,65 +154,112 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 	return TRUE;
 }
 
-void WINAPI HackThread(LPVOID lpReserved)
+
+bool IsPlayerLoaded(UWorld* World)
+{
+	if (!World)
+		return false;
+
+	UGameInstance* GameInstance = World->OwningGameInstance;
+	if (!GameInstance)
+		return false;
+
+	ULocalPlayer* LocalPlayer = GameInstance->LocalPlayers.Num() > 0 ? GameInstance->LocalPlayers[0] : nullptr;
+	if (!LocalPlayer)
+		return false;
+
+	APlayerController* PlayerController = LocalPlayer->PlayerController;
+	if (!PlayerController)
+		return false;
+
+	APawn* AcknowledgedPawn = PlayerController->AcknowledgedPawn;
+	if (!AcknowledgedPawn)
+		return false;
+
+	return AcknowledgedPawn->IsPawnControlled();
+}
+
+bool IsWorldFullyLoaded(UWorld* World)
+{
+	if (!World)
+		return false;
+
+	ULevel* Level = World->PersistentLevel;
+	if (!Level || !Level->bIsVisible)
+		return false;
+
+	// Optionally, check if streaming levels are fully loaded
+	const TArray<ULevelStreaming*>& StreamingLevels = World->StreamingLevels;
+	for (ULevelStreaming* StreamingLevel : StreamingLevels)
+	{
+		if (StreamingLevel && !StreamingLevel->IsLevelLoaded())
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+void WINAPI FeaturesThread(LPVOID lpReserved)
 {
 	UWorld* mWorld = nullptr;
 	SDK::UEngine* mEngine = nullptr;
-	UGameInstance* mGameInstance = nullptr;
-	ULocalPlayer* mLocalPlayer = nullptr;
-	AGameStateBase* mGameState = nullptr;
-	ULevel* mLevel = nullptr;
-	APlayerController* mPlayerControler;
-	APawn* mAcknowledgePawn;
 	bool SettedUp = false;
 
 	while (!g_bUnload)
 	{
-		mEngine = SDK::UEngine::GetEngine();
-		if ( !mEngine )
-			continue;
+		if (!mEngine)
+		{
+			mEngine = SDK::UEngine::GetEngine();
+			if (!mEngine)
+			{
+				std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Sleep longer when setup is not ready
+				continue;
+			}
+		}
 
-		mWorld = SDK::UWorld::GetWorld();
-		if ( !mWorld )
-			continue;
+		if (!mWorld)
+		{
+			mWorld = SDK::UWorld::GetWorld();
+			if (!mWorld)
+			{
+				std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Sleep longer when setup is not ready
+				continue;
+			}
+		}
 
-		mGameInstance = mWorld->OwningGameInstance;
-		if ( !mGameInstance )
+		if (!IsPlayerLoaded(mWorld) || !IsWorldFullyLoaded(mWorld))
+		{
+			std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Sleep longer when setup is not ready
 			continue;
-
-		mLocalPlayer = mGameInstance->LocalPlayers[0];
-		if ( !mLocalPlayer )
-			continue;
-
-		mPlayerControler = mLocalPlayer->PlayerController;
-		if (!mPlayerControler)
-			continue;
-
-		mAcknowledgePawn = mPlayerControler->AcknowledgedPawn;
-		if (!mAcknowledgePawn)
-			continue;
-
-		mLevel = mAcknowledgePawn->GetLevel();
-		if (!mLevel && !mLevel->bIsVisible)
-			continue;
+		}
 
 		if (!SettedUp)
 		{
-			speedhack.Setup();
-			god.Setup();
+			if (!speedhack.Setup())
+			{
+				std::cerr << "Failed to setup SpeedHack." << std::endl;
+				return; // Exit if setup fails
+			}
+
 			SettedUp = true;
 		}
 
-		void* AcknowledgePawn[1] = {mLocalPlayer->PlayerController->AcknowledgedPawn};
-		printf( "LocalPlayer->PlayerController->AcknowledgedPawn -> %p\n", mLocalPlayer->PlayerController->AcknowledgedPawn);
-		printf( "AcknowledgePawn -> %p\n", AcknowledgePawn );
-		printf( "CustomTimeDilation -> %p\n", mLocalPlayer->PlayerController->AcknowledgedPawn->CustomTimeDilation);
-		speedhack.Run(AcknowledgePawn, 1 );
-		god.Run(AcknowledgePawn, 1);
+		ULocalPlayer* LocalPlayer = mWorld->OwningGameInstance->LocalPlayers[0];
+		APawn* AcknowledgePawn = LocalPlayer->PlayerController->AcknowledgedPawn;
+		void* AcknowledgePawnPtr[1] = { AcknowledgePawn };
 
-		std::this_thread::sleep_for(100ms);
+		std::cout << "LocalPlayer->PlayerController->AcknowledgedPawn -> " << AcknowledgePawnPtr[0] << std::endl;
+		std::cout << "CustomTimeDilation -> " << AcknowledgePawn->CustomTimeDilation << std::endl;
+
+		speedhack.Run( AcknowledgePawnPtr, 1);
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
+
 	return;
+
 }
 
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
@@ -307,7 +354,7 @@ BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 	case DLL_PROCESS_ATTACH:
 		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, nullptr);
 		CreateThread(nullptr, 0, KeyHandler, hMod, 0, nullptr);
-		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)HackThread, hMod, 0, nullptr);
+		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)FeaturesThread, hMod, 0, nullptr);
 		hModule = hMod;
 		break;
 
