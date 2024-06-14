@@ -161,6 +161,8 @@
     <ClInclude Include="src\Features\WalkableFloorZ.h" />
     <ClInclude Include="src\globals.h" />
     <ClInclude Include="src\Helper.h" />
+    <ClInclude Include="src\SDKTools\Player.h" />
+    <ClInclude Include="src\SDKTools\SDKTools.hpp" />
     <ClInclude Include="vendor\imgui\imconfig.h" />
     <ClInclude Include="vendor\imgui\imgui.h" />
     <ClInclude Include="vendor\imgui\imgui_impl_dx11.h" />
@@ -200,6 +202,7 @@
     <ClInclude Include="vendor\UnrealEngine\SDK\SlateCore_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\Slate_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\UnrealContainers.hpp" />
+    <ClInclude Include="src\SDKTools\World.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Features\Config.cpp" />
@@ -215,6 +218,7 @@
     <ClCompile Include="src\Features\WalkableFloorZ.cpp" />
     <ClCompile Include="src\globals.cpp" />
     <ClCompile Include="src\Helper.cpp" />
+    <ClCompile Include="src\SDKTools\Player.cpp" />
     <ClCompile Include="vendor\imgui\imgui.cpp" />
     <ClCompile Include="vendor\imgui\imgui_demo.cpp" />
     <ClCompile Include="vendor\imgui\imgui_draw.cpp" />
@@ -232,6 +236,7 @@
     <ClCompile Include="vendor\UnrealEngine\SDK\Basic.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\CoreUObject_functions.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\Engine_functions.cpp" />
+    <ClCompile Include="src\SDKTools\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\kiero\minhook\dll_resources\MinHook.def" />

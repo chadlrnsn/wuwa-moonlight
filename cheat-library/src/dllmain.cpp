@@ -4,6 +4,9 @@
 #define QuitKey VK_END
 
 using namespace SDK;
+using namespace SDKTools;
+using namespace SDKTools::World;
+using namespace SDKTools::Player;
 
 void InitImGui()
 {
@@ -154,64 +157,17 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 	return TRUE;
 }
 
-
-bool IsPlayerLoaded(UWorld* World)
-{
-	if (!World)
-		return false;
-
-	UGameInstance* GameInstance = World->OwningGameInstance;
-	if (!GameInstance)
-		return false;
-
-	ULocalPlayer* LocalPlayer = GameInstance->LocalPlayers.Num() > 0 ? GameInstance->LocalPlayers[0] : nullptr;
-	if (!LocalPlayer)
-		return false;
-
-	APlayerController* PlayerController = LocalPlayer->PlayerController;
-	if (!PlayerController)
-		return false;
-
-	APawn* AcknowledgedPawn = PlayerController->AcknowledgedPawn;
-	if (!AcknowledgedPawn)
-		return false;
-
-	return AcknowledgedPawn->IsPawnControlled();
-}
-
-bool IsWorldFullyLoaded(UWorld* World)
-{
-	if (!World)
-		return false;
-
-	ULevel* Level = World->PersistentLevel;
-	if (!Level || !Level->bIsVisible)
-		return false;
-
-	// Optionally, check if streaming levels are fully loaded
-	const TArray<ULevelStreaming*>& StreamingLevels = World->StreamingLevels;
-	for (ULevelStreaming* StreamingLevel : StreamingLevels)
-	{
-		if (StreamingLevel && !StreamingLevel->IsLevelLoaded())
-		{
-			return false;
-		}
-	}
-
-	return true;
-}
-
 void WINAPI FeaturesThread(LPVOID lpReserved)
 {
 	UWorld* mWorld = nullptr;
-	SDK::UEngine* mEngine = nullptr;
+	UEngine* mEngine = nullptr;
 	bool SettedUp = false;
 
 	while (!g_bUnload)
 	{
 		if (!mEngine)
 		{
-			mEngine = SDK::UEngine::GetEngine();
+			mEngine = UEngine::GetEngine();
 			if (!mEngine)
 			{
 				std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Sleep longer when setup is not ready
@@ -246,14 +202,17 @@ void WINAPI FeaturesThread(LPVOID lpReserved)
 			SettedUp = true;
 		}
 
+
 		ULocalPlayer* LocalPlayer = mWorld->OwningGameInstance->LocalPlayers[0];
+		//APawn* AcknowledgePawn = LocalPlayer->PlayerController->AcknowledgedPawn;
 		APawn* AcknowledgePawn = LocalPlayer->PlayerController->AcknowledgedPawn;
 		void* AcknowledgePawnPtr[1] = { AcknowledgePawn };
 
 		std::cout << "LocalPlayer->PlayerController->AcknowledgedPawn -> " << AcknowledgePawnPtr[0] << std::endl;
 		std::cout << "CustomTimeDilation -> " << AcknowledgePawn->CustomTimeDilation << std::endl;
 
-		speedhack.Run( AcknowledgePawnPtr, 1);
+		void* td[1] = { AcknowledgePawn };
+		speedhack.Run( td, 1 );
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}

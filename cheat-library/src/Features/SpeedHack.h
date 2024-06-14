@@ -7,7 +7,7 @@ private:
 
 public:
 	bool bEnable = false;
-	float fMaxSpeed = 1000.0f;
+	float fMaxSpeed = 30.0f;
 	float fMinSpeed = 1.0f;
 	float fSpeed = 10.0f;
 

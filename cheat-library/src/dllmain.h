@@ -13,6 +13,7 @@
 #include <globals.h>
 #include <wuwa-base/Logger.h>
 #include <wuwa-base/util.h>
+#include <SDKTools/SDKTools.hpp>
 
 typedef HRESULT(__stdcall* Present) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 typedef LRESULT(CALLBACK* WNDPROC)(HWND, UINT, WPARAM, LPARAM);

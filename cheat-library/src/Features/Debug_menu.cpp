@@ -39,5 +39,7 @@ void DebugMenu::DebugMainPage()
 		ImGui::Text("APawn -> 0x%d", &World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn);
 		ImGui::SliderFloat("Speedhack", &World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn->CustomTimeDilation, 0.1f, 100.0f);
 		//ImGui::Checkbox("Stamina", &)
+		//SDK::ACharacter* Character = &World->OwningGameInstance->LocalPlayers[0]->PlayerController->Character;
+
 	}
 }
