@@ -1,11 +1,11 @@
-﻿<div align="center">
+<div align="center">
 <h1>wuwa-moonlight🌘</h1></br>
 <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/chadlrnsn/wuwa-moonlight/msbuild.yml?branch=master">
 <img alt="GitHub forks" src="https://img.shields.io/github/forks/chadlrnsn/wuwa-moonlight">
 <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/chadlrnsn/wuwa-moonlight">
 <img alt="GitHub License" src="https://img.shields.io/github/license/chadlrnsn/wuwa-moonlight">
 <img alt="GitHub Release" src="https://img.shields.io/github/v/release/chadlrnsn/wuwa-moonlight">
-<img alt="Discord" src="https://img.shields.io/discord/1246834050119893064?logo=discord">
+<a src="https://discord.gg/RJuN8UG4MJ"><img alt="Discord" src="https://img.shields.io/discord/1246834050119893064?logo=discord"></a>
 
 </div>
 
