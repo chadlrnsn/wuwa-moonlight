@@ -15,10 +15,19 @@ void FpsUnlock::Run(void** args, size_t numArgs)
 
 	SDK::UGameUserSettings* Settings = (SDK::UGameUserSettings*)args[0];
 
+
 	if (bEnabled)
 	{
+		if (Settings->GetFrameRateLimit() == fFrameRateLimit)
+			return;
+		
+		printf("unlocking to %.0f", fFrameRateLimit);
 		Settings->SetFrameRateLimit(fFrameRateLimit);
-		bOnce = false;
+
+		if (bApplyFps) {
+			Settings->ApplySettings(true);
+			bApplyFps = false;
+		}
 	}
 	if (!bEnabled && !bOnce)
 	{

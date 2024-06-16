@@ -205,7 +205,7 @@ void Menu::Render()
             break;
 
         case 2: // Misc
-
+            fpsUnlock.DrawMenuItems();
             if (ImGui::Button("Force exit"))
                 ExitProcess(0);
 

@@ -13,7 +13,7 @@ public:
 	float fFrameRateLimitMax = 540.0f;
 	float fFrameRateLimitDefault = 60.0f;
 	float fFPS;
-
+	bool bApplyFps = false;
 	// Show FPS
 	bool bShowFps = true; // True by default;
 
@@ -46,7 +46,12 @@ public:
 		ImGui::Checkbox("Show FPS", &bShowFps);
 		ImGui::Checkbox("Fps Unlock", &bEnabled);
 		if (bEnabled)
+		{
 			ImGui::SliderFloat("## Custom FPS Limit", &fFrameRateLimit, fFrameRateLimitMin, fFrameRateLimitMax, "%.0f");
+			if (ImGui::Button("Apply") && !bApplyFps) {
+				bApplyFps = true;
+			}
+		}
 	}
 
 	// Show fps

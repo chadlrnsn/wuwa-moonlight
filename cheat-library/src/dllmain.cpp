@@ -28,9 +28,12 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 		break;
 	}
 
-	if (menu.IsOpened() && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam)) {
+	ImGuiIO& io = ImGui::GetIO();
+	io.MouseDrawCursor = menu.IsOpened();
+
+	if (menu.IsOpened() && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
 		return true;
-	}
+	
 
 	return menu.IsOpened() ? menu.IsOpened() : CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
 }
@@ -82,7 +85,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	fpsUnlock.DrawFPS();
 
 	// Show real cursor
-	menu.RealCursorShow();
+	//menu.RealCursorShow();
 	menu.RenderWatermark();
 	menu.PreventMoveOutOfWndBounds(" ");
 
@@ -169,6 +172,7 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 	gravityScale.Setup();
 	walkFloorZ.Setup();
 	walkFloorAngle.Setup();
+	fpsUnlock.Setup();
 
 	UWorld* mWorld = nullptr;
 	UEngine* mEngine = nullptr;
@@ -197,7 +201,6 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 		APlayerController* PlayerController = LocalPlayer->PlayerController;
 		APawn* APawn = PlayerController->AcknowledgedPawn;
 
-		//APawn* AcknowledgePawn = LocalPlayer->PlayerController->AcknowledgedPawn;
 		void* AcknowledgePawnPtr[1] = { APawn };
 
 		speedhack.Run( AcknowledgePawnPtr, 1 );
@@ -209,6 +212,9 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 		UPawnMovementComponent* MoveComponent = APawn->GetMovementComponent();
 		void* flyArgs[2] = { MoveComponent, APawn };
 		fly.Run(flyArgs, 1);
+
+		void* userSettings[1] = { mEngine->GameUserSettings };
+		fpsUnlock.Run(userSettings,1);
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
