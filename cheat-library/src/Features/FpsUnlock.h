@@ -57,6 +57,10 @@ public:
 	// Show fps
 	void DrawFPS() {
 
+
+		if (bShowFps)
+		{
+
 		fFPS = ("%.1f", ImGui::GetIO().Framerate);
 		
 		char fpsText[32];
@@ -65,9 +69,10 @@ public:
 		ImVec2 textSize = ImGui::CalcTextSize(fpsText);
 		ImGui::SetNextWindowSize(ImVec2(textSize.x + 15, textSize.y + 15));
 
-		ImGui::Begin("FPS", &bShowFps, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar );
-		ImGui::Text("%s", fpsText);
-		ImGui::End();
+			ImGui::Begin("FPS", 0, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar);
+			ImGui::Text("%s", fpsText);
+			ImGui::End();
+		}
 	}
 
 	// This should be run at the top of the ImGUI draw loop, used to render things like ESP, Tracers, and Debug Info

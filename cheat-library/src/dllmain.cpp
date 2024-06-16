@@ -83,9 +83,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	
 	// Show FPS
 	fpsUnlock.DrawFPS();
-
-	// Show real cursor
-	//menu.RealCursorShow();
+	//
 	menu.RenderWatermark();
 	menu.PreventMoveOutOfWndBounds(" ");
 

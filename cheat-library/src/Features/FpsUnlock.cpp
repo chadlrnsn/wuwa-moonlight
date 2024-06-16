@@ -18,6 +18,7 @@ void FpsUnlock::Run(void** args, size_t numArgs)
 
 	if (bEnabled)
 	{
+		std::cout << "FPS Changing" << std::endl;
 		if (Settings->GetFrameRateLimit() == fFrameRateLimit)
 			return;
 		
@@ -28,6 +29,7 @@ void FpsUnlock::Run(void** args, size_t numArgs)
 			Settings->ApplySettings(true);
 			bApplyFps = false;
 		}
+		bOnce = false;
 	}
 	if (!bEnabled && !bOnce)
 	{
