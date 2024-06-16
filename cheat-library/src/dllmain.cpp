@@ -157,11 +157,17 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 	return TRUE;
 }
 
-void WINAPI FeaturesThread(LPVOID lpReserved)
+DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 {
+	speedhack.Setup();
+	god.Setup();
+	fly.Setup();
+	gravityScale.Setup();
+	walkFloorZ.Setup();
+	walkFloorAngle.Setup();
+
 	UWorld* mWorld = nullptr;
 	UEngine* mEngine = nullptr;
-	bool SettedUp = false;
 
 	while (!g_bUnload)
 	{
@@ -169,55 +175,41 @@ void WINAPI FeaturesThread(LPVOID lpReserved)
 		{
 			mEngine = UEngine::GetEngine();
 			if (!mEngine)
-			{
-				std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Sleep longer when setup is not ready
 				continue;
-			}
 		}
 
 		if (!mWorld)
 		{
 			mWorld = SDK::UWorld::GetWorld();
 			if (!mWorld)
-			{
-				std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Sleep longer when setup is not ready
 				continue;
-			}
 		}
 
+		// this is important
 		if (!IsPlayerLoaded(mWorld) || !IsWorldFullyLoaded(mWorld))
-		{
-			std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Sleep longer when setup is not ready
 			continue;
-		}
-
-		if (!SettedUp)
-		{
-			if (!speedhack.Setup())
-			{
-				std::cerr << "Failed to setup SpeedHack." << std::endl;
-				return; // Exit if setup fails
-			}
-
-			SettedUp = true;
-		}
-
 
 		ULocalPlayer* LocalPlayer = mWorld->OwningGameInstance->LocalPlayers[0];
+		APlayerController* PlayerController = LocalPlayer->PlayerController;
+		APawn* APawn = PlayerController->AcknowledgedPawn;
+
 		//APawn* AcknowledgePawn = LocalPlayer->PlayerController->AcknowledgedPawn;
-		APawn* AcknowledgePawn = LocalPlayer->PlayerController->AcknowledgedPawn;
-		void* AcknowledgePawnPtr[1] = { AcknowledgePawn };
+		void* AcknowledgePawnPtr[1] = { APawn };
 
-		std::cout << "LocalPlayer->PlayerController->AcknowledgedPawn -> " << AcknowledgePawnPtr[0] << std::endl;
-		std::cout << "CustomTimeDilation -> " << AcknowledgePawn->CustomTimeDilation << std::endl;
+		speedhack.Run( AcknowledgePawnPtr, 1 );
+		god.Run( AcknowledgePawnPtr, 1 );
+		gravityScale.Run( AcknowledgePawnPtr, 1 );
+		walkFloorZ.Run( AcknowledgePawnPtr, 1 );
+		walkFloorAngle.Run(AcknowledgePawnPtr , 1 );
 
-		void* td[1] = { AcknowledgePawn };
-		speedhack.Run( td, 1 );
+		UPawnMovementComponent* MoveComponent = APawn->GetMovementComponent();
+		void* flyArgs[2] = { MoveComponent, APawn };
+		fly.Run(flyArgs, 1);
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 
-	return;
+	return TRUE;
 
 }
 
@@ -227,7 +219,8 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	AllocConsole();
 	FILE* dummy;
 	freopen_s(&dummy, "CONOUT$", "w", stdout);
-	freopen("CONOUT$", "w", stderr);
+	freopen_s(&dummy, "CONOUT$", "w", stderr);
+	freopen_s(&dummy, "CONOUT$", "w", stdin);
 
 	HANDLE hProc = GetCurrentProcess();
 	Helper proc;
@@ -313,7 +306,7 @@ BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 	case DLL_PROCESS_ATTACH:
 		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, nullptr);
 		CreateThread(nullptr, 0, KeyHandler, hMod, 0, nullptr);
-		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)FeaturesThread, hMod, 0, nullptr);
+		CreateThread(nullptr, 0, FeaturesThread, hMod, 0, nullptr);
 		hModule = hMod;
 		break;
 

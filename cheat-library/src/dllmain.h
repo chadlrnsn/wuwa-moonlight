@@ -60,6 +60,6 @@ HRESULT ResizeSwapChain(IDXGISwapChain* pSwapChain, ID3D11Device* pDevice, ID3D1
 
 // Hack stuff
 DWORD WINAPI KeyHandler(LPVOID lpReserved);
-void WINAPI FeaturesThread(LPVOID lpReserved);
+DWORD WINAPI FeaturesThread(LPVOID lpReserved);
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved);
 BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved);

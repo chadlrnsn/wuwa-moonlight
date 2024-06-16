@@ -26,4 +26,5 @@
 ## Thanks to
 [kiero hook](https://github.com/rdbo/ImGui-DirectX-11-Kiero-Hook)</br>
 [Dumper-7](https://github.com/Encryqed/Dumper-7)</br>
+[Borderlands 3 cheat](https://github.com/Omega172/Borderlands-3-Cheat)
 Old Akebi❤️</br>

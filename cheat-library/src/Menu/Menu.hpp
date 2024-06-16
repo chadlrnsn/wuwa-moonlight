@@ -31,7 +31,6 @@ private:
         { "Player", "", nullptr },
         { "ESP", "", nullptr },
         { "Misc", "", nullptr },
-        { "Movement", "", nullptr },
         { "Config", "", nullptr },
         { "Debug", "", nullptr },
     };

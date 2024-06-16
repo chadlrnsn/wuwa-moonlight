@@ -11,17 +11,22 @@ namespace SDKTools::World
 
 		ULevel* Level = World->PersistentLevel;
 		if (!Level || !Level->bIsVisible)
-			return false;
-
-		// Optionally, check if streaming levels are fully loaded
-		const TArray<ULevelStreaming*>& StreamingLevels = World->StreamingLevels;
-		for (ULevelStreaming* StreamingLevel : StreamingLevels)
 		{
-			if (StreamingLevel && !StreamingLevel->IsLevelLoaded())
-			{
-				return false;
-			}
+			std::cerr << "No PersistentLevel found" << std::endl;
+			return false;
 		}
+
+		// this is was critical bug
+		// Optionally, check if streaming levels are fully loaded
+		//const TArray<ULevelStreaming*>& StreamingLevels = World->StreamingLevels;
+		//for (ULevelStreaming* StreamingLevel : StreamingLevels)
+		//{
+		//	if (StreamingLevel && !StreamingLevel->IsLevelLoaded())
+		//	{
+		//		std::cerr << "No Level loaded" << std::endl;
+		//		return false;
+		//	}
+		//}
 
 		return true;
 	}

@@ -2,6 +2,5 @@
 
 namespace DebugMenu
 {
-	static bool inGame = false;
 	void DebugMainPage();
 }

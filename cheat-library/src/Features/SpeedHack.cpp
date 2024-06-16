@@ -18,12 +18,12 @@ void SpeedHack::Run(void** args, size_t numArgs)
 	if (bEnable && AcknowledgedPawn)
 	{
 		AcknowledgedPawn->CustomTimeDilation = fSpeed;
-		bOnce = false;
+		//bOnce = false;
 	}
 
-	if (!bEnable && AcknowledgedPawn && !bOnce)
+	if (!bEnable && AcknowledgedPawn/* && !bOnce*/)
 	{
 		AcknowledgedPawn->CustomTimeDilation = 1.0f;
-		bOnce = true;
+		//bOnce = true;
 	}
 }

@@ -11,20 +11,13 @@ void WalkableFloorAngle::Run(void** args, size_t numArgs)
 		return;
 	}
 
-	SDK::UWorld* World = SDK::UWorld::GetWorld();
-
-	SDK::UPawnMovementComponent* PawnMovement = World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn->GetMovementComponent();
+	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
+	SDK::UPawnMovementComponent* PawnMovement = AcknowledgedPawn->GetMovementComponent();
 	SDK::UCharacterMovementComponent* Movement = static_cast<SDK::UCharacterMovementComponent*>(PawnMovement);
 
 	if (bEnable && Movement)
-	{
 		Movement->WalkableFloorAngle = fAngle;
-		bOnce = false;
-	}
 
-	if (!bEnable && Movement && !bOnce)
-	{
+	if (!bEnable && Movement)
 		Movement->WalkableFloorZ = 0.574f;
-		bOnce = true;
-	}
 }

@@ -1,5 +1,19 @@
 #include "Fly.h"
 
+void Fly::DrawMenuItems()
+{
+	ImGui::Checkbox("FlyHack", &bEnabled);
+	ImGui::SameLine();
+	ImGui::Hotkey("##FlyHack Key", kbToggle, &bSettingKey);
+	ImGui::Checkbox("NoClip", &bNoClip);
+
+	if (bEnabled)
+	{
+		ImGui::Text("Flight Speed Multiplier");
+		ImGui::SliderFloat("## Flight Speed Multiplier", &fSpeed, fMinSpeed, fMaxSpeed );
+	}
+}
+
 void Fly::Run(void** args, size_t numArgs)
 {
 	if (!Initalized)
@@ -12,17 +26,31 @@ void Fly::Run(void** args, size_t numArgs)
 		return;
 	}
 
-	//CG::AActor* AcknowledgedPawn = (CG::AActor*)args[0];
+	SDK::UCharacterMovementComponent* CharacterMovement = (SDK::UCharacterMovementComponent*)args[0];
+	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[1];
 
-	//if (bGodMode && AcknowledgedPawn)
-	//{
-	//	AcknowledgedPawn->bCanBeDamaged = false;
-	//	bOnce = false;
-	//}
+	if (bEnabled)
+	{
+			CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Flying;
+			fOldSpeed = CharacterMovement->MaxFlySpeed;
+			CharacterMovement->MaxFlySpeed = fOldSpeed * fSpeed;
 
-	//if (!bGodMode && AcknowledgedPawn && !bOnce)
-	//{
-	//	AcknowledgedPawn->bCanBeDamaged = true;
-	//	bOnce = true;
-	//}
+			if (bNoClip && AcknowledgedPawn->GetActorEnableCollision())
+				AcknowledgedPawn->SetActorEnableCollision(false);
+
+			bFlySwitch = true;
+	}
+	else
+	{
+		if (bFlySwitch)
+		{
+			CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Walking;
+			CharacterMovement->MaxFlySpeed = fOldSpeed;
+
+			if (!AcknowledgedPawn->GetActorEnableCollision())
+				AcknowledgedPawn->SetActorEnableCollision(true);
+
+			bFlySwitch = false;
+		}
+	}
 }

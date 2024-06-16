@@ -2,6 +2,7 @@
 
 #include <SDK.hpp>
 #include <globals.h>
+#include "Features.h"
 
 
 
@@ -37,9 +38,9 @@ void DebugMenu::DebugMainPage()
 		ImGui::Text("LocalPlayer -> 0x%d", &World->OwningGameInstance->LocalPlayers[0]);
 		ImGui::Text("APlayerController -> 0x%d", &World->OwningGameInstance->LocalPlayers[0]->PlayerController);
 		ImGui::Text("APawn -> 0x%d", &World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn);
-		ImGui::SliderFloat("Speedhack", &World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn->CustomTimeDilation, 0.1f, 100.0f);
+		ImGui::SliderFloat("Speedhack current character", &World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn->CustomTimeDilation, 0.1f, 100.0f);
 		//ImGui::Checkbox("Stamina", &)
 		//SDK::ACharacter* Character = &World->OwningGameInstance->LocalPlayers[0]->PlayerController->Character;
-
+		
 	}
 }

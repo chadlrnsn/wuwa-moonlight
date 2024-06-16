@@ -1,18 +1,25 @@
 #include "Feature.h"
+#include <SDK.hpp>
+#include <SDKTools/Player.h>
+#include "Bindings.h"
 
 class Fly : Feature
 {
 private:
 	bool Initalized = false;
+	bool bFlySwitch = false;
+	bool bSettingKey = false;
 
 public:
 	bool bEnabled = false;
-	float fMaxSpeed = 1000.0f;
-	float fMinSpeed = 0.1f;
+	float fMaxSpeed = 100.0f;
+	float fMinSpeed = 1.0f;
 	float fSpeed = 10.0f;
+	bool bNoClip = false;
+	KeyBindToggle kbToggle = KeyBindToggle(KeyBind::KeyCode::F);
 
 private:
-	bool bOnce = false;
+	float fOldSpeed = 0.0f;
 
 public:
 	Fly() {};
@@ -32,17 +39,14 @@ public:
 	}
 
 	// Handle checking for any key/hotkey presses or holds needed for features
-	void HandleKeys() override {}
+	void HandleKeys() override 
+	{
+		if (GetAsyncKeyState(kbToggle.toInt()) & 0x1)
+			bEnabled = !bEnabled;
+	}
 
 	// This should be run in the ImGUI draw loop, used to draw anything to the menu
-	void DrawMenuItems() override
-	{
-		ImGui::Checkbox("Fly", &bEnabled);
-		if (bEnabled) {
-			ImGui::Text("Speed");
-			ImGui::SliderFloat("##Speed", &fSpeed, fMinSpeed, fMaxSpeed);
-		}
-	}
+	void DrawMenuItems() override;
 
 	// This should be run at the top of the ImGUI draw loop, used to render things like ESP, Tracers, and Debug Info
 	void Render(void** args, size_t numArgs) override {}

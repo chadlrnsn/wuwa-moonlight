@@ -12,18 +12,17 @@ void GodMode::Run(void** args, size_t numArgs)
 		return;
 	}
 
-	SDK::AActor* AcknowledgedPawn = (SDK::AActor*)args[0];
-	printf("AcknowledgePawn[GOD] -> %p", AcknowledgedPawn);
+	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
 
 	if (bGodMode && AcknowledgedPawn)
 	{
 		AcknowledgedPawn->bCanBeDamaged = false;
-		bOnce = false;
+		//bOnce = false;
 	}
 
 	if (!bGodMode && AcknowledgedPawn && !bOnce)
 	{
 		AcknowledgedPawn->bCanBeDamaged = true;
-		bOnce = true;
+		//bOnce = true;
 	}
 }

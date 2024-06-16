@@ -12,7 +12,6 @@ public:
 	float fZ = 0.574f;
 
 private:
-	bool bOnce = false;
 
 public:
 	WalkableFloorZ() {};

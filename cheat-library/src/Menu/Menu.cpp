@@ -193,6 +193,10 @@ void Menu::Render()
         case 0: // Player
             god.DrawMenuItems();
             speedhack.DrawMenuItems();
+            fly.DrawMenuItems();
+            gravityScale.DrawMenuItems();
+            walkFloorZ.DrawMenuItems();
+            walkFloorAngle.DrawMenuItems();
 
             break;
 
@@ -201,20 +205,17 @@ void Menu::Render()
             break;
 
         case 2: // Misc
+
+            if (ImGui::Button("Force exit"))
+                ExitProcess(0);
+
+            break;
+
+        case 3: // Config 
             ImGui::Text("in dev.");
             break;
 
-        case 3: // Movement
-            gravityScale.DrawMenuItems();   
-            walkFloorZ.DrawMenuItems();
-            walkFloorAngle.DrawMenuItems();
-            break;
-
-        case 4: // Config 
-            ImGui::Text("in dev.");
-            break;
-
-        case 5: // Debug
+        case 4: // Debug
             ImGui::Text("Debug Page");
             DebugMenu::DebugMainPage();
             break;

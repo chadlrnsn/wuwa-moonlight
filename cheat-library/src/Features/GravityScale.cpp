@@ -11,21 +11,17 @@ void GravityScale::Run(void** args, size_t numArgs)
 		return;
 	}
 
-	SDK::UWorld* World = SDK::UWorld::GetWorld();
-	SDK::AActor* AcknowledgedPawn = World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn;
-
-	SDK::UPawnMovementComponent* PawnMovement = World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn->GetMovementComponent();
+	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
+	SDK::UPawnMovementComponent* PawnMovement = AcknowledgedPawn->GetMovementComponent();
 	SDK::UCharacterMovementComponent* Movement = static_cast<SDK::UCharacterMovementComponent*>(PawnMovement);
 
 	if (bEnable && Movement)
 	{
 		Movement->GravityScale = fGravity;
-		bOnce = false;
 	}
 
-	if (!bEnable && Movement && !bOnce)
+	if (!bEnable && Movement)
 	{
-		Movement->GravityScale = 1.0f;
-		bOnce = true;
+		Movement->GravityScale = 1.0f; // may be 2 its defautlt not mine function btw
 	}
 }

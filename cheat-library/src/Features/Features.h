@@ -9,7 +9,6 @@
 
 #include "Debug_menu.h"
 
-
 extern GodMode god;
 extern SpeedHack speedhack;
 extern GravityScale gravityScale;
