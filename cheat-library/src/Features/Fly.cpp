@@ -26,6 +26,8 @@ void Fly::Run(void** args, size_t numArgs)
 		return;
 	}
 
+	HandleKeys();
+	
 	SDK::UCharacterMovementComponent* CharacterMovement = (SDK::UCharacterMovementComponent*)args[0];
 	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[1];
 
