@@ -49,25 +49,24 @@ public:
 		{
 			ImGui::SliderFloat("## Custom FPS Limit", &fFrameRateLimit, fFrameRateLimitMin, fFrameRateLimitMax, "%.0f");
 			if (ImGui::Button("Apply") && !bApplyFps) {
+				printf("Applied new fps %.0f", fFrameRateLimit);
 				bApplyFps = true;
 			}
 		}
 	}
 
 	// Show fps
-	void DrawFPS() {
-
-
+	void DrawFPS() 
+	{
 		if (bShowFps)
 		{
-
-		fFPS = ("%.1f", ImGui::GetIO().Framerate);
+			fFPS = ("%.1f", ImGui::GetIO().Framerate);
 		
-		char fpsText[32];
-		snprintf(fpsText, sizeof(fpsText), "FPS: %.1f", fFPS);
+			char fpsText[32];
+			snprintf(fpsText, sizeof(fpsText), "FPS: %.1f", fFPS);
 
-		ImVec2 textSize = ImGui::CalcTextSize(fpsText);
-		ImGui::SetNextWindowSize(ImVec2(textSize.x + 15, textSize.y + 15));
+			ImVec2 textSize = ImGui::CalcTextSize(fpsText);
+			ImGui::SetNextWindowSize(ImVec2(textSize.x + 15, textSize.y + 15));
 
 			ImGui::Begin("FPS", 0, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar);
 			ImGui::Text("%s", fpsText);

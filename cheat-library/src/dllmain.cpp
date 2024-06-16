@@ -172,30 +172,33 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 	walkFloorAngle.Setup();
 	fpsUnlock.Setup();
 
-	UWorld* mWorld = nullptr;
-	UEngine* mEngine = nullptr;
+	UWorld* World = nullptr;
+	UEngine* Engine = nullptr;
 
 	while (!g_bUnload)
 	{
-		if (!mEngine)
+		if (!Engine)
 		{
-			mEngine = UEngine::GetEngine();
-			if (!mEngine)
+			Engine = UEngine::GetEngine();
+			if (!Engine)
 				continue;
 		}
 
-		if (!mWorld)
+		void* userSettings[1] = { Engine };
+		fpsUnlock.Run(userSettings, 1);
+
+		if (!World)
 		{
-			mWorld = SDK::UWorld::GetWorld();
-			if (!mWorld)
+			World = SDK::UWorld::GetWorld();
+			if (!World)
 				continue;
 		}
 
 		// this is important
-		if (!IsPlayerLoaded(mWorld) || !IsWorldFullyLoaded(mWorld))
+		if (!IsPlayerLoaded(World) || !IsWorldFullyLoaded(World))
 			continue;
 
-		ULocalPlayer* LocalPlayer = mWorld->OwningGameInstance->LocalPlayers[0];
+		ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
 		APlayerController* PlayerController = LocalPlayer->PlayerController;
 		APawn* APawn = PlayerController->AcknowledgedPawn;
 
@@ -210,9 +213,6 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 		UPawnMovementComponent* MoveComponent = APawn->GetMovementComponent();
 		void* flyArgs[2] = { MoveComponent, APawn };
 		fly.Run(flyArgs, 1);
-
-		void* userSettings[1] = { mEngine->GameUserSettings };
-		fpsUnlock.Run(userSettings,1);
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}

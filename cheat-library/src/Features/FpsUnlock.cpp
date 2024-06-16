@@ -1,6 +1,6 @@
 #include "FpsUnlock.h"
 
-void FpsUnlock::Run(void** args, size_t numArgs)
+void FpsUnlock::Run(void** args = {}, size_t numArgs = 1)
 {
 	if (!Initalized)
 		return;
@@ -13,16 +13,17 @@ void FpsUnlock::Run(void** args, size_t numArgs)
 		return;
 	}
 
-	SDK::UGameUserSettings* Settings = (SDK::UGameUserSettings*)args[0];
+	SDK::UEngine* Engine = (SDK::UEngine*)args[0];
+	SDK::UGameUserSettings* Settings = Engine->GameUserSettings;
 
+	if (!Settings)
+		return;
 
 	if (bEnabled)
 	{
-		std::cout << "FPS Changing" << std::endl;
 		if (Settings->GetFrameRateLimit() == fFrameRateLimit)
 			return;
 		
-		printf("unlocking to %.0f", fFrameRateLimit);
 		Settings->SetFrameRateLimit(fFrameRateLimit);
 
 		if (bApplyFps) {
