@@ -37,7 +37,7 @@ void DebugMenu::DebugMainPage()
 	APawn* AcknowledgedPawn = PlayerController->AcknowledgedPawn;
 
 
-	ImGui::Text("Build %x", &BuildInfo);
+	ImGui::Text("Build %s", &BuildInfo);
 	ImGui::Text("GWorld -> 0x%d", &World);
 	ImGui::Text("GEngine -> 0x%d", &Engine);
 	ImGui::Text("LocalPlayer -> 0x%d", &LocalPlayer);
@@ -63,17 +63,17 @@ void DebugMenu::DebugMainPage()
 		PlayerController->PlayerCameraManager->DefaultFOV = fDefaultFOV;
 
 	// World Speedhack
-	ImGui::Checkbox("World Speedhack", &bChangeWorldTimeDilation);
-	AWorldSettings* WorldSettings = World->PersistentLevel->WorldSettings;
-	if (bChangeWorldTimeDilation)
-	{
-		ImGui::SliderFloat("## Change World Speed", &fCustomWorldSpeed, 0.1f, 5.0f, "%.1f");
-		WorldSettings->TimeDilation = fCustomWorldSpeed;
-	}
-	else {
-		fCustomWorldSpeed = fWorldSpeed;
-		WorldSettings->TimeDilation = fCustomWorldSpeed;
-	}
+	//ImGui::Checkbox("World Speedhack", &bChangeWorldTimeDilation);
+	//AWorldSettings* WorldSettings = World->PersistentLevel->WorldSettings;
+	//if (bChangeWorldTimeDilation)
+	//{
+	//	ImGui::SliderFloat("## Change World Speed", &fCustomWorldSpeed, 0.1f, 5.0f, "%.1f");
+	//	WorldSettings->TimeDilation = fCustomWorldSpeed;
+	//}
+	//else {
+	//	fCustomWorldSpeed = fWorldSpeed;
+	//	WorldSettings->TimeDilation = fCustomWorldSpeed;
+	//}
 
 	FVector pos = AcknowledgedPawn->K2_GetActorLocation();
 	ImGui::InputFloat("X", &pos.X);
@@ -99,9 +99,9 @@ void DebugMenu::DebugMainPage()
 
 		FVector vel = CharacterMovement->Velocity;
 		ImGui::Text("Velocity");
-		ImGui::InputFloat("VX", &vel.X);
-		ImGui::InputFloat("VY", &vel.Y);
-		ImGui::InputFloat("VZ", &vel.Z);
+		ImGui::InputFloat("VX", &CharacterMovement->Velocity.X);
+		ImGui::InputFloat("VY", &CharacterMovement->Velocity.Y);
+		ImGui::InputFloat("VZ", &CharacterMovement->Velocity.Z);
 
 
 		//CharacterMovement->AddImpulse(FVector{ 100.0f, 100.0f, 100.0f }, true);

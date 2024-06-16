@@ -9,6 +9,8 @@ private:
 	bool Initalized = false;
 	bool bFlySwitch = false;
 	bool bSettingKey = false;
+	bool bUpKey = false;
+	bool bDownKey = false;
 
 public:
 	bool bEnabled = false;
@@ -16,7 +18,13 @@ public:
 	float fMinSpeed = 1.0f;
 	float fSpeed = 10.0f;
 	bool bNoClip = false;
+	float fZSpeed = 100.0f;
+	float fZSpeedMin = 10.0f;
+	float fZSpeedMax = 2000.0f;
+
 	KeyBindToggle kbToggle = KeyBindToggle(KeyBind::KeyCode::F);
+	//KeyBind kbUp = KeyBind::isPressed(KeyBind::KeyCode::SPACE);
+	//KeyBind kbDown = KeyBindToggle(KeyBind::KeyCode::LCTRL);
 
 private:
 	float fOldSpeed = 0.0f;
@@ -43,6 +51,12 @@ public:
 	{
 		if (GetAsyncKeyState(kbToggle.toInt()) & 0x1)
 			bEnabled = !bEnabled;
+
+		//if (GetAsyncKeyState(kbUp.toInt()) & 0x1)
+		//	bEnabled = !bEnabled;
+
+		//if (GetAsyncKeyState(kbDown.toInt()) & 0x1)
+		//	bEnabled = !bEnabled;
 	}
 
 	// This should be run in the ImGUI draw loop, used to draw anything to the menu

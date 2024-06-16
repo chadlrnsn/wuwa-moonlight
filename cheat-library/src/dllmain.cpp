@@ -202,7 +202,7 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 		APlayerController* PlayerController = LocalPlayer->PlayerController;
 		APawn* APawn = PlayerController->AcknowledgedPawn;
 
-		void* AcknowledgePawnPtr[1] = { APawn };
+		void* AcknowledgePawnPtr[2] = { APawn, World };
 
 		speedhack.Run( AcknowledgePawnPtr, 1 );
 		god.Run( AcknowledgePawnPtr, 1 );

@@ -5,12 +5,21 @@ void Fly::DrawMenuItems()
 	ImGui::Checkbox("FlyHack", &bEnabled);
 	ImGui::SameLine();
 	ImGui::Hotkey("##FlyHack Key", kbToggle, &bSettingKey);
-	ImGui::Checkbox("NoClip", &bNoClip);
 
 	if (bEnabled)
 	{
+		ImGui::Checkbox("NoClip", &bNoClip);
 		ImGui::Text("Flight Speed Multiplier");
 		ImGui::SliderFloat("## Flight Speed Multiplier", &fSpeed, fMinSpeed, fMaxSpeed );
+
+		ImGui::Text("Flight Z axis speed");
+		ImGui::SliderFloat("## Flight Z axis speed", &fZSpeed, fZSpeedMin, fZSpeedMax );
+		//ImGui::Text("Move Up");
+		//ImGui::SameLine();
+		//ImGui::Hotkey("##Move UP", kbUp, &bUpKey);
+		//ImGui::Text("Move Down");
+		//ImGui::SameLine();
+		//ImGui::Hotkey("##Move Down", kbDown, &bDownKey);
 	}
 }
 
@@ -39,6 +48,15 @@ void Fly::Run(void** args, size_t numArgs)
 
 			if (bNoClip && AcknowledgedPawn->GetActorEnableCollision())
 				AcknowledgedPawn->SetActorEnableCollision(false);
+
+			// TODO Bindings
+			if (GetAsyncKeyState(VK_SPACE))
+				CharacterMovement->Velocity.Z = CharacterMovement->LastUpdateVelocity.Z + fZSpeed;
+
+			if (GetAsyncKeyState(VK_LCONTROL))
+				CharacterMovement->Velocity.Z = CharacterMovement->LastUpdateVelocity.Z - fZSpeed;
+
+			
 
 			bFlySwitch = true;
 	}
