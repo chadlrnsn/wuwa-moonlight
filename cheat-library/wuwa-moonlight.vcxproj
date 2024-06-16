@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Features\FpsUnlock.h" />
     <ClInclude Include="src\dllmain.h" />
     <ClInclude Include="src\Features\Config.h" />
     <ClInclude Include="src\Features\Bindings.h" />
@@ -212,6 +213,7 @@
     <ClInclude Include="src\SDKTools\World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Features\FpsUnlock.cpp" />
     <ClCompile Include="src\Features\Config.cpp" />
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\Features\Debug_menu.cpp" />

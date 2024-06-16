@@ -3,44 +3,109 @@
 #include <SDK.hpp>
 #include <globals.h>
 #include "Features.h"
+#include <SDKTools/SDKTools.hpp>
 
-
-
-//SDK::UGameInstance* UGameInstance = World->OwningGameInstance;
-//SDK::ULocalPlayer* LocalPlayer = UGameInstance->LocalPlayers[0];
-//SDK::APlayerController* APlayerController = LocalPlayer->PlayerController;
-//SDK::APawn* APawn = APlayerController->AcknowledgedPawn;
+//UGameInstance* UGameInstance = World->OwningGameInstance;
+//ULocalPlayer* LocalPlayer = UGameInstance->LocalPlayers[0];
+//APlayerController* APlayerController = LocalPlayer->PlayerController;
+//APawn* APawn = APlayerController->AcknowledgedPawn;
 //DWORD speed = APawn->CustomTimeDilation;
 
+using namespace SDK;
+
+float fDefaultFOV = 90;
+float fDefaultFOVOverride = 90;
+bool bChangeFOV = false;
+
+bool bChangeWorldTimeDilation = false;
+float fWorldSpeed = 1;
+float fCustomWorldSpeed = 1;
+
+bool bFpsUnlock = false;
 
 void DebugMenu::DebugMainPage()
 {
 
-	SDK::UWorld* World = SDK::UWorld::GetWorld();
-	SDK::UEngine* Engine = SDK::UEngine::GetEngine();
+	UEngine* Engine = UEngine::GetEngine();
+	UWorld* World = UWorld::GetWorld();
+	
+	if (!SDKTools::Player::IsPlayerLoaded(World) || !SDKTools::World::IsWorldFullyLoaded(World))
+		return;
+
+	ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
+	APlayerController* PlayerController = LocalPlayer->PlayerController;
+	APawn* AcknowledgedPawn = PlayerController->AcknowledgedPawn;
 
 
-	//SDK::APlayerController* MyController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
+	ImGui::Text("Build %x", &BuildInfo);
+	ImGui::Text("GWorld -> 0x%d", &World);
+	ImGui::Text("GEngine -> 0x%d", &Engine);
+	ImGui::Text("LocalPlayer -> 0x%d", &LocalPlayer);
+	ImGui::Text("APlayerController -> 0x%d", &PlayerController);
+	ImGui::Text("APawn -> 0x%d", &AcknowledgedPawn);
 
-	//SDK::UGameInstance* OwningGameInstance = World->OwningGameInstance;
-	//if (OwningGameInstance != nullptr)
-	//	ImGui::Text("Instance 0x%d", &OwningGameInstance);
+	static float SpeedhackSliderVal = 5.0f;
+	ImGui::SliderFloat("Speedhack", &SpeedhackSliderVal, 0.1f, 100.0f);
+	AcknowledgedPawn->CustomTimeDilation = SpeedhackSliderVal;
 
-	//SDK::ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
+	static bool bAlwaysSunny = false;
+	ImGui::Checkbox("Always sunny not implemented", &bAlwaysSunny);
+	if (bAlwaysSunny) {}
 
-	ImGui::Text("Build %s", &BuildInfo);
-	if (World != nullptr && World->OwningGameInstance != nullptr) 
+	// Change Default fov
+	ImGui::Checkbox("Change FOV", &bChangeFOV);
+	if (bChangeFOV)
 	{
-		//SDK::AActor Actor = SDK::AActor::IsA(SDK::ULocalPlayer::StaticClass())
-
-		ImGui::Text("GWorld -> 0x%d", &World);
-		ImGui::Text("GEngine -> 0x%d", &Engine);
-		ImGui::Text("LocalPlayer -> 0x%d", &World->OwningGameInstance->LocalPlayers[0]);
-		ImGui::Text("APlayerController -> 0x%d", &World->OwningGameInstance->LocalPlayers[0]->PlayerController);
-		ImGui::Text("APawn -> 0x%d", &World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn);
-		ImGui::SliderFloat("Speedhack current character", &World->OwningGameInstance->LocalPlayers[0]->PlayerController->AcknowledgedPawn->CustomTimeDilation, 0.1f, 100.0f);
-		//ImGui::Checkbox("Stamina", &)
-		//SDK::ACharacter* Character = &World->OwningGameInstance->LocalPlayers[0]->PlayerController->Character;
-		
+		ImGui::SliderFloat("## Change FOV", &fDefaultFOVOverride, 0.0f, 360.0f, "%.0f");
+		PlayerController->PlayerCameraManager->DefaultFOV = fDefaultFOVOverride;
 	}
+	else
+		PlayerController->PlayerCameraManager->DefaultFOV = fDefaultFOV;
+
+	// World Speedhack
+	ImGui::Checkbox("World Speedhack", &bChangeWorldTimeDilation);
+	AWorldSettings* WorldSettings = World->PersistentLevel->WorldSettings;
+	if (bChangeWorldTimeDilation)
+	{
+		ImGui::SliderFloat("## Change World Speed", &fCustomWorldSpeed, 0.1f, 5.0f, "%.1f");
+		WorldSettings->TimeDilation = fCustomWorldSpeed;
+	}
+	else {
+		fCustomWorldSpeed = fWorldSpeed;
+		WorldSettings->TimeDilation = fCustomWorldSpeed;
+	}
+
+	FVector pos = AcknowledgedPawn->K2_GetActorLocation();
+	ImGui::InputFloat("X", &pos.X);
+	ImGui::InputFloat("Y", &pos.Y);
+	ImGui::InputFloat("Z", &pos.Z);
+
+	FVector velocity = AcknowledgedPawn->GetVelocity();
+	ImGui::Text("Velocity from AcknowledgedPawn");
+	ImGui::BeginGroup();
+	{
+		ImGui::InputFloat("VX", &velocity.X);
+		ImGui::InputFloat("VY", &velocity.Y);
+		ImGui::InputFloat("VZ", &velocity.Z);
+	}
+	ImGui::EndGroup();
+
+	
+	ImGui::SeparatorText("CharacterMovement");
+	UCharacterMovementComponent* CharacterMovement = PlayerController->Character->CharacterMovement;
+	ImGui::BeginGroup();
+	{
+		ImGui::InputFloat("AirControl", &CharacterMovement->AirControl);
+
+		FVector vel = CharacterMovement->Velocity;
+		ImGui::Text("Velocity");
+		ImGui::InputFloat("VX", &vel.X);
+		ImGui::InputFloat("VY", &vel.Y);
+		ImGui::InputFloat("VZ", &vel.Z);
+
+
+		//CharacterMovement->AddImpulse(FVector{ 100.0f, 100.0f, 100.0f }, true);
+	}
+	ImGui::EndGroup();
+
 }

@@ -6,3 +6,4 @@ GravityScale gravityScale;
 WalkableFloorZ walkFloorZ;
 WalkableFloorAngle walkFloorAngle;
 Fly fly;
+FpsUnlock fpsUnlock;

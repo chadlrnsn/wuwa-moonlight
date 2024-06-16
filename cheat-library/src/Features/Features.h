@@ -6,6 +6,7 @@
 #include "GravityScale.h"
 #include "WalkableFloorZ.h"
 #include "WalkableFloorAngle.h"
+#include "FpsUnlock.h"
 
 #include "Debug_menu.h"
 
@@ -16,3 +17,4 @@ extern WalkableFloorZ walkFloorZ;
 extern WalkableFloorAngle walkFloorAngle;
 extern ESP esp;
 extern Fly fly;
+extern FpsUnlock fpsUnlock;

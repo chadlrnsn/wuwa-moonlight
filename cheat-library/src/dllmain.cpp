@@ -60,22 +60,26 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 		}
 	}
 
-	// to improve
-	ImGuiIO& io = ImGui::GetIO();
-	ImVec2 whole_content_size = io.DisplaySize;
-	whole_content_size.x = whole_content_size.x * 0.3;
-	whole_content_size.y = whole_content_size.y * 0.2;
+	static bool styleInitialized = false;
+	if (!styleInitialized) {
+		ImGuiIO& io = ImGui::GetIO();
+		ImVec2 whole_content_size = io.DisplaySize;
+		whole_content_size.x = whole_content_size.x * 0.3;
+		whole_content_size.y = whole_content_size.y * 0.2;
 
-	
-	ImGuiStyle& style = ImGui::GetStyle();
-	ImVec4* colors = style.Colors;
-	//menu.StyleColors(style, colors, whole_content_size);
-	menu.SetUpColors(style, colors, whole_content_size);
+		ImGuiStyle& style = ImGui::GetStyle();
+		ImVec4* colors = style.Colors;
+		menu.SetUpColors(style, colors, whole_content_size);
+		styleInitialized = true;
+	}
 
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 
 	ImGui::NewFrame();
+	
+	// Show FPS
+	fpsUnlock.DrawFPS();
 
 	// Show real cursor
 	menu.RealCursorShow();
