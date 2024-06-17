@@ -24,6 +24,8 @@
 #include "SDK/PhysicsCore_classes.hpp"
 #include "SDK/PropertyAccess_structs.hpp"
 #include "SDK/Engine_classes.hpp"
+#include "SDK/Puerts_classes.hpp"
+#include "SDK/KuroPuertsWrapper_classes.hpp"
 
 
 /*
@@ -197,7 +199,6 @@
 #include "SDK/ECamp_structs.hpp"
 #include "SDK/ERelation_structs.hpp"
 #include "SDK/BP_FightManager_classes.hpp"
-#include "SDK/Puerts_classes.hpp"
 #include "SDK/ECharacterControllerUVSwitch_structs.hpp"
 #include "SDK/ItemMaterialControllerActorData_classes.hpp"
 #include "SDK/AkAudio_structs.hpp"
@@ -233,7 +234,6 @@
 #include "SDK/HoudiniEngineRuntime_structs.hpp"
 #include "SDK/HoudiniEngineRuntime_classes.hpp"
 #include "SDK/EInteractionType_structs.hpp"
-#include "SDK/KuroPuertsWrapper_classes.hpp"
 #include "SDK/KuroHotPatch_structs.hpp"
 #include "SDK/KuroHotPatch_classes.hpp"
 #include "SDK/BP_KuroRainGenerator_classes.hpp"

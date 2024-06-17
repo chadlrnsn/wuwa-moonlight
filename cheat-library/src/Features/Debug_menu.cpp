@@ -108,4 +108,7 @@ void DebugMenu::DebugMainPage()
 	}
 	ImGui::EndGroup();
 
+	//UPuertsSetting* PuertsSettings;
+	//PuertsSettings->
+
 }

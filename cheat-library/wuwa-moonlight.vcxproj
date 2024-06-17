@@ -203,10 +203,14 @@
     <ClInclude Include="vendor\UnrealEngine\SDK\Engine_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\InputCore_classes.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\InputCore_structs.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\KuroPuertsWrapper_classes.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\KuroPuertsWrapper_parameters.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\PacketHandler_classes.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\PhysicsCore_classes.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\PhysicsCore_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\PropertyAccess_structs.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\Puerts_classes.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\Puerts_parameters.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\SlateCore_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\Slate_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\UnrealContainers.hpp" />
@@ -246,6 +250,8 @@
     <ClCompile Include="vendor\UnrealEngine\SDK\CoreUObject_functions.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\Engine_functions.cpp" />
     <ClCompile Include="src\SDKTools\World.cpp" />
+    <ClCompile Include="vendor\UnrealEngine\SDK\KuroPuertsWrapper_functions.cpp" />
+    <ClCompile Include="vendor\UnrealEngine\SDK\Puerts_functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\kiero\minhook\dll_resources\MinHook.def" />

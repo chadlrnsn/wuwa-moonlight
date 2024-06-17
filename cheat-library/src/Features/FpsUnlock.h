@@ -48,10 +48,10 @@ public:
 		if (bEnabled)
 		{
 			ImGui::SliderFloat("## Custom FPS Limit", &fFrameRateLimit, fFrameRateLimitMin, fFrameRateLimitMax, "%.0f");
-			if (ImGui::Button("Apply") && !bApplyFps) {
-				printf("Applied new fps %.0f", fFrameRateLimit);
-				bApplyFps = true;
-			}
+			//if (ImGui::Button("Apply") && !bApplyFps) {
+			//	printf("Applied new fps %.0f", fFrameRateLimit);
+			//	bApplyFps = true;
+			//}
 		}
 	}
 
