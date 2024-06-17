@@ -14,6 +14,9 @@
 #include <wuwa-base/util.h>
 #include <SDKTools/SDKTools.hpp>
 
+typedef HRESULT(__stdcall* ResizeBuffers)(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
+ResizeBuffers oResizeBuffers = nullptr;
+
 typedef HRESULT(__stdcall* Present) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 typedef LRESULT(CALLBACK* WNDPROC)(HWND, UINT, WPARAM, LPARAM);
 typedef uintptr_t PTR;

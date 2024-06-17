@@ -26,14 +26,12 @@ void FpsUnlock::Run(void** args = {}, size_t numArgs = 1)
 		
 		Settings->SetFrameRateLimit(fFrameRateLimit);
 		Settings->ApplySettings(false);
-		//if (bApplyFps) {
-		//	bApplyFps = false;
-		//}
 		bOnce = false;
 	}
 	if (!bEnabled && !bOnce)
 	{
 		Settings->FrameRateLimit = fFrameRateLimitDefault;
+		Settings->ApplySettings(false);
 		bOnce = true;
 	}
 }

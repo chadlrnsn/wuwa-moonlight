@@ -3,9 +3,6 @@
 #define MenuKey VK_INSERT
 #define QuitKey VK_END
 
-typedef HRESULT(__stdcall* ResizeBuffers)(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
-ResizeBuffers oResizeBuffers = nullptr;
-
 using namespace SDK;
 using namespace SDKTools;
 using namespace SDKTools::World;
