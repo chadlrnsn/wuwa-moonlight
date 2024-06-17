@@ -8,7 +8,6 @@
 #include <imgui_impl_win32.h>
 #include <imgui_impl_dx11.h>
 #include <Menu/Menu.hpp>
-#include <thread>
 #include <Helper.h>
 #include <globals.h>
 #include <wuwa-base/Logger.h>
@@ -26,18 +25,14 @@ typedef unsigned int (WINAPI* PTHREADPROC)(LPVOID lParam);
 
 typedef struct _DLLUNLOADINFO
 {
-	PFreeLibrary	m_fpFreeLibrary;
-	PExitThread		m_fpExitThread;
-	HMODULE		    m_hFreeModule;
-}DLLUNLOADINFO, * PDLLUNLOADINFO;
-
-unsigned int WINAPI DllUnloadThreadProc(LPVOID lParam);
-void DllSelfUnloading(_In_ const HMODULE hModule);
-//
+    PFreeLibrary	m_fpFreeLibrary;
+    PExitThread		m_fpExitThread;
+    HMODULE		    m_hFreeModule;
+} DLLUNLOADINFO, *PDLLUNLOADINFO;
 
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 HRESULT ResizeSwapChain(IDXGISwapChain* pSwapChain, ID3D11Device* pDevice, ID3D11DeviceContext* pContext,
-	ID3D11RenderTargetView** pRenderTargetView, UINT Width, UINT Height);
+    ID3D11RenderTargetView** pRenderTargetView, UINT Width, UINT Height);
 
 volatile bool g_bUnload = false;
 Present oPresent;
@@ -53,10 +48,13 @@ uintptr_t BaseAddr;
 Menu menu;
 
 void InitImGui();
+void CreateRenderTarget(IDXGISwapChain* pSwapChain);
+void CleanupRenderTarget();
+
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 HRESULT ResizeSwapChain(IDXGISwapChain* pSwapChain, ID3D11Device* pDevice, ID3D11DeviceContext* pContext,
-	ID3D11RenderTargetView** pRenderTargetView, UINT Width, UINT Height);
+    ID3D11RenderTargetView** pRenderTargetView, UINT Width, UINT Height);
 
 // Hack stuff
 DWORD WINAPI KeyHandler(LPVOID lpReserved);

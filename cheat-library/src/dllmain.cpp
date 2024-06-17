@@ -3,10 +3,14 @@
 #define MenuKey VK_INSERT
 #define QuitKey VK_END
 
+typedef HRESULT(__stdcall* ResizeBuffers)(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
+ResizeBuffers oResizeBuffers = nullptr;
+
 using namespace SDK;
 using namespace SDKTools;
 using namespace SDKTools::World;
 using namespace SDKTools::Player;
+
 
 void InitImGui()
 {
@@ -17,16 +21,34 @@ void InitImGui()
 	ImGui_ImplDX11_Init(pDevice, pContext);
 }
 
-LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-	switch (uMsg) {
-	case WM_SIZE:
-		if (pDevice != nullptr && wParam != SIZE_MINIMIZED) {
-			UINT width = LOWORD(lParam);
-			UINT height = HIWORD(lParam);
-			ResizeSwapChain(pSwapChain, pDevice, pContext, &mainRenderTargetView, width, height);
-		}
-		break;
+void CleanupRenderTarget()
+{
+	if (mainRenderTargetView) {
+		mainRenderTargetView->Release();
+		mainRenderTargetView = nullptr;
 	}
+}
+
+void CreateRenderTarget(IDXGISwapChain* pSwapChain)
+{
+	ID3D11Texture2D* pBackBuffer = nullptr;
+	pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (LPVOID*)&pBackBuffer);
+	if (pBackBuffer) {
+		pDevice->CreateRenderTargetView(pBackBuffer, NULL, &mainRenderTargetView);
+		pBackBuffer->Release();
+	}
+}
+
+LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+	//switch (uMsg) {
+	//case WM_SIZE:
+	//	if (pDevice != nullptr && wParam != SIZE_MINIMIZED) {
+	//		UINT width = LOWORD(lParam);
+	//		UINT height = HIWORD(lParam);
+	//		ResizeSwapChain(pSwapChain, pDevice, pContext, &mainRenderTargetView, width, height);
+	//	}
+	//	break;
+	//}
 
 	ImGuiIO& io = ImGui::GetIO();
 	io.MouseDrawCursor = menu.IsOpened();
@@ -41,7 +63,6 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
 	static bool init = false;
-	static bool AlertMessage = true;
 	if (!init) {
 		if (SUCCEEDED(pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&pDevice))) {
 			pDevice->GetImmediateContext(&pContext);
@@ -49,10 +70,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 			pSwapChain->GetDesc(&sd);
 			window = sd.OutputWindow;
 
-			ID3D11Texture2D* pBackBuffer;
-			pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (LPVOID*)&pBackBuffer);
-			pDevice->CreateRenderTargetView(pBackBuffer, NULL, &mainRenderTargetView);
-			pBackBuffer->Release();
+			CreateRenderTarget(pSwapChain);
 
 			oWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
 			InitImGui();
@@ -99,42 +117,15 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 }
 
 
-HRESULT ResizeSwapChain(IDXGISwapChain* pSwapChain, ID3D11Device* pDevice, ID3D11DeviceContext* pContext,
-	ID3D11RenderTargetView** pRenderTargetView, UINT Width, UINT Height) {
-	if (*pRenderTargetView) {
-		(*pRenderTargetView)->Release();
-		*pRenderTargetView = nullptr;
+HRESULT __stdcall hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags)
+{
+	CleanupRenderTarget();
+	HRESULT hr = oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
+	if (SUCCEEDED(hr))
+	{
+		CreateRenderTarget(pSwapChain);
 	}
-
-	HRESULT hr = pSwapChain->ResizeBuffers(0, Width, Height, DXGI_FORMAT_UNKNOWN, 0);
-	if (FAILED(hr)) {
-		return hr;
-	}
-
-	ID3D11Texture2D* pBackBuffer = nullptr;
-	hr = pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
-	if (FAILED(hr)) {
-		return hr;
-	}
-
-	hr = pDevice->CreateRenderTargetView(pBackBuffer, nullptr, pRenderTargetView);
-	pBackBuffer->Release();
-	if (FAILED(hr)) {
-		return hr;
-	}
-
-	pContext->OMSetRenderTargets(1, pRenderTargetView, nullptr);
-
-	D3D11_VIEWPORT viewport = {};
-	viewport.Width = static_cast<float>(Width);
-	viewport.Height = static_cast<float>(Height);
-	viewport.MinDepth = 0.0f;
-	viewport.MaxDepth = 1.0f;
-	viewport.TopLeftX = 0;
-	viewport.TopLeftY = 0;
-	pContext->RSSetViewports(1, &viewport);
-
-	return S_OK;
+	return hr;
 }
 
 DWORD WINAPI KeyHandler(LPVOID lpReserved)
@@ -244,13 +235,11 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 		if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
 		{
 			kiero::bind(8, (void**)&oPresent, hkPresent);
+			kiero::bind(13, (void**)&oResizeBuffers, hkResizeBuffers);
 			init_hook = true;
 		}
 
 	} while (!init_hook);
-
-	while (!g_bUnload)
-		continue;
 
 	return TRUE;
 }
