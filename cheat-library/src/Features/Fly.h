@@ -22,9 +22,7 @@ public:
 	float fZSpeedMin = 10.0f;
 	float fZSpeedMax = 2000.0f;
 
-	KeyBindToggle kbToggle = KeyBindToggle(KeyBind::KeyCode::F);
-	//KeyBind kbUp = KeyBind::isPressed(KeyBind::KeyCode::SPACE);
-	//KeyBind kbDown = KeyBindToggle(KeyBind::KeyCode::LCTRL);
+	KeyBindToggle kbToggle = KeyBindToggle(KeyBind::KeyCode::V);
 
 private:
 	float fOldSpeed = 0.0f;

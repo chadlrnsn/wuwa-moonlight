@@ -37,16 +37,6 @@ void CreateRenderTarget(IDXGISwapChain* pSwapChain)
 }
 
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-	//switch (uMsg) {
-	//case WM_SIZE:
-	//	if (pDevice != nullptr && wParam != SIZE_MINIMIZED) {
-	//		UINT width = LOWORD(lParam);
-	//		UINT height = HIWORD(lParam);
-	//		ResizeSwapChain(pSwapChain, pDevice, pContext, &mainRenderTargetView, width, height);
-	//	}
-	//	break;
-	//}
-
 	ImGuiIO& io = ImGui::GetIO();
 	io.MouseDrawCursor = menu.IsOpened();
 
@@ -135,19 +125,19 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 
 
 		if (GetAsyncKeyState(QuitKey) & 1) {
+			g_bUnload = true;
 			kiero::shutdown();
 			ExitProcess(EXIT_SUCCESS);
-
+			FreeLibraryAndExitThread((HMODULE)lpReserved, 0);
 			// Temporary disabled due to crash
 			//DllSelfUnloading((HMODULE)hModule);
-
 			return 0;
 		}
 
 		Sleep(100);
 	}
 
-	return TRUE;
+	return 0;
 }
 
 DWORD WINAPI FeaturesThread(LPVOID lpReserved)
