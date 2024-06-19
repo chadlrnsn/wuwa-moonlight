@@ -1,5 +1,14 @@
 #include "ESP.h"
 
+void ESP::DrawMenuItems()
+{
+	ImGui::Checkbox("ESP", &bEnabled);
+	if (bEnabled) {
+		ImGui::Text("ESP Distance");
+		ImGui::SliderFloat("##Speed", &fDistance, fMinDistance, fMaxDistance);
+	}
+}
+
 void ESP::Run(void** args, size_t numArgs)
 {
 	if (!Initalized)

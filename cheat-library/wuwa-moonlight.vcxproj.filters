@@ -201,6 +201,9 @@
     <ClInclude Include="vendor\UnrealEngine\SDK\KuroPuertsWrapper_parameters.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\fonts\font.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\dllmain.cpp">

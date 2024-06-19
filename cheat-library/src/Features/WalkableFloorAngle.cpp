@@ -16,8 +16,14 @@ void WalkableFloorAngle::Run(void** args, size_t numArgs)
 	SDK::UCharacterMovementComponent* Movement = static_cast<SDK::UCharacterMovementComponent*>(PawnMovement);
 
 	if (bEnable && Movement)
+	{
 		Movement->WalkableFloorAngle = fAngle;
+		bOnce = false;
+	}
 
-	if (!bEnable && Movement)
+	if (!bEnable && Movement && !bOnce)
+	{
 		Movement->WalkableFloorZ = 0.574f;
+		bOnce = true;
+	}
 }

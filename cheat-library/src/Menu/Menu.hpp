@@ -17,7 +17,6 @@ ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall) {
 class Menu
 {
 private:
-    bool IsOpen = false;
     int page = 0;
     bool bWatermark = true;
 
@@ -36,12 +35,12 @@ private:
     };
 public:
     bool bShowBuild = true;
+    bool IsOpen = false;
 
 
 public:
-    bool IsOpened();
-    bool SetIsOpen(bool boolean);
     void RealCursorShow();
+    void Setup();
     void SetUpColors(ImGuiStyle& style, ImVec4* colors, ImVec2 windowSize);
     void StyleColors(ImGuiStyle& style, ImVec4* colors, ImVec2 windowSize);
 

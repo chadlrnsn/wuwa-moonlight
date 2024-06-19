@@ -5,12 +5,6 @@
 #include "Features.h"
 #include <SDKTools/SDKTools.hpp>
 
-//UGameInstance* UGameInstance = World->OwningGameInstance;
-//ULocalPlayer* LocalPlayer = UGameInstance->LocalPlayers[0];
-//APlayerController* APlayerController = LocalPlayer->PlayerController;
-//APawn* APawn = APlayerController->AcknowledgedPawn;
-//DWORD speed = APawn->CustomTimeDilation;
-
 using namespace SDK;
 
 float fDefaultFOV = 90;
@@ -29,12 +23,13 @@ void DebugMenu::DebugMainPage()
 	UEngine* Engine = UEngine::GetEngine();
 	UWorld* World = UWorld::GetWorld();
 	
-	if (!SDKTools::Player::IsPlayerLoaded(World) || !SDKTools::World::IsWorldFullyLoaded(World))
+	if (!SDKTools::Player::IsPlayerLoaded(World) || !SDKTools::World::IsPersistentLevelLoaded(World))
 		return;
 
 	ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
 	APlayerController* PlayerController = LocalPlayer->PlayerController;
 	APawn* AcknowledgedPawn = PlayerController->AcknowledgedPawn;
+
 
 
 	ImGui::Text("Build %s", &BuildInfo);
@@ -44,12 +39,12 @@ void DebugMenu::DebugMainPage()
 	ImGui::Text("APlayerController -> 0x%d", &PlayerController);
 	ImGui::Text("APawn -> 0x%d", &AcknowledgedPawn);
 
-	static float SpeedhackSliderVal = 5.0f;
-	ImGui::SliderFloat("Speedhack", &SpeedhackSliderVal, 0.1f, 100.0f);
-	AcknowledgedPawn->CustomTimeDilation = SpeedhackSliderVal;
+	//static float SpeedhackSliderVal = 5.0f;
+	//ImGui::SliderFloat("Speedhack", &SpeedhackSliderVal, 0.1f, 100.0f);
+	//AcknowledgedPawn->CustomTimeDilation = SpeedhackSliderVal;
 
 	static bool bAlwaysSunny = false;
-	ImGui::Checkbox("Always sunny not implemented", &bAlwaysSunny);
+	ImGui::Checkbox("Always sunny not implemented yet", &bAlwaysSunny);
 	if (bAlwaysSunny) {}
 
 	// Change Default fov
@@ -61,19 +56,6 @@ void DebugMenu::DebugMainPage()
 	}
 	else
 		PlayerController->PlayerCameraManager->DefaultFOV = fDefaultFOV;
-
-	// World Speedhack
-	//ImGui::Checkbox("World Speedhack", &bChangeWorldTimeDilation);
-	//AWorldSettings* WorldSettings = World->PersistentLevel->WorldSettings;
-	//if (bChangeWorldTimeDilation)
-	//{
-	//	ImGui::SliderFloat("## Change World Speed", &fCustomWorldSpeed, 0.1f, 5.0f, "%.1f");
-	//	WorldSettings->TimeDilation = fCustomWorldSpeed;
-	//}
-	//else {
-	//	fCustomWorldSpeed = fWorldSpeed;
-	//	WorldSettings->TimeDilation = fCustomWorldSpeed;
-	//}
 
 	FVector pos = AcknowledgedPawn->K2_GetActorLocation();
 	ImGui::InputFloat("X", &pos.X);
@@ -108,7 +90,74 @@ void DebugMenu::DebugMainPage()
 	}
 	ImGui::EndGroup();
 
-	//UPuertsSetting* PuertsSettings;
-	//PuertsSettings->
 
+	static bool bEsp = false;
+	static struct FESP
+	{
+		float Distance;
+		float Min;
+		float Max;
+	};
+
+	FESP esp;
+	esp.Distance = 10000;
+	esp.Min = 1;
+	esp.Max = 100000;
+
+	static struct ActorInfo
+	{
+		const char* Name;
+		std::string ClassName;
+		FVector Position;
+		FString HP;
+	};
+
+	ImGui::Checkbox("ESP", &bEsp);
+	if (bEsp)
+	{
+		ImGui::Text("Im not done ESP yet");
+		ImGui::SliderFloat("Render Distance", &esp.Distance, esp.Min, esp.Max);
+		
+		ULevel* Level = World->PersistentLevel;
+		if (Level)
+		{
+			// Создаем массив для хранения объектов
+			TArray<AActor*> FoundActors;
+
+			// Получаем список всех объектов заданного типа на уровне
+			
+			UGameplayStatics::GetAllActorsOfClass(World, AActor::StaticClass(), &FoundActors);
+
+			// Вывести имена всех найденных объектов
+			for (AActor* Actor : FoundActors)
+			{
+				if (Actor)
+				{
+					ActorInfo Info;
+					Info.Name = Actor->GetName().c_str();
+					Info.ClassName = Actor->Class->GetName();
+					Info.Position = Actor->K2_GetActorLocation();
+
+					if (ImGui::Selectable(Info.Name, false))
+					{
+						
+					}
+					// Попытка получить здоровье, если объект поддерживает интерфейс здоровья
+					//if (Actor->Implements<UHealthInterface>())
+					//{
+					//	IHealthInterface* HealthInterface = Cast<IHealthInterface>(Actor);
+					//	if (HealthInterface)
+					//	{
+					//		Info.HP = HealthInterface->GetHealth();
+					//	}
+					//}
+					//else
+					//{
+					//	Info.HP = -1.0f; // Указать, что HP недоступно
+					//}
+
+				}
+			}
+		}
+	}
 }

@@ -35,8 +35,6 @@ typedef struct _DLLUNLOADINFO
 } DLLUNLOADINFO, *PDLLUNLOADINFO;
 
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-HRESULT ResizeSwapChain(IDXGISwapChain* pSwapChain, ID3D11Device* pDevice, ID3D11DeviceContext* pContext,
-    ID3D11RenderTargetView** pRenderTargetView, UINT Width, UINT Height);
 
 volatile bool g_bUnload = false;
 HWND window = NULL;

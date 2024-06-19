@@ -124,7 +124,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\kiero;$(ProjectDir)\vendor\UnrealEngine;$(SolutionDir)\cheat-base\src;$(SolutionDir)\cheat-base\vendor</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\kiero;$(ProjectDir)\vendor\UnrealEngine;$(SolutionDir)\cheat-base\src;$(SolutionDir)\cheat-base\vendor;$(ProjectDir)vendor\fonts</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -142,7 +142,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\kiero;$(ProjectDir)\vendor\UnrealEngine;$(SolutionDir)\cheat-base\src;$(SolutionDir)\cheat-base\vendor</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\fonts;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\kiero;$(ProjectDir)\vendor\UnrealEngine;$(SolutionDir)\cheat-base\src;$(SolutionDir)\cheat-base\vendor</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -171,6 +171,7 @@
     <ClInclude Include="src\Helper.h" />
     <ClInclude Include="src\SDKTools\Player.h" />
     <ClInclude Include="src\SDKTools\SDKTools.hpp" />
+    <ClInclude Include="vendor\fonts\font.h" />
     <ClInclude Include="vendor\imgui\imconfig.h" />
     <ClInclude Include="vendor\imgui\imgui.h" />
     <ClInclude Include="vendor\imgui\imgui_impl_dx11.h" />

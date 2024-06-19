@@ -17,12 +17,12 @@ void GodMode::Run(void** args, size_t numArgs)
 	if (bGodMode && AcknowledgedPawn)
 	{
 		AcknowledgedPawn->bCanBeDamaged = false;
-		//bOnce = false;
+		bOnce = false;
 	}
 
 	if (!bGodMode && AcknowledgedPawn && !bOnce)
 	{
 		AcknowledgedPawn->bCanBeDamaged = true;
-		//bOnce = true;
+		bOnce = true;
 	}
 }

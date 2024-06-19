@@ -1,5 +1,14 @@
 #include "WalkableFloorZ.h"
 
+void WalkableFloorZ::DrawMenuItems()
+{
+	ImGui::Checkbox("WalkableFloorZ", &bEnable);
+	if (bEnable) {
+		ImGui::Text("WalkableFloorZ");
+		ImGui::SliderFloat("##WalkableFloorZ", &fZ, fMinZ, fMaxZ);
+	}
+}
+
 void WalkableFloorZ::Run(void** args, size_t numArgs)
 {
 	if (!Initalized)

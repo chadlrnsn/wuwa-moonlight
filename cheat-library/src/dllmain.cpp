@@ -38,13 +38,13 @@ void CreateRenderTarget(IDXGISwapChain* pSwapChain)
 
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 	ImGuiIO& io = ImGui::GetIO();
-	io.MouseDrawCursor = menu.IsOpened();
+	io.MouseDrawCursor = menu.IsOpen;
 
-	if (menu.IsOpened() && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
+	if (menu.IsOpen && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
 		return true;
 	
 
-	return menu.IsOpened() ? menu.IsOpened() : CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
+	return menu.IsOpen ? menu.IsOpen : CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
 }
 
 HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
@@ -70,14 +70,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 	static bool styleInitialized = false;
 	if (!styleInitialized) {
-		ImGuiIO& io = ImGui::GetIO();
-		ImVec2 whole_content_size = io.DisplaySize;
-		whole_content_size.x = whole_content_size.x * 0.3;
-		whole_content_size.y = whole_content_size.y * 0.2;
-
-		ImGuiStyle& style = ImGui::GetStyle();
-		ImVec4* colors = style.Colors;
-		menu.SetUpColors(style, colors, whole_content_size);
+		menu.Setup();
 		styleInitialized = true;
 	}
 
@@ -93,7 +86,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	menu.PreventMoveOutOfWndBounds(" ");
 
 	//menu.ShowCenteredPopupSubmit("ALERT", "This cheat is opensource if you purchase it from someone u got scammed!", "Ok", &AlertMessage);
-	if (menu.IsOpened())
+	if (menu.IsOpen)
 		menu.Render();
 
 	ImGui::Render();
@@ -121,7 +114,7 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 	while (!g_bUnload) {
 
 		if (GetAsyncKeyState(MenuKey) & 1)
-			menu.SetIsOpen(!menu.IsOpened());
+			menu.IsOpen = !menu.IsOpen;
 
 
 		if (GetAsyncKeyState(QuitKey) & 1) {
@@ -173,7 +166,7 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 		}
 
 		// this is important
-		if (!IsPlayerLoaded(World) || !IsWorldFullyLoaded(World))
+		if (!IsPersistentLevelLoaded(World) || !IsPlayerLoaded(World))
 			continue;
 
 		ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];

@@ -4,5 +4,6 @@
 using namespace SDK;
 
 namespace SDKTools::Player {
-	bool IsPlayerLoaded(UWorld* World);
+	bool IsPlayerLoaded(UWorld*);
+	bool IsPawnControlled(APawn*);
 }

@@ -30,14 +30,7 @@ public:
 
 	void HandleKeys() override {}
 
-	void DrawMenuItems() override
-	{
-		ImGui::Checkbox("WalkableFloorZ", &bEnable);
-		if (bEnable) {
-			ImGui::Text("WalkableFloorZ");
-			ImGui::SliderFloat("##WalkableFloorZ", &fZ, fMinZ, fMaxZ);
-		}
-	}
+	void DrawMenuItems() override;
 
 	void Render(void** args, size_t numArgs) override {}
 

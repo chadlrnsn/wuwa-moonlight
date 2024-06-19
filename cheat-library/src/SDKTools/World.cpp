@@ -4,13 +4,13 @@ using namespace SDK;
 
 namespace SDKTools::World
 {
-	bool IsWorldFullyLoaded(UWorld* World)
+	bool IsPersistentLevelLoaded(UWorld* World)
 	{
 		if (!World)
 			return false;
 
-		ULevel* Level = World->PersistentLevel;
-		if (!Level || !Level->bIsVisible)
+		ULevel* PLevel = World->PersistentLevel;
+		if (!PLevel || !PLevel->bIsVisible)
 		{
 			std::cerr << "No PersistentLevel found" << std::endl;
 			return false;

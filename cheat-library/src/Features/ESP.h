@@ -42,14 +42,7 @@ public:
 	void HandleKeys() override {}
 
 	// This should be run in the ImGUI draw loop, used to draw anything to the menu
-	void DrawMenuItems() override
-	{
-		ImGui::Checkbox("ESP", &bEnabled);
-		if (bEnabled) {
-			ImGui::Text("ESP Distance");
-			ImGui::SliderFloat("##Speed", &fDistance, fMinDistance, fMaxDistance);
-		}
-	}
+	void DrawMenuItems() override;
 
 	// This should be run at the top of the ImGUI draw loop, used to render things like ESP, Tracers, and Debug Info
 	void Render(void** args, size_t numArgs) override {}

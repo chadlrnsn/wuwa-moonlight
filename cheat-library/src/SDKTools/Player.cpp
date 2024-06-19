@@ -4,6 +4,13 @@ using namespace SDK;
 
 namespace SDKTools::Player
 {
+
+
+	bool IsPawnControlled(APawn* pawn)
+	{
+		return pawn->IsPawnControlled();
+	}
+
 	bool IsPlayerLoaded(UWorld* World)
 	{
 		
@@ -41,6 +48,13 @@ namespace SDKTools::Player
 			return false;
 		}
 
-		return AcknowledgedPawn->IsPawnControlled();
+		APawn* IsControled = (APawn*)AcknowledgedPawn->IsPawnControlled();
+		if (!IsControled)
+		{
+			std::cerr << "Pawn did not controlling!" << std::endl;
+			return false;
+		}
+
+		return true;
 	}
 }

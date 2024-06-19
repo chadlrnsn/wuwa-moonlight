@@ -5,5 +5,5 @@ using namespace SDK;
 
 namespace SDKTools::World
 {
-	bool IsWorldFullyLoaded(UWorld* World);
+	bool IsPersistentLevelLoaded(UWorld* World);
 }

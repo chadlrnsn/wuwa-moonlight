@@ -1,22 +1,43 @@
 #include "Menu.hpp"
-
-
-bool Menu::IsOpened()
-{
-    return this->IsOpen;
-}
-
-bool Menu::SetIsOpen(bool boolean)
-{
-    this->IsOpen = boolean;
-    return this->IsOpened();
-}
+#include "fonts/font.h"
 
 void Menu::RealCursorShow() {
     ImGui::GetMouseCursor();
     ImGui::SetMouseCursor(ImGuiMouseCursor_Arrow);
-    ImGui::GetIO().WantCaptureMouse = this->IsOpened();
-    ImGui::GetIO().MouseDrawCursor = this->IsOpened();
+    ImGui::GetIO().WantCaptureMouse = IsOpen;
+    ImGui::GetIO().MouseDrawCursor = IsOpen;
+}
+
+void Menu::Setup()
+{
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImVec2 whole_content_size = io.DisplaySize;
+    whole_content_size.x = whole_content_size.x * 0.3;
+    whole_content_size.y = whole_content_size.y * 0.2;
+
+    ImGuiStyle& style = ImGui::GetStyle();
+    ImVec4* colors = style.Colors;
+    this->SetUpColors(style, colors, whole_content_size);
+
+    ImFontConfig font_config;
+    font_config.PixelSnapH = false;
+    font_config.OversampleH = 5;
+    font_config.OversampleV = 5;
+    font_config.RasterizerMultiply = 1.2f;
+
+    static const ImWchar ranges[] =
+    {
+        0x0020, 0x00FF, // Basic Latin + Latin Supplement
+        0x0400, 0x052F, // Cyrillic + Cyrillic Supplement
+        0x2DE0, 0x2DFF, // Cyrillic Extended-A
+        0xA640, 0xA69F, // Cyrillic Extended-B
+        0xE000, 0xE226, // icons
+        0,
+    };
+
+    io.Fonts->AddFontDefault();
+    ImFont* main = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
+    io.FontDefault = main;
 }
 
 void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors, ImVec2 windowSize) {
@@ -47,7 +68,6 @@ void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors, ImVec2 windowSize) {
     style.WindowMinSize = windowSize;
     style.ChildRounding = 5.0f;
 }
-
 
 void Menu::StyleColors(ImGuiStyle & style, ImVec4 * colors, ImVec2 windowSize) {
     // Colors
@@ -117,7 +137,6 @@ void Menu::StyleColors(ImGuiStyle & style, ImVec4 * colors, ImVec2 windowSize) {
     style.WindowMinSize = windowSize;
     style.ChildRounding = 5.0f;
 }
-
 
 void Menu::PreventMoveOutOfWndBounds(const char* wndName) {
     ImGuiWindow* existingWindow = ImGui::FindWindowByName(wndName);

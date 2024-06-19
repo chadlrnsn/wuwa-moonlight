@@ -42,8 +42,9 @@ void SpeedHack::Run(void** args, size_t numArgs)
 	}
 
 	// World speedhack
-	if (bEnable && PersistentLevel)
+	if (bEnable && World && PersistentLevel)
 	{
+		
 		PersistentLevel->WorldSettings->TimeDilation = fWorldSpeed;
 		bOnce = false;
 	}

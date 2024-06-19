@@ -31,14 +31,7 @@ public:
 
 	void HandleKeys() override {}
 
-	void DrawMenuItems() override
-	{
-		ImGui::Checkbox("Gravity Scale", &bEnable);
-		if (bEnable) {
-			ImGui::Text("Gravity Multiplier");
-			ImGui::SliderFloat("##Gravity Multiplier", &fGravity, fMinGravity, fMaxGravity);
-		}
-	}
+	void DrawMenuItems() override;
 
 	void Render(void** args, size_t numArgs) override {}
 
