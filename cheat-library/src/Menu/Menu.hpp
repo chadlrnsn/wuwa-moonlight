@@ -3,10 +3,16 @@
 #include <vector>
 #include <windows.h>
 #include <thread>
+#include <globals.h>
+
+#ifndef IMGUI_DEFINE_MATH_OPERATORS
+#define IMGUI_DEFINE_MATH_OPERATORS
+#endif // !IMGUI_DEFINE_MATH_OPERATORS
+
 #include <imgui_internal.h>
 #include <imgui.h>
+#include <nav_elements.h>
 #include <Features/Features.h>
-#include <globals.h>
 
 template <typename T>
 ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall) {
@@ -33,6 +39,15 @@ private:
         { "Config", "", nullptr },
         { "Debug", "", nullptr },
     };
+
+    enum Headers {
+        PLAYER,
+        ESP,
+        MISC,
+        CONFIG,
+        DEBUG
+    };
+
 public:
     bool bShowBuild = true;
     bool IsOpen = false;
@@ -41,7 +56,7 @@ public:
 public:
     void RealCursorShow();
     void Setup();
-    void SetUpColors(ImGuiStyle& style, ImVec4* colors, ImVec2 windowSize);
+    void SetUpColors(ImGuiStyle& style, ImVec4* colors);
     void StyleColors(ImGuiStyle& style, ImVec4* colors, ImVec2 windowSize);
 
     // https://github.com/ocornut/imgui/issues/4356#issuecomment-1535547717
@@ -54,3 +69,7 @@ public:
 };
 
 
+inline ImFont* regular;
+inline ImFont* medium;
+inline ImFont* bold;
+inline ImFont* title;

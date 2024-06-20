@@ -180,6 +180,7 @@
     <ClInclude Include="vendor\imgui\imstb_rectpack.h" />
     <ClInclude Include="vendor\imgui\imstb_textedit.h" />
     <ClInclude Include="vendor\imgui\imstb_truetype.h" />
+    <ClInclude Include="vendor\imgui\nav_elements.h" />
     <ClInclude Include="vendor\kiero\kiero.h" />
     <ClInclude Include="vendor\kiero\minhook\include\MinHook.h" />
     <ClInclude Include="vendor\kiero\minhook\src\buffer.h" />
@@ -223,7 +224,6 @@
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\Features\Debug_menu.cpp" />
     <ClCompile Include="src\Features\ESP.cpp" />
-    <ClCompile Include="src\Features\Features.cpp" />
     <ClCompile Include="src\Features\Fly.cpp" />
     <ClCompile Include="src\Features\GodMode.cpp" />
     <ClCompile Include="src\Features\GravityScale.cpp" />
@@ -240,6 +240,7 @@
     <ClCompile Include="vendor\imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="vendor\imgui\imgui_tables.cpp" />
     <ClCompile Include="vendor\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="vendor\imgui\nav_elements.cpp" />
     <ClCompile Include="vendor\kiero\kiero.cpp" />
     <ClCompile Include="vendor\kiero\minhook\src\buffer.c" />
     <ClCompile Include="vendor\kiero\minhook\src\hde\hde32.c" />

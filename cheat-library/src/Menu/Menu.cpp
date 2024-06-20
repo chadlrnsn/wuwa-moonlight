@@ -11,13 +11,12 @@ void Menu::RealCursorShow() {
 void Menu::Setup()
 {
     ImGuiIO& io = ImGui::GetIO(); (void)io;
+    ImGuiStyle& style = ImGui::GetStyle();
+    ImVec4* colors = style.Colors;
     ImVec2 whole_content_size = io.DisplaySize;
     whole_content_size.x = whole_content_size.x * 0.3;
     whole_content_size.y = whole_content_size.y * 0.2;
-
-    ImGuiStyle& style = ImGui::GetStyle();
-    ImVec4* colors = style.Colors;
-    this->SetUpColors(style, colors, whole_content_size);
+    this->SetUpColors(style, colors);
 
     ImFontConfig font_config;
     font_config.PixelSnapH = false;
@@ -36,36 +35,46 @@ void Menu::Setup()
     };
 
     io.Fonts->AddFontDefault();
-    ImFont* main = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
-    io.FontDefault = main;
+    regular = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
+    medium  = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
+    bold    = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
+    title   = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
+    io.FontDefault = regular;
 }
 
-void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors, ImVec2 windowSize) {
+void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors) {
 
-    colors[ImGuiCol_WindowBg] = ImColor(25, 20, 20);
-    colors[ImGuiCol_ChildBg] = ImColor(30, 24, 24);
+    ImColor hovered = { 31, 110, 171 };
+    ImColor Transparented = { 0, 0, 0, 255 };
+    colors[ImGuiCol_WindowBg] = ImColor(20, 23, 25);
+    colors[ImGuiCol_ChildBg] = ImColor(24, 28, 30);
     colors[ImGuiCol_Text] = ImColor(255, 255, 255);
+    
     //Header
     colors[ImGuiCol_Header] = ImColor(30, 138, 200);
-    colors[ImGuiCol_HeaderHovered] = ImColor(40, 215, 192);
+    colors[ImGuiCol_HeaderHovered] = hovered;
     colors[ImGuiCol_HeaderActive] = ImColor(30, 116, 215);
+    
     //buttons
     colors[ImGuiCol_Button] = ImColor(25, 145, 215);
-    colors[ImGuiCol_ButtonHovered] = ImColor(25, 104, 215);
+    colors[ImGuiCol_ButtonHovered] = hovered;
     colors[ImGuiCol_ButtonActive] = ImColor(100, 161, 222);
+
     //checkboxes
     colors[ImGuiCol_CheckMark] = ImColor(0, 0, 0);
-    colors[ImGuiCol_FrameBg] = ImColor(25, 174, 215, 200);
-    colors[ImGuiCol_FrameBgActive] = ImColor(25, 215, 212);
-    colors[ImGuiCol_FrameBgHovered] = ImColor(20, 250, 200);
+    colors[ImGuiCol_FrameBg] = ImColor(25, 158, 215, 200);
+    colors[ImGuiCol_FrameBgActive] = ImColor(25, 164, 215);
+    colors[ImGuiCol_FrameBgHovered] = ImColor(20, 212, 250);
 
-    style.WindowRounding = 5.3f;
-    style.FrameRounding = 2.3f;
-    style.ScrollbarRounding = 0;
+    colors[ImGuiCol_Border] = Transparented;
+
+    style.WindowRounding = 10.0f;
+    style.FrameRounding = 5.0f;
+    style.ScrollbarRounding = 5.0f;
     style.GrabRounding = 2.3f;
     style.TabRounding = 2.3f;
 
-    style.WindowMinSize = windowSize;
+    //style.WindowMinSize = { 600,300 };
     style.ChildRounding = 5.0f;
 }
 
@@ -174,41 +183,84 @@ void Menu::PreventMoveOutOfWndBounds(const char* wndName) {
 
 void Menu::Render()
 {
-    if (ImGui::Begin(" ", 0, ImGuiWindowFlags_NoTitleBar /*  | ImGuiWindowFlags_NoResize */)) 
+    static Headers tab{ PLAYER };
+    const char* tab_name = tab == PLAYER ? "Player" 
+        : tab == ESP ? "ESP" 
+        : tab == MISC ? "MISC" 
+        : tab == CONFIG ? "CONFIG" 
+        : tab == DEBUG ? "DEBUG" 
+        : 0;
+
+
+    if (ImGui::Begin("Moonlight", nullptr, /*ImGuiWindowFlags_NoDecoration |*/ ImGuiWindowFlags_NoTitleBar))
     {
-        ImGui::PushStyleColor(ImGuiCol_Border, ImColor(0, 0, 0, 255).Value);
-        
-        if (ImGui::BeginChild("##LeftSide", ImVec2(120, ImGui::GetContentRegionAvail().y), 1))
+        ImVec2 pos = ImGui::GetWindowPos();
+        ImVec2 size = ImGui::GetWindowSize();
+
+        ImVec2 wndSize = ImGui::GetWindowSize();
+
+        ImGuiStyle style = ImGui::GetStyle();
+        ImDrawList* draw = ImGui::GetWindowDrawList();
+
+        // Определение минимальных размеров для MainLeft
+        float minWidth = 120;
+
+        // Ограничение размеров для MainLeft
+        ImVec2 mainLeftSize = ImVec2(ImGui::GetContentRegionAvail().x * 0.16f, ImGui::GetContentRegionAvail().y);
+        mainLeftSize.x = ImClamp(mainLeftSize.x, minWidth, wndSize.x);
+
+        // Левое основное окно
+        ImGui::BeginChild("MainLeft", mainLeftSize, 0);
         {
 
-            for (unsigned int i = 0; i < Buttons.size(); ++i) {
+            ImVec2 leftTopChildSize = ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y * 0.16f);
+            ImGui::BeginChild("LeftSide1", leftTopChildSize, false);
 
-                bool selected = (page == i);
-                auto windowvars = ImGuiStyleVar_SelectableTextAlign;
+            ImGui::PushFont(title);
 
-                ImGui::PushStyleVar(windowvars, ImVec2(0.5f, 0.5f));
+            ImVec2 textSize = ImGui::CalcTextSize(ProjectName);
 
-                if (ImGui::Selectable(Buttons[i].btnLable, &selected, 0, ImVec2(ImGui::GetContentRegionAvail().x, 20)))
-                    page = i;
+            float posX = (leftTopChildSize.x - textSize.x) * 0.5f;
+            float posY = (leftTopChildSize.y - textSize.y) * 0.5f;
 
-                ImGui::PopStyleVar();
+            ImGui::SetCursorPos(ImVec2(posX, posY));
 
-                if (selected)
-                    ImGui::SetItemDefaultFocus();
+            ImGui::TextColored(ImColor(84, 160, 227), ProjectName);
 
+            ImGui::PopFont();
+            ImGui::EndChild();
+
+
+            if (ImGui::BeginChild("LeftSide2", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), 0))
+            {
+                for (unsigned int i = 0; i < Buttons.size(); ++i) 
+                {
+                    bool selected = (page == i);
+                    auto windowvars = ImGuiStyleVar_SelectableTextAlign;
+
+                    ImGui::PushStyleVar(windowvars, ImVec2(0.5f, 0.5f));
+
+                    if (ImGui::Selectable(Buttons[i].btnLable, &selected, 0, ImVec2(ImGui::GetContentRegionAvail().x, 24)))
+                        page = i;
+
+                    ImGui::PopStyleVar();
+
+                    if (selected)
+                        ImGui::SetItemDefaultFocus();
+                }
             }
+            ImGui::EndChild();
         }
-
         ImGui::EndChild();
+    }
+    
+    ImGui::SameLine(0);
 
-        ImGui::SameLine(0);
-        ImGui::SeparatorEx(ImGuiSeparatorFlags_Vertical);
-        ImGui::SameLine(0);
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(20, 20));
 
-        ImGui::BeginChild("##RightSide", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), true);
-
-        switch (page) {
-
+    ImGui::BeginChild("RightSide", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), 0);
+    switch (page) 
+    {
         case 0: // Player
             god.DrawMenuItems();
             speedhack.DrawMenuItems();
@@ -239,12 +291,10 @@ void Menu::Render()
             DebugMenu::DebugMainPage();
             break;
 
-        } // Switch
+    } // Switch
+    ImGui::EndChild();
+    ImGui::PopStyleVar();
 
-        ImGui::EndChild();
-        ImGui::PopStyleColor();
-
-    } // Begin
     ImGui::End(); // Render end
 }
 
@@ -267,35 +317,12 @@ void Menu::RenderWatermark()
         ImGuiWindowFlags_NoBackground |
         ImGuiWindowFlags_NoCollapse |
         ImGuiWindowFlags_NoScrollbar |
-        ImGuiWindowFlags_::ImGuiWindowFlags_NoBringToFrontOnFocus |
-        ImGuiWindowFlags_::ImGuiWindowFlags_NoBackground |
-        ImGuiWindowFlags_::ImGuiWindowFlags_NoNavFocus |
-        ImGuiWindowFlags_::ImGuiWindowFlags_NoNav
+        ImGuiWindowFlags_NoBringToFrontOnFocus |
+        ImGuiWindowFlags_NoBackground |
+        ImGuiWindowFlags_NoNavFocus |
+        ImGuiWindowFlags_NoNav
     );
 
     ImGui::Text("By chadlrnsn | Moonlight | %s | %s", std::ctime(&formatedtime), BuildInfo);
     ImGui::End();
 }
-
-//void Menu::ShowCenteredPopupSubmit(const char* title, const char* text, const char* submit_text,  bool* open)
-//{
-//    if (*open) {
-//        ImGui::OpenPopup(title);
-//    }
-//
-//    if (ImGui::BeginPopupModal(title, NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
-//        ImGuiIO& io = ImGui::GetIO();
-//        ImVec2 window_size = ImGui::GetWindowSize();
-//        ImVec2 window_pos = ImVec2((io.DisplaySize.x - window_size.x) / 2, (io.DisplaySize.y - window_size.y) / 2);
-//
-//        ImGui::SetWindowPos(window_pos);
-//
-//        ImGui::Text(text);
-//        if (ImGui::Button(submit_text)) {
-//            ImGui::CloseCurrentPopup();
-//            *open = false;
-//        }
-//
-//        ImGui::EndPopup();
-//    }
-//}

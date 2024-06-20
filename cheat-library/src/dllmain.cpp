@@ -82,8 +82,9 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	// Show FPS
 	fpsUnlock.DrawFPS();
 	//
+
 	menu.RenderWatermark();
-	menu.PreventMoveOutOfWndBounds(" ");
+	menu.PreventMoveOutOfWndBounds("Moonlight");
 
 	//menu.ShowCenteredPopupSubmit("ALERT", "This cheat is opensource if you purchase it from someone u got scammed!", "Ok", &AlertMessage);
 	if (menu.IsOpen)
@@ -127,7 +128,7 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 			return 0;
 		}
 
-		Sleep(100);
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
 	}
 
 	return 0;
@@ -143,33 +144,34 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 	walkFloorAngle.Setup();
 	fpsUnlock.Setup();
 
-	UWorld* World = nullptr;
-	UEngine* Engine = nullptr;
-
 	while (!g_bUnload)
 	{
+		UEngine* Engine;
+		UWorld* World;
+
+		Engine = UEngine::GetEngine();
 		if (!Engine)
-		{
-			Engine = UEngine::GetEngine();
-			if (!Engine)
-				continue;
-		}
+			continue;
 
 		void* userSettings[1] = { Engine };
 		fpsUnlock.Run(userSettings, 1);
 
+		World = UWorld::GetWorld();
 		if (!World)
-		{
-			World = SDK::UWorld::GetWorld();
-			if (!World)
-				continue;
-		}
+			continue;
 
 		// this is important
 		if (!IsPersistentLevelLoaded(World) || !IsPlayerLoaded(World))
 			continue;
 
-		ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
+		TArray<ULocalPlayer*> LocalPlayers = World->OwningGameInstance->LocalPlayers;
+		ULocalPlayer* LocalPlayer = nullptr;
+
+		if (!(LocalPlayers.Num() > 0))
+			continue;
+
+		LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
+
 		APlayerController* PlayerController = LocalPlayer->PlayerController;
 		APawn* APawn = PlayerController->AcknowledgedPawn;
 

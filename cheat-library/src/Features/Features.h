@@ -10,11 +10,10 @@
 
 #include "Debug_menu.h"
 
-extern GodMode god;
-extern SpeedHack speedhack;
-extern GravityScale gravityScale;
-extern WalkableFloorZ walkFloorZ;
-extern WalkableFloorAngle walkFloorAngle;
-extern ESP esp;
-extern Fly fly;
-extern FpsUnlock fpsUnlock;
+inline GodMode god;
+inline SpeedHack speedhack;
+inline GravityScale gravityScale;
+inline WalkableFloorZ walkFloorZ;
+inline WalkableFloorAngle walkFloorAngle;
+inline Fly fly;
+inline FpsUnlock fpsUnlock;

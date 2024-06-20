@@ -204,6 +204,9 @@
     <ClInclude Include="vendor\fonts\font.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\imgui\nav_elements.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\dllmain.cpp">
@@ -293,9 +296,6 @@
     <ClCompile Include="src\globals.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="src\Features\Features.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="src\SDKTools\Player.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -309,6 +309,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="vendor\UnrealEngine\SDK\KuroPuertsWrapper_functions.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\imgui\nav_elements.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

@@ -9,7 +9,7 @@ private:
 public:
 	bool bEnabled = false;
 	float fFrameRateLimit = 144.0f;
-	float fFrameRateLimitMin = 1.0f;
+	float fFrameRateLimitMin = 24.0f;
 	float fFrameRateLimitMax = 540.0f;
 	float fFrameRateLimitDefault = 60.0f;
 	float fFPS;
