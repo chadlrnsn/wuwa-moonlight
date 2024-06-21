@@ -79,14 +79,10 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 	ImGui::NewFrame();
 	
-	// Show FPS
 	fpsUnlock.DrawFPS();
-	//
-
 	menu.RenderWatermark();
 	menu.PreventMoveOutOfWndBounds("Moonlight");
 
-	//menu.ShowCenteredPopupSubmit("ALERT", "This cheat is opensource if you purchase it from someone u got scammed!", "Ok", &AlertMessage);
 	if (menu.IsOpen)
 		menu.Render();
 

@@ -39,38 +39,14 @@ void DebugMenu::DebugMainPage()
 	ImGui::Text("APlayerController -> 0x%d", &PlayerController);
 	ImGui::Text("APawn -> 0x%d", &AcknowledgedPawn);
 
-	//static float SpeedhackSliderVal = 5.0f;
-	//ImGui::SliderFloat("Speedhack", &SpeedhackSliderVal, 0.1f, 100.0f);
-	//AcknowledgedPawn->CustomTimeDilation = SpeedhackSliderVal;
-
 	static bool bAlwaysSunny = false;
 	ImGui::Checkbox("Always sunny not implemented yet", &bAlwaysSunny);
 	if (bAlwaysSunny) {}
-
-	// Change Default fov
-	ImGui::Checkbox("Change FOV", &bChangeFOV);
-	if (bChangeFOV)
-	{
-		ImGui::SliderFloat("## Change FOV", &fDefaultFOVOverride, 0.0f, 360.0f, "%.0f");
-		PlayerController->PlayerCameraManager->DefaultFOV = fDefaultFOVOverride;
-	}
-	else
-		PlayerController->PlayerCameraManager->DefaultFOV = fDefaultFOV;
 
 	FVector pos = AcknowledgedPawn->K2_GetActorLocation();
 	ImGui::InputFloat("X", &pos.X);
 	ImGui::InputFloat("Y", &pos.Y);
 	ImGui::InputFloat("Z", &pos.Z);
-
-	FVector velocity = AcknowledgedPawn->GetVelocity();
-	ImGui::Text("Velocity from AcknowledgedPawn");
-	ImGui::BeginGroup();
-	{
-		ImGui::InputFloat("VX", &velocity.X);
-		ImGui::InputFloat("VY", &velocity.Y);
-		ImGui::InputFloat("VZ", &velocity.Z);
-	}
-	ImGui::EndGroup();
 
 	
 	ImGui::SeparatorText("CharacterMovement");
@@ -85,8 +61,6 @@ void DebugMenu::DebugMainPage()
 		ImGui::InputFloat("VY", &CharacterMovement->Velocity.Y);
 		ImGui::InputFloat("VZ", &CharacterMovement->Velocity.Z);
 
-
-		//CharacterMovement->AddImpulse(FVector{ 100.0f, 100.0f, 100.0f }, true);
 	}
 	ImGui::EndGroup();
 
