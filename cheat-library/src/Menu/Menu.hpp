@@ -12,6 +12,8 @@
 #include <imgui_internal.h>
 #include <imgui.h>
 #include <nav_elements.h>
+#include <imgui-notify/backends/IconsFontAwesome6.h>
+#include <imgui-notify/backends/ImGuiNotify.hpp>
 #include <Features/Features.h>
 
 template <typename T>
@@ -51,7 +53,8 @@ private:
 public:
     bool bShowBuild = true;
     bool IsOpen = false;
-
+    float baseFontSize = 14.0f;
+    float iconFontSize = baseFontSize * 2.0f / 3.0f;
 
 public:
     void RealCursorShow();
@@ -64,6 +67,7 @@ public:
 
     void Render();
     void RenderWatermark();
+    void RenderNotify();
     // Title, Text to show, submit text, bool open
     //void ShowCenteredPopupSubmit(const char* title, const char* text, const char* submit_text, bool* open);
 };
@@ -73,3 +77,4 @@ inline ImFont* regular;
 inline ImFont* medium;
 inline ImFont* bold;
 inline ImFont* title;
+inline ImFont* icons;

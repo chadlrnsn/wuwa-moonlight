@@ -19,8 +19,8 @@
 #include <chrono>			// For the notifications timed dissmiss
 #include <functional>		// For storing the code, which executest on the button click in the notification
 
-#include "imgui.h"
-#include "imgui_internal.h"
+#include "imgui/imgui.h"
+#include "imgui/imgui_internal.h"
 
 #include "IconsFontAwesome6.h"
 

@@ -63,8 +63,13 @@ int main(int argc, char* argv[])
 
 	InjectDLL(hProcess, tempDllPath.string());
 #else
-	InjectDLL(hProcess, currentDllPath.string());
-	InjectDLL(hProcess, currentBypassDllPath.string());
+	std::cout << "Injecting bypass" << std::endl;
+	if (InjectDLL(hProcess, currentBypassDllPath.string()))
+		std::cout << "Injected." << std::endl;
+
+	std::cout << "Injecting cheat dll" << std::endl;
+	if (InjectDLL(hProcess, currentDllPath.string()))
+		std::cout << "Injected successfully" << std::endl;
 #endif
 
 	Sleep(2000);
@@ -81,7 +86,7 @@ bool OpenGenshinProcess(HANDLE* phProcess, HANDLE* phThread)
 	if (!TokenRet)
 	{
 		//LOG_LAST_ERROR("Privilege escalation failed!");
-		printf("Privilege escalation failed!");
+		printf("Privilege escalation failed!\n");
 		return false;
 	}
 

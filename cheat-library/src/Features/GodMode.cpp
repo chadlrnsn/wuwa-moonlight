@@ -1,5 +1,10 @@
 #include "GodMode.h"
 
+void GodMode::DrawMenuItems()
+{
+	ImGui::Checkbox("God Mode", &bGodMode);
+}
+
 void GodMode::Run(void** args, size_t numArgs)
 {
 	if (!Initalized)

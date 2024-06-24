@@ -44,6 +44,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -122,7 +123,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_AMD64_;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <LanguageStandard_C>Default</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\SimpleIni;$(ProjectDir)\src\wuwa-base\framework;$(ProjectDir)\vendor\imgui-notify</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -140,7 +141,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\SimpleIni;$(ProjectDir)\src\wuwa-base\framework;$(ProjectDir)\vendor\imgui-notify</AdditionalIncludeDirectories>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -171,6 +172,19 @@
     <ClInclude Include="src\wuwa-base\inject\manual-map.h" />
     <ClInclude Include="src\wuwa-base\Logger.h" />
     <ClInclude Include="src\wuwa-base\util.h" />
+    <ClInclude Include="vendor\imgui-notify\backends\fa_solid_900.h" />
+    <ClInclude Include="vendor\imgui-notify\backends\IconsFontAwesome6.h" />
+    <ClInclude Include="vendor\imgui-notify\backends\ImGuiNotify.hpp" />
+    <ClInclude Include="vendor\imgui-notify\backends\imgui_impl_dx11.h" />
+    <ClInclude Include="vendor\imgui-notify\backends\imgui_impl_win32.h" />
+    <ClInclude Include="vendor\imgui-notify\imgui\imconfig.h" />
+    <ClInclude Include="vendor\imgui-notify\imgui\imgui.h" />
+    <ClInclude Include="vendor\imgui-notify\imgui\imgui_internal.h" />
+    <ClInclude Include="vendor\imgui-notify\imgui\implot.h" />
+    <ClInclude Include="vendor\imgui-notify\imgui\implot_internal.h" />
+    <ClInclude Include="vendor\imgui-notify\imgui\imstb_rectpack.h" />
+    <ClInclude Include="vendor\imgui-notify\imgui\imstb_textedit.h" />
+    <ClInclude Include="vendor\imgui-notify\imgui\imstb_truetype.h" />
     <ClInclude Include="vendor\nlohmann\adl_serializer.hpp" />
     <ClInclude Include="vendor\nlohmann\byte_container_with_subtype.hpp" />
     <ClInclude Include="vendor\nlohmann\detail\abi_macros.hpp" />
@@ -226,6 +240,16 @@
     <ClCompile Include="src\wuwa-base\inject\manual-map.cpp" />
     <ClCompile Include="src\wuwa-base\Logger.cpp" />
     <ClCompile Include="src\wuwa-base\util.cpp" />
+    <ClCompile Include="vendor\imgui-notify\backends\imgui_impl_dx11.cpp" />
+    <ClCompile Include="vendor\imgui-notify\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="vendor\imgui-notify\imgui\imgui.cpp" />
+    <ClCompile Include="vendor\imgui-notify\imgui\imgui_demo.cpp" />
+    <ClCompile Include="vendor\imgui-notify\imgui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\imgui-notify\imgui\imgui_tables.cpp" />
+    <ClCompile Include="vendor\imgui-notify\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="vendor\imgui-notify\imgui\implot.cpp" />
+    <ClCompile Include="vendor\imgui-notify\imgui\implot_demo.cpp" />
+    <ClCompile Include="vendor\imgui-notify\imgui\implot_items.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

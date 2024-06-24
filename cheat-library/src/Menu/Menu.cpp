@@ -24,6 +24,13 @@ void Menu::Setup()
     font_config.OversampleV = 5;
     font_config.RasterizerMultiply = 1.2f;
 
+
+    ImFontConfig icontfont_config;
+    icontfont_config.MergeMode = true;
+    icontfont_config.GlyphMinAdvanceX = iconFontSize;
+    icontfont_config.PixelSnapH = true;
+
+
     static const ImWchar ranges[] =
     {
         0x0020, 0x00FF, // Basic Latin + Latin Supplement
@@ -31,6 +38,12 @@ void Menu::Setup()
         0x2DE0, 0x2DFF, // Cyrillic Extended-A
         0xA640, 0xA69F, // Cyrillic Extended-B
         0xE000, 0xE226, // icons
+        0
+    };
+
+    static const ImWchar iconRanges[] =
+    {
+        ICON_MIN_FA, ICON_MAX_16_FA, // awesome font icons
         0,
     };
 
@@ -39,6 +52,8 @@ void Menu::Setup()
     medium  = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
     bold    = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
     title   = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
+    icons   = io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icontfont_config, iconRanges);
+
     io.FontDefault = regular;
 }
 
@@ -280,6 +295,13 @@ void Menu::Render()
             if (ImGui::Button("Force exit"))
                 ExitProcess(0);
 
+            if (ImGui::Button("Success"))
+                ImGui::InsertNotification({ ImGuiToastType::Success, 3000, "That is a success! %s", "(Format here)" });
+            if (ImGui::Button("Warning"))
+                ImGui::InsertNotification({ ImGuiToastType::Warning, 3000, "Hello World! This is a warning! %d", 0x1337 });
+            //ImGui::InsertNotification({ ImGuiToastType::Error, 3000, "Hello World! This is an error! 0x%X", 0xDEADBEEF });
+            //ImGui::InsertNotification({ ImGuiToastType::Info, 3000, "Hello World! This is an info!" });
+
             break;
 
         case 3: // Config 
@@ -325,4 +347,24 @@ void Menu::RenderWatermark()
 
     ImGui::Text("By chadlrnsn | Moonlight | %s | %s", std::ctime(&formatedtime), BuildInfo);
     ImGui::End();
+}
+
+void Menu::RenderNotify()
+{
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.f); // Disable round borders
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.f); // Disable borders
+
+    // Notifications color setup
+    ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10f, 0.10f, 0.10f, 1.00f)); // Background color
+
+
+    // Main rendering function
+    ImGui::RenderNotifications();
+
+
+    //——————————————————————————————— WARNING ———————————————————————————————
+    // Argument MUST match the amount of ImGui::PushStyleVar() calls 
+    ImGui::PopStyleVar(2);
+    // Argument MUST match the amount of ImGui::PushStyleColor() calls 
+    ImGui::PopStyleColor(1);
 }

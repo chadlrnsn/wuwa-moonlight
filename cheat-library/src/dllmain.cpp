@@ -86,6 +86,8 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	if (menu.IsOpen)
 		menu.Render();
 
+	menu.RenderNotify();
+
 	ImGui::Render();
 	pContext->OMSetRenderTargets(1, &mainRenderTargetView, NULL);
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
@@ -140,11 +142,11 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 	walkFloorAngle.Setup();
 	fpsUnlock.Setup();
 
+	UEngine* Engine;
+	UWorld* World;
+
 	while (!g_bUnload)
 	{
-		UEngine* Engine;
-		UWorld* World;
-
 		Engine = UEngine::GetEngine();
 		if (!Engine)
 			continue;
@@ -207,11 +209,12 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	std::cout << "Builded at " << BuildInfo << std::endl;
 
 		
-	bool init_hook = false;
+	static bool init_hook = false;
 	do
 	{
 		if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
 		{
+			std::this_thread::sleep_for(std::chrono::milliseconds(100));
 			kiero::bind(8, (void**)&oPresent, hkPresent);
 			kiero::bind(13, (void**)&oResizeBuffers, hkResizeBuffers);
 			init_hook = true;

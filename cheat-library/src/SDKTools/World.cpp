@@ -16,6 +16,24 @@ namespace SDKTools::World
 			return false;
 		}
 
+		TArray<ULevelStreaming*> levelStreams = World->StreamingLevels;
+		if (~levelStreams.Num() > 0)
+			return false;
+
+		for (ULevelStreaming* StreamingLevel : levelStreams)
+		{
+			if (!StreamingLevel)
+				continue;
+
+			FName StreamingLevelName = StreamingLevel->GetWorldAssetPackageFName();
+			if (sizeof(StreamingLevelName.ToString()) > 0)
+			{	
+				std::cout << StreamingLevelName.ToString() << std::endl;
+				return true;
+			}
+		}
+
+
 		// this is was critical bug
 		// Optionally, check if streaming levels are fully loaded
 		//const TArray<ULevelStreaming*>& StreamingLevels = World->StreamingLevels;
@@ -29,5 +47,24 @@ namespace SDKTools::World
 		//}
 
 		return true;
+	}
+
+	bool IsLoading(UWorld* world) {
+
+		// is exists gameinstance
+		if (!world->OwningGameInstance)
+			return false;
+		
+		// is exists gameinstance
+		if (~world->OwningGameInstance->LocalPlayers.Num() > 0)
+			return false;
+
+		if (!world->OwningGameInstance->LocalPlayers[0]->PlayerController)
+			return false;
+		
+		if (!world->StreamingLevels)
+			return false;
+
+
 	}
 }
