@@ -79,9 +79,23 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 	ImGui::NewFrame();
 	
+	if (!firstnotify)
+	{
+		ImGui::InsertNotification({ ImGuiToastType::Warning, 15000, "This cheat was created for free use, if you bought it - you got scamed" });
+		firstnotify = true;
+	}
+
+
 	fpsUnlock.DrawFPS();
 	menu.RenderWatermark();
-	menu.PreventMoveOutOfWndBounds("Moonlight");
+
+	const char* wnds[] = {
+		"Moonlight",
+		"FPS",
+	};
+
+	for (int i = 0; i < std::size(wnds); i++)
+		menu.PreventMoveOutOfWndBounds(wnds[i]);
 
 	if (menu.IsOpen)
 		menu.RenderMenu();

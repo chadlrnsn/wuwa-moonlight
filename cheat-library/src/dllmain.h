@@ -50,7 +50,7 @@ IDXGISwapChain* pSwapChain;
 HMODULE hModule;
 
 Menu menu;
-
+inline bool firstnotify = false;
 void InitImGui();
 void CreateRenderTarget(IDXGISwapChain* pSwapChain);
 void CleanupRenderTarget();

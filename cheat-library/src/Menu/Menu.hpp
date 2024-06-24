@@ -27,22 +27,6 @@ class Menu
 private:
     bool bWatermark = true;
 
-    struct Button {
-        const char* btnLable;
-        std::string status;
-        char* lastupd;
-    };
-
-    // to change on ENUM
-    std::vector<Button> Buttons = {
-        { "Player", "", nullptr },
-        { "ESP", "", nullptr },
-        { "Misc", "", nullptr },
-        { "Config", "", nullptr },
-        { "Debug", "", nullptr },
-    };
-
-    int page = 0;
     enum Headers {
         PLAYER,
         ESP,
@@ -58,6 +42,7 @@ public:
     float baseFontSize = 14.0f;
     float iconFontSize = baseFontSize * 2.0f / 3.0f;
     bool bOnceStyle = false;
+    bool bOnceScaledMenu = false;
 
 public:
     void RealCursorShow();
