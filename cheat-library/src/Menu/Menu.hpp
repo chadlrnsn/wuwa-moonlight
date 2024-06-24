@@ -25,7 +25,6 @@ ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall) {
 class Menu
 {
 private:
-    int page = 0;
     bool bWatermark = true;
 
     struct Button {
@@ -34,6 +33,7 @@ private:
         char* lastupd;
     };
 
+    // to change on ENUM
     std::vector<Button> Buttons = {
         { "Player", "", nullptr },
         { "ESP", "", nullptr },
@@ -42,12 +42,14 @@ private:
         { "Debug", "", nullptr },
     };
 
+    int page = 0;
     enum Headers {
         PLAYER,
         ESP,
         MISC,
         CONFIG,
-        DEBUG
+        DEBUG,
+        HEADERS_COUNT
     };
 
 public:
@@ -55,6 +57,7 @@ public:
     bool IsOpen = false;
     float baseFontSize = 14.0f;
     float iconFontSize = baseFontSize * 2.0f / 3.0f;
+    bool bOnceStyle = false;
 
 public:
     void RealCursorShow();
@@ -65,11 +68,9 @@ public:
     // https://github.com/ocornut/imgui/issues/4356#issuecomment-1535547717
     void PreventMoveOutOfWndBounds(const char* wndName);
 
-    void Render();
+    void RenderMenu();
     void RenderWatermark();
     void RenderNotify();
-    // Title, Text to show, submit text, bool open
-    //void ShowCenteredPopupSubmit(const char* title, const char* text, const char* submit_text, bool* open);
 };
 
 

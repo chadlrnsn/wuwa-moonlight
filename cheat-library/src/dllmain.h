@@ -49,7 +49,6 @@ ID3D11RenderTargetView* mainRenderTargetView;
 IDXGISwapChain* pSwapChain;
 HMODULE hModule;
 
-uintptr_t BaseAddr;
 Menu menu;
 
 void InitImGui();

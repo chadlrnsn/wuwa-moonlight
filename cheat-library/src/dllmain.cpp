@@ -68,10 +68,10 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 		}
 	}
 
-	static bool styleInitialized = false;
-	if (!styleInitialized) {
+
+	if (!menu.bOnceStyle) {
 		menu.Setup();
-		styleInitialized = true;
+		menu.bOnceStyle = true;
 	}
 
 	ImGui_ImplDX11_NewFrame();
@@ -84,7 +84,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	menu.PreventMoveOutOfWndBounds("Moonlight");
 
 	if (menu.IsOpen)
-		menu.Render();
+		menu.RenderMenu();
 
 	menu.RenderNotify();
 
@@ -121,8 +121,6 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 			kiero::shutdown();
 			ExitProcess(EXIT_SUCCESS);
 			FreeLibraryAndExitThread((HMODULE)lpReserved, 0);
-			// Temporary disabled due to crash
-			//DllSelfUnloading((HMODULE)hModule);
 			return 0;
 		}
 
@@ -201,11 +199,8 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	freopen_s(&dummy, "CONOUT$", "w", stderr);
 	freopen_s(&dummy, "CONOUT$", "w", stdin);
 
-	HANDLE hProc = GetCurrentProcess();
-	Helper proc;
-
-	BaseAddr = proc.GetBaseModuleAddress("Client-Win64-Shipping.exe");
-	std::cout << "Base address: " << BaseAddr << " hex: " << std::hex << BaseAddr << std::endl;
+	HMODULE addr = GetModuleHandleA(0);
+	std::cout << "Base address: " << addr << std::endl;
 	std::cout << "Builded at " << BuildInfo << std::endl;
 
 		
@@ -225,55 +220,6 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	return TRUE;
 }
 
-
-// TO FIX CRASH
-// https://www.unknowncheats.me/forum/c-and-c-/146497-release-source-self-unloading-dll.html
-//unsigned int WINAPI DllUnloadThreadProc(LPVOID lParam)
-//{
-//	PDLLUNLOADINFO pDllUnloadInfo = (PDLLUNLOADINFO)lParam;
-//
-//	//  
-//	// FreeLibrary dll  
-//	//  
-//	(pDllUnloadInfo->m_fpFreeLibrary)(pDllUnloadInfo->m_hFreeModule);
-//
-//	//
-//	// Exit Thread
-//	// This thread return value is freed memory.
-//	// So you don't have to return this thread.
-//	//
-//	pDllUnloadInfo->m_fpExitThread(0);
-//	return 0;
-//}
-//
-//VOID DllSelfUnloading(_In_ const HMODULE hModule)
-//{
-//	PVOID pMemory = NULL;
-//	ULONG ulFuncSize;
-//	unsigned int uintThreadId = 0;
-//
-//	pMemory = VirtualAlloc(NULL, 0x1000, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
-//	if (pMemory != NULL)
-//	{
-//		ulFuncSize = (ULONG_PTR)DllUnloadThreadProc - (ULONG_PTR)DllSelfUnloading;
-//		if ((ulFuncSize >> 31) & 0x01)
-//		{
-//			ulFuncSize = (ULONG_PTR)DllSelfUnloading - (ULONG_PTR)DllUnloadThreadProc;
-//		}
-//
-//		memcpy(pMemory, DllUnloadThreadProc, ulFuncSize);
-//
-//		((PDLLUNLOADINFO)(((ULONG_PTR)pMemory) + 0x500))->m_fpFreeLibrary =
-//			(PFreeLibrary)GetProcAddress(GetModuleHandle(_T("kernel32.dll")), "FreeLibrary");
-//
-//		((PDLLUNLOADINFO)(((ULONG_PTR)pMemory) + 0x500))->m_fpExitThread =
-//			(PExitThread)GetProcAddress(GetModuleHandle(_T("kernel32.dll")), "ExitThread");
-//
-//		((PDLLUNLOADINFO)(((ULONG_PTR)pMemory) + 0x500))->m_hFreeModule = hModule;
-//
-//		_beginthreadex(NULL, 0, (PTHREADPROC)pMemory, (PVOID)(((ULONG_PTR)pMemory) + 0x500), 0, &uintThreadId);
-//	}
-//}
 
 BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 {

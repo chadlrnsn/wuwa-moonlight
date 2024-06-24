@@ -196,15 +196,10 @@ void Menu::PreventMoveOutOfWndBounds(const char* wndName) {
     }
 }
 
-void Menu::Render()
+void Menu::RenderMenu()
 {
-    static Headers tab{ PLAYER };
-    const char* tab_name = tab == PLAYER ? "Player" 
-        : tab == ESP ? "ESP" 
-        : tab == MISC ? "MISC" 
-        : tab == CONFIG ? "CONFIG" 
-        : tab == DEBUG ? "DEBUG" 
-        : 0;
+    static Headers tab = PLAYER;
+    const char* tab_names[] = { "Player", "ESP", "MISC", "CONFIG", "DEBUG" };
 
 
     if (ImGui::Begin("Moonlight", nullptr, /*ImGuiWindowFlags_NoDecoration |*/ ImGuiWindowFlags_NoTitleBar))
@@ -217,14 +212,11 @@ void Menu::Render()
         ImGuiStyle style = ImGui::GetStyle();
         ImDrawList* draw = ImGui::GetWindowDrawList();
 
-        // Определение минимальных размеров для MainLeft
         float minWidth = 120;
 
-        // Ограничение размеров для MainLeft
         ImVec2 mainLeftSize = ImVec2(ImGui::GetContentRegionAvail().x * 0.16f, ImGui::GetContentRegionAvail().y);
         mainLeftSize.x = ImClamp(mainLeftSize.x, minWidth, wndSize.x);
 
-        // Левое основное окно
         ImGui::BeginChild("MainLeft", mainLeftSize, 0);
         {
 
@@ -248,15 +240,15 @@ void Menu::Render()
 
             if (ImGui::BeginChild("LeftSide2", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), 0))
             {
-                for (unsigned int i = 0; i < Buttons.size(); ++i) 
+                for (unsigned int i = 0; i < HEADERS_COUNT; ++i)
                 {
-                    bool selected = (page == i);
+                    bool selected = (tab == static_cast<Headers>(i));
                     auto windowvars = ImGuiStyleVar_SelectableTextAlign;
 
                     ImGui::PushStyleVar(windowvars, ImVec2(0.5f, 0.5f));
 
-                    if (ImGui::Selectable(Buttons[i].btnLable, &selected, 0, ImVec2(ImGui::GetContentRegionAvail().x, 24)))
-                        page = i;
+                    if (ImGui::Selectable(tab_names[i], &selected, 0, ImVec2(ImGui::GetContentRegionAvail().x, 24)))
+                        tab = static_cast<Headers>(i);
 
                     ImGui::PopStyleVar();
 
@@ -274,9 +266,9 @@ void Menu::Render()
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(20, 20));
 
     ImGui::BeginChild("RightSide", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), 0);
-    switch (page) 
+    switch (tab)
     {
-        case 0: // Player
+        case PLAYER:
             god.DrawMenuItems();
             speedhack.DrawMenuItems();
             fly.DrawMenuItems();
@@ -286,30 +278,21 @@ void Menu::Render()
 
             break;
 
-        case 1: // Esp
+        case ESP:
             ImGui::Text("in dev.");
             break;
 
-        case 2: // Misc
+        case MISC:
             fpsUnlock.DrawMenuItems();
             if (ImGui::Button("Force exit"))
                 ExitProcess(0);
-
-            if (ImGui::Button("Success"))
-                ImGui::InsertNotification({ ImGuiToastType::Success, 3000, "That is a success! %s", "(Format here)" });
-            if (ImGui::Button("Warning"))
-                ImGui::InsertNotification({ ImGuiToastType::Warning, 3000, "Hello World! This is a warning! %d", 0x1337 });
-            //ImGui::InsertNotification({ ImGuiToastType::Error, 3000, "Hello World! This is an error! 0x%X", 0xDEADBEEF });
-            //ImGui::InsertNotification({ ImGuiToastType::Info, 3000, "Hello World! This is an info!" });
-
             break;
 
-        case 3: // Config 
+        case CONFIG: 
             ImGui::Text("in dev.");
             break;
 
-        case 4: // Debug
-            ImGui::Text("Debug Page");
+        case DEBUG:
             DebugMenu::DebugMainPage();
             break;
 
@@ -331,9 +314,9 @@ void Menu::RenderWatermark()
 
 
     ImGui::SetNextWindowPos(ImVec2(15, 15));
-    ImGui::SetNextWindowSize(ImVec2());
+    ImGui::SetNextWindowSize({});
 
-    ImGui::Begin("watermark", nullptr,
+    ImGui::Begin("watermark", nullptr, ImGuiWindowFlags_NoDecoration |
         ImGuiWindowFlags_NoResize |
         ImGuiWindowFlags_NoTitleBar |
         ImGuiWindowFlags_NoBackground |
@@ -342,10 +325,8 @@ void Menu::RenderWatermark()
         ImGuiWindowFlags_NoBringToFrontOnFocus |
         ImGuiWindowFlags_NoBackground |
         ImGuiWindowFlags_NoNavFocus |
-        ImGuiWindowFlags_NoNav
-    );
-
-    ImGui::Text("By chadlrnsn | Moonlight | %s | %s", std::ctime(&formatedtime), BuildInfo);
+        ImGuiWindowFlags_NoNav);
+    ImGui::Text("Moonlight | Build %s | %s", __DATE__, std::ctime(&formatedtime));
     ImGui::End();
 }
 
