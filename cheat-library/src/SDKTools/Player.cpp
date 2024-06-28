@@ -4,16 +4,9 @@ using namespace SDK;
 
 namespace SDKTools::Player
 {
-
-
-	bool IsPawnControlled(APawn* pawn)
+	bool IsPlayerLoaded()
 	{
-		return pawn->IsPawnControlled();
-	}
-
-	bool IsPlayerLoaded(UWorld* World)
-	{
-		
+		UWorld* World = UWorld::GetWorld();
 		if (!World)
 		{
 			std::cerr << "No world found" << std::endl;
@@ -48,10 +41,31 @@ namespace SDKTools::Player
 			return false;
 		}
 
-		APawn* IsControled = (APawn*)AcknowledgedPawn->IsPawnControlled();
-		if (!IsControled)
+		APawn* IsPawnControled = (APawn*)AcknowledgedPawn->IsPawnControlled();
+		if (!IsPawnControled)
 		{
 			std::cerr << "Pawn did not controlling!" << std::endl;
+			return false;
+		}
+
+		APawn* IsControlled = (APawn*)AcknowledgedPawn->IsControlled();
+		if (!IsControlled)
+		{
+			std::cerr << "Pawn not controlling!" << std::endl;
+			return false;
+		}
+		
+		APawn* IsPlayerControled = (APawn*)AcknowledgedPawn->IsPlayerControlled();
+		if (!IsPlayerControled)
+		{
+			std::cerr << "Player not controlling!" << std::endl;
+			return false;
+		}
+				
+		APawn* IsLocallyControlled = (APawn*)AcknowledgedPawn->IsLocallyControlled();
+		if (!IsLocallyControlled)
+		{
+			std::cerr << "Localy not controlling!" << std::endl;
 			return false;
 		}
 

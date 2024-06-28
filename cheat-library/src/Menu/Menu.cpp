@@ -52,7 +52,12 @@ void Menu::Setup()
     medium  = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
     bold    = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
     title   = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
+#ifndef _DEBUG
     icons   = io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icontfont_config, iconRanges);
+#else 
+    std::cout << "Awesome font will not be loaded due to DEBUG configuration!" << std::endl;
+#endif // _DEBUG
+
 
     io.FontDefault = regular;
 }

@@ -17,6 +17,12 @@
 #include "../PropertyFixup.hpp"
 #include "../UnrealContainers.hpp"
 
+/*
+	1 - GLOBAL
+	0 - CN
+*/
+#define GLOBAL_VERSION 1
+
 namespace SDK
 {
 
@@ -31,12 +37,21 @@ using namespace UC;
 */
 namespace Offsets
 {
+#if GLOBAL_VERSION
 	constexpr int32 GObjects = 0x07E8C2A8;
 	constexpr int32 AppendString = 0x02421AF0;
 	constexpr int32 GNames = 0x07E537C0;
 	constexpr int32 GWorld = 0x07D67888;
 	constexpr int32 ProcessEvent = 0x02625440;
 	constexpr int32 ProcessEventIdx = 0x00000049;
+#else
+	constexpr int32 GObjects = 0x07F74328;
+	constexpr int32 AppendString = 0x0247DA70;
+	constexpr int32 GNames = 0x07F3B840;
+	constexpr int32 GWorld = 0x081A86C0;
+	constexpr int32 ProcessEvent = 0x02681360;
+	constexpr int32 ProcessEventIdx = 0x00000049;
+#endif // GLOBAL_VERSION
 }
 
 namespace InSDKUtils

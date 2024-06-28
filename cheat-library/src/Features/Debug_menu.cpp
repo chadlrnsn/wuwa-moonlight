@@ -23,7 +23,7 @@ void DebugMenu::DebugMainPage()
 	UEngine* Engine = UEngine::GetEngine();
 	UWorld* World = UWorld::GetWorld();
 	
-	if (!SDKTools::Player::IsPlayerLoaded(World) || !SDKTools::World::IsPersistentLevelLoaded(World))
+	if (!IsFullyLoaded())
 		return;
 
 	ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];

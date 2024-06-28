@@ -62,14 +62,10 @@ int main(int argc, char* argv[])
 	}
 
 	InjectDLL(hProcess, tempDllPath.string());
+	InjectDLL(hProcess, currentBypassDllPath.string());
 #else
-	std::cout << "Injecting bypass" << std::endl;
-	if (InjectDLL(hProcess, currentBypassDllPath.string()))
-		std::cout << "Injected." << std::endl;
-
-	std::cout << "Injecting cheat dll" << std::endl;
-	if (InjectDLL(hProcess, currentDllPath.string()))
-		std::cout << "Injected successfully" << std::endl;
+	InjectDLL(hProcess, currentBypassDllPath.string());
+	InjectDLL(hProcess, currentDllPath.string());
 #endif
 
 	Sleep(2000);

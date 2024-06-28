@@ -126,6 +126,15 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 
 	while (!g_bUnload) {
 
+		// checking we on another window or no
+		if (window) {
+			if (GetForegroundWindow() != window)
+			{ 
+				std::this_thread::sleep_for(std::chrono::milliseconds(100));
+				continue;
+			}
+		}
+
 		if (GetAsyncKeyState(MenuKey) & 1)
 			menu.IsOpen = !menu.IsOpen;
 
@@ -159,6 +168,16 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 
 	while (!g_bUnload)
 	{
+
+		// checking we on another window or no
+		if (window) {
+			if (GetForegroundWindow() != window)
+			{
+				std::this_thread::sleep_for(std::chrono::milliseconds(100));
+				continue;
+			}
+		}
+
 		Engine = UEngine::GetEngine();
 		if (!Engine)
 			continue;
@@ -167,21 +186,15 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 		fpsUnlock.Run(userSettings, 1);
 
 		World = UWorld::GetWorld();
-		if (!World)
+		if (!IsValidPointer(World))
 			continue;
 
 		// this is important
-		if (!IsPersistentLevelLoaded(World) || !IsPlayerLoaded(World))
+		if (!IsFullyLoaded())
 			continue;
 
-		TArray<ULocalPlayer*> LocalPlayers = World->OwningGameInstance->LocalPlayers;
-		ULocalPlayer* LocalPlayer = nullptr;
 
-		if (!(LocalPlayers.Num() > 0))
-			continue;
-
-		LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
-
+		ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
 		APlayerController* PlayerController = LocalPlayer->PlayerController;
 		APawn* APawn = PlayerController->AcknowledgedPawn;
 
@@ -223,7 +236,7 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	{
 		if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
 		{
-			std::this_thread::sleep_for(std::chrono::milliseconds(100));
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 			kiero::bind(8, (void**)&oPresent, hkPresent);
 			kiero::bind(13, (void**)&oResizeBuffers, hkResizeBuffers);
 			init_hook = true;

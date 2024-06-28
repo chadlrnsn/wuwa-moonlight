@@ -78,6 +78,19 @@ namespace util
 		auto newFmt = string_format("%s. Error: %d %s", fmt, errorId, GetLastErrorAsString(errorId).c_str());
 		//Logger::Log(Logger::Level::Error, filepath, line, newFmt.c_str(), args ...);
 	}
+
+	template<typename T>
+	bool IsValidPointer(T* ptr)
+	{
+		if (ptr == nullptr)
+			return false;
+		MEMORY_BASIC_INFORMATION mbi;
+		if (VirtualQuery(ptr, &mbi, sizeof(mbi)) == 0)
+			return false;
+		if (mbi.Protect & (PAGE_NOACCESS | PAGE_GUARD))
+			return false;
+		return true;
+	}
 }
 
 

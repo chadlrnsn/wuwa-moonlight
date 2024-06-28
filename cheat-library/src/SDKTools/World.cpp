@@ -9,10 +9,16 @@ namespace SDKTools::World
 		if (!World)
 			return false;
 
-		ULevel* PLevel = World->PersistentLevel;
-		if (!PLevel || !PLevel->bIsVisible)
-		{
-			std::cerr << "No PersistentLevel found" << std::endl;
+		try {
+			//ULevel* PLevel = World->PersistentLevel;
+			if (!World->PersistentLevel || !World->PersistentLevel->OwningWorld)
+			{
+				std::cerr << "No PersistentLevel found" << std::endl;
+				return false;
+			}
+		}
+		catch (const std::exception& e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
 			return false;
 		}
 
@@ -20,31 +26,6 @@ namespace SDKTools::World
 		if (~levelStreams.Num() > 0)
 			return false;
 
-		for (ULevelStreaming* StreamingLevel : levelStreams)
-		{
-			if (!StreamingLevel)
-				continue;
-
-			FName StreamingLevelName = StreamingLevel->GetWorldAssetPackageFName();
-			if (sizeof(StreamingLevelName.ToString()) > 0)
-			{	
-				std::cout << StreamingLevelName.ToString() << std::endl;
-				return true;
-			}
-		}
-
-
-		// this is was critical bug
-		// Optionally, check if streaming levels are fully loaded
-		//const TArray<ULevelStreaming*>& StreamingLevels = World->StreamingLevels;
-		//for (ULevelStreaming* StreamingLevel : StreamingLevels)
-		//{
-		//	if (StreamingLevel && !StreamingLevel->IsLevelLoaded())
-		//	{
-		//		std::cerr << "No Level loaded" << std::endl;
-		//		return false;
-		//	}
-		//}
 
 		return true;
 	}
