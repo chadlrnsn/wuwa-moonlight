@@ -31,12 +31,12 @@ using namespace UC;
 */
 namespace Offsets
 {
-	constexpr int32 GObjects          = 0x07CFE4E8;
-	constexpr int32 AppendString      = 0x02348990;
-	constexpr int32 GNames            = 0x07CC5A00;
-	constexpr int32 GWorld            = 0x07BDCD50;
-	constexpr int32 ProcessEvent      = 0x0254B460;
-	constexpr int32 ProcessEventIdx   = 0x00000049;
+	constexpr int32 GObjects = 0x07E8C2A8;
+	constexpr int32 AppendString = 0x02421AF0;
+	constexpr int32 GNames = 0x07E537C0;
+	constexpr int32 GWorld = 0x07D67888;
+	constexpr int32 ProcessEvent = 0x02625440;
+	constexpr int32 ProcessEventIdx = 0x00000049;
 }
 
 namespace InSDKUtils
