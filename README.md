@@ -11,7 +11,7 @@
 
 ## How to use
 - Compile project in x64-Release or download release
-- Download `pipsi's bypass` from unknowncheats or join to our [discord server](https://discord.gg/RJuN8UG4MJ) after that put it to same direcory as `Moonlight.exe`
+- Download `pipsi's bypass` from unknowncheats or join to our [discord server](https://discord.gg/RJuN8UG4MJ) download pinned dll from [#download](https://discord.com/channels/1246834050119893064/1250821466593689660) channel and after that put it to same direcory as `Moonlight.exe`
 - Open `Moonlight.exe` in `bin\Release-x64` put there bypass and open
 - **See [How to use](HowToUse.md) if you are a beginner**
 
@@ -23,6 +23,20 @@
 
 <!-- ## Star History
 [![Star History Chart](https://api.star-history.com/svg?repos=chadlrnsn/wuwa-moonlight&type=Timeline)](https://star-history.com/#chadlrnsn/wuwa-moonlight&Timeline) -->
+
+## Working features
+- Speedhack
+- Flight
+- Gravity Scale
+- WalkableFloorZ
+- WalkableFloorAngle
+
+## Coming soon
+- ESP
+- GodMode
+- MultiHit
+- AutoLoot
+- Configs
 
 ## Thanks to
 [kiero hook](https://github.com/rdbo/ImGui-DirectX-11-Kiero-Hook)</br>
