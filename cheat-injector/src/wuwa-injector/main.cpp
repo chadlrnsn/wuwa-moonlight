@@ -1,14 +1,15 @@
+#include "pch.h"
 #include <Windows.h>
 #include <iostream>
 #include <sstream>
 #include <filesystem>
 
 #include <SimpleIni.h>
-//#include <wuwa-base/Logger.h>
 
 #include "injector.h"
 #include "util.h"
 #include <resource.h>
+#include <wuwa-base/Logger.h>
 
 const std::string GlobalWuwaProcName = "Client-Win64-Shipping.exe";
 const char* DLLPath = "moonlight.dll";
@@ -140,8 +141,8 @@ bool OpenGenshinProcess(HANDLE* phProcess, HANDLE* phThread)
 	{
 		//LOG_LAST_ERROR("Failed to create game process.");
 		printf("Failed to create game process.\n");
-		//LOG_ERROR("If you have problem with GenshinImpact.exe path. You can change it manually in cfg.ini.");
-		printf("If you have problem with GenshinImpact.exe path. You can change it manually in cfg.ini.\n");
+		//LOG_ERROR("If you have problem with Client-Win64-Shipping.exe path. You can change it manually in cfg.ini.");
+		printf("If you have problem with Client-Win64-Shipping.exe path. You can change it manually in cfg.ini.\n");
 	}
 
 	DeleteProcThreadAttributeList(AttributeList);

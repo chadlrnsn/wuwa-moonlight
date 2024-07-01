@@ -140,9 +140,10 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;_AMD64_;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\SimpleIni;$(ProjectDir)\src\wuwa-base\framework;$(ProjectDir)\vendor\imgui-notify</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)src\wuwa-base\framework;$(ProjectDir)\vendor;$(ProjectDir)\vendor\SimpleIni;$(ProjectDir)\vendor\imgui-notify</AdditionalIncludeDirectories>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

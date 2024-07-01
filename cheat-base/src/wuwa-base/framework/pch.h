@@ -28,14 +28,7 @@
 
 #include <Windows.h>
 
-//#include <imgui.h>
-//#include <imconfig.h>
-//#include <backends/imgui_impl_dx11.h>
-//#include <imgui_notify.h>
-
 #include <SimpleIni.h>
-//#include <fmt/format.h>
-//#include <detours.h>
 
 #include <wuwa-base/Logger.h>
 
@@ -45,5 +38,4 @@
 #include <wuwa-base/events/joins/handlereventjoin.hpp>
 #include <wuwa-base/events/joins/eventjoinwrapper.hpp>
 
-//#include <wuwa-base/globals.h>
 #endif //PCH_H

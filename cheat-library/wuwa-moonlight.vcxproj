@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -145,6 +145,8 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\fonts;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\kiero;$(ProjectDir)\vendor\UnrealEngine;$(SolutionDir)\cheat-base\src;$(SolutionDir)\cheat-base\vendor</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -166,6 +168,7 @@
     <ClInclude Include="src\Features\Fly.h" />
     <ClInclude Include="src\Features\GodMode.h" />
     <ClInclude Include="src\Features\GravityScale.h" />
+    <ClInclude Include="src\Features\MultiHit.h" />
     <ClInclude Include="src\Features\SpeedHack.h" />
     <ClInclude Include="src\Features\WalkableFloorAngle.h" />
     <ClInclude Include="src\Features\WalkableFloorZ.h" />
@@ -205,16 +208,20 @@
     <ClInclude Include="vendor\UnrealEngine\SDK\Engine_classes.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\Engine_parameters.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\Engine_structs.hpp" />
-    <ClInclude Include="vendor\UnrealEngine\SDK\InputCore_classes.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\GameplayAbilities_classes.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\GameplayAbilities_parameters.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\GameplayAbilities_structs.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\GameplayTags_classes.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\GameplayTags_parameters.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\GameplayTags_structs.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\GameplayTasks_classes.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\GameplayTasks_parameters.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\GameplayTasks_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\InputCore_structs.hpp" />
-    <ClInclude Include="vendor\UnrealEngine\SDK\KuroPuertsWrapper_classes.hpp" />
-    <ClInclude Include="vendor\UnrealEngine\SDK\KuroPuertsWrapper_parameters.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\PacketHandler_classes.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\PhysicsCore_classes.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\PhysicsCore_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\PropertyAccess_structs.hpp" />
-    <ClInclude Include="vendor\UnrealEngine\SDK\Puerts_classes.hpp" />
-    <ClInclude Include="vendor\UnrealEngine\SDK\Puerts_parameters.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\SlateCore_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\Slate_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\UnrealContainers.hpp" />
@@ -229,6 +236,7 @@
     <ClCompile Include="src\Features\Fly.cpp" />
     <ClCompile Include="src\Features\GodMode.cpp" />
     <ClCompile Include="src\Features\GravityScale.cpp" />
+    <ClCompile Include="src\Features\MultiHit.cpp" />
     <ClCompile Include="src\Features\SpeedHack.cpp" />
     <ClCompile Include="src\Features\WalkableFloorAngle.cpp" />
     <ClCompile Include="src\Features\WalkableFloorZ.cpp" />
@@ -250,12 +258,13 @@
     <ClCompile Include="vendor\kiero\minhook\src\hook.c" />
     <ClCompile Include="vendor\kiero\minhook\src\trampoline.c" />
     <ClCompile Include="src\Menu\Menu.cpp" />
+    <ClCompile Include="src\SDKTools\World.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\Basic.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\CoreUObject_functions.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\Engine_functions.cpp" />
-    <ClCompile Include="src\SDKTools\World.cpp" />
-    <ClCompile Include="vendor\UnrealEngine\SDK\KuroPuertsWrapper_functions.cpp" />
-    <ClCompile Include="vendor\UnrealEngine\SDK\Puerts_functions.cpp" />
+    <ClCompile Include="vendor\UnrealEngine\SDK\GameplayAbilities_functions.cpp" />
+    <ClCompile Include="vendor\UnrealEngine\SDK\GameplayTags_functions.cpp" />
+    <ClCompile Include="vendor\UnrealEngine\SDK\GameplayTasks_functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\kiero\minhook\dll_resources\MinHook.def" />

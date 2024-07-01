@@ -105,12 +105,14 @@
   <ItemGroup>
     <ClCompile Include="src\wuwa-injector\Injector.cpp" />
     <ClCompile Include="src\wuwa-injector\main.cpp" />
+    <ClCompile Include="src\wuwa-injector\pch.cpp" />
     <ClCompile Include="src\wuwa-injector\util.cpp" />
     <ClCompile Include="vendor\inject\load-library.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
     <ClInclude Include="src\wuwa-injector\Injector.h" />
+    <ClInclude Include="src\wuwa-injector\pch.h" />
     <ClInclude Include="src\wuwa-injector\util.h" />
     <ClInclude Include="toml\color.hpp" />
     <ClInclude Include="toml\combinator.hpp" />
