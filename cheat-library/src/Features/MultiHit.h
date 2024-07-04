@@ -10,6 +10,7 @@ public:
 	int iMax = 100;
 	int iMin = 1;
 	int iCurrent = 2;
+	bool bHooked = false;
 
 private:
 

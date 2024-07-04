@@ -134,55 +134,67 @@ void DebugMenu::DebugMainPage()
 
 	ImGui::Checkbox("Abilities", &bHits);
 
-	if (bHits) {
-		
-		ImGui::BeginChild(3, ImVec2(0, 100), true);
+	//if (bHits && !bOnce2) {
+	//	
+	//	ImGui::Begin("Abilities", 0);
 
-		// Get ability system component from pawn
+	//	// Get ability system component from pawn
 
-		AActor* OwnerActor = AcknowledgedPawn;
-		UAbilitySystemComponent* AbilitySystemComponent = static_cast<UAbilitySystemComponent*>(AcknowledgedPawn->GetComponentByClass(UAbilitySystemComponent::StaticClass()));
+	//	AActor* OwnerActor = AcknowledgedPawn;
+	//	UAbilitySystemComponent* AbilitySystemComponent = static_cast<UAbilitySystemComponent*>(AcknowledgedPawn->GetComponentByClass(UAbilitySystemComponent::StaticClass()));
 
-		// Show all abilities
-		static float fDuration = 0.0f;
+	//	// Show all abilities
+	//	static float fDuration = 0.0f;
 
-		ImGui::InputFloat("Duration", &fDuration);
-		if (AbilitySystemComponent->IncomingDuration != fDuration) {
-			AbilitySystemComponent->IncomingDuration = fDuration;
-		}
-	
-		// Print All Abilities
-		ImGui::Spacing();
+	//	ImGui::InputFloat("Duration", &fDuration);
+	//	if (AbilitySystemComponent->IncomingDuration != fDuration) {
+	//		AbilitySystemComponent->IncomingDuration = fDuration;
+	//	}
+	//
+	//	// Print All Abilities
+	//	ImGui::Spacing();
 
-		static int i = 0;
+	//	static int i = 0;
 
-		ImGui::Text("Abilities:");
+	//	ImGui::Text("Abilities:");
 
-		for (i = 0; i < AbilitySystemComponent->ActivatableAbilities.Owner->ActivatableAbilities.Items.Num(); i++)
-		{
-			if (!IsValidPointer(AbilitySystemComponent)) continue;
+	//	for (i = 0; i < AbilitySystemComponent->ActivatableAbilities.Owner->ActivatableAbilities.Items.Num(); i++)
+	//	{
+	//		if (!IsValidPointer(AbilitySystemComponent)) continue;
 
-			if (AbilitySystemComponent->ActivatableAbilities.Owner->OwnerActor->GetOwner())
-			{
-				UGameplayAbility* OwnedAbility = AbilitySystemComponent->ActivatableAbilities.Owner->ActivatableAbilities.Items[i].Ability;
+	//		if (AbilitySystemComponent->ActivatableAbilities.Owner->OwnerActor->GetOwner())
+	//		{
+	//			UGameplayAbility* OwnedAbility = AbilitySystemComponent->ActivatableAbilities.Owner->ActivatableAbilities.Items[i].Ability;
 
-				
-				ImGui::Text("Ability: [%s] Dur: [%.0f]", OwnedAbility->Name.ToString().c_str(), OwnedAbility->GetCooldownTimeRemaining());
-				if (ImGui::Button("Activate tasks")) {
-					OwnedAbility->ActiveTasks;
-				}
-				if (ImGui::Button("Activate")) {
-					OwnedAbility->ActivationRequiredTags.GameplayTags.Clear();
-					OwnedAbility->ActivationRequiredTags.ParentTags.Clear();
-				}
+	//			
+	//			ImGui::Text("Ability: [%s] Dur: [%.0f]", OwnedAbility->Name.ToString().c_str(), OwnedAbility->GetCooldownTimeRemaining());
+	//			if (ImGui::Button("Activate tasks")) {
+	//				OwnedAbility->ActiveTasks;
+	//			} 
+	//			ImGui::SameLine();
 
-				ImGui::Checkbox("bRetriggerInstancedAbility", &OwnedAbility->bRetriggerInstancedAbility);
+	//			if (ImGui::Button("Activate")) {
+	//				OwnedAbility->ActivationRequiredTags.GameplayTags.Clear();
+	//				OwnedAbility->ActivationRequiredTags.ParentTags.Clear();
+	//			}
 
-				ImGui::Text("%x", OwnedAbility->VTable);
+	//			ImGui::SameLine();
 
-			}
-		}
+	//			static bool bActivateTags = false;
+	//			ImGui::Checkbox("tags", &bActivateTags);
+	//			if (bActivateTags) {
+	//				for (static int j = 0; j < OwnedAbility->ActivationRequiredTags.GameplayTags.Num(); j++) {
+	//					ImGui::Text(OwnedAbility->ActivationRequiredTags.GameplayTags[j].TagName.ToString().c_str());
+	//				}
+	//			}
 
-		ImGui::EndChild();
-	}
+	//			ImGui::Checkbox("bRetriggerInstancedAbility", &OwnedAbility->bRetriggerInstancedAbility);
+
+	//			//ImGui::Text("%x", OwnedAbility->ProcessEvent());
+
+	//		}
+	//	}
+
+	//	ImGui::End();
+	//}
 }

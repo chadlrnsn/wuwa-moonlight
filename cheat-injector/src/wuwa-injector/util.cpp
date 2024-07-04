@@ -156,3 +156,19 @@ std::optional<std::string> GetOrSelectPath(CSimpleIni& ini, const char* section,
     ini.SetValue(section, name, selectedPath->c_str());
     return selectedPath;
 }
+
+//std::optional<std::string> GetOrSetLoadMethods(CSimpleIni& ini, const char* section, const char* name, const char* friendName, const char* filter)
+//{
+//
+//    // 
+//    auto savedPath = ini.GetValue(section, name);
+//    if (savedPath != nullptr)
+//        return std::string(savedPath);
+//
+//    printf("%s path not found. Please point to it manually.\n", friendName);
+//
+//
+//    ini.SetValue(section, name, selectedPath->c_str());
+//    return selectedPath;
+//}
+

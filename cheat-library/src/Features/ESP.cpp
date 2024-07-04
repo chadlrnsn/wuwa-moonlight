@@ -21,17 +21,18 @@ void ESP::Run(void** args, size_t numArgs)
 		return;
 	}
 
-	//CG::AActor* AcknowledgedPawn = (CG::AActor*)args[0];
+	AActor* AcknowledgedPawn = (AActor*)args[0];
 
-	//if (bGodMode && AcknowledgedPawn)
-	//{
-	//	AcknowledgedPawn->bCanBeDamaged = false;
-	//	bOnce = false;
-	//}
+	if (bEnabled && AcknowledgedPawn)
+	{
+		AcknowledgedPawn->bCanBeDamaged = false;
+		AcknowledgedPawn->bAllowReceiveTickEventOnDedicatedServer = false;
+		bOnce = false;
+	}
 
-	//if (!bGodMode && AcknowledgedPawn && !bOnce)
-	//{
-	//	AcknowledgedPawn->bCanBeDamaged = true;
-	//	bOnce = true;
-	//}
+	if (!bEnabled && AcknowledgedPawn && !bOnce)
+	{
+		AcknowledgedPawn->bCanBeDamaged = true;
+		bOnce = true;
+	}
 }

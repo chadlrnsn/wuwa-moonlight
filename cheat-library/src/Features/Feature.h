@@ -2,6 +2,9 @@
 #define IMGUI_DEFINE_MATH_OPERATORS
 #include <imgui.h>
 #include <SDK.hpp>
+#include <PE_Hook/PE_Hook.hpp>
+
+using namespace SDK;
 
 class Feature
 {

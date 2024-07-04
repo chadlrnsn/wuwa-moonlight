@@ -196,6 +196,7 @@
     <ClInclude Include="vendor\kiero\minhook\src\hde\table64.h" />
     <ClInclude Include="vendor\kiero\minhook\src\trampoline.h" />
     <ClInclude Include="src\Menu\Menu.hpp" />
+    <ClInclude Include="vendor\PE_Hook\PE_Hook.hpp" />
     <ClInclude Include="vendor\UnrealEngine\PropertyFixup.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\AudioPlatformConfiguration_structs.hpp" />
@@ -266,6 +267,7 @@
     <ClCompile Include="vendor\kiero\minhook\src\trampoline.c" />
     <ClCompile Include="src\Menu\Menu.cpp" />
     <ClCompile Include="src\SDKTools\World.cpp" />
+    <ClCompile Include="vendor\PE_Hook\PE_Hook.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\Basic.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\CoreUObject_functions.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\Engine_functions.cpp" />
