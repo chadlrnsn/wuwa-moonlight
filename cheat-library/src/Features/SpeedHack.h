@@ -17,6 +17,9 @@ public:
 	float fWorldMinSpeed = 1.0f;
 	float fWorldSpeed = 1.0f;
 
+	// Bindings
+	bool bSettingKey = false;
+	KeyBindToggle kbToggle = KeyBindToggle(KeyBind::KeyCode::Z);
 
 private:
 	bool bOnce = false;
@@ -39,7 +42,11 @@ public:
 	}
 
 	// Handle checking for any key/hotkey presses or holds needed for features
-	void HandleKeys() override {}
+	void HandleKeys() override {
+		if (GetAsyncKeyState(kbToggle.toInt()) & 0x1) {
+			bEnable = !bEnable;
+		}
+	}
 
 	// This should be run in the ImGUI draw loop, used to draw anything to the menu
 	void DrawMenuItems() override;

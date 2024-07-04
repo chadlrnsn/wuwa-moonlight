@@ -3,6 +3,8 @@
 #include <imgui.h>
 #include <SDK.hpp>
 #include <PE_Hook/PE_Hook.hpp>
+#include "Bindings.h"
+
 
 using namespace SDK;
 

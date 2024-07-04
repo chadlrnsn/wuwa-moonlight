@@ -397,7 +397,7 @@ namespace ImGui
 
         if (ImGui::GetActiveID() == id) {
             ImGui::PushStyleColor(ImGuiCol_Button, ImGui::GetColorU32(ImGuiCol_ButtonActive));
-            ImGui::Button("...", size);
+            ImGui::ButtonEx("...", size, ImGuiButtonFlags_NoKeyModifiers); // Use ImGui::ButtonEx() here
             ImGui::PopStyleColor();
 
             ImGui::GetCurrentContext()->ActiveIdAllowOverlap = true;
@@ -407,7 +407,7 @@ namespace ImGui
                 *setting = false;
             }
         }
-        else if (ImGui::Button(BtnName.c_str(), size) || *setting) {
+        else if (ImGui::ButtonEx(BtnName.c_str(), size, ImGuiButtonFlags_NoKeyModifiers) || *setting) { // Use ImGui::ButtonEx() here
             ImGui::SetActiveID(id, ImGui::GetCurrentWindow());
             *setting = true;
         }

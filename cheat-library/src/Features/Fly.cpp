@@ -16,8 +16,12 @@ void Fly::DrawMenuItems()
 
 		ImGui::Text("Flight Z axis speed");
 		ImGui::SliderFloat("## Flight Z axis speed", &fZSpeed, fZSpeedMin, fZSpeedMax );
+		ImGui::Checkbox("Prevent Anim Velecity", &bPreventAnimVelecity);
+
 
 		ImGui::EndChild();
+
+		// TODO: Move Up and Down keys
 		//ImGui::Text("Move Up");
 		//ImGui::SameLine();
 		//ImGui::Hotkey("##Move UP", kbUp, &bUpKey);
@@ -61,6 +65,10 @@ void Fly::Run(void** args, size_t numArgs)
 		if (GetAsyncKeyState(VK_LCONTROL))
 			CharacterMovement->Velocity.Z = CharacterMovement->LastUpdateVelocity.Z - fZSpeed;
 
+
+		// Stop player anim when flying
+		if (bPreventAnimVelecity)	
+			CharacterMovement->AnimRootMotionVelocity = FVector(0, 0, 0);
 
 
 		bFlySwitch = true;

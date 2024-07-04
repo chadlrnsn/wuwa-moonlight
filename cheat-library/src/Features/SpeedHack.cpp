@@ -3,6 +3,9 @@
 void SpeedHack::DrawMenuItems()
 {
 	ImGui::Checkbox("SpeedHack", &bEnable);
+	ImGui::SameLine();
+	ImGui::Hotkey("##SpeedHack Key", kbToggle, &bSettingKey);
+
 	if (bEnable) {
 		ImGui::Text("Speed Multiplier");
 		ImGui::SliderFloat("##Speed Multiplier", &fSpeed, fMinSpeed, fMaxSpeed);
@@ -22,6 +25,8 @@ void SpeedHack::Run(void** args, size_t numArgs)
 		Destroy();
 		return;
 	}
+	
+	HandleKeys();
 
 
 	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];

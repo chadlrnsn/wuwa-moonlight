@@ -21,6 +21,7 @@ public:
 	float fZSpeed = 500.0f;
 	float fZSpeedMin = 10.0f;
 	float fZSpeedMax = 2000.0f;
+	bool bPreventAnimVelecity = false;
 
 	KeyBindToggle kbToggle = KeyBindToggle(KeyBind::KeyCode::V);
 

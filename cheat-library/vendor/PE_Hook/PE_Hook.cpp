@@ -33,6 +33,11 @@ void VTable::FreeVTableCache()
 		free(this->m_vtable_cache);
 }
 
+/**
+ * Finds the index of the ProcessEvent function in the vtable.
+ *
+ * @return The index of the ProcessEvent function in the vtable, or -1 if not found.
+ */
 int ProcessEventHook::FindProcessEventIndex()
 {
 	if (!ValidPtr((void*)m_vtable) || this->m_vtablesize == -1)
@@ -56,22 +61,38 @@ int ProcessEventHook::FindProcessEventIndex()
 	return -1;
 }
 
+/**
+ * Apply a hook to a class function pointer.
+ *
+ * @param pClass memory address of the class
+ * @param pOrgFunc original function pointer
+ * @param pFunc new function pointer to be applied
+ */
 void ProcessEventHook::ApplyHook(std::uintptr_t pClass, std::uintptr_t pOrgFunc, std::uintptr_t pFunc)
 {
 	if (this->m_eventindex == -1 || this->m_vtablesize == -1)
+	{
+		std::cout << "Invalid event index or vtable size. Skipping hook application." << std::endl;
 		return;
+	}
 
 	if (pClass != m_class)
 	{
 		this->m_vtable = *reinterpret_cast<std::uintptr_t**>(pClass);
 
 		if (!ValidPtr((void*)m_vtable))
+		{
+			std::cout << "Invalid vtable pointer. Skipping hook application." << std::endl;
 			return;
+		}
 
 		this->m_vtable_cache = reinterpret_cast<decltype(m_vtable_cache)>(malloc(m_vtablesize));
 
 		if (!m_vtable_cache)
+		{
+			std::cout << "Failed to allocate memory for vtable cache. Skipping hook application." << std::endl;
 			return;
+		}
 
 		memcpy(m_vtable_cache, m_vtable, m_vtablesize);
 
@@ -84,3 +105,4 @@ void ProcessEventHook::ApplyHook(std::uintptr_t pClass, std::uintptr_t pOrgFunc,
 		this->m_class = pClass;
 	}
 }
+
