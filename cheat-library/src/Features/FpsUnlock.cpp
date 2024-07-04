@@ -1,4 +1,5 @@
 #include "FpsUnlock.h"
+#include "SDK.hpp"
 
 void FpsUnlock::DrawMenuItems()
 {
@@ -13,6 +14,7 @@ void FpsUnlock::DrawFPS()
 {
 	if (bShowFps)
 	{
+		SDK::UWorld* World = SDK::UWorld::GetWorld();
 		fFPS = ("%.1f", ImGui::GetIO().Framerate);
 
 		char fpsText[32];

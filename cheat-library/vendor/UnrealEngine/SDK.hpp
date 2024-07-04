@@ -27,7 +27,9 @@
 #include "SDK/GameplayTags_structs.hpp"
 #include "SDK/GameplayAbilities_structs.hpp"
 #include "SDK/GameplayAbilities_classes.hpp"
-
+#include "SDK/WorldFunctionLibrary_classes.hpp"
+#include "SDK/TsAnimNotifyAddBuff_classes.hpp"
+#include "SDK/TsAnimNotifyReSkillEvent_classes.hpp"
 /*
 #include "SDK/AnimationCore_structs.hpp"
 #include "SDK/AnimGraphRuntime_structs.hpp"
@@ -151,7 +153,6 @@
 #include "SDK/EDetachType_structs.hpp"
 #include "SDK/ERelation_structs.hpp"
 #include "SDK/EPawnChannel_structs.hpp"
-#include "SDK/WorldFunctionLibrary_classes.hpp"
 #include "SDK/ImageWriteQueue_structs.hpp"
 #include "SDK/ImageWriteQueue_classes.hpp"
 #include "SDK/RoadNetNavigationRuntime_classes.hpp"
@@ -169,7 +170,6 @@
 #include "SDK/EHeadStateViewType_structs.hpp"
 #include "SDK/KuroLogAnalyzer_classes.hpp"
 #include "SDK/JsEnv_classes.hpp"
-#include "SDK/TsAnimNotifyAddBuff_classes.hpp"
 #include "SDK/Puerts_classes.hpp"
 #include "SDK/AkAudio_structs.hpp"
 #include "SDK/WwiseFileHandler_structs.hpp"

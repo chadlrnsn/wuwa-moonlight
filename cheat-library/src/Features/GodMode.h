@@ -7,6 +7,7 @@ private:
 
 public:
 	bool bGodMode = false;
+	int iDmgTest = 1;
 
 private:
 	bool bOnce = false;

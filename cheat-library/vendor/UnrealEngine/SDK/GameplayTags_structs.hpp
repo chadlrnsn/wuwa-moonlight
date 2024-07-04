@@ -72,24 +72,6 @@ enum class EGameplayTagSourceType : uint8
 	EGameplayTagSourceType_MAX               = 6,
 };
 
-// ScriptStruct GameplayTags.GameplayTagSource
-// 0x0020 (0x0020 - 0x0000)
-struct FGameplayTagSource final
-{
-public:
-	class FName                                   SourceName;                                        // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGameplayTagSourceType                        SourceType;                                        // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25FB[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameplayTagsList*                      SourceTagList;                                     // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class URestrictedGameplayTagsList*            SourceRestrictedTagList;                           // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FGameplayTagSource) == 0x000008, "Wrong alignment on FGameplayTagSource");
-static_assert(sizeof(FGameplayTagSource) == 0x000020, "Wrong size on FGameplayTagSource");
-static_assert(offsetof(FGameplayTagSource, SourceName) == 0x000000, "Member 'FGameplayTagSource::SourceName' has a wrong offset!");
-static_assert(offsetof(FGameplayTagSource, SourceType) == 0x00000C, "Member 'FGameplayTagSource::SourceType' has a wrong offset!");
-static_assert(offsetof(FGameplayTagSource, SourceTagList) == 0x000010, "Member 'FGameplayTagSource::SourceTagList' has a wrong offset!");
-static_assert(offsetof(FGameplayTagSource, SourceRestrictedTagList) == 0x000018, "Member 'FGameplayTagSource::SourceRestrictedTagList' has a wrong offset!");
-
 // ScriptStruct GameplayTags.GameplayTag
 // 0x000C (0x000C - 0x0000)
 struct FGameplayTag final
@@ -100,26 +82,6 @@ public:
 static_assert(alignof(FGameplayTag) == 0x000004, "Wrong alignment on FGameplayTag");
 static_assert(sizeof(FGameplayTag) == 0x00000C, "Wrong size on FGameplayTag");
 static_assert(offsetof(FGameplayTag, TagName) == 0x000000, "Member 'FGameplayTag::TagName' has a wrong offset!");
-
-// ScriptStruct GameplayTags.GameplayTagQuery
-// 0x0048 (0x0048 - 0x0000)
-struct FGameplayTagQuery final
-{
-public:
-	int32                                         TokenStreamVersion;                                // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_25FC[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FGameplayTag>                   TagDictionary;                                     // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	TArray<uint8>                                 QueryTokenStream;                                  // 0x0018(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	class FString                                 UserDescription;                                   // 0x0028(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FString                                 AutoDescription;                                   // 0x0038(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-};
-static_assert(alignof(FGameplayTagQuery) == 0x000008, "Wrong alignment on FGameplayTagQuery");
-static_assert(sizeof(FGameplayTagQuery) == 0x000048, "Wrong size on FGameplayTagQuery");
-static_assert(offsetof(FGameplayTagQuery, TokenStreamVersion) == 0x000000, "Member 'FGameplayTagQuery::TokenStreamVersion' has a wrong offset!");
-static_assert(offsetof(FGameplayTagQuery, TagDictionary) == 0x000008, "Member 'FGameplayTagQuery::TagDictionary' has a wrong offset!");
-static_assert(offsetof(FGameplayTagQuery, QueryTokenStream) == 0x000018, "Member 'FGameplayTagQuery::QueryTokenStream' has a wrong offset!");
-static_assert(offsetof(FGameplayTagQuery, UserDescription) == 0x000028, "Member 'FGameplayTagQuery::UserDescription' has a wrong offset!");
-static_assert(offsetof(FGameplayTagQuery, AutoDescription) == 0x000038, "Member 'FGameplayTagQuery::AutoDescription' has a wrong offset!");
 
 // ScriptStruct GameplayTags.GameplayTagContainer
 // 0x0020 (0x0020 - 0x0000)
@@ -134,43 +96,13 @@ static_assert(sizeof(FGameplayTagContainer) == 0x000020, "Wrong size on FGamepla
 static_assert(offsetof(FGameplayTagContainer, GameplayTags) == 0x000000, "Member 'FGameplayTagContainer::GameplayTags' has a wrong offset!");
 static_assert(offsetof(FGameplayTagContainer, ParentTags) == 0x000010, "Member 'FGameplayTagContainer::ParentTags' has a wrong offset!");
 
-// ScriptStruct GameplayTags.GameplayTagNode
-// 0x0058 (0x0058 - 0x0000)
-struct alignas(0x08) FGameplayTagNode final
-{
-public:
-	uint8                                         Pad_25FD[0x58];                                    // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGameplayTagNode) == 0x000008, "Wrong alignment on FGameplayTagNode");
-static_assert(sizeof(FGameplayTagNode) == 0x000058, "Wrong size on FGameplayTagNode");
-
-// ScriptStruct GameplayTags.GameplayTagCreationWidgetHelper
-// 0x0001 (0x0001 - 0x0000)
-struct FGameplayTagCreationWidgetHelper final
-{
-public:
-	uint8                                         Pad_25FE[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGameplayTagCreationWidgetHelper) == 0x000001, "Wrong alignment on FGameplayTagCreationWidgetHelper");
-static_assert(sizeof(FGameplayTagCreationWidgetHelper) == 0x000001, "Wrong size on FGameplayTagCreationWidgetHelper");
-
-// ScriptStruct GameplayTags.GameplayTagReferenceHelper
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FGameplayTagReferenceHelper final
-{
-public:
-	uint8                                         Pad_25FF[0x10];                                    // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGameplayTagReferenceHelper) == 0x000008, "Wrong alignment on FGameplayTagReferenceHelper");
-static_assert(sizeof(FGameplayTagReferenceHelper) == 0x000010, "Wrong size on FGameplayTagReferenceHelper");
-
 // ScriptStruct GameplayTags.GameplayTagTableRow
 // 0x0020 (0x0028 - 0x0008)
 struct FGameplayTagTableRow : public FTableRowBase
 {
 public:
 	class FName                                   Tag;                                               // 0x0008(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2600[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2665[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 DevComment;                                        // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FGameplayTagTableRow) == 0x000008, "Wrong alignment on FGameplayTagTableRow");
@@ -184,11 +116,79 @@ struct FRestrictedGameplayTagTableRow final : public FGameplayTagTableRow
 {
 public:
 	bool                                          bAllowNonRestrictedChildren;                       // 0x0028(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2601[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2666[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRestrictedGameplayTagTableRow) == 0x000008, "Wrong alignment on FRestrictedGameplayTagTableRow");
 static_assert(sizeof(FRestrictedGameplayTagTableRow) == 0x000030, "Wrong size on FRestrictedGameplayTagTableRow");
 static_assert(offsetof(FRestrictedGameplayTagTableRow, bAllowNonRestrictedChildren) == 0x000028, "Member 'FRestrictedGameplayTagTableRow::bAllowNonRestrictedChildren' has a wrong offset!");
+
+// ScriptStruct GameplayTags.GameplayTagQuery
+// 0x0048 (0x0048 - 0x0000)
+struct FGameplayTagQuery final
+{
+public:
+	int32                                         TokenStreamVersion;                                // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2667[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FGameplayTag>                   TagDictionary;                                     // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<uint8>                                 QueryTokenStream;                                  // 0x0018(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	class FString                                 UserDescription;                                   // 0x0028(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FString                                 AutoDescription;                                   // 0x0038(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+};
+static_assert(alignof(FGameplayTagQuery) == 0x000008, "Wrong alignment on FGameplayTagQuery");
+static_assert(sizeof(FGameplayTagQuery) == 0x000048, "Wrong size on FGameplayTagQuery");
+static_assert(offsetof(FGameplayTagQuery, TokenStreamVersion) == 0x000000, "Member 'FGameplayTagQuery::TokenStreamVersion' has a wrong offset!");
+static_assert(offsetof(FGameplayTagQuery, TagDictionary) == 0x000008, "Member 'FGameplayTagQuery::TagDictionary' has a wrong offset!");
+static_assert(offsetof(FGameplayTagQuery, QueryTokenStream) == 0x000018, "Member 'FGameplayTagQuery::QueryTokenStream' has a wrong offset!");
+static_assert(offsetof(FGameplayTagQuery, UserDescription) == 0x000028, "Member 'FGameplayTagQuery::UserDescription' has a wrong offset!");
+static_assert(offsetof(FGameplayTagQuery, AutoDescription) == 0x000038, "Member 'FGameplayTagQuery::AutoDescription' has a wrong offset!");
+
+// ScriptStruct GameplayTags.GameplayTagCreationWidgetHelper
+// 0x0001 (0x0001 - 0x0000)
+struct FGameplayTagCreationWidgetHelper final
+{
+public:
+	uint8                                         Pad_2668[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGameplayTagCreationWidgetHelper) == 0x000001, "Wrong alignment on FGameplayTagCreationWidgetHelper");
+static_assert(sizeof(FGameplayTagCreationWidgetHelper) == 0x000001, "Wrong size on FGameplayTagCreationWidgetHelper");
+
+// ScriptStruct GameplayTags.GameplayTagReferenceHelper
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FGameplayTagReferenceHelper final
+{
+public:
+	uint8                                         Pad_2669[0x10];                                    // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGameplayTagReferenceHelper) == 0x000008, "Wrong alignment on FGameplayTagReferenceHelper");
+static_assert(sizeof(FGameplayTagReferenceHelper) == 0x000010, "Wrong size on FGameplayTagReferenceHelper");
+
+// ScriptStruct GameplayTags.GameplayTagNode
+// 0x0058 (0x0058 - 0x0000)
+struct alignas(0x08) FGameplayTagNode final
+{
+public:
+	uint8                                         Pad_266A[0x58];                                    // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGameplayTagNode) == 0x000008, "Wrong alignment on FGameplayTagNode");
+static_assert(sizeof(FGameplayTagNode) == 0x000058, "Wrong size on FGameplayTagNode");
+
+// ScriptStruct GameplayTags.GameplayTagSource
+// 0x0020 (0x0020 - 0x0000)
+struct FGameplayTagSource final
+{
+public:
+	class FName                                   SourceName;                                        // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGameplayTagSourceType                        SourceType;                                        // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_266B[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameplayTagsList*                      SourceTagList;                                     // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class URestrictedGameplayTagsList*            SourceRestrictedTagList;                           // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FGameplayTagSource) == 0x000008, "Wrong alignment on FGameplayTagSource");
+static_assert(sizeof(FGameplayTagSource) == 0x000020, "Wrong size on FGameplayTagSource");
+static_assert(offsetof(FGameplayTagSource, SourceName) == 0x000000, "Member 'FGameplayTagSource::SourceName' has a wrong offset!");
+static_assert(offsetof(FGameplayTagSource, SourceType) == 0x00000C, "Member 'FGameplayTagSource::SourceType' has a wrong offset!");
+static_assert(offsetof(FGameplayTagSource, SourceTagList) == 0x000010, "Member 'FGameplayTagSource::SourceTagList' has a wrong offset!");
+static_assert(offsetof(FGameplayTagSource, SourceRestrictedTagList) == 0x000018, "Member 'FGameplayTagSource::SourceRestrictedTagList' has a wrong offset!");
 
 // ScriptStruct GameplayTags.RestrictedConfigInfo
 // 0x0020 (0x0020 - 0x0000)

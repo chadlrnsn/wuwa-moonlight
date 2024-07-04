@@ -222,6 +222,27 @@
     <ClInclude Include="vendor\UnrealEngine\SDK\GameplayTasks_structs.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\UnrealEngine\SDK\EDetachType_structs.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\UnrealEngine\SDK\EPawnChannel_structs.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\UnrealEngine\SDK\ERelation_structs.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\UnrealEngine\SDK\EWeatherState_structs.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\UnrealEngine\SDK\EWuYinQuState_structs.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\UnrealEngine\SDK\WorldFunctionLibrary_classes.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\UnrealEngine\SDK\WorldFunctionLibrary_parameters.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\dllmain.cpp">
@@ -333,6 +354,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="vendor\UnrealEngine\SDK\GameplayTasks_functions.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\UnrealEngine\SDK\WorldFunctionLibrary_functions.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

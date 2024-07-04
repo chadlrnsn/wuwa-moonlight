@@ -205,9 +205,14 @@
     <ClInclude Include="vendor\UnrealEngine\SDK\CoreUObject_parameters.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\CoreUObject_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\DeveloperSettings_classes.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\EDetachType_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\Engine_classes.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\Engine_parameters.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\Engine_structs.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\EPawnChannel_structs.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\ERelation_structs.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\EWeatherState_structs.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\EWuYinQuState_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\GameplayAbilities_classes.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\GameplayAbilities_parameters.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\GameplayAbilities_structs.hpp" />
@@ -224,6 +229,8 @@
     <ClInclude Include="vendor\UnrealEngine\SDK\PropertyAccess_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\SlateCore_structs.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\Slate_structs.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\WorldFunctionLibrary_classes.hpp" />
+    <ClInclude Include="vendor\UnrealEngine\SDK\WorldFunctionLibrary_parameters.hpp" />
     <ClInclude Include="vendor\UnrealEngine\UnrealContainers.hpp" />
     <ClInclude Include="src\SDKTools\World.h" />
   </ItemGroup>
@@ -265,6 +272,7 @@
     <ClCompile Include="vendor\UnrealEngine\SDK\GameplayAbilities_functions.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\GameplayTags_functions.cpp" />
     <ClCompile Include="vendor\UnrealEngine\SDK\GameplayTasks_functions.cpp" />
+    <ClCompile Include="vendor\UnrealEngine\SDK\WorldFunctionLibrary_functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\kiero\minhook\dll_resources\MinHook.def" />

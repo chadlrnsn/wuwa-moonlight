@@ -81,7 +81,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	
 	if (!firstnotify)
 	{
-		ImGui::InsertNotification({ ImGuiToastType::Warning, 15000, "This cheat was created for free use, if you bought it - you got scamed" });
+		ImGui::InsertNotification({ ImGuiToastType::Warning, 20000, "This cheat is for free use, if you bought it - you got scamed" });
 		firstnotify = true;
 	}
 
@@ -109,6 +109,11 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	return oPresent(pSwapChain, SyncInterval, Flags);
 }
 
+HRESULT __stdcall hkPresent_visuals(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
+{
+
+	return hkPresent(pSwapChain, SyncInterval, Flags);
+}
 
 HRESULT __stdcall hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags)
 {
@@ -170,20 +175,18 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 	{
 
 		// checking we on another window or no
-		if (window) {
-			if (GetForegroundWindow() != window)
-			{
-				std::this_thread::sleep_for(std::chrono::milliseconds(100));
-				continue;
-			}
+		if (window && GetForegroundWindow() != window)
+		{
+			std::this_thread::sleep_for(std::chrono::milliseconds(100));
+			continue;
 		}
 
 		Engine = UEngine::GetEngine();
 		if (!Engine)
 			continue;
 
-		void* userSettings[1] = { Engine };
-		fpsUnlock.Run(userSettings, 1);
+		void* enginePtr[1] = { Engine };
+		fpsUnlock.Run(enginePtr, 1);
 
 		World = UWorld::GetWorld();
 		if (!IsValidPointer(World))
@@ -196,19 +199,22 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 
 		ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
 		APlayerController* PlayerController = LocalPlayer->PlayerController;
-		APawn* APawn = PlayerController->AcknowledgedPawn;
+		APawn* AcknowledgedPawn = PlayerController->AcknowledgedPawn;
+		UPawnMovementComponent* MovementComponent = AcknowledgedPawn->GetMovementComponent();
 
-		void* AcknowledgePawnPtr[2] = { APawn, World };
+		void* acknowledgePawnPtr[2] = { AcknowledgedPawn, World };
 
-		speedhack.Run( AcknowledgePawnPtr, 1 );
-		god.Run( AcknowledgePawnPtr, 1 );
-		gravityScale.Run( AcknowledgePawnPtr, 1 );
-		walkFloorZ.Run( AcknowledgePawnPtr, 1 );
-		walkFloorAngle.Run(AcknowledgePawnPtr , 1 );
+		speedhack.Run(acknowledgePawnPtr, 1);
+		god.Run(acknowledgePawnPtr, 1);
+		gravityScale.Run(acknowledgePawnPtr, 1);
+		walkFloorZ.Run(acknowledgePawnPtr, 1);
+		walkFloorAngle.Run(acknowledgePawnPtr, 1);
 
-		UPawnMovementComponent* MoveComponent = APawn->GetMovementComponent();
-		void* flyArgs[2] = { MoveComponent, APawn };
-		fly.Run(flyArgs, 1);
+		hitMultiplier.Run(acknowledgePawnPtr, 1);
+
+		UPawnMovementComponent* MoveComponent = AcknowledgedPawn->GetMovementComponent();
+		void* flyArgs[2] = { AcknowledgedPawn, MoveComponent };
+		fly.Run(flyArgs, 1);;
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
@@ -237,7 +243,9 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 		if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
 		{
 			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-			kiero::bind(8, (void**)&oPresent, hkPresent);
+			if (kiero::bind(8, (void**)&oPresent, hkPresent))
+				kiero::bind(8, (void**)&oPresent, hkPresent_visuals);
+
 			kiero::bind(13, (void**)&oResizeBuffers, hkResizeBuffers);
 			init_hook = true;
 		}

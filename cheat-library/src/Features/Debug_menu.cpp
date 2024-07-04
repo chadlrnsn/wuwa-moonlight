@@ -4,8 +4,42 @@
 #include <globals.h>
 #include "Features.h"
 #include <SDKTools/SDKTools.hpp>
+#include <wuwa-base/util.h>
 
 using namespace SDK;
+
+typedef void(__thiscall* processEventFn)(SDK::UObject*, SDK::UObject*, void*);
+using fn = void(__thiscall*)(UObject*, UObject*);
+using pevent_fn = void(__thiscall*)(UObject*, UObject*, void* params);
+
+fn original = 0;
+pevent_fn oProcessEvent = 0;
+int post_render_index = 0x46;
+int post_event_index = 0x49;
+
+
+void PostRenderHook(UObject* _this, UObject* canvas)
+{
+	original(_this, canvas);
+}
+
+void hkProcessEvent(UObject* caller, UFunction* fn, void* params) {
+	oProcessEvent(caller, fn, params);
+}
+
+BYTE* vmt_hook(void** VTable, int32 index, void* fn)
+{
+	BYTE* org = reinterpret_cast<BYTE*>(VTable[index]);
+
+	DWORD protect = 0;
+
+	VirtualProtect(&VTable[index], 8, PAGE_EXECUTE_READWRITE, &protect);
+
+	VTable[index] = fn;
+
+	VirtualProtect(&VTable[index], 8, protect, 0);
+	return org;
+}
 
 float fDefaultFOV = 90;
 float fDefaultFOVOverride = 90;
@@ -20,6 +54,8 @@ bool bFpsUnlock = false;
 void DebugMenu::DebugMainPage()
 {
 
+	static DWORD protect = 0;
+
 	UEngine* Engine = UEngine::GetEngine();
 	UWorld* World = UWorld::GetWorld();
 	
@@ -31,7 +67,6 @@ void DebugMenu::DebugMainPage()
 	APawn* AcknowledgedPawn = PlayerController->AcknowledgedPawn;
 
 
-
 	ImGui::Text("Build %s", &BuildInfo);
 	ImGui::Text("GWorld -> 0x%d", &World);
 	ImGui::Text("GEngine -> 0x%d", &Engine);
@@ -39,99 +74,115 @@ void DebugMenu::DebugMainPage()
 	ImGui::Text("APlayerController -> 0x%d", &PlayerController);
 	ImGui::Text("APawn -> 0x%d", &AcknowledgedPawn);
 
-	static bool bAlwaysSunny = false;
-	ImGui::Checkbox("Always sunny not implemented yet", &bAlwaysSunny);
-	if (bAlwaysSunny) {}
-
 	FVector pos = AcknowledgedPawn->K2_GetActorLocation();
-	ImGui::InputFloat("X", &pos.X);
-	ImGui::InputFloat("Y", &pos.Y);
-	ImGui::InputFloat("Z", &pos.Z);
 
-	
 	ImGui::SeparatorText("CharacterMovement");
 	UCharacterMovementComponent* CharacterMovement = PlayerController->Character->CharacterMovement;
-	ImGui::BeginGroup();
+	ImGui::BeginChild(1, ImVec2(0,200), true);
 	{
 		ImGui::InputFloat("AirControl", &CharacterMovement->AirControl);
 
 		FVector vel = CharacterMovement->Velocity;
 		ImGui::Text("Velocity");
-		ImGui::InputFloat("VX", &CharacterMovement->Velocity.X);
-		ImGui::InputFloat("VY", &CharacterMovement->Velocity.Y);
-		ImGui::InputFloat("VZ", &CharacterMovement->Velocity.Z);
+		ImGui::SliderFloat("VX", &CharacterMovement->Velocity.X, 0.1f, 100000.0f);
+		ImGui::SliderFloat("VY", &CharacterMovement->Velocity.Y, 0.1f, 100000.0f);
+		ImGui::SliderFloat("VZ", &CharacterMovement->Velocity.Z, 0.1f, 100000.0f);
 
 	}
-	ImGui::EndGroup();
+	ImGui::EndChild();
 
 
-	static bool bEsp = false;
-	static struct FESP
+
+	static FVector newActorScale{};
+
+	static bool bActorscale = false;
+	static bool bOnce = false;
+
+	ImGui::Spacing();
+
+	ImGui::Checkbox("Actor scale", &bActorscale);
+	if (bActorscale) {
+		ImGui::BeginChild(2, ImVec2(0, 200), true);
+
+		ImGui::InputFloat("X", &newActorScale.X);
+		ImGui::InputFloat("Y", &newActorScale.Y);
+		ImGui::InputFloat("Z", &newActorScale.Z);
+
+		ImGui::EndChild();
+		AcknowledgedPawn->SetActorScale3D(newActorScale);
+		bOnce = false;
+	}
+	if (!bActorscale && !bOnce)
 	{
-		float Distance;
-		float Min;
-		float Max;
-	};
+		AcknowledgedPawn->SetActorScale3D({1,1,1});
+		bOnce = true;
+	}
 
-	FESP esp;
-	esp.Distance = 10000;
-	esp.Min = 1;
-	esp.Max = 100000;
+	static bool bMapTeleport = false;
+	ImGui::Checkbox("Map teleport", &bMapTeleport);
+	ImGui::SameLine();
+	ImGui::Text("Double click on map");
 
-	static struct ActorInfo
-	{
-		const char* Name;
-		std::string ClassName;
-		FVector Position;
-		FString HP;
-	};
+	if (bMapTeleport) {
+		ImGui::Text("in dev");
+	}
 
-	ImGui::Checkbox("ESP", &bEsp);
-	if (bEsp)
-	{
-		ImGui::Text("Im not done ESP yet");
-		ImGui::SliderFloat("Render Distance", &esp.Distance, esp.Min, esp.Max);
+	static bool bHits = false;
+	static bool bOnce2 = false;
+	static void** VFTable = &(LocalPlayer->ViewportClient->VTable);
+
+
+	ImGui::Checkbox("Abilities", &bHits);
+
+	if (bHits) {
 		
-		ULevel* Level = World->PersistentLevel;
-		if (Level)
+		ImGui::BeginChild(3, ImVec2(0, 100), true);
+
+		// Get ability system component from pawn
+
+		AActor* OwnerActor = AcknowledgedPawn;
+		UAbilitySystemComponent* AbilitySystemComponent = static_cast<UAbilitySystemComponent*>(AcknowledgedPawn->GetComponentByClass(UAbilitySystemComponent::StaticClass()));
+
+		// Show all abilities
+		static float fDuration = 0.0f;
+
+		ImGui::InputFloat("Duration", &fDuration);
+		if (AbilitySystemComponent->IncomingDuration != fDuration) {
+			AbilitySystemComponent->IncomingDuration = fDuration;
+		}
+	
+		// Print All Abilities
+		ImGui::Spacing();
+
+		static int i = 0;
+
+		ImGui::Text("Abilities:");
+
+		for (i = 0; i < AbilitySystemComponent->ActivatableAbilities.Owner->ActivatableAbilities.Items.Num(); i++)
 		{
-			// Создаем массив для хранения объектов
-			TArray<AActor*> FoundActors;
+			if (!IsValidPointer(AbilitySystemComponent)) continue;
 
-			// Получаем список всех объектов заданного типа на уровне
-			
-			UGameplayStatics::GetAllActorsOfClass(World, AActor::StaticClass(), &FoundActors);
-
-			// Вывести имена всех найденных объектов
-			for (AActor* Actor : FoundActors)
+			if (AbilitySystemComponent->ActivatableAbilities.Owner->OwnerActor->GetOwner())
 			{
-				if (Actor)
-				{
-					ActorInfo Info;
-					Info.Name = Actor->GetName().c_str();
-					Info.ClassName = Actor->Class->GetName();
-					Info.Position = Actor->K2_GetActorLocation();
+				UGameplayAbility* OwnedAbility = AbilitySystemComponent->ActivatableAbilities.Owner->ActivatableAbilities.Items[i].Ability;
 
-					if (ImGui::Selectable(Info.Name, false))
-					{
-						
-					}
-					// Попытка получить здоровье, если объект поддерживает интерфейс здоровья
-					//if (Actor->Implements<UHealthInterface>())
-					//{
-					//	IHealthInterface* HealthInterface = Cast<IHealthInterface>(Actor);
-					//	if (HealthInterface)
-					//	{
-					//		Info.HP = HealthInterface->GetHealth();
-					//	}
-					//}
-					//else
-					//{
-					//	Info.HP = -1.0f; // Указать, что HP недоступно
-					//}
-
+				
+				ImGui::Text("Ability: [%s] Dur: [%.0f]", OwnedAbility->Name.ToString().c_str(), OwnedAbility->GetCooldownTimeRemaining());
+				if (ImGui::Button("Activate tasks")) {
+					OwnedAbility->ActiveTasks;
 				}
+				if (ImGui::Button("Activate")) {
+					OwnedAbility->ActivationRequiredTags.GameplayTags.Clear();
+					OwnedAbility->ActivationRequiredTags.ParentTags.Clear();
+				}
+
+				ImGui::Checkbox("bRetriggerInstancedAbility", &OwnedAbility->bRetriggerInstancedAbility);
+
+				ImGui::Text("%x", OwnedAbility->VTable);
+
 			}
 		}
+
+		ImGui::EndChild();
 	}
 }

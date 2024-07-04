@@ -7,6 +7,7 @@
 #include "WalkableFloorZ.h"
 #include "WalkableFloorAngle.h"
 #include "FpsUnlock.h"
+#include "MultiHit.h"
 
 #include "Debug_menu.h"
 
@@ -17,3 +18,4 @@ inline WalkableFloorZ walkFloorZ;
 inline WalkableFloorAngle walkFloorAngle;
 inline Fly fly;
 inline FpsUnlock fpsUnlock;
+inline HitMultiplier hitMultiplier;

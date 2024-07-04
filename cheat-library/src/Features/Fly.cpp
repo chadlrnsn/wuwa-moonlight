@@ -8,12 +8,16 @@ void Fly::DrawMenuItems()
 
 	if (bEnabled)
 	{
+		ImGui::BeginChild(1, ImVec2(0, 150), 1);
+
 		ImGui::Checkbox("NoClip", &bNoClip);
 		ImGui::Text("Flight Speed Multiplier");
 		ImGui::SliderFloat("## Flight Speed Multiplier", &fSpeed, fMinSpeed, fMaxSpeed );
 
 		ImGui::Text("Flight Z axis speed");
 		ImGui::SliderFloat("## Flight Z axis speed", &fZSpeed, fZSpeedMin, fZSpeedMax );
+
+		ImGui::EndChild();
 		//ImGui::Text("Move Up");
 		//ImGui::SameLine();
 		//ImGui::Hotkey("##Move UP", kbUp, &bUpKey);
@@ -37,28 +41,29 @@ void Fly::Run(void** args, size_t numArgs)
 
 	HandleKeys();
 	
-	SDK::UCharacterMovementComponent* CharacterMovement = (SDK::UCharacterMovementComponent*)args[0];
-	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[1];
+	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
+	SDK::UCharacterMovementComponent* CharacterMovement = (SDK::UCharacterMovementComponent*)args[1];
+
 
 	if (bEnabled)
 	{
-			CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Flying;
-			fOldSpeed = CharacterMovement->MaxFlySpeed;
-			CharacterMovement->MaxFlySpeed = fOldSpeed * fSpeed;
+		CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Flying;
+		fOldSpeed = CharacterMovement->MaxFlySpeed;
+		CharacterMovement->MaxFlySpeed = fOldSpeed * fSpeed;
 
-			if (bNoClip && AcknowledgedPawn->GetActorEnableCollision())
-				AcknowledgedPawn->SetActorEnableCollision(false);
+		if (bNoClip && AcknowledgedPawn->GetActorEnableCollision())
+			AcknowledgedPawn->SetActorEnableCollision(false);
 
-			// TODO Bindings
-			if (GetAsyncKeyState(VK_SPACE))
-				CharacterMovement->Velocity.Z = CharacterMovement->LastUpdateVelocity.Z + fZSpeed;
+		// TODO Bindings
+		if (GetAsyncKeyState(VK_SPACE))
+			CharacterMovement->Velocity.Z = CharacterMovement->LastUpdateVelocity.Z + fZSpeed;
 
-			if (GetAsyncKeyState(VK_LCONTROL))
-				CharacterMovement->Velocity.Z = CharacterMovement->LastUpdateVelocity.Z - fZSpeed;
+		if (GetAsyncKeyState(VK_LCONTROL))
+			CharacterMovement->Velocity.Z = CharacterMovement->LastUpdateVelocity.Z - fZSpeed;
 
-			
 
-			bFlySwitch = true;
+
+		bFlySwitch = true;
 	}
 	else
 	{

@@ -271,6 +271,11 @@ void Menu::RenderMenu()
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(20, 20));
 
     ImGui::BeginChild("RightSide", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), 0);
+    
+    ImGui::Spacing();
+    ImGui::Spacing();
+    ImGui::Indent(10.0f);
+
     switch (tab)
     {
         case PLAYER:
@@ -280,6 +285,7 @@ void Menu::RenderMenu()
             gravityScale.DrawMenuItems();
             walkFloorZ.DrawMenuItems();
             walkFloorAngle.DrawMenuItems();
+            hitMultiplier.DrawMenuItems();
 
             break;
 
@@ -297,11 +303,20 @@ void Menu::RenderMenu()
             ImGui::Text("in dev.");
             break;
 
+#ifdef _DEBUG
+
         case DEBUG:
             DebugMenu::DebugMainPage();
             break;
 
+#endif //_DEBUG
+
     } // Switch
+
+    ImGui::Unindent();
+    ImGui::Spacing();
+    ImGui::Spacing();
+
     ImGui::EndChild();
     ImGui::PopStyleVar();
 

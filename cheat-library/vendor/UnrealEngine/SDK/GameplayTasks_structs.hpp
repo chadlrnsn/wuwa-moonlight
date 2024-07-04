@@ -52,7 +52,7 @@ enum class EGameplayTaskState : uint8
 struct alignas(0x02) FGameplayResourceSet final
 {
 public:
-	uint8                                         Pad_105E[0x2];                                     // 0x0000(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_104A[0x2];                                     // 0x0000(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGameplayResourceSet) == 0x000002, "Wrong alignment on FGameplayResourceSet");
 static_assert(sizeof(FGameplayResourceSet) == 0x000002, "Wrong size on FGameplayResourceSet");

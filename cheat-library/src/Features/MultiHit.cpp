@@ -1,14 +1,17 @@
 #include "MultiHit.h"
+#include "imgui-notify/backends/ImGuiNotify.hpp"
+
+using namespace SDK;
 
 void HitMultiplier::DrawMenuItems()
 {
-	ImGui::Checkbox("Hit multiplier", &bEnable);
-	ImGui::BeginGroup();
+	ImGui::Checkbox("Multi Hit", &bEnable);
 	if (bEnable) {
-		ImGui::Text("Hit multiplier");
-		ImGui::SliderInt("##Hit multiplier", &iCurrent, iMin, iMax);
+		ImGui::BeginChild(1, ImVec2(0,100), 1);
+			ImGui::Text("Hit multiplier");
+			ImGui::SliderInt("##Hit multiplier", &iCurrent, iMin, iMax);
+		ImGui::EndChild();
 	}
-	ImGui::EndGroup();
 }
 
 void HitMultiplier::Run(void** args, size_t numArgs)
@@ -22,15 +25,19 @@ void HitMultiplier::Run(void** args, size_t numArgs)
 		return;
 	}
 
-	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
+	// Get pawn
+	APawn* Pawn = (APawn*)args[0];
 
-	//if (bEnable && OnHit)
-	//{
-	//	Movement->WalkableFloorZ = fZ;
-	//}
+	// Get UTsAnimNotifyReSkillEvent_C instance
 
-	//if (!bEnable && Movement)
-	//{
-	//	Movement->WalkableFloorZ = 0.574f;
-	//}
+
+	// Hooking for the original player hit function 
+	if (bEnable)
+	{
+	}
+	else
+	{
+
+	}
+
 }

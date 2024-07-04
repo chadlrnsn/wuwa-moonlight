@@ -31,6 +31,14 @@
                             if (s_LastUpdate + (delay) > currentTime)  \
                                 return name;                         \
                             s_LastUpdate = currentTime;
+template <typename T>
+struct SelectableItem
+{
+	std::string label;
+	bool showInfo;
+	T info;
+};
+
 
 namespace util
 {

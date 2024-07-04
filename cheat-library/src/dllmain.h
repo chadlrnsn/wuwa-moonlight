@@ -56,6 +56,7 @@ void CreateRenderTarget(IDXGISwapChain* pSwapChain);
 void CleanupRenderTarget();
 
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+HRESULT __stdcall hkPresent_visuals(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 HRESULT __stdcall hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
 

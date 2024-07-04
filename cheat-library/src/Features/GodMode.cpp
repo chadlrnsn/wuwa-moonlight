@@ -3,6 +3,12 @@
 void GodMode::DrawMenuItems()
 {
 	ImGui::Checkbox("God Mode", &bGodMode);
+	
+	if (bGodMode) {
+		ImGui::BeginChild(1, ImVec2(0, 100), true);
+		ImGui::SliderInt("## DMG", &iDmgTest, -10000, 10000);
+		ImGui::EndChild();
+	}
 }
 
 void GodMode::Run(void** args, size_t numArgs)
@@ -19,15 +25,16 @@ void GodMode::Run(void** args, size_t numArgs)
 
 	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
 
+	// Make player invulnerable
 	if (bGodMode && AcknowledgedPawn)
 	{
-		AcknowledgedPawn->bCanBeDamaged = false;
+		AcknowledgedPawn->ReceiveAnyDamage(iDmgTest, nullptr, nullptr, nullptr);
 		bOnce = false;
 	}
 
 	if (!bGodMode && AcknowledgedPawn && !bOnce)
 	{
-		AcknowledgedPawn->bCanBeDamaged = true;
+		AcknowledgedPawn->ReceiveAnyDamage(0, nullptr, nullptr, nullptr);
 		bOnce = true;
 	}
 }
