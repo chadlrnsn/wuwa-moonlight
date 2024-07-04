@@ -291,12 +291,14 @@ void Menu::RenderWatermark()
 
 void Menu::RenderNotify()
 {
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.f); // Disable round borders
+    // Setup style like main window
+
+
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 5.f);
     ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.f); // Disable borders
 
     // Notifications color setup
-    ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10f, 0.10f, 0.10f, 1.00f)); // Background color
-
+    //ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10f, 0.10f, 0.10f, 1.00f)); // Background color
 
     // Main rendering function
     ImGui::RenderNotifications();
@@ -306,5 +308,5 @@ void Menu::RenderNotify()
     // Argument MUST match the amount of ImGui::PushStyleVar() calls 
     ImGui::PopStyleVar(2);
     // Argument MUST match the amount of ImGui::PushStyleColor() calls 
-    ImGui::PopStyleColor(1);
+    //ImGui::PopStyleColor(1);
 }
