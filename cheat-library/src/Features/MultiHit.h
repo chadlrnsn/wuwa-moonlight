@@ -9,7 +9,7 @@ public:
 	bool bEnable = false;
 	int iMax = 100;
 	int iMin = 1;
-	int iCurrent = 2;
+	int iCurrent = 10;
 	bool bHooked = false;
 
 private:

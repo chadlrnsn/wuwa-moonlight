@@ -1,5 +1,23 @@
 #include "MultiHit.h"
-#include "imgui-notify/backends/ImGuiNotify.hpp"
+#include "PE_Hook/vmthook.h"
+#define HOOK_INDEX 0x49
+
+using ProcessEvent = void(__thiscall*)(UObject*, UFunction*, void*);
+static ProcessEvent ProcessEventOriginal = nullptr;
+
+
+void __stdcall ProcessEventHooked(UObject* object, UFunction* function, void* parms) {
+	printf("ProcessEvent Function Called\n");
+
+    ProcessEventOriginal(object, function, parms);
+
+	return ProcessEventOriginal(object, function, parms);
+}
+
+UGameViewportClient* getViewport(UWorld* world) noexcept {
+	return world->OwningGameInstance->LocalPlayers[0]->ViewportClient;
+}
+
 
 void HitMultiplier::DrawMenuItems()
 {
@@ -12,47 +30,37 @@ void HitMultiplier::DrawMenuItems()
 	}
 }
 
-typedef void(__fastcall* tProcessEvent)(UObject* Class, UFunction* Function, void* Parms);
-static tProcessEvent hkProcessEvent = nullptr;
 
-void HookedProcessEvent(UObject* Class, UFunction* Function, void* Parms)
-{
-	std::printf("[#] Hello From ProcessEvent\n");
+std::unique_ptr<CVMTHook> g_processEventHook;
 
-	return hkProcessEvent(Class, Function, Parms);
-}
+void HitMultiplier::Run(void** args, size_t numArgs) {
+    if (!Initalized || numArgs != 1) {
+        Destroy();
+        return;
+    }
 
-void HitMultiplier::Run(void** args, size_t numArgs)
-{
-	if (!Initalized)
-		return;
+    APawn* Pawn = (APawn*)args[0];
+    UWorld* World = (UWorld*)args[1];
 
-	if (numArgs != 1)
-	{
-		Destroy();
-		return;
-	}
-
-	APawn* Pawn = (APawn*)args[0];
-	UWorld* World = (UWorld*)args[1];
-
-	if (bEnable)
-	{
-
-		USkeletalMeshComponent* SkeletalMeshComponent = static_cast<USkeletalMeshComponent*>(Pawn->GetComponentByClass(USkeletalMeshComponent::StaticClass()));
-		ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
-		UGameViewportClient* Viewport = LocalPlayer->ViewportClient;
-		UObject* func = LocalPlayer->FindObject("TsAnimNotifyReSkillEvent_C.K2_Notify");
+    if (bEnable) {
+        UGameViewportClient* viewport = getViewport(World);
+        UObject* VTableClass = viewport->FindObject("Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify");
+        
+        if (!g_processEventHook) {
+            g_processEventHook = std::make_unique<CVMTHook>(VTableClass);
+            ProcessEventOriginal = reinterpret_cast<ProcessEvent>(
+                g_processEventHook->HookMethod(reinterpret_cast<void*>(&ProcessEventHooked), HOOK_INDEX)
+                );
 
 
-
-		//UAbilitySystemComponent = Pawn->GetComponentByClass(UAbilitySystemComponent::StaticClass());
-		//ULightComponent = static_cast<ULightComponent*>(Pawn->GetComponentByClass(ULightComponent::StaticClass());
-
-	}
-	else
-	{
-
-	}
-
+            printf("Hook created successfully. o: [0x%p]\n", ProcessEventOriginal);
+        }
+    } 
+    else 
+    {
+        if (g_processEventHook) {
+            g_processEventHook->RestoreTable();
+            g_processEventHook.reset();
+        }
+    }
 }

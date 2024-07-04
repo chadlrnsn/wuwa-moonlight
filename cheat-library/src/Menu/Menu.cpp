@@ -138,7 +138,7 @@ void Menu::RenderMenu()
     const char* tab_names[] = { "Player", "ESP", "MISC", "CONFIG", "DEBUG" };
 
     // Get Window Size
-    ImVec2 wndSize = ImGui::GetWindowSize();
+    ImVec2 wndSize = ImGui::GetIO().DisplaySize;
 
     // min and max size for the main window
     ImVec2 minSize(600, 300);

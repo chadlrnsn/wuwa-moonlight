@@ -197,6 +197,7 @@
     <ClInclude Include="vendor\kiero\minhook\src\trampoline.h" />
     <ClInclude Include="src\Menu\Menu.hpp" />
     <ClInclude Include="vendor\PE_Hook\PE_Hook.hpp" />
+    <ClInclude Include="vendor\PE_Hook\vmthook.h" />
     <ClInclude Include="vendor\UnrealEngine\PropertyFixup.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\AudioPlatformConfiguration_structs.hpp" />

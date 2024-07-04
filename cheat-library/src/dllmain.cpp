@@ -167,6 +167,7 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved)
 	walkFloorZ.Setup();
 	walkFloorAngle.Setup();
 	fpsUnlock.Setup();
+	hitMultiplier.Setup();
 
 	UEngine* Engine;
 	UWorld* World;

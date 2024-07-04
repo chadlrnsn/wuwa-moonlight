@@ -62,9 +62,11 @@ public:
 		*m_interface = m_table;
 	}
 
-	void HookMethod(void* handler, uint32_t index)
+	uintptr_t HookMethod(void* handler, uint32_t index)
 	{
+		uintptr_t original = m_table[index];
 		m_table[index] = reinterpret_cast<uintptr_t>(handler);
+		return original;
 	}
 
 	void RestoreTable()
