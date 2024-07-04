@@ -388,30 +388,59 @@ inline void KeyBindToggle::handleToggle() noexcept
 
 namespace ImGui
 {
-    inline void Hotkey(const char* label, KeyBind& key, bool* setting, const ImVec2& size = { 100.0f, 0.0f }) noexcept
-    {
-        const auto id = ImGui::GetID(label);
-        ImGui::PushID(label);
+	/**
+	 * @brief Handles the interaction for setting a hotkey.
+	 *
+	 * @param label The label text for the hotkey button.
+	 * @param key The KeyBind object storing the hotkey.
+	 * @param setting The boolean pointer indicating if the hotkey is being set.
+	 * @param size The size of the hotkey button. Default is { 100.0f, 0.0f }.
+	 */
+	inline void Hotkey(const char* label, KeyBind& key, bool* setting, const ImVec2& size = { 100.0f, 0.0f }) noexcept
+	{
+		ImGui::PushID(label);
 
-        std::string BtnName = (*setting) ? "..." : key.toString();
+		const auto id = ImGui::GetID(label);
 
-        if (ImGui::GetActiveID() == id) {
-            ImGui::PushStyleColor(ImGuiCol_Button, ImGui::GetColorU32(ImGuiCol_ButtonActive));
-            ImGui::ButtonEx("...", size, ImGuiButtonFlags_NoKeyModifiers); // Use ImGui::ButtonEx() here
-            ImGui::PopStyleColor();
+		ImGuiStorage* storage = ImGui::GetStateStorage();
+		bool isSelecting = storage->GetBool(id, false);
 
-            ImGui::GetCurrentContext()->ActiveIdAllowOverlap = true;
-            if ((!ImGui::IsItemHovered() && ImGui::GetIO().MouseClicked[0]) || key.setToPressedKey())
-            {
-                ImGui::ClearActiveID();
-                *setting = false;
-            }
-        }
-        else if (ImGui::ButtonEx(BtnName.c_str(), size, ImGuiButtonFlags_NoKeyModifiers) || *setting) { // Use ImGui::ButtonEx() here
-            ImGui::SetActiveID(id, ImGui::GetCurrentWindow());
-            *setting = true;
-        }
+		// Display the button text as "..." when selecting a new hotkey, otherwise show the current hotkey.
+		std::string BtnName = (isSelecting) ? "..." : key.toString();
 
-        ImGui::PopID();
-    }
+		// Check if the button is clicked and not already in selection mode.
+		bool clicked = ImGui::Button(BtnName.c_str(), size);
+
+		if (clicked && !isSelecting)
+		{
+			isSelecting = true;
+			*setting = true;
+		}
+
+		if (isSelecting)
+		{
+			ImGui::GetCurrentContext()->ActiveIdAllowOverlap = true;
+
+			if (ImGui::IsItemActive() || ImGui::IsItemHovered())
+			{
+				// Set the hotkey to the pressed key and exit selection mode.
+				if (key.setToPressedKey())
+				{
+					isSelecting = false;
+					*setting = false;
+				}
+			}
+			else if (ImGui::IsMouseClicked(ImGuiMouseButton_Left))
+			{
+				// Cancel hotkey selection on left mouse click.
+				isSelecting = false;
+				*setting = false;
+			}
+		}
+
+		storage->SetBool(id, isSelecting);
+
+		ImGui::PopID();
+	}
+
 }
