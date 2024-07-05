@@ -17,7 +17,7 @@ const char* BypassDLLPath = "bypass.dll";
 
 static CSimpleIni ini;
 
-bool OpenGenshinProcess(HANDLE* phProcess, HANDLE* phThread);
+bool OpenGameProcess(HANDLE* phProcess, HANDLE* phThread, const char* additionalParam);
 
 int main(int argc, char* argv[])
 {
@@ -34,9 +34,10 @@ int main(int argc, char* argv[])
 	ini.LoadFile("cfg.ini");
 
 	HANDLE hProcess, hThread;
-	if (!OpenGenshinProcess(&hProcess, &hThread))
+	bool success = OpenGameProcess(&hProcess, &hThread, "-freeopenlog");
+	if (!success)
 	{
-		std::cout << "Failed to open Wuwa process." << std::endl;
+		std::cout << "Failed to open Client-Win64-Shipping process." << std::endl;
 		system("pause");
 		return 1;
 	}
@@ -75,11 +76,11 @@ int main(int argc, char* argv[])
 	CloseHandle(hProcess);
 }
 
-bool OpenGenshinProcess(HANDLE* phProcess, HANDLE* phThread)
+bool OpenGameProcess(HANDLE* phProcess, HANDLE* phThread, const char* additionalParam)
 {
-
 	HANDLE hToken;
 	BOOL TokenRet = OpenProcessToken(GetCurrentProcess(), TOKEN_ALL_ACCESS, &hToken);
+
 	if (!TokenRet)
 	{
 		//LOG_LAST_ERROR("Privilege escalation failed!");
@@ -90,7 +91,36 @@ bool OpenGenshinProcess(HANDLE* phProcess, HANDLE* phThread)
 	auto filePath = GetOrSelectPath(ini, "Inject", "wuwapath", "wuwa path", "Executable\0Client-Win64-Shipping.exe;\0");
 	auto commandline = ini.GetValue("Inject", "WuwaCommandLine");
 
-	LPSTR lpstr = commandline == nullptr ? nullptr : const_cast<LPSTR>(commandline);
+	// Проверяем, существует ли параметр в конфиге
+	bool useAdditionalParamExists = ini.KeyExists("Inject", "UseAdditionalParam");
+
+	if (!useAdditionalParamExists) {
+		ini.SetBoolValue("Inject", "UseAdditionalParam", false);
+		ini.SaveFile("cfg.ini");
+	}
+
+	// Читаем параметр UseAdditionalParam
+	bool useAdditionalParam = ini.GetBoolValue("Inject", "UseAdditionalParam", false);
+
+	std::string newCommandLine;
+	if (commandline != nullptr) {
+		newCommandLine = commandline;
+	}
+
+	if (useAdditionalParam && additionalParam != nullptr) {
+		if (!newCommandLine.empty()) {
+			newCommandLine += " ";
+		}
+		newCommandLine += additionalParam;
+		std::cout << "Launching the program with an additional parameter: " << additionalParam << std::endl;
+	}
+	else {
+		std::cout << "Launching the program without an additional parameter" << std::endl;
+	}
+
+	LPSTR lpstr = newCommandLine.empty() ? nullptr : const_cast<LPSTR>(newCommandLine.c_str());
+
+	//LPSTR lpstr = commandline == nullptr ? nullptr : const_cast<LPSTR>(commandline);
 	if (!filePath)
 		return false;
 
