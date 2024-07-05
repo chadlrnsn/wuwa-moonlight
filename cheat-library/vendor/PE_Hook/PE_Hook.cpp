@@ -1,4 +1,5 @@
 #include "PE_Hook.hpp"
+#include "SDK/Basic.hpp"
 
 using namespace Hook;
 
@@ -52,7 +53,7 @@ int ProcessEventHook::FindProcessEventIndex()
 		if (!ValidPtr((void*)function))
 			continue;
 
-		if (function == (module_base + ProcessEventOffset))
+		if (function == (module_base + SDK::Offsets::ProcessEvent))
 		{
 			return index;
 		}
@@ -106,3 +107,6 @@ void ProcessEventHook::ApplyHook(std::uintptr_t pClass, std::uintptr_t pOrgFunc,
 	}
 }
 
+bool ProcessEventHook::IsHooked() const {
+	return m_class != 0;
+}

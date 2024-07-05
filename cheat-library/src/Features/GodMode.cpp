@@ -2,13 +2,13 @@
 
 void GodMode::DrawMenuItems()
 {
-	ImGui::Checkbox("God Mode", &bGodMode);
-	
-	if (bGodMode) {
-		ImGui::BeginChild(1, ImVec2(0, 100), true);
-		ImGui::SliderInt("## DMG", &iDmgTest, -10000, 10000);
-		ImGui::EndChild();
-	}
+	//ImGui::Checkbox("God Mode", &bGodMode);
+	//
+	//if (bGodMode) {
+	//	ImGui::BeginChild(1, ImVec2(0, 100), true);
+	//	ImGui::SliderInt("## DMG", &iDmgTest, -10000, 10000);
+	//	ImGui::EndChild();
+	//}
 }
 
 void GodMode::Run(void** args, size_t numArgs)

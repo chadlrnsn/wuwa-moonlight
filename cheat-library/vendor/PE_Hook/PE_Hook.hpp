@@ -6,8 +6,6 @@
 
 namespace Hook
 {
-#define ProcessEventOffset 0x274FB70
-
 	template <typename T = void*>
 	inline auto ValidPtr(T ptr) -> bool {
 		return (ptr && ptr > (T)0xFFFFFF && ptr < (T)0x7FFFFFFFFFFF);
@@ -58,6 +56,9 @@ namespace Hook
 
 		~ProcessEventHook()	{ this->FreeVTableCache(); } 
 		
+		bool IsHooked() const;
+		int GetEventIndex() const { return m_eventindex; }
+
 	private:
 		int m_eventindex;
 	};

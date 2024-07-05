@@ -10,9 +10,9 @@ public:
 	int iMax = 100;
 	int iMin = 1;
 	int iCurrent = 10;
-	bool bHooked = false;
 
 private:
+	bool bHooked = false;
 
 public:
 	HitMultiplier() {};
