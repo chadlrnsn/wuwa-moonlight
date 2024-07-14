@@ -241,14 +241,11 @@ void Menu::RenderMenu()
         case CONFIG: 
             ImGui::Text("in dev.");
             break;
-
 #ifdef _DEBUG
-
         case DEBUG:
             DebugMenu::DebugMainPage();
             break;
-
-#endif //_DEBUG
+#endif
 
     } // Switch
 

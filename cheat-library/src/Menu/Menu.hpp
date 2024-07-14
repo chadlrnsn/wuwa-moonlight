@@ -32,7 +32,9 @@ private:
         ESP,
         MISC,
         CONFIG,
+#ifdef _DEBUG
         DEBUG,
+#endif
         HEADERS_COUNT
     };
 
