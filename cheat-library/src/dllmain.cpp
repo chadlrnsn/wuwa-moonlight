@@ -262,6 +262,7 @@ BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 
 	case DLL_PROCESS_ATTACH:
 		Hooks::hkACE_BypassSetup();
+		Hooks::AntiDebug();
 
 		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, nullptr);
 		CreateThread(nullptr, 0, KeyHandler, hMod, 0, nullptr);

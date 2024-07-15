@@ -2,8 +2,18 @@
 #include <iostream>	
 #include <Windows.h>
 #include <minhook/include/MinHook.h>
+#include <winternl.h>
 
 typedef HMODULE(WINAPI* LoadLibraryW_t)(LPCWSTR lpLibFileName);
+typedef BOOL(WINAPI* IsDebuggerPresent_t)();
+typedef NTSTATUS(NTAPI* NtQueryInformationProcess_t)(
+	HANDLE ProcessHandle,
+	PROCESSINFOCLASS ProcessInformationClass,
+	PVOID ProcessInformation,
+	ULONG ProcessInformationLength,
+	PULONG ReturnLength
+	);
+
 
 /* Blocks ACE (special thanks to @rottingexistence) */
 const LPCWSTR blockedDlls[] = {
@@ -22,8 +32,20 @@ const LPCWSTR blockedDlls[] = {
 
 HMODULE WINAPI hkLoadLibraryW(LPCWSTR libFileName);
 
+// Anti-AntiDebug
+BOOL WINAPI hkIsDebuggerPresent();
+
+NTSTATUS NTAPI hkNtQueryInformationProcess(
+	HANDLE ProcessHandle,
+	PROCESSINFOCLASS ProcessInformationClass,
+	PVOID ProcessInformation,
+	ULONG ProcessInformationLength,
+	PULONG ReturnLength
+);
+
 namespace Hooks {
 	void hkACE_BypassSetup();
 	void hkACE_BypassCleanup();
+	void AntiDebug();
 	void RemoveHooks();
 }
