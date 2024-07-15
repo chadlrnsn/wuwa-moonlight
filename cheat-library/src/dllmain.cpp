@@ -156,7 +156,7 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 	return 0;
 }
 
-DWORD WINAPI FeaturesThread(LPVOID lpReserved)
+DWORD WINAPI FeaturesThread(LPVOID lpReserved) noexcept
 {
 	speedhack.Setup();
 	god.Setup();

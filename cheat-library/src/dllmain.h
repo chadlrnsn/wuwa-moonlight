@@ -64,6 +64,6 @@ HRESULT __stdcall hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, 
 
 // Hack stuff
 DWORD WINAPI KeyHandler(LPVOID lpReserved);
-DWORD WINAPI FeaturesThread(LPVOID lpReserved);
+DWORD WINAPI FeaturesThread(LPVOID lpReserved) noexcept;
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved);
 BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved);

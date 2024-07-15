@@ -48,9 +48,6 @@ int main(int argc, char* argv[])
 	std::string filename = (argc == 2 ? argv[1] : DLLPath);
 	std::filesystem::path currentDllPath = std::filesystem::current_path() / filename;
 
-	std::string bypassdllfilename = (argc == 2 ? argv[1] : BypassDLLPath);
-	std::filesystem::path currentBypassDllPath = std::filesystem::current_path() / bypassdllfilename;
-
 #ifdef _DEBUG
 	std::filesystem::path tempDllPath = std::filesystem::temp_directory_path() / filename;
 
@@ -64,9 +61,7 @@ int main(int argc, char* argv[])
 	}
 
 	InjectDLL(hProcess, tempDllPath.string());
-	InjectDLL(hProcess, currentBypassDllPath.string());
 #else
-	InjectDLL(hProcess, currentBypassDllPath.string());
 	InjectDLL(hProcess, currentDllPath.string());
 #endif
 
@@ -91,7 +86,6 @@ bool OpenGameProcess(HANDLE* phProcess, HANDLE* phThread, const char* additional
 	auto filePath = GetOrSelectPath(ini, "Inject", "wuwapath", "wuwa path", "Executable\0Client-Win64-Shipping.exe;\0");
 	auto commandline = ini.GetValue("Inject", "WuwaCommandLine");
 
-	// Ïðîâåðÿåì, ñóùåñòâóåò ëè ïàðàìåòð â êîíôèãå
 	bool useAdditionalParamExists = ini.KeyExists("Inject", "UseAdditionalParam");
 
 	if (!useAdditionalParamExists) {
@@ -99,7 +93,6 @@ bool OpenGameProcess(HANDLE* phProcess, HANDLE* phThread, const char* additional
 		ini.SaveFile("cfg.ini");
 	}
 
-	// ×èòàåì ïàðàìåòð UseAdditionalParam
 	bool useAdditionalParam = ini.GetBoolValue("Inject", "UseAdditionalParam", false);
 
 	std::string newCommandLine;
