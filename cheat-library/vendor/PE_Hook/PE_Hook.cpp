@@ -34,79 +34,71 @@ void VTable::FreeVTableCache()
 		free(this->m_vtable_cache);
 }
 
-/**
- * Finds the index of the ProcessEvent function in the vtable.
- *
- * @return The index of the ProcessEvent function in the vtable, or -1 if not found.
- */
 int ProcessEventHook::FindProcessEventIndex()
 {
-	if (!ValidPtr((void*)m_vtable) || this->m_vtablesize == -1)
-		return NULL;
+    if (!ValidPtr((void*)m_vtable) || this->m_vtablesize == -1)
+    {
+        std::cout << "Invalid VTable or size is -1" << std::endl;
+        return -1;
+    }
 
-	static auto module_base = (std::uintptr_t)GetModuleHandleA(NULL);
+    static auto module_base = (std::uintptr_t)GetModuleHandleA(NULL);
 
-	for (int index = 0; index <= this->m_vtablesize; index++)
-	{
-		auto function = *reinterpret_cast<std::uintptr_t*>(this->m_vtable + (index * 0x8));
+    for (int index = 0; index <= this->m_vtablesize; index++)
+    {
+        auto function = *reinterpret_cast<std::uintptr_t*>(this->m_vtable + (index * 0x8));
 
-		if (!ValidPtr((void*)function))
-			continue;
+        if (!ValidPtr((void*)function))
+        {
+            std::cout << "Invalid function pointer at index " << index << std::endl;
+            continue;
+        }
 
-		if (function == (module_base + SDK::Offsets::ProcessEvent))
-		{
-			return index;
-		}
-	}
+        if (function == (module_base + SDK::Offsets::ProcessEvent))
+        {
+            std::cout << "Found ProcessEvent function at index " << index << std::endl;
+            return index;
+        }
+    }
 
-	return -1;
+    std::cout << "ProcessEvent function not found" << std::endl;
+    return -1;
 }
 
-/**
- * Apply a hook to a class function pointer.
- *
- * @param pClass memory address of the class
- * @param pOrgFunc original function pointer
- * @param pFunc new function pointer to be applied
- */
 void ProcessEventHook::ApplyHook(std::uintptr_t pClass, std::uintptr_t pOrgFunc, std::uintptr_t pFunc)
 {
-	if (this->m_eventindex == -1 || this->m_vtablesize == -1)
-	{
-		std::cout << "Invalid event index or vtable size. Skipping hook application." << std::endl;
-		return;
-	}
+    if (this->m_eventindex == -1 || this->m_vtablesize == -1)
+    {
+        std::cout << "Event index or vtable size is invalid" << std::endl;
+        return;
+    }
 
-	if (pClass != m_class)
-	{
-		this->m_vtable = *reinterpret_cast<std::uintptr_t**>(pClass);
+    if (pClass != m_class)
+    {
+        this->m_vtable = *reinterpret_cast<std::uintptr_t**>(pClass);
 
-		if (!ValidPtr((void*)m_vtable))
-		{
-			std::cout << "Invalid vtable pointer. Skipping hook application." << std::endl;
-			return;
-		}
+        if (!ValidPtr((void*)m_vtable))
+        {
+            std::cout << "Vtable pointer is invalid" << std::endl;
+            return;
+        }
 
-		this->m_vtable_cache = reinterpret_cast<decltype(m_vtable_cache)>(malloc(m_vtablesize));
+        this->m_vtable_cache = reinterpret_cast<decltype(m_vtable_cache)>(malloc(m_vtablesize));
 
-		if (!m_vtable_cache)
-		{
-			std::cout << "Failed to allocate memory for vtable cache. Skipping hook application." << std::endl;
-			return;
-		}
+        if (!m_vtable_cache)
+        {
+            std::cout << "Failed to allocate memory for vtable cache" << std::endl;
+            return;
+        }
 
-		memcpy(m_vtable_cache, m_vtable, m_vtablesize);
+        memcpy(m_vtable_cache, m_vtable, m_vtablesize);
 
-		pOrgFunc = m_vtable_cache[this->m_eventindex]; // or just (module_base + ProcessEventOffset)
+        pOrgFunc = m_vtable_cache[this->m_eventindex]; // or just (module_base + ProcessEventOffset)
 
-		m_vtable_cache[this->m_eventindex] = pFunc;
+        m_vtable_cache[this->m_eventindex] = pFunc;
 
-		*reinterpret_cast<std::uintptr_t**>(pClass) = m_vtable_cache;
+        *reinterpret_cast<std::uintptr_t**>(pClass) = m_vtable_cache;
 
-		this->m_class = pClass;
-	}
-}
-
-bool ProcessEventHook::IsHooked() const {
-	return m_class != 0;
+        this->m_class = pClass;
+    }
 }

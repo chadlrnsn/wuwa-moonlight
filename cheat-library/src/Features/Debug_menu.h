@@ -4,9 +4,10 @@ using namespace SDK;
 namespace DebugMenu
 {
 	void DebugMainPage();
+	void DebugRoutine();
 }
 
-extern void PostRenderHook(UObject* _this, UObject* canvas);
-extern void ProcessEventHook(UObject* caller, UObject* fn, void* params);
-extern BYTE* vmt_hook(void** VTable, int32 index, void* fn);
+extern void hkPostRender(UObject* _this, UObject* canvas);
+extern void hkProcessEvent(UObject* caller, UFunction* fn, void* params);
+extern BYTE* vmt_hook(void** VTable, uint32_t index, void* fn);
 

@@ -87,3 +87,15 @@ inline bool IsFullyLoaded()
 
 	return true;
 }
+
+
+
+/*inline bool()
+{
+	PCURSORINFO CursorInfo;
+	GetCursorInfo(CursorInfo);
+	if (CursorInfo)
+		CursorInfo->flags |= CURSOR_SHOWING;
+
+	return UEngine::GetEngine() && ;
+}*/

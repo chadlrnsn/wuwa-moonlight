@@ -5,8 +5,6 @@
 
 using namespace SDK;
 using namespace SDKTools;
-using namespace SDKTools::World;
-using namespace SDKTools::Player;
 
 
 void InitImGui()
@@ -231,7 +229,7 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	FILE* dummy;
 	freopen_s(&dummy, "CONOUT$", "w", stdout);
 	freopen_s(&dummy, "CONOUT$", "w", stderr);
-	freopen_s(&dummy, "CONOUT$", "w", stdin);
+	freopen_s(&dummy, "CONIN$", "r", stdin);
 
 	HMODULE addr = GetModuleHandleA(0);
 	std::cout << "Base address: " << addr << std::endl;
@@ -256,7 +254,6 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	return TRUE;
 }
 
-
 BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 {
 	DisableThreadLibraryCalls(hMod);
@@ -264,6 +261,8 @@ BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 	{
 
 	case DLL_PROCESS_ATTACH:
+		Hooks::hkACE_BypassSetup();
+
 		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, nullptr);
 		CreateThread(nullptr, 0, KeyHandler, hMod, 0, nullptr);
 		CreateThread(nullptr, 0, FeaturesThread, hMod, 0, nullptr);
@@ -271,6 +270,7 @@ BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 		break;
 
 	case DLL_PROCESS_DETACH:
+		Hooks::RemoveHooks();
 		kiero::shutdown();
 		break;
 	}

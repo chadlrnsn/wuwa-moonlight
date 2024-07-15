@@ -5,69 +5,59 @@
 #include "Features.h"
 #include <SDKTools/SDKTools.hpp>
 #include <wuwa-base/util.h>
+#include <minhook/include/MinHook.h>
 
 using namespace SDK;
 
-typedef void(__thiscall* processEventFn)(SDK::UObject*, SDK::UObject*, void*);
 using fn = void(__thiscall*)(UObject*, UObject*);
 using pevent_fn = void(__thiscall*)(UObject*, UObject*, void* params);
 
 fn original = 0;
 pevent_fn oProcessEvent = 0;
-int post_render_index = 0x46;
-int post_event_index = 0x49;
 
-
-void PostRenderHook(UObject* _this, UObject* canvas)
+void hkPostRender(UObject* _this, UObject* canvas)
 {
 	original(_this, canvas);
 }
 
-void hkProcessEvent(UObject* caller, UFunction* fn, void* params) {
+void hkProcessEvent(UObject* caller, UFunction* fn, void* params) 
+{
+	printf("Caller: [%s] Function Called: [%s] Fullname : [%s]\n", caller->GetName().c_str(), fn->GetName().c_str(), fn->GetFullName().c_str());
 	oProcessEvent(caller, fn, params);
 }
 
-BYTE* vmt_hook(void** VTable, int32 index, void* fn)
+BYTE* vmt_hook(void** VTable, uint32_t index, void* fn)
 {
-	BYTE* org = reinterpret_cast<BYTE*>(VTable[index]);
+    BYTE* org = reinterpret_cast<BYTE*>(VTable[index]);
 
-	DWORD protect = 0;
+    DWORD protect = 0;
 
-	VirtualProtect(&VTable[index], 8, PAGE_EXECUTE_READWRITE, &protect);
+    VirtualProtect(&VTable[index], 8, PAGE_EXECUTE_READWRITE, &protect);
 
-	VTable[index] = fn;
+    std::cout << "Hooking index: " << index << std::endl;
 
-	VirtualProtect(&VTable[index], 8, protect, 0);
-	return org;
+    VTable[index] = fn;
+
+    std::cout << "Function hooked successfully at index: " << index << std::endl;
+
+    VirtualProtect(&VTable[index], 8, protect, 0);
+
+    return org;
 }
 
-float fDefaultFOV = 90;
-float fDefaultFOVOverride = 90;
-bool bChangeFOV = false;
 
-bool bChangeWorldTimeDilation = false;
-float fWorldSpeed = 1;
-float fCustomWorldSpeed = 1;
-
-bool bFpsUnlock = false;
 
 void DebugMenu::DebugMainPage()
 {
-
-	static DWORD protect = 0;
-
 	UEngine* Engine = UEngine::GetEngine();
 	UWorld* World = UWorld::GetWorld();
-	
-	if (!IsFullyLoaded())
+	if (!Engine || !World || !IsFullyLoaded()) 
 		return;
 
 	ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
 	APlayerController* PlayerController = LocalPlayer->PlayerController;
 	APawn* AcknowledgedPawn = PlayerController->AcknowledgedPawn;
 
-
-	ImGui::Text("Build %s", &BuildInfo);
 	ImGui::Text("GWorld -> 0x%d", &World);
 	ImGui::Text("GEngine -> 0x%d", &Engine);
 	ImGui::Text("LocalPlayer -> 0x%d", &LocalPlayer);
@@ -93,7 +83,7 @@ void DebugMenu::DebugMainPage()
 
 
 
-	static FVector newActorScale{};
+	static FVector newActorScale { 1.0f, 1.0f, 1.0f };
 
 	static bool bActorscale = false;
 	static bool bOnce = false;
@@ -118,83 +108,33 @@ void DebugMenu::DebugMainPage()
 		bOnce = true;
 	}
 
-	static bool bMapTeleport = false;
-	ImGui::Checkbox("Map teleport", &bMapTeleport);
-	ImGui::SameLine();
-	ImGui::Text("Double click on map");
-
-	if (bMapTeleport) {
-		ImGui::Text("in dev");
-	}
-
-	static bool bHits = false;
 	static bool bOnce2 = false;
-	static void** VFTable = &(LocalPlayer->ViewportClient->VTable);
+	static bool HookWorld = false;
+
+	auto process_event_addr = (uintptr_t*)(GetModuleHandleA(0) + Offsets::ProcessEvent);
+	ImGui::Checkbox("Hook world", &HookWorld);
+	if (HookWorld && !bOnce2)
+	{
+		MH_Initialize();
+		MH_CreateHook((LPVOID*)process_event_addr, &hkProcessEvent, reinterpret_cast<void**>(&oProcessEvent));
+		MH_EnableHook((LPVOID*)process_event_addr);
+
+		bOnce2 = true;
+		std::cout << "Hook enabled" << std::endl;
+	} 
+	else if (!HookWorld && bOnce2)
+	{
+		MH_DisableHook((LPVOID*)process_event_addr);
+		MH_RemoveHook((LPVOID*)process_event_addr);
+		MH_Uninitialize();
 
 
-	ImGui::Checkbox("Abilities", &bHits);
+		bOnce2 = false;
+		std::cout << "Hook disabled" << std::endl;
+	}	
+}
 
-	//if (bHits && !bOnce2) {
-	//	
-	//	ImGui::Begin("Abilities", 0);
+void DebugMenu::DebugRoutine()
+{
 
-	//	// Get ability system component from pawn
-
-	//	AActor* OwnerActor = AcknowledgedPawn;
-	//	UAbilitySystemComponent* AbilitySystemComponent = static_cast<UAbilitySystemComponent*>(AcknowledgedPawn->GetComponentByClass(UAbilitySystemComponent::StaticClass()));
-
-	//	// Show all abilities
-	//	static float fDuration = 0.0f;
-
-	//	ImGui::InputFloat("Duration", &fDuration);
-	//	if (AbilitySystemComponent->IncomingDuration != fDuration) {
-	//		AbilitySystemComponent->IncomingDuration = fDuration;
-	//	}
-	//
-	//	// Print All Abilities
-	//	ImGui::Spacing();
-
-	//	static int i = 0;
-
-	//	ImGui::Text("Abilities:");
-
-	//	for (i = 0; i < AbilitySystemComponent->ActivatableAbilities.Owner->ActivatableAbilities.Items.Num(); i++)
-	//	{
-	//		if (!IsValidPointer(AbilitySystemComponent)) continue;
-
-	//		if (AbilitySystemComponent->ActivatableAbilities.Owner->OwnerActor->GetOwner())
-	//		{
-	//			UGameplayAbility* OwnedAbility = AbilitySystemComponent->ActivatableAbilities.Owner->ActivatableAbilities.Items[i].Ability;
-
-	//			
-	//			ImGui::Text("Ability: [%s] Dur: [%.0f]", OwnedAbility->Name.ToString().c_str(), OwnedAbility->GetCooldownTimeRemaining());
-	//			if (ImGui::Button("Activate tasks")) {
-	//				OwnedAbility->ActiveTasks;
-	//			} 
-	//			ImGui::SameLine();
-
-	//			if (ImGui::Button("Activate")) {
-	//				OwnedAbility->ActivationRequiredTags.GameplayTags.Clear();
-	//				OwnedAbility->ActivationRequiredTags.ParentTags.Clear();
-	//			}
-
-	//			ImGui::SameLine();
-
-	//			static bool bActivateTags = false;
-	//			ImGui::Checkbox("tags", &bActivateTags);
-	//			if (bActivateTags) {
-	//				for (static int j = 0; j < OwnedAbility->ActivationRequiredTags.GameplayTags.Num(); j++) {
-	//					ImGui::Text(OwnedAbility->ActivationRequiredTags.GameplayTags[j].TagName.ToString().c_str());
-	//				}
-	//			}
-
-	//			ImGui::Checkbox("bRetriggerInstancedAbility", &OwnedAbility->bRetriggerInstancedAbility);
-
-	//			//ImGui::Text("%x", OwnedAbility->ProcessEvent());
-
-	//		}
-	//	}
-
-	//	ImGui::End();
-	//}
 }

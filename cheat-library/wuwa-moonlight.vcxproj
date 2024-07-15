@@ -174,6 +174,7 @@
     <ClInclude Include="src\Features\WalkableFloorZ.h" />
     <ClInclude Include="src\globals.h" />
     <ClInclude Include="src\Helper.h" />
+    <ClInclude Include="src\Hooks.h" />
     <ClInclude Include="src\SDKTools\Player.h" />
     <ClInclude Include="src\SDKTools\SDKTools.hpp" />
     <ClInclude Include="vendor\fonts\font.h" />
@@ -197,7 +198,6 @@
     <ClInclude Include="vendor\kiero\minhook\src\trampoline.h" />
     <ClInclude Include="src\Menu\Menu.hpp" />
     <ClInclude Include="vendor\PE_Hook\PE_Hook.hpp" />
-    <ClInclude Include="vendor\PE_Hook\vmthook.h" />
     <ClInclude Include="vendor\UnrealEngine\PropertyFixup.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK.hpp" />
     <ClInclude Include="vendor\UnrealEngine\SDK\AudioPlatformConfiguration_structs.hpp" />
@@ -251,6 +251,7 @@
     <ClCompile Include="src\Features\WalkableFloorZ.cpp" />
     <ClCompile Include="src\globals.cpp" />
     <ClCompile Include="src\Helper.cpp" />
+    <ClCompile Include="src\Hooks.cpp" />
     <ClCompile Include="src\SDKTools\Player.cpp" />
     <ClCompile Include="vendor\imgui\imgui.cpp" />
     <ClCompile Include="vendor\imgui\imgui_demo.cpp" />

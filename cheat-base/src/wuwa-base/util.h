@@ -99,6 +99,20 @@ namespace util
 			return false;
 		return true;
 	}
+
+	/**
+	 * @brief Performs a dynamic cast from type From to type To.
+	 *
+	 * @tparam To The type to cast to.
+	 * @tparam From The type to cast from.
+	 * @param from The pointer to the object to be cast.
+	 * @return Pointer to the casted object of type To.
+	 */
+	template<typename To, typename From>
+	To* Cast(From* from) {
+		return static_cast<To*>(from);
+	}
+
 }
 
 

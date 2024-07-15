@@ -246,7 +246,7 @@
     <ClInclude Include="vendor\PE_Hook\PE_Hook.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="vendor\PE_Hook\vmthook.h">
+    <ClInclude Include="src\Hooks.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -366,6 +366,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="vendor\PE_Hook\PE_Hook.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hooks.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

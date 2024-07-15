@@ -16,11 +16,19 @@
 #include <imgui-notify/backends/ImGuiNotify.hpp>
 #include <Features/Features.h>
 
+/**
+ * @brief Calculates a responsive size based on the input size, width multiplier, and height multiplier.
+ * 
+ * @tparam T The type of the multipliers.
+ * @param size The original size.
+ * @param mulwide The multiplier for the width.
+ * @param multall The multiplier for the height.
+ * @return The calculated responsive size.
+ */
 template <typename T>
 ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall) {
     return ImVec2(size.x * mulwide, size.y * multall);
 }
-
 
 class Menu
 {
@@ -50,7 +58,6 @@ public:
     void RealCursorShow();
     void Setup();
     void SetUpColors(ImGuiStyle& style, ImVec4* colors);
-    void StyleColors(ImGuiStyle& style, ImVec4* colors, ImVec2 windowSize);
 
     // https://github.com/ocornut/imgui/issues/4356#issuecomment-1535547717
     void PreventMoveOutOfWndBounds(const char* wndName);

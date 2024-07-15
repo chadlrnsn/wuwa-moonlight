@@ -34,5 +34,6 @@ void ESP::Run(void** args, size_t numArgs)
 	{
 		AcknowledgedPawn->bCanBeDamaged = true;
 		bOnce = true;
+		//Cast<UWorld>(AcknowledgedPawn->GetWorld())->GetGameInstance()->GetFirstLocalPlayerController()->ConsoleCommand("stat fps");
 	}
 }

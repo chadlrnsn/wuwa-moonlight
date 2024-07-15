@@ -135,7 +135,7 @@ void Menu::PreventMoveOutOfWndBounds(const char* wndName) {
 void Menu::RenderMenu()
 {
     static Headers tab = PLAYER;
-    const char* tab_names[] = { "Player", "ESP", "MISC", "CONFIG", "DEBUG" };
+    const char* tab_names[] = { "PLAYER", "ESP", "MISC", "CONFIG", "DEBUG" };
 
     // Get Window Size
     ImVec2 wndSize = ImGui::GetIO().DisplaySize;
@@ -236,6 +236,7 @@ void Menu::RenderMenu()
             fpsUnlock.DrawMenuItems();
             if (ImGui::Button("Force exit"))
                 ExitProcess(0);
+
             break;
 
         case CONFIG: 

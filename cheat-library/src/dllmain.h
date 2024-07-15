@@ -17,6 +17,8 @@
 #include <wuwa-base/Logger.h>
 #include <wuwa-base/util.h>
 #include <SDKTools/SDKTools.hpp>
+#include <SDK.hpp>
+#include <Hooks.h>
 
 typedef HRESULT(__stdcall* ResizeBuffers)(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
 ResizeBuffers oResizeBuffers = nullptr;

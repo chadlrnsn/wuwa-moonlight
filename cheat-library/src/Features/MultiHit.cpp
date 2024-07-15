@@ -1,5 +1,4 @@
 #include "MultiHit.h"
-#include "PE_Hook/vmthook.h"
 
 using ProcessEvent = void(__thiscall*)(UObject*, UFunction*, void*);
 static ProcessEvent ProcessEventOriginal = nullptr;
