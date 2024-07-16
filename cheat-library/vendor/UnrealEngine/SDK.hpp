@@ -30,6 +30,8 @@
 #include "SDK/WorldFunctionLibrary_classes.hpp"
 #include "SDK/TsAnimNotifyAddBuff_classes.hpp"
 #include "SDK/TsAnimNotifyReSkillEvent_classes.hpp"
+
+#include <SDK/Engine_parameters.hpp>
 /*
 #include "SDK/AnimationCore_structs.hpp"
 #include "SDK/AnimGraphRuntime_structs.hpp"

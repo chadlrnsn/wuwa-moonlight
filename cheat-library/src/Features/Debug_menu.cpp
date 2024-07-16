@@ -6,6 +6,8 @@
 #include <SDKTools/SDKTools.hpp>
 #include <wuwa-base/util.h>
 #include <minhook/include/MinHook.h>
+#include "SDK/TsAnimNotifyReSkillEvent_parameters.hpp"
+#include "SDK/TsAnimNotifyReSkillEvent_functions.cpp"
 
 using namespace SDK;
 
@@ -51,8 +53,9 @@ void DebugMenu::DebugMainPage()
 {
 	UEngine* Engine = UEngine::GetEngine();
 	UWorld* World = UWorld::GetWorld();
-	if (!Engine || !World || !IsFullyLoaded()) 
+	if (!Engine || !IsFullyLoaded(World))
 		return;
+
 
 	ULocalPlayer* LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
 	APlayerController* PlayerController = LocalPlayer->PlayerController;
@@ -63,6 +66,17 @@ void DebugMenu::DebugMainPage()
 	ImGui::Text("LocalPlayer -> 0x%d", &LocalPlayer);
 	ImGui::Text("APlayerController -> 0x%d", &PlayerController);
 	ImGui::Text("APawn -> 0x%d", &AcknowledgedPawn);
+
+	//if (ImGui::Button("event call"))
+	//{
+	//	auto vp = LocalPlayer->ViewportClient;
+	//	UFunction* fn = vp->FindObject<UFunction>("Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify");
+
+	//	Params::TsAnimNotifyReSkillEvent_C_K2_Notify* parameters = (Params::TsAnimNotifyReSkillEvent_C_K2_Notify*)params;
+	//	USkeletalMeshComponent* meshComp = parameters->MeshComp;
+
+	//	vp->ProcessEvent(fn, parameters);
+	//}
 
 	FVector pos = AcknowledgedPawn->K2_GetActorLocation();
 

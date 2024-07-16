@@ -109,7 +109,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 HRESULT __stdcall hkPresent_visuals(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
-
 	return hkPresent(pSwapChain, SyncInterval, Flags);
 }
 
@@ -129,7 +128,7 @@ DWORD WINAPI KeyHandler(LPVOID lpReserved)
 
 	while (!g_bUnload) {
 
-		// checking we on another window or no
+		// check if window is focused
 		if (window) {
 			if (GetForegroundWindow() != window)
 			{ 
@@ -188,11 +187,7 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved) noexcept
 		fpsUnlock.Run(enginePtr, 1);
 
 		World = UWorld::GetWorld();
-		if (!IsValidPointer(World))
-			continue;
-
-		// this is important
-		if (!IsFullyLoaded())
+		if (!IsFullyLoaded(World))
 			continue;
 
 

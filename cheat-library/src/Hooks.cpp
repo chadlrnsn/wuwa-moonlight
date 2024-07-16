@@ -25,7 +25,7 @@ HMODULE WINAPI hkLoadLibraryW(LPCWSTR libFileName)
 #ifdef _DEBUG
 			std::wcout << "Blocked dll: " << dll << std::endl;
 #else
-			std::wcout << "ACE Bypassed" << std::endl;
+			printf("Blocked anticheat dll: %s", dll);
 #endif
 			return nullptr;
 		}

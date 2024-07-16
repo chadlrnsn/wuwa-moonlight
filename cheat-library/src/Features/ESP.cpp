@@ -1,4 +1,5 @@
 #include "ESP.h"
+#include <SDKTools/SDKTools.hpp>
 
 void ESP::DrawMenuItems()
 {
@@ -25,15 +26,21 @@ void ESP::Run(void** args, size_t numArgs)
 
 	if (bEnabled && AcknowledgedPawn)
 	{
-		AcknowledgedPawn->bCanBeDamaged = false;
-		AcknowledgedPawn->bAllowReceiveTickEventOnDedicatedServer = false;
-		bOnce = false;
+		auto world = UWorld::GetWorld();
+
+		auto levels = world->Levels.Num();
+
+		auto localplayer = world->OwningGameInstance->LocalPlayers[0];
+
+		for (int i = 0; i < levels; i++) {
+			for (auto actor : world->Levels[i]->Actors) {
+
+			}
+		}
 	}
 
 	if (!bEnabled && AcknowledgedPawn && !bOnce)
 	{
-		AcknowledgedPawn->bCanBeDamaged = true;
 		bOnce = true;
-		//Cast<UWorld>(AcknowledgedPawn->GetWorld())->GetGameInstance()->GetFirstLocalPlayerController()->ConsoleCommand("stat fps");
 	}
 }

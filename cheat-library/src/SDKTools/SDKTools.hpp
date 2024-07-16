@@ -5,9 +5,8 @@
 
 using namespace util;
 
-inline bool IsFullyLoaded() noexcept
+inline bool IsFullyLoaded(UWorld* World) noexcept
 {
-	UWorld* World = UWorld::GetWorld();
 	if (!(World))
 	{
 		std::cerr << "No world found" << std::endl;
