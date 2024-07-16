@@ -11,7 +11,7 @@
 
 #include <imgui_internal.h>
 #include <imgui.h>
-#include <nav_elements.h>
+#include <imgui-nav/nav_elements.h>
 #include <imgui-notify/backends/IconsFontAwesome6.h>
 #include <imgui-notify/backends/ImGuiNotify.hpp>
 #include <Features/Features.h>
