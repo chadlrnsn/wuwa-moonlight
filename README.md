@@ -15,8 +15,13 @@
 - Open `Moonlight.exe` in `bin\Release-x64` put there bypass and open
 - **See [How to use](HowToUse.md) if you are a beginner**
 
-> [!IMPORTANT]\
-> Developers are not responsible for your actions, you do everything at your own risk!
+> [!Note]
+> Latest build available is for version 1.1.0 (global version only yet)
+
+
+> [!Warning]
+> This is for educational purposes only!
+> **The safety of your account is entirely your responsibility. If it gets banned by using this, it's your own fault! (You have been warned.)**
 
 
 ![preview](https://i.imgur.com/OJwrALG.jpeg)
