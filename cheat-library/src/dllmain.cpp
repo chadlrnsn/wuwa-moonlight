@@ -169,6 +169,8 @@ DWORD WINAPI FeaturesThread(LPVOID lpReserved) noexcept
 	UEngine* Engine;
 	UWorld* World;
 
+	DebugMenu::DebugRoutine();
+
 	while (!g_bUnload)
 	{
 

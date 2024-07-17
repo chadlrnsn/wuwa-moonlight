@@ -11,49 +11,50 @@
 
 using namespace SDK;
 
-using fn = void(__thiscall*)(UObject*, UObject*);
-using pevent_fn = void(__thiscall*)(UObject*, UObject*, void* params);
 
-fn original = 0;
-pevent_fn oProcessEvent = 0;
+using ProcessEvent = void(__thiscall*)(UObject*, UFunction*, void*);
+ProcessEvent oProcessEvent = 0;
 
-void hkPostRender(UObject* _this, UObject* canvas)
+void __stdcall hkProcessEvent(UObject* caller, UFunction* fn, void* params)
 {
-	original(_this, canvas);
-}
-
-void hkProcessEvent(UObject* caller, UFunction* fn, void* params) 
-{
-	printf("Caller: [%s] Function Called: [%s] Fullname : [%s]\n", caller->GetName().c_str(), fn->GetName().c_str(), fn->GetFullName().c_str());
-	oProcessEvent(caller, fn, params);
+	printf("Caller: [%s] Function: [%s] Fullname : [%s]\n", caller->GetName().c_str(), fn->GetName().c_str(), fn->GetFullName().c_str());
+	return oProcessEvent(caller, fn, params);
 }
 
 BYTE* vmt_hook(void** VTable, uint32_t index, void* fn)
 {
     BYTE* org = reinterpret_cast<BYTE*>(VTable[index]);
 
+	printf("Try intercept. Original Addr: %p, New Addr: %p\n", org, fn);
+
     DWORD protect = 0;
 
-    VirtualProtect(&VTable[index], 8, PAGE_EXECUTE_READWRITE, &protect);
-
-    std::cout << "Hooking index: " << index << std::endl;
-
-    VTable[index] = fn;
-
-    std::cout << "Function hooked successfully at index: " << index << std::endl;
-
-    VirtualProtect(&VTable[index], 8, protect, 0);
+    if (VirtualProtect(&VTable[index], 8, PAGE_EXECUTE_READWRITE, &protect))
+    {
+        VTable[index] = fn;
+        VirtualProtect(&VTable[index], 8, protect, 0);
+		printf("Successfully intercepted!\n");
+    }
+    else
+    {
+        std::cerr << "Failed to change memory protection!" << std::endl;
+    }
 
     return org;
 }
 
 
 
+
 void DebugMenu::DebugMainPage()
 {
 	UEngine* Engine = UEngine::GetEngine();
+	if (!Engine)
+		return;
+
+
 	UWorld* World = UWorld::GetWorld();
-	if (!Engine || !IsFullyLoaded(World))
+	if (!World || !IsFullyLoaded(World))
 		return;
 
 
@@ -146,9 +147,108 @@ void DebugMenu::DebugMainPage()
 		bOnce2 = false;
 		std::cout << "Hook disabled" << std::endl;
 	}	
+
+	if (ImGui::Button("hook this shit")) {
+		UGameViewportClient* vpc = World->OwningGameInstance->LocalPlayers[0]->ViewportClient;
+
+		if (!vpc)
+			return;
+
+		void** VFTable = reinterpret_cast<void**>(vpc->VTable);
+
+		if (VFTable)
+		{
+			oProcessEvent = reinterpret_cast<decltype(oProcessEvent)>(vmt_hook(VFTable, Offsets::ProcessEventIdx, &hkProcessEvent));
+
+			// После вызова vmt_hook
+			void* new_func = VFTable[Offsets::ProcessEventIdx];
+			if (new_func == &hkProcessEvent)
+			{
+				printf("Successfully intercepted rout!\n");
+				for (int i = 0; i < 74; i++) {
+					printf("[%d - [%p]]\n", i, VFTable[i]);
+				}
+			}
+			else
+			{
+				printf("Successfully intercepted. Current addr: %p\n", new_func);
+			}
+
+			if (oProcessEvent)
+			{
+				printf("Original ProcessEvent function address: [%p] [%p]\n", (void*)oProcessEvent, &oProcessEvent);
+				//hooked = true;
+			}
+			else
+			{
+				std::cerr << "Failed to get original ProcessEvent function address!" << std::endl;
+			}
+		}
+		else {
+			std::cerr << "VTable is null!" << std::endl;
+		}
+	}
 }
 
-void DebugMenu::DebugRoutine()
-{
+static UGameViewportClient* getViewport(UWorld* world) noexcept {
+	return world->OwningGameInstance->LocalPlayers[0]->ViewportClient;
+}
 
+void DebugMenu::DebugRoutine() noexcept
+{
+	bool hooked = false;
+
+	//while (!hooked)
+	//{
+
+	//	UWorld* World = UWorld::GetWorld();
+	//	if (!World)
+	//		continue;
+	//	
+	//	if (!IsFullyLoaded(World))
+	//		continue;
+
+	//	if (!World->OwningGameInstance->LocalPlayers[0]->PlayerController->K2_GetPawn()->IsPawnControlled())
+	//		continue;
+
+	//	UGameViewportClient* vpc = World->OwningGameInstance->LocalPlayers[0]->ViewportClient;
+	//	if (!vpc)
+	//		continue;
+
+	//	void** VFTable = reinterpret_cast<void**>(vpc->VTable);
+
+	//	if (VFTable)
+	//	{
+	//		oProcessEvent = reinterpret_cast<decltype(oProcessEvent)>(vmt_hook(VFTable, Offsets::ProcessEventIdx, &hkProcessEvent));
+
+	//		// После вызова vmt_hook
+	//		void* new_func = VFTable[Offsets::ProcessEventIdx];
+	//		if (new_func == &hkProcessEvent)
+	//		{
+	//			printf("Successfully intercepted rout!\n");
+	//			for (int i = 0; i < 74; i++) {
+	//				printf("[%d - [%p]]\n", i, VFTable[i]);
+	//			}
+	//		}
+	//		else
+	//		{
+	//			printf("Successfully intercepted. Current addr: %p\n", new_func);
+	//		}
+
+	//		if (oProcessEvent)
+	//		{
+	//			printf("Original ProcessEvent function address: [%p] [%p]\n", (void*)oProcessEvent, &oProcessEvent);
+	//			hooked = true;
+	//		}
+	//		else
+	//		{
+	//			std::cerr << "Failed to get original ProcessEvent function address!" << std::endl;
+	//		}
+	//	}
+	//	else {
+	//		std::cerr << "VTable is null!" << std::endl;
+	//	}
+
+	//	std::this_thread::sleep_for(std::chrono::milliseconds(100));
+	//}
 }
