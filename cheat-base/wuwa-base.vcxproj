@@ -153,25 +153,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\wuwa-base\events\event.hpp" />
-    <ClInclude Include="src\wuwa-base\events\handlers\abstracteventhandler.hpp" />
-    <ClInclude Include="src\wuwa-base\events\handlers\eventhandlerptr.h" />
-    <ClInclude Include="src\wuwa-base\events\handlers\functoreventhandler.hpp" />
-    <ClInclude Include="src\wuwa-base\events\handlers\handlercast.hpp" />
-    <ClInclude Include="src\wuwa-base\events\handlers\helpers\innerholder.hpp" />
-    <ClInclude Include="src\wuwa-base\events\handlers\helpers\objectsaver.hpp" />
-    <ClInclude Include="src\wuwa-base\events\handlers\methodeventhandler.hpp" />
-    <ClInclude Include="src\wuwa-base\events\helpers\is_equatable.hpp" />
-    <ClInclude Include="src\wuwa-base\events\joins\abstracteventjoin.h" />
-    <ClInclude Include="src\wuwa-base\events\joins\eventjoinwrapper.h" />
-    <ClInclude Include="src\wuwa-base\events\joins\eventjoinwrapper.hpp" />
-    <ClInclude Include="src\wuwa-base\events\joins\handlereventjoin.h" />
-    <ClInclude Include="src\wuwa-base\events\joins\handlereventjoin.hpp" />
     <ClInclude Include="src\wuwa-base\framework\framework.h" />
     <ClInclude Include="src\wuwa-base\framework\pch.h" />
     <ClInclude Include="src\wuwa-base\inject\load-library.h" />
     <ClInclude Include="src\wuwa-base\inject\manual-map.h" />
-    <ClInclude Include="src\wuwa-base\Logger.h" />
     <ClInclude Include="src\wuwa-base\util.h" />
     <ClInclude Include="vendor\nlohmann\adl_serializer.hpp" />
     <ClInclude Include="vendor\nlohmann\byte_container_with_subtype.hpp" />
@@ -221,12 +206,9 @@
     <ClInclude Include="vendor\SimpleIni\SimpleIni.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\wuwa-base\events\joins\abstracteventjoin.cpp" />
-    <ClCompile Include="src\wuwa-base\events\joins\eventjoinwrapper.cpp" />
     <ClCompile Include="src\wuwa-base\framework\pch.cpp" />
     <ClCompile Include="src\wuwa-base\inject\load-library.cpp" />
     <ClCompile Include="src\wuwa-base\inject\manual-map.cpp" />
-    <ClCompile Include="src\wuwa-base\Logger.cpp" />
     <ClCompile Include="src\wuwa-base\util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

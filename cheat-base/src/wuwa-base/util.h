@@ -4,7 +4,6 @@
 #include <memory>
 #include <optional>
 #include <vector>
-#include <wuwa-base/Logger.h>
 
 #include <filesystem>
 #include <SimpleIni/SimpleIni.h>

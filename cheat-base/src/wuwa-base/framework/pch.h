@@ -30,12 +30,5 @@
 
 #include <SimpleIni.h>
 
-#include <wuwa-base/Logger.h>
-
-#include <wuwa-base/events/event.hpp>
-#include <wuwa-base/events/handlers/methodeventhandler.hpp>
-#include <wuwa-base/events/handlers/functoreventhandler.hpp>
-#include <wuwa-base/events/joins/handlereventjoin.hpp>
-#include <wuwa-base/events/joins/eventjoinwrapper.hpp>
 
 #endif //PCH_H
