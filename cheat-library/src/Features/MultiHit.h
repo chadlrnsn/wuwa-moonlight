@@ -1,4 +1,7 @@
-#include "Feature.h"
+#pragma once
+#include <includes.h>
+#include <SDK.hpp>
+#include <globals.h>
 #include <SDK/TsAnimNotifyReSkillEvent_parameters.hpp>
 
 using tProcessEvent = void(__thiscall*)(UObject*, UFunction*, void*);

@@ -4,10 +4,8 @@
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\Helper.cpp" />
     <ClCompile Include="src\Hooks\Hooks.cpp" />
-    <ClCompile Include="src\SDKTools\Player.cpp" />
     <ClCompile Include="vendor\kiero\kiero.cpp" />
     <ClCompile Include="src\Menu\Menu.cpp" />
-    <ClCompile Include="src\SDKTools\World.cpp" />
     <ClCompile Include="vendor\imgui\backends\imgui_impl_dx11.cpp" />
     <ClCompile Include="vendor\imgui\imgui.cpp" />
     <ClCompile Include="vendor\imgui\imgui_demo.cpp" />
@@ -28,7 +26,6 @@
     <ClInclude Include="src\dllmain.h" />
     <ClInclude Include="src\Features\Bindings.h" />
     <ClInclude Include="src\Features\ESP.h" />
-    <ClInclude Include="src\Features\Feature.h" />
     <ClInclude Include="src\Features\Features.h" />
     <ClInclude Include="src\Features\Fly.h" />
     <ClInclude Include="src\Features\GodMode.h" />
@@ -40,12 +37,10 @@
     <ClInclude Include="src\globals.h" />
     <ClInclude Include="src\Helper.h" />
     <ClInclude Include="src\Hooks\Hooks.h" />
-    <ClInclude Include="src\SDKTools\Player.h" />
     <ClInclude Include="src\SDKTools\SDKTools.hpp" />
     <ClInclude Include="vendor\fonts\font.h" />
     <ClInclude Include="vendor\kiero\kiero.h" />
     <ClInclude Include="src\Menu\Menu.hpp" />
-    <ClInclude Include="src\SDKTools\World.h" />
     <ClInclude Include="vendor\imgui\backends\imgui_impl_dx11.h" />
     <ClInclude Include="vendor\imgui\imconfig.h" />
     <ClInclude Include="vendor\imgui\imgui.h" />
@@ -66,6 +61,7 @@
     <ClInclude Include="src\includes.h" />
     <ClInclude Include="src\config.h" />
     <ClInclude Include="src\Hooks\d3d11hook.h" />
+    <ClInclude Include="src\Hooks\tFunctions.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\minhook\dll_resources\MinHook.def" />

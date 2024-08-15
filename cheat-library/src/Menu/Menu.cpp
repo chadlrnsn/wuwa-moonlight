@@ -218,14 +218,13 @@ void Menu::RenderMenu()
     switch (tab)
     {
         case PLAYER:
-            //god.DrawMenuItems();
             speedhack.DrawMenuItems();
             fly.DrawMenuItems();
             gravityScale.DrawMenuItems();
             walkFloorZ.DrawMenuItems();
             walkFloorAngle.DrawMenuItems();
-            //hitMultiplier.DrawMenuItems();
             multihit.Draw();
+            godmode.Draw();
 
             break;
 

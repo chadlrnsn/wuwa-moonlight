@@ -7,4 +7,8 @@ namespace config {
 		inline int min_hits = 2;
 		inline int hits = 10;
 	}
+
+	namespace godmode {
+		inline bool enabled = false;
+	}
 }

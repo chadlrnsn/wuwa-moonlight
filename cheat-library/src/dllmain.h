@@ -19,6 +19,5 @@
 #include <SDK.hpp>
 #include <Hooks/Hooks.h>
 
-void FeaturesThread();
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved);
 BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved);

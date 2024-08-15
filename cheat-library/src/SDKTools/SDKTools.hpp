@@ -1,34 +1,29 @@
 #pragma once
-#include "Player.h"
-#include "World.h"
-#include <wuwa-base/util.h>
 
-using namespace util;
-
-inline bool IsFullyLoaded(UWorld* World) noexcept
+inline bool IsFullyLoaded() noexcept
 {
-	if (!(World))
+	if (!World)
 	{
 		// std::cerr << "No world found" << std::endl;
 		return false;
 	}
 
 	UGameInstance* GameInstance = World->OwningGameInstance;
-	if (!(GameInstance))
+	if (!GameInstance)
 	{
 		// std::cerr << "No GameInstace found" << std::endl;
 		return false;
 	}
 
 	ULocalPlayer* LocalPlayer = GameInstance->LocalPlayers.Num() > 0 ? GameInstance->LocalPlayers[0] : nullptr;
-	if (!(LocalPlayer))
+	if (!LocalPlayer)
 	{
 		// std::cerr << "No LocalPlayer found" << std::endl;
 		return false;
 	}
 
 	APlayerController* PlayerController = LocalPlayer->PlayerController;
-	if (!(PlayerController))
+	if (!PlayerController)
 	{
 		// std::cerr << "No PlayerController found" << std::endl;
 		return false;

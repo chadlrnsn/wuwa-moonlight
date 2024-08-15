@@ -1,79 +1,41 @@
-#include "Feature.h"
+#pragma once
+#include <includes.h>
+#include <globals.h>
+#include <SDK/TsAnimNotifyReSkillEvent_parameters.hpp>
+using namespace globals;
 
-class GodMode : Feature
+using tProcessEvent = void(__thiscall*)(UObject*, UFunction*, void*);
+
+class GodMode
 {
-private:
-	bool Initalized = false;
-
 public:
-	bool bGodMode = false;
-	int iDmgTest = 1;
-
-private:
-	bool bOnce = false;
-
-public:
-	GodMode() {};
-
-	// Handle setup, like hook creation and variable initalization
-	bool Setup() override
-	{
-		Initalized = true;
-
-		return Initalized;
-	};
-
-	// Handle clean up, like restoring hooked functions 
-	void Destroy() override
-	{
-		Initalized = false;
-	}
-
-	// Handle checking for any key/hotkey presses or holds needed for features
-	void HandleKeys() override {}
-
-	// This should be run in the ImGUI draw loop, used to draw anything to the menu
-	void DrawMenuItems() override;
-
-	// This should be run at the top of the ImGUI draw loop, used to render things like ESP, Tracers, and Debug Info
-	void Render(void** args, size_t numArgs) override {}
-
-	// This should be run in the feature loop, used to run any acutal feature code like setting a value for godmode
-	void Run(void** args, size_t numArgs) override;
+	void HandleKeys();
+	void Draw();
+	void Call(UObject* Object, UFunction* Function, void* Parms, tProcessEvent oProcessEvent);
 };
 
 
-inline void GodMode::DrawMenuItems()
-{
-	ImGui::Checkbox("God Mode", &bGodMode);
+
+inline void GodMode::Draw() {
+	ImGui::Checkbox("God Mode", &config::godmode::enabled);
 }
 
-inline void GodMode::Run(void** args, size_t numArgs)
-{
-	if (!Initalized)
-		return;
+inline void GodMode::Call(UObject* Object, UFunction* Function, void* Parms, tProcessEvent oProcessEvent) {
 
-	if (numArgs != 1)
-	{
-		//std::cout << "Too many or too little args passed to GodMode, Destryoing...\n";
-		Destroy();
-		return;
-	}
+	APawn* MyPawn = globals::AcknowledgedPawn;
 
-	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
+	if (Function == globals::tfuncs::ReSkillEvent_C) {
+		//printf("Object [%s] MyPawn [%s] Function [%s]\n", Object->GetName().c_str(), MyPawn->GetName().c_str(), Function->GetName().c_str());
 
-	// Make player invulnerable
-	if (bGodMode && AcknowledgedPawn)
-	{
-		AcknowledgedPawn->ReceiveAnyDamage(iDmgTest, nullptr, nullptr, nullptr);
-		bOnce = false;
-	}
+		SDK::Params::TsAnimNotifyReSkillEvent_C_K2_Notify* parameters = (SDK::Params::TsAnimNotifyReSkillEvent_C_K2_Notify*)Parms;
+		SDK::USkeletalMeshComponent* meshComp = parameters->MeshComp;
 
-	if (!bGodMode && AcknowledgedPawn && !bOnce)
-	{
-		AcknowledgedPawn->ReceiveAnyDamage(0, nullptr, nullptr, nullptr);
-		bOnce = true;
+		if (meshComp && meshComp->GetOwner() != MyPawn) {
+			printf("Prevented damage to anyone else\n");
+			return;
+		}
 	}
 }
 
-inline GodMode god;
+// i declarate here cause im too lazy do that in another place 
+inline GodMode godmode;

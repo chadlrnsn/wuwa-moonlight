@@ -1,40 +1,26 @@
-#include "Feature.h"
+#pragma once
+#include <includes.h>
+#include <globals.h>
+using namespace globals;
 
-class WalkableFloorZ : Feature
+class WalkableFloorZ 
 {
-private:
-	bool Initalized = false;
-
 public:
 	bool bEnable = false;
 	float fMaxZ = 2000.0f;
 	float fMinZ = -2000.0f;
 	float fZ = 0.574f;
-
-private:
+	bool bOnce = true;
 
 public:
-	WalkableFloorZ() {};
 
-	bool Setup() override
-	{
-		Initalized = true;
+	void HandleKeys();
 
-		return Initalized;
-	};
+	void DrawMenuItems();
 
-	void Destroy() override
-	{
-		Initalized = false;
-	}
+	void Render();
 
-	void HandleKeys() override {}
-
-	void DrawMenuItems() override;
-
-	void Render(void** args, size_t numArgs) override {}
-
-	void Run(void** args, size_t numArgs) override;
+	void Run();
 };
 
 
@@ -47,29 +33,21 @@ inline void WalkableFloorZ::DrawMenuItems()
 	}
 }
 
-inline void WalkableFloorZ::Run(void** args, size_t numArgs)
+inline void WalkableFloorZ::Run()
 {
-	if (!Initalized)
-		return;
-
-	if (numArgs != 1)
-	{
-		Destroy();
-		return;
-	}
-
-	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
 	SDK::UPawnMovementComponent* PawnMovement = AcknowledgedPawn->GetMovementComponent();
 	SDK::UCharacterMovementComponent* Movement = static_cast<SDK::UCharacterMovementComponent*>(PawnMovement);
 
 	if (bEnable && Movement)
 	{
 		Movement->WalkableFloorZ = fZ;
+		bOnce = true;
 	}
 
-	if (!bEnable && Movement)
+	if (!bEnable && Movement && bOnce)
 	{
 		Movement->WalkableFloorZ = 0.574f;
+		bOnce = false;
 	}
 }
 

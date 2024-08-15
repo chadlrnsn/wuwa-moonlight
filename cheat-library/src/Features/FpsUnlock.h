@@ -1,5 +1,8 @@
 #pragma once
-#include "Feature.h"
+#include <includes.h>
+#include <SDK.hpp>
+#include <globals.h>
+using namespace globals;
 
 class FpsUnlock
 {

@@ -1,6 +1,10 @@
-#include "Feature.h"
+#pragma once
+#include <includes.h>
+#include <SDK.hpp>
+#include <globals.h>
+using namespace globals;
 
-class GravityScale : Feature
+class GravityScale
 {
 private:
 	bool Initalized = false;
@@ -15,27 +19,14 @@ private:
 	bool bOnce = false;
 
 public:
-	GravityScale() {};
 
-	bool Setup() override
-	{
-		Initalized = true;
+	void HandleKeys();
 
-		return Initalized;
-	};
+	void DrawMenuItems();
 
-	void Destroy() override
-	{
-		Initalized = false;
-	}
+	void Render();
 
-	void HandleKeys() override {}
-
-	void DrawMenuItems() override;
-
-	void Render(void** args, size_t numArgs) override {}
-
-	void Run(void** args, size_t numArgs) override;
+	void Run();
 };
 
 
@@ -48,18 +39,8 @@ inline void GravityScale::DrawMenuItems()
 	}
 }
 
-inline void GravityScale::Run(void** args, size_t numArgs)
+inline void GravityScale::Run()
 {
-	if (!Initalized)
-		return;
-
-	if (numArgs != 1)
-	{
-		Destroy();
-		return;
-	}
-
-	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
 	SDK::UPawnMovementComponent* PawnMovement = AcknowledgedPawn->GetMovementComponent();
 	SDK::UCharacterMovementComponent* Movement = static_cast<SDK::UCharacterMovementComponent*>(PawnMovement);
 

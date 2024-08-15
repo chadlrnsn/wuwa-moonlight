@@ -1,37 +1,21 @@
-#include "Feature.h"
+#pragma once
+#include <includes.h>
+#include <globals.h>
+using namespace globals;
 
-class WalkableFloorAngle : Feature
+class WalkableFloorAngle
 {
-private:
-	bool Initalized = false;
-
 public:
 	bool bEnable = false;
 	float fMaxAngle = 360.0f;
 	float fMinAngle = -360.0f;
 	float fAngle = 55.0f;
-
-private:
 	bool bOnce = false;
 
 public:
-	WalkableFloorAngle() {};
+	void HandleKeys();
 
-	bool Setup() override
-	{
-		Initalized = true;
-
-		return Initalized;
-	};
-
-	void Destroy() override
-	{
-		Initalized = false;
-	}
-
-	void HandleKeys() override {}
-
-	void DrawMenuItems() override
+	void DrawMenuItems()
 	{
 		ImGui::Checkbox("WalkableFloorAngle", &bEnable);
 		if (bEnable) {
@@ -40,23 +24,14 @@ public:
 		}
 	}
 
-	void Render(void** args, size_t numArgs) override {}
+	void Render();
 
-	void Run(void** args, size_t numArgs) override;
+	void Run();
 };
 
-inline void WalkableFloorAngle::Run(void** args, size_t numArgs)
+inline void WalkableFloorAngle::Run()
 {
-	if (!Initalized)
-		return;
 
-	if (numArgs != 1)
-	{
-		Destroy();
-		return;
-	}
-
-	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
 	SDK::UPawnMovementComponent* PawnMovement = AcknowledgedPawn->GetMovementComponent();
 	SDK::UCharacterMovementComponent* Movement = static_cast<SDK::UCharacterMovementComponent*>(PawnMovement);
 

@@ -15,7 +15,6 @@ namespace globals {
 	inline ULocalPlayer* LocalPlayer;
 	inline APlayerController* PlayerController;
 	inline APawn* AcknowledgedPawn;
-	inline UPawnMovementComponent* MovementComponent;
 	inline TArray<ULevel*> Levels;
 
 	namespace tfuncs {

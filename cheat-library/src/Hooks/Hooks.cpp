@@ -109,27 +109,29 @@ void Hooks::AntiDebug()
 
 void __fastcall hkProcessEvent(UObject* caller, UFunction* function, void* params) {
 
+	//printf("Calling ProcessEvent %s\n", function->GetName().c_str());
 	if (config::multihit::enabled) multihit.Call(caller, function, params, oProcessEvent);
+	if (config::godmode::enabled) godmode.Call(caller, function, params, oProcessEvent);
 	oProcessEvent(caller, function, params);
 }
 
 void Hooks::InGame::ProcessEvent()
 {
 	void* ProcessEventAddr = reinterpret_cast<void*>(InSDKUtils::GetImageBase() + SDK::Offsets::ProcessEvent);
-	printf("ProcessEvent address: %llx", ProcessEventAddr);
+	printf("ProcessEvent address: %llx\n", ProcessEventAddr);
 
 
 	while (true) {
 		if ((InSDKUtils::GetImageBase() + SDK::Offsets::ProcessEvent) <= InSDKUtils::GetImageBase()) {
-			printf("Invalid ProcessEvent address");
+			printf("Invalid ProcessEvent address\n");
 			break;
 		}
 
-		printf("Trying to hook ProcessEvent at %llx", ProcessEventAddr);
+		printf("Trying to hook ProcessEvent at %llx\n", ProcessEventAddr);
 
 		MH_STATUS status = MH_CreateHook(ProcessEventAddr, &hkProcessEvent, reinterpret_cast<LPVOID*>(&oProcessEvent));
 		if (status != MH_OK) {
-			printf("Failed to create hook: %s", MH_StatusToString(status));
+			printf("Failed to create hook: %s\n", MH_StatusToString(status));
 
 			std::this_thread::sleep_for(std::chrono::seconds(1));
 			continue;
@@ -137,15 +139,14 @@ void Hooks::InGame::ProcessEvent()
 
 		status = MH_EnableHook(ProcessEventAddr);
 		if (status != MH_OK) {
-			printf("Failed to enable hook: %s", MH_StatusToString(status));
+			printf("Failed to enable hook: %s\n", MH_StatusToString(status));
 			std::this_thread::sleep_for(std::chrono::seconds(1));
 			continue;
 		}
 
-		printf("ProcessEvent hook created and enabled successfully");
+		printf("ProcessEvent hook created and enabled successfully\n");
 		break;
 	}
-	printf("Failed to hook ProcessEvent");
 }
 
 
