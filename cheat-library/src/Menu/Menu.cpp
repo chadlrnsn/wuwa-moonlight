@@ -135,7 +135,7 @@ void Menu::PreventMoveOutOfWndBounds(const char* wndName) {
 void Menu::RenderMenu()
 {
     static Headers tab = PLAYER;
-    const char* tab_names[] = { "PLAYER", "ESP", "MISC", "CONFIG", "DEBUG" };
+    const char* tab_names[] = { "PLAYER", "ESP", "MISC", "CONFIG", /*"DEBUG"*/ };
 
     // Get Window Size
     ImVec2 wndSize = ImGui::GetIO().DisplaySize;
@@ -169,14 +169,14 @@ void Menu::RenderMenu()
 
             ImGui::PushFont(title);
 
-            ImVec2 textSize = ImGui::CalcTextSize(ProjectName);
+            ImVec2 textSize = ImGui::CalcTextSize("Moonlight");
 
             float posX = (leftTopChildSize.x - textSize.x) * 0.5f;
             float posY = (leftTopChildSize.y - textSize.y) * 0.5f;
 
             ImGui::SetCursorPos(ImVec2(posX, posY));
 
-            ImGui::TextColored(ImColor(84, 160, 227), ProjectName);
+            ImGui::TextColored(ImColor(84, 160, 227), "Moonlight");
 
             ImGui::PopFont();
             ImGui::EndChild();
@@ -225,6 +225,7 @@ void Menu::RenderMenu()
             walkFloorZ.DrawMenuItems();
             walkFloorAngle.DrawMenuItems();
             //hitMultiplier.DrawMenuItems();
+            multihit.Draw();
 
             break;
 
@@ -242,11 +243,10 @@ void Menu::RenderMenu()
         case CONFIG: 
             ImGui::Text("in dev.");
             break;
-#ifdef _DEBUG
-        case DEBUG:
-            DebugMenu::DebugMainPage();
-            break;
-#endif
+//#ifdef _DEBUG
+//        case DEBUG:
+//            break;
+//#endif
 
     } // Switch
 
@@ -262,7 +262,7 @@ void Menu::RenderMenu()
 
 void Menu::RenderWatermark()
 {
-    if (!this->bWatermark)
+    if (!bWatermark)
         return;
 
 
@@ -283,7 +283,7 @@ void Menu::RenderWatermark()
         ImGuiWindowFlags_NoBackground |
         ImGuiWindowFlags_NoNavFocus |
         ImGuiWindowFlags_NoNav);
-    ImGui::Text("Moonlight | Build %s | %s", __DATE__, std::ctime(&formatedtime));
+    ImGui::Text("Moonlight | github.com/chadlrnsn/wuwa-moonlight");
     ImGui::End();
 }
 
@@ -308,3 +308,4 @@ void Menu::RenderNotify()
     // Argument MUST match the amount of ImGui::PushStyleColor() calls 
     //ImGui::PopStyleColor(1);
 }
+

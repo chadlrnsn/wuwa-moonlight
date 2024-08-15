@@ -1,39 +1,46 @@
 #include "Feature.h"
+#include <SDK/TsAnimNotifyReSkillEvent_parameters.hpp>
 
-class HitMultiplier : Feature
+using tProcessEvent = void(__thiscall*)(UObject*, UFunction*, void*);
+
+class HitMultiplier
 {
-private:
-	bool Initalized = false;
-
 public:
-	bool bEnable = false;
-	int iMax = 100;
-	int iMin = 1;
-	int iCurrent = 10;
-
-private:
-	bool bHooked = false;
-
-public:
-	HitMultiplier() {};
-
-	bool Setup() override
-	{
-		Initalized = true;
-
-		return Initalized;
-	};
-
-	void Destroy() override
-	{
-		Initalized = false;
-	}
-
-	void HandleKeys() override {}
-
-	void DrawMenuItems() override;
-
-	void Render(void** args, size_t numArgs) override {}
-
-	void Run(void** args, size_t numArgs) override;
+	void HandleKeys();
+	void Draw();
+	void Call(UObject* Object, UFunction* Function, void* Parms, tProcessEvent oProcessEvent);
 };
+
+
+
+inline void HitMultiplier::Draw() {
+	ImGui::Checkbox("Multi Hit", &config::multihit::enabled);
+	if (config::multihit::enabled) {
+		ImGui::BeginChild(2, ImVec2(0, 100), 1);
+		ImGui::Text("Hit multiplier");
+		ImGui::SliderInt("##Hit multiplier", &config::multihit::hits, config::multihit::min_hits, config::multihit::max_hits);
+		ImGui::EndChild();
+	}
+}
+
+inline void HitMultiplier::Call(UObject* Object, UFunction* Function, void* Parms, tProcessEvent oProcessEvent) {
+
+	APawn* MyPawn = globals::AcknowledgedPawn;
+
+	if (Function == globals::tfuncs::ReSkillEvent_C) {
+		printf("Object [%s] MyPawn [%s] Function [%s]\n", Object->GetName().c_str(), MyPawn->GetName().c_str(), Function->GetName().c_str());
+
+		SDK::Params::TsAnimNotifyReSkillEvent_C_K2_Notify* parameters = (SDK::Params::TsAnimNotifyReSkillEvent_C_K2_Notify*)Parms;
+		SDK::USkeletalMeshComponent* meshComp = parameters->MeshComp;
+
+		if (meshComp && meshComp->GetOwner() == MyPawn) {
+			for (auto i = 0; i < config::multihit::hits; i++) {
+				oProcessEvent(Object, Function, Parms);
+			}
+		}
+		return;
+	}
+}
+
+// i declarate here cause im too lazy do that in another place 
+inline HitMultiplier multihit;

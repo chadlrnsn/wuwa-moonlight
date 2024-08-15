@@ -2,11 +2,11 @@
 #define IMGUI_DEFINE_MATH_OPERATORS
 #include <imgui.h>
 #include <SDK.hpp>
-#include <PE_Hook/PE_Hook.hpp>
 #include "Bindings.h"
-
+#include <globals.h>
 
 using namespace SDK;
+using namespace globals;
 
 class Feature
 {

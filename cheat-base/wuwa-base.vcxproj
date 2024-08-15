@@ -125,6 +125,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>Default</LanguageStandard_C>
       <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\SimpleIni;$(ProjectDir)\src\wuwa-base\framework;$(ProjectDir)\vendor\imgui-notify</AdditionalIncludeDirectories>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,6 +145,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,6 +160,13 @@
     <ClInclude Include="src\wuwa-base\inject\load-library.h" />
     <ClInclude Include="src\wuwa-base\inject\manual-map.h" />
     <ClInclude Include="src\wuwa-base\util.h" />
+    <ClInclude Include="vendor\CppSDK\SDK\Basic.hpp" />
+    <ClInclude Include="vendor\CppSDK\SDK\CoreUObject_classes.hpp" />
+    <ClInclude Include="vendor\CppSDK\SDK\CoreUObject_parameters.hpp" />
+    <ClInclude Include="vendor\CppSDK\SDK\CoreUObject_structs.hpp" />
+    <ClInclude Include="vendor\CppSDK\SDK\Engine_classes.hpp" />
+    <ClInclude Include="vendor\CppSDK\SDK\Engine_parameters.hpp" />
+    <ClInclude Include="vendor\CppSDK\SDK\Engine_structs.hpp" />
     <ClInclude Include="vendor\nlohmann\adl_serializer.hpp" />
     <ClInclude Include="vendor\nlohmann\byte_container_with_subtype.hpp" />
     <ClInclude Include="vendor\nlohmann\detail\abi_macros.hpp" />
@@ -210,6 +219,9 @@
     <ClCompile Include="src\wuwa-base\inject\load-library.cpp" />
     <ClCompile Include="src\wuwa-base\inject\manual-map.cpp" />
     <ClCompile Include="src\wuwa-base\util.cpp" />
+    <ClCompile Include="vendor\CppSDK\SDK\Basic.cpp" />
+    <ClCompile Include="vendor\CppSDK\SDK\CoreUObject_functions.cpp" />
+    <ClCompile Include="vendor\CppSDK\SDK\Engine_functions.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

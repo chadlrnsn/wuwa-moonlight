@@ -9,13 +9,5 @@
 #include "FpsUnlock.h"
 #include "MultiHit.h"
 
-#include "Debug_menu.h"
 
-inline GodMode god;
-inline SpeedHack speedhack;
-inline GravityScale gravityScale;
-inline WalkableFloorZ walkFloorZ;
-inline WalkableFloorAngle walkFloorAngle;
-inline Fly fly;
-inline FpsUnlock fpsUnlock;
-inline HitMultiplier hitMultiplier;
+

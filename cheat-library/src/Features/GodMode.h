@@ -41,3 +41,39 @@ public:
 	// This should be run in the feature loop, used to run any acutal feature code like setting a value for godmode
 	void Run(void** args, size_t numArgs) override;
 };
+
+
+inline void GodMode::DrawMenuItems()
+{
+	ImGui::Checkbox("God Mode", &bGodMode);
+}
+
+inline void GodMode::Run(void** args, size_t numArgs)
+{
+	if (!Initalized)
+		return;
+
+	if (numArgs != 1)
+	{
+		//std::cout << "Too many or too little args passed to GodMode, Destryoing...\n";
+		Destroy();
+		return;
+	}
+
+	SDK::APawn* AcknowledgedPawn = (SDK::APawn*)args[0];
+
+	// Make player invulnerable
+	if (bGodMode && AcknowledgedPawn)
+	{
+		AcknowledgedPawn->ReceiveAnyDamage(iDmgTest, nullptr, nullptr, nullptr);
+		bOnce = false;
+	}
+
+	if (!bGodMode && AcknowledgedPawn && !bOnce)
+	{
+		AcknowledgedPawn->ReceiveAnyDamage(0, nullptr, nullptr, nullptr);
+		bOnce = true;
+	}
+}
+
+inline GodMode god;

@@ -14,56 +14,11 @@
 #include <Menu/Menu.hpp>
 #include <Helper.h>
 #include <globals.h>
-#include <wuwa-base/Logger.h>
 #include <wuwa-base/util.h>
 #include <SDKTools/SDKTools.hpp>
 #include <SDK.hpp>
-#include <Hooks.h>
+#include <Hooks/Hooks.h>
 
-typedef HRESULT(__stdcall* ResizeBuffers)(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
-ResizeBuffers oResizeBuffers = nullptr;
-typedef HRESULT(__stdcall* Present) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
-Present oPresent;
-
-typedef LRESULT(CALLBACK* WNDPROC)(HWND, UINT, WPARAM, LPARAM);
-typedef uintptr_t PTR;
-
-// to unload dll
-typedef BOOL(WINAPI* PFreeLibrary)(_In_ HMODULE hModule);
-typedef VOID(WINAPI* PExitThread)(_In_ DWORD dwExitCode);
-typedef unsigned int (WINAPI* PTHREADPROC)(LPVOID lParam);
-
-typedef struct _DLLUNLOADINFO
-{
-    PFreeLibrary	m_fpFreeLibrary;
-    PExitThread		m_fpExitThread;
-    HMODULE		    m_hFreeModule;
-} DLLUNLOADINFO, *PDLLUNLOADINFO;
-
-extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-
-volatile bool g_bUnload = false;
-HWND window = NULL;
-WNDPROC oWndProc;
-ID3D11Device* pDevice = NULL;
-ID3D11DeviceContext* pContext = NULL;
-ID3D11RenderTargetView* mainRenderTargetView;
-IDXGISwapChain* pSwapChain;
-HMODULE hModule;
-
-Menu menu;
-inline bool firstnotify = false;
-void InitImGui();
-void CreateRenderTarget(IDXGISwapChain* pSwapChain);
-void CleanupRenderTarget();
-
-LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-HRESULT __stdcall hkPresent_visuals(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
-HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
-HRESULT __stdcall hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
-
-// Hack stuff
-DWORD WINAPI KeyHandler(LPVOID lpReserved);
-DWORD WINAPI FeaturesThread(LPVOID lpReserved) noexcept;
+void FeaturesThread();
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved);
 BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved);

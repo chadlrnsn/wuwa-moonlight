@@ -168,6 +168,27 @@
     <ClInclude Include="vendor\nlohmann\ordered_map.hpp">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\CppSDK\SDK\Basic.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\CppSDK\SDK\CoreUObject_classes.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\CppSDK\SDK\CoreUObject_parameters.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\CppSDK\SDK\CoreUObject_structs.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\CppSDK\SDK\Engine_classes.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\CppSDK\SDK\Engine_parameters.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\CppSDK\SDK\Engine_structs.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\wuwa-base\util.cpp">
@@ -180,6 +201,15 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\wuwa-base\framework\pch.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\CppSDK\SDK\Basic.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\CppSDK\SDK\CoreUObject_functions.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\CppSDK\SDK\Engine_functions.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

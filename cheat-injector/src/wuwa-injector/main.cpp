@@ -9,7 +9,6 @@
 #include "injector.h"
 #include "util.h"
 #include <resource.h>
-#include <wuwa-base/Logger.h>
 
 const std::string GlobalWuwaProcName = "Client-Win64-Shipping.exe";
 const char* DLLPath = "moonlight.dll";
