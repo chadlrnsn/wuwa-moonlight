@@ -24,6 +24,7 @@
     <ProjectGuid>{0d43eda3-149f-4726-8707-c657c4511242}</ProjectGuid>
     <RootNamespace>wuwabase</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>cheat-base</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

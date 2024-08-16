@@ -61,7 +61,6 @@
     <ClInclude Include="src\includes.h" />
     <ClInclude Include="src\config.h" />
     <ClInclude Include="src\Hooks\d3d11hook.h" />
-    <ClInclude Include="src\Hooks\tFunctions.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\minhook\dll_resources\MinHook.def" />

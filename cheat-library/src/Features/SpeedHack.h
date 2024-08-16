@@ -1,30 +1,36 @@
 #pragma once
 #include <includes.h>
 #include <globals.h>
+#include <SDK/TsAnimNotifyReSkillEvent_parameters.hpp>
+
 using namespace globals;
 
 using namespace SDK;
+using tProcessEvent = void(__thiscall*)(UObject*, UFunction*, void*);
 
 class SpeedHack
 {
-public:
+private:
 
+	struct Speed {
+		float Speed;
+		float MinSpeed;
+		float MaxSpeed;
+		float Default = 1.0f;
+	};
+
+	Speed rateSpeed		= { 2, -1, 100 };
+	Speed animSpeed		= { 2, -1, 100 };
+	Speed moveSpeed		= { 5, 1, 30 };
+	Speed worldSpeed	= { 2, 0, 5 };
+
+	bool bOnce = false;
 	bool bEnable = false;
-	float fMaxSpeed = 30.0f;
-	float fMinSpeed = 1.0f;
-	float fSpeed = 10.0f;
-
-
-	float fWorldMaxSpeed = 30.0f;
-	float fWorldMinSpeed = 1.0f;
-	float fWorldSpeed = 1.0f;
 
 	// Bindings
 	bool bSettingKey = false;
 	KeyBindToggle kbToggle = KeyBindToggle(KeyBind::KeyCode::Z);
 
-private:
-	bool bOnce = false;
 
 public:
 	void HandleKeys() {
@@ -41,6 +47,7 @@ public:
 
 	// This should be run in the feature loop, used to run any acutal feature code like setting a value for godmode
 	void Run();
+	void Call(UObject*, UFunction*, void*);
 };
 
 
@@ -53,9 +60,11 @@ inline void SpeedHack::DrawMenuItems()
 
 	if (bEnable) {
 		ImGui::Text("Speed Multiplier");
-		ImGui::SliderFloat("##Speed Multiplier", &fSpeed, fMinSpeed, fMaxSpeed);
+		ImGui::SliderFloat("##SpeedMultiplier", &moveSpeed.Speed, moveSpeed.MinSpeed, moveSpeed.MaxSpeed);
 		ImGui::Text("World Speed Multiplier");
-		ImGui::SliderFloat("##World Speed Multiplier", &fWorldSpeed, fWorldMinSpeed, fWorldMaxSpeed);
+		ImGui::SliderFloat("##WorldSpeed", &worldSpeed.Speed, worldSpeed.MinSpeed, worldSpeed.MaxSpeed);
+		ImGui::Text("Rate Speed (sequences)");
+		ImGui::SliderFloat("##RateSpeed", &rateSpeed.Speed, rateSpeed.MinSpeed, rateSpeed.MaxSpeed);
 	}
 }
 
@@ -67,13 +76,13 @@ inline void SpeedHack::Run()
 	// Character speedhack
 	if (bEnable && AcknowledgedPawn)
 	{
-		AcknowledgedPawn->CustomTimeDilation = fSpeed;
+		AcknowledgedPawn->CustomTimeDilation = moveSpeed.Speed;
 		bOnce = false;
 	}
 
 	if (!bEnable && AcknowledgedPawn && !bOnce)
 	{
-		AcknowledgedPawn->CustomTimeDilation = 1.0f;
+		AcknowledgedPawn->CustomTimeDilation = moveSpeed.Default;
 		bOnce = true;
 	}
 
@@ -81,15 +90,34 @@ inline void SpeedHack::Run()
 	if (bEnable && World && World->PersistentLevel)
 	{
 
-		World->PersistentLevel->WorldSettings->TimeDilation = fWorldSpeed;
+		World->PersistentLevel->WorldSettings->TimeDilation = worldSpeed.Speed;
 		bOnce = false;
 	}
 
 	if (!bEnable && World->PersistentLevel && !bOnce)
 	{
-		World->PersistentLevel->WorldSettings->TimeDilation = 1.0f;
+		World->PersistentLevel->WorldSettings->TimeDilation = worldSpeed.Default;
 		bOnce = true;
 	}
+}
+
+inline void SpeedHack::Call(UObject* Object, UFunction* Function, void* Parms)
+{
+	//if (Function == FN_TsAnimNotifyReSkillEvent_C) {
+	//	
+	//	Params::TsAnimNotifyReSkillEvent_C_K2_Notify* parameters = (Params::TsAnimNotifyReSkillEvent_C_K2_Notify*)Parms;
+	//	bool IsMyMesh = parameters->MeshComp == PlayerController->Character->Mesh;
+
+	//	if (IsMyMesh) {
+	//		//
+	//		//			billet
+	//		// 
+	//		//if (bEnable)
+	//		//	parameters->Animation->RateScale = rateSpeed.Speed;
+	//		//else
+	//		//	parameters->Animation->RateScale = rateSpeed.Default;
+	//	}
+	//}
 }
 
 inline SpeedHack speedhack;

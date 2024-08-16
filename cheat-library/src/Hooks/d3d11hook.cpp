@@ -90,8 +90,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 			return oPresent(pSwapChain, SyncInterval, Flags);
 	}
 
-	if (!g_ShouldDrawImGui) return oPresent(pSwapChain, SyncInterval, Flags);
-
 	ImGuiIO& io = ImGui::GetIO();
 	io.MouseDrawCursor = menu.IsOpen;
 
@@ -141,10 +139,42 @@ void D3D11Hook::Initialize()
 	static bool init = false;
 	do {
 		if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success) {
+			std::this_thread::sleep_for(std::chrono::seconds(10));
 			kiero::bind(8, (void**)&oPresent, hkPresent);
 			kiero::bind(13, (void**)&oResizeBuffers, hkResizeBuffers);
+#ifdef _DEBUG
+			printf("kiero binded");
+#endif
 			init = true;
 		}
 	} while (!init);
 }
 
+void D3D11Hook::Uninitialize() {
+
+	if (oWndProc)
+	{
+		SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)oWndProc);
+		oWndProc = nullptr;
+	}
+
+	CleanupRenderTarget();
+
+	//ImGui_ImplWin32_Shutdown();
+	//ImGui_ImplDX11_Shutdown();
+	//ImGui::DestroyContext();
+
+	//if (pContext)
+	//{
+	//	pContext->Release();
+	//	pContext = nullptr;
+	//}
+
+	//if (pDevice)
+	//{
+	//	pDevice->Release();
+	//	pDevice = nullptr;
+	//}
+
+	window = nullptr;
+}

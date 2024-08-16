@@ -1,4 +1,5 @@
 #include "Helper.h"
+#include <algorithm>
 
 Helper::Helper()
 {
@@ -136,4 +137,14 @@ bool Helper::UnloadModule( LPCSTR name )
 
 	std::cout << "Successfully unloaded module: " << name << std::endl;
 	return true;
+}
+
+bool HelperNS::ContainsSubstring(const std::string& str, const std::string& sub)
+{
+	auto it = std::search(
+		str.begin(), str.end(),
+		sub.begin(), sub.end(),
+		[](char ch1, char ch2) { return std::toupper(ch1) == std::toupper(ch2); }
+	);
+	return (it != str.end());
 }

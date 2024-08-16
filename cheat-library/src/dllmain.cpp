@@ -1,7 +1,6 @@
 #pragma once
 #include "dllmain.h"
 #include <Hooks/d3d11hook.h>
-#include <Hooks/tFunctions.h>
 #define MenuKey VK_INSERT
 #define QuitKey VK_F9
 
@@ -17,32 +16,17 @@ void CreateConsole() {
 	freopen_s(&dummy, "CONOUT$", "w", stderr);
 }
 
-void HookThread() {
-
-
-	// this neen for in-game hooks and d3d11 hooks
-	//while (!GetModuleHandleA("kernel32.dll") && !GetModuleHandleA("ntdll.dll") && !GetModuleHandleA("Client-Win64-ShippingBase.dll")) {
-	//	std::this_thread::sleep_for(std::chrono::seconds(1));
-	//}
-	//printf("Modules loaded\n");
-
-
-	Hooks::InGame::Initialize();
-	D3D11Hook::Initialize();
-
-}
-
-
 void GlobalsThread() noexcept {
 
 	static bool originals = false;
 	while (g_bRunning) {
 
+		if (!UEngine::GetEngine()) continue;
 		Engine = UEngine::GetEngine();
+
+		if (!UWorld::GetWorld()) continue;
 		World = UWorld::GetWorld();
-
-		if (!Engine || !World) continue;
-
+		
 		GameInstance = World->OwningGameInstance;
 
 		if (!GameInstance) continue;
@@ -56,15 +40,16 @@ void GlobalsThread() noexcept {
 		if (!PlayerController) continue;
 
 		AcknowledgedPawn = PlayerController->AcknowledgedPawn;
+
+		if (IsFullyLoaded() && AcknowledgedPawn && !AcknowledgedPawn->IsDefaultObject() && FN_TsAnimNotifyReSkillEvent_C == nullptr) {
+			FN_TsAnimNotifyReSkillEvent_C = World->FindObject<UFunction>("Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify");
+		}
 	}
 	std::cout << "Thread ended" << std::endl;
 }
 
 void FeaturesThread() noexcept
 {
-
-	TFunction tf;
-	tf.Init();
 
 	while (g_bRunning)
 	{
@@ -84,36 +69,41 @@ void FeaturesThread() noexcept
 	return;
 }
 
+
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 {
+
 	if (MH_Initialize() != MH_OK) {
 		std::cerr << "Failed to init MinHook" << std::endl;
 	}
 	else
 		printf("MinHook initialized\n");
 
-	std::thread features(FeaturesThread);
-	std::thread hooks(HookThread);
+	Hooks::hkACE_BypassSetup();
+	Hooks::AntiDebug();
+	D3D11Hook::Initialize();
+	Hooks::InGame::Initialize();
+
 	std::thread globals(GlobalsThread);
+	std::thread features(FeaturesThread);
 
-
-	hooks.join();
 
 	while (true) {
 
 		if (GetAsyncKeyState(QuitKey) & 1) {
 			g_bRunning = false;
-			Hooks::RemoveHooks();
 			break;
 		}
-
-		g_ShouldDrawImGui = g_bRunning;
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 
+
 	features.join();
 	globals.join();
+	
+	D3D11Hook::Uninitialize();
+	Hooks::RemoveHooks();
 
 	FreeLibraryAndExitThread(hMod, 0);
 	return TRUE;
@@ -128,11 +118,7 @@ BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 		DisableThreadLibraryCalls(hMod);
 
 		CreateConsole();
-
 		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, nullptr);
-
-		Hooks::hkACE_BypassSetup();
-		Hooks::AntiDebug();
 
 		break;
 

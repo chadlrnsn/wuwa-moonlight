@@ -97,17 +97,12 @@ inline void Fly::Run()
 		if (bNoClip && AcknowledgedPawn->GetActorEnableCollision())
 			AcknowledgedPawn->SetActorEnableCollision(false);
 
-		// TODO Bindings
+
 		if (GetAsyncKeyState(VK_SPACE))
-			CharacterMovement->Velocity.Z = CharacterMovement->LastUpdateVelocity.Z + fZSpeed;
+			CharacterMovement->Velocity.Z += fZSpeed;
 
 		if (GetAsyncKeyState(VK_LCONTROL))
-			CharacterMovement->Velocity.Z = CharacterMovement->LastUpdateVelocity.Z - fZSpeed;
-
-
-		// Stop player anim when flying
-		if (bPreventAnimVelecity)
-			CharacterMovement->AnimRootMotionVelocity = FVector(0, 0, 0);
+			CharacterMovement->Velocity.Z -= fZSpeed;
 
 
 		bFlySwitch = true;

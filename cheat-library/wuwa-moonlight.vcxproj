@@ -24,6 +24,7 @@
     <ProjectGuid>{9295c555-4e22-4eb5-bfad-2f45685d6114}</ProjectGuid>
     <RootNamespace>wuwamoonlight</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>cheat-library</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -177,7 +178,6 @@
     <ClInclude Include="src\Helper.h" />
     <ClInclude Include="src\Hooks\d3d11hook.h" />
     <ClInclude Include="src\Hooks\Hooks.h" />
-    <ClInclude Include="src\Hooks\tFunctions.h" />
     <ClInclude Include="src\includes.h" />
     <ClInclude Include="src\SDKTools\SDKTools.hpp" />
     <ClInclude Include="vendor\fonts\font.h" />

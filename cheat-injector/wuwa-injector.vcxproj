@@ -16,6 +16,7 @@
     <ProjectGuid>{fbf8460d-4332-423f-90ec-31fcbd064243}</ProjectGuid>
     <RootNamespace>wuwainjector</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>cheat-injector</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">

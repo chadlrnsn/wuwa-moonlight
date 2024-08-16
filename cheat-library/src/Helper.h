@@ -37,3 +37,9 @@ public:
 	HMODULE GetCurrentModuleName();
 
 };
+
+namespace HelperNS {
+	bool ContainsSubstring(const std::string& str, const std::string& sub);
+
+
+}

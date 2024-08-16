@@ -10,13 +10,12 @@
 
 
 ## How to use
-- Compile project in x64-Release or download release
-- Download `pipsi's bypass` from unknowncheats or join to our [discord server](https://discord.gg/RJuN8UG4MJ) download pinned dll from [#download](https://discord.com/channels/1246834050119893064/1250821466593689660) channel and after that put it to same direcory as `Moonlight.exe`
+- Compile project in Release-x64 or download [latest release](https://github.com/chadlrnsn/wuwa-moonlight/releases)
 - Open `Moonlight.exe` in `bin\Release-x64` put there bypass and open
 - **See [How to use](HowToUse.md) if you are a beginner**
 
 > [!Note]
-> Latest build available is for version 1.1.0 (global version only yet)
+> Latest build available is for version 1.2.0 (global version only)
 
 
 > [!Warning]
@@ -26,25 +25,20 @@
 
 ![preview](https://i.imgur.com/OJwrALG.jpeg)
 
-<!-- ## Star History
-[![Star History Chart](https://api.star-history.com/svg?repos=chadlrnsn/wuwa-moonlight&type=Timeline)](https://star-history.com/#chadlrnsn/wuwa-moonlight&Timeline) -->
-
 ## Working features
 - Speedhack
 - Flight
 - Gravity Scale
 - WalkableFloorZ
 - WalkableFloorAngle
+- MultiHit
 
 ## Coming soon
 - ESP
 - GodMode
-- MultiHit
 - AutoLoot
 - Configs
 
 ## Thanks to
 [kiero hook](https://github.com/rdbo/ImGui-DirectX-11-Kiero-Hook)</br>
 [Dumper-7](https://github.com/Encryqed/Dumper-7)</br>
-[Borderlands 3 cheat](https://github.com/Omega172/Borderlands-3-Cheat)</br>
-Old Akebi❤️</br>

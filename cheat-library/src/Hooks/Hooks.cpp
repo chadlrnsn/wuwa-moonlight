@@ -2,6 +2,8 @@
 #include <includes.h>
 #include <globals.h>
 #include <Features/Features.h>
+#include <Helper.h>
+
 
 using namespace globals;
 using namespace SDK;
@@ -109,9 +111,14 @@ void Hooks::AntiDebug()
 
 void __fastcall hkProcessEvent(UObject* caller, UFunction* function, void* params) {
 
-	//printf("Calling ProcessEvent %s\n", function->GetName().c_str());
-	if (config::multihit::enabled) multihit.Call(caller, function, params, oProcessEvent);
-	if (config::godmode::enabled) godmode.Call(caller, function, params, oProcessEvent);
+	//printf("%s %s\n", caller->GetFullName().c_str(), function->GetFullName().c_str());
+
+	//if (config::multihit::enabled)
+	multihit.Call(caller, function, params, oProcessEvent);
+
+	//if (config::godmode::enabled)
+	godmode.Call(caller, function, params, oProcessEvent);
+
 	oProcessEvent(caller, function, params);
 }
 

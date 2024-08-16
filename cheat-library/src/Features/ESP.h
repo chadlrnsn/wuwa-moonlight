@@ -1,7 +1,6 @@
 #pragma once
 #include <includes.h>
 #include <globals.h>
-using namespace globals;
 
 using namespace globals;
 
@@ -9,6 +8,9 @@ class ESP
 {
 private:
 	bool Initalized = false;
+	TArray<ULevel*> Levels;
+	TArray<AActor*> Actors;
+	TArray<FVector> ActorsLocations;
 
 public:
 	bool bEnabled = false;
@@ -39,7 +41,7 @@ public:
 	void DrawMenuItems() ;
 
 	// This should be run at the top of the ImGUI draw loop, used to render things like ESP, Tracers, and Debug Info
-	void Render();
+	void Render(UCanvas* Canvas);
 
 	// This should be run in the feature loop, used to run any acutal feature code like setting a value for godmode
 	void Run();
@@ -54,19 +56,33 @@ inline void ESP::DrawMenuItems()
 	}
 }
 
+inline void ESP::Render(UCanvas* Canvas)
+{
+	if (!Canvas) return;
+
+}
+
 inline void ESP::Run()
 {
 
 	if (bEnabled && AcknowledgedPawn)
 	{
 		auto world = UWorld::GetWorld();
-
+		
+		if (!world) return;
+		
 		auto levels = world->Levels.Num();
+		
+		if (!levels) return;
+
+		Levels = world->Levels;
 
 		auto localplayer = world->OwningGameInstance->LocalPlayers[0];
 
-		for (int i = 0; i < levels; i++) {
-			for (auto actor : world->Levels[i]->Actors) {
+		if (!localplayer) return;
+
+		for (auto level : Levels) {
+			for (auto actor : Levels) {
 
 			}
 		}

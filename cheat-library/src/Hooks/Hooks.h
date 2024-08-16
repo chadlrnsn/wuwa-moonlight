@@ -28,6 +28,8 @@ const LPCWSTR blockedDlls[] = {
 	L"ACE-Safe.dll",
 	L"ACE-Tips64.dll",
 	L"SGuardAgent64.dll",
+	L"CrashSight64.dll",
+	L"PerfSight.dll",
 };
 
 HMODULE WINAPI hkLoadLibraryW(LPCWSTR libFileName);

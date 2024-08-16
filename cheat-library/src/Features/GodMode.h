@@ -22,20 +22,23 @@ inline void GodMode::Draw() {
 
 inline void GodMode::Call(UObject* Object, UFunction* Function, void* Parms, tProcessEvent oProcessEvent) {
 
-	APawn* MyPawn = globals::AcknowledgedPawn;
-
-	if (Function == globals::tfuncs::ReSkillEvent_C) {
-		//printf("Object [%s] MyPawn [%s] Function [%s]\n", Object->GetName().c_str(), MyPawn->GetName().c_str(), Function->GetName().c_str());
+	if (Function == FN_TsAnimNotifyReSkillEvent_C) {
 
 		SDK::Params::TsAnimNotifyReSkillEvent_C_K2_Notify* parameters = (SDK::Params::TsAnimNotifyReSkillEvent_C_K2_Notify*)Parms;
 		SDK::USkeletalMeshComponent* meshComp = parameters->MeshComp;
 
-		if (meshComp && meshComp->GetOwner() != MyPawn) {
-			printf("Prevented damage to anyone else\n");
-			return;
+		bool not_local_called = meshComp != PlayerController->Character->Mesh;
+
+		if (not_local_called) {
+			parameters->Animation->RateScale = 0;
+			parameters->ReturnValue = false;
+
+#ifdef _DEBUG
+			printf("Not local called and attack %s\n", parameters->Animation->GetFullName().c_str());
+#endif
+			return oProcessEvent(Object, Function, parameters);
 		}
 	}
 }
 
-// i declarate here cause im too lazy do that in another place 
 inline GodMode godmode;
