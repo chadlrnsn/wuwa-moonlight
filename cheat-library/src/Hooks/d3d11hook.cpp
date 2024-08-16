@@ -137,17 +137,43 @@ HRESULT __stdcall hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, 
 void D3D11Hook::Initialize()
 {
 	static bool init = false;
+	static size_t ampects = 25;
+	static size_t counter = 0;
 	do {
 		if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success) {
-			std::this_thread::sleep_for(std::chrono::seconds(10));
 			kiero::bind(8, (void**)&oPresent, hkPresent);
 			kiero::bind(13, (void**)&oResizeBuffers, hkResizeBuffers);
 #ifdef _DEBUG
-			printf("kiero binded");
+			printf("kiero binded\n");
 #endif
 			init = true;
 		}
-	} while (!init);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
+		counter++;
+	} while ((counter < ampects) || !init);
+
+	if (kiero::getRenderType() != kiero::RenderType::D3D11) {
+		printf("kiero initialized with unknown render type\n");
+		MessageBoxA(NULL, "kiero initialized with unknown render type\n", "DirectX Error", MB_OK);
+	}
+	else {
+		printf("kiero initialized with D3D11 if you dont see menu it might be bug or idk\n");
+	}
+
+	//if (kiero::init(kiero::RenderType::Auto) == kiero::Status::Success) {
+	//	printf("kiero initialized with auto statement\n");
+	//	switch (kiero::getRenderType()) {
+	//		case kiero::RenderType::D3D11:
+	//			printf("kiero initialized with D3D11 if you dont see menu it might be bug!\n");
+	//			break;
+	//		case kiero::RenderType::D3D12:
+	//			printf("kiero initialized with D3D12\nbtw i dont maintain D3D12\n");
+	//			break;
+	//		default:
+	//			printf("kiero initialized with unknown render type\n");
+	//			break;
+	//	}
+	//}
 }
 
 void D3D11Hook::Uninitialize() {
@@ -159,22 +185,6 @@ void D3D11Hook::Uninitialize() {
 	}
 
 	CleanupRenderTarget();
-
-	//ImGui_ImplWin32_Shutdown();
-	//ImGui_ImplDX11_Shutdown();
-	//ImGui::DestroyContext();
-
-	//if (pContext)
-	//{
-	//	pContext->Release();
-	//	pContext = nullptr;
-	//}
-
-	//if (pDevice)
-	//{
-	//	pDevice->Release();
-	//	pDevice = nullptr;
-	//}
 
 	window = nullptr;
 }

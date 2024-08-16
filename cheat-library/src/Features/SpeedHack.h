@@ -22,7 +22,7 @@ private:
 	Speed rateSpeed		= { 2, -1, 100 };
 	Speed animSpeed		= { 2, -1, 100 };
 	Speed moveSpeed		= { 5, 1, 30 };
-	Speed worldSpeed	= { 2, 0, 5 };
+	Speed worldSpeed	= { 1, 0, 5 };
 
 	bool bOnce = false;
 	bool bEnable = false;

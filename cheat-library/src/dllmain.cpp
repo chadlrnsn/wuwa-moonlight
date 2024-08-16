@@ -69,6 +69,12 @@ void FeaturesThread() noexcept
 	return;
 }
 
+void IndependentHooks() {
+	Hooks::hkACE_BypassSetup();
+	Hooks::AntiDebug();
+	D3D11Hook::Initialize();
+	Hooks::InGame::Initialize();
+}
 
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 {
@@ -79,15 +85,13 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	else
 		printf("MinHook initialized\n");
 
-	Hooks::hkACE_BypassSetup();
-	Hooks::AntiDebug();
-	D3D11Hook::Initialize();
-	Hooks::InGame::Initialize();
-
+	std::thread Indpndhk(IndependentHooks);
 	std::thread globals(GlobalsThread);
 	std::thread features(FeaturesThread);
 
+	Indpndhk.detach();
 
+	printf("You can detach this dll from your process with F9\n");
 	while (true) {
 
 		if (GetAsyncKeyState(QuitKey) & 1) {
@@ -104,6 +108,8 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	
 	D3D11Hook::Uninitialize();
 	Hooks::RemoveHooks();
+
+	printf("Now you can close console and re-inject or inject another cheetos!\n");
 
 	FreeLibraryAndExitThread(hMod, 0);
 	return TRUE;
