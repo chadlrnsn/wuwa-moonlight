@@ -27,6 +27,7 @@ void features() noexcept {
 
 		Engine = UEngine::GetEngine();
 
+		if (!Engine) continue;
 		fpsUnlock.Run();
 		
 		if (!Engine) continue;
