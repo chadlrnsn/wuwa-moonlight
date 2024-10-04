@@ -54,21 +54,21 @@ jobs:
         name: my-artifact
         path: bin.zip
         
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
+  # release:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: write
 
-    steps:
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.0
-        with:
-          name: my-artifact
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+  #   steps:
+  #     - name: Download a Build Artifact
+  #       uses: actions/download-artifact@v3.0.0
+  #       with:
+  #         name: my-artifact
+  #     - name: Release
+  #       uses: softprops/action-gh-release@v1
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
           
-          tag_name: ${{env.tag1}}
-          files: bin.zip
+  #         tag_name: ${{env.tag1}}
+  #         files: bin.zip
