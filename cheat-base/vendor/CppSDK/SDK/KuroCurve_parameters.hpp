@@ -40,7 +40,7 @@ public:
 	struct FKuroCurveLinearColor                  CurveLinearColor;                                  // 0x0000(0x0220)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                         Time;                                              // 0x0220(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           ReturnValue;                                       // 0x0224(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B22[0x4];                                     // 0x0234(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_234[0x4];                                      // 0x0234(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroCurveLibrary_GetValue_LinearColor) == 0x000008, "Wrong alignment on KuroCurveLibrary_GetValue_LinearColor");
 static_assert(sizeof(KuroCurveLibrary_GetValue_LinearColor) == 0x000238, "Wrong size on KuroCurveLibrary_GetValue_LinearColor");
@@ -71,7 +71,7 @@ public:
 	struct FKuroCurveVector2D                     CurveVector2D;                                     // 0x0000(0x0120)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                         Time;                                              // 0x0120(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              ReturnValue;                                       // 0x0124(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B23[0x4];                                     // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12C[0x4];                                      // 0x012C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroCurveLibrary_GetValue_Vector2D) == 0x000008, "Wrong alignment on KuroCurveLibrary_GetValue_Vector2D");
 static_assert(sizeof(KuroCurveLibrary_GetValue_Vector2D) == 0x000130, "Wrong size on KuroCurveLibrary_GetValue_Vector2D");
@@ -86,7 +86,7 @@ struct KuroCurveLibrary_UseCurve_Float final
 public:
 	struct FKuroCurveFloat                        CurveFloat;                                        // 0x0000(0x0090)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0090(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B24[0x7];                                     // 0x0091(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroCurveLibrary_UseCurve_Float) == 0x000008, "Wrong alignment on KuroCurveLibrary_UseCurve_Float");
 static_assert(sizeof(KuroCurveLibrary_UseCurve_Float) == 0x000098, "Wrong size on KuroCurveLibrary_UseCurve_Float");
@@ -100,7 +100,7 @@ struct KuroCurveLibrary_UseCurve_LinearColor final
 public:
 	struct FKuroCurveLinearColor                  CurveLinearColor;                                  // 0x0000(0x0220)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0220(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B25[0x7];                                     // 0x0221(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_221[0x7];                                      // 0x0221(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroCurveLibrary_UseCurve_LinearColor) == 0x000008, "Wrong alignment on KuroCurveLibrary_UseCurve_LinearColor");
 static_assert(sizeof(KuroCurveLibrary_UseCurve_LinearColor) == 0x000228, "Wrong size on KuroCurveLibrary_UseCurve_LinearColor");
@@ -114,7 +114,7 @@ struct KuroCurveLibrary_UseCurve_Vector final
 public:
 	struct FKuroCurveVector                       CurveVector;                                       // 0x0000(0x01A8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x01A8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B26[0x7];                                     // 0x01A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A9[0x7];                                      // 0x01A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroCurveLibrary_UseCurve_Vector) == 0x000008, "Wrong alignment on KuroCurveLibrary_UseCurve_Vector");
 static_assert(sizeof(KuroCurveLibrary_UseCurve_Vector) == 0x0001B0, "Wrong size on KuroCurveLibrary_UseCurve_Vector");
@@ -128,7 +128,7 @@ struct KuroCurveLibrary_UseCurve_Vector2D final
 public:
 	struct FKuroCurveVector2D                     CurveVector2D;                                     // 0x0000(0x0120)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0120(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B27[0x7];                                     // 0x0121(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroCurveLibrary_UseCurve_Vector2D) == 0x000008, "Wrong alignment on KuroCurveLibrary_UseCurve_Vector2D");
 static_assert(sizeof(KuroCurveLibrary_UseCurve_Vector2D) == 0x000128, "Wrong size on KuroCurveLibrary_UseCurve_Vector2D");

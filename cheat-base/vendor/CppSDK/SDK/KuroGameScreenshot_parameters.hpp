@@ -103,19 +103,19 @@ static_assert(offsetof(KuroGameScreenshotBPLibrary_IsPhotoLibraryAuthorized, Ret
 struct KuroGameScreenshotBPLibrary_PrepareTakeScreenshot final
 {
 public:
-	class UObject*                                Param_Outer;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                Outer_0;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 InFilename;                                        // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              MinCaptureRegion;                                  // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              MaxCaptureRegion;                                  // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ScreenshotResolutionX;                             // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ScreenshotResolutionY;                             // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          SaveFile;                                          // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1798[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameScreenshotTask*                    ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroGameScreenshotBPLibrary_PrepareTakeScreenshot) == 0x000008, "Wrong alignment on KuroGameScreenshotBPLibrary_PrepareTakeScreenshot");
 static_assert(sizeof(KuroGameScreenshotBPLibrary_PrepareTakeScreenshot) == 0x000040, "Wrong size on KuroGameScreenshotBPLibrary_PrepareTakeScreenshot");
-static_assert(offsetof(KuroGameScreenshotBPLibrary_PrepareTakeScreenshot, Param_Outer) == 0x000000, "Member 'KuroGameScreenshotBPLibrary_PrepareTakeScreenshot::Param_Outer' has a wrong offset!");
+static_assert(offsetof(KuroGameScreenshotBPLibrary_PrepareTakeScreenshot, Outer_0) == 0x000000, "Member 'KuroGameScreenshotBPLibrary_PrepareTakeScreenshot::Outer_0' has a wrong offset!");
 static_assert(offsetof(KuroGameScreenshotBPLibrary_PrepareTakeScreenshot, InFilename) == 0x000008, "Member 'KuroGameScreenshotBPLibrary_PrepareTakeScreenshot::InFilename' has a wrong offset!");
 static_assert(offsetof(KuroGameScreenshotBPLibrary_PrepareTakeScreenshot, MinCaptureRegion) == 0x000018, "Member 'KuroGameScreenshotBPLibrary_PrepareTakeScreenshot::MinCaptureRegion' has a wrong offset!");
 static_assert(offsetof(KuroGameScreenshotBPLibrary_PrepareTakeScreenshot, MaxCaptureRegion) == 0x000020, "Member 'KuroGameScreenshotBPLibrary_PrepareTakeScreenshot::MaxCaptureRegion' has a wrong offset!");

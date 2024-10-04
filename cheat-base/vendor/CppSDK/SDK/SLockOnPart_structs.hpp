@@ -22,7 +22,7 @@ public:
 	class FString                                 BoneName_2_048C9EF3448F15D7B3302ABCF21AA998;       // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          SoftLockValid_9_45098E15418657B7C965318E86E94A01;  // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          HardLockValid_7_166F80504483F02C033442B44C4A2494;  // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3129[0x6];                                     // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AimPartBoneName_12_8F667B8D4DFC018C6589B2A33468AB3B; // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 EnablePartName_16_D5B4C3C9470814563A7A41A520AA135A; // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 };

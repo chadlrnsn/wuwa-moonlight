@@ -25,12 +25,12 @@ namespace SDK
 class UABP_BaseRole_Seq_V2_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_2BC5[0x8];                                     // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A8[0x8];                                      // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_Root                         AnimGraphNode_Root_4;                              // 0x03B8(0x0038)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_2;                   // 0x03F0(0x0138)()
 	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace_1;             // 0x0528(0x0020)()
-	uint8                                         Pad_2BC6[0x8];                                     // 0x0548(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_548[0x8];                                      // 0x0548(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_RBF                          AnimGraphNode_RBF;                                 // 0x0550(0x0150)()
 	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace_1;             // 0x06A0(0x0020)()
 	struct FAnimNode_Root                         AnimGraphNode_Root_3;                              // 0x06C0(0x0038)()
@@ -66,25 +66,25 @@ public:
 	struct FRotator                               LookFixHead;                                       // 0x17F8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	struct FRotator                               LookFixNeck;                                       // 0x1804(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          Enable_AimOffset;                                  // 0x1810(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BC7[0x3];                                     // 0x1811(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1811[0x3];                                     // 0x1811(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRotator                               LookFixSpine;                                      // 0x1814(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	class UAimOffsetBlendSpace*                   AimOffset;                                         // 0x1820(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Enable_Stand;                                      // 0x1828(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BC8[0x7];                                     // 0x1829(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1829[0x7];                                     // 0x1829(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAnimSequenceBase*                      Stand;                                             // 0x1830(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          EnableSwitchPose;                                  // 0x1838(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BC9[0x7];                                     // 0x1839(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1839[0x7];                                     // 0x1839(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPoseSnapshot                          CachePose;                                         // 0x1840(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance)
 	float                                         SwitchPoseTime;                                    // 0x1880(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_ABP_BaseRole_Seq_V2(int32 EntryPoint);
 	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
-	void __B_0(const struct FPoseLink& InPose_0, struct FPoseLink* Param___B);
-	void _SB(struct FPoseLink* Param__SB);
-	void b_B(const struct FPoseLink& InPose, struct FPoseLink* Param_b_B);
-	void __B(const struct FPoseLink& InPose_0, struct FPoseLink* Param___B);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void __B_0(const struct FPoseLink& InPose_0, struct FPoseLink* Param___B_0);
+	void _SB(struct FPoseLink* _SB_0);
+	void b_B(const struct FPoseLink& InPose, struct FPoseLink* b_B_0);
+	void __B(const struct FPoseLink& InPose_0, struct FPoseLink* __B_0);
 
 public:
 	static class UClass* StaticClass()

@@ -11,6 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
+#include "WwiseFileHandler_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK
@@ -38,6 +40,41 @@ public:
 };
 static_assert(alignof(UWwiseExternalSourceStatics) == 0x000008, "Wrong alignment on UWwiseExternalSourceStatics");
 static_assert(sizeof(UWwiseExternalSourceStatics) == 0x000030, "Wrong size on UWwiseExternalSourceStatics");
+
+// Class WwiseFileHandler.WwiseFileHandlerSettings
+// 0x0018 (0x0048 - 0x0030)
+class UWwiseFileHandlerSettings final : public UObject
+{
+public:
+	bool                                          bUseSharedOpQueue;                                 // 0x0030(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIOInSharedOpQueue;                                // 0x0031(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_32[0x2];                                       // 0x0032(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	EKuroWwiseTaskPriority                        FileCacheOpenQueuePriority;                        // 0x0034(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroWwiseTaskPriority                        FileCacheDeleteQueuePriority;                      // 0x0038(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroWwiseTaskPriority                        FileHandlerOpQueuePriority;                        // 0x003C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroWwiseTaskPriority                        IOHookBatchOpQueuePriority;                        // 0x0040(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseMediaExtDecrement;                             // 0x0044(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"WwiseFileHandlerSettings">();
+	}
+	static class UWwiseFileHandlerSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UWwiseFileHandlerSettings>();
+	}
+};
+static_assert(alignof(UWwiseFileHandlerSettings) == 0x000008, "Wrong alignment on UWwiseFileHandlerSettings");
+static_assert(sizeof(UWwiseFileHandlerSettings) == 0x000048, "Wrong size on UWwiseFileHandlerSettings");
+static_assert(offsetof(UWwiseFileHandlerSettings, bUseSharedOpQueue) == 0x000030, "Member 'UWwiseFileHandlerSettings::bUseSharedOpQueue' has a wrong offset!");
+static_assert(offsetof(UWwiseFileHandlerSettings, bIOInSharedOpQueue) == 0x000031, "Member 'UWwiseFileHandlerSettings::bIOInSharedOpQueue' has a wrong offset!");
+static_assert(offsetof(UWwiseFileHandlerSettings, FileCacheOpenQueuePriority) == 0x000034, "Member 'UWwiseFileHandlerSettings::FileCacheOpenQueuePriority' has a wrong offset!");
+static_assert(offsetof(UWwiseFileHandlerSettings, FileCacheDeleteQueuePriority) == 0x000038, "Member 'UWwiseFileHandlerSettings::FileCacheDeleteQueuePriority' has a wrong offset!");
+static_assert(offsetof(UWwiseFileHandlerSettings, FileHandlerOpQueuePriority) == 0x00003C, "Member 'UWwiseFileHandlerSettings::FileHandlerOpQueuePriority' has a wrong offset!");
+static_assert(offsetof(UWwiseFileHandlerSettings, IOHookBatchOpQueuePriority) == 0x000040, "Member 'UWwiseFileHandlerSettings::IOHookBatchOpQueuePriority' has a wrong offset!");
+static_assert(offsetof(UWwiseFileHandlerSettings, bUseMediaExtDecrement) == 0x000044, "Member 'UWwiseFileHandlerSettings::bUseMediaExtDecrement' has a wrong offset!");
 
 }
 

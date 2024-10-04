@@ -22,7 +22,7 @@ namespace SDK
 class UReactWidget final : public UUserWidget
 {
 public:
-	uint8                                         Pad_2360[0x8];                                     // 0x0300(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_300[0x8];                                      // 0x0300(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UPanelSlot* AddChild(class UWidget* Content);
@@ -47,7 +47,7 @@ class UUMGManager final : public UBlueprintFunctionLibrary
 {
 public:
 	static class UReactWidget* CreateReactWidget(class UWorld* World);
-	static class UUserWidget* CreateWidget(class UWorld* World, class UClass* Param_Class);
+	static class UUserWidget* CreateWidget(class UWorld* World, class UClass* Class_0);
 	static void SynchronizeSlotProperties(class UPanelSlot* Slot);
 	static void SynchronizeWidgetProperties(class UWidget* Widget);
 

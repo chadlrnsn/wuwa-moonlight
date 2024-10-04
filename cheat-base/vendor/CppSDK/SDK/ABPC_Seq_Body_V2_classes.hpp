@@ -24,7 +24,7 @@ class UABPC_Seq_Body_V2_C final : public UActorComponent
 {
 public:
 	bool                                          _i___;                                             // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
-	uint8                                         Pad_2BBD[0x3];                                     // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C1[0x3];                                       // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         I___C_;                                            // 0x00C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FNamedCurveValue>               NamedCurves;                                       // 0x00C8(0x0010)(Edit, BlueprintVisible)
 	struct FRotator                               Add_LookAt;                                        // 0x00D8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)

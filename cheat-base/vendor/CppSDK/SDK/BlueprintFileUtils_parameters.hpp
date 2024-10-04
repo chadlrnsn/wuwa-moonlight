@@ -24,7 +24,7 @@ public:
 	bool                                          bReplace;                                          // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEvenIfReadOnly;                                   // 0x0021(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0022(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_238E[0x5];                                     // 0x0023(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(BlueprintFileUtilsBPLibrary_CopyFile) == 0x000008, "Wrong alignment on BlueprintFileUtilsBPLibrary_CopyFile");
 static_assert(sizeof(BlueprintFileUtilsBPLibrary_CopyFile) == 0x000028, "Wrong size on BlueprintFileUtilsBPLibrary_CopyFile");
@@ -43,7 +43,7 @@ public:
 	bool                                          bMustExist;                                        // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bDeleteRecursively;                                // 0x0011(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0012(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_238F[0x5];                                     // 0x0013(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(BlueprintFileUtilsBPLibrary_DeleteDirectory) == 0x000008, "Wrong alignment on BlueprintFileUtilsBPLibrary_DeleteDirectory");
 static_assert(sizeof(BlueprintFileUtilsBPLibrary_DeleteDirectory) == 0x000018, "Wrong size on BlueprintFileUtilsBPLibrary_DeleteDirectory");
@@ -61,7 +61,7 @@ public:
 	bool                                          bMustExist;                                        // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEvenIfReadOnly;                                   // 0x0011(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0012(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2390[0x5];                                     // 0x0013(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(BlueprintFileUtilsBPLibrary_DeleteFile) == 0x000008, "Wrong alignment on BlueprintFileUtilsBPLibrary_DeleteFile");
 static_assert(sizeof(BlueprintFileUtilsBPLibrary_DeleteFile) == 0x000018, "Wrong size on BlueprintFileUtilsBPLibrary_DeleteFile");
@@ -77,7 +77,7 @@ struct BlueprintFileUtilsBPLibrary_DirectoryExists final
 public:
 	class FString                                 Directory;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2391[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(BlueprintFileUtilsBPLibrary_DirectoryExists) == 0x000008, "Wrong alignment on BlueprintFileUtilsBPLibrary_DirectoryExists");
 static_assert(sizeof(BlueprintFileUtilsBPLibrary_DirectoryExists) == 0x000018, "Wrong size on BlueprintFileUtilsBPLibrary_DirectoryExists");
@@ -91,7 +91,7 @@ struct BlueprintFileUtilsBPLibrary_FileExists final
 public:
 	class FString                                 Filename;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2392[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(BlueprintFileUtilsBPLibrary_FileExists) == 0x000008, "Wrong alignment on BlueprintFileUtilsBPLibrary_FileExists");
 static_assert(sizeof(BlueprintFileUtilsBPLibrary_FileExists) == 0x000018, "Wrong size on BlueprintFileUtilsBPLibrary_FileExists");
@@ -107,7 +107,7 @@ public:
 	TArray<class FString>                         FoundFiles;                                        // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	class FString                                 FileExtension;                                     // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2393[0x7];                                     // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(BlueprintFileUtilsBPLibrary_FindFiles) == 0x000008, "Wrong alignment on BlueprintFileUtilsBPLibrary_FindFiles");
 static_assert(sizeof(BlueprintFileUtilsBPLibrary_FindFiles) == 0x000038, "Wrong size on BlueprintFileUtilsBPLibrary_FindFiles");
@@ -127,7 +127,7 @@ public:
 	bool                                          bFindFiles;                                        // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFindDirectories;                                  // 0x0031(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0032(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2394[0x5];                                     // 0x0033(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33[0x5];                                       // 0x0033(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(BlueprintFileUtilsBPLibrary_FindRecursive) == 0x000008, "Wrong alignment on BlueprintFileUtilsBPLibrary_FindRecursive");
 static_assert(sizeof(BlueprintFileUtilsBPLibrary_FindRecursive) == 0x000038, "Wrong size on BlueprintFileUtilsBPLibrary_FindRecursive");
@@ -157,7 +157,7 @@ public:
 	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCreateTree;                                       // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2395[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(BlueprintFileUtilsBPLibrary_MakeDirectory) == 0x000008, "Wrong alignment on BlueprintFileUtilsBPLibrary_MakeDirectory");
 static_assert(sizeof(BlueprintFileUtilsBPLibrary_MakeDirectory) == 0x000018, "Wrong size on BlueprintFileUtilsBPLibrary_MakeDirectory");
@@ -175,7 +175,7 @@ public:
 	bool                                          bReplace;                                          // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEvenIfReadOnly;                                   // 0x0021(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0022(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2396[0x5];                                     // 0x0023(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(BlueprintFileUtilsBPLibrary_MoveFile) == 0x000008, "Wrong alignment on BlueprintFileUtilsBPLibrary_MoveFile");
 static_assert(sizeof(BlueprintFileUtilsBPLibrary_MoveFile) == 0x000028, "Wrong size on BlueprintFileUtilsBPLibrary_MoveFile");

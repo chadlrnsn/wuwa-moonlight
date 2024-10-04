@@ -33,7 +33,7 @@ struct FProcMeshTangent final
 public:
 	struct FVector                                TangentX;                                          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFlipTangentY;                                     // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F2[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FProcMeshTangent) == 0x000004, "Wrong alignment on FProcMeshTangent");
 static_assert(sizeof(FProcMeshTangent) == 0x000010, "Wrong size on FProcMeshTangent");
@@ -83,7 +83,7 @@ public:
 	struct FBox                                   SectionLocalBox;                                   // 0x0020(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bEnableCollision;                                  // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSectionVisible;                                   // 0x003D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F3[0x2];                                     // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FProcMeshSection) == 0x000008, "Wrong alignment on FProcMeshSection");
 static_assert(sizeof(FProcMeshSection) == 0x000040, "Wrong size on FProcMeshSection");

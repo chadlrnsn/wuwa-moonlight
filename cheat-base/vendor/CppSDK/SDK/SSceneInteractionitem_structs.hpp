@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "SSceneInteractionMontage_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "SSceneInteractionSequence_structs.hpp"
-#include "SSceneInteractionMaterialController_structs.hpp"
+#include "SSceneInteractionMontage_structs.hpp"
 #include "SSceneInteractionAudio_structs.hpp"
+#include "SSceneInteractionMaterialController_structs.hpp"
 #include "SStateBasedEffect_structs.hpp"
 #include "SSceneInteractionitemIndestructibleEffectsParameters_structs.hpp"
 #include "SSceneInteractionCrossStateEffect_structs.hpp"
@@ -38,7 +38,7 @@ public:
 	struct FSSceneInteractionAudio                AkEvent_55_13AFBE064E3EE720B032EEB28FD64E67;       // 0x00B8(0x0010)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FSStateBasedEffect>             StateBasedEffect_64_73E7A59A47D638467E5151AD988AC976; // 0x00C8(0x0010)(Edit, BlueprintVisible)
 	bool                                          IsForceSetState_66_E46DD56C4B1577706375779EE9901CDC; // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3133[0x7];                                     // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPD_CharacterControllerDataGroup_C*     CharacterDataGroupForOrgan_69_B03A0A914328798FF4DDB6A1EBC5C950; // 0x00E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FSSceneInteractionitemIndestructibleEffectsParameters> IndestructibleEffectsParameters_82_B16BD5A64450652CED7731AF68D8E053; // 0x00E8(0x0010)(Edit, BlueprintVisible)
 	TArray<class ADestructibleActor*>             DestructibleActors_99_A07716B4422E6A54621BEDB3F449F6E9; // 0x00F8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)

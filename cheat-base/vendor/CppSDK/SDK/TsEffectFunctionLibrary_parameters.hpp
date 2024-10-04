@@ -10,289 +10,97 @@
 
 #include "Basic.hpp"
 
+#include "EEffectPlay_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "SEffectFloatParameter_structs.hpp"
+#include "Engine_structs.hpp"
 #include "EEffectType_structs.hpp"
 #include "SEffectColorParameter_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "SEffectVectorParameter_structs.hpp"
-#include "Engine_structs.hpp"
-#include "EEffectPlay_structs.hpp"
-#include "SEffectFloatParameter_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.InitializeWithPreview
-// 0x0010 (0x0010 - 0x0000)
-struct TsEffectFunctionLibrary_C_InitializeWithPreview final
-{
-public:
-	bool                                          Refresh;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3407[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsEffectFunctionLibrary_C_InitializeWithPreview) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_InitializeWithPreview");
-static_assert(sizeof(TsEffectFunctionLibrary_C_InitializeWithPreview) == 0x000010, "Wrong size on TsEffectFunctionLibrary_C_InitializeWithPreview");
-static_assert(offsetof(TsEffectFunctionLibrary_C_InitializeWithPreview, Refresh) == 0x000000, "Member 'TsEffectFunctionLibrary_C_InitializeWithPreview::Refresh' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_InitializeWithPreview, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_InitializeWithPreview::__WorldContext' has a wrong offset!");
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.EditorTickHandle
-// 0x0010 (0x0010 - 0x0000)
-struct TsEffectFunctionLibrary_C_EditorTickHandle final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	float                                         Delta;                                             // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsEffectFunctionLibrary_C_EditorTickHandle) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_EditorTickHandle");
-static_assert(sizeof(TsEffectFunctionLibrary_C_EditorTickHandle) == 0x000010, "Wrong size on TsEffectFunctionLibrary_C_EditorTickHandle");
-static_assert(offsetof(TsEffectFunctionLibrary_C_EditorTickHandle, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_EditorTickHandle::Handle' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_EditorTickHandle, Delta) == 0x000004, "Member 'TsEffectFunctionLibrary_C_EditorTickHandle::Delta' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_EditorTickHandle, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_EditorTickHandle::__WorldContext' has a wrong offset!");
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.PlayEffect
-// 0x0030 (0x0030 - 0x0000)
-struct TsEffectFunctionLibrary_C_PlayEffect final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_3408[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                CallObject;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 Reason;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(TsEffectFunctionLibrary_C_PlayEffect) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_PlayEffect");
-static_assert(sizeof(TsEffectFunctionLibrary_C_PlayEffect) == 0x000030, "Wrong size on TsEffectFunctionLibrary_C_PlayEffect");
-static_assert(offsetof(TsEffectFunctionLibrary_C_PlayEffect, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_PlayEffect::Handle' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_PlayEffect, CallObject) == 0x000008, "Member 'TsEffectFunctionLibrary_C_PlayEffect::CallObject' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_PlayEffect, Reason) == 0x000010, "Member 'TsEffectFunctionLibrary_C_PlayEffect::Reason' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_PlayEffect, __WorldContext) == 0x000020, "Member 'TsEffectFunctionLibrary_C_PlayEffect::__WorldContext' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_PlayEffect, ReturnValue) == 0x000028, "Member 'TsEffectFunctionLibrary_C_PlayEffect::ReturnValue' has a wrong offset!");
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.GetEffectActor
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetSimulateFromSequence
 // 0x0018 (0x0018 - 0x0000)
-struct TsEffectFunctionLibrary_C_GetEffectActor final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_3409[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsEffectFunctionLibrary_C_GetEffectActor) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_GetEffectActor");
-static_assert(sizeof(TsEffectFunctionLibrary_C_GetEffectActor) == 0x000018, "Wrong size on TsEffectFunctionLibrary_C_GetEffectActor");
-static_assert(offsetof(TsEffectFunctionLibrary_C_GetEffectActor, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_GetEffectActor::Handle' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_GetEffectActor, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_GetEffectActor::__WorldContext' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_GetEffectActor, ReturnValue) == 0x000010, "Member 'TsEffectFunctionLibrary_C_GetEffectActor::ReturnValue' has a wrong offset!");
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SpawnEffect
-// 0x0080 (0x0080 - 0x0000)
-struct TsEffectFunctionLibrary_C_SpawnEffect final
-{
-public:
-	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                CallObject;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 Path;                                              // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	struct FTransform                             Transform;                                         // 0x0020(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	class FString                                 Reason;                                            // 0x0050(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	EEffectPlay                                   PlayType;                                          // 0x0060(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_340A[0x7];                                     // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0068(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ReturnValue;                                       // 0x0070(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsEffectFunctionLibrary_C_SpawnEffect) == 0x000010, "Wrong alignment on TsEffectFunctionLibrary_C_SpawnEffect");
-static_assert(sizeof(TsEffectFunctionLibrary_C_SpawnEffect) == 0x000080, "Wrong size on TsEffectFunctionLibrary_C_SpawnEffect");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, WorldContext) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::WorldContext' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, CallObject) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::CallObject' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, Path) == 0x000010, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::Path' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, Transform) == 0x000020, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::Transform' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, Reason) == 0x000050, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::Reason' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, PlayType) == 0x000060, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::PlayType' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, __WorldContext) == 0x000068, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::__WorldContext' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, ReturnValue) == 0x000070, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::ReturnValue' has a wrong offset!");
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SpawnEffectWithActor
-// 0x0050 (0x0050 - 0x0000)
-struct TsEffectFunctionLibrary_C_SpawnEffectWithActor final
-{
-public:
-	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                CallObject;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 EffectActor;                                       // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 Path;                                              // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 Reason;                                            // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	EEffectPlay                                   PlayType;                                          // 0x0038(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEffectType                                   EffectType;                                        // 0x0039(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_340B[0x6];                                     // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0040(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ReturnValue;                                       // 0x0048(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsEffectFunctionLibrary_C_SpawnEffectWithActor) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SpawnEffectWithActor");
-static_assert(sizeof(TsEffectFunctionLibrary_C_SpawnEffectWithActor) == 0x000050, "Wrong size on TsEffectFunctionLibrary_C_SpawnEffectWithActor");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, WorldContext) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::WorldContext' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, CallObject) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::CallObject' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, EffectActor) == 0x000010, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::EffectActor' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, Path) == 0x000018, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::Path' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, Reason) == 0x000028, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::Reason' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, PlayType) == 0x000038, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::PlayType' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, EffectType) == 0x000039, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::EffectType' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, __WorldContext) == 0x000040, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::__WorldContext' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, ReturnValue) == 0x000048, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::ReturnValue' has a wrong offset!");
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.StopEffect
-// 0x0038 (0x0038 - 0x0000)
-struct TsEffectFunctionLibrary_C_StopEffect final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_340C[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                CallObject;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 Reason;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          Immediately;                                       // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          DestroyActor;                                      // 0x0021(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_340D[0x6];                                     // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(TsEffectFunctionLibrary_C_StopEffect) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_StopEffect");
-static_assert(sizeof(TsEffectFunctionLibrary_C_StopEffect) == 0x000038, "Wrong size on TsEffectFunctionLibrary_C_StopEffect");
-static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_StopEffect::Handle' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, CallObject) == 0x000008, "Member 'TsEffectFunctionLibrary_C_StopEffect::CallObject' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, Reason) == 0x000010, "Member 'TsEffectFunctionLibrary_C_StopEffect::Reason' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, Immediately) == 0x000020, "Member 'TsEffectFunctionLibrary_C_StopEffect::Immediately' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, DestroyActor) == 0x000021, "Member 'TsEffectFunctionLibrary_C_StopEffect::DestroyActor' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, __WorldContext) == 0x000028, "Member 'TsEffectFunctionLibrary_C_StopEffect::__WorldContext' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, ReturnValue) == 0x000030, "Member 'TsEffectFunctionLibrary_C_StopEffect::ReturnValue' has a wrong offset!");
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.EffectHandleIsValid
-// 0x0018 (0x0018 - 0x0000)
-struct TsEffectFunctionLibrary_C_EffectHandleIsValid final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_340E[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(TsEffectFunctionLibrary_C_EffectHandleIsValid) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_EffectHandleIsValid");
-static_assert(sizeof(TsEffectFunctionLibrary_C_EffectHandleIsValid) == 0x000018, "Wrong size on TsEffectFunctionLibrary_C_EffectHandleIsValid");
-static_assert(offsetof(TsEffectFunctionLibrary_C_EffectHandleIsValid, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_EffectHandleIsValid::Handle' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_EffectHandleIsValid, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_EffectHandleIsValid::__WorldContext' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_EffectHandleIsValid, ReturnValue) == 0x000010, "Member 'TsEffectFunctionLibrary_C_EffectHandleIsValid::ReturnValue' has a wrong offset!");
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.AttachEffectActorToComponent
-// 0x0028 (0x0028 - 0x0000)
-struct TsEffectFunctionLibrary_C_AttachEffectActorToComponent final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_340F[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USceneComponent*                        Parent;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   SocketName;                                        // 0x0010(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EAttachmentRule                               LocationRule;                                      // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EAttachmentRule                               RotationRule;                                      // 0x001D(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EAttachmentRule                               ScaleRule;                                         // 0x001E(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bWeldSimulatedBodies;                              // 0x001F(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_AttachEffectActorToComponent");
-static_assert(sizeof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent) == 0x000028, "Wrong size on TsEffectFunctionLibrary_C_AttachEffectActorToComponent");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::Handle' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, Parent) == 0x000008, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::Parent' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, SocketName) == 0x000010, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::SocketName' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, LocationRule) == 0x00001C, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::LocationRule' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, RotationRule) == 0x00001D, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::RotationRule' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, ScaleRule) == 0x00001E, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::ScaleRule' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, bWeldSimulatedBodies) == 0x00001F, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::bWeldSimulatedBodies' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, __WorldContext) == 0x000020, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::__WorldContext' has a wrong offset!");
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectActorRelativeLocation
-// 0x0020 (0x0020 - 0x0000)
-struct TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	struct FVector                                NewRelativeLocation;                               // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bSweep;                                            // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bTeleport;                                         // 0x0011(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3410[0x6];                                     // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation");
-static_assert(sizeof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation) == 0x000020, "Wrong size on TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation::Handle' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation, NewRelativeLocation) == 0x000004, "Member 'TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation::NewRelativeLocation' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation, bSweep) == 0x000010, "Member 'TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation::bSweep' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation, bTeleport) == 0x000011, "Member 'TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation::bTeleport' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation, __WorldContext) == 0x000018, "Member 'TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation::__WorldContext' has a wrong offset!");
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectParameterNiagara
-// 0x0060 (0x0060 - 0x0000)
-struct TsEffectFunctionLibrary_C_SetEffectParameterNiagara final
+struct TsEffectFunctionLibrary_C_SetSimulateFromSequence final
 {
 public:
 	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3411[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSEffectFloatParameter>         UserParameterFloat;                                // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FSEffectColorParameter>         UserParameterColor;                                // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FSEffectVectorParameter>        UserParameterVector;                               // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FSEffectFloatParameter>         MaterialParameterFloat;                            // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FSEffectColorParameter>         MaterialParameterColor;                            // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UObject*                                __WorldContext;                                    // 0x0058(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_EffectActor_C*                      Actor;                                             // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetEffectParameterNiagara");
-static_assert(sizeof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara) == 0x000060, "Wrong size on TsEffectFunctionLibrary_C_SetEffectParameterNiagara");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::Handle' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, UserParameterFloat) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::UserParameterFloat' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, UserParameterColor) == 0x000018, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::UserParameterColor' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, UserParameterVector) == 0x000028, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::UserParameterVector' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, MaterialParameterFloat) == 0x000038, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::MaterialParameterFloat' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, MaterialParameterColor) == 0x000048, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::MaterialParameterColor' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, __WorldContext) == 0x000058, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::__WorldContext' has a wrong offset!");
+static_assert(alignof(TsEffectFunctionLibrary_C_SetSimulateFromSequence) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetSimulateFromSequence");
+static_assert(sizeof(TsEffectFunctionLibrary_C_SetSimulateFromSequence) == 0x000018, "Wrong size on TsEffectFunctionLibrary_C_SetSimulateFromSequence");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetSimulateFromSequence, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetSimulateFromSequence::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetSimulateFromSequence, Actor) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SetSimulateFromSequence::Actor' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetSimulateFromSequence, __WorldContext) == 0x000010, "Member 'TsEffectFunctionLibrary_C_SetSimulateFromSequence::__WorldContext' has a wrong offset!");
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.AttachEffectActorToActor
-// 0x0028 (0x0028 - 0x0000)
-struct TsEffectFunctionLibrary_C_AttachEffectActorToActor final
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetPublicToSequence
+// 0x0018 (0x0018 - 0x0000)
+struct TsEffectFunctionLibrary_C_SetPublicToSequence final
 {
 public:
 	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3412[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 Parent;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   SocketName;                                        // 0x0010(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EAttachmentRule                               LocationRule;                                      // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EAttachmentRule                               RotationRule;                                      // 0x001D(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EAttachmentRule                               ScaleRule;                                         // 0x001E(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bWeldSimulatedBodies;                              // 0x001F(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_EffectActor_C*                      Actor;                                             // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(TsEffectFunctionLibrary_C_AttachEffectActorToActor) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_AttachEffectActorToActor");
-static_assert(sizeof(TsEffectFunctionLibrary_C_AttachEffectActorToActor) == 0x000028, "Wrong size on TsEffectFunctionLibrary_C_AttachEffectActorToActor");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::Handle' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, Parent) == 0x000008, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::Parent' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, SocketName) == 0x000010, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::SocketName' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, LocationRule) == 0x00001C, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::LocationRule' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, RotationRule) == 0x00001D, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::RotationRule' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, ScaleRule) == 0x00001E, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::ScaleRule' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, bWeldSimulatedBodies) == 0x00001F, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::bWeldSimulatedBodies' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, __WorldContext) == 0x000020, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::__WorldContext' has a wrong offset!");
+static_assert(alignof(TsEffectFunctionLibrary_C_SetPublicToSequence) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetPublicToSequence");
+static_assert(sizeof(TsEffectFunctionLibrary_C_SetPublicToSequence) == 0x000018, "Wrong size on TsEffectFunctionLibrary_C_SetPublicToSequence");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetPublicToSequence, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetPublicToSequence::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetPublicToSequence, Actor) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SetPublicToSequence::Actor' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetPublicToSequence, __WorldContext) == 0x000010, "Member 'TsEffectFunctionLibrary_C_SetPublicToSequence::__WorldContext' has a wrong offset!");
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectHiddenInGame
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectStoppingTime
 // 0x0010 (0x0010 - 0x0000)
-struct TsEffectFunctionLibrary_C_SetEffectHiddenInGame final
+struct TsEffectFunctionLibrary_C_SetEffectStoppingTime final
 {
 public:
-	int32                                         Handle1;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Value1;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3413[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          StoppingTime;                                      // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(TsEffectFunctionLibrary_C_SetEffectHiddenInGame) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetEffectHiddenInGame");
-static_assert(sizeof(TsEffectFunctionLibrary_C_SetEffectHiddenInGame) == 0x000010, "Wrong size on TsEffectFunctionLibrary_C_SetEffectHiddenInGame");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectHiddenInGame, Handle1) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetEffectHiddenInGame::Handle1' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectHiddenInGame, Value1) == 0x000004, "Member 'TsEffectFunctionLibrary_C_SetEffectHiddenInGame::Value1' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectHiddenInGame, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SetEffectHiddenInGame::__WorldContext' has a wrong offset!");
+static_assert(alignof(TsEffectFunctionLibrary_C_SetEffectStoppingTime) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetEffectStoppingTime");
+static_assert(sizeof(TsEffectFunctionLibrary_C_SetEffectStoppingTime) == 0x000010, "Wrong size on TsEffectFunctionLibrary_C_SetEffectStoppingTime");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectStoppingTime, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetEffectStoppingTime::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectStoppingTime, StoppingTime) == 0x000004, "Member 'TsEffectFunctionLibrary_C_SetEffectStoppingTime::StoppingTime' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectStoppingTime, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SetEffectStoppingTime::__WorldContext' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetGlobalStoppingTime
+// 0x0010 (0x0010 - 0x0000)
+struct TsEffectFunctionLibrary_C_SetGlobalStoppingTime final
+{
+public:
+	bool                                          StoppingTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PlayTime;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_SetGlobalStoppingTime) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetGlobalStoppingTime");
+static_assert(sizeof(TsEffectFunctionLibrary_C_SetGlobalStoppingTime) == 0x000010, "Wrong size on TsEffectFunctionLibrary_C_SetGlobalStoppingTime");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetGlobalStoppingTime, StoppingTime) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetGlobalStoppingTime::StoppingTime' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetGlobalStoppingTime, PlayTime) == 0x000004, "Member 'TsEffectFunctionLibrary_C_SetGlobalStoppingTime::PlayTime' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetGlobalStoppingTime, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SetGlobalStoppingTime::__WorldContext' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectIgnoreVisibilityOptimize
+// 0x0010 (0x0010 - 0x0000)
+struct TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Ignore;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize");
+static_assert(sizeof(TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize) == 0x000010, "Wrong size on TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize, Ignore) == 0x000004, "Member 'TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize::Ignore' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize::__WorldContext' has a wrong offset!");
 
 // Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SpawnEffectUI
 // 0x0070 (0x0070 - 0x0000)
@@ -317,21 +125,277 @@ static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectUI, Reason) == 0x000
 static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectUI, __WorldContext) == 0x000060, "Member 'TsEffectFunctionLibrary_C_SpawnEffectUI::__WorldContext' has a wrong offset!");
 static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectUI, ReturnValue) == 0x000068, "Member 'TsEffectFunctionLibrary_C_SpawnEffectUI::ReturnValue' has a wrong offset!");
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectIgnoreVisibilityOptimize
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectHiddenInGame
 // 0x0010 (0x0010 - 0x0000)
-struct TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize final
+struct TsEffectFunctionLibrary_C_SetEffectHiddenInGame final
+{
+public:
+	int32                                         Handle1;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Value1;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_SetEffectHiddenInGame) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetEffectHiddenInGame");
+static_assert(sizeof(TsEffectFunctionLibrary_C_SetEffectHiddenInGame) == 0x000010, "Wrong size on TsEffectFunctionLibrary_C_SetEffectHiddenInGame");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectHiddenInGame, Handle1) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetEffectHiddenInGame::Handle1' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectHiddenInGame, Value1) == 0x000004, "Member 'TsEffectFunctionLibrary_C_SetEffectHiddenInGame::Value1' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectHiddenInGame, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SetEffectHiddenInGame::__WorldContext' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.AttachEffectActorToActor
+// 0x0028 (0x0028 - 0x0000)
+struct TsEffectFunctionLibrary_C_AttachEffectActorToActor final
 {
 public:
 	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Ignore;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3414[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Parent;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   SocketName;                                        // 0x0010(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               LocationRule;                                      // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               RotationRule;                                      // 0x001D(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               ScaleRule;                                         // 0x001E(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWeldSimulatedBodies;                              // 0x001F(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_AttachEffectActorToActor) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_AttachEffectActorToActor");
+static_assert(sizeof(TsEffectFunctionLibrary_C_AttachEffectActorToActor) == 0x000028, "Wrong size on TsEffectFunctionLibrary_C_AttachEffectActorToActor");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, Parent) == 0x000008, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::Parent' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, SocketName) == 0x000010, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::SocketName' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, LocationRule) == 0x00001C, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::LocationRule' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, RotationRule) == 0x00001D, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::RotationRule' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, ScaleRule) == 0x00001E, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::ScaleRule' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, bWeldSimulatedBodies) == 0x00001F, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::bWeldSimulatedBodies' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToActor, __WorldContext) == 0x000020, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToActor::__WorldContext' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectParameterNiagara
+// 0x0060 (0x0060 - 0x0000)
+struct TsEffectFunctionLibrary_C_SetEffectParameterNiagara final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSEffectFloatParameter>         UserParameterFloat;                                // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FSEffectColorParameter>         UserParameterColor;                                // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FSEffectVectorParameter>        UserParameterVector;                               // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FSEffectFloatParameter>         MaterialParameterFloat;                            // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FSEffectColorParameter>         MaterialParameterColor;                            // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                __WorldContext;                                    // 0x0058(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetEffectParameterNiagara");
+static_assert(sizeof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara) == 0x000060, "Wrong size on TsEffectFunctionLibrary_C_SetEffectParameterNiagara");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, UserParameterFloat) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::UserParameterFloat' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, UserParameterColor) == 0x000018, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::UserParameterColor' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, UserParameterVector) == 0x000028, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::UserParameterVector' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, MaterialParameterFloat) == 0x000038, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::MaterialParameterFloat' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, MaterialParameterColor) == 0x000048, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::MaterialParameterColor' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectParameterNiagara, __WorldContext) == 0x000058, "Member 'TsEffectFunctionLibrary_C_SetEffectParameterNiagara::__WorldContext' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectActorRelativeLocation
+// 0x0020 (0x0020 - 0x0000)
+struct TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	struct FVector                                NewRelativeLocation;                               // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bSweep;                                            // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bTeleport;                                         // 0x0011(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation");
+static_assert(sizeof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation) == 0x000020, "Wrong size on TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation, NewRelativeLocation) == 0x000004, "Member 'TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation::NewRelativeLocation' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation, bSweep) == 0x000010, "Member 'TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation::bSweep' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation, bTeleport) == 0x000011, "Member 'TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation::bTeleport' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation, __WorldContext) == 0x000018, "Member 'TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation::__WorldContext' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.AttachEffectActorToComponent
+// 0x0028 (0x0028 - 0x0000)
+struct TsEffectFunctionLibrary_C_AttachEffectActorToComponent final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USceneComponent*                        Parent;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   SocketName;                                        // 0x0010(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               LocationRule;                                      // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               RotationRule;                                      // 0x001D(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               ScaleRule;                                         // 0x001E(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWeldSimulatedBodies;                              // 0x001F(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_AttachEffectActorToComponent");
+static_assert(sizeof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent) == 0x000028, "Wrong size on TsEffectFunctionLibrary_C_AttachEffectActorToComponent");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, Parent) == 0x000008, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::Parent' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, SocketName) == 0x000010, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::SocketName' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, LocationRule) == 0x00001C, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::LocationRule' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, RotationRule) == 0x00001D, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::RotationRule' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, ScaleRule) == 0x00001E, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::ScaleRule' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, bWeldSimulatedBodies) == 0x00001F, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::bWeldSimulatedBodies' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_AttachEffectActorToComponent, __WorldContext) == 0x000020, "Member 'TsEffectFunctionLibrary_C_AttachEffectActorToComponent::__WorldContext' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.EffectHandleIsValid
+// 0x0018 (0x0018 - 0x0000)
+struct TsEffectFunctionLibrary_C_EffectHandleIsValid final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_EffectHandleIsValid) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_EffectHandleIsValid");
+static_assert(sizeof(TsEffectFunctionLibrary_C_EffectHandleIsValid) == 0x000018, "Wrong size on TsEffectFunctionLibrary_C_EffectHandleIsValid");
+static_assert(offsetof(TsEffectFunctionLibrary_C_EffectHandleIsValid, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_EffectHandleIsValid::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_EffectHandleIsValid, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_EffectHandleIsValid::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_EffectHandleIsValid, ReturnValue) == 0x000010, "Member 'TsEffectFunctionLibrary_C_EffectHandleIsValid::ReturnValue' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.StopEffect
+// 0x0038 (0x0038 - 0x0000)
+struct TsEffectFunctionLibrary_C_StopEffect final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                CallObject;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 Reason;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          Immediately;                                       // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DestroyActor;                                      // 0x0021(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_StopEffect) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_StopEffect");
+static_assert(sizeof(TsEffectFunctionLibrary_C_StopEffect) == 0x000038, "Wrong size on TsEffectFunctionLibrary_C_StopEffect");
+static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_StopEffect::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, CallObject) == 0x000008, "Member 'TsEffectFunctionLibrary_C_StopEffect::CallObject' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, Reason) == 0x000010, "Member 'TsEffectFunctionLibrary_C_StopEffect::Reason' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, Immediately) == 0x000020, "Member 'TsEffectFunctionLibrary_C_StopEffect::Immediately' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, DestroyActor) == 0x000021, "Member 'TsEffectFunctionLibrary_C_StopEffect::DestroyActor' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, __WorldContext) == 0x000028, "Member 'TsEffectFunctionLibrary_C_StopEffect::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_StopEffect, ReturnValue) == 0x000030, "Member 'TsEffectFunctionLibrary_C_StopEffect::ReturnValue' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SpawnEffectWithActor
+// 0x0050 (0x0050 - 0x0000)
+struct TsEffectFunctionLibrary_C_SpawnEffectWithActor final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                CallObject;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 EffectActor;                                       // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 Path;                                              // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Reason;                                            // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	EEffectPlay                                   PlayType;                                          // 0x0038(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEffectType                                   EffectType;                                        // 0x0039(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0040(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0048(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_SpawnEffectWithActor) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SpawnEffectWithActor");
+static_assert(sizeof(TsEffectFunctionLibrary_C_SpawnEffectWithActor) == 0x000050, "Wrong size on TsEffectFunctionLibrary_C_SpawnEffectWithActor");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, WorldContext) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::WorldContext' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, CallObject) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::CallObject' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, EffectActor) == 0x000010, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::EffectActor' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, Path) == 0x000018, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::Path' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, Reason) == 0x000028, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::Reason' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, PlayType) == 0x000038, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::PlayType' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, EffectType) == 0x000039, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::EffectType' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, __WorldContext) == 0x000040, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffectWithActor, ReturnValue) == 0x000048, "Member 'TsEffectFunctionLibrary_C_SpawnEffectWithActor::ReturnValue' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SpawnEffect
+// 0x0080 (0x0080 - 0x0000)
+struct TsEffectFunctionLibrary_C_SpawnEffect final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                CallObject;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 Path;                                              // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FTransform                             Transform;                                         // 0x0020(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	class FString                                 Reason;                                            // 0x0050(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	EEffectPlay                                   PlayType;                                          // 0x0060(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0068(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0070(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_SpawnEffect) == 0x000010, "Wrong alignment on TsEffectFunctionLibrary_C_SpawnEffect");
+static_assert(sizeof(TsEffectFunctionLibrary_C_SpawnEffect) == 0x000080, "Wrong size on TsEffectFunctionLibrary_C_SpawnEffect");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, WorldContext) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::WorldContext' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, CallObject) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::CallObject' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, Path) == 0x000010, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::Path' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, Transform) == 0x000020, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::Transform' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, Reason) == 0x000050, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::Reason' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, PlayType) == 0x000060, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::PlayType' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, __WorldContext) == 0x000068, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_SpawnEffect, ReturnValue) == 0x000070, "Member 'TsEffectFunctionLibrary_C_SpawnEffect::ReturnValue' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.GetEffectActor
+// 0x0018 (0x0018 - 0x0000)
+struct TsEffectFunctionLibrary_C_GetEffectActor final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_GetEffectActor) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_GetEffectActor");
+static_assert(sizeof(TsEffectFunctionLibrary_C_GetEffectActor) == 0x000018, "Wrong size on TsEffectFunctionLibrary_C_GetEffectActor");
+static_assert(offsetof(TsEffectFunctionLibrary_C_GetEffectActor, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_GetEffectActor::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_GetEffectActor, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_GetEffectActor::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_GetEffectActor, ReturnValue) == 0x000010, "Member 'TsEffectFunctionLibrary_C_GetEffectActor::ReturnValue' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.PlayEffect
+// 0x0030 (0x0030 - 0x0000)
+struct TsEffectFunctionLibrary_C_PlayEffect final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                CallObject;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 Reason;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_PlayEffect) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_PlayEffect");
+static_assert(sizeof(TsEffectFunctionLibrary_C_PlayEffect) == 0x000030, "Wrong size on TsEffectFunctionLibrary_C_PlayEffect");
+static_assert(offsetof(TsEffectFunctionLibrary_C_PlayEffect, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_PlayEffect::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_PlayEffect, CallObject) == 0x000008, "Member 'TsEffectFunctionLibrary_C_PlayEffect::CallObject' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_PlayEffect, Reason) == 0x000010, "Member 'TsEffectFunctionLibrary_C_PlayEffect::Reason' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_PlayEffect, __WorldContext) == 0x000020, "Member 'TsEffectFunctionLibrary_C_PlayEffect::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_PlayEffect, ReturnValue) == 0x000028, "Member 'TsEffectFunctionLibrary_C_PlayEffect::ReturnValue' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.EditorTickHandle
+// 0x0010 (0x0010 - 0x0000)
+struct TsEffectFunctionLibrary_C_EditorTickHandle final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	float                                         Delta;                                             // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize");
-static_assert(sizeof(TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize) == 0x000010, "Wrong size on TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize::Handle' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize, Ignore) == 0x000004, "Member 'TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize::Ignore' has a wrong offset!");
-static_assert(offsetof(TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize::__WorldContext' has a wrong offset!");
+static_assert(alignof(TsEffectFunctionLibrary_C_EditorTickHandle) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_EditorTickHandle");
+static_assert(sizeof(TsEffectFunctionLibrary_C_EditorTickHandle) == 0x000010, "Wrong size on TsEffectFunctionLibrary_C_EditorTickHandle");
+static_assert(offsetof(TsEffectFunctionLibrary_C_EditorTickHandle, Handle) == 0x000000, "Member 'TsEffectFunctionLibrary_C_EditorTickHandle::Handle' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_EditorTickHandle, Delta) == 0x000004, "Member 'TsEffectFunctionLibrary_C_EditorTickHandle::Delta' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_EditorTickHandle, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_EditorTickHandle::__WorldContext' has a wrong offset!");
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.InitializeWithPreview
+// 0x0010 (0x0010 - 0x0000)
+struct TsEffectFunctionLibrary_C_InitializeWithPreview final
+{
+public:
+	bool                                          Refresh;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEffectFunctionLibrary_C_InitializeWithPreview) == 0x000008, "Wrong alignment on TsEffectFunctionLibrary_C_InitializeWithPreview");
+static_assert(sizeof(TsEffectFunctionLibrary_C_InitializeWithPreview) == 0x000010, "Wrong size on TsEffectFunctionLibrary_C_InitializeWithPreview");
+static_assert(offsetof(TsEffectFunctionLibrary_C_InitializeWithPreview, Refresh) == 0x000000, "Member 'TsEffectFunctionLibrary_C_InitializeWithPreview::Refresh' has a wrong offset!");
+static_assert(offsetof(TsEffectFunctionLibrary_C_InitializeWithPreview, __WorldContext) == 0x000008, "Member 'TsEffectFunctionLibrary_C_InitializeWithPreview::__WorldContext' has a wrong offset!");
 
 }
 

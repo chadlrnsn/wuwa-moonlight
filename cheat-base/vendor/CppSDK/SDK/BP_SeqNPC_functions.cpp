@@ -148,9 +148,9 @@ bool ABP_SeqNPC_C::GetAnimDataFloat(TArray<struct FNamedCurveValue>* FloatCurveD
 // Function BP_SeqNPC.BP_SeqNPC_C.GetABPC_Body_V2
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UABPC_Seq_Body_V2_C*              Param_ABPC_Body_V2                                     (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UABPC_Seq_Body_V2_C*              ABPC_Body_V2_0                                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SeqNPC_C::GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** Param_ABPC_Body_V2)
+void ABP_SeqNPC_C::GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** ABPC_Body_V2_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -161,8 +161,8 @@ void ABP_SeqNPC_C::GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** Param_ABPC_Body_V
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_ABPC_Body_V2 != nullptr)
-		*Param_ABPC_Body_V2 = Parms.Param_ABPC_Body_V2;
+	if (ABPC_Body_V2_0 != nullptr)
+		*ABPC_Body_V2_0 = Parms.ABPC_Body_V2_0;
 }
 
 }

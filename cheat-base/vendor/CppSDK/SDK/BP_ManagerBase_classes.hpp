@@ -26,7 +26,7 @@ public:
 	class UBP_EventManager_C*                     ____h;                                             // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ___(class UBP_MainGameInstance_C* Param_Eight___);
+	void ___(class UBP_MainGameInstance_C* Eight____0);
 	void OnLeaveWorld();
 
 public:

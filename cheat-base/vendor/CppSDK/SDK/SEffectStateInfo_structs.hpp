@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "SStateBasedEffectLinearColorCurveSection_structs.hpp"
 #include "SEffectStateFloatCurve_structs.hpp"
 #include "SEffectStateLinearColorCurve_structs.hpp"
 #include "SStateBasedEffectFloatCurveSection_structs.hpp"
-#include "SStateBasedEffectLinearColorCurveSection_structs.hpp"
 
 
 namespace SDK
@@ -27,7 +27,7 @@ public:
 	float                                         StateTransitionTime_67_3DD750234A75325489136994A0DCED5C; // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         PreLoopTime_11_72CEC72C4ED64385654C5AB966B95978;   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         LoopTime_31_224DE317481D8C3195F97692EED77972;      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3090[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, struct FSEffectStateFloatCurve> FloatInfos_44_A616367C4DA7C9CCD35BADA15FF37CE2;    // 0x0010(0x0050)(Edit, BlueprintVisible)
 	TMap<class FName, struct FSEffectStateLinearColorCurve> LinearColorInfos_45_94E48AED44A9A6653B2A4D978AB58D25; // 0x0060(0x0050)(Edit, BlueprintVisible)
 	TMap<class FName, struct FSStateBasedEffectFloatCurveSection> StaticMeshFloatInfo_63_D63F21AB4EBFA038D23445A837CB06EF; // 0x00B0(0x0050)(Edit, BlueprintVisible)

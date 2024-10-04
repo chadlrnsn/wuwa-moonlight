@@ -24,7 +24,7 @@ struct BP_UiActorCallBack_C_UiAnimNotifyStateEffectPlay__DelegateSignature final
 {
 public:
 	EPerformanceRoleState                         AnimState;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2EB3[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 SocketName;                                        // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 Mesh;                                              // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -40,7 +40,7 @@ struct BP_UiActorCallBack_C_UiAnimNotifyStateEffectStop__DelegateSignature final
 {
 public:
 	EPerformanceRoleState                         AnimState;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2EB4[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 SocketName;                                        // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 Mesh;                                              // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -55,12 +55,12 @@ static_assert(offsetof(BP_UiActorCallBack_C_UiAnimNotifyStateEffectStop__Delegat
 struct BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature final
 {
 public:
-	struct FSUiAnimNotifyEffect                   Param_UiAnimNotifyEffect;                          // 0x0000(0x0060)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	struct FSUiAnimNotifyEffect                   UiAnimNotifyEffect_0;                              // 0x0000(0x0060)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 Mesh;                                              // 0x0060(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature) == 0x000010, "Wrong alignment on BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature");
 static_assert(sizeof(BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature) == 0x000070, "Wrong size on BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature");
-static_assert(offsetof(BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature, Param_UiAnimNotifyEffect) == 0x000000, "Member 'BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature::Param_UiAnimNotifyEffect' has a wrong offset!");
+static_assert(offsetof(BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature, UiAnimNotifyEffect_0) == 0x000000, "Member 'BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature::UiAnimNotifyEffect_0' has a wrong offset!");
 static_assert(offsetof(BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature, Mesh) == 0x000060, "Member 'BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature::Mesh' has a wrong offset!");
 
 // Function BP_UiActorCallBack.BP_UiActorCallBack_C.UiAnimNotifyModel__DelegateSignature
@@ -68,12 +68,12 @@ static_assert(offsetof(BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignatur
 struct BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature final
 {
 public:
-	struct FSUiAnimNotifyModel                    Param_UiAnimNotifyModel;                           // 0x0000(0x00C0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	struct FSUiAnimNotifyModel                    UiAnimNotifyModel_0;                               // 0x0000(0x00C0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 Mesh;                                              // 0x00C0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature) == 0x000010, "Wrong alignment on BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature");
 static_assert(sizeof(BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature) == 0x0000D0, "Wrong size on BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature");
-static_assert(offsetof(BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature, Param_UiAnimNotifyModel) == 0x000000, "Member 'BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature::Param_UiAnimNotifyModel' has a wrong offset!");
+static_assert(offsetof(BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature, UiAnimNotifyModel_0) == 0x000000, "Member 'BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature::UiAnimNotifyModel_0' has a wrong offset!");
 static_assert(offsetof(BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature, Mesh) == 0x0000C0, "Member 'BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature::Mesh' has a wrong offset!");
 
 // Function BP_UiActorCallBack.BP_UiActorCallBack_C.UiAnimNotifyEndPoint__DelegateSignature

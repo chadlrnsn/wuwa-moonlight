@@ -95,7 +95,7 @@ struct TsBasePlayerController_C_OnTouchBegin final
 {
 public:
 	ETouchIndex                                   TouchIndex;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2E2C[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Position;                                          // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
 static_assert(alignof(TsBasePlayerController_C_OnTouchBegin) == 0x000004, "Wrong alignment on TsBasePlayerController_C_OnTouchBegin");
@@ -109,7 +109,7 @@ struct TsBasePlayerController_C_OnTouchEnd final
 {
 public:
 	ETouchIndex                                   TouchIndex;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2E2D[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Position;                                          // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
 static_assert(alignof(TsBasePlayerController_C_OnTouchEnd) == 0x000004, "Wrong alignment on TsBasePlayerController_C_OnTouchEnd");
@@ -123,7 +123,7 @@ struct TsBasePlayerController_C_OnTouchMove final
 {
 public:
 	ETouchIndex                                   TouchIndex;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2E2E[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Position;                                          // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
 static_assert(alignof(TsBasePlayerController_C_OnTouchMove) == 0x000004, "Wrong alignment on TsBasePlayerController_C_OnTouchMove");

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "EEnterClimb_structs.hpp"
-#include "Engine_classes.hpp"
-#include "EExitClimb_structs.hpp"
 #include "EMovementDirection_structs.hpp"
+#include "Engine_classes.hpp"
+#include "EEnterClimb_structs.hpp"
+#include "EExitClimb_structs.hpp"
 #include "EClimbState_structs.hpp"
 
 
@@ -115,6 +115,7 @@ public:
 	static void AddActorLocalRotationWithContext(int32 EntityId, const struct FRotator& Rotation, bool Sweep, const class FString& Context, class UObject* __WorldContext);
 	static void AddActorLocalOffsetWithContext(int32 EntityId, const struct FVector& Offset, bool Sweep, const class FString& Context, class UObject* __WorldContext);
 	static struct FVector GetSwimLocation(int32 EntityId, class UObject* __WorldContext);
+	static struct FVector SimpleSwim(int32 EntityId, float DeltaSeconds, float DetectedHeight, const struct FVector& CurrentSpeed, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

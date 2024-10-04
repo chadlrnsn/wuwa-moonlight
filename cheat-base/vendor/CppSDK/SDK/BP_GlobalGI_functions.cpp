@@ -1049,12 +1049,12 @@ void ABP_GlobalGI_C::GetParallaxCorrectCachedShadowDirection(struct FRotator* Ne
 // Parameters:
 // struct FLinearColor                     MainLight                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   MainLightIntensity                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     Param_SkyLight                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor                     SkyLight_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   SkyLightIntensity                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FLinearColor                     FrontSideLight                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FLinearColor                     BackSideLight                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GlobalGI_C::GetTODCharacterLighting(const struct FLinearColor& MainLight, float MainLightIntensity, const struct FLinearColor& Param_SkyLight, float SkyLightIntensity, struct FLinearColor* FrontSideLight, struct FLinearColor* BackSideLight)
+void ABP_GlobalGI_C::GetTODCharacterLighting(const struct FLinearColor& MainLight, float MainLightIntensity, const struct FLinearColor& SkyLight_0, float SkyLightIntensity, struct FLinearColor* FrontSideLight, struct FLinearColor* BackSideLight)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1065,7 +1065,7 @@ void ABP_GlobalGI_C::GetTODCharacterLighting(const struct FLinearColor& MainLigh
 
 	Parms.MainLight = std::move(MainLight);
 	Parms.MainLightIntensity = MainLightIntensity;
-	Parms.Param_SkyLight = std::move(Param_SkyLight);
+	Parms.SkyLight_0 = std::move(SkyLight_0);
 	Parms.SkyLightIntensity = SkyLightIntensity;
 
 	UObject::ProcessEvent(Func, &Parms);

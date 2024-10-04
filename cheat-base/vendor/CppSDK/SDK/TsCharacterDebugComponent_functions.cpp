@@ -89,9 +89,9 @@ void UTsCharacterDebugComponent_C::ReceiveBeginPlay()
 // Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.ActivateDebugSpeed
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_Activate                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    Activate_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UTsCharacterDebugComponent_C::ActivateDebugSpeed(bool Param_Activate)
+void UTsCharacterDebugComponent_C::ActivateDebugSpeed(bool Activate_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -100,7 +100,7 @@ void UTsCharacterDebugComponent_C::ActivateDebugSpeed(bool Param_Activate)
 
 	Params::TsCharacterDebugComponent_C_ActivateDebugSpeed Parms{};
 
-	Parms.Param_Activate = Param_Activate;
+	Parms.Activate_0 = Activate_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

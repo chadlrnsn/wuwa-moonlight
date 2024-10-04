@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SCounterAttackEffect_structs.hpp"
 #include "SCounterAttackBuff_structs.hpp"
+#include "SCounterAttackEffect_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
 
@@ -29,11 +29,11 @@ public:
 	float                                         J____10_5FFEA61B4A6822B406F1E7AB634133B4;          // 0x0390(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _______12_B1E9072B4B14DF443199C8A0B257C149;        // 0x0394(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ____9__14_9C54863B4F28F6D8229137908D84F815;        // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_313A[0x4];                                     // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39C[0x4];                                      // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	int64                                         _9____BuffID_52_3FD017324758D15AA7A88E8DDDF8F266;  // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         _____BuffID_53_BCC3A4494643E23E0CBC8F8A2EE6977F;   // 0x03A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _____eBuff_K_40_B75D26CA4B24DAB1F5CBF39BB2321401;  // 0x03B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_313B[0x7];                                     // 0x03B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3B1[0x7];                                      // 0x03B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSCounterAttackBuff>            _KBuff_h_57_5CD865994F901D76CB1C488EE5222C44;      // 0x03B8(0x0010)(Edit, BlueprintVisible)
 	int64                                         ANS___9___H_BuffID_60_BB7B172C4B0C23B10BAFB89E83C222A2; // 0x03C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           ____Tag_64_73DE9EC74B7E952793F7B38D76B33642;       // 0x03D0(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)

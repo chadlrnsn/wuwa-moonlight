@@ -25,7 +25,7 @@ public:
 	int64                                         __V___BuffID_6_B107430041EE7889780ABFB2BF439935;   // 0x01C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         _____BuffID_8_770DF1D74885F20C854E60A1CCB1823E;    // 0x01C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ___V___15_05D42AC24F81951811435A9B67880249;        // 0x01D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_311C[0x3];                                     // 0x01D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D1[0x3];                                      // 0x01D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         _V__ID_11_6A13DC214E971B0DF65BC788698B4A73;        // 0x01D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSVisionCounterAttack) == 0x000008, "Wrong alignment on FSVisionCounterAttack");

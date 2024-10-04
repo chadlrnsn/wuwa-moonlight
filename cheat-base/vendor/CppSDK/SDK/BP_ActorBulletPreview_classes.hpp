@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "SReBulletDataMain_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "EBulletShape_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -35,9 +35,9 @@ public:
 	class FName                                   P___;                                              // 0x0A00(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Func___(class USkeletalMeshComponent* MeshComp);
+	void ___0(class USkeletalMeshComponent* MeshComp);
 	void b____(EBulletShape b_);
-	void Func____(const struct FSReBulletDataMain& Param_Mn, class AActor* Param____);
+	void Func_____0(const struct FSReBulletDataMain& Mn_0, class AActor* Param_____0);
 	void OnTick();
 	void Minus_MnO_();
 

@@ -37,7 +37,7 @@ public:
 	int32                                         MaxUpdateSlotCountInOneFrame;                      // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InitWithTransparent;                               // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ExpandMode                                    ExpandMode;                                        // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B44[0x16];                                    // 0x0022(0x0016)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_22[0x16];                                      // 0x0022(0x0016)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FDynamicTextureAtlasSetting) == 0x000008, "Wrong alignment on FDynamicTextureAtlasSetting");
 static_assert(sizeof(FDynamicTextureAtlasSetting) == 0x000038, "Wrong size on FDynamicTextureAtlasSetting");
@@ -54,7 +54,7 @@ static_assert(offsetof(FDynamicTextureAtlasSetting, ExpandMode) == 0x000021, "Me
 struct alignas(0x08) FDynamicAtlasSlotManagedHandle final
 {
 public:
-	uint8                                         Pad_1B45[0x10];                                    // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FDynamicAtlasSlotManagedHandle) == 0x000008, "Wrong alignment on FDynamicAtlasSlotManagedHandle");
 static_assert(sizeof(FDynamicAtlasSlotManagedHandle) == 0x000010, "Wrong size on FDynamicAtlasSlotManagedHandle");
@@ -64,7 +64,7 @@ static_assert(sizeof(FDynamicAtlasSlotManagedHandle) == 0x000010, "Wrong size on
 struct alignas(0x08) FTextureExpandParam final
 {
 public:
-	uint8                                         Pad_1B46[0x20];                                    // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FTextureExpandParam) == 0x000008, "Wrong alignment on FTextureExpandParam");
 static_assert(sizeof(FTextureExpandParam) == 0x000020, "Wrong size on FTextureExpandParam");

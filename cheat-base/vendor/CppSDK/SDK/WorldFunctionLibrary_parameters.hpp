@@ -10,31 +10,19 @@
 
 #include "Basic.hpp"
 
+#include "EWeatherState_structs.hpp"
+#include "ERelation_structs.hpp"
+#include "EInputAction_structs.hpp"
+#include "EDetachType_structs.hpp"
+#include "Engine_structs.hpp"
+#include "EInputState_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "EPawnChannel_structs.hpp"
-#include "EWeatherState_structs.hpp"
-#include "Engine_structs.hpp"
 #include "EWuYinQuState_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function WorldFunctionLibrary.WorldFunctionLibrary_C.AddPublicTags
-// 0x0020 (0x0020 - 0x0000)
-struct WorldFunctionLibrary_C_AddPublicTags final
-{
-public:
-	float                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3294[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         Tags1;                                             // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WorldFunctionLibrary_C_AddPublicTags) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_AddPublicTags");
-static_assert(sizeof(WorldFunctionLibrary_C_AddPublicTags) == 0x000020, "Wrong size on WorldFunctionLibrary_C_AddPublicTags");
-static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, EntityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_AddPublicTags::EntityId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, Tags1) == 0x000008, "Member 'WorldFunctionLibrary_C_AddPublicTags::Tags1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_AddPublicTags::__WorldContext' has a wrong offset!");
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemovePublicTags
 // 0x0020 (0x0020 - 0x0000)
@@ -42,7 +30,7 @@ struct WorldFunctionLibrary_C_RemovePublicTags final
 {
 public:
 	float                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3295[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         Tags1;                                             // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -52,13 +40,29 @@ static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, EntityId1) == 0x
 static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, Tags1) == 0x000008, "Member 'WorldFunctionLibrary_C_RemovePublicTags::Tags1' has a wrong offset!");
 static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_RemovePublicTags::__WorldContext' has a wrong offset!");
 
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.AddPublicTags
+// 0x0020 (0x0020 - 0x0000)
+struct WorldFunctionLibrary_C_AddPublicTags final
+{
+public:
+	float                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         Tags1;                                             // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_AddPublicTags) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_AddPublicTags");
+static_assert(sizeof(WorldFunctionLibrary_C_AddPublicTags) == 0x000020, "Wrong size on WorldFunctionLibrary_C_AddPublicTags");
+static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, EntityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_AddPublicTags::EntityId1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, Tags1) == 0x000008, "Member 'WorldFunctionLibrary_C_AddPublicTags::Tags1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_AddPublicTags::__WorldContext' has a wrong offset!");
+
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetIntValueByEntity
 // 0x0028 (0x0028 - 0x0000)
 struct WorldFunctionLibrary_C_GetIntValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3296[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -93,10 +97,10 @@ struct WorldFunctionLibrary_C_SetIntValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3297[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         Value;                                             // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3298[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetIntValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetIntValueByEntity");
@@ -114,7 +118,7 @@ public:
 	class ATsBaseCharacter_C*                     Entity;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         Value;                                             // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3299[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetIntValueByEntityWithCharacter");
@@ -130,7 +134,7 @@ struct WorldFunctionLibrary_C_GetIntValuesByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_329A[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int32>                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
@@ -148,7 +152,7 @@ struct WorldFunctionLibrary_C_GetLongValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_329B[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -166,7 +170,7 @@ struct WorldFunctionLibrary_C_SetLongValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_329C[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int64                                         Value;                                             // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -184,7 +188,7 @@ struct WorldFunctionLibrary_C_GetLongValuesByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_329D[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int64>                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
@@ -202,7 +206,7 @@ struct WorldFunctionLibrary_C_GetBooleanValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_329E[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
@@ -220,10 +224,10 @@ struct WorldFunctionLibrary_C_SetBooleanValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_329F[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          Value;                                             // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32A0[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetBooleanValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetBooleanValueByEntity");
@@ -239,7 +243,7 @@ struct WorldFunctionLibrary_C_GetFloatValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32A1[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -257,10 +261,10 @@ struct WorldFunctionLibrary_C_SetFloatValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32A2[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	float                                         Value;                                             // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32A3[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetFloatValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetFloatValueByEntity");
@@ -276,7 +280,7 @@ struct WorldFunctionLibrary_C_GetFloatValuesByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32A4[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<float>                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
@@ -294,7 +298,7 @@ struct WorldFunctionLibrary_C_GetStringValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32A5[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
@@ -312,7 +316,7 @@ struct WorldFunctionLibrary_C_SetStringValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32A6[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 Value;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -330,7 +334,7 @@ struct WorldFunctionLibrary_C_GetStringValuesByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32A7[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class FString>                         ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
@@ -348,7 +352,7 @@ struct WorldFunctionLibrary_C_RemoveValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32A8[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -364,7 +368,7 @@ struct WorldFunctionLibrary_C_HasValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32A9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
@@ -382,7 +386,7 @@ struct WorldFunctionLibrary_C_GetVectorValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32AA[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                ReturnValue;                                       // 0x0020(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -400,10 +404,10 @@ struct WorldFunctionLibrary_C_SetVectorValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32AB[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	struct FVector                                Value;                                             // 0x0018(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32AC[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetVectorValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetVectorValueByEntity");
@@ -419,7 +423,7 @@ struct WorldFunctionLibrary_C_GetVectorValuesByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32AD[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FVector>                        ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
@@ -437,7 +441,7 @@ struct WorldFunctionLibrary_C_GetRotatorValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32AE[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               ReturnValue;                                       // 0x0020(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
@@ -455,10 +459,10 @@ struct WorldFunctionLibrary_C_SetRotatorValueByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32AF[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	struct FRotator                               Value;                                             // 0x0018(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32B0[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetRotatorValueByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetRotatorValueByEntity");
@@ -474,7 +478,7 @@ struct WorldFunctionLibrary_C_GetRotatorValuesByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32B1[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FRotator>                       ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
@@ -492,7 +496,7 @@ struct WorldFunctionLibrary_C_GetEntityIdByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32B2[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -510,10 +514,10 @@ struct WorldFunctionLibrary_C_SetEntityIdByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32B3[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         Value;                                             // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32B4[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetEntityIdByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetEntityIdByEntity");
@@ -529,7 +533,7 @@ struct WorldFunctionLibrary_C_GetEntityIdsByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32B5[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int32>                                 ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm)
@@ -547,7 +551,7 @@ struct WorldFunctionLibrary_C_SetEntityIdsByEntity final
 {
 public:
 	int32                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32B6[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Key1;                                              // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	TArray<int32>                                 Values1;                                           // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -565,7 +569,7 @@ struct WorldFunctionLibrary_C_GetBlackboardInfosByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32B7[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
@@ -596,7 +600,7 @@ struct WorldFunctionLibrary_C_GetDynamicEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32B8[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -653,7 +657,7 @@ struct WorldFunctionLibrary_C_GetCreatureDataIdByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32B9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -669,7 +673,7 @@ struct WorldFunctionLibrary_C_GetPlayerIdByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32BA[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -685,7 +689,7 @@ struct WorldFunctionLibrary_C_GetRoleElementId final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32BB[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -701,7 +705,7 @@ struct WorldFunctionLibrary_C_GetOwnerIdByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32BC[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -717,7 +721,7 @@ struct WorldFunctionLibrary_C_AddPrivateTags final
 {
 public:
 	float                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32BD[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         Tags;                                              // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -733,7 +737,7 @@ struct WorldFunctionLibrary_C_RemovePrivateTags final
 {
 public:
 	float                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32BE[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         Tags;                                              // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -750,7 +754,7 @@ struct WorldFunctionLibrary_C_ActorHasSceneItemTag final
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Tag;                                               // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32BF[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
@@ -768,7 +772,7 @@ struct WorldFunctionLibrary_C_CheckConfigIdByActor final
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ConfigId;                                          // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32C0[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
@@ -809,7 +813,7 @@ struct WorldFunctionLibrary_C_PlayWuYinLevelSequence final
 {
 public:
 	int32                                         LoopStartFrame;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32C1[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULevelSequenceDirector*                 Director;                                          // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 SequenceActorName;                                 // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -840,7 +844,7 @@ struct WorldFunctionLibrary_C_GetRoleId final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32C2[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -857,7 +861,7 @@ struct WorldFunctionLibrary_C_SummonRequest final
 public:
 	int32                                         SkillId;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          IsVisible;                                         // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_32C3[0xB];                                     // 0x0005(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0xB];                                        // 0x0005(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             Transform;                                         // 0x0010(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, UObjectWrapper)
 	int32                                         SummonerId;                                        // 0x0040(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	int32                                         SummonConfigId;                                    // 0x0044(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
@@ -897,7 +901,7 @@ public:
 	class ULevelSequenceDirector*                 Director;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	class FString                                 battleActorName;                                   // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	EWuYinQuState                                 TargetState;                                       // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32C4[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_ChangeBattleState) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ChangeBattleState");
@@ -915,7 +919,7 @@ public:
 	int32                                         SkillId;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         SummonerId;                                        // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         RemoveId;                                          // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32C5[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_RemoveSummonEntityRequest) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_RemoveSummonEntityRequest");
@@ -932,7 +936,7 @@ struct WorldFunctionLibrary_C_AiChangeBattleState final
 public:
 	class FString                                 battleActorName;                                   // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	EWuYinQuState                                 TargetState;                                       // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32C6[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_AiChangeBattleState) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_AiChangeBattleState");
@@ -1045,11 +1049,11 @@ struct WorldFunctionLibrary_C_ChangeEntityState final
 {
 public:
 	int32                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32C7[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 State1;                                            // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	class AActor*                                 ChangerstActor;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	int32                                         ChangerstEntityId;                                 // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32C8[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_ChangeEntityState) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ChangeEntityState");
@@ -1066,7 +1070,7 @@ struct WorldFunctionLibrary_C_GetEntityTypeByEntity final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32C9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
@@ -1144,7 +1148,7 @@ public:
 	int32                                         Level;                                             // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FTransform                             Transform;                                         // 0x0010(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, UObjectWrapper)
 	int32                                         ExtraRatioConfigId;                                // 0x0040(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32CA[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_TestSpawnTemplateEntityPush) == 0x000010, "Wrong alignment on WorldFunctionLibrary_C_TestSpawnTemplateEntityPush");
@@ -1216,7 +1220,7 @@ struct WorldFunctionLibrary_C_GetActorByPbDataId final
 {
 public:
 	int32                                         PbDataId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32CB[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
@@ -1236,7 +1240,7 @@ public:
 	int32                                         ScreenEffect;                                      // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Location;                                          // 0x0024(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               Rotator;                                           // 0x0030(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32CC[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0040(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_ChangeSubLevel) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ChangeSubLevel");
@@ -1255,7 +1259,7 @@ struct WorldFunctionLibrary_C_MonsterBoomRequest final
 public:
 	int64                                         CreatureDataId;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	float                                         Delay;                                             // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32CD[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_MonsterBoomRequest) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_MonsterBoomRequest");
@@ -1270,7 +1274,7 @@ struct WorldFunctionLibrary_C_GetVisionEntityId final
 {
 public:
 	int32                                         OwnerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32CE[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -1304,7 +1308,7 @@ struct WorldFunctionLibrary_C_SetVisionEnable final
 public:
 	int32                                         OwnerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Enable;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_32CF[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetVisionEnable) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetVisionEnable");
@@ -1319,7 +1323,7 @@ struct WorldFunctionLibrary_C_GetServerIdByEntityId final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32D0[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -1365,7 +1369,7 @@ struct WorldFunctionLibrary_C_GetInitPositionByEntity final
 {
 public:
 	int32                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32D1[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -1402,7 +1406,7 @@ public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                CallObject;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Handle;                                            // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32D2[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
@@ -1441,7 +1445,7 @@ public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                CallObject;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Handle;                                            // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32D3[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
@@ -1459,7 +1463,7 @@ struct WorldFunctionLibrary_C_SetCameraShakeModify final
 {
 public:
 	float                                         Modify;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32D4[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetCameraShakeModify) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetCameraShakeModify");
@@ -1488,7 +1492,7 @@ public:
 	class ATsBaseCharacter_C*                     Actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EPawnChannel                                  PawnChannel;                                       // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECollisionResponse                            NewResponse;                                       // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32D5[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetCollisionResponseToPawn) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetCollisionResponseToPawn");
@@ -1520,7 +1524,7 @@ public:
 	struct FVector                                Location;                                          // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Sweep;                                             // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          Teleport;                                          // 0x0011(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32D6[0x6];                                     // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetEntityLocation) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetEntityLocation");
@@ -1540,7 +1544,7 @@ public:
 	struct FVector                                Location;                                          // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               Rotation;                                          // 0x0010(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          Sweep;                                             // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32D7[0x3];                                     // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetEntityLocationAndRotation) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetEntityLocationAndRotation");
@@ -1559,7 +1563,7 @@ public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	struct FRotator                               Rotation;                                          // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          Sweep;                                             // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32D8[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetEntityRotation) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetEntityRotation");
@@ -1588,7 +1592,7 @@ struct WorldFunctionLibrary_C_ShowCharacterCollision final
 {
 public:
 	bool                                          IsShow;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32D9[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         EntityId1;                                         // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -1604,7 +1608,7 @@ struct WorldFunctionLibrary_C_GetEnableCollisionDebug final
 {
 public:
 	int32                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32DA[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
@@ -1620,7 +1624,7 @@ struct WorldFunctionLibrary_C_ChangeRole final
 {
 public:
 	int32                                         Pos;                                               // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32DB[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_ChangeRole) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_ChangeRole");
@@ -1634,7 +1638,7 @@ struct WorldFunctionLibrary_C_InitGameSplineBySplineEntity final
 {
 public:
 	int32                                         PbDataId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32DC[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsGameSplineActor_C*                   InSplineActor1;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class USplineComponent*                       ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1652,7 +1656,7 @@ struct WorldFunctionLibrary_C_SetNewUiSceneDebugOpen final
 {
 public:
 	bool                                          UseNewUiSceneWorkflow;                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32DD[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetNewUiSceneDebugOpen) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetNewUiSceneDebugOpen");
@@ -1668,7 +1672,7 @@ public:
 	int32                                         OwnerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	int32                                         Pos;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          Enable;                                            // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32DE[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                CallObject;                                        // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 Reason;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1710,7 +1714,7 @@ struct WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor final
 {
 public:
 	int32                                         Position1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32DF[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_UiCameraAnimationDisableCustomCreatureActor");
@@ -1735,7 +1739,7 @@ struct WorldFunctionLibrary_C_GetControlVisionEntityId final
 {
 public:
 	int32                                         OwnerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32E0[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -1764,7 +1768,7 @@ struct WorldFunctionLibrary_C_GetSummonerEntityId final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32E1[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -1795,7 +1799,7 @@ struct WorldFunctionLibrary_C_GetSummonEntityIds final
 {
 public:
 	int32                                         OwnerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32E2[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int32>                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm)
 };
@@ -1811,7 +1815,7 @@ struct WorldFunctionLibrary_C_GetVisionId final
 {
 public:
 	int32                                         VisionEntityId;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32E3[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -1827,7 +1831,7 @@ struct WorldFunctionLibrary_C_GetEntityDestructible final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32E4[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
@@ -1873,7 +1877,7 @@ struct WorldFunctionLibrary_C_SetTimeDilation final
 {
 public:
 	float                                         TimeDilation;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32E5[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WorldFunctionLibrary_C_SetTimeDilation) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetTimeDilation");
@@ -1887,7 +1891,7 @@ struct WorldFunctionLibrary_C_EntityIsInit final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32E6[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
@@ -1903,7 +1907,7 @@ struct WorldFunctionLibrary_C_GetActorByEntityId final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_32E7[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -1919,7 +1923,7 @@ struct WorldFunctionLibrary_C_GetEntityEnable final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32E8[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
@@ -1961,7 +1965,7 @@ struct WorldFunctionLibrary_C_GetRoleIdIgnoreTrial final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_32E9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -1970,6 +1974,325 @@ static_assert(sizeof(WorldFunctionLibrary_C_GetRoleIdIgnoreTrial) == 0x000018, "
 static_assert(offsetof(WorldFunctionLibrary_C_GetRoleIdIgnoreTrial, EntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetRoleIdIgnoreTrial::EntityId' has a wrong offset!");
 static_assert(offsetof(WorldFunctionLibrary_C_GetRoleIdIgnoreTrial, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetRoleIdIgnoreTrial::__WorldContext' has a wrong offset!");
 static_assert(offsetof(WorldFunctionLibrary_C_GetRoleIdIgnoreTrial, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetRoleIdIgnoreTrial::ReturnValue' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetIntValuesByEntity
+// 0x0030 (0x0030 - 0x0000)
+struct WorldFunctionLibrary_C_SetIntValuesByEntity final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<int32>                                 Values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_SetIntValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetIntValuesByEntity");
+static_assert(sizeof(WorldFunctionLibrary_C_SetIntValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetIntValuesByEntity");
+static_assert(offsetof(WorldFunctionLibrary_C_SetIntValuesByEntity, EntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetIntValuesByEntity::EntityId' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetIntValuesByEntity, Key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetIntValuesByEntity::Key' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetIntValuesByEntity, Values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetIntValuesByEntity::Values' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetIntValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetIntValuesByEntity::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetLongValuesByEntity
+// 0x0030 (0x0030 - 0x0000)
+struct WorldFunctionLibrary_C_SetLongValuesByEntity final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<int64>                                 Values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_SetLongValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetLongValuesByEntity");
+static_assert(sizeof(WorldFunctionLibrary_C_SetLongValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetLongValuesByEntity");
+static_assert(offsetof(WorldFunctionLibrary_C_SetLongValuesByEntity, EntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetLongValuesByEntity::EntityId' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetLongValuesByEntity, Key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetLongValuesByEntity::Key' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetLongValuesByEntity, Values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetLongValuesByEntity::Values' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetLongValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetLongValuesByEntity::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetFloatValuesByEntity
+// 0x0030 (0x0030 - 0x0000)
+struct WorldFunctionLibrary_C_SetFloatValuesByEntity final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<float>                                 Values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_SetFloatValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetFloatValuesByEntity");
+static_assert(sizeof(WorldFunctionLibrary_C_SetFloatValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetFloatValuesByEntity");
+static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValuesByEntity, EntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetFloatValuesByEntity::EntityId' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValuesByEntity, Key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetFloatValuesByEntity::Key' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValuesByEntity, Values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetFloatValuesByEntity::Values' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetFloatValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetFloatValuesByEntity::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetStringValuesByEntity
+// 0x0030 (0x0030 - 0x0000)
+struct WorldFunctionLibrary_C_SetStringValuesByEntity final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<class FString>                         Values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_SetStringValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetStringValuesByEntity");
+static_assert(sizeof(WorldFunctionLibrary_C_SetStringValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetStringValuesByEntity");
+static_assert(offsetof(WorldFunctionLibrary_C_SetStringValuesByEntity, EntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetStringValuesByEntity::EntityId' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetStringValuesByEntity, Key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetStringValuesByEntity::Key' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetStringValuesByEntity, Values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetStringValuesByEntity::Values' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetStringValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetStringValuesByEntity::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetVectorValuesByEntity
+// 0x0030 (0x0030 - 0x0000)
+struct WorldFunctionLibrary_C_SetVectorValuesByEntity final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<struct FVector>                        Values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_SetVectorValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetVectorValuesByEntity");
+static_assert(sizeof(WorldFunctionLibrary_C_SetVectorValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetVectorValuesByEntity");
+static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValuesByEntity, EntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetVectorValuesByEntity::EntityId' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValuesByEntity, Key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetVectorValuesByEntity::Key' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValuesByEntity, Values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetVectorValuesByEntity::Values' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetVectorValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetVectorValuesByEntity::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetRotatorValuesByEntity
+// 0x0030 (0x0030 - 0x0000)
+struct WorldFunctionLibrary_C_SetRotatorValuesByEntity final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<struct FRotator>                       Values;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_SetRotatorValuesByEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetRotatorValuesByEntity");
+static_assert(sizeof(WorldFunctionLibrary_C_SetRotatorValuesByEntity) == 0x000030, "Wrong size on WorldFunctionLibrary_C_SetRotatorValuesByEntity");
+static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValuesByEntity, EntityId) == 0x000000, "Member 'WorldFunctionLibrary_C_SetRotatorValuesByEntity::EntityId' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValuesByEntity, Key) == 0x000008, "Member 'WorldFunctionLibrary_C_SetRotatorValuesByEntity::Key' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValuesByEntity, Values) == 0x000018, "Member 'WorldFunctionLibrary_C_SetRotatorValuesByEntity::Values' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetRotatorValuesByEntity, __WorldContext) == 0x000028, "Member 'WorldFunctionLibrary_C_SetRotatorValuesByEntity::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntitiesInRange
+// 0x0020 (0x0020 - 0x0000)
+struct WorldFunctionLibrary_C_GetEntitiesInRange final
+{
+public:
+	int32                                         Distance;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ERelation                                     Relation;                                          // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<int32>                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm)
+};
+static_assert(alignof(WorldFunctionLibrary_C_GetEntitiesInRange) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetEntitiesInRange");
+static_assert(sizeof(WorldFunctionLibrary_C_GetEntitiesInRange) == 0x000020, "Wrong size on WorldFunctionLibrary_C_GetEntitiesInRange");
+static_assert(offsetof(WorldFunctionLibrary_C_GetEntitiesInRange, Distance) == 0x000000, "Member 'WorldFunctionLibrary_C_GetEntitiesInRange::Distance' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_GetEntitiesInRange, Relation) == 0x000004, "Member 'WorldFunctionLibrary_C_GetEntitiesInRange::Relation' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_GetEntitiesInRange, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetEntitiesInRange::__WorldContext' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_GetEntitiesInRange, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetEntitiesInRange::ReturnValue' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.AttachToActor
+// 0x0058 (0x0058 - 0x0000)
+struct WorldFunctionLibrary_C_AttachToActor final
+{
+public:
+	class UObject*                                CallObject1;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Actor1;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 ParentActor1;                                      // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EDetachType                                   DetachType1;                                       // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Reason1;                                           // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FName                                   SocketName1;                                       // 0x0030(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               LocationRule1;                                     // 0x003C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               RotationRule1;                                     // 0x003D(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               ScaleRule1;                                        // 0x003E(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWeldSimulatedBodies1;                             // 0x003F(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DoAttach;                                          // 0x0040(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WorldFunctionLibrary_C_AttachToActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_AttachToActor");
+static_assert(sizeof(WorldFunctionLibrary_C_AttachToActor) == 0x000058, "Wrong size on WorldFunctionLibrary_C_AttachToActor");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, CallObject1) == 0x000000, "Member 'WorldFunctionLibrary_C_AttachToActor::CallObject1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, Actor1) == 0x000008, "Member 'WorldFunctionLibrary_C_AttachToActor::Actor1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, ParentActor1) == 0x000010, "Member 'WorldFunctionLibrary_C_AttachToActor::ParentActor1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, DetachType1) == 0x000018, "Member 'WorldFunctionLibrary_C_AttachToActor::DetachType1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, Reason1) == 0x000020, "Member 'WorldFunctionLibrary_C_AttachToActor::Reason1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, SocketName1) == 0x000030, "Member 'WorldFunctionLibrary_C_AttachToActor::SocketName1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, LocationRule1) == 0x00003C, "Member 'WorldFunctionLibrary_C_AttachToActor::LocationRule1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, RotationRule1) == 0x00003D, "Member 'WorldFunctionLibrary_C_AttachToActor::RotationRule1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, ScaleRule1) == 0x00003E, "Member 'WorldFunctionLibrary_C_AttachToActor::ScaleRule1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, bWeldSimulatedBodies1) == 0x00003F, "Member 'WorldFunctionLibrary_C_AttachToActor::bWeldSimulatedBodies1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, DoAttach) == 0x000040, "Member 'WorldFunctionLibrary_C_AttachToActor::DoAttach' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, __WorldContext) == 0x000048, "Member 'WorldFunctionLibrary_C_AttachToActor::__WorldContext' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToActor, ReturnValue) == 0x000050, "Member 'WorldFunctionLibrary_C_AttachToActor::ReturnValue' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetPlayerFollower
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_GetPlayerFollower final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_GetPlayerFollower) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetPlayerFollower");
+static_assert(sizeof(WorldFunctionLibrary_C_GetPlayerFollower) == 0x000010, "Wrong size on WorldFunctionLibrary_C_GetPlayerFollower");
+static_assert(offsetof(WorldFunctionLibrary_C_GetPlayerFollower, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_GetPlayerFollower::__WorldContext' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_GetPlayerFollower, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_GetPlayerFollower::ReturnValue' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.AttachToComponent
+// 0x0058 (0x0058 - 0x0000)
+struct WorldFunctionLibrary_C_AttachToComponent final
+{
+public:
+	class UObject*                                CallObject;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Actor;                                             // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        ParentComponent;                                   // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EDetachType                                   DetachType;                                        // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Reason;                                            // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FName                                   SocketName;                                        // 0x0030(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               LocationRule;                                      // 0x003C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               RotationRule;                                      // 0x003D(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAttachmentRule                               ScaleRule;                                         // 0x003E(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWeldSimulatedBodies;                              // 0x003F(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DoAttach;                                          // 0x0040(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WorldFunctionLibrary_C_AttachToComponent) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_AttachToComponent");
+static_assert(sizeof(WorldFunctionLibrary_C_AttachToComponent) == 0x000058, "Wrong size on WorldFunctionLibrary_C_AttachToComponent");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, CallObject) == 0x000000, "Member 'WorldFunctionLibrary_C_AttachToComponent::CallObject' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, Actor) == 0x000008, "Member 'WorldFunctionLibrary_C_AttachToComponent::Actor' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, ParentComponent) == 0x000010, "Member 'WorldFunctionLibrary_C_AttachToComponent::ParentComponent' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, DetachType) == 0x000018, "Member 'WorldFunctionLibrary_C_AttachToComponent::DetachType' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, Reason) == 0x000020, "Member 'WorldFunctionLibrary_C_AttachToComponent::Reason' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, SocketName) == 0x000030, "Member 'WorldFunctionLibrary_C_AttachToComponent::SocketName' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, LocationRule) == 0x00003C, "Member 'WorldFunctionLibrary_C_AttachToComponent::LocationRule' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, RotationRule) == 0x00003D, "Member 'WorldFunctionLibrary_C_AttachToComponent::RotationRule' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, ScaleRule) == 0x00003E, "Member 'WorldFunctionLibrary_C_AttachToComponent::ScaleRule' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, bWeldSimulatedBodies) == 0x00003F, "Member 'WorldFunctionLibrary_C_AttachToComponent::bWeldSimulatedBodies' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, DoAttach) == 0x000040, "Member 'WorldFunctionLibrary_C_AttachToComponent::DoAttach' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, __WorldContext) == 0x000048, "Member 'WorldFunctionLibrary_C_AttachToComponent::__WorldContext' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_AttachToComponent, ReturnValue) == 0x000050, "Member 'WorldFunctionLibrary_C_AttachToComponent::ReturnValue' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.DetachActor
+// 0x0040 (0x0040 - 0x0000)
+struct WorldFunctionLibrary_C_DetachActor final
+{
+public:
+	class UObject*                                CallObject;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 SrcActor;                                          // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Destroy;                                           // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Reason;                                            // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	EDetachmentRule                               LocationRule;                                      // 0x0028(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EDetachmentRule                               RotationRule;                                      // 0x0029(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EDetachmentRule                               ScaleRule;                                         // 0x002A(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2B[0x5];                                       // 0x002B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WorldFunctionLibrary_C_DetachActor) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_DetachActor");
+static_assert(sizeof(WorldFunctionLibrary_C_DetachActor) == 0x000040, "Wrong size on WorldFunctionLibrary_C_DetachActor");
+static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, CallObject) == 0x000000, "Member 'WorldFunctionLibrary_C_DetachActor::CallObject' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, SrcActor) == 0x000008, "Member 'WorldFunctionLibrary_C_DetachActor::SrcActor' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, Destroy) == 0x000010, "Member 'WorldFunctionLibrary_C_DetachActor::Destroy' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, Reason) == 0x000018, "Member 'WorldFunctionLibrary_C_DetachActor::Reason' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, LocationRule) == 0x000028, "Member 'WorldFunctionLibrary_C_DetachActor::LocationRule' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, RotationRule) == 0x000029, "Member 'WorldFunctionLibrary_C_DetachActor::RotationRule' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, ScaleRule) == 0x00002A, "Member 'WorldFunctionLibrary_C_DetachActor::ScaleRule' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, __WorldContext) == 0x000030, "Member 'WorldFunctionLibrary_C_DetachActor::__WorldContext' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_DetachActor, ReturnValue) == 0x000038, "Member 'WorldFunctionLibrary_C_DetachActor::ReturnValue' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsPlayerFollowerEnable
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_IsPlayerFollowerEnable final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WorldFunctionLibrary_C_IsPlayerFollowerEnable) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_IsPlayerFollowerEnable");
+static_assert(sizeof(WorldFunctionLibrary_C_IsPlayerFollowerEnable) == 0x000010, "Wrong size on WorldFunctionLibrary_C_IsPlayerFollowerEnable");
+static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerEnable, __WorldContext) == 0x000000, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerEnable::__WorldContext' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerEnable, ReturnValue) == 0x000008, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerEnable::ReturnValue' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetPlayerFollowerEnable
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_SetPlayerFollowerEnable final
+{
+public:
+	bool                                          Enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_SetPlayerFollowerEnable) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_SetPlayerFollowerEnable");
+static_assert(sizeof(WorldFunctionLibrary_C_SetPlayerFollowerEnable) == 0x000010, "Wrong size on WorldFunctionLibrary_C_SetPlayerFollowerEnable");
+static_assert(offsetof(WorldFunctionLibrary_C_SetPlayerFollowerEnable, Enable) == 0x000000, "Member 'WorldFunctionLibrary_C_SetPlayerFollowerEnable::Enable' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SetPlayerFollowerEnable, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_SetPlayerFollowerEnable::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsPlayerFollowerNeedInput
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_IsPlayerFollowerNeedInput final
+{
+public:
+	EInputAction                                  Action;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EInputState                                   State;                                             // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_IsPlayerFollowerNeedInput");
+static_assert(sizeof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput) == 0x000018, "Wrong size on WorldFunctionLibrary_C_IsPlayerFollowerNeedInput");
+static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput, Action) == 0x000000, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerNeedInput::Action' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput, State) == 0x000001, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerNeedInput::State' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerNeedInput::__WorldContext' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_IsPlayerFollowerNeedInput, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_IsPlayerFollowerNeedInput::ReturnValue' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.RegisterToBpActorController
+// 0x0028 (0x0028 - 0x0000)
+struct WorldFunctionLibrary_C_RegisterToBpActorController final
+{
+public:
+	class FName                                   GroupTag;                                          // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IBPI_SceneBp_C>        SceneBp;                                           // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_RegisterToBpActorController) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_RegisterToBpActorController");
+static_assert(sizeof(WorldFunctionLibrary_C_RegisterToBpActorController) == 0x000028, "Wrong size on WorldFunctionLibrary_C_RegisterToBpActorController");
+static_assert(offsetof(WorldFunctionLibrary_C_RegisterToBpActorController, GroupTag) == 0x000000, "Member 'WorldFunctionLibrary_C_RegisterToBpActorController::GroupTag' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_RegisterToBpActorController, SceneBp) == 0x000010, "Member 'WorldFunctionLibrary_C_RegisterToBpActorController::SceneBp' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_RegisterToBpActorController, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_RegisterToBpActorController::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.UnregisterToBpActorController
+// 0x0028 (0x0028 - 0x0000)
+struct WorldFunctionLibrary_C_UnregisterToBpActorController final
+{
+public:
+	class FName                                   GroupTag;                                          // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IBPI_SceneBp_C>        SceneBp;                                           // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_UnregisterToBpActorController) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_UnregisterToBpActorController");
+static_assert(sizeof(WorldFunctionLibrary_C_UnregisterToBpActorController) == 0x000028, "Wrong size on WorldFunctionLibrary_C_UnregisterToBpActorController");
+static_assert(offsetof(WorldFunctionLibrary_C_UnregisterToBpActorController, GroupTag) == 0x000000, "Member 'WorldFunctionLibrary_C_UnregisterToBpActorController::GroupTag' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_UnregisterToBpActorController, SceneBp) == 0x000010, "Member 'WorldFunctionLibrary_C_UnregisterToBpActorController::SceneBp' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_UnregisterToBpActorController, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_UnregisterToBpActorController::__WorldContext' has a wrong offset!");
 
 }
 

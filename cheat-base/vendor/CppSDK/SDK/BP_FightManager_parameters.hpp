@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "SHitMapping_structs.hpp"
 #include "ERelation_structs.hpp"
+#include "SHitMapping_structs.hpp"
 #include "ECamp_structs.hpp"
 #include "SCamp_structs.hpp"
 
@@ -22,47 +22,47 @@ namespace SDK::Params
 
 // Function BP_FightManager.BP_FightManager_C.	¢æÑ__DelegateSignature
 // 0x0008 (0x0008 - 0x0000)
-struct BP_FightManager_C_______DelegateSignature final
+struct BP_FightManager_C_______DelegateSignature_1 final
 {
 public:
-	class ATsBaseCharacter_C*                     Param____;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     Param_____0;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_FightManager_C_______DelegateSignature) == 0x000008, "Wrong alignment on BP_FightManager_C_______DelegateSignature");
 static_assert(sizeof(BP_FightManager_C_______DelegateSignature) == 0x000008, "Wrong size on BP_FightManager_C_______DelegateSignature");
-static_assert(offsetof(BP_FightManager_C_______DelegateSignature, Param____) == 0x000000, "Member 'BP_FightManager_C_______DelegateSignature::Param____' has a wrong offset!");
+static_assert(offsetof(BP_FightManager_C_______DelegateSignature, Param_____0) == 0x000000, "Member 'BP_FightManager_C_______DelegateSignature::Param_____0' has a wrong offset!");
 
 // Function BP_FightManager.BP_FightManager_C.	ˆæÑ__DelegateSignature
 // 0x0008 (0x0008 - 0x0000)
-struct BP_FightManager_C_______DelegateSignature final
+struct BP_FightManager_C_______DelegateSignature_0 final
 {
 public:
-	class ATsBaseCharacter_C*                     Param____;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     Param_____0;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_FightManager_C_______DelegateSignature) == 0x000008, "Wrong alignment on BP_FightManager_C_______DelegateSignature");
 static_assert(sizeof(BP_FightManager_C_______DelegateSignature) == 0x000008, "Wrong size on BP_FightManager_C_______DelegateSignature");
-static_assert(offsetof(BP_FightManager_C_______DelegateSignature, Param____) == 0x000000, "Member 'BP_FightManager_C_______DelegateSignature::Param____' has a wrong offset!");
+static_assert(offsetof(BP_FightManager_C_______DelegateSignature, Param_____0) == 0x000000, "Member 'BP_FightManager_C_______DelegateSignature::Param_____0' has a wrong offset!");
 
 // Function BP_FightManager.BP_FightManager_C.ûÞæÑ__DelegateSignature
 // 0x0008 (0x0008 - 0x0000)
 struct BP_FightManager_C_______DelegateSignature final
 {
 public:
-	class ATsBaseCharacter_C*                     Param____;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     Param_____0;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_FightManager_C_______DelegateSignature) == 0x000008, "Wrong alignment on BP_FightManager_C_______DelegateSignature");
 static_assert(sizeof(BP_FightManager_C_______DelegateSignature) == 0x000008, "Wrong size on BP_FightManager_C_______DelegateSignature");
-static_assert(offsetof(BP_FightManager_C_______DelegateSignature, Param____) == 0x000000, "Member 'BP_FightManager_C_______DelegateSignature::Param____' has a wrong offset!");
+static_assert(offsetof(BP_FightManager_C_______DelegateSignature, Param_____0) == 0x000000, "Member 'BP_FightManager_C_______DelegateSignature::Param_____0' has a wrong offset!");
 
 // Function BP_FightManager.BP_FightManager_C.4}aæÑ__DelegateSignature
 // 0x0008 (0x0008 - 0x0000)
 struct BP_FightManager_C_Four_a____DelegateSignature final
 {
 public:
-	class ATsBaseCharacter_C*                     Param____;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     Param_____0;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_FightManager_C_Four_a____DelegateSignature) == 0x000008, "Wrong alignment on BP_FightManager_C_Four_a____DelegateSignature");
 static_assert(sizeof(BP_FightManager_C_Four_a____DelegateSignature) == 0x000008, "Wrong size on BP_FightManager_C_Four_a____DelegateSignature");
-static_assert(offsetof(BP_FightManager_C_Four_a____DelegateSignature, Param____) == 0x000000, "Member 'BP_FightManager_C_Four_a____DelegateSignature::Param____' has a wrong offset!");
+static_assert(offsetof(BP_FightManager_C_Four_a____DelegateSignature, Param_____0) == 0x000000, "Member 'BP_FightManager_C_Four_a____DelegateSignature::Param_____0' has a wrong offset!");
 
 // Function BP_FightManager.BP_FightManager_C.û Debug„FightAttribute__DelegateSignature
 // 0x0010 (0x0010 - 0x0000)
@@ -112,7 +112,7 @@ static_assert(offsetof(BP_FightManager_C_Tick, DeltaSeconds) == 0x000000, "Membe
 
 // Function BP_FightManager.BP_FightManager_C.—Ë
 // 0x0010 (0x0010 - 0x0000)
-struct BP_FightManager_C______ final
+struct BP_FightManager_C_______0 final
 {
 public:
 	class UBP_ActorManager_C*                     CallFunc_SpawnObject_ReturnValue;                  // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -130,11 +130,11 @@ static_assert(offsetof(BP_FightManager_C______, CallFunc_IsValid_ReturnValue) ==
 struct BP_FightManager_C____ final
 {
 public:
-	class UBP_MainGameInstance_C*                 Param_Eight___;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBP_MainGameInstance_C*                 Eight____0;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_FightManager_C____) == 0x000008, "Wrong alignment on BP_FightManager_C____");
 static_assert(sizeof(BP_FightManager_C____) == 0x000008, "Wrong size on BP_FightManager_C____");
-static_assert(offsetof(BP_FightManager_C____, Param_Eight___) == 0x000000, "Member 'BP_FightManager_C____::Param_Eight___' has a wrong offset!");
+static_assert(offsetof(BP_FightManager_C____, Eight____0) == 0x000000, "Member 'BP_FightManager_C____::Eight____0' has a wrong offset!");
 
 // Function BP_FightManager.BP_FightManager_C.5%$­
 // 0x0050 (0x0050 - 0x0000)
@@ -144,7 +144,7 @@ public:
 	ECamp                                         __5_;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECamp                                         __5__0;                                            // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ERelation                                     S_;                                                // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3196[0x1];                                     // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         S_tp;                                              // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSCamp                                 _0_5_pn;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
@@ -176,11 +176,11 @@ struct BP_FightManager_C_____NPC final
 {
 public:
 	class FString                                 ___npc;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	int32                                         Param_____;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Param______0;                                      // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _____0_P;                                          // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3197[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Stari__C___;                                       // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3198[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UObject*>                        Stariaic__p_;                                      // 0x0020(0x0010)(Edit, BlueprintVisible)
 	class UObject*                                _r_S__;                                            // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class UObject*>                        _rp___;                                            // 0x0038(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
@@ -188,7 +188,7 @@ public:
 static_assert(alignof(BP_FightManager_C_____NPC) == 0x000008, "Wrong alignment on BP_FightManager_C_____NPC");
 static_assert(sizeof(BP_FightManager_C_____NPC) == 0x000048, "Wrong size on BP_FightManager_C_____NPC");
 static_assert(offsetof(BP_FightManager_C_____NPC, ___npc) == 0x000000, "Member 'BP_FightManager_C_____NPC::___npc' has a wrong offset!");
-static_assert(offsetof(BP_FightManager_C_____NPC, Param_____) == 0x000010, "Member 'BP_FightManager_C_____NPC::Param_____' has a wrong offset!");
+static_assert(offsetof(BP_FightManager_C_____NPC, Param______0) == 0x000010, "Member 'BP_FightManager_C_____NPC::Param______0' has a wrong offset!");
 static_assert(offsetof(BP_FightManager_C_____NPC, _____0_P) == 0x000014, "Member 'BP_FightManager_C_____NPC::_____0_P' has a wrong offset!");
 static_assert(offsetof(BP_FightManager_C_____NPC, Stari__C___) == 0x000018, "Member 'BP_FightManager_C_____NPC::Stari__C___' has a wrong offset!");
 static_assert(offsetof(BP_FightManager_C_____NPC, Stariaic__p_) == 0x000020, "Member 'BP_FightManager_C_____NPC::Stariaic__p_' has a wrong offset!");
@@ -201,7 +201,7 @@ struct BP_FightManager_C_______Actor final
 {
 public:
 	int32                                         SMStari__;                                         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3199[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                Stari4___;                                         // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                _r4___;                                            // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -230,7 +230,7 @@ public:
 	const class ATsBaseCharacter_C*               baseChar;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0008(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_319A[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
@@ -254,7 +254,7 @@ public:
 	const class ATsBaseCharacter_C*               baseChar;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0008(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_319B[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
@@ -293,14 +293,14 @@ struct BP_FightManager_C_________ final
 {
 public:
 	int32                                         ID;                                                // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_319C[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSHitMapping                           Param_____;                                        // 0x0008(0x0028)(Parm, OutParm, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSHitMapping                           Param______0;                                      // 0x0008(0x0028)(Parm, OutParm, HasGetValueTypeHash)
 	bool                                          __0;                                               // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_319D[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSHitMapping                           _0_pn;                                             // 0x0038(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0070(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_319E[0x4];                                     // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0080(0x0040)(HasGetValueTypeHash)
 	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x00C0(0x0010)(ReferenceParm)
 	class FText                                   CallFunc_Format_ReturnValue;                       // 0x00D0(0x0018)()
@@ -311,7 +311,7 @@ public:
 static_assert(alignof(BP_FightManager_C_________) == 0x000008, "Wrong alignment on BP_FightManager_C_________");
 static_assert(sizeof(BP_FightManager_C_________) == 0x000128, "Wrong size on BP_FightManager_C_________");
 static_assert(offsetof(BP_FightManager_C_________, ID) == 0x000000, "Member 'BP_FightManager_C_________::ID' has a wrong offset!");
-static_assert(offsetof(BP_FightManager_C_________, Param_____) == 0x000008, "Member 'BP_FightManager_C_________::Param_____' has a wrong offset!");
+static_assert(offsetof(BP_FightManager_C_________, Param______0) == 0x000008, "Member 'BP_FightManager_C_________::Param______0' has a wrong offset!");
 static_assert(offsetof(BP_FightManager_C_________, __0) == 0x000030, "Member 'BP_FightManager_C_________::__0' has a wrong offset!");
 static_assert(offsetof(BP_FightManager_C_________, _0_pn) == 0x000038, "Member 'BP_FightManager_C_________::_0_pn' has a wrong offset!");
 static_assert(offsetof(BP_FightManager_C_________, CallFunc_Conv_IntToString_ReturnValue) == 0x000060, "Member 'BP_FightManager_C_________::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");

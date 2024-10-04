@@ -51,7 +51,7 @@ public:
 	TArray<struct FIntPoint>                      InPoints;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FTransform                             InPlaneToWorld;                                    // 0x0010(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         MaxHeight;                                         // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1850[0xC];                                     // 0x0044(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0xC];                                       // 0x0044(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPointCloudInstance_BuildFrom2DPoints) == 0x000010, "Wrong alignment on KuroPointCloudInstance_BuildFrom2DPoints");
 static_assert(sizeof(KuroPointCloudInstance_BuildFrom2DPoints) == 0x000050, "Wrong size on KuroPointCloudInstance_BuildFrom2DPoints");
@@ -92,7 +92,7 @@ struct KuroPointCloudInstance_GetQueryPointsNum final
 public:
 	struct FKuroPointCloudInstanceQueryResult     QueryResult;                                       // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1851[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPointCloudInstance_GetQueryPointsNum) == 0x000008, "Wrong alignment on KuroPointCloudInstance_GetQueryPointsNum");
 static_assert(sizeof(KuroPointCloudInstance_GetQueryPointsNum) == 0x000028, "Wrong size on KuroPointCloudInstance_GetQueryPointsNum");
@@ -105,17 +105,17 @@ struct KuroPointCloudInstance_GetQueryPointTransform final
 {
 public:
 	struct FKuroPointCloudInstanceQueryResult     QueryResult;                                       // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                OutPosition;                                       // 0x0024(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FQuat                                  OutRotation;                                       // 0x0030(0x0010)(Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector                                OutScale;                                          // 0x0040(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x004C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1852[0x3];                                     // 0x004D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPointCloudInstance_GetQueryPointTransform) == 0x000010, "Wrong alignment on KuroPointCloudInstance_GetQueryPointTransform");
 static_assert(sizeof(KuroPointCloudInstance_GetQueryPointTransform) == 0x000050, "Wrong size on KuroPointCloudInstance_GetQueryPointTransform");
 static_assert(offsetof(KuroPointCloudInstance_GetQueryPointTransform, QueryResult) == 0x000000, "Member 'KuroPointCloudInstance_GetQueryPointTransform::QueryResult' has a wrong offset!");
-static_assert(offsetof(KuroPointCloudInstance_GetQueryPointTransform, Param_Index) == 0x000020, "Member 'KuroPointCloudInstance_GetQueryPointTransform::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroPointCloudInstance_GetQueryPointTransform, Index_0) == 0x000020, "Member 'KuroPointCloudInstance_GetQueryPointTransform::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroPointCloudInstance_GetQueryPointTransform, OutPosition) == 0x000024, "Member 'KuroPointCloudInstance_GetQueryPointTransform::OutPosition' has a wrong offset!");
 static_assert(offsetof(KuroPointCloudInstance_GetQueryPointTransform, OutRotation) == 0x000030, "Member 'KuroPointCloudInstance_GetQueryPointTransform::OutRotation' has a wrong offset!");
 static_assert(offsetof(KuroPointCloudInstance_GetQueryPointTransform, OutScale) == 0x000040, "Member 'KuroPointCloudInstance_GetQueryPointTransform::OutScale' has a wrong offset!");
@@ -144,7 +144,7 @@ public:
 	int32                                         CellX;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         CellY;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   CollectionName;                                    // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1854[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroPointCloudInstance*                PointCloudInstance;                                // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroPointCloudStreamingConfig_SetInstanceData) == 0x000008, "Wrong alignment on KuroPointCloudStreamingConfig_SetInstanceData");
@@ -175,7 +175,7 @@ struct KuroPointCloudWorldComponent_GetInstance final
 {
 public:
 	bool                                          bCreateIfNull;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1859[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroPointCloudInstance*                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroPointCloudWorldComponent_GetInstance) == 0x000008, "Wrong alignment on KuroPointCloudWorldComponent_GetInstance");
@@ -201,7 +201,7 @@ struct KuroPointCloudWorldSystem_SetStreamingConfig final
 public:
 	class UKuroPointCloudStreamingConfig*         Config;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         StreamingDistance;                                 // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_185D[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPointCloudWorldSystem_SetStreamingConfig) == 0x000008, "Wrong alignment on KuroPointCloudWorldSystem_SetStreamingConfig");
 static_assert(sizeof(KuroPointCloudWorldSystem_SetStreamingConfig) == 0x000010, "Wrong size on KuroPointCloudWorldSystem_SetStreamingConfig");
@@ -216,7 +216,7 @@ public:
 	TArray<struct FIntPoint>                      InPoints;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FTransform                             InPlaneToWorld;                                    // 0x0010(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         MaxHeight;                                         // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1860[0xC];                                     // 0x0044(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0xC];                                       // 0x0044(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroVirtualPointCloud2DQTree_BuildFromPointData) == 0x000010, "Wrong alignment on KuroVirtualPointCloud2DQTree_BuildFromPointData");
 static_assert(sizeof(KuroVirtualPointCloud2DQTree_BuildFromPointData) == 0x000050, "Wrong size on KuroVirtualPointCloud2DQTree_BuildFromPointData");

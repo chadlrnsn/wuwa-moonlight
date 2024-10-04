@@ -22,7 +22,7 @@ struct FSFootstepAkAudioEvent final
 {
 public:
 	EFootstepAkAudioEventType                     Type_3_5A96FB7946D1A00B65D8F6BBCADD922E;           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3127[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UAkAudioEvent>           Event_8_AE565C774FF6F84C7110ED9C1D6E5E5F;          // 0x0008(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FSFootstepAkAudioEvent) == 0x000008, "Wrong alignment on FSFootstepAkAudioEvent");

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ESimpleNpcFlowCheckType_structs.hpp"
 #include "ESimpleNpcFlowIndex_structs.hpp"
 #include "SimplpNpcStateData_structs.hpp"
+#include "ESimpleNpcFlowCheckType_structs.hpp"
 
 
 namespace SDK
@@ -25,12 +25,12 @@ struct FSimpleNpcFlowData final
 public:
 	ESimpleNpcFlowIndex                           Pawn_24_CD886D8444C6C2E6EC5C75B09F924B53;          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ESimpleNpcFlowCheckType                       CheckType_14_065E0FFB4D2FB7300CB5988E385D8AC1;     // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D72[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CheckValue_5_D63390304C4D6A8886A0B2BEFB13430D;     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 FlowListName_9_80C2D9BE4C6723F556D6DD88DA0DE957;   // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 FlowSubTitle_17_6C656AD34B42E96B850858B8E5916D3D;  // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	float                                         LoopTime_26_7AB8D2E049FF73A8BC1DA4BD48B7786A;      // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D73[0x4];                                     // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSimplpNpcStateData                    WorldState_31_8D7689E841D60A5FE8F23EB089069410;    // 0x0030(0x0058)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FSimpleNpcFlowData) == 0x000008, "Wrong alignment on FSimpleNpcFlowData");

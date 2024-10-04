@@ -22,7 +22,7 @@ struct FSEffectType final
 {
 public:
 	EAttributeEffectType                          ___2_E61509C54CB06843D284E6BB84540982;             // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2949[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Id_5_0D2332CC4BFE7A8FEE6343B77956876E;             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSEffectType) == 0x000004, "Wrong alignment on FSEffectType");

@@ -20,9 +20,9 @@ namespace SDK
 // Function BP_ManagerBase.BP_ManagerBase_C.Ë
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UBP_MainGameInstance_C*           Param_Eight___                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UBP_MainGameInstance_C*           Eight____0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBP_ManagerBase_C::___(class UBP_MainGameInstance_C* Param_Eight___)
+void UBP_ManagerBase_C::___(class UBP_MainGameInstance_C* Eight____0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -31,7 +31,7 @@ void UBP_ManagerBase_C::___(class UBP_MainGameInstance_C* Param_Eight___)
 
 	Params::BP_ManagerBase_C____ Parms{};
 
-	Parms.Param_Eight___ = Param_Eight___;
+	Parms.Eight____0 = Eight____0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -30,7 +30,7 @@ public:
 	float                                         SunIndirectScale;                                  // 0x023C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         StaticIrraidianceScale;                            // 0x0240(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           TintColor;                                         // 0x0244(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B6D[0xAC];                                    // 0x0254(0x00AC)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_254[0xAC];                                     // 0x0254(0x00AC)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -79,7 +79,7 @@ static_assert(offsetof(AProbeVolumeActor, GIVolumeComp) == 0x0002A8, "Member 'AP
 class UVolumeGIRenderSystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_1B6E[0x8];                                     // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

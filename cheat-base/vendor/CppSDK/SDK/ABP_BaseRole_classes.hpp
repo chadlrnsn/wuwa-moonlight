@@ -22,7 +22,8 @@ namespace SDK
 
 // AnimBlueprintGeneratedClass ABP_BaseRole.ABP_BaseRole_C
 // 0x1F3F0 (0x1FC50 - 0x0860)
-class UABP_BaseRole_C : public UKuroAnimInstanceRole
+#pragma pack(push, 0x1)
+class alignas(0x10) UABP_BaseRole_C : public UKuroAnimInstanceRole
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0860(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -45,7 +46,7 @@ public:
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_26;                  // 0x0FB8(0x0138)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_29;                   // 0x10F0(0x01B0)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_25;                  // 0x12A0(0x0138)()
-	uint8                                         Pad_2BCD[0x8];                                     // 0x13D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13D8[0x8];                                     // 0x13D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_28;                   // 0x13E0(0x01B0)()
 	struct FAnimNode_Root                         AnimGraphNode_Root_10;                             // 0x1590(0x0038)()
 	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace_1;             // 0x15C8(0x0020)()
@@ -111,7 +112,7 @@ public:
 	struct FAnimNode_UseCachedPose                AnimGraphNode_UseCachedPose_48;                    // 0x3090(0x0030)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_23;                   // 0x30C0(0x01B0)()
 	struct FAnimNode_TwoWayBlend                  AnimGraphNode_TwoWayBlend_7;                       // 0x3270(0x00C8)()
-	uint8                                         Pad_2BCE[0x8];                                     // 0x3338(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3338[0x8];                                     // 0x3338(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_22;                   // 0x3340(0x01B0)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_21;                   // 0x34F0(0x01B0)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_20;                   // 0x36A0(0x01B0)()
@@ -132,20 +133,20 @@ public:
 	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_1;                        // 0x4100(0x0110)()
 	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone;                          // 0x4210(0x0110)()
 	struct FAnimNode_FeedbackRotate               AnimGraphNode_FeedbackRotate;                      // 0x4320(0x0308)()
-	uint8                                         Pad_2BCF[0x8];                                     // 0x4628(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4628[0x8];                                     // 0x4628(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_KuroHumanIK                  AnimGraphNode_KuroHumanIK;                         // 0x4630(0x0200)()
 	struct FAnimNode_Root                         AnimGraphNode_Root_7;                              // 0x4830(0x0038)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_15;                  // 0x4868(0x0138)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_19;                   // 0x49A0(0x01B0)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_14;                  // 0x4B50(0x0138)()
-	uint8                                         Pad_2BD0[0x8];                                     // 0x4C88(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C88[0x8];                                     // 0x4C88(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_18;                   // 0x4C90(0x01B0)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_13;                  // 0x4E40(0x0138)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_12;                  // 0x4F78(0x0138)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_11;                  // 0x50B0(0x0138)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_10;                  // 0x51E8(0x0138)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_9;                   // 0x5320(0x0138)()
-	uint8                                         Pad_2BD1[0x8];                                     // 0x5458(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5458[0x8];                                     // 0x5458(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_17;                   // 0x5460(0x01B0)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_16;                   // 0x5610(0x01B0)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_15;                   // 0x57C0(0x01B0)()
@@ -155,7 +156,7 @@ public:
 	struct FAnimNode_UseCachedPose                AnimGraphNode_UseCachedPose_46;                    // 0x5D00(0x0030)()
 	struct FAnimNode_UseCachedPose                AnimGraphNode_UseCachedPose_45;                    // 0x5D30(0x0030)()
 	struct FAnimNode_TwoWayBlend                  AnimGraphNode_TwoWayBlend_6;                       // 0x5D60(0x00C8)()
-	uint8                                         Pad_2BD2[0x8];                                     // 0x5E28(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5E28[0x8];                                     // 0x5E28(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_12;                   // 0x5E30(0x01B0)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_477;                // 0x5FE0(0x0028)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_476;                // 0x6008(0x0028)()
@@ -224,7 +225,7 @@ public:
 	struct FAnimNode_Root                         AnimGraphNode_Root_6;                              // 0x6EB0(0x0038)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_8;                   // 0x6EE8(0x0138)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_7;                   // 0x7020(0x0138)()
-	uint8                                         Pad_2BD3[0x8];                                     // 0x7158(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7158[0x8];                                     // 0x7158(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_11;                   // 0x7160(0x01B0)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_10;                   // 0x7310(0x01B0)()
 	struct FAnimNode_Slot                         AnimGraphNode_Slot_4;                              // 0x74C0(0x0060)()
@@ -253,12 +254,12 @@ public:
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_9;                    // 0x7B40(0x01B0)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_6;                   // 0x7CF0(0x0138)()
 	struct FAnimNode_Inertialization              AnimGraphNode_Inertialization;                     // 0x7E28(0x0070)()
-	uint8                                         Pad_2BD4[0x8];                                     // 0x7E98(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7E98[0x8];                                     // 0x7E98(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_RBF                          AnimGraphNode_RBF;                                 // 0x7EA0(0x0150)()
 	struct FAnimNode_Root                         AnimGraphNode_Root_5;                              // 0x7FF0(0x0038)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_5;                   // 0x8028(0x0138)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_4;                   // 0x8160(0x0138)()
-	uint8                                         Pad_2BD5[0x8];                                     // 0x8298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8298[0x8];                                     // 0x8298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_8;                    // 0x82A0(0x01B0)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_7;                    // 0x8450(0x01B0)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_3;                   // 0x8600(0x0138)()
@@ -331,7 +332,7 @@ public:
 	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_224;                     // 0xA380(0x0038)()
 	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_42;                     // 0xA3B8(0x0148)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_1;                   // 0xA500(0x0138)()
-	uint8                                         Pad_2BD6[0x8];                                     // 0xA638(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A638[0x8];                                     // 0xA638(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_5;                    // 0xA640(0x01B0)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_4;                    // 0xA7F0(0x01B0)()
 	struct FAnimNode_Root                         AnimGraphNode_Root_2;                              // 0xA9A0(0x0038)()
@@ -1265,7 +1266,7 @@ public:
 	struct FAnimNode_UseCachedPose                AnimGraphNode_UseCachedPose_1;                     // 0x1E9C8(0x0030)()
 	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x1E9F8(0x0038)()
 	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x1EA30(0x0148)()
-	uint8                                         Pad_2BD7[0x8];                                     // 0x1EB78(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1EB78[0x8];                                    // 0x1EB78(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_3;                    // 0x1EB80(0x01B0)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_2;                    // 0x1ED30(0x01B0)()
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_1;                    // 0x1EEE0(0x01B0)()
@@ -1288,7 +1289,7 @@ public:
 	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer;                     // 0x1FAD8(0x00C0)()
 	class ATsBaseCharacter_C*                     _r__;                                              // 0x1FB98(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ____;                                              // 0x1FBA0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BD8[0x4];                                     // 0x1FBA4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FBA4[0x4];                                    // 0x1FBA4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 _rMesh;                                            // 0x1FBA8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __U;                                               // 0x1FBB0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          _____;                                             // 0x1FBB1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
@@ -1296,26 +1297,26 @@ public:
 	bool                                          FASLE;                                             // 0x1FBB3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	float                                         ___;                                               // 0x1FBB4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         ___v__;                                            // 0x1FBB8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BD9[0x3];                                     // 0x1FBB9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FBB9[0x3];                                    // 0x1FBB9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         _i____;                                            // 0x1FBBC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___d_p;                                            // 0x1FBC0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _____0;                                            // 0x1FBC4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __MinusXA;                                         // 0x1FBC8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BDA[0x3];                                     // 0x1FBC9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FBC9[0x3];                                    // 0x1FBC9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              XA__;                                              // 0x1FBCC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _____1;                                            // 0x1FBD4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BDB[0x3];                                     // 0x1FBD5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FBD5[0x3];                                    // 0x1FBD5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVeloctiyBlend                         __lerp__;                                          // 0x1FBD8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          XA_;                                               // 0x1FBE8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          XAMovingUp;                                        // 0x1FBE9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BDC[0x6];                                     // 0x1FBEA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FBEA[0x6];                                    // 0x1FBEA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPoseSnapshot                          CachePose;                                         // 0x1FBF0(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          EnableSwitchPose;                                  // 0x1FC30(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          Cache_0l_;                                         // 0x1FC31(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BDD[0x2];                                     // 0x1FC32(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FC32[0x2];                                    // 0x1FC32(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         SwitchPoseTime;                                    // 0x1FC34(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ____Minus__Minus;                                  // 0x1FC38(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BDE[0x3];                                     // 0x1FC39(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FC39[0x3];                                    // 0x1FC39(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         _aM_;                                              // 0x1FC3C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _aJ1IK;                                            // 0x1FC40(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -1347,7 +1348,7 @@ public:
 	void AnimNotify______0();
 	void AnimNotify__e__();
 	void AnimNotify__b__();
-	void Func_____(const struct FSDynamicMontageParams& Param_____);
+	void Func______0(const struct FSDynamicMontageParams& Param______0);
 	void BlueprintInitializeAnimation();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_ABAC73734BEDAD39CF8E0E84960D0FD3();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_E92C9C154183602E7D1028A30578DB13();
@@ -1681,22 +1682,22 @@ public:
 	void CleanAnimVariable();
 	void _______0(float __, float* ___0);
 	void ______();
-	void _n____(float Param____);
+	void _n____(float ____0);
 	void XA____();
 	void VelocityBlendLerp(const struct FVeloctiyBlend& From, const struct FVeloctiyBlend& To, float Alpha, struct FVeloctiyBlend* Out);
 	void _0___r___();
-	void AnimGraph(const struct FPoseLink& SpeicalPose, struct FPoseLink* Param_AnimGraph);
-	void __B_3(struct FPoseLink* Param___B);
-	void __B_2(const struct FPoseLink& _ry___, struct FPoseLink* Param___B);
-	void ____B(struct FPoseLink* Param_____B);
-	void ______B(const struct FPoseLink& BaseLayer, const struct FPoseLink& OverlayLayer, const struct FPoseLink& BasePose, struct FPoseLink* Param_______B);
-	void __B_1(const struct FPoseLink& __B_e, const struct FPoseLink& __B_e_0, const struct FPoseLink& __B_e_1, struct FPoseLink* Param___B);
-	void Zerob______B(const struct FPoseLink& M, const struct FPoseLink& _, const struct FPoseLink& _M, const struct FPoseLink& __, const struct FPoseLink& _M_0, const struct FPoseLink& ___0, const struct FPoseLink& ___1, struct FPoseLink* Param_Zerob______B);
-	void ___B(const struct FPoseLink& InPose_0, struct FPoseLink* Param____B);
-	void ZMinus__B(const struct FPoseLink& ZMinus__, const struct FPoseLink& ZMinus___0, const struct FPoseLink& ZMinus__BasePose, struct FPoseLink* Param_ZMinus__B);
-	void Zerob______B2(const struct FPoseLink& MMinusp_, const struct FPoseLink& _Minusp_, const struct FPoseLink& _MMinusp_, const struct FPoseLink& _MMinusp__0, const struct FPoseLink& __Minusp_, const struct FPoseLink& __Minusp__0, const struct FPoseLink& MMinus__, struct FPoseLink* Param_Zerob______B2);
-	void __B_0(const struct FPoseLink& InPose, struct FPoseLink* Param___B);
-	void __B(const struct FPoseLink& InPose_0, struct FPoseLink* Param___B);
+	void AnimGraph(const struct FPoseLink& SpeicalPose, struct FPoseLink* AnimGraph_0);
+	void __B_3(struct FPoseLink* Param___B_0);
+	void __B_2(const struct FPoseLink& _ry___, struct FPoseLink* Param___B_0);
+	void ____B(struct FPoseLink* ____B_0);
+	void ______B(const struct FPoseLink& BaseLayer, const struct FPoseLink& OverlayLayer, const struct FPoseLink& BasePose, struct FPoseLink* ______B_0);
+	void __B_1(const struct FPoseLink& __B_e, const struct FPoseLink& __B_e_0, const struct FPoseLink& __B_e_1, struct FPoseLink* Param___B_0);
+	void Zerob______B(const struct FPoseLink& M, const struct FPoseLink& _, const struct FPoseLink& _M, const struct FPoseLink& __, const struct FPoseLink& _M_0, const struct FPoseLink& ___0, const struct FPoseLink& ___1, struct FPoseLink* Zerob______B_0);
+	void ___B(const struct FPoseLink& InPose_0, struct FPoseLink* ___B_0);
+	void ZMinus__B(const struct FPoseLink& ZMinus__, const struct FPoseLink& ZMinus___0, const struct FPoseLink& ZMinus__BasePose, struct FPoseLink* ZMinus__B_0);
+	void Zerob______B2(const struct FPoseLink& MMinusp_, const struct FPoseLink& _Minusp_, const struct FPoseLink& _MMinusp_, const struct FPoseLink& _MMinusp__0, const struct FPoseLink& __Minusp_, const struct FPoseLink& __Minusp__0, const struct FPoseLink& MMinus__, struct FPoseLink* Zerob______B2_0);
+	void __B_0(const struct FPoseLink& InPose, struct FPoseLink* Param___B_0);
+	void __B(const struct FPoseLink& InPose_0, struct FPoseLink* __B_0);
 	void InterfaceJumpPressed(float* Speed);
 
 public:
@@ -1709,6 +1710,7 @@ public:
 		return GetDefaultObjImpl<UABP_BaseRole_C>();
 	}
 };
+#pragma pack(pop)
 static_assert(alignof(UABP_BaseRole_C) == 0x000010, "Wrong alignment on UABP_BaseRole_C");
 static_assert(sizeof(UABP_BaseRole_C) == 0x01FC50, "Wrong size on UABP_BaseRole_C");
 static_assert(offsetof(UABP_BaseRole_C, UberGraphFrame) == 0x000860, "Member 'UABP_BaseRole_C::UberGraphFrame' has a wrong offset!");

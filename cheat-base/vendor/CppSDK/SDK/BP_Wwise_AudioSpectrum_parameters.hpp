@@ -22,7 +22,7 @@ struct BP_Wwise_AudioSpectrum_C_ExecuteUbergraph_BP_Wwise_AudioSpectrum final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DA9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAkComponent*                           K2Node_CustomEvent_Ak;                             // 0x0008(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAkAudioEvent*                          K2Node_CustomEvent_AkEvent;                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Array_Index_Variable;                       // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -34,7 +34,7 @@ public:
 	int32                                         CallFunc_GetSourcePlayPosition_ReturnValue;        // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetRTPCValue_Value;                       // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ERTPCValueType                                CallFunc_GetRTPCValue_OutputValueType;             // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DAA[0x3];                                     // 0x005D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5D[0x3];                                       // 0x005D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<float>                                 CallFunc_GetNormalizedChannelConstantQAtTime_OutConstantQ; // 0x0068(0x0010)(ReferenceParm)
@@ -66,12 +66,12 @@ static_assert(offsetof(BP_Wwise_AudioSpectrum_C_ExecuteUbergraph_BP_Wwise_AudioS
 struct BP_Wwise_AudioSpectrum_C_AkCall final
 {
 public:
-	class UAkComponent*                           Param_Ak;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAkComponent*                           Ak_0;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAkAudioEvent*                          AkEvent;                                           // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_Wwise_AudioSpectrum_C_AkCall) == 0x000008, "Wrong alignment on BP_Wwise_AudioSpectrum_C_AkCall");
 static_assert(sizeof(BP_Wwise_AudioSpectrum_C_AkCall) == 0x000010, "Wrong size on BP_Wwise_AudioSpectrum_C_AkCall");
-static_assert(offsetof(BP_Wwise_AudioSpectrum_C_AkCall, Param_Ak) == 0x000000, "Member 'BP_Wwise_AudioSpectrum_C_AkCall::Param_Ak' has a wrong offset!");
+static_assert(offsetof(BP_Wwise_AudioSpectrum_C_AkCall, Ak_0) == 0x000000, "Member 'BP_Wwise_AudioSpectrum_C_AkCall::Ak_0' has a wrong offset!");
 static_assert(offsetof(BP_Wwise_AudioSpectrum_C_AkCall, AkEvent) == 0x000008, "Member 'BP_Wwise_AudioSpectrum_C_AkCall::AkEvent' has a wrong offset!");
 
 // Function BP_Wwise_AudioSpectrum.BP_Wwise_AudioSpectrum_C.ReceiveTick
@@ -90,12 +90,12 @@ static_assert(offsetof(BP_Wwise_AudioSpectrum_C_ReceiveTick, DeltaSeconds) == 0x
 struct BP_Wwise_AudioSpectrum_C_NotifyAnalyser final
 {
 public:
-	class UAkComponent*                           Param_Ak;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAkComponent*                           Ak_0;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAkAudioEvent*                          AkEvent;                                           // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_Wwise_AudioSpectrum_C_NotifyAnalyser) == 0x000008, "Wrong alignment on BP_Wwise_AudioSpectrum_C_NotifyAnalyser");
 static_assert(sizeof(BP_Wwise_AudioSpectrum_C_NotifyAnalyser) == 0x000010, "Wrong size on BP_Wwise_AudioSpectrum_C_NotifyAnalyser");
-static_assert(offsetof(BP_Wwise_AudioSpectrum_C_NotifyAnalyser, Param_Ak) == 0x000000, "Member 'BP_Wwise_AudioSpectrum_C_NotifyAnalyser::Param_Ak' has a wrong offset!");
+static_assert(offsetof(BP_Wwise_AudioSpectrum_C_NotifyAnalyser, Ak_0) == 0x000000, "Member 'BP_Wwise_AudioSpectrum_C_NotifyAnalyser::Ak_0' has a wrong offset!");
 static_assert(offsetof(BP_Wwise_AudioSpectrum_C_NotifyAnalyser, AkEvent) == 0x000008, "Member 'BP_Wwise_AudioSpectrum_C_NotifyAnalyser::AkEvent' has a wrong offset!");
 
 }

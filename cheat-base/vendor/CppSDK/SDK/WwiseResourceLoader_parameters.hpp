@@ -25,11 +25,11 @@ public:
 	struct FWwiseEventInfo                        Ref;                                               // 0x0000(0x0028)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                  OutWwiseGuid;                                      // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         OutWwiseShortId;                                   // 0x0038(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C7D[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 OutWwiseName;                                      // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWwiseEventSwitchContainerLoading             OutSwitchContainerLoading;                         // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWwiseEventDestroyOptions                     OutDestroyOptions;                                 // 0x0051(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C7E[0x2];                                     // 0x0052(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_52[0x2];                                       // 0x0052(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         OutHardCodedSoundBankShortId;                      // 0x0054(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(WwiseEventInfoLibrary_BreakStruct) == 0x000008, "Wrong alignment on WwiseEventInfoLibrary_BreakStruct");
@@ -49,7 +49,7 @@ struct WwiseEventInfoLibrary_GetDestroyOptions final
 public:
 	struct FWwiseEventInfo                        Ref;                                               // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWwiseEventDestroyOptions                     ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C7F[0x3];                                     // 0x0029(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WwiseEventInfoLibrary_GetDestroyOptions) == 0x000004, "Wrong alignment on WwiseEventInfoLibrary_GetDestroyOptions");
 static_assert(sizeof(WwiseEventInfoLibrary_GetDestroyOptions) == 0x00002C, "Wrong size on WwiseEventInfoLibrary_GetDestroyOptions");
@@ -76,7 +76,7 @@ struct WwiseEventInfoLibrary_GetSwitchContainerLoading final
 public:
 	struct FWwiseEventInfo                        Ref;                                               // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWwiseEventSwitchContainerLoading             ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C80[0x3];                                     // 0x0029(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WwiseEventInfoLibrary_GetSwitchContainerLoading) == 0x000004, "Wrong alignment on WwiseEventInfoLibrary_GetSwitchContainerLoading");
 static_assert(sizeof(WwiseEventInfoLibrary_GetSwitchContainerLoading) == 0x00002C, "Wrong size on WwiseEventInfoLibrary_GetSwitchContainerLoading");
@@ -129,11 +129,11 @@ struct WwiseEventInfoLibrary_MakeStruct final
 public:
 	struct FGuid                                  WwiseGuid;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         WwiseShortId;                                      // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C81[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 WwiseName;                                         // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWwiseEventSwitchContainerLoading             SwitchContainerLoading;                            // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWwiseEventDestroyOptions                     DestroyOptions;                                    // 0x0029(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C82[0x2];                                     // 0x002A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A[0x2];                                       // 0x002A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         HardCodedSoundBankShortId;                         // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FWwiseEventInfo                        ReturnValue;                                       // 0x0030(0x0028)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -154,7 +154,7 @@ struct WwiseEventInfoLibrary_SetDestroyOptions final
 public:
 	struct FWwiseEventInfo                        Ref;                                               // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWwiseEventDestroyOptions                     DestroyOptions;                                    // 0x0028(0x0001)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C83[0x3];                                     // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FWwiseEventInfo                        ReturnValue;                                       // 0x002C(0x0028)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(WwiseEventInfoLibrary_SetDestroyOptions) == 0x000004, "Wrong alignment on WwiseEventInfoLibrary_SetDestroyOptions");
@@ -185,7 +185,7 @@ struct WwiseEventInfoLibrary_SetSwitchContainerLoading final
 public:
 	struct FWwiseEventInfo                        Ref;                                               // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EWwiseEventSwitchContainerLoading             SwitchContainerLoading;                            // 0x0028(0x0001)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C84[0x3];                                     // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FWwiseEventInfo                        ReturnValue;                                       // 0x002C(0x0028)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(WwiseEventInfoLibrary_SetSwitchContainerLoading) == 0x000004, "Wrong alignment on WwiseEventInfoLibrary_SetSwitchContainerLoading");
@@ -399,7 +399,7 @@ public:
 	int32                                         OutWwiseShortId;                                   // 0x0034(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 OutWwiseName;                                      // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         OutHardCodedSoundBankShortId;                      // 0x0048(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C85[0x4];                                     // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WwiseObjectInfoLibrary_BreakStruct) == 0x000008, "Wrong alignment on WwiseObjectInfoLibrary_BreakStruct");
 static_assert(sizeof(WwiseObjectInfoLibrary_BreakStruct) == 0x000050, "Wrong size on WwiseObjectInfoLibrary_BreakStruct");
@@ -441,7 +441,7 @@ struct WwiseObjectInfoLibrary_GetWwiseName final
 {
 public:
 	struct FWwiseObjectInfo                       Ref;                                               // 0x0000(0x0024)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C86[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(WwiseObjectInfoLibrary_GetWwiseName) == 0x000008, "Wrong alignment on WwiseObjectInfoLibrary_GetWwiseName");
@@ -469,7 +469,7 @@ struct WwiseObjectInfoLibrary_MakeStruct final
 public:
 	struct FGuid                                  WwiseGuid;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         WwiseShortId;                                      // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C87[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 WwiseName;                                         // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         HardCodedSoundBankShortId;                         // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FWwiseObjectInfo                       ReturnValue;                                       // 0x002C(0x0024)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -518,10 +518,10 @@ struct WwiseObjectInfoLibrary_SetWwiseName final
 {
 public:
 	struct FWwiseObjectInfo                       Ref;                                               // 0x0000(0x0024)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C88[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 WwiseName;                                         // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FWwiseObjectInfo                       ReturnValue;                                       // 0x0038(0x0024)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C89[0x4];                                     // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(WwiseObjectInfoLibrary_SetWwiseName) == 0x000008, "Wrong alignment on WwiseObjectInfoLibrary_SetWwiseName");
 static_assert(sizeof(WwiseObjectInfoLibrary_SetWwiseName) == 0x000060, "Wrong size on WwiseObjectInfoLibrary_SetWwiseName");

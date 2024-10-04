@@ -14,71 +14,33 @@
 namespace SDK::Params
 {
 
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetInteractionDebugInfos
-// 0x0018 (0x0018 - 0x0000)
-struct TsEntityDebugInfoManager_C_GetInteractionDebugInfos final
-{
-public:
-	int32                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_3142[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-};
-static_assert(alignof(TsEntityDebugInfoManager_C_GetInteractionDebugInfos) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetInteractionDebugInfos");
-static_assert(sizeof(TsEntityDebugInfoManager_C_GetInteractionDebugInfos) == 0x000018, "Wrong size on TsEntityDebugInfoManager_C_GetInteractionDebugInfos");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetInteractionDebugInfos, EntityId1) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetInteractionDebugInfos::EntityId1' has a wrong offset!");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetInteractionDebugInfos, ReturnValue) == 0x000008, "Member 'TsEntityDebugInfoManager_C_GetInteractionDebugInfos::ReturnValue' has a wrong offset!");
-
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityNameList
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityActor
 // 0x0010 (0x0010 - 0x0000)
-struct TsEntityDebugInfoManager_C_GetDebugEntityNameList final
-{
-public:
-	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm)
-};
-static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugEntityNameList) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugEntityNameList");
-static_assert(sizeof(TsEntityDebugInfoManager_C_GetDebugEntityNameList) == 0x000010, "Wrong size on TsEntityDebugInfoManager_C_GetDebugEntityNameList");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugEntityNameList, ReturnValue) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetDebugEntityNameList::ReturnValue' has a wrong offset!");
-
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityName
-// 0x0018 (0x0018 - 0x0000)
-struct TsEntityDebugInfoManager_C_GetDebugEntityName final
+struct TsEntityDebugInfoManager_C_GetDebugEntityActor final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_3143[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugEntityActor) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugEntityActor");
+static_assert(sizeof(TsEntityDebugInfoManager_C_GetDebugEntityActor) == 0x000010, "Wrong size on TsEntityDebugInfoManager_C_GetDebugEntityActor");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugEntityActor, EntityId) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetDebugEntityActor::EntityId' has a wrong offset!");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugEntityActor, ReturnValue) == 0x000008, "Member 'TsEntityDebugInfoManager_C_GetDebugEntityActor::ReturnValue' has a wrong offset!");
+
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugBaseInfo
+// 0x0018 (0x0018 - 0x0000)
+struct TsEntityDebugInfoManager_C_GetDebugBaseInfo final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
-static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugEntityName) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugEntityName");
-static_assert(sizeof(TsEntityDebugInfoManager_C_GetDebugEntityName) == 0x000018, "Wrong size on TsEntityDebugInfoManager_C_GetDebugEntityName");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugEntityName, EntityId) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetDebugEntityName::EntityId' has a wrong offset!");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugEntityName, ReturnValue) == 0x000008, "Member 'TsEntityDebugInfoManager_C_GetDebugEntityName::ReturnValue' has a wrong offset!");
-
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetEntityCommonTagDebugString
-// 0x0018 (0x0018 - 0x0000)
-struct TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString final
-{
-public:
-	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_3144[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-};
-static_assert(alignof(TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString");
-static_assert(sizeof(TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString) == 0x000018, "Wrong size on TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString, EntityId) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString::EntityId' has a wrong offset!");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString, ReturnValue) == 0x000008, "Member 'TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString::ReturnValue' has a wrong offset!");
-
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetEntityPbDataId
-// 0x0008 (0x0008 - 0x0000)
-struct TsEntityDebugInfoManager_C_GetEntityPbDataId final
-{
-public:
-	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsEntityDebugInfoManager_C_GetEntityPbDataId) == 0x000004, "Wrong alignment on TsEntityDebugInfoManager_C_GetEntityPbDataId");
-static_assert(sizeof(TsEntityDebugInfoManager_C_GetEntityPbDataId) == 0x000008, "Wrong size on TsEntityDebugInfoManager_C_GetEntityPbDataId");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetEntityPbDataId, EntityId) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetEntityPbDataId::EntityId' has a wrong offset!");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetEntityPbDataId, ReturnValue) == 0x000004, "Member 'TsEntityDebugInfoManager_C_GetEntityPbDataId::ReturnValue' has a wrong offset!");
+static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugBaseInfo) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugBaseInfo");
+static_assert(sizeof(TsEntityDebugInfoManager_C_GetDebugBaseInfo) == 0x000018, "Wrong size on TsEntityDebugInfoManager_C_GetDebugBaseInfo");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugBaseInfo, EntityId) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetDebugBaseInfo::EntityId' has a wrong offset!");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugBaseInfo, ReturnValue) == 0x000008, "Member 'TsEntityDebugInfoManager_C_GetDebugBaseInfo::ReturnValue' has a wrong offset!");
 
 // Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetSelectedEntityId
 // 0x0018 (0x0018 - 0x0000)
@@ -93,33 +55,71 @@ static_assert(sizeof(TsEntityDebugInfoManager_C_GetSelectedEntityId) == 0x000018
 static_assert(offsetof(TsEntityDebugInfoManager_C_GetSelectedEntityId, Label) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetSelectedEntityId::Label' has a wrong offset!");
 static_assert(offsetof(TsEntityDebugInfoManager_C_GetSelectedEntityId, ReturnValue) == 0x000010, "Member 'TsEntityDebugInfoManager_C_GetSelectedEntityId::ReturnValue' has a wrong offset!");
 
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugBaseInfo
-// 0x0018 (0x0018 - 0x0000)
-struct TsEntityDebugInfoManager_C_GetDebugBaseInfo final
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetEntityPbDataId
+// 0x0008 (0x0008 - 0x0000)
+struct TsEntityDebugInfoManager_C_GetEntityPbDataId final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_3145[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEntityDebugInfoManager_C_GetEntityPbDataId) == 0x000004, "Wrong alignment on TsEntityDebugInfoManager_C_GetEntityPbDataId");
+static_assert(sizeof(TsEntityDebugInfoManager_C_GetEntityPbDataId) == 0x000008, "Wrong size on TsEntityDebugInfoManager_C_GetEntityPbDataId");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetEntityPbDataId, EntityId) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetEntityPbDataId::EntityId' has a wrong offset!");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetEntityPbDataId, ReturnValue) == 0x000004, "Member 'TsEntityDebugInfoManager_C_GetEntityPbDataId::ReturnValue' has a wrong offset!");
+
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetEntityCommonTagDebugString
+// 0x0018 (0x0018 - 0x0000)
+struct TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
-static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugBaseInfo) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugBaseInfo");
-static_assert(sizeof(TsEntityDebugInfoManager_C_GetDebugBaseInfo) == 0x000018, "Wrong size on TsEntityDebugInfoManager_C_GetDebugBaseInfo");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugBaseInfo, EntityId) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetDebugBaseInfo::EntityId' has a wrong offset!");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugBaseInfo, ReturnValue) == 0x000008, "Member 'TsEntityDebugInfoManager_C_GetDebugBaseInfo::ReturnValue' has a wrong offset!");
+static_assert(alignof(TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString");
+static_assert(sizeof(TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString) == 0x000018, "Wrong size on TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString, EntityId) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString::EntityId' has a wrong offset!");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString, ReturnValue) == 0x000008, "Member 'TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString::ReturnValue' has a wrong offset!");
 
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityActor
-// 0x0010 (0x0010 - 0x0000)
-struct TsEntityDebugInfoManager_C_GetDebugEntityActor final
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityName
+// 0x0018 (0x0018 - 0x0000)
+struct TsEntityDebugInfoManager_C_GetDebugEntityName final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_3146[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
-static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugEntityActor) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugEntityActor");
-static_assert(sizeof(TsEntityDebugInfoManager_C_GetDebugEntityActor) == 0x000010, "Wrong size on TsEntityDebugInfoManager_C_GetDebugEntityActor");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugEntityActor, EntityId) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetDebugEntityActor::EntityId' has a wrong offset!");
-static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugEntityActor, ReturnValue) == 0x000008, "Member 'TsEntityDebugInfoManager_C_GetDebugEntityActor::ReturnValue' has a wrong offset!");
+static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugEntityName) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugEntityName");
+static_assert(sizeof(TsEntityDebugInfoManager_C_GetDebugEntityName) == 0x000018, "Wrong size on TsEntityDebugInfoManager_C_GetDebugEntityName");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugEntityName, EntityId) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetDebugEntityName::EntityId' has a wrong offset!");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugEntityName, ReturnValue) == 0x000008, "Member 'TsEntityDebugInfoManager_C_GetDebugEntityName::ReturnValue' has a wrong offset!");
+
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityNameList
+// 0x0010 (0x0010 - 0x0000)
+struct TsEntityDebugInfoManager_C_GetDebugEntityNameList final
+{
+public:
+	TArray<class FString>                         ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm)
+};
+static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugEntityNameList) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugEntityNameList");
+static_assert(sizeof(TsEntityDebugInfoManager_C_GetDebugEntityNameList) == 0x000010, "Wrong size on TsEntityDebugInfoManager_C_GetDebugEntityNameList");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetDebugEntityNameList, ReturnValue) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetDebugEntityNameList::ReturnValue' has a wrong offset!");
+
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetInteractionDebugInfos
+// 0x0018 (0x0018 - 0x0000)
+struct TsEntityDebugInfoManager_C_GetInteractionDebugInfos final
+{
+public:
+	int32                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+};
+static_assert(alignof(TsEntityDebugInfoManager_C_GetInteractionDebugInfos) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetInteractionDebugInfos");
+static_assert(sizeof(TsEntityDebugInfoManager_C_GetInteractionDebugInfos) == 0x000018, "Wrong size on TsEntityDebugInfoManager_C_GetInteractionDebugInfos");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetInteractionDebugInfos, EntityId1) == 0x000000, "Member 'TsEntityDebugInfoManager_C_GetInteractionDebugInfos::EntityId1' has a wrong offset!");
+static_assert(offsetof(TsEntityDebugInfoManager_C_GetInteractionDebugInfos, ReturnValue) == 0x000008, "Member 'TsEntityDebugInfoManager_C_GetInteractionDebugInfos::ReturnValue' has a wrong offset!");
 
 }
 

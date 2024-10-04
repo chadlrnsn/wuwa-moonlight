@@ -26,7 +26,7 @@ public:
 	TArray<struct FSoftObjectPath>                InSoftObjectPath;                                  // 0x0010(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TDelegate<void(TArray<struct FDynamicAtlasSlotManagedHandle>& ManagedHandle)> CompleteCallback;                                  // 0x0020(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0048(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B47[0x7];                                     // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(DynamicAtlasBlueprintLibrary_AddTextureAsync) == 0x000008, "Wrong alignment on DynamicAtlasBlueprintLibrary_AddTextureAsync");
 static_assert(sizeof(DynamicAtlasBlueprintLibrary_AddTextureAsync) == 0x000050, "Wrong size on DynamicAtlasBlueprintLibrary_AddTextureAsync");
@@ -53,7 +53,7 @@ struct DynamicAtlasBlueprintLibrary_HasOverrideSetting final
 public:
 	class FString                                 InAtlasTag;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B48[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(DynamicAtlasBlueprintLibrary_HasOverrideSetting) == 0x000008, "Wrong alignment on DynamicAtlasBlueprintLibrary_HasOverrideSetting");
 static_assert(sizeof(DynamicAtlasBlueprintLibrary_HasOverrideSetting) == 0x000018, "Wrong size on DynamicAtlasBlueprintLibrary_HasOverrideSetting");

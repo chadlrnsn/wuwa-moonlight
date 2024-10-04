@@ -25,11 +25,11 @@ public:
 	float                                         BlendOutTime_4_B229F83544CCA82D68E7B9867CC519D0;   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ULevelSequence*                         CameraSequence_11_EA0F02DF4948AFF0A951AB8E0F790CEC; // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsHideHud_13_3FD8AC824B783C3AC1386394935251D1;     // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_317D[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<EBattleUIChild>                        VisibleChild_26_E1BC75D64F4C322DD3D258A5F6B6F888;  // 0x0018(0x0010)(Edit, BlueprintVisible)
 	float                                         HideHudTime_28_D37870A24D62DBDE4DBCD593374C8C9B;   // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          EnableSpecificSequenceTime_30_C30B0DDE4FC51270656237A7AC01DAEA; // 0x002C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_317E[0x3];                                     // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         SpecificSequenceTime_33_90C52F1D4FA038826487E38A87172200; // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSSequenceCamera_Settings) == 0x000008, "Wrong alignment on FSSequenceCamera_Settings");

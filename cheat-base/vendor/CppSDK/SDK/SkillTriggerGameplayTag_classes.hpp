@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SkillTriggerBase_classes.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "SkillTriggerBase_classes.hpp"
 
 
 namespace SDK

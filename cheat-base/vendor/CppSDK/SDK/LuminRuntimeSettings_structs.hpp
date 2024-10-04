@@ -147,7 +147,7 @@ struct FLuminComponentSubElement final
 {
 public:
 	ELuminComponentSubElementType                 ElementType;                                       // 0x0000(0x0001)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_27FF[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Value;                                             // 0x0008(0x0010)(Edit, ZeroConstructor, Config, GlobalConfig, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FLuminComponentSubElement) == 0x000008, "Wrong alignment on FLuminComponentSubElement");
@@ -164,7 +164,7 @@ public:
 	class FString                                 VisibleName;                                       // 0x0010(0x0010)(Edit, ZeroConstructor, Config, GlobalConfig, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ExecutableName;                                    // 0x0020(0x0010)(Edit, ZeroConstructor, Config, GlobalConfig, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELuminComponentType                           ComponentType;                                     // 0x0030(0x0001)(Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2800[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FLuminComponentSubElement>      ExtraComponentSubElements;                         // 0x0038(0x0010)(Edit, ZeroConstructor, Config, GlobalConfig, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FLuminComponentElement) == 0x000008, "Wrong alignment on FLuminComponentElement");

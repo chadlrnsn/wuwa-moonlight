@@ -108,12 +108,12 @@ void ABP_LevelSequenceHalo_C::UpdateHaloParameter(bool UpdateComponent)
 // Function BP_LevelSequenceHalo.BP_LevelSequenceHalo_C.GetHaloDrawParameters
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   Param_MinDrawDistance                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Param_MaxDrawDistance                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Param_MinDrawRange                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Param_MaxDrawRange                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   MinDrawDistance_0                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   MaxDrawDistance_0                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   MinDrawRange_0                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   MaxDrawRange_0                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_LevelSequenceHalo_C::GetHaloDrawParameters(float* Param_MinDrawDistance, float* Param_MaxDrawDistance, float* Param_MinDrawRange, float* Param_MaxDrawRange)
+void ABP_LevelSequenceHalo_C::GetHaloDrawParameters(float* MinDrawDistance_0, float* MaxDrawDistance_0, float* MinDrawRange_0, float* MaxDrawRange_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -124,17 +124,17 @@ void ABP_LevelSequenceHalo_C::GetHaloDrawParameters(float* Param_MinDrawDistance
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_MinDrawDistance != nullptr)
-		*Param_MinDrawDistance = Parms.Param_MinDrawDistance;
+	if (MinDrawDistance_0 != nullptr)
+		*MinDrawDistance_0 = Parms.MinDrawDistance_0;
 
-	if (Param_MaxDrawDistance != nullptr)
-		*Param_MaxDrawDistance = Parms.Param_MaxDrawDistance;
+	if (MaxDrawDistance_0 != nullptr)
+		*MaxDrawDistance_0 = Parms.MaxDrawDistance_0;
 
-	if (Param_MinDrawRange != nullptr)
-		*Param_MinDrawRange = Parms.Param_MinDrawRange;
+	if (MinDrawRange_0 != nullptr)
+		*MinDrawRange_0 = Parms.MinDrawRange_0;
 
-	if (Param_MaxDrawRange != nullptr)
-		*Param_MaxDrawRange = Parms.Param_MaxDrawRange;
+	if (MaxDrawRange_0 != nullptr)
+		*MaxDrawRange_0 = Parms.MaxDrawRange_0;
 }
 
 

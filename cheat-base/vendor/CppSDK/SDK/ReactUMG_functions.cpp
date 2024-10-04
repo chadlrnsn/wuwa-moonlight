@@ -105,10 +105,10 @@ class UReactWidget* UUMGManager::CreateReactWidget(class UWorld* World)
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           Param_Class                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UUserWidget* UUMGManager::CreateWidget(class UWorld* World, class UClass* Param_Class)
+class UUserWidget* UUMGManager::CreateWidget(class UWorld* World, class UClass* Class_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -118,7 +118,7 @@ class UUserWidget* UUMGManager::CreateWidget(class UWorld* World, class UClass* 
 	Params::UMGManager_CreateWidget Parms{};
 
 	Parms.World = World;
-	Parms.Param_Class = Param_Class;
+	Parms.Class_0 = Class_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

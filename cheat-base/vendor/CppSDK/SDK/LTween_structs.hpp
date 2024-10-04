@@ -66,7 +66,7 @@ enum class ELTweenEase : uint8
 struct alignas(0x08) FLTweenDelegateHandleWrapper final
 {
 public:
-	uint8                                         Pad_13CC[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLTweenDelegateHandleWrapper) == 0x000008, "Wrong alignment on FLTweenDelegateHandleWrapper");
 static_assert(sizeof(FLTweenDelegateHandleWrapper) == 0x000008, "Wrong size on FLTweenDelegateHandleWrapper");

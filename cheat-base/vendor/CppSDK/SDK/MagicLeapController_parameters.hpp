@@ -25,7 +25,7 @@ public:
 	int32                                         ControllerIndex;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EControllerHand                               Hand;                                              // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0005(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24CB[0x2];                                     // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_GetControllerMapping) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_GetControllerMapping");
 static_assert(sizeof(MagicLeapControllerFunctionLibrary_GetControllerMapping) == 0x000008, "Wrong size on MagicLeapControllerFunctionLibrary_GetControllerMapping");
@@ -51,7 +51,7 @@ struct MagicLeapControllerFunctionLibrary_GetControllerType final
 public:
 	class FName                                   MotionSource;                                      // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapControllerType                      ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24CC[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_GetControllerType) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_GetControllerType");
 static_assert(sizeof(MagicLeapControllerFunctionLibrary_GetControllerType) == 0x000010, "Wrong size on MagicLeapControllerFunctionLibrary_GetControllerType");
@@ -65,7 +65,7 @@ struct MagicLeapControllerFunctionLibrary_GetHandForMotionSource final
 public:
 	class FName                                   MotionSource;                                      // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EControllerHand                               ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24CD[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_GetHandForMotionSource) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_GetHandForMotionSource");
 static_assert(sizeof(MagicLeapControllerFunctionLibrary_GetHandForMotionSource) == 0x000010, "Wrong size on MagicLeapControllerFunctionLibrary_GetHandForMotionSource");
@@ -91,7 +91,7 @@ struct MagicLeapControllerFunctionLibrary_GetMotionSourceForHand final
 {
 public:
 	EControllerHand                               Hand;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24CE[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   ReturnValue;                                       // 0x0004(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_GetMotionSourceForHand) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_GetMotionSourceForHand");
@@ -106,7 +106,7 @@ struct MagicLeapControllerFunctionLibrary_IsMLControllerConnected final
 public:
 	class FName                                   MotionSource;                                      // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24CF[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_IsMLControllerConnected) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_IsMLControllerConnected");
 static_assert(sizeof(MagicLeapControllerFunctionLibrary_IsMLControllerConnected) == 0x000010, "Wrong size on MagicLeapControllerFunctionLibrary_IsMLControllerConnected");
@@ -149,10 +149,10 @@ public:
 	EControllerHand                               Hand;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapControllerLEDPattern                LEDPattern;                                        // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapControllerLEDColor                  LEDColor;                                          // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24D0[0x1];                                     // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         DurationInSec;                                     // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24D1[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_PlayControllerLED) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_PlayControllerLED");
 static_assert(sizeof(MagicLeapControllerFunctionLibrary_PlayControllerLED) == 0x00000C, "Wrong size on MagicLeapControllerFunctionLibrary_PlayControllerLED");
@@ -172,10 +172,10 @@ public:
 	EMagicLeapControllerLEDSpeed                  LEDSpeed;                                          // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapControllerLEDPattern                LEDPattern;                                        // 0x0003(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapControllerLEDColor                  LEDColor;                                          // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24D2[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         DurationInSec;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24D3[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_PlayControllerLEDEffect) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_PlayControllerLEDEffect");
 static_assert(sizeof(MagicLeapControllerFunctionLibrary_PlayControllerLEDEffect) == 0x000010, "Wrong size on MagicLeapControllerFunctionLibrary_PlayControllerLEDEffect");
@@ -196,7 +196,7 @@ public:
 	EMagicLeapControllerHapticPattern             HapticPattern;                                     // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapControllerHapticIntensity           Intensity;                                         // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000E(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24D4[0x1];                                     // 0x000F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_PlayHapticPattern) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_PlayHapticPattern");
 static_assert(sizeof(MagicLeapControllerFunctionLibrary_PlayHapticPattern) == 0x000010, "Wrong size on MagicLeapControllerFunctionLibrary_PlayHapticPattern");
@@ -217,7 +217,7 @@ public:
 	EMagicLeapControllerLEDColor                  LEDColor;                                          // 0x000F(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DurationInSec;                                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24D5[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_PlayLEDEffect) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_PlayLEDEffect");
 static_assert(sizeof(MagicLeapControllerFunctionLibrary_PlayLEDEffect) == 0x000018, "Wrong size on MagicLeapControllerFunctionLibrary_PlayLEDEffect");
@@ -237,10 +237,10 @@ public:
 	class FName                                   MotionSource;                                      // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapControllerLEDPattern                LEDPattern;                                        // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapControllerLEDColor                  LEDColor;                                          // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24D6[0x2];                                     // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         DurationInSec;                                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24D7[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_PlayLEDPattern) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_PlayLEDPattern");
 static_assert(sizeof(MagicLeapControllerFunctionLibrary_PlayLEDPattern) == 0x000018, "Wrong size on MagicLeapControllerFunctionLibrary_PlayLEDPattern");
@@ -269,10 +269,10 @@ struct MagicLeapControllerFunctionLibrary_SetMotionSourceForHand final
 {
 public:
 	EControllerHand                               Hand;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24D8[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   MotionSource;                                      // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24D9[0x3];                                     // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapControllerFunctionLibrary_SetMotionSourceForHand) == 0x000004, "Wrong alignment on MagicLeapControllerFunctionLibrary_SetMotionSourceForHand");
 static_assert(sizeof(MagicLeapControllerFunctionLibrary_SetMotionSourceForHand) == 0x000014, "Wrong size on MagicLeapControllerFunctionLibrary_SetMotionSourceForHand");

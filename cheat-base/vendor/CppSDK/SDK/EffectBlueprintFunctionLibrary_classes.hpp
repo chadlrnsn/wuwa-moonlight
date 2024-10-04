@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "AkAudio_structs.hpp"
 #include "EEffectStatisticsSortType_structs.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK

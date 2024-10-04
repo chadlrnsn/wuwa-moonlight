@@ -23,7 +23,7 @@ struct ImageWriteBlueprintLibrary_ExportToDisk final
 public:
 	class UTexture*                               Texture;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Filename;                                          // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25AE[0x8];                                     // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FImageWriteOptions                     Options;                                           // 0x0020(0x0080)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(ImageWriteBlueprintLibrary_ExportToDisk) == 0x000010, "Wrong alignment on ImageWriteBlueprintLibrary_ExportToDisk");

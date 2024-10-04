@@ -34,9 +34,9 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_Wwise_AudioSpectrum(int32 EntryPoint);
-	void AkCall(class UAkComponent* Param_Ak, class UAkAudioEvent* AkEvent);
+	void AkCall(class UAkComponent* Ak_0, class UAkAudioEvent* AkEvent);
 	void ReceiveTick(float DeltaSeconds);
-	void NotifyAnalyser(class UAkComponent* Param_Ak, class UAkAudioEvent* AkEvent);
+	void NotifyAnalyser(class UAkComponent* Ak_0, class UAkAudioEvent* AkEvent);
 
 public:
 	static class UClass* StaticClass()

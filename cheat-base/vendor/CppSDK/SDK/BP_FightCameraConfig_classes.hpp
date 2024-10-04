@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "EFightCameraDefault_structs.hpp"
+#include "EFightCameraFocus_structs.hpp"
 #include "SBaseCurve_structs.hpp"
-#include "EFightCameraAdjust_structs.hpp"
-#include "EFightCameraModify_structs.hpp"
 #include "EFightCameraAuto_structs.hpp"
 #include "EFightCameraInput_structs.hpp"
 #include "SSettlementCamera_structs.hpp"
-#include "Engine_classes.hpp"
-#include "EFightCameraHook_structs.hpp"
-#include "EFightCameraFocus_structs.hpp"
+#include "EFightCameraDefault_structs.hpp"
+#include "EFightCameraAdjust_structs.hpp"
+#include "EFightCameraModify_structs.hpp"
 #include "EFightCameraGuide_structs.hpp"
 #include "EFightCameraExplore_structs.hpp"
 #include "EFightCameraDialogue_structs.hpp"
 #include "EFightCameraClimb_structs.hpp"
 #include "EFightCameraSidestep_structs.hpp"
+#include "EFightCameraHook_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK

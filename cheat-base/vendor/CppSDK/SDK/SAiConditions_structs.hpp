@@ -12,9 +12,9 @@
 
 #include "SConDitionGroupType_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "SAiAttributeRate_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "EAttributeType_structs.hpp"
+#include "SAiAttributeRate_structs.hpp"
 
 
 namespace SDK

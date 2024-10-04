@@ -24,7 +24,7 @@ struct ChaosSolverEngineBlueprintLibrary_ConvertPhysicsCollisionToHitResult fina
 public:
 	struct FChaosPhysicsCollisionInfo             PhysicsCollision;                                  // 0x0000(0x0070)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FHitResult                             ReturnValue;                                       // 0x0070(0x0094)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_276A[0x4];                                     // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ChaosSolverEngineBlueprintLibrary_ConvertPhysicsCollisionToHitResult) == 0x000008, "Wrong alignment on ChaosSolverEngineBlueprintLibrary_ConvertPhysicsCollisionToHitResult");
 static_assert(sizeof(ChaosSolverEngineBlueprintLibrary_ConvertPhysicsCollisionToHitResult) == 0x000108, "Wrong size on ChaosSolverEngineBlueprintLibrary_ConvertPhysicsCollisionToHitResult");

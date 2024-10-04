@@ -184,11 +184,11 @@ void ABP_ScreenEffectPlayer_C::SetUIVisible(bool Visible)
 // Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.Set Effect Hidden
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_bToHide                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bToHide_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    bOverrideFadeSpeed                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // float                                   OverrideFadeSpeed                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ScreenEffectPlayer_C::Set_Effect_Hidden(bool Param_bToHide, bool bOverrideFadeSpeed, float OverrideFadeSpeed)
+void ABP_ScreenEffectPlayer_C::Set_Effect_Hidden(bool bToHide_0, bool bOverrideFadeSpeed, float OverrideFadeSpeed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -197,7 +197,7 @@ void ABP_ScreenEffectPlayer_C::Set_Effect_Hidden(bool Param_bToHide, bool bOverr
 
 	Params::BP_ScreenEffectPlayer_C_Set_Effect_Hidden Parms{};
 
-	Parms.Param_bToHide = Param_bToHide;
+	Parms.bToHide_0 = bToHide_0;
 	Parms.bOverrideFadeSpeed = bOverrideFadeSpeed;
 	Parms.OverrideFadeSpeed = OverrideFadeSpeed;
 
@@ -222,10 +222,10 @@ void ABP_ScreenEffectPlayer_C::BeforeStart()
 // Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.InitPlayer
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UEffectScreenPlayData_C*          Param_Data                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AUIContainerActor*                Param_ScreenEffectRoot                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UEffectScreenPlayData_C*          Data_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AUIContainerActor*                ScreenEffectRoot_0                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ScreenEffectPlayer_C::InitPlayer(class UEffectScreenPlayData_C* Param_Data, class AUIContainerActor* Param_ScreenEffectRoot)
+void ABP_ScreenEffectPlayer_C::InitPlayer(class UEffectScreenPlayData_C* Data_0, class AUIContainerActor* ScreenEffectRoot_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -234,8 +234,8 @@ void ABP_ScreenEffectPlayer_C::InitPlayer(class UEffectScreenPlayData_C* Param_D
 
 	Params::BP_ScreenEffectPlayer_C_InitPlayer Parms{};
 
-	Parms.Param_Data = Param_Data;
-	Parms.Param_ScreenEffectRoot = Param_ScreenEffectRoot;
+	Parms.Data_0 = Data_0;
+	Parms.ScreenEffectRoot_0 = ScreenEffectRoot_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

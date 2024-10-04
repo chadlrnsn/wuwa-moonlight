@@ -13,7 +13,6 @@
 #include <io.h>
 #include <fcntl.h>
 
-
 #define LOG_LAST_ERROR(fmt, ...) util::LogLastError(__FILE__, __LINE__, fmt, __VA_ARGS__)
 
 #define UPDATE_DELAY(delay) \
@@ -41,18 +40,9 @@ struct SelectableItem
 
 namespace util
 {
-	std::optional<std::string> SelectFile(const char* filter, const char* title);
-	std::optional<std::string> SelectDirectory(const char* title);
-	std::optional<std::string> GetOrSelectPath(CSimpleIni& ini, const char* section, const char* name, const char* friendName, const char* filter);
-
 	void OpenURL(const char* url);
 	std::string GetLastErrorAsString(DWORD errorId = 0);
 	int64_t GetCurrentTimeMillisec();
-
-	std::string GetModulePath(HMODULE hModule = nullptr);
-
-	void SetCurrentPath(const std::filesystem::path& curren_path);
-	std::filesystem::path GetCurrentPath();
 
 	std::vector<std::string> StringSplit(const std::string& delimiter, const std::string& content);
 	std::string SplitWords(const std::string& value);
@@ -78,14 +68,6 @@ namespace util
 		return std::string(buf.get(), buf.get() + size - 1); // We don't want the '\0' inside
 	}
 
-	template<typename ... Args>
-	void LogLastError(const char* filepath, int line, const char* fmt, Args ... args)
-	{
-		auto errorId = ::GetLastError();
-		auto newFmt = string_format("%s. Error: %d %s", fmt, errorId, GetLastErrorAsString(errorId).c_str());
-		//Logger::Log(Logger::Level::Error, filepath, line, newFmt.c_str(), args ...);
-	}
-
 	template<typename T>
 	bool IsValidPointer(T* ptr)
 	{
@@ -98,20 +80,4 @@ namespace util
 			return false;
 		return true;
 	}
-
-	/**
-	 * @brief Performs a dynamic cast from type From to type To.
-	 *
-	 * @tparam To The type to cast to.
-	 * @tparam From The type to cast from.
-	 * @param from The pointer to the object to be cast.
-	 * @return Pointer to the casted object of type To.
-	 */
-	template<typename To, typename From>
-	To* Cast(From* from) {
-		return static_cast<To*>(from);
-	}
-
 }
-
-

@@ -24,8 +24,8 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	float GetPatrolSpeedByIndex(int32 Param_Index);
-	struct FRotator GetPointRotatorByIndex(int32 Param_Index);
+	struct FRotator GetPointRotatorByIndex(int32 Index_0);
+	float GetPatrolSpeedByIndex(int32 Index_0);
 
 public:
 	static class UClass* StaticClass()

@@ -144,10 +144,10 @@ void ABP_SimpleHolographic_C::Clear()
 // TArray<struct FSMaterialControllerColorParameter>Colors                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UMaterialInstanceDynamic*         Material                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bReplaceMaterial                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FSMaterialParamCache             Result                                                 (Parm, OutParm, HasGetValueTypeHash)
 
-void ABP_SimpleHolographic_C::CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& Floats, TArray<struct FSMaterialControllerColorParameter>& Colors, class UMaterialInstanceDynamic* Material, bool bReplaceMaterial, int32 Param_Index, struct FSMaterialParamCache* Result)
+void ABP_SimpleHolographic_C::CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& Floats, TArray<struct FSMaterialControllerColorParameter>& Colors, class UMaterialInstanceDynamic* Material, bool bReplaceMaterial, int32 Index_0, struct FSMaterialParamCache* Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -160,7 +160,7 @@ void ABP_SimpleHolographic_C::CacheMaterialParameters(TArray<struct FSMaterialCo
 	Parms.Colors = std::move(Colors);
 	Parms.Material = Material;
 	Parms.bReplaceMaterial = bReplaceMaterial;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 

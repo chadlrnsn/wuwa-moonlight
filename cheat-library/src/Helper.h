@@ -5,41 +5,44 @@
 #include <Psapi.h>    //GetModuleInformation
 #include <vector>
 #include <iostream>
+#include <SDK.hpp>
+#include <globals.h>
+#include <algorithm>
 
 using namespace std;
+using namespace globals;
+using namespace SDK;
 
-class Helper
-{
-private:
-	DWORD pID;
-	DWORD pBaseAddress; //Base Address of exe
-	DWORD pSize;		//Size of exe module
-	HANDLE processHandle;
-	LPCSTR moduleName = "Client-Win64-Shipping.exe";
 
-public:
-	Helper();
-	Helper(DWORD pID);
-	~Helper();
-	uintptr_t GetModuleBaseAddress(TCHAR* lpszModuleName);
-	uintptr_t GetDynamicAddress(uintptr_t baseAddress, vector<DWORD> offsets);
-	uintptr_t GetAddressFromSignature(vector<int> signature);
-	void SetpID(DWORD pID);
-	void SetpBaseAddress(char moduleName[]);
-	DWORD GetpID();
-	HANDLE GetprocessHandle();
-	uintptr_t GetBaseAddress(const HANDLE hProcess);
-	uintptr_t GetBaseModuleAddress( LPCSTR name );
+namespace Helper {
 
-	bool UnloadModule(LPCSTR name);
-
-	// todo
-	HMODULE GetCurrentModuleName();
-
-};
-
-namespace HelperNS {
 	bool ContainsSubstring(const std::string& str, const std::string& sub);
+	void devlog(const char* fmt, ...);
+	bool IsFullyLoaded(SDK::UWorld* World) noexcept;
 
+	void UE_RenderText(
+		UCanvas* canvas,
+		UFont* font,
+		FString text,
+		FVector2D Position = { 0, 0 },
+		FVector2D Scale = { 1, 1 },
+		FLinearColor color = { 1, 1, 1, 1 }
+	);
 
+	void UE_RenderTextEx(
+		UCanvas* canvas,
+		UFont* font,
+		FString text,
+		FVector2D Position = { 0, 0 },
+		FVector2D Scale = { 1, 1 },
+		FLinearColor color = { 1, 1, 1, 1 },
+		bool centeredX = false,
+		bool centeredY = false,
+		bool outline = false,
+		FLinearColor outlineColor = { 0, 0, 0, 1 }
+	);
 }
+
+#define LOG(fmt, ...) HelperNS::devlog("[*] " fmt, ##__VA_ARGS__)
+#define LOG_WARN(fmt, ...) HelperNS::devlog("[WARN] " fmt, ##__VA_ARGS__)
+#define LOG_ERROR(fmt, ...) HelperNS::devlog("[ERROR] " fmt, ##__VA_ARGS__)

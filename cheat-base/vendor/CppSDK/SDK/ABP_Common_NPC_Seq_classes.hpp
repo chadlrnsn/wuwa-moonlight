@@ -25,7 +25,7 @@ namespace SDK
 class UABP_Common_NPC_Seq_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_29C7[0x8];                                     // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A8[0x8];                                      // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x03B8(0x0038)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x03F0(0x0138)()
@@ -49,7 +49,7 @@ public:
 public:
 	void ExecuteUbergraph_ABP_Common_NPC_Seq(int32 EntryPoint);
 	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* Param_AnimGraph);
+	void AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

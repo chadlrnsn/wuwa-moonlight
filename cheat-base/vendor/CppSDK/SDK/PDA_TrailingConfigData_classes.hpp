@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ETrailingAttachType_structs.hpp"
 #include "SMaterialControllerColorParameter_structs.hpp"
+#include "ETrailingAttachType_structs.hpp"
 #include "SMaterialControllerFloatParameter_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
@@ -27,7 +27,7 @@ class UPDA_TrailingConfigData_C final : public UPrimaryDataAsset
 {
 public:
 	ETrailingAttachType                           AttachType;                                        // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DBF[0x7];                                     // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         AttachLimbNames;                                   // 0x0040(0x0010)(Edit, BlueprintVisible)
 	TArray<struct FVector>                        RelativeLocations;                                 // 0x0050(0x0010)(Edit, BlueprintVisible)
 	class UMaterialInterface*                     Material;                                          // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -35,7 +35,7 @@ public:
 	int32                                         MaxInterpolateCount;                               // 0x006C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         LengthUnit;                                        // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseNormal;                                         // 0x0074(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2DC0[0x3];                                     // 0x0075(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_75[0x3];                                       // 0x0075(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AirflowHoldTime;                                   // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         SmoothIntensity;                                   // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         UV2Scale;                                          // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -45,7 +45,7 @@ public:
 	TArray<struct FSMaterialControllerFloatParameter> Time_FloatParameter;                               // 0x0090(0x0010)(Edit, BlueprintVisible)
 	TArray<struct FSMaterialControllerColorParameter> Time_ColorParameter;                               // 0x00A0(0x0010)(Edit, BlueprintVisible)
 	float                                         MaxDensitySpeed;                                   // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DC1[0x4];                                     // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        AirflowDensitySpeedScale;                          // 0x00B8(0x0090)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          DestroyAtOnce;                                     // 0x0148(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 

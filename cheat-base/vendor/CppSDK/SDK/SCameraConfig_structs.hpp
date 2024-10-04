@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "EFightCameraModify_structs.hpp"
-#include "EFightCameraType_structs.hpp"
-#include "EFightCameraAdjust_structs.hpp"
+#include "EFightCameraSidestep_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "SBaseCurve_structs.hpp"
+#include "EFightCameraType_structs.hpp"
 #include "EFightCameraDefault_structs.hpp"
+#include "SBaseCurve_structs.hpp"
+#include "EFightCameraAdjust_structs.hpp"
 #include "EFightCameraAuto_structs.hpp"
 #include "EFightCameraInput_structs.hpp"
 #include "EFightCameraFocus_structs.hpp"
+#include "EFightCameraModify_structs.hpp"
 #include "EFightCameraGuide_structs.hpp"
 #include "EFightCameraExplore_structs.hpp"
 #include "EFightCameraDialogue_structs.hpp"
 #include "EFightCameraClimb_structs.hpp"
-#include "EFightCameraSidestep_structs.hpp"
 
 
 namespace SDK
@@ -36,11 +36,11 @@ struct FSCameraConfig final
 public:
 	EFightCameraType                              Type_49_64F042F744CF2C4652C8C48399F51487;          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __n__Mn_157_93EECDE7479C64736DE2E6AF7FB31440;      // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2681[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           Tag_52_1250E0A24D6B5FC23E12D1B35A2EEC19;           // 0x0004(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 	bool                                          PC_H_137_EC32D76142C349B49C6420B8468D8768;         // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          K__H_138_1E6DBBA94D1C3FD9643F978D862F94B4;         // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2682[0x2];                                     // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         _H__60_66AAA6BB4FF82D1F5ABAFDA447469F3C;           // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _e___59_13F91E30404D36E236D88DAB7CB311DA;          // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSBaseCurve                            _e___126_49889A84483779A1DDDBA78C6B05ADAF;         // 0x001C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -52,7 +52,7 @@ public:
 	bool                                          ____4_71_81223E26430DA435A1D7408B58E6331A;         // 0x0033(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ______4_73_5B699B4344822D32AE88CFB17915970C;       // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ____4_159_7E8F9A26411AC1711D179ABE907A54FC;        // 0x0035(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2683[0x2];                                     // 0x0036(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_36[0x2];                                       // 0x0036(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         ______147_ED7368374D75B24BBF2353AFC9F61BD6;        // 0x0038(0x0010)(Edit, BlueprintVisible)
 	TMap<EFightCameraDefault, float>              ___31_167E6F454CF805948A7838AEE2576922;            // 0x0048(0x0050)(Edit, BlueprintVisible)
 	TMap<EFightCameraAdjust, float>               ___c_32_20894BD444DA18195B2C10979A146581;          // 0x0098(0x0050)(Edit, BlueprintVisible)
@@ -66,7 +66,7 @@ public:
 	TMap<EFightCameraClimb, float>                ___4_45_2909B8D44EF3644EA4C26088A8A46306;          // 0x0318(0x0050)(Edit, BlueprintVisible)
 	TMap<EFightCameraSidestep, float>             _____4_46_7FF98AFE46049674E443A5A3466CC3AB;        // 0x0368(0x0050)(Edit, BlueprintVisible)
 	bool                                          __4_e___75_6096DE6E42E79C20AAAD81B5ACFACC74;       // 0x03B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2684[0x7];                                     // 0x03B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3B9[0x7];                                      // 0x03B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<EFightCameraDefault, struct FSBaseCurve> ____Mn_99_36EB4DFA4C24A67C4FC39C9D39456B9E;        // 0x03C0(0x0050)(Edit, BlueprintVisible)
 	TMap<EFightCameraAdjust, struct FSBaseCurve>  ___c__Mn_113_F5C59F9242A05862FD5A28AAB3B75B90;     // 0x0410(0x0050)(Edit, BlueprintVisible)
 	TMap<EFightCameraAuto, struct FSBaseCurve>    ___4__Mn_114_C56F26FC42B97E290F759F850B68151B;     // 0x0460(0x0050)(Edit, BlueprintVisible)

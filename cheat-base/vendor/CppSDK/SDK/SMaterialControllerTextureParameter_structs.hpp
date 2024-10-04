@@ -22,7 +22,7 @@ struct FSMaterialControllerTextureParameter final
 {
 public:
 	class FName                                   ParameterName_2_63DBF67741F1C36DF997F194BA36AA4F;  // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3078[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSMaterialControllerTextureGroup       ParameterValue_12_CC60B0BF4272CF87B5FE94AFE3803E42; // 0x0010(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSMaterialControllerTextureParameter) == 0x000008, "Wrong alignment on FSMaterialControllerTextureParameter");

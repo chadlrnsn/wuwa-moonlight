@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsSimpleNpc.TsSimpleNpc_C.ExecuteUbergraph_TsSimpleNpc
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// (Final, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -33,17 +33,12 @@ void ATsSimpleNpc_C::ExecuteUbergraph_TsSimpleNpc(int32 EntryPoint)
 
 	Parms.EntryPoint = EntryPoint;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.ReceiveBeginPlay
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 
 void ATsSimpleNpc_C::ReceiveBeginPlay()
 {
@@ -52,17 +47,12 @@ void ATsSimpleNpc_C::ReceiveBeginPlay()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsSimpleNpc_C", "ReceiveBeginPlay");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.EditorInit
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
 void ATsSimpleNpc_C::EditorInit()
 {
@@ -71,17 +61,12 @@ void ATsSimpleNpc_C::EditorInit()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsSimpleNpc_C", "EditorInit");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.EditorTick
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -96,17 +81,12 @@ void ATsSimpleNpc_C::EditorTick(float DeltaSeconds)
 
 	Parms.DeltaSeconds = DeltaSeconds;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.ReceiveEndPlay
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -121,17 +101,12 @@ void ATsSimpleNpc_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 	Parms.EndPlayReason = EndPlayReason;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.LoadModel
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsSimpleNpc_C::LoadModel()
 {
@@ -140,17 +115,12 @@ void ATsSimpleNpc_C::LoadModel()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsSimpleNpc_C", "LoadModel");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.FindFloor
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsSimpleNpc_C::FindFloor()
 {
@@ -159,17 +129,12 @@ void ATsSimpleNpc_C::FindFloor()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsSimpleNpc_C", "FindFloor");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.SetDefaultCollision
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsSimpleNpc_C::SetDefaultCollision()
 {
@@ -178,17 +143,12 @@ void ATsSimpleNpc_C::SetDefaultCollision()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsSimpleNpc_C", "SetDefaultCollision");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.ResetMeshLocation
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsSimpleNpc_C::ResetMeshLocation()
 {
@@ -197,17 +157,12 @@ void ATsSimpleNpc_C::ResetMeshLocation()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsSimpleNpc_C", "ResetMeshLocation");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.ShowDialog
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FString                           Text1                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 // float                                   RemoveFrame1                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
@@ -224,17 +179,12 @@ void ATsSimpleNpc_C::ShowDialog(const class FString& Text1, float RemoveFrame1)
 	Parms.Text1 = std::move(Text1);
 	Parms.RemoveFrame1 = RemoveFrame1;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.TryPlayMontage
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FString                           MontagePath                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
@@ -250,19 +200,14 @@ bool ATsSimpleNpc_C::TryPlayMontage(const class FString& MontagePath)
 
 	Parms.MontagePath = std::move(MontagePath);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.HideDialog
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsSimpleNpc_C::HideDialog()
 {
@@ -271,17 +216,12 @@ void ATsSimpleNpc_C::HideDialog()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsSimpleNpc_C", "HideDialog");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.StopMontage
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsSimpleNpc_C::StopMontage()
 {
@@ -290,17 +230,12 @@ void ATsSimpleNpc_C::StopMontage()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsSimpleNpc_C", "StopMontage");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.HandleLoadedDaConfig
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UPD_NpcSetupData_C*               DaConfig1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // bool                                    IsEditor                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
@@ -317,17 +252,12 @@ void ATsSimpleNpc_C::HandleLoadedDaConfig(class UPD_NpcSetupData_C* DaConfig1, b
 	Parms.DaConfig1 = DaConfig1;
 	Parms.IsEditor = IsEditor;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsSimpleNpc.TsSimpleNpc_C.DebugSetNpcDitherValue
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -342,12 +272,7 @@ void ATsSimpleNpc_C::DebugSetNpcDitherValue(float Value)
 
 	Parms.Value = Value;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

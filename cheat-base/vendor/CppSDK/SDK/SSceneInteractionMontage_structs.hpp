@@ -22,7 +22,7 @@ public:
 	class ASkeletalMeshActor*                     SkeletalMesh_9_6EF8209442A672C3BA0B5CAB403C01BA;   // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAnimMontage*                           Montage_5_9E9440554F795D22727DF4B08D05FCE4;        // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Loop_8_7365D06643AEE9A973768FA8D495BBDF;           // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3115[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         PlayRate_15_78927E734D4ABA303D16C88CF3EF7A6E;      // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSSceneInteractionMontage) == 0x000008, "Wrong alignment on FSSceneInteractionMontage");

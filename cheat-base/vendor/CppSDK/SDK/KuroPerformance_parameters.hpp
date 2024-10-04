@@ -25,7 +25,7 @@ public:
 	int32                                         BoostDurationInMilliSecond;                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bBoostMemory;                                      // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BBF[0x2];                                     // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPerformanceBPLibrary_BoostCPU) == 0x000004, "Wrong alignment on KuroPerformanceBPLibrary_BoostCPU");
 static_assert(sizeof(KuroPerformanceBPLibrary_BoostCPU) == 0x00000C, "Wrong size on KuroPerformanceBPLibrary_BoostCPU");
@@ -43,7 +43,7 @@ public:
 	int32                                         BoostDurationInMilliSecond;                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bBoostMemory;                                      // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BC0[0x2];                                     // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPerformanceBPLibrary_BoostGPU) == 0x000004, "Wrong alignment on KuroPerformanceBPLibrary_BoostGPU");
 static_assert(sizeof(KuroPerformanceBPLibrary_BoostGPU) == 0x00000C, "Wrong size on KuroPerformanceBPLibrary_BoostGPU");
@@ -93,7 +93,7 @@ public:
 	int32                                         CPULoadScale;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         GPULoadScale;                                      // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BC1[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPerformanceBPLibrary_PredictWorkload) == 0x000004, "Wrong alignment on KuroPerformanceBPLibrary_PredictWorkload");
 static_assert(sizeof(KuroPerformanceBPLibrary_PredictWorkload) == 0x00000C, "Wrong size on KuroPerformanceBPLibrary_PredictWorkload");
@@ -120,7 +120,7 @@ public:
 	int32                                         FPS;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ThreadId;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BC2[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPerformanceBPLibrary_SetTargetFPS) == 0x000004, "Wrong alignment on KuroPerformanceBPLibrary_SetTargetFPS");
 static_assert(sizeof(KuroPerformanceBPLibrary_SetTargetFPS) == 0x00000C, "Wrong size on KuroPerformanceBPLibrary_SetTargetFPS");
@@ -135,7 +135,7 @@ struct KuroPerformanceBPLibrary_StartPerformanceAdaptiveService final
 public:
 	int32                                         EServiceFlags;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BC3[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPerformanceBPLibrary_StartPerformanceAdaptiveService) == 0x000004, "Wrong alignment on KuroPerformanceBPLibrary_StartPerformanceAdaptiveService");
 static_assert(sizeof(KuroPerformanceBPLibrary_StartPerformanceAdaptiveService) == 0x000008, "Wrong size on KuroPerformanceBPLibrary_StartPerformanceAdaptiveService");
@@ -149,7 +149,7 @@ struct KuroPerformanceBPLibrary_StopPerformanceAdaptiveService final
 public:
 	int32                                         EServiceFlags;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BC4[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPerformanceBPLibrary_StopPerformanceAdaptiveService) == 0x000004, "Wrong alignment on KuroPerformanceBPLibrary_StopPerformanceAdaptiveService");
 static_assert(sizeof(KuroPerformanceBPLibrary_StopPerformanceAdaptiveService) == 0x000008, "Wrong size on KuroPerformanceBPLibrary_StopPerformanceAdaptiveService");

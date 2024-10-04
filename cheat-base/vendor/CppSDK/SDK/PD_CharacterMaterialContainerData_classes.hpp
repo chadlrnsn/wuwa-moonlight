@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SCharacterSlotSpecifiedStruct_structs.hpp"
-#include "SCharacterBodySpecifiedStruct_structs.hpp"
 #include "ECharacterBodySpecifiedType_structs.hpp"
 #include "ECharacterSlotSpecifiedType_structs.hpp"
+#include "SCharacterBodySpecifiedStruct_structs.hpp"
+#include "SCharacterSlotSpecifiedStruct_structs.hpp"
 #include "Engine_classes.hpp"
 
 

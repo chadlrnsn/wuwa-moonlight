@@ -86,10 +86,10 @@ public:
 	TArray<class FName>                           UsedBoneNames;                                     // 0x00F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 UsedBoneIndices;                                   // 0x0100(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         ReferenceBoneIndex;                                // 0x0110(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2218[0x4];                                     // 0x0114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UClothingAssetCustomData*               CustomData;                                        // 0x0118(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FClothConfig_Legacy                    ClothConfig;                                       // 0x0120(0x00D4)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2219[0x4];                                     // 0x01F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F4[0x4];                                      // 0x01F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -125,7 +125,7 @@ public:
 	class UClothPhysicalMeshDataBase_Legacy*      PhysicalMeshData;                                  // 0x0030(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FClothPhysicalMeshData                 ClothPhysicalMeshData;                             // 0x0038(0x00F8)(NativeAccessSpecifierPublic)
 	struct FClothCollisionData                    CollisionData;                                     // 0x0130(0x0040)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_221A[0x20];                                    // 0x0170(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_170[0x20];                                     // 0x0170(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

@@ -21,7 +21,7 @@ struct KuroPhysicsSplitSystem_IsTickFinishBP final
 public:
 	class UWorld*                                 World;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BB7[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPhysicsSplitSystem_IsTickFinishBP) == 0x000008, "Wrong alignment on KuroPhysicsSplitSystem_IsTickFinishBP");
 static_assert(sizeof(KuroPhysicsSplitSystem_IsTickFinishBP) == 0x000010, "Wrong size on KuroPhysicsSplitSystem_IsTickFinishBP");
@@ -35,7 +35,7 @@ struct KuroPhysicsSplitSystem_StartTickPhysicsStateBP final
 public:
 	class UWorld*                                 World;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseProcessNumPerFrame;                            // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BB8[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ProcessNumPerFrame;                                // 0x000C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroPhysicsSplitSystem_StartTickPhysicsStateBP) == 0x000008, "Wrong alignment on KuroPhysicsSplitSystem_StartTickPhysicsStateBP");

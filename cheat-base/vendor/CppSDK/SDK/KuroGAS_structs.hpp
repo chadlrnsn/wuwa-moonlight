@@ -34,7 +34,7 @@ struct FGameplayTagHashData final : public FTableRowBase
 {
 public:
 	int32                                         Hash;                                              // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1799[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGameplayTagHashData) == 0x000008, "Wrong alignment on FGameplayTagHashData");
 static_assert(sizeof(FGameplayTagHashData) == 0x000010, "Wrong size on FGameplayTagHashData");

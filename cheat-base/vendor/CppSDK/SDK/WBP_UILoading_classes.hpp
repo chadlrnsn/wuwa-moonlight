@@ -45,7 +45,7 @@ public:
 	void ExecuteUbergraph_WBP_UILoading(int32 EntryPoint);
 	void Construct();
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void SetProgress(float InProgress, float Param_ClampProgress, bool Forece);
+	void SetProgress(float InProgress, float ClampProgress_0, bool Forece);
 	void UpdateOtherLoadingProgerss(float InProgress);
 	void RebootFinished();
 

@@ -38,7 +38,7 @@ static_assert(sizeof(UMeshDescription) == 0x000030, "Wrong size on UMeshDescript
 class UMeshDescriptionBase : public UObject
 {
 public:
-	uint8                                         Pad_26AF[0x398];                                   // 0x0030(0x0398)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x398];                                     // 0x0030(0x0398)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ComputePolygonTriangulation(const struct FPolygonID& PolygonID);
@@ -100,7 +100,7 @@ public:
 	void GetTriangleEdges(const struct FTriangleID& TriangleID, TArray<struct FEdgeID>* OutEdgeIDs) const;
 	struct FPolygonID GetTrianglePolygon(const struct FTriangleID& TriangleID) const;
 	struct FPolygonGroupID GetTrianglePolygonGroup(const struct FTriangleID& TriangleID) const;
-	struct FVertexInstanceID GetTriangleVertexInstance(const struct FTriangleID& TriangleID, int32 Param_Index) const;
+	struct FVertexInstanceID GetTriangleVertexInstance(const struct FTriangleID& TriangleID, int32 Index_0) const;
 	void GetTriangleVertexInstances(const struct FTriangleID& TriangleID, TArray<struct FVertexInstanceID>* OutVertexInstanceIDs) const;
 	void GetTriangleVertices(const struct FTriangleID& TriangleID, TArray<struct FVertexID>* OutVertexIDs) const;
 	void GetVertexAdjacentVertices(const struct FVertexID& VertexID, TArray<struct FVertexID>* OutAdjacentVertexIDs) const;

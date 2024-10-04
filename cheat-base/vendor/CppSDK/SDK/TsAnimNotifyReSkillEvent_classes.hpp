@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
@@ -17,17 +18,23 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C
-// 0x0038 (0x0080 - 0x0048)
+// 0x0078 (0x00C0 - 0x0048)
 class UTsAnimNotifyReSkillEvent_C final : public UKuroAnimNotify
 {
 public:
 	bool                                          __P9idp_;                                          // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3060[0x3];                                     // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   P9pn_;                                             // 0x004C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class FString>                         P9idp_;                                            // 0x0058(0x0010)(Edit, BlueprintVisible)
 	bool                                          _____P9;                                           // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3061[0x7];                                     // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 __P9C_p_;                                          // 0x0070(0x0010)(Edit, BlueprintVisible)
+	struct FVector                                P9__MnO_;                                          // 0x0080(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        P9__MnO_p_;                                        // 0x0090(0x0010)(Edit, BlueprintVisible)
+	struct FRotator                               P9___O_;                                           // 0x00A0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRotator>                       P9___O_p_;                                         // 0x00B0(0x0010)(Edit, BlueprintVisible)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
@@ -46,12 +53,16 @@ public:
 	}
 };
 static_assert(alignof(UTsAnimNotifyReSkillEvent_C) == 0x000008, "Wrong alignment on UTsAnimNotifyReSkillEvent_C");
-static_assert(sizeof(UTsAnimNotifyReSkillEvent_C) == 0x000080, "Wrong size on UTsAnimNotifyReSkillEvent_C");
+static_assert(sizeof(UTsAnimNotifyReSkillEvent_C) == 0x0000C0, "Wrong size on UTsAnimNotifyReSkillEvent_C");
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, __P9idp_) == 0x000048, "Member 'UTsAnimNotifyReSkillEvent_C::__P9idp_' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, P9pn_) == 0x00004C, "Member 'UTsAnimNotifyReSkillEvent_C::P9pn_' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, P9idp_) == 0x000058, "Member 'UTsAnimNotifyReSkillEvent_C::P9idp_' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, _____P9) == 0x000068, "Member 'UTsAnimNotifyReSkillEvent_C::_____P9' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, __P9C_p_) == 0x000070, "Member 'UTsAnimNotifyReSkillEvent_C::__P9C_p_' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, P9__MnO_) == 0x000080, "Member 'UTsAnimNotifyReSkillEvent_C::P9__MnO_' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, P9__MnO_p_) == 0x000090, "Member 'UTsAnimNotifyReSkillEvent_C::P9__MnO_p_' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, P9___O_) == 0x0000A0, "Member 'UTsAnimNotifyReSkillEvent_C::P9___O_' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, P9___O_p_) == 0x0000B0, "Member 'UTsAnimNotifyReSkillEvent_C::P9___O_p_' has a wrong offset!");
 
 }
 

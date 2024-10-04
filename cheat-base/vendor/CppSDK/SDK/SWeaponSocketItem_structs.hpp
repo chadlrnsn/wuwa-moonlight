@@ -27,7 +27,7 @@ public:
 	class FName                                   DropSocket_16_66E387994D25403F8861D892DAEE5132;    // 0x0010(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                DropVelocity_23_A26B05B541CF03CF69B531ABEA7D8051;  // 0x001C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           Tag_19_2E69EBC5415BF14374317FB499A95B38;           // 0x0028(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3173[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSoftObjectPath                        WeaponEffectPath_26_C519CEFC406FFC9E8723D093D62AF1A2; // 0x0038(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSWeaponSocketItem) == 0x000008, "Wrong alignment on FSWeaponSocketItem");

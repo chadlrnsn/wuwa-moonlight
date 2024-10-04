@@ -23,10 +23,10 @@ struct FSKposeEffect final
 public:
 	TSoftObjectPtr<class UEffectModelBase>        EffectData_10_3246131C4633FFDA427C6187B71AD429;    // 0x0000(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	bool                                          Attach_15_04F65EFA456233D69F8CC79A49661626;        // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1D1E[0x3];                                     // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   AttachSocketName_7_2C1410AA41AC4D32BDD90E86EFCD8656; // 0x0034(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   SkeletalTagOptional_9_544314D34EF4C32FDF924AB478CF80ED; // 0x0040(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1D1F[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             Transform_13_93B2F538418A37C5B3B70CBF726FBF46;     // 0x0050(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(FSKposeEffect) == 0x000010, "Wrong alignment on FSKposeEffect");

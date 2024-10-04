@@ -40,9 +40,9 @@ void ABP_BaseItem_C::ExecuteUbergraph_BP_BaseItem(int32 EntryPoint)
 // Function BP_BaseItem.BP_BaseItem_C.ApplyEntityId
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_EntityId                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntityId_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseItem_C::ApplyEntityId(int32 Param_EntityId)
+void ABP_BaseItem_C::ApplyEntityId(int32 EntityId_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -51,7 +51,7 @@ void ABP_BaseItem_C::ApplyEntityId(int32 Param_EntityId)
 
 	Params::BP_BaseItem_C_ApplyEntityId Parms{};
 
-	Parms.Param_EntityId = Param_EntityId;
+	Parms.EntityId_0 = EntityId_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -232,9 +232,9 @@ void ABP_ScreenEffectSystem_C::UpdateLGUIMaterialParams()
 // Function BP_ScreenEffectSystem.BP_ScreenEffectSystem_C.GetScreenEffectFightRoot
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AUIContainerActor*                Param_ScreenEffectFightRoot                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AUIContainerActor*                ScreenEffectFightRoot_0                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ScreenEffectSystem_C::GetScreenEffectFightRoot(class AUIContainerActor** Param_ScreenEffectFightRoot)
+void ABP_ScreenEffectSystem_C::GetScreenEffectFightRoot(class AUIContainerActor** ScreenEffectFightRoot_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -245,8 +245,8 @@ void ABP_ScreenEffectSystem_C::GetScreenEffectFightRoot(class AUIContainerActor*
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_ScreenEffectFightRoot != nullptr)
-		*Param_ScreenEffectFightRoot = Parms.Param_ScreenEffectFightRoot;
+	if (ScreenEffectFightRoot_0 != nullptr)
+		*ScreenEffectFightRoot_0 = Parms.ScreenEffectFightRoot_0;
 }
 
 
@@ -281,9 +281,9 @@ void ABP_ScreenEffectSystem_C::Init_SEPlotRoot()
 // Function BP_ScreenEffectSystem.BP_ScreenEffectSystem_C.GetScreenEffectPlotRoot
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AUIContainerActor*                Param_ScreenEffectPlotRoot                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AUIContainerActor*                ScreenEffectPlotRoot_0                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ScreenEffectSystem_C::GetScreenEffectPlotRoot(class AUIContainerActor** Param_ScreenEffectPlotRoot)
+void ABP_ScreenEffectSystem_C::GetScreenEffectPlotRoot(class AUIContainerActor** ScreenEffectPlotRoot_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -294,8 +294,8 @@ void ABP_ScreenEffectSystem_C::GetScreenEffectPlotRoot(class AUIContainerActor**
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_ScreenEffectPlotRoot != nullptr)
-		*Param_ScreenEffectPlotRoot = Parms.Param_ScreenEffectPlotRoot;
+	if (ScreenEffectPlotRoot_0 != nullptr)
+		*ScreenEffectPlotRoot_0 = Parms.ScreenEffectPlotRoot_0;
 }
 
 

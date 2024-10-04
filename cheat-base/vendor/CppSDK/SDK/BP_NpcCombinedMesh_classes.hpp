@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SNpcSetupPartInfo_structs.hpp"
-#include "EBodyPartName_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "EBodyPartName_structs.hpp"
+#include "SNpcSetupPartInfo_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -28,7 +28,7 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UPD_NpcSetupData_C*                     NpcData;                                           // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          OriginalSkeletalVisible;                           // 0x02C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E5F[0x7];                                     // 0x02C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C1[0x7];                                      // 0x02C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, struct FSNpcSetupPartInfo>  AllSubSkeletalComponents;                          // 0x02C8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, ContainsInstancedReference)
 	class UMaterialInstanceDynamic*               DIMat;                                             // 0x0318(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ABP_NpcCombinedMesh_C*                  Target;                                            // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -37,7 +37,7 @@ public:
 	struct FLinearColor                           ColorNPC02;                                        // 0x0388(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Forced_LOD;                                        // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           SkinColor;                                         // 0x039C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E60[0x4];                                     // 0x03AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3AC[0x4];                                      // 0x03AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class USkeletalMeshComponent*>         SkelMeshArray;                                     // 0x03B0(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
 	class UMaterialInstance*                      MINPC01;                                           // 0x03C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      MINPC02;                                           // 0x03C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -48,17 +48,17 @@ public:
 	void SetupSkeletalMeshComponents(bool* Suc);
 	void SetupSockets();
 	void SetupSocket(class FName SocketName, const struct FTransform& Transform, class USkeletalMesh* SkeletalMesh, bool* Suc, class USkeletalMeshComponent** SkeletalComp);
-	void GetArmTransform(const struct FTransform& InTransform, int32 Param_Index, struct FTransform* OutTransform);
-	void GetWeaponTransform(const struct FTransform& InTransform, int32 Param_Index, struct FTransform* OutTransform);
-	void GetLegTransform(const struct FTransform& InTransform, int32 Param_Index, struct FTransform* OutTransform);
-	void GetBackTransform(const struct FTransform& InTransform, int32 Param_Index, struct FTransform* OutTransform);
-	void GetWaistTransform(const struct FTransform& InTransform, int32 Param_Index, struct FTransform* OutTransform);
+	void GetArmTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
+	void GetWeaponTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
+	void GetLegTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
+	void GetBackTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
+	void GetWaistTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
 	void SetupSkeletalMeshComponent(class USkeletalMesh* InSkeletalMesh, EBodyPartName BodyType, bool* Suc, class USkeletalMeshComponent** SkeletalComp);
-	void AddSkeletalComponent(class FName Param_Name, class USkeletalMeshComponent* SkeletalComp);
+	void AddSkeletalComponent(class FName Name_0, class USkeletalMeshComponent* SkeletalComp);
 	void GetMainMeshComponent(class USkeletalMeshComponent** SkeletalMeshComp);
 	void GetPartMeshComponent(class FName Key, TArray<class USkeletalMeshComponent*>* Comps);
 	void SetSkeletonMeshDI(class USkeletalMeshComponent* SKMesh, class FName ParamName01, class FName ParamName02, EBodyPartName BodyType, class FName SkinColorName, class UMaterialInstance* MI01);
-	void GetHeadTransform(const struct FTransform& InTransform, int32 Param_Index, struct FTransform* OutTransform);
+	void GetHeadTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
 	void Test(class USkeletalMeshComponent* SKMesh, class UMaterialInstance* MI);
 
 public:

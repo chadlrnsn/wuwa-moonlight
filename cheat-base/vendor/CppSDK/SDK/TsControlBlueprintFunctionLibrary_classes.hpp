@@ -32,6 +32,7 @@ public:
 	static void SetUseControllerRotationPitch(int32 EntityId, bool Value, class UObject* __WorldContext);
 	static void SetUseControllerRotationYaw(int32 EntityId, bool Value, class UObject* __WorldContext);
 	static void SetUseControllerRotationRoll(int32 EntityId, bool Value, class UObject* __WorldContext);
+	static void SetBpInputComponent(int32 EntityId, class UBP_InputBase_C* bpInputComp, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

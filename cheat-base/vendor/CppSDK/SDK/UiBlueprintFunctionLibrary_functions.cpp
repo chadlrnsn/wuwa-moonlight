@@ -2062,5 +2062,88 @@ void UUiBlueprintFunctionLibrary_C::ShowGenericPrompt(const class FString& Id, c
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.TestSceneLoadBornLocation
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FVector UUiBlueprintFunctionLibrary_C::TestSceneLoadBornLocation(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UiBlueprintFunctionLibrary_C", "TestSceneLoadBornLocation");
+
+	Params::UiBlueprintFunctionLibrary_C_TestSceneLoadBornLocation Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.GetLocalGameDataPath
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString UUiBlueprintFunctionLibrary_C::GetLocalGameDataPath(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UiBlueprintFunctionLibrary_C", "GetLocalGameDataPath");
+
+	Params::UiBlueprintFunctionLibrary_C_GetLocalGameDataPath Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.ActivitySequenceEmitEvent
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           Param                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UUiBlueprintFunctionLibrary_C::ActivitySequenceEmitEvent(const class FString& Param, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UiBlueprintFunctionLibrary_C", "ActivitySequenceEmitEvent");
+
+	Params::UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent Parms{};
+
+	Parms.Param = std::move(Param);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

@@ -56,7 +56,7 @@ public:
 	TSet<ELuminARLineTraceChannel>                TraceChannels;                                     // 0x0010(0x0050)(Parm, NativeAccessSpecifierPublic)
 	TArray<struct FARTraceResult>                 OutHitResults;                                     // 0x0060(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2454[0x7];                                     // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LuminARFrameFunctionLibrary_LuminARLineTrace) == 0x000008, "Wrong alignment on LuminARFrameFunctionLibrary_LuminARLineTrace");
 static_assert(sizeof(LuminARFrameFunctionLibrary_LuminARLineTrace) == 0x000078, "Wrong size on LuminARFrameFunctionLibrary_LuminARLineTrace");
@@ -88,7 +88,7 @@ public:
 	float                                         PhysicalWidth;                                     // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseUnreliablePose;                                // 0x0024(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bImageIsStationary;                                // 0x0025(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2455[0x2];                                     // 0x0026(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_26[0x2];                                       // 0x0026(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULuminARCandidateImage*                 ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LuminARImageTrackingFunctionLibrary_AddLuminRuntimeCandidateImage) == 0x000008, "Wrong alignment on LuminARImageTrackingFunctionLibrary_AddLuminRuntimeCandidateImage");
@@ -113,7 +113,7 @@ public:
 	bool                                          bUseUnreliablePose;                                // 0x0024(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bImageIsStationary;                                // 0x0025(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapImageTargetOrientation              InAxisOrientation;                                 // 0x0026(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2456[0x1];                                     // 0x0027(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_27[0x1];                                       // 0x0027(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULuminARCandidateImage*                 ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LuminARImageTrackingFunctionLibrary_AddLuminRuntimeCandidateImageEx) == 0x000008, "Wrong alignment on LuminARImageTrackingFunctionLibrary_AddLuminRuntimeCandidateImageEx");

@@ -67,10 +67,10 @@ void UAsyncTaskAnyAttributeChanged::EndTask()
 // Function KuroGAS.AsyncTaskAnyEffectInhibitionChanged.ListenForAnyEffectInhibitionChanged
 // (Final, Native, Static, Private)
 // Parameters:
-// class UAbilitySystemComponent*          Param_AbilityComp                                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          AbilityComp_0                                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTaskAnyEffectInhibitionChanged*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAsyncTaskAnyEffectInhibitionChanged* UAsyncTaskAnyEffectInhibitionChanged::ListenForAnyEffectInhibitionChanged(class UAbilitySystemComponent* Param_AbilityComp)
+class UAsyncTaskAnyEffectInhibitionChanged* UAsyncTaskAnyEffectInhibitionChanged::ListenForAnyEffectInhibitionChanged(class UAbilitySystemComponent* AbilityComp_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -79,7 +79,7 @@ class UAsyncTaskAnyEffectInhibitionChanged* UAsyncTaskAnyEffectInhibitionChanged
 
 	Params::AsyncTaskAnyEffectInhibitionChanged_ListenForAnyEffectInhibitionChanged Parms{};
 
-	Parms.Param_AbilityComp = Param_AbilityComp;
+	Parms.AbilityComp_0 = AbilityComp_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -161,10 +161,10 @@ void UAsyncTaskAnyEffectRemoved::EndTask()
 // Function KuroGAS.AsyncTaskAnyEffectStackChanged.ListenForAnyEffectStackChanged
 // (Final, Native, Static, Private)
 // Parameters:
-// class UAbilitySystemComponent*          Param_AbilityComp                                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          AbilityComp_0                                          (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTaskAnyEffectStackChanged*  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAsyncTaskAnyEffectStackChanged* UAsyncTaskAnyEffectStackChanged::ListenForAnyEffectStackChanged(class UAbilitySystemComponent* Param_AbilityComp)
+class UAsyncTaskAnyEffectStackChanged* UAsyncTaskAnyEffectStackChanged::ListenForAnyEffectStackChanged(class UAbilitySystemComponent* AbilityComp_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -173,7 +173,7 @@ class UAsyncTaskAnyEffectStackChanged* UAsyncTaskAnyEffectStackChanged::ListenFo
 
 	Params::AsyncTaskAnyEffectStackChanged_ListenForAnyEffectStackChanged Parms{};
 
-	Parms.Param_AbilityComp = Param_AbilityComp;
+	Parms.AbilityComp_0 = AbilityComp_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -447,14 +447,14 @@ void UAsyncTaskGameplayCueNotify::EndTask()
 // Function KuroGAS.AsyncTaskPlayMontageAndWait.ListenForPlayMontage
 // (Final, Native, Static, Private)
 // Parameters:
-// class UAnimInstance*                    Param_AnimInstance                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAnimMontage*                     Param_MontageToPlay                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAnimInstance*                    AnimInstance_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAnimMontage*                     MontageToPlay_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   PlayRate                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   StartingPosition                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             StartingSection                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTaskPlayMontageAndWait*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAsyncTaskPlayMontageAndWait* UAsyncTaskPlayMontageAndWait::ListenForPlayMontage(class UAnimInstance* Param_AnimInstance, class UAnimMontage* Param_MontageToPlay, float PlayRate, float StartingPosition, class FName StartingSection)
+class UAsyncTaskPlayMontageAndWait* UAsyncTaskPlayMontageAndWait::ListenForPlayMontage(class UAnimInstance* AnimInstance_0, class UAnimMontage* MontageToPlay_0, float PlayRate, float StartingPosition, class FName StartingSection)
 {
 	static class UFunction* Func = nullptr;
 
@@ -463,8 +463,8 @@ class UAsyncTaskPlayMontageAndWait* UAsyncTaskPlayMontageAndWait::ListenForPlayM
 
 	Params::AsyncTaskPlayMontageAndWait_ListenForPlayMontage Parms{};
 
-	Parms.Param_AnimInstance = Param_AnimInstance;
-	Parms.Param_MontageToPlay = Param_MontageToPlay;
+	Parms.AnimInstance_0 = AnimInstance_0;
+	Parms.MontageToPlay_0 = MontageToPlay_0;
 	Parms.PlayRate = PlayRate;
 	Parms.StartingPosition = StartingPosition;
 	Parms.StartingSection = StartingSection;
@@ -619,10 +619,10 @@ void UAsyncTaskTagSignificantChanged::EndTask()
 // Function KuroGAS.AsyncTaskWaitGameplayEvent.ListenForGameplayEvent
 // (Final, Native, Static, Private)
 // Parameters:
-// class UAbilitySystemComponent*          Param_AbilitySystemComponent                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          AbilitySystemComponent_0                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTaskWaitGameplayEvent*      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UAsyncTaskWaitGameplayEvent* UAsyncTaskWaitGameplayEvent::ListenForGameplayEvent(class UAbilitySystemComponent* Param_AbilitySystemComponent)
+class UAsyncTaskWaitGameplayEvent* UAsyncTaskWaitGameplayEvent::ListenForGameplayEvent(class UAbilitySystemComponent* AbilitySystemComponent_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -631,7 +631,7 @@ class UAsyncTaskWaitGameplayEvent* UAsyncTaskWaitGameplayEvent::ListenForGamepla
 
 	Params::AsyncTaskWaitGameplayEvent_ListenForGameplayEvent Parms{};
 
-	Parms.Param_AbilitySystemComponent = Param_AbilitySystemComponent;
+	Parms.AbilitySystemComponent_0 = AbilitySystemComponent_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2131,11 +2131,11 @@ float UBaseGameplayModMagnitudeCalculation::CalculationImplementation(int64 Game
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UDataTable*                       DataTable                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Param_Name                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UStruct*                          Data                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UGASBPLibrary::AddDataTableRowByName_EditorOnly(class UDataTable* DataTable, class FName Param_Name, class UStruct* Data)
+bool UGASBPLibrary::AddDataTableRowByName_EditorOnly(class UDataTable* DataTable, class FName Name_0, class UStruct* Data)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2145,7 +2145,7 @@ bool UGASBPLibrary::AddDataTableRowByName_EditorOnly(class UDataTable* DataTable
 	Params::GASBPLibrary_AddDataTableRowByName_EditorOnly Parms{};
 
 	Parms.DataTable = DataTable;
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 	Parms.Data = Data;
 
 	auto Flgs = Func->FunctionFlags;

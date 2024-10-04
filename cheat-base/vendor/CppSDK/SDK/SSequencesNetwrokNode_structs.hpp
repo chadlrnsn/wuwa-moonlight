@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SSeqOptionJumpGroup_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "ESeqSwtichType_structs.hpp"
+#include "SSeqOptionJumpGroup_structs.hpp"
 #include "SeqCameraMode_structs.hpp"
 
 
@@ -29,11 +29,11 @@ public:
 	struct FSoftObjectPath                        SeqNodeData_44_6266215844F469543EFA2CB97D91FA70;   // 0x0018(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          __b_e_18_D8F8DC4148F982E9D851E5AB21ED205E;         // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          __b___6_19_8302A4B6442EC67F96D100AD7A85893C;       // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_314F[0x2];                                     // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A[0x2];                                       // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         BlendInTime_26_41AAC7F6417E901E7D01FB9AA9A87B72;   // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         BlendOutTime_25_C1997C4B4E37C27B5303D38C24A9C0F8;  // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ESeqSwtichType                                _l___31_F6B5B5BF47457E42D4DFA196EF6C6891;          // 0x0044(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3150[0x3];                                     // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSSeqOptionJumpGroup>           _y_l__34_1EEE6BA64BE3BB169DEAA3B37660750F;         // 0x0048(0x0010)(Edit, BlueprintVisible)
 	ESeqCameraMode                                _____37_3C7E44F548695030B69751B93ED709AE;          // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ___v_UI_39_22B309494CC15ABB41B5C786E8B2B009;       // 0x0059(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)

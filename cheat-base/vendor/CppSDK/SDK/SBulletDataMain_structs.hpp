@@ -29,7 +29,7 @@ struct FSBulletDataMain final
 {
 public:
 	class FName                                   P9___24_A1A7201B4ADF90E01822548A0A9AC171;          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2945[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSBulletDataBase                       ___n_2_8BCB10694CE745643619B883EF6A23AA;           // 0x0010(0x00D8)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	struct FSBulletDataMove                       ___n_5_413344AA4ECA4F55169EDEB190C18458;           // 0x00E8(0x0090)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSBulletDataEffect                     H__n_11_0C7DD99C4AA72FDAD83EC58E139456E2;          // 0x0178(0x0048)(Edit, BlueprintVisible, HasGetValueTypeHash)

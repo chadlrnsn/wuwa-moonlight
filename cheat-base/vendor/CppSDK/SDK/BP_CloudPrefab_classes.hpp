@@ -36,12 +36,12 @@ public:
 	bool                                          Change;                                            // 0x030C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          Stop;                                              // 0x030D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          Farward;                                           // 0x030E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_291B[0x1];                                     // 0x030F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30F[0x1];                                      // 0x030F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMaterialInstanceDynamic*>       DMI;                                               // 0x0310(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	float                                         Delta_Seconds;                                     // 0x0320(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          TimerInit;                                         // 0x0324(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          ColoredCloud_;                                     // 0x0325(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_291C[0x2];                                     // 0x0326(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_326[0x2];                                      // 0x0326(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CloudSaturation;                                   // 0x0328(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CurrentOpacity___Plus9___;                         // 0x032C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstanceDynamic*               DMI_Top;                                           // 0x0330(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -53,14 +53,14 @@ public:
 	bool                                          UpdatePerFourFrame01;                              // 0x035C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          UpdatePerFourFrame02;                              // 0x035D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          SetCoverMaterial;                                  // 0x035E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_291D[0x1];                                     // 0x035F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35F[0x1];                                      // 0x035F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInterface*                     Cloud_Cover_Material;                              // 0x0360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         TransSortNumber;                                   // 0x0368(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_291E[0x4];                                     // 0x036C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_36C[0x4];                                      // 0x036C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UStaticMeshComponent*>           MeshArray;                                         // 0x0370(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	TArray<class UMaterialInstanceDynamic*>       DMIArray;                                          // 0x0380(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	float                                         Random;                                            // 0x0390(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_291F[0x4];                                     // 0x0394(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_394[0x4];                                      // 0x0394(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 Trans;                                             // 0x0398(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	float                                         SDFTime;                                           // 0x03A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -73,12 +73,12 @@ public:
 	void Active();
 	void Hidden();
 	void AddCloudRotation();
-	void Timer(bool Forward, float DeltaTime, float Speed, float* Param_Time, bool* Param_Stop);
+	void Timer(bool Forward, float DeltaTime, float Speed, float* Time_0, bool* Stop_0);
 	void CloudInitial();
-	void Single_Cloud_Parameters_Initial(class UMaterialInstanceDynamic* Param_DMI, class UStaticMeshComponent* Mesh, const struct FCloudParameters& CloudStructParameter, int32 Param_TransSortNumber);
+	void Single_Cloud_Parameters_Initial(class UMaterialInstanceDynamic* DMI_0, class UStaticMeshComponent* Mesh, const struct FCloudParameters& CloudStructParameter, int32 TransSortNumber_0);
 	void UpdatePerFourFrame();
-	void Single_Building_Parameters_Initial(class UMaterialInstanceDynamic* Param_DMI, class UStaticMeshComponent* Mesh, const struct FAnomaliesParameters& CloudStructParameter, int32 Param_TransSortNumber);
-	void Single_POICloud_Parameters_Initial(class UMaterialInstanceDynamic* Param_DMI, class UStaticMeshComponent* Mesh, const struct FPOICloudParameters& CloudStructParameter, int32 Param_TransSortNumber);
+	void Single_Building_Parameters_Initial(class UMaterialInstanceDynamic* DMI_0, class UStaticMeshComponent* Mesh, const struct FAnomaliesParameters& CloudStructParameter, int32 TransSortNumber_0);
+	void Single_POICloud_Parameters_Initial(class UMaterialInstanceDynamic* DMI_0, class UStaticMeshComponent* Mesh, const struct FPOICloudParameters& CloudStructParameter, int32 TransSortNumber_0);
 
 public:
 	static class UClass* StaticClass()

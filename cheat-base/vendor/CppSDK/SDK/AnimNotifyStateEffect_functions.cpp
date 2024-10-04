@@ -195,10 +195,10 @@ void UAnimNotifyStateEffect_C::CacheEffectHandle(class USkeletalMeshComponent* M
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           Param_Outer                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Outer_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   EffectHandle                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAnimNotifyStateEffect_C::AttachEffectToWeapon(class USkeletalMeshComponent* MeshComp, class AActor* Param_Outer, float EffectHandle)
+void UAnimNotifyStateEffect_C::AttachEffectToWeapon(class USkeletalMeshComponent* MeshComp, class AActor* Outer_0, float EffectHandle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -208,7 +208,7 @@ void UAnimNotifyStateEffect_C::AttachEffectToWeapon(class USkeletalMeshComponent
 	Params::AnimNotifyStateEffect_C_AttachEffectToWeapon Parms{};
 
 	Parms.MeshComp = MeshComp;
-	Parms.Param_Outer = Param_Outer;
+	Parms.Outer_0 = Outer_0;
 	Parms.EffectHandle = EffectHandle;
 
 	auto Flgs = Func->FunctionFlags;

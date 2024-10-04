@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "EMovementDirection_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "EMovementDirection_structs.hpp"
 
 
 namespace SDK

@@ -344,5 +344,34 @@ void UTsControlBlueprintFunctionLibrary_C::SetUseControllerRotationRoll(int32 En
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function TsControlBlueprintFunctionLibrary.TsControlBlueprintFunctionLibrary_C.SetBpInputComponent
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UBP_InputBase_C*                  bpInputComp                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsControlBlueprintFunctionLibrary_C::SetBpInputComponent(int32 EntityId, class UBP_InputBase_C* bpInputComp, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsControlBlueprintFunctionLibrary_C", "SetBpInputComponent");
+
+	Params::TsControlBlueprintFunctionLibrary_C_SetBpInputComponent Parms{};
+
+	Parms.EntityId = EntityId;
+	Parms.bpInputComp = bpInputComp;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

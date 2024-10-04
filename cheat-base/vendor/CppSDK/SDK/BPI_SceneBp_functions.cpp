@@ -17,43 +17,15 @@
 namespace SDK
 {
 
-// Function BPI_SceneBp.BPI_SceneBp_C.TickOutside
+// Function BPI_SceneBp.BPI_SceneBp_C.Resume
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void IBPI_SceneBp_C::TickOutside()
+void IBPI_SceneBp_C::Resume()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_SceneBp_C", "TickOutside");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BPI_SceneBp.BPI_SceneBp_C.Start
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void IBPI_SceneBp_C::Start()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_SceneBp_C", "Start");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BPI_SceneBp.BPI_SceneBp_C.Stop
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void IBPI_SceneBp_C::Stop()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_SceneBp_C", "Stop");
+		Func = Class->GetFunction("BPI_SceneBp_C", "Resume");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -73,15 +45,43 @@ void IBPI_SceneBp_C::Pause()
 }
 
 
-// Function BPI_SceneBp.BPI_SceneBp_C.Resume
+// Function BPI_SceneBp.BPI_SceneBp_C.Stop
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void IBPI_SceneBp_C::Resume()
+void IBPI_SceneBp_C::Stop()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_SceneBp_C", "Resume");
+		Func = Class->GetFunction("BPI_SceneBp_C", "Stop");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BPI_SceneBp.BPI_SceneBp_C.Start
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void IBPI_SceneBp_C::Start()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPI_SceneBp_C", "Start");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BPI_SceneBp.BPI_SceneBp_C.TickOutside
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void IBPI_SceneBp_C::TickOutside()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPI_SceneBp_C", "TickOutside");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

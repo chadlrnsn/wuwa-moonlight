@@ -10,8 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "WwiseResourceLoader_structs.hpp"
 #include "Engine_classes.hpp"
+#include "WwiseResourceLoader_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK
@@ -107,6 +108,28 @@ public:
 };
 static_assert(alignof(UWwiseObjectInfoLibrary) == 0x000008, "Wrong alignment on UWwiseObjectInfoLibrary");
 static_assert(sizeof(UWwiseObjectInfoLibrary) == 0x000030, "Wrong size on UWwiseObjectInfoLibrary");
+
+// Class WwiseResourceLoader.WwiseResourceLoaderSettings
+// 0x0008 (0x0038 - 0x0030)
+class UWwiseResourceLoaderSettings final : public UObject
+{
+public:
+	int32                                         MaxAllowedMediaCount;                              // 0x0030(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"WwiseResourceLoaderSettings">();
+	}
+	static class UWwiseResourceLoaderSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UWwiseResourceLoaderSettings>();
+	}
+};
+static_assert(alignof(UWwiseResourceLoaderSettings) == 0x000008, "Wrong alignment on UWwiseResourceLoaderSettings");
+static_assert(sizeof(UWwiseResourceLoaderSettings) == 0x000038, "Wrong size on UWwiseResourceLoaderSettings");
+static_assert(offsetof(UWwiseResourceLoaderSettings, MaxAllowedMediaCount) == 0x000030, "Member 'UWwiseResourceLoaderSettings::MaxAllowedMediaCount' has a wrong offset!");
 
 }
 

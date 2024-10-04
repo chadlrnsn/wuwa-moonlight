@@ -39,7 +39,7 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_LightsGroup(int32 EntryPoint);
-	void ReceiveTick(float Param_DeltaSeconds);
+	void ReceiveTick(float DeltaSeconds_0);
 	void ReceiveBeginPlay();
 	void ToggleLights(bool InEnable);
 	void ToggleLightsIntensity();
@@ -48,7 +48,7 @@ public:
 	void Timer(float* ElapsedTime);
 	void GetLightsIntensity();
 	void ToggleLightsColorChange();
-	void LightsColorChange(float ElapsedTime, const struct FLinearColor& Param_ColorOriginal, const struct FLinearColor& Param_ColorTarget);
+	void LightsColorChange(float ElapsedTime, const struct FLinearColor& ColorOriginal_0, const struct FLinearColor& ColorTarget_0);
 
 public:
 	static class UClass* StaticClass()

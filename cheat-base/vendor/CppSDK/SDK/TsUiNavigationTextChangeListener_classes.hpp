@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsUiNavigationTextChangeListener.TsUiNavigationTextChangeListener_C
-// 0x0008 (0x00F8 - 0x00F0)
+// 0x0008 (0x0110 - 0x0108)
 class UTsUiNavigationTextChangeListener_C final : public UUINavigationTextChangeListener
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0108(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_TsUiNavigationTextChangeListener(int32 EntryPoint);
@@ -41,8 +41,8 @@ public:
 	}
 };
 static_assert(alignof(UTsUiNavigationTextChangeListener_C) == 0x000008, "Wrong alignment on UTsUiNavigationTextChangeListener_C");
-static_assert(sizeof(UTsUiNavigationTextChangeListener_C) == 0x0000F8, "Wrong size on UTsUiNavigationTextChangeListener_C");
-static_assert(offsetof(UTsUiNavigationTextChangeListener_C, UberGraphFrame) == 0x0000F0, "Member 'UTsUiNavigationTextChangeListener_C::UberGraphFrame' has a wrong offset!");
+static_assert(sizeof(UTsUiNavigationTextChangeListener_C) == 0x000110, "Wrong size on UTsUiNavigationTextChangeListener_C");
+static_assert(offsetof(UTsUiNavigationTextChangeListener_C, UberGraphFrame) == 0x000108, "Member 'UTsUiNavigationTextChangeListener_C::UberGraphFrame' has a wrong offset!");
 
 }
 

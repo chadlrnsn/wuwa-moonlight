@@ -198,11 +198,11 @@ void UGameplayTasksComponent::OnRep_SimulatedTasks()
 // TScriptInterface<class IGameplayTaskOwnerInterface>TaskOwner                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic)
 // struct FVector                          SpawnLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FRotator                         SpawnRotation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// TSubclassOf<class AActor>               Param_Class                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class AActor>               Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bSpawnOnlyOnAuthority                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGameplayTask_SpawnActor*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UGameplayTask_SpawnActor* UGameplayTask_SpawnActor::SpawnActor(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation, TSubclassOf<class AActor> Param_Class, bool bSpawnOnlyOnAuthority)
+class UGameplayTask_SpawnActor* UGameplayTask_SpawnActor::SpawnActor(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation, TSubclassOf<class AActor> Class_0, bool bSpawnOnlyOnAuthority)
 {
 	static class UFunction* Func = nullptr;
 
@@ -214,7 +214,7 @@ class UGameplayTask_SpawnActor* UGameplayTask_SpawnActor::SpawnActor(TScriptInte
 	Parms.TaskOwner = TaskOwner;
 	Parms.SpawnLocation = std::move(SpawnLocation);
 	Parms.SpawnRotation = std::move(SpawnRotation);
-	Parms.Param_Class = Param_Class;
+	Parms.Class_0 = Class_0;
 	Parms.bSpawnOnlyOnAuthority = bSpawnOnlyOnAuthority;
 
 	auto Flgs = Func->FunctionFlags;

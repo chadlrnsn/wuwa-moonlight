@@ -24,16 +24,16 @@ struct BP_SeqNPC_C_UserConstructionScript final
 public:
 	TArray<class USkeletalMeshComponent*>         SKComps;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
 	int32                                         ___int_Array_Index_Variable;                       // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E92[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_Array_Get_Item;                           // 0x0018(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Loop_Counter_Variable;                      // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class USkeletalMeshComponent*>         CallFunc_K2_GetComponentsByClass_ReturnValue;      // 0x0028(0x0010)(ReferenceParm, ContainsInstancedReference)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E93[0x3];                                     // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SetupNpcMesh_IsSuc;                       // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E94[0x7];                                     // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class USkeletalMeshComponent*>         CallFunc_SetupNpcMesh_SkleMain;                    // 0x0048(0x0010)(ReferenceParm, ContainsInstancedReference)
 };
 static_assert(alignof(BP_SeqNPC_C_UserConstructionScript) == 0x000008, "Wrong alignment on BP_SeqNPC_C_UserConstructionScript");
@@ -119,11 +119,11 @@ static_assert(offsetof(BP_SeqNPC_C_GetAnimDataFloat, ReturnValue) == 0x000010, "
 struct BP_SeqNPC_C_GetABPC_Body_V2 final
 {
 public:
-	class UABPC_Seq_Body_V2_C*                    Param_ABPC_Body_V2;                                // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UABPC_Seq_Body_V2_C*                    ABPC_Body_V2_0;                                    // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_SeqNPC_C_GetABPC_Body_V2) == 0x000008, "Wrong alignment on BP_SeqNPC_C_GetABPC_Body_V2");
 static_assert(sizeof(BP_SeqNPC_C_GetABPC_Body_V2) == 0x000008, "Wrong size on BP_SeqNPC_C_GetABPC_Body_V2");
-static_assert(offsetof(BP_SeqNPC_C_GetABPC_Body_V2, Param_ABPC_Body_V2) == 0x000000, "Member 'BP_SeqNPC_C_GetABPC_Body_V2::Param_ABPC_Body_V2' has a wrong offset!");
+static_assert(offsetof(BP_SeqNPC_C_GetABPC_Body_V2, ABPC_Body_V2_0) == 0x000000, "Member 'BP_SeqNPC_C_GetABPC_Body_V2::ABPC_Body_V2_0' has a wrong offset!");
 
 }
 

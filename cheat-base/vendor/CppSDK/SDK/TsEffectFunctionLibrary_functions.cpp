@@ -17,22 +17,24 @@
 namespace SDK
 {
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.InitializeWithPreview
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetSimulateFromSequence
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Refresh                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABP_EffectActor_C*                Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsEffectFunctionLibrary_C::InitializeWithPreview(bool Refresh, class UObject* __WorldContext)
+void UTsEffectFunctionLibrary_C::SetSimulateFromSequence(int32 Handle, class ABP_EffectActor_C* Actor, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "InitializeWithPreview");
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetSimulateFromSequence");
 
-	Params::TsEffectFunctionLibrary_C_InitializeWithPreview Parms{};
+	Params::TsEffectFunctionLibrary_C_SetSimulateFromSequence Parms{};
 
-	Parms.Refresh = Refresh;
+	Parms.Handle = Handle;
+	Parms.Actor = Actor;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -44,24 +46,24 @@ void UTsEffectFunctionLibrary_C::InitializeWithPreview(bool Refresh, class UObje
 }
 
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.EditorTickHandle
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetPublicToSequence
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// float                                   Delta                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABP_EffectActor_C*                Actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsEffectFunctionLibrary_C::EditorTickHandle(int32 Handle, float Delta, class UObject* __WorldContext)
+void UTsEffectFunctionLibrary_C::SetPublicToSequence(int32 Handle, class ABP_EffectActor_C* Actor, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "EditorTickHandle");
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetPublicToSequence");
 
-	Params::TsEffectFunctionLibrary_C_EditorTickHandle Parms{};
+	Params::TsEffectFunctionLibrary_C_SetPublicToSequence Parms{};
 
 	Parms.Handle = Handle;
-	Parms.Delta = Delta;
+	Parms.Actor = Actor;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -73,27 +75,24 @@ void UTsEffectFunctionLibrary_C::EditorTickHandle(int32 Handle, float Delta, cla
 }
 
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.PlayEffect
-// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectStoppingTime
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class UObject*                          CallObject                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    StoppingTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool UTsEffectFunctionLibrary_C::PlayEffect(int32 Handle, class UObject* CallObject, const class FString& Reason, class UObject* __WorldContext)
+void UTsEffectFunctionLibrary_C::SetEffectStoppingTime(int32 Handle, bool StoppingTime, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "PlayEffect");
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetEffectStoppingTime");
 
-	Params::TsEffectFunctionLibrary_C_PlayEffect Parms{};
+	Params::TsEffectFunctionLibrary_C_SetEffectStoppingTime Parms{};
 
 	Parms.Handle = Handle;
-	Parms.CallObject = CallObject;
-	Parms.Reason = std::move(Reason);
+	Parms.StoppingTime = StoppingTime;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -102,28 +101,27 @@ bool UTsEffectFunctionLibrary_C::PlayEffect(int32 Handle, class UObject* CallObj
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.GetEffectActor
-// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetGlobalStoppingTime
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// bool                                    StoppingTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// float                                   PlayTime                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-class AActor* UTsEffectFunctionLibrary_C::GetEffectActor(int32 Handle, class UObject* __WorldContext)
+void UTsEffectFunctionLibrary_C::SetGlobalStoppingTime(bool StoppingTime, float PlayTime, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "GetEffectActor");
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetGlobalStoppingTime");
 
-	Params::TsEffectFunctionLibrary_C_GetEffectActor Parms{};
+	Params::TsEffectFunctionLibrary_C_SetGlobalStoppingTime Parms{};
 
-	Parms.Handle = Handle;
+	Parms.StoppingTime = StoppingTime;
+	Parms.PlayTime = PlayTime;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -132,12 +130,39 @@ class AActor* UTsEffectFunctionLibrary_C::GetEffectActor(int32 Handle, class UOb
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SpawnEffect
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectIgnoreVisibilityOptimize
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Ignore                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsEffectFunctionLibrary_C::SetEffectIgnoreVisibilityOptimize(int32 Handle, bool Ignore, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetEffectIgnoreVisibilityOptimize");
+
+	Params::TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize Parms{};
+
+	Parms.Handle = Handle;
+	Parms.Ignore = Ignore;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SpawnEffectUI
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          WorldContext                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -145,25 +170,274 @@ class AActor* UTsEffectFunctionLibrary_C::GetEffectActor(int32 Handle, class UOb
 // class FString                           Path                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // struct FTransform                       Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // class FString                           Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// EEffectPlay                             PlayType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-int32 UTsEffectFunctionLibrary_C::SpawnEffect(class UObject* WorldContext, class UObject* CallObject, const class FString& Path, const struct FTransform& Transform, const class FString& Reason, EEffectPlay PlayType, class UObject* __WorldContext)
+int32 UTsEffectFunctionLibrary_C::SpawnEffectUI(class UObject* WorldContext, class UObject* CallObject, const class FString& Path, const struct FTransform& Transform, const class FString& Reason, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SpawnEffect");
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SpawnEffectUI");
 
-	Params::TsEffectFunctionLibrary_C_SpawnEffect Parms{};
+	Params::TsEffectFunctionLibrary_C_SpawnEffectUI Parms{};
 
 	Parms.WorldContext = WorldContext;
 	Parms.CallObject = CallObject;
 	Parms.Path = std::move(Path);
 	Parms.Transform = std::move(Transform);
 	Parms.Reason = std::move(Reason);
-	Parms.PlayType = PlayType;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectHiddenInGame
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Handle1                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Value1                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsEffectFunctionLibrary_C::SetEffectHiddenInGame(int32 Handle1, bool Value1, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetEffectHiddenInGame");
+
+	Params::TsEffectFunctionLibrary_C_SetEffectHiddenInGame Parms{};
+
+	Parms.Handle1 = Handle1;
+	Parms.Value1 = Value1;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.AttachEffectActorToActor
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Parent                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EAttachmentRule                         LocationRule                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EAttachmentRule                         RotationRule                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EAttachmentRule                         ScaleRule                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWeldSimulatedBodies                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsEffectFunctionLibrary_C::AttachEffectActorToActor(int32 Handle, class AActor* Parent, class FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "AttachEffectActorToActor");
+
+	Params::TsEffectFunctionLibrary_C_AttachEffectActorToActor Parms{};
+
+	Parms.Handle = Handle;
+	Parms.Parent = Parent;
+	Parms.SocketName = SocketName;
+	Parms.LocationRule = LocationRule;
+	Parms.RotationRule = RotationRule;
+	Parms.ScaleRule = ScaleRule;
+	Parms.bWeldSimulatedBodies = bWeldSimulatedBodies;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectParameterNiagara
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<struct FSEffectFloatParameter>   UserParameterFloat                                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSEffectColorParameter>   UserParameterColor                                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSEffectVectorParameter>  UserParameterVector                                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSEffectFloatParameter>   MaterialParameterFloat                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSEffectColorParameter>   MaterialParameterColor                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsEffectFunctionLibrary_C::SetEffectParameterNiagara(int32 Handle, TArray<struct FSEffectFloatParameter>& UserParameterFloat, TArray<struct FSEffectColorParameter>& UserParameterColor, TArray<struct FSEffectVectorParameter>& UserParameterVector, TArray<struct FSEffectFloatParameter>& MaterialParameterFloat, TArray<struct FSEffectColorParameter>& MaterialParameterColor, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetEffectParameterNiagara");
+
+	Params::TsEffectFunctionLibrary_C_SetEffectParameterNiagara Parms{};
+
+	Parms.Handle = Handle;
+	Parms.UserParameterFloat = std::move(UserParameterFloat);
+	Parms.UserParameterColor = std::move(UserParameterColor);
+	Parms.UserParameterVector = std::move(UserParameterVector);
+	Parms.MaterialParameterFloat = std::move(MaterialParameterFloat);
+	Parms.MaterialParameterColor = std::move(MaterialParameterColor);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	UserParameterFloat = std::move(Parms.UserParameterFloat);
+	UserParameterColor = std::move(Parms.UserParameterColor);
+	UserParameterVector = std::move(Parms.UserParameterVector);
+	MaterialParameterFloat = std::move(Parms.MaterialParameterFloat);
+	MaterialParameterColor = std::move(Parms.MaterialParameterColor);
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectActorRelativeLocation
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// struct FVector                          NewRelativeLocation                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bSweep                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bTeleport                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsEffectFunctionLibrary_C::SetEffectActorRelativeLocation(int32 Handle, const struct FVector& NewRelativeLocation, bool bSweep, bool bTeleport, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetEffectActorRelativeLocation");
+
+	Params::TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation Parms{};
+
+	Parms.Handle = Handle;
+	Parms.NewRelativeLocation = std::move(NewRelativeLocation);
+	Parms.bSweep = bSweep;
+	Parms.bTeleport = bTeleport;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.AttachEffectActorToComponent
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class USceneComponent*                  Parent                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EAttachmentRule                         LocationRule                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EAttachmentRule                         RotationRule                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EAttachmentRule                         ScaleRule                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWeldSimulatedBodies                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsEffectFunctionLibrary_C::AttachEffectActorToComponent(int32 Handle, class USceneComponent* Parent, class FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "AttachEffectActorToComponent");
+
+	Params::TsEffectFunctionLibrary_C_AttachEffectActorToComponent Parms{};
+
+	Parms.Handle = Handle;
+	Parms.Parent = Parent;
+	Parms.SocketName = SocketName;
+	Parms.LocationRule = LocationRule;
+	Parms.RotationRule = RotationRule;
+	Parms.ScaleRule = ScaleRule;
+	Parms.bWeldSimulatedBodies = bWeldSimulatedBodies;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.EffectHandleIsValid
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsEffectFunctionLibrary_C::EffectHandleIsValid(int32 Handle, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "EffectHandleIsValid");
+
+	Params::TsEffectFunctionLibrary_C_EffectHandleIsValid Parms{};
+
+	Parms.Handle = Handle;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.StopEffect
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class UObject*                          CallObject                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    Immediately                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    DestroyActor                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsEffectFunctionLibrary_C::StopEffect(int32 Handle, class UObject* CallObject, const class FString& Reason, bool Immediately, bool DestroyActor, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "StopEffect");
+
+	Params::TsEffectFunctionLibrary_C_StopEffect Parms{};
+
+	Parms.Handle = Handle;
+	Parms.CallObject = CallObject;
+	Parms.Reason = std::move(Reason);
+	Parms.Immediately = Immediately;
+	Parms.DestroyActor = DestroyActor;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -219,258 +493,7 @@ int32 UTsEffectFunctionLibrary_C::SpawnEffectWithActor(class UObject* WorldConte
 }
 
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.StopEffect
-// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class UObject*                          CallObject                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// bool                                    Immediately                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// bool                                    DestroyActor                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-
-bool UTsEffectFunctionLibrary_C::StopEffect(int32 Handle, class UObject* CallObject, const class FString& Reason, bool Immediately, bool DestroyActor, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "StopEffect");
-
-	Params::TsEffectFunctionLibrary_C_StopEffect Parms{};
-
-	Parms.Handle = Handle;
-	Parms.CallObject = CallObject;
-	Parms.Reason = std::move(Reason);
-	Parms.Immediately = Immediately;
-	Parms.DestroyActor = DestroyActor;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.EffectHandleIsValid
-// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-
-bool UTsEffectFunctionLibrary_C::EffectHandleIsValid(int32 Handle, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "EffectHandleIsValid");
-
-	Params::TsEffectFunctionLibrary_C_EffectHandleIsValid Parms{};
-
-	Parms.Handle = Handle;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.AttachEffectActorToComponent
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class USceneComponent*                  Parent                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EAttachmentRule                         LocationRule                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EAttachmentRule                         RotationRule                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EAttachmentRule                         ScaleRule                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bWeldSimulatedBodies                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsEffectFunctionLibrary_C::AttachEffectActorToComponent(int32 Handle, class USceneComponent* Parent, class FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "AttachEffectActorToComponent");
-
-	Params::TsEffectFunctionLibrary_C_AttachEffectActorToComponent Parms{};
-
-	Parms.Handle = Handle;
-	Parms.Parent = Parent;
-	Parms.SocketName = SocketName;
-	Parms.LocationRule = LocationRule;
-	Parms.RotationRule = RotationRule;
-	Parms.ScaleRule = ScaleRule;
-	Parms.bWeldSimulatedBodies = bWeldSimulatedBodies;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectActorRelativeLocation
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// struct FVector                          NewRelativeLocation                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bSweep                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// bool                                    bTeleport                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsEffectFunctionLibrary_C::SetEffectActorRelativeLocation(int32 Handle, const struct FVector& NewRelativeLocation, bool bSweep, bool bTeleport, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetEffectActorRelativeLocation");
-
-	Params::TsEffectFunctionLibrary_C_SetEffectActorRelativeLocation Parms{};
-
-	Parms.Handle = Handle;
-	Parms.NewRelativeLocation = std::move(NewRelativeLocation);
-	Parms.bSweep = bSweep;
-	Parms.bTeleport = bTeleport;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectParameterNiagara
-// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FSEffectFloatParameter>   UserParameterFloat                                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSEffectColorParameter>   UserParameterColor                                     (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSEffectVectorParameter>  UserParameterVector                                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSEffectFloatParameter>   MaterialParameterFloat                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSEffectColorParameter>   MaterialParameterColor                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsEffectFunctionLibrary_C::SetEffectParameterNiagara(int32 Handle, TArray<struct FSEffectFloatParameter>& UserParameterFloat, TArray<struct FSEffectColorParameter>& UserParameterColor, TArray<struct FSEffectVectorParameter>& UserParameterVector, TArray<struct FSEffectFloatParameter>& MaterialParameterFloat, TArray<struct FSEffectColorParameter>& MaterialParameterColor, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetEffectParameterNiagara");
-
-	Params::TsEffectFunctionLibrary_C_SetEffectParameterNiagara Parms{};
-
-	Parms.Handle = Handle;
-	Parms.UserParameterFloat = std::move(UserParameterFloat);
-	Parms.UserParameterColor = std::move(UserParameterColor);
-	Parms.UserParameterVector = std::move(UserParameterVector);
-	Parms.MaterialParameterFloat = std::move(MaterialParameterFloat);
-	Parms.MaterialParameterColor = std::move(MaterialParameterColor);
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	UserParameterFloat = std::move(Parms.UserParameterFloat);
-	UserParameterColor = std::move(Parms.UserParameterColor);
-	UserParameterVector = std::move(Parms.UserParameterVector);
-	MaterialParameterFloat = std::move(Parms.MaterialParameterFloat);
-	MaterialParameterColor = std::move(Parms.MaterialParameterColor);
-}
-
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.AttachEffectActorToActor
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           Parent                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EAttachmentRule                         LocationRule                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EAttachmentRule                         RotationRule                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EAttachmentRule                         ScaleRule                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bWeldSimulatedBodies                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsEffectFunctionLibrary_C::AttachEffectActorToActor(int32 Handle, class AActor* Parent, class FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "AttachEffectActorToActor");
-
-	Params::TsEffectFunctionLibrary_C_AttachEffectActorToActor Parms{};
-
-	Parms.Handle = Handle;
-	Parms.Parent = Parent;
-	Parms.SocketName = SocketName;
-	Parms.LocationRule = LocationRule;
-	Parms.RotationRule = RotationRule;
-	Parms.ScaleRule = ScaleRule;
-	Parms.bWeldSimulatedBodies = bWeldSimulatedBodies;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectHiddenInGame
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Handle1                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Value1                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsEffectFunctionLibrary_C::SetEffectHiddenInGame(int32 Handle1, bool Value1, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetEffectHiddenInGame");
-
-	Params::TsEffectFunctionLibrary_C_SetEffectHiddenInGame Parms{};
-
-	Parms.Handle1 = Handle1;
-	Parms.Value1 = Value1;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SpawnEffectUI
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SpawnEffect
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          WorldContext                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -478,22 +501,88 @@ void UTsEffectFunctionLibrary_C::SetEffectHiddenInGame(int32 Handle1, bool Value
 // class FString                           Path                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // struct FTransform                       Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // class FString                           Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// EEffectPlay                             PlayType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-int32 UTsEffectFunctionLibrary_C::SpawnEffectUI(class UObject* WorldContext, class UObject* CallObject, const class FString& Path, const struct FTransform& Transform, const class FString& Reason, class UObject* __WorldContext)
+int32 UTsEffectFunctionLibrary_C::SpawnEffect(class UObject* WorldContext, class UObject* CallObject, const class FString& Path, const struct FTransform& Transform, const class FString& Reason, EEffectPlay PlayType, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SpawnEffectUI");
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SpawnEffect");
 
-	Params::TsEffectFunctionLibrary_C_SpawnEffectUI Parms{};
+	Params::TsEffectFunctionLibrary_C_SpawnEffect Parms{};
 
 	Parms.WorldContext = WorldContext;
 	Parms.CallObject = CallObject;
 	Parms.Path = std::move(Path);
 	Parms.Transform = std::move(Transform);
+	Parms.Reason = std::move(Reason);
+	Parms.PlayType = PlayType;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.GetEffectActor
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class AActor* UTsEffectFunctionLibrary_C::GetEffectActor(int32 Handle, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "GetEffectActor");
+
+	Params::TsEffectFunctionLibrary_C_GetEffectActor Parms{};
+
+	Parms.Handle = Handle;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.PlayEffect
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class UObject*                          CallObject                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsEffectFunctionLibrary_C::PlayEffect(int32 Handle, class UObject* CallObject, const class FString& Reason, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "PlayEffect");
+
+	Params::TsEffectFunctionLibrary_C_PlayEffect Parms{};
+
+	Parms.Handle = Handle;
+	Parms.CallObject = CallObject;
 	Parms.Reason = std::move(Reason);
 	Parms.__WorldContext = __WorldContext;
 
@@ -508,24 +597,51 @@ int32 UTsEffectFunctionLibrary_C::SpawnEffectUI(class UObject* WorldContext, cla
 }
 
 
-// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SetEffectIgnoreVisibilityOptimize
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.EditorTickHandle
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Ignore                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// float                                   Delta                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsEffectFunctionLibrary_C::SetEffectIgnoreVisibilityOptimize(int32 Handle, bool Ignore, class UObject* __WorldContext)
+void UTsEffectFunctionLibrary_C::EditorTickHandle(int32 Handle, float Delta, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SetEffectIgnoreVisibilityOptimize");
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "EditorTickHandle");
 
-	Params::TsEffectFunctionLibrary_C_SetEffectIgnoreVisibilityOptimize Parms{};
+	Params::TsEffectFunctionLibrary_C_EditorTickHandle Parms{};
 
 	Parms.Handle = Handle;
-	Parms.Ignore = Ignore;
+	Parms.Delta = Delta;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.InitializeWithPreview
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Refresh                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsEffectFunctionLibrary_C::InitializeWithPreview(bool Refresh, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "InitializeWithPreview");
+
+	Params::TsEffectFunctionLibrary_C_InitializeWithPreview Parms{};
+
+	Parms.Refresh = Refresh;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;

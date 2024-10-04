@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsActionHandle.TsActionHandle_C.OnPressAction
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FKey                             Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
@@ -33,17 +33,12 @@ void UTsActionHandle_C::OnPressAction(const struct FKey& Key)
 
 	Parms.Key = std::move(Key);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsActionHandle.TsActionHandle_C.OnReleaseAction
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FKey                             Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
@@ -58,12 +53,7 @@ void UTsActionHandle_C::OnReleaseAction(const struct FKey& Key)
 
 	Parms.Key = std::move(Key);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

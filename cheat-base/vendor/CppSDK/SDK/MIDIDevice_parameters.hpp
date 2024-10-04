@@ -52,7 +52,7 @@ struct MIDIDeviceManager_CreateMIDIDeviceOutputController final
 {
 public:
 	int32                                         DeviceID;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_256B[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMIDIDeviceOutputController*            ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MIDIDeviceManager_CreateMIDIDeviceOutputController) == 0x000008, "Wrong alignment on MIDIDeviceManager_CreateMIDIDeviceOutputController");
@@ -113,7 +113,7 @@ struct MIDIDeviceManager_GetMIDIInputDeviceIDByName final
 public:
 	class FString                                 DeviceName;                                        // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         DeviceID;                                          // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_256C[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MIDIDeviceManager_GetMIDIInputDeviceIDByName) == 0x000008, "Wrong alignment on MIDIDeviceManager_GetMIDIInputDeviceIDByName");
 static_assert(sizeof(MIDIDeviceManager_GetMIDIInputDeviceIDByName) == 0x000018, "Wrong size on MIDIDeviceManager_GetMIDIInputDeviceIDByName");
@@ -127,7 +127,7 @@ struct MIDIDeviceManager_GetMIDIOutputDeviceIDByName final
 public:
 	class FString                                 DeviceName;                                        // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         DeviceID;                                          // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_256D[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MIDIDeviceManager_GetMIDIOutputDeviceIDByName) == 0x000008, "Wrong alignment on MIDIDeviceManager_GetMIDIOutputDeviceIDByName");
 static_assert(sizeof(MIDIDeviceManager_GetMIDIOutputDeviceIDByName) == 0x000018, "Wrong size on MIDIDeviceManager_GetMIDIOutputDeviceIDByName");
@@ -168,7 +168,7 @@ struct MIDIDeviceOutputController_SendMIDIEvent final
 {
 public:
 	EMIDIEventType                                EventType;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2570[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Channel;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Data1;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Data2;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

@@ -45,7 +45,7 @@ struct MagicLeapAudioFunctionLibrary_SetOnAudioJackPluggedDelegate final
 public:
 	TDelegate<void()>                             ResultDelegate;                                    // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24C7[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapAudioFunctionLibrary_SetOnAudioJackPluggedDelegate) == 0x000004, "Wrong alignment on MagicLeapAudioFunctionLibrary_SetOnAudioJackPluggedDelegate");
 static_assert(sizeof(MagicLeapAudioFunctionLibrary_SetOnAudioJackPluggedDelegate) == 0x000030, "Wrong size on MagicLeapAudioFunctionLibrary_SetOnAudioJackPluggedDelegate");
@@ -59,7 +59,7 @@ struct MagicLeapAudioFunctionLibrary_SetOnAudioJackUnpluggedDelegate final
 public:
 	TDelegate<void()>                             ResultDelegate;                                    // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24C8[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapAudioFunctionLibrary_SetOnAudioJackUnpluggedDelegate) == 0x000004, "Wrong alignment on MagicLeapAudioFunctionLibrary_SetOnAudioJackUnpluggedDelegate");
 static_assert(sizeof(MagicLeapAudioFunctionLibrary_SetOnAudioJackUnpluggedDelegate) == 0x000030, "Wrong size on MagicLeapAudioFunctionLibrary_SetOnAudioJackUnpluggedDelegate");

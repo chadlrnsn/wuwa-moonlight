@@ -22,7 +22,7 @@ namespace SDK
 class ULogicDataAdditiveAccelerate_C final : public ULogicDataBase_C
 {
 public:
-	uint8                                         Pad_2CDE[0x3];                                     // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Acceleration;                                      // 0x003C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UCurveVector*                           AccelerationCurve;                                 // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

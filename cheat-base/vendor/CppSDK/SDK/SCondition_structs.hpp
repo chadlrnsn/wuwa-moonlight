@@ -20,7 +20,7 @@ struct FSCondition final
 {
 public:
 	class FName                                   A_ID_40_7903DF4A472964134AABB2BCB04746FD;          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2CD1[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, class FString>              _p__43_7247EF4646519C36CC0D6082179995CD;           // 0x0010(0x0050)(Edit, BlueprintVisible)
 	class FText                                   ___29_9A079BDC4A8FB8D1569BA6920FFA4C0F;            // 0x0060(0x0018)(Edit, BlueprintVisible)
 };

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "TsTaskAbortImmediatelyBase_classes.hpp"
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -28,7 +28,7 @@ public:
 	TMap<class FString, float>                    FloatMap;                                          // 0x0110(0x0050)(Edit, BlueprintVisible)
 	TMap<class FString, bool>                     BooleanMap;                                        // 0x0160(0x0050)(Edit, BlueprintVisible)
 	TMap<class FString, struct FVector>           VectorMap;                                         // 0x01B0(0x0050)(Edit, BlueprintVisible)
-	TMap<class FString, float>                    IntMap;                                            // 0x0200(0x0050)(Edit, BlueprintVisible)
+	TMap<class FString, int32>                    IntMap;                                            // 0x0200(0x0050)(Edit, BlueprintVisible)
 
 public:
 	void ExecuteUbergraph_TsTaskBlackBoardSetValues(int32 EntryPoint);

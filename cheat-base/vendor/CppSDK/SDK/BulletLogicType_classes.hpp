@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
-#include "GameplayTags_structs.hpp"
 #include "EBulletType_structs.hpp"
 #include "EBulletHitDirectionType_structs.hpp"
+#include "Engine_classes.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK
@@ -35,7 +35,7 @@ public:
 	EBulletHitDirectionType                       P9________;                                        // 0x004B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Nine__S;                                           // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Fourb__;                                           // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_308B[0x7];                                     // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  ____;                                              // 0x0058(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class FString                                 _____S;                                            // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          _e4S;                                              // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)

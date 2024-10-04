@@ -20,7 +20,7 @@ struct FSWeaponMesh final
 {
 public:
 	class FName                                   SocketName_10_7E5A67CA419B3CCDB9F0EF8DAB3769BB;    // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3131[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class USkeletalMesh>           MeshSoftPtr_17_98C9B4294B35F8E0D704BD88964D513E;   // 0x0010(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TSoftClassPtr<class UClass>                   AnimInstanceSoftPtr_27_CB59D54843156A87D50BC189CB2BA4EE; // 0x0040(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };

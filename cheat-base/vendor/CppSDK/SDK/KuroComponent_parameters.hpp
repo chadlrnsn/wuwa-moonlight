@@ -35,7 +35,7 @@ struct KuroCharacterAnimationComponent_AddModelQuat final
 public:
 	struct FQuat                                  Quat;                                              // 0x0000(0x0010)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          LockCenter;                                        // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B33[0xF];                                     // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroCharacterAnimationComponent_AddModelQuat) == 0x000010, "Wrong alignment on KuroCharacterAnimationComponent_AddModelQuat");
 static_assert(sizeof(KuroCharacterAnimationComponent_AddModelQuat) == 0x000020, "Wrong size on KuroCharacterAnimationComponent_AddModelQuat");
@@ -107,10 +107,10 @@ struct KuroRegionDetectComponent_Detect final
 {
 public:
 	struct FVector                                Point;                                             // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B37[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 RegionName;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B38[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRegionDetectComponent_Detect) == 0x000008, "Wrong alignment on KuroRegionDetectComponent_Detect");
 static_assert(sizeof(KuroRegionDetectComponent_Detect) == 0x000028, "Wrong size on KuroRegionDetectComponent_Detect");
@@ -169,7 +169,7 @@ public:
 	float                                         CdSec;                                             // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UCurveFloat*                            RotateCurve;                                       // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B3F[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSceneItemMoveComponent_AddRotationStep) == 0x000008, "Wrong alignment on KuroSceneItemMoveComponent_AddRotationStep");
 static_assert(sizeof(KuroSceneItemMoveComponent_AddRotationStep) == 0x000030, "Wrong size on KuroSceneItemMoveComponent_AddRotationStep");
@@ -188,7 +188,7 @@ public:
 	struct FVector                                NextTarget;                                        // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                CurrentVelocity;                                   // 0x000C(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B40[0x3];                                     // 0x0019(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSceneItemMoveComponent_GetNextMoveTarget) == 0x000004, "Wrong alignment on KuroSceneItemMoveComponent_GetNextMoveTarget");
 static_assert(sizeof(KuroSceneItemMoveComponent_GetNextMoveTarget) == 0x00001C, "Wrong size on KuroSceneItemMoveComponent_GetNextMoveTarget");
@@ -204,7 +204,7 @@ public:
 	class AActor*                                 TargetActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsLoop;                                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B41[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSceneItemMoveComponent_InitRotationData) == 0x000008, "Wrong alignment on KuroSceneItemMoveComponent_InitRotationData");
 static_assert(sizeof(KuroSceneItemMoveComponent_InitRotationData) == 0x000010, "Wrong size on KuroSceneItemMoveComponent_InitRotationData");
@@ -243,7 +243,7 @@ public:
 	bool                                          Repeat;                                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Cycle;                                             // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          KeepLookAt;                                        // 0x000A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B42[0x5];                                     // 0x000B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 Speeds;                                            // 0x0010(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<float>                                 WaitTimes;                                         // 0x0020(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };

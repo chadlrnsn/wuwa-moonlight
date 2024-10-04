@@ -99,10 +99,10 @@ class UNiagaraEffectType* UNiagaraComponent::GetActualEffectType()
 // Function Niagara.NiagaraComponent.GetDataInterface
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UNiagaraDataInterface*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UNiagaraDataInterface* UNiagaraComponent::GetDataInterface(const class FString& Param_Name)
+class UNiagaraDataInterface* UNiagaraComponent::GetDataInterface(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -111,7 +111,7 @@ class UNiagaraDataInterface* UNiagaraComponent::GetDataInterface(const class FSt
 
 	Params::NiagaraComponent_GetDataInterface Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -24,10 +24,10 @@ namespace SDK
 
 // AnimBlueprintGeneratedClass ABP_PerformanceRole.ABP_PerformanceRole_C
 // 0x5E20 (0x61D0 - 0x03B0)
-class UABP_PerformanceRole_C : public UAnimInstance
+class UABP_PerformanceRole_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_319F[0x8];                                     // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A8[0x8];                                      // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x03B8(0x0138)()
 	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x04F0(0x0020)()
@@ -101,7 +101,7 @@ public:
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_55;                 // 0x1230(0x0028)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_54;                 // 0x1258(0x0028)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_53;                 // 0x1280(0x0028)()
-	uint8                                         Pad_31A0[0x8];                                     // 0x12A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12A8[0x8];                                     // 0x12A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_TransitionPoseEvaluator      AnimGraphNode_TransitionPoseEvaluator_13;          // 0x12B0(0x0140)()
 	struct FAnimNode_TransitionPoseEvaluator      AnimGraphNode_TransitionPoseEvaluator_12;          // 0x13F0(0x0140)()
 	struct FAnimNode_StateResult                  AnimGraphNode_CustomTransitionResult_6;            // 0x1530(0x0038)()
@@ -153,7 +153,7 @@ public:
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_44;                 // 0x2920(0x0028)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_43;                 // 0x2948(0x0028)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_42;                 // 0x2970(0x0028)()
-	uint8                                         Pad_31A1[0x8];                                     // 0x2998(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2998[0x8];                                     // 0x2998(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_TransitionPoseEvaluator      AnimGraphNode_TransitionPoseEvaluator_9;           // 0x29A0(0x0140)()
 	struct FAnimNode_TransitionPoseEvaluator      AnimGraphNode_TransitionPoseEvaluator_8;           // 0x2AE0(0x0140)()
 	struct FAnimNode_StateResult                  AnimGraphNode_CustomTransitionResult_4;            // 0x2C20(0x0038)()
@@ -194,7 +194,7 @@ public:
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_30;                 // 0x3950(0x0028)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_29;                 // 0x3978(0x0028)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_28;                 // 0x39A0(0x0028)()
-	uint8                                         Pad_31A2[0x8];                                     // 0x39C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39C8[0x8];                                     // 0x39C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_TransitionPoseEvaluator      AnimGraphNode_TransitionPoseEvaluator_5;           // 0x39D0(0x0140)()
 	struct FAnimNode_TransitionPoseEvaluator      AnimGraphNode_TransitionPoseEvaluator_4;           // 0x3B10(0x0140)()
 	struct FAnimNode_StateResult                  AnimGraphNode_CustomTransitionResult_2;            // 0x3C50(0x0038)()
@@ -290,26 +290,26 @@ public:
 	EPerformanceRoleState                         StateInternal;                                     // 0x60C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReLoop;                                            // 0x60C1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          bForceChange;                                      // 0x60C2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31A3[0x1];                                     // 0x60C3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60C3[0x1];                                     // 0x60C3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Delta_Time_X;                                      // 0x60C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         HeadAlpha;                                         // 0x60C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A4[0x4];                                     // 0x60CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60CC[0x4];                                     // 0x60CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnEffectBegin;                                     // 0x60D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	FMulticastInlineDelegateProperty_             OnEffectEnd;                                       // 0x60E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	float                                         PerformDelay;                                      // 0x60F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CurPerformTime;                                    // 0x60F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bForceChange_Perform;                              // 0x60F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31A5[0x3];                                     // 0x60F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60F9[0x3];                                     // 0x60F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              CacheViewportSize;                                 // 0x60FC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                LookAtWorld_Position;                              // 0x6104(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 Mesh;                                              // 0x6110(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                LookAtDirection;                                   // 0x6118(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsCreateRoleState;                                 // 0x6124(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31A6[0x3];                                     // 0x6125(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6125[0x3];                                     // 0x6125(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CreateRoleStartLocation;                           // 0x6128(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CreateRoleEndLocation;                             // 0x6134(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CreateRoleMoveAllTime;                             // 0x6140(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A7[0x4];                                     // 0x6144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6144[0x4];                                     // 0x6144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsUiSceneRoleActor_C*                  Actor;                                             // 0x6148(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CreateRoleMoveCurrentTime;                         // 0x6150(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CreateRoleStartRotation;                           // 0x6154(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
@@ -323,15 +323,15 @@ public:
 	bool                                          InSkillRotate;                                     // 0x618B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          InSkillEndRotate;                                  // 0x618C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          TempRotate;                                        // 0x618D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31A8[0x2];                                     // 0x618E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_618E[0x2];                                     // 0x618E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSPerformanceRoleInfo                  PerformanceRoleInfo;                               // 0x6190(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         BlinkAlpha;                                        // 0x6198(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          InBlinking;                                        // 0x619C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31A9[0x3];                                     // 0x619D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_619D[0x3];                                     // 0x619D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         BlinkEndTime;                                      // 0x61A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ______;                                            // 0x61A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Dn_______;                                         // 0x61A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31AA[0x4];                                     // 0x61AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_61AC[0x4];                                     // 0x61AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<EPerformanceRoleState>                 SameStateArray01;                                  // 0x61B0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          False;                                             // 0x61C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          DirectEnterLoop;                                   // 0x61C1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
@@ -424,7 +424,7 @@ public:
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PerformanceRole_AnimGraphNode_TransitionResult_1076956541FC74BF7A3047BF3518CA89();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PerformanceRole_AnimGraphNode_TransitionResult_C60CCB8046FAB6F0C07D51B6B238E4BA();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PerformanceRole_AnimGraphNode_TransitionResult_7A87E8194AFB02D1564F408592A3BAE7();
-	void SetState(EPerformanceRoleState State, bool Param_ReLoop, bool Param_ReLoopFromLoopToStart, bool WaitLaseStateEnd);
+	void SetState(EPerformanceRoleState State, bool ReLoop_0, bool ReLoopFromLoopToStart_0, bool WaitLaseStateEnd);
 	float GetHeadApha();
 	void UpdateHeadRotator();
 	void SyncAnimInstance(class UABP_PerformanceRole_C* SourceAnimInstance);
@@ -434,14 +434,14 @@ public:
 	void DebugLine(const struct FVector& LineStart, const struct FVector& LineEnd, const struct FLinearColor& LineColor);
 	void UpdateCreateRoleLocation();
 	void ClearCreateRoleState();
-	void GetIsLooping(bool* Param_IsLooping);
+	void GetIsLooping(bool* IsLooping_0);
 	void SkillRotate();
 	void UpdateBlinkInfo();
-	bool Is_Same_State(EPerformanceRoleState NewState, const EPerformanceRoleState& Param_StateInternal);
+	bool Is_Same_State(EPerformanceRoleState NewState, const EPerformanceRoleState& StateInternal_0);
 	void Set_Current_State(EPerformanceRoleState State);
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
-	void BasePose(struct FPoseLink* Param_BasePose);
-	void PostProcessPose(const struct FPoseLink& InPose, struct FPoseLink* Param_PostProcessPose);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void BasePose(struct FPoseLink* BasePose_0);
+	void PostProcessPose(const struct FPoseLink& InPose, struct FPoseLink* PostProcessPose_0);
 
 public:
 	static class UClass* StaticClass()

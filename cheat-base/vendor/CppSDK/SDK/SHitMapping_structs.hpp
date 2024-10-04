@@ -22,7 +22,7 @@ struct FSHitMapping final
 {
 public:
 	int32                                         ID_2_9EF5C6E14C5D4265AF775BAFFE88C075;             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3139[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<EHitAnim>                              __h_7_863BA6364A352F1602BB8193FCE02157;            // 0x0008(0x0010)(Edit, BlueprintVisible)
 	class FString                                 ___11_2A5388E94C1111570A398ABF9EA38FE5;            // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 };

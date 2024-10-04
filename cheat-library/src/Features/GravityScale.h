@@ -41,8 +41,9 @@ inline void GravityScale::DrawMenuItems()
 
 inline void GravityScale::Run()
 {
-	SDK::UPawnMovementComponent* PawnMovement = AcknowledgedPawn->GetMovementComponent();
-	SDK::UCharacterMovementComponent* Movement = static_cast<SDK::UCharacterMovementComponent*>(PawnMovement);
+	if (!AcknowledgedPawn) return;
+	if (!PlayerController || !PlayerController->Character) return;
+	SDK::UCharacterMovementComponent* Movement = PlayerController->Character->CharacterMovement;
 
 	if (bEnable && Movement)
 	{
@@ -56,5 +57,4 @@ inline void GravityScale::Run()
 		bOnce = true;
 	}
 }
-
 inline GravityScale gravityScale;

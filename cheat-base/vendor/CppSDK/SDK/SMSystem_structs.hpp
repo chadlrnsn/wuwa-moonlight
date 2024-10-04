@@ -97,10 +97,10 @@ struct FSMExposedFunctionHandler final
 public:
 	class FName                                   BoundFunction;                                     // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESMExposedFunctionExecutionType               ExecutionType;                                     // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E3F[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UFunction*                              Function;                                          // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UObject*                                OwnerObject;                                       // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E40[0x8];                                     // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_20[0x8];                                       // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMExposedFunctionHandler) == 0x000008, "Wrong alignment on FSMExposedFunctionHandler");
 static_assert(sizeof(FSMExposedFunctionHandler) == 0x000028, "Wrong size on FSMExposedFunctionHandler");
@@ -114,7 +114,7 @@ static_assert(offsetof(FSMExposedFunctionHandler, OwnerObject) == 0x000018, "Mem
 struct FSMNode_Base
 {
 public:
-	uint8                                         Pad_1E41[0x8];                                     // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSMExposedFunctionHandler>      TransitionInitializedGraphEvaluators;              // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FSMExposedFunctionHandler>      TransitionShutdownGraphEvaluators;                 // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FSMExposedFunctionHandler>      OnRootStateMachineStartedGraphEvaluator;           // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
@@ -122,19 +122,19 @@ public:
 	float                                         TimeInState;                                       // 0x0048(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsInEndState;                                     // 0x004C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHasUpdated;                                       // 0x004D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E42[0x2];                                     // 0x004E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4E[0x2];                                       // 0x004E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         DuplicateId;                                       // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                  Guid;                                              // 0x0054(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FGuid                                  OwnerGuid;                                         // 0x0064(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FGuid                                  PathGuid;                                          // 0x0074(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E43[0xC];                                     // 0x0084(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_84[0xC];                                       // 0x0084(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 NodeName;                                          // 0x0090(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class FName                                   TemplateName;                                      // 0x00A0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E44[0x4];                                     // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USMInstance*                            OwningInstance;                                    // 0x00B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class USMNodeInstance*                        NodeInstance;                                      // 0x00B8(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UClass*                                 NodeInstanceClass;                                 // 0x00C0(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E45[0x8];                                     // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMNode_Base) == 0x000008, "Wrong alignment on FSMNode_Base");
 static_assert(sizeof(FSMNode_Base) == 0x0000D0, "Wrong size on FSMNode_Base");
@@ -166,7 +166,7 @@ public:
 	uint8                                         bDisableTickTransitionEvaluation : 1;              // 0x00D0(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bStayActiveOnStateChange : 1;                      // 0x00D0(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bAllowParallelReentry : 1;                         // 0x00D0(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1E46[0x4F];                                    // 0x00D1(0x004F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D1[0x4F];                                      // 0x00D1(0x004F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMState_Base) == 0x000008, "Wrong alignment on FSMState_Base");
 static_assert(sizeof(FSMState_Base) == 0x000120, "Wrong size on FSMState_Base");
@@ -176,7 +176,7 @@ static_assert(sizeof(FSMState_Base) == 0x000120, "Wrong size on FSMState_Base");
 struct FSMInfo_Base
 {
 public:
-	uint8                                         Pad_1E47[0x8];                                     // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 NodeName;                                          // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                  Guid;                                              // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                  OwnerGuid;                                         // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -201,9 +201,9 @@ public:
 	struct FGuid                                  FromStateGuid;                                     // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                  ToStateGuid;                                       // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Priority;                                          // 0x0080(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E48[0x4];                                     // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDateTime                              LastNetworkTimestamp;                              // 0x0088(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E49[0x8];                                     // 0x0090(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_90[0x8];                                       // 0x0090(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMTransitionInfo) == 0x000008, "Wrong alignment on FSMTransitionInfo");
 static_assert(sizeof(FSMTransitionInfo) == 0x000098, "Wrong size on FSMTransitionInfo");
@@ -219,7 +219,7 @@ struct FSMStateInfo final : public FSMInfo_Base
 public:
 	TArray<struct FSMTransitionInfo>              OutgoingTransitions;                               // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          bIsEndState;                                       // 0x0070(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E4A[0xF];                                     // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMStateInfo) == 0x000008, "Wrong alignment on FSMStateInfo");
 static_assert(sizeof(FSMStateInfo) == 0x000080, "Wrong size on FSMStateInfo");
@@ -234,11 +234,11 @@ public:
 	uint8                                         bCanEnterTransition : 1;                           // 0x0120(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bCanEvaluate : 1;                                  // 0x0120(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bEvalWithTransitions : 1;                          // 0x0120(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1E4B[0x7];                                     // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSMExposedFunctionHandler>      CanEnterConduitGraphEvaluator;                     // 0x0128(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FSMExposedFunctionHandler>      ConduitEnteredGraphEvaluator;                      // 0x0138(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	ESMConditionalEvaluationType                  ConditionalEvaluationType;                         // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E4C[0x7];                                     // 0x0149(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_149[0x7];                                      // 0x0149(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMConduit) == 0x000008, "Wrong alignment on FSMConduit");
 static_assert(sizeof(FSMConduit) == 0x000150, "Wrong size on FSMConduit");
@@ -264,7 +264,7 @@ static_assert(offsetof(FSMReferenceContainer, Reference) == 0x000010, "Member 'F
 struct FSMDebugStateMachine final
 {
 public:
-	uint8                                         Pad_1E4D[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMDebugStateMachine) == 0x000001, "Wrong alignment on FSMDebugStateMachine");
 static_assert(sizeof(FSMDebugStateMachine) == 0x000001, "Wrong size on FSMDebugStateMachine");
@@ -292,7 +292,7 @@ struct FSMNodeDescription final
 {
 public:
 	class FName                                   Name;                                              // 0x0000(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E4E[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   Category;                                          // 0x0010(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	class FText                                   Description;                                       // 0x0028(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
@@ -328,18 +328,18 @@ public:
 	bool                                          bAllowIndependentTick;                             // 0x0123(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCallReferenceTickOnManualUpdate;                  // 0x0124(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bWaitForEndState : 1;                              // 0x0125(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1E4F[0x2];                                     // 0x0126(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_126[0x2];                                      // 0x0126(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSMExposedFunctionHandler>      BeginStateGraphEvaluator;                          // 0x0128(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FSMExposedFunctionHandler>      UpdateStateGraphEvaluator;                         // 0x0138(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FSMExposedFunctionHandler>      EndStateGraphEvaluator;                            // 0x0148(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TScriptInterface<class ISMStateMachineNetworkedInterface> NetworkedInterface;                                // 0x0158(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E50[0xF0];                                    // 0x0168(0x00F0)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_168[0xF0];                                     // 0x0168(0x00F0)(Fixing Size After Last Property [ Dumper-7 ])
 	class UClass*                                 ReferencedStateMachineClass;                       // 0x0258(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class FName                                   ReferencedTemplateName;                            // 0x0260(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class FName                                   DynamicStateMachineReferenceVariable;              // 0x026C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class USMInstance*                            ReferencedStateMachine;                            // 0x0278(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class USMInstance*                            IsReferencedByInstance;                            // 0x0280(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1E51[0x10];                                    // 0x0288(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_288[0x10];                                     // 0x0288(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMStateMachine) == 0x000008, "Wrong alignment on FSMStateMachine");
 static_assert(sizeof(FSMStateMachine) == 0x000298, "Wrong size on FSMStateMachine");
@@ -363,7 +363,7 @@ static_assert(offsetof(FSMStateMachine, IsReferencedByInstance) == 0x000280, "Me
 struct FSMTransaction_Base
 {
 public:
-	uint8                                         Pad_1E52[0x1];                                     // 0x0000(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	ESMTransactionType                            TransactionType;                                   // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bOriginatedFromServer : 1;                         // 0x0002(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 };
@@ -376,7 +376,7 @@ static_assert(offsetof(FSMTransaction_Base, TransactionType) == 0x000001, "Membe
 struct FSMFullSyncStateTransaction final : public FSMTransaction_Base
 {
 public:
-	uint8                                         Pad_1E53[0x1];                                     // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGuid                                  BaseGuid;                                          // 0x0004(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TimeInState;                                       // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -390,11 +390,11 @@ static_assert(offsetof(FSMFullSyncStateTransaction, TimeInState) == 0x000014, "M
 struct FSMFullSyncTransaction final : public FSMTransaction_Base
 {
 public:
-	uint8                                         Pad_1E54[0x5];                                     // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3[0x5];                                        // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSMFullSyncStateTransaction>    ActiveStates;                                      // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	uint8                                         bHasStarted : 1;                                   // 0x0018(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bFromUserLoad : 1;                                 // 0x0018(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1E55[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMFullSyncTransaction) == 0x000008, "Wrong alignment on FSMFullSyncTransaction");
 static_assert(sizeof(FSMFullSyncTransaction) == 0x000020, "Wrong size on FSMFullSyncTransaction");
@@ -405,12 +405,12 @@ static_assert(offsetof(FSMFullSyncTransaction, ActiveStates) == 0x000008, "Membe
 struct FSMActivateStateTransaction final : public FSMTransaction_Base
 {
 public:
-	uint8                                         Pad_1E56[0x1];                                     // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGuid                                  BaseGuid;                                          // 0x0004(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TimeInState;                                       // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bIsActive : 1;                                     // 0x0018(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bSetAllParents : 1;                                // 0x0018(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1E57[0x3];                                     // 0x0019(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMActivateStateTransaction) == 0x000004, "Wrong alignment on FSMActivateStateTransaction");
 static_assert(sizeof(FSMActivateStateTransaction) == 0x00001C, "Wrong size on FSMActivateStateTransaction");
@@ -422,13 +422,13 @@ static_assert(offsetof(FSMActivateStateTransaction, TimeInState) == 0x000014, "M
 struct FSMTransitionTransaction final : public FSMTransaction_Base
 {
 public:
-	uint8                                         Pad_1E58[0x1];                                     // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGuid                                  BaseGuid;                                          // 0x0004(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E59[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FGuid>                          AdditionalGuids;                                   // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FDateTime                              Timestamp;                                         // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ActiveTime;                                        // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E5A[0x4];                                     // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMTransitionTransaction) == 0x000008, "Wrong alignment on FSMTransitionTransaction");
 static_assert(sizeof(FSMTransitionTransaction) == 0x000038, "Wrong size on FSMTransitionTransaction");
@@ -442,7 +442,7 @@ static_assert(offsetof(FSMTransitionTransaction, ActiveTime) == 0x000030, "Membe
 struct FSMInitializeTransaction final : public FSMTransaction_Base
 {
 public:
-	uint8                                         Pad_1E5B[0x5];                                     // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3[0x5];                                        // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                Context;                                           // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSMInitializeTransaction) == 0x000008, "Wrong alignment on FSMInitializeTransaction");
@@ -469,11 +469,11 @@ public:
 	uint8                                         bCanEvalWithStartState : 1;                        // 0x0114(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bAlwaysFalse : 1;                                  // 0x0115(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bFromAnyState : 1;                                 // 0x0115(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1E5C[0x2];                                     // 0x0116(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_116[0x2];                                      // 0x0116(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGuid                                  FromGuid;                                          // 0x0118(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                  ToGuid;                                            // 0x0128(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESMConditionalEvaluationType                  ConditionalEvaluationType;                         // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E5D[0x2F];                                    // 0x0139(0x002F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_139[0x2F];                                     // 0x0139(0x002F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSMTransition) == 0x000008, "Wrong alignment on FSMTransition");
 static_assert(sizeof(FSMTransition) == 0x000168, "Wrong size on FSMTransition");

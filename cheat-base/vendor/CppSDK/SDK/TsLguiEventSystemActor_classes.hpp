@@ -29,15 +29,15 @@ public:
 	bool                                          NavigationEnable;                                  // 0x02D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	bool IsPointerEventDataLineTrace(class ULGUIPointerEventData* PointerEventData);
-	class ULGUIPointerEventData* GetPointerEventData(float PointerId, bool CreateIfNotExist);
-	class UUIItem* GetNowHitComponent();
-	void InputTouchMove(int32 TouchId, const struct FVector& TouchPointPosition);
-	void InputTouchTrigger(bool TouchPress, int32 TouchId, const struct FVector& TouchPointPosition);
-	void InputScroll(float AxisValue);
-	void InputTriggerForNavigation(bool TriggerPress);
-	void InputNavigation(ELGUINavigationDirection Direction, bool PressOrRelease, bool ForceNavigation);
 	void InputTrigger(bool TriggerPress, EMouseButtonType MouseButtonType);
+	void InputNavigation(ELGUINavigationDirection Direction, bool PressOrRelease, bool ForceNavigation);
+	void InputTriggerForNavigation(bool TriggerPress);
+	void InputScroll(float AxisValue);
+	void InputTouchTrigger(bool TouchPress, int32 TouchId, const struct FVector& TouchPointPosition);
+	void InputTouchMove(int32 TouchId, const struct FVector& TouchPointPosition);
+	class UUIItem* GetNowHitComponent();
+	class ULGUIPointerEventData* GetPointerEventData(float PointerId, bool CreateIfNotExist);
+	bool IsPointerEventDataLineTrace(class ULGUIPointerEventData* PointerEventData);
 
 public:
 	static class UClass* StaticClass()

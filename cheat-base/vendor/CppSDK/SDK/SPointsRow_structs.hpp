@@ -22,7 +22,7 @@ struct FSPointsRow final
 {
 public:
 	float                                         X_8_573075694D39CE6F764D5F888C6C003F;              // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1CBE[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FVector>                        PointsRow_3_844AA949457F26713A2D799E011ED094;      // 0x0008(0x0010)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSPointsRow) == 0x000008, "Wrong alignment on FSPointsRow");

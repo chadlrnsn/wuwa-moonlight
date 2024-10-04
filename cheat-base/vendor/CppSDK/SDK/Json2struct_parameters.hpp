@@ -24,7 +24,7 @@ public:
 	class UStruct*                                Out;                                               // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Json;                                              // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EJson2structParseResult                       ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_108A[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(Json2structBPLibrary_Json2structBP) == 0x000008, "Wrong alignment on Json2structBPLibrary_Json2structBP");
 static_assert(sizeof(Json2structBPLibrary_Json2structBP) == 0x000020, "Wrong size on Json2structBPLibrary_Json2structBP");
@@ -41,7 +41,7 @@ public:
 	struct FJson2struct_filter                    Filter;                                            // 0x0008(0x0050)(Parm, NativeAccessSpecifierPublic)
 	class FString                                 Json;                                              // 0x0058(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EJson2structParseResult                       ReturnValue;                                       // 0x0068(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_108B[0x7];                                     // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(Json2structBPLibrary_WriteStructBP) == 0x000008, "Wrong alignment on Json2structBPLibrary_WriteStructBP");
 static_assert(sizeof(Json2structBPLibrary_WriteStructBP) == 0x000070, "Wrong size on Json2structBPLibrary_WriteStructBP");

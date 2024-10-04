@@ -23,7 +23,7 @@ struct GooglePADFunctionLibrary_CancelDownload final
 public:
 	TArray<class FString>                         AssetPacks;                                        // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	EGooglePADErrorCode                           ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2376[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GooglePADFunctionLibrary_CancelDownload) == 0x000008, "Wrong alignment on GooglePADFunctionLibrary_CancelDownload");
 static_assert(sizeof(GooglePADFunctionLibrary_CancelDownload) == 0x000018, "Wrong size on GooglePADFunctionLibrary_CancelDownload");
@@ -35,14 +35,14 @@ static_assert(offsetof(GooglePADFunctionLibrary_CancelDownload, ReturnValue) == 
 struct GooglePADFunctionLibrary_GetAssetPackLocation final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Location;                                          // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EGooglePADErrorCode                           ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2377[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GooglePADFunctionLibrary_GetAssetPackLocation) == 0x000008, "Wrong alignment on GooglePADFunctionLibrary_GetAssetPackLocation");
 static_assert(sizeof(GooglePADFunctionLibrary_GetAssetPackLocation) == 0x000018, "Wrong size on GooglePADFunctionLibrary_GetAssetPackLocation");
-static_assert(offsetof(GooglePADFunctionLibrary_GetAssetPackLocation, Param_Name) == 0x000000, "Member 'GooglePADFunctionLibrary_GetAssetPackLocation::Param_Name' has a wrong offset!");
+static_assert(offsetof(GooglePADFunctionLibrary_GetAssetPackLocation, Name_0) == 0x000000, "Member 'GooglePADFunctionLibrary_GetAssetPackLocation::Name_0' has a wrong offset!");
 static_assert(offsetof(GooglePADFunctionLibrary_GetAssetPackLocation, Location) == 0x000010, "Member 'GooglePADFunctionLibrary_GetAssetPackLocation::Location' has a wrong offset!");
 static_assert(offsetof(GooglePADFunctionLibrary_GetAssetPackLocation, ReturnValue) == 0x000014, "Member 'GooglePADFunctionLibrary_GetAssetPackLocation::ReturnValue' has a wrong offset!");
 
@@ -52,7 +52,7 @@ struct GooglePADFunctionLibrary_GetAssetsPath final
 {
 public:
 	int32                                         Location;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2378[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(GooglePADFunctionLibrary_GetAssetsPath) == 0x000008, "Wrong alignment on GooglePADFunctionLibrary_GetAssetsPath");
@@ -78,14 +78,14 @@ static_assert(offsetof(GooglePADFunctionLibrary_GetBytesDownloaded, ReturnValue)
 struct GooglePADFunctionLibrary_GetDownloadState final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         State;                                             // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EGooglePADErrorCode                           ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2379[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GooglePADFunctionLibrary_GetDownloadState) == 0x000008, "Wrong alignment on GooglePADFunctionLibrary_GetDownloadState");
 static_assert(sizeof(GooglePADFunctionLibrary_GetDownloadState) == 0x000018, "Wrong size on GooglePADFunctionLibrary_GetDownloadState");
-static_assert(offsetof(GooglePADFunctionLibrary_GetDownloadState, Param_Name) == 0x000000, "Member 'GooglePADFunctionLibrary_GetDownloadState::Param_Name' has a wrong offset!");
+static_assert(offsetof(GooglePADFunctionLibrary_GetDownloadState, Name_0) == 0x000000, "Member 'GooglePADFunctionLibrary_GetDownloadState::Name_0' has a wrong offset!");
 static_assert(offsetof(GooglePADFunctionLibrary_GetDownloadState, State) == 0x000010, "Member 'GooglePADFunctionLibrary_GetDownloadState::State' has a wrong offset!");
 static_assert(offsetof(GooglePADFunctionLibrary_GetDownloadState, ReturnValue) == 0x000014, "Member 'GooglePADFunctionLibrary_GetDownloadState::ReturnValue' has a wrong offset!");
 
@@ -96,7 +96,7 @@ struct GooglePADFunctionLibrary_GetDownloadStatus final
 public:
 	int32                                         State;                                             // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EGooglePADDownloadStatus                      ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_237A[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GooglePADFunctionLibrary_GetDownloadStatus) == 0x000004, "Wrong alignment on GooglePADFunctionLibrary_GetDownloadStatus");
 static_assert(sizeof(GooglePADFunctionLibrary_GetDownloadStatus) == 0x000008, "Wrong size on GooglePADFunctionLibrary_GetDownloadStatus");
@@ -123,7 +123,7 @@ struct GooglePADFunctionLibrary_GetStorageMethod final
 public:
 	int32                                         Location;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EGooglePADStorageMethod                       ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_237B[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GooglePADFunctionLibrary_GetStorageMethod) == 0x000004, "Wrong alignment on GooglePADFunctionLibrary_GetStorageMethod");
 static_assert(sizeof(GooglePADFunctionLibrary_GetStorageMethod) == 0x000008, "Wrong size on GooglePADFunctionLibrary_GetStorageMethod");
@@ -172,7 +172,7 @@ struct GooglePADFunctionLibrary_RequestDownload final
 public:
 	TArray<class FString>                         AssetPacks;                                        // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	EGooglePADErrorCode                           ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_237C[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GooglePADFunctionLibrary_RequestDownload) == 0x000008, "Wrong alignment on GooglePADFunctionLibrary_RequestDownload");
 static_assert(sizeof(GooglePADFunctionLibrary_RequestDownload) == 0x000018, "Wrong size on GooglePADFunctionLibrary_RequestDownload");
@@ -186,7 +186,7 @@ struct GooglePADFunctionLibrary_RequestInfo final
 public:
 	TArray<class FString>                         AssetPacks;                                        // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	EGooglePADErrorCode                           ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_237D[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GooglePADFunctionLibrary_RequestInfo) == 0x000008, "Wrong alignment on GooglePADFunctionLibrary_RequestInfo");
 static_assert(sizeof(GooglePADFunctionLibrary_RequestInfo) == 0x000018, "Wrong size on GooglePADFunctionLibrary_RequestInfo");
@@ -198,13 +198,13 @@ static_assert(offsetof(GooglePADFunctionLibrary_RequestInfo, ReturnValue) == 0x0
 struct GooglePADFunctionLibrary_RequestRemoval final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EGooglePADErrorCode                           ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_237E[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GooglePADFunctionLibrary_RequestRemoval) == 0x000008, "Wrong alignment on GooglePADFunctionLibrary_RequestRemoval");
 static_assert(sizeof(GooglePADFunctionLibrary_RequestRemoval) == 0x000018, "Wrong size on GooglePADFunctionLibrary_RequestRemoval");
-static_assert(offsetof(GooglePADFunctionLibrary_RequestRemoval, Param_Name) == 0x000000, "Member 'GooglePADFunctionLibrary_RequestRemoval::Param_Name' has a wrong offset!");
+static_assert(offsetof(GooglePADFunctionLibrary_RequestRemoval, Name_0) == 0x000000, "Member 'GooglePADFunctionLibrary_RequestRemoval::Name_0' has a wrong offset!");
 static_assert(offsetof(GooglePADFunctionLibrary_RequestRemoval, ReturnValue) == 0x000010, "Member 'GooglePADFunctionLibrary_RequestRemoval::ReturnValue' has a wrong offset!");
 
 // Function GooglePAD.GooglePADFunctionLibrary.ShowCellularDataConfirmation

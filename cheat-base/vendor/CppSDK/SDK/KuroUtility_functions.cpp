@@ -546,10 +546,10 @@ bool UKuroActorManager::IsPooledActor(const class AActor* Actor)
 // Function KuroUtility.KuroActorManager.RegisterActorSkipProperties
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UClass*                           Param_Class                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FPropertyPair>            Properties                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UKuroActorManager::RegisterActorSkipProperties(class UClass* Param_Class, const TArray<struct FPropertyPair>& Properties)
+void UKuroActorManager::RegisterActorSkipProperties(class UClass* Class_0, const TArray<struct FPropertyPair>& Properties)
 {
 	static class UFunction* Func = nullptr;
 
@@ -558,7 +558,7 @@ void UKuroActorManager::RegisterActorSkipProperties(class UClass* Param_Class, c
 
 	Params::KuroActorManager_RegisterActorSkipProperties Parms{};
 
-	Parms.Param_Class = Param_Class;
+	Parms.Class_0 = Class_0;
 	Parms.Properties = std::move(Properties);
 
 	auto Flgs = Func->FunctionFlags;
@@ -601,9 +601,9 @@ bool UKuroActorManager::ResetActorToDefault(class AActor* Actor)
 // Function KuroUtility.KuroActorManager.ResetClassPropertyCache
 // (Final, Native, Static, Public)
 // Parameters:
-// class UClass*                           Param_Class                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroActorManager::ResetClassPropertyCache(class UClass* Param_Class)
+void UKuroActorManager::ResetClassPropertyCache(class UClass* Class_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -612,7 +612,7 @@ void UKuroActorManager::ResetClassPropertyCache(class UClass* Param_Class)
 
 	Params::KuroActorManager_ResetClassPropertyCache Parms{};
 
-	Parms.Param_Class = Param_Class;
+	Parms.Class_0 = Class_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3159,10 +3159,10 @@ float UKuroStaticLibrary::GetCurCPUFrequency()
 // Function KuroUtility.KuroStaticLibrary.GetDefaultObject
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UClass*                           Param_Class                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UObject* UKuroStaticLibrary::GetDefaultObject(class UClass* Param_Class)
+class UObject* UKuroStaticLibrary::GetDefaultObject(class UClass* Class_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3171,7 +3171,7 @@ class UObject* UKuroStaticLibrary::GetDefaultObject(class UClass* Param_Class)
 
 	Params::KuroStaticLibrary_GetDefaultObject Parms{};
 
-	Parms.Param_Class = Param_Class;
+	Parms.Class_0 = Class_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3976,10 +3976,10 @@ int32 UKuroStaticLibrary::GetTotalMemoryGB()
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
 // TArray<class UMovieSceneTrack*>         Tracks                                                 (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// TSubclassOf<class UMovieSceneTrack>     Param_Class                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UMovieSceneTrack>     Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneTrack*                 ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMovieSceneTrack* UKuroStaticLibrary::GetTrackByClass(const TArray<class UMovieSceneTrack*>& Tracks, TSubclassOf<class UMovieSceneTrack> Param_Class)
+class UMovieSceneTrack* UKuroStaticLibrary::GetTrackByClass(const TArray<class UMovieSceneTrack*>& Tracks, TSubclassOf<class UMovieSceneTrack> Class_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3989,7 +3989,7 @@ class UMovieSceneTrack* UKuroStaticLibrary::GetTrackByClass(const TArray<class U
 	Params::KuroStaticLibrary_GetTrackByClass Parms{};
 
 	Parms.Tracks = std::move(Tracks);
-	Parms.Param_Class = Param_Class;
+	Parms.Class_0 = Class_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

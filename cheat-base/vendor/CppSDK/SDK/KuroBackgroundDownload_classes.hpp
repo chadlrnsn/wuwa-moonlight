@@ -24,7 +24,7 @@ public:
 	FMulticastInlineDelegateProperty_             AllCompleteDelegate;                               // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             ProgressDelegate;                                  // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             ProgressDelegateNew;                               // 0x0050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E04[0x8];                                     // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Start(const class FString& Suffix, const TArray<class FString>& Prefixes, const TArray<struct FKuroRequestDownloadInfo>& Targets, int32 InRetryCount, float InTimeout);

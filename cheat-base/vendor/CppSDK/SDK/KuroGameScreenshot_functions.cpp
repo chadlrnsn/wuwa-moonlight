@@ -228,7 +228,7 @@ bool UKuroGameScreenshotBPLibrary::IsPhotoLibraryAuthorized()
 // Function KuroGameScreenshot.KuroGameScreenshotBPLibrary.PrepareTakeScreenshot
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class UObject*                          Param_Outer                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Outer_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           InFilename                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                        MinCaptureRegion                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                        MaxCaptureRegion                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -237,7 +237,7 @@ bool UKuroGameScreenshotBPLibrary::IsPhotoLibraryAuthorized()
 // bool                                    SaveFile                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGameScreenshotTask*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UGameScreenshotTask* UKuroGameScreenshotBPLibrary::PrepareTakeScreenshot(class UObject* Param_Outer, const class FString& InFilename, const struct FVector2D& MinCaptureRegion, const struct FVector2D& MaxCaptureRegion, float ScreenshotResolutionX, float ScreenshotResolutionY, bool SaveFile)
+class UGameScreenshotTask* UKuroGameScreenshotBPLibrary::PrepareTakeScreenshot(class UObject* Outer_0, const class FString& InFilename, const struct FVector2D& MinCaptureRegion, const struct FVector2D& MaxCaptureRegion, float ScreenshotResolutionX, float ScreenshotResolutionY, bool SaveFile)
 {
 	static class UFunction* Func = nullptr;
 
@@ -246,7 +246,7 @@ class UGameScreenshotTask* UKuroGameScreenshotBPLibrary::PrepareTakeScreenshot(c
 
 	Params::KuroGameScreenshotBPLibrary_PrepareTakeScreenshot Parms{};
 
-	Parms.Param_Outer = Param_Outer;
+	Parms.Outer_0 = Outer_0;
 	Parms.InFilename = std::move(InFilename);
 	Parms.MinCaptureRegion = std::move(MinCaptureRegion);
 	Parms.MaxCaptureRegion = std::move(MaxCaptureRegion);

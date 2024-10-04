@@ -23,7 +23,7 @@ struct PD_StateMachineEffect_C_GetStateInfo final
 {
 public:
 	EEffectState                                  InputState;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D79[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSEffectStateInfo                      Ret;                                               // 0x0008(0x0150)(Parm, OutParm, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };

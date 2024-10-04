@@ -82,7 +82,7 @@ public:
 	struct FVector                                CustomVector01;                                    // 0x0024(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                CustomVector02;                                    // 0x0030(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMovementMode                                 MovementMode;                                      // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1815[0x7];                                     // 0x003D(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D[0x7];                                       // 0x003D(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FBaseRecord) == 0x000004, "Wrong alignment on FBaseRecord");
 static_assert(sizeof(FBaseRecord) == 0x000044, "Wrong size on FBaseRecord");
@@ -100,7 +100,7 @@ struct FDebugModifyRecord final
 public:
 	class FString                                 Context;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBaseRecord                            Record;                                            // 0x0010(0x0044)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1816[0x4];                                     // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FDebugModifyRecord) == 0x000008, "Wrong alignment on FDebugModifyRecord");
 static_assert(sizeof(FDebugModifyRecord) == 0x000058, "Wrong size on FDebugModifyRecord");
@@ -113,10 +113,10 @@ struct FOverlapActorRecord final
 {
 public:
 	ETriggerAreaType                              Area;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1817[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          EnterOverlap;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1818[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FOverlapActorRecord) == 0x000008, "Wrong alignment on FOverlapActorRecord");
 static_assert(sizeof(FOverlapActorRecord) == 0x000018, "Wrong size on FOverlapActorRecord");
@@ -130,7 +130,7 @@ struct FDebugTickGroupRecord final
 {
 public:
 	struct FBaseRecord                            Record;                                            // 0x0000(0x0044)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1819[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FDebugModifyRecord>             ModifyRecords;                                     // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FDebugTickGroupRecord) == 0x000008, "Wrong alignment on FDebugTickGroupRecord");
@@ -143,7 +143,7 @@ static_assert(offsetof(FDebugTickGroupRecord, ModifyRecords) == 0x000048, "Membe
 struct FSingleFrameDebugInfo final
 {
 public:
-	uint8                                         Pad_181A[0x8];                                     // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDebugTickGroupRecord                  TickStartRecord;                                   // 0x0008(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FDebugTickGroupRecord                  PositionTickEnd;                                   // 0x0060(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TMap<ETickingGroup, struct FDebugTickGroupRecord> TickGroupDebugPositionInfo;                        // 0x00B8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)

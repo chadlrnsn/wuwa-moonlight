@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SCameraModifier_Settings_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "SCameraModifier_Settings_structs.hpp"
 
 
 namespace SDK
@@ -27,7 +27,7 @@ public:
 	float                                         _e___4_C5AC925340D20321B902A9AC2BFB3294;           // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _____6_7765076E4F718E300481828BCA924171;           // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         S______12_2392BC1040C7E8D2A871E5838CA1AE01;        // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_313D[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CameraAttachSocket_18_6C5DA6F14E99C3E47A533BAC2B020FBD; // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	struct FSCameraModifier_Settings              D__Mn_9_0D23F3FF4B053EADB03E308C9B93B190;          // 0x0030(0x0118)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };

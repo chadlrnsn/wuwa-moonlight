@@ -23,12 +23,12 @@ namespace SDK
 class ABP_BaseNPC_C final : public ATsBaseCharacter_C
 {
 public:
-	uint8                                         Pad_31DB[0x7];                                     // 0x0771(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_771[0x7];                                      // 0x0771(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseNPC_C;                       // 0x0778(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UBoxComponent*                          HitCollision;                                      // 0x0780(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UNavigationInvokerComponent*            NavigationInvoker_0;                               // 0x0788(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsBeingImpacted;                                   // 0x0790(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31DC[0x3];                                     // 0x0791(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_791[0x3];                                      // 0x0791(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Direction;                                         // 0x0794(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Strength;                                          // 0x0798(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsBeingAttacked;                                   // 0x079C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)

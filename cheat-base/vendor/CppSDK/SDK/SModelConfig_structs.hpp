@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "EBodyType_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "EBodyType_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "SNiagaraParam_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "SNiagaraParam_structs.hpp"
 #include "ESceneInteractionEffect_structs.hpp"
 
 
@@ -27,7 +27,7 @@ struct FSModelConfig final
 {
 public:
 	int32                                         ID_3_6A014D4F486091DDAF9D4D9D32B8C4FF;             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13C9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftClassPtr<class UClass>                   ___164_769F290B4EFC164B65A1599B535666B6;           // 0x0008(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TSoftObjectPtr<class USkeletalMesh>           Q_S_168_BEB7464046E518BA05D4C799C3CC4633;          // 0x0038(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TArray<TSoftObjectPtr<class USkeletalMesh>>   PQ_S_196_D82578F34F1E4A691036E99B5FB78226;         // 0x0068(0x0010)(Edit, BlueprintVisible)
@@ -46,13 +46,13 @@ public:
 	TMap<struct FGameplayTag, EKuroSceneInteractionState> _o__i___h_144_70E5A0E44592B5CC8C81789E5CBAF975;    // 0x02F8(0x0050)(Edit, BlueprintVisible)
 	TMap<struct FGameplayTag, ESceneInteractionEffect> _o__iyH_h_160_269D1C9D465A43640E572894290F2EA9;    // 0x0348(0x0050)(Edit, BlueprintVisible)
 	bool                                          IsHiddenWithCamera_180_E4B768F74ED8490D4EF4F7AC52E7AF3E; // 0x0398(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_13CA[0x3];                                     // 0x0399(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_399[0x3];                                      // 0x0399(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ModelAlpha_184_38E22542455C4F4C5E1EDE82183BF375;   // 0x039C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         _WZO__188_E8CB9C9A43F04B2BF247FD9E233CBE80;        // 0x03A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _____G___192_4AFA30A74F0864E1CEE43B930EDB3B36;     // 0x03A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EBodyType                                     S____199_997203F4416F68DB877D96A595F2AC51;         // 0x03A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _____201_B2B40294482FF0B8641BE98CCAA2E7BC;         // 0x03A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_13CB[0x6];                                     // 0x03AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3AA[0x6];                                      // 0x03AA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UDataTable>              YH_bh_204_A2EA47D943B31ED94A4BA0B89DECD92C;        // 0x03B0(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FSModelConfig) == 0x000008, "Wrong alignment on FSModelConfig");

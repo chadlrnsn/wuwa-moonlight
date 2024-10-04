@@ -23,7 +23,7 @@ class UTsAnimNotifyDestroySpecBullet_C final : public UKuroAnimNotify
 {
 public:
 	bool                                          ___PP9;                                            // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3B7C[0x7];                                     // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  _r____gL__;                                        // 0x0050(0x0020)(Edit, BlueprintVisible)
 	class FName                                   bulletName;                                        // 0x0070(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

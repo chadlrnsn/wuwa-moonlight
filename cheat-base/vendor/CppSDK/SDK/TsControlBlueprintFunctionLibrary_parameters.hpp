@@ -22,7 +22,7 @@ struct TsControlBlueprintFunctionLibrary_C_GetMoveVectorCache final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2C14[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -38,7 +38,7 @@ struct TsControlBlueprintFunctionLibrary_C_GetMoveDirectionCache final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2C15[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -54,7 +54,7 @@ struct TsControlBlueprintFunctionLibrary_C_GetWorldMoveDirectionCache final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2C16[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -70,7 +70,7 @@ struct TsControlBlueprintFunctionLibrary_C_GetMoveVector final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2C17[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -86,7 +86,7 @@ struct TsControlBlueprintFunctionLibrary_C_GetMoveDirection final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2C18[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -106,7 +106,7 @@ public:
 	bool                                          bLooping;                                          // 0x0014(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          bIgnoreTimeDilation;                               // 0x0015(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          bPlayWhilePaused;                                  // 0x0016(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2C19[0x1];                                     // 0x0017(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17[0x1];                                       // 0x0017(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(TsControlBlueprintFunctionLibrary_C_PlayKuroForceFeedback) == 0x000008, "Wrong alignment on TsControlBlueprintFunctionLibrary_C_PlayKuroForceFeedback");
@@ -125,7 +125,7 @@ struct TsControlBlueprintFunctionLibrary_C_StopKuroForceFeedback final
 public:
 	class UKuroForceFeedbackEffect*               ForceFeedbackEffect1;                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   Tag1;                                              // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2C1A[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(TsControlBlueprintFunctionLibrary_C_StopKuroForceFeedback) == 0x000008, "Wrong alignment on TsControlBlueprintFunctionLibrary_C_StopKuroForceFeedback");
@@ -140,7 +140,7 @@ struct TsControlBlueprintFunctionLibrary_C_BpInputReceiveEndPlay final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2C1B[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(TsControlBlueprintFunctionLibrary_C_BpInputReceiveEndPlay) == 0x000008, "Wrong alignment on TsControlBlueprintFunctionLibrary_C_BpInputReceiveEndPlay");
@@ -155,7 +155,7 @@ struct TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationPitch final
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          Value;                                             // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2C1C[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationPitch) == 0x000008, "Wrong alignment on TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationPitch");
@@ -171,7 +171,7 @@ struct TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationYaw final
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          Value;                                             // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2C1D[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationYaw) == 0x000008, "Wrong alignment on TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationYaw");
@@ -187,7 +187,7 @@ struct TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll final
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          Value;                                             // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2C1E[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll) == 0x000008, "Wrong alignment on TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll");
@@ -195,6 +195,22 @@ static_assert(sizeof(TsControlBlueprintFunctionLibrary_C_SetUseControllerRotatio
 static_assert(offsetof(TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll, EntityId) == 0x000000, "Member 'TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll::EntityId' has a wrong offset!");
 static_assert(offsetof(TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll, Value) == 0x000004, "Member 'TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll::Value' has a wrong offset!");
 static_assert(offsetof(TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll, __WorldContext) == 0x000008, "Member 'TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll::__WorldContext' has a wrong offset!");
+
+// Function TsControlBlueprintFunctionLibrary.TsControlBlueprintFunctionLibrary_C.SetBpInputComponent
+// 0x0018 (0x0018 - 0x0000)
+struct TsControlBlueprintFunctionLibrary_C_SetBpInputComponent final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBP_InputBase_C*                        bpInputComp;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsControlBlueprintFunctionLibrary_C_SetBpInputComponent) == 0x000008, "Wrong alignment on TsControlBlueprintFunctionLibrary_C_SetBpInputComponent");
+static_assert(sizeof(TsControlBlueprintFunctionLibrary_C_SetBpInputComponent) == 0x000018, "Wrong size on TsControlBlueprintFunctionLibrary_C_SetBpInputComponent");
+static_assert(offsetof(TsControlBlueprintFunctionLibrary_C_SetBpInputComponent, EntityId) == 0x000000, "Member 'TsControlBlueprintFunctionLibrary_C_SetBpInputComponent::EntityId' has a wrong offset!");
+static_assert(offsetof(TsControlBlueprintFunctionLibrary_C_SetBpInputComponent, bpInputComp) == 0x000008, "Member 'TsControlBlueprintFunctionLibrary_C_SetBpInputComponent::bpInputComp' has a wrong offset!");
+static_assert(offsetof(TsControlBlueprintFunctionLibrary_C_SetBpInputComponent, __WorldContext) == 0x000010, "Member 'TsControlBlueprintFunctionLibrary_C_SetBpInputComponent::__WorldContext' has a wrong offset!");
 
 }
 

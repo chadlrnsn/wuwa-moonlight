@@ -24,7 +24,7 @@ struct BPL_BulletPreview_C_ShowBulletPreview final
 public:
 	class FString                                 P9h__;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class FName                                   P9ID;                                              // 0x0010(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D58[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 ___;                                               // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -32,7 +32,7 @@ public:
 	struct FSReBulletDataMain                     P9MnL;                                             // 0x0040(0x0728)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class UDataTable*                             CallFunc_GetDataTableOnEditor_Return;              // 0x0768(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsEditor_ReturnValue;                     // 0x0770(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D59[0xF];                                     // 0x0771(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_771[0xF];                                      // 0x0771(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_GetTransform_ReturnValue;                 // 0x0780(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
 	class ABP_ActorBulletPreview_C*               CallFunc_SpawnActorFromClass_ReturnValue;          // 0x07B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSReBulletDataMain                     CallFunc_GetDataTableRowFromName_OutRow;           // 0x07B8(0x0728)(HasGetValueTypeHash)

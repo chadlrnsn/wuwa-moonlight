@@ -61,9 +61,9 @@ void UABP_Common_NPC_Seq_C::BlueprintUpdateAnimation(float DeltaTimeX)
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        Param_AnimGraph                                        (Parm, OutParm, NoDestructor)
+// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
-void UABP_Common_NPC_Seq_C::AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* Param_AnimGraph)
+void UABP_Common_NPC_Seq_C::AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* AnimGraph_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -76,8 +76,8 @@ void UABP_Common_NPC_Seq_C::AnimGraph(const struct FPoseLink& InPose, struct FPo
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_AnimGraph != nullptr)
-		*Param_AnimGraph = std::move(Parms.Param_AnimGraph);
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 }

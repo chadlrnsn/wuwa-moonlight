@@ -29,7 +29,7 @@ public:
 	static int32 GetCurrentWeaponHangState(int32 EntityId, class UObject* __WorldContext);
 	static void ChangeWeapon(int32 EntityId, const struct FSWeaponSocketItem& WeaponSocket, class UObject* __WorldContext);
 	static float GetRandomStandActionIndex(int32 EntityId, class UObject* __WorldContext);
-	static void HideWeapon(int32 EntityId, bool Hide, int32 Param_Index, bool HideEffect, bool UseHighPriority, class UObject* __WorldContext);
+	static void HideWeapon(int32 EntityId, bool Hide, int32 Index_0, bool HideEffect, bool UseHighPriority, class UObject* __WorldContext);
 	static void HideHulu(int32 EntityId, bool bHidden, class UObject* __WorldContext);
 	static void ChangeMeshAnim(int32 EntityId, class USkeletalMesh* MeshClass, class UClass* AnimBlueprintClass, class UObject* __WorldContext);
 	static float GetDegMovementSlope(int32 EntityId, class UObject* __WorldContext);

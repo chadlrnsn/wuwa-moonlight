@@ -23,7 +23,7 @@ struct AudioMaterialBlueprint_GetMaterialID final
 public:
 	struct FVector                                Position;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D1D[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(AudioMaterialBlueprint_GetMaterialID) == 0x000004, "Wrong alignment on AudioMaterialBlueprint_GetMaterialID");
 static_assert(sizeof(AudioMaterialBlueprint_GetMaterialID) == 0x000010, "Wrong size on AudioMaterialBlueprint_GetMaterialID");

@@ -28,7 +28,7 @@ public:
 	int32                                         UserIndex;                                         // 0x0228(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapAutoPinType                         AutoPinType;                                       // 0x022C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bShouldPinActor;                                   // 0x022D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23E6[0x2];                                     // 0x022E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_22E[0x2];                                      // 0x022E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UMagicLeapARPinSaveGame>    PinDataClass;                                      // 0x0230(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSet<EMagicLeapARPinType>                     SearchPinTypes;                                    // 0x0238(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class USphereComponent*                       SearchVolume;                                      // 0x0288(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -38,12 +38,12 @@ public:
 	struct FGuid                                  PinnedCFUID;                                       // 0x02C0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class USceneComponent*                        PinnedSceneComponent;                              // 0x02D0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMagicLeapARPinSaveGame*                PinData;                                           // 0x02D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_23E7[0xF0];                                    // 0x02E0(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2E0[0xF0];                                     // 0x02E0(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool AttemptPinDataRestoration();
 	void AttemptPinDataRestorationAsync();
-	class UMagicLeapARPinSaveGame* GetPinData(TSubclassOf<class UMagicLeapARPinSaveGame> Param_PinDataClass);
+	class UMagicLeapARPinSaveGame* GetPinData(TSubclassOf<class UMagicLeapARPinSaveGame> PinDataClass_0);
 	void MagicLeapARPinDataLoadAttemptCompleted__DelegateSignature(bool bDataRestored);
 	void PersistentEntityPinLost__DelegateSignature();
 	void PersistentEntityPinned__DelegateSignature(bool bRestoredOrSynced);
@@ -133,7 +133,7 @@ class AMagicLeapARPinInfoActorBase : public AActor
 public:
 	struct FGuid                                  PinID;                                             // 0x02A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bVisibilityOverride;                               // 0x02B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23FA[0x7];                                     // 0x02B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B9[0x7];                                      // 0x02B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnUpdateARPinState();
@@ -159,9 +159,9 @@ class AMagicLeapARPinRenderer final : public AActor
 {
 public:
 	bool                                          bInfoActorsVisibilityOverride;                     // 0x02A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23FB[0x7];                                     // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A9[0x7];                                      // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<struct FGuid, class AMagicLeapARPinInfoActorBase*> AllInfoActors;                                     // 0x02B0(0x0050)(NativeAccessSpecifierPrivate)
-	uint8                                         Pad_23FC[0x8];                                     // 0x0300(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_300[0x8];                                      // 0x0300(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class AMagicLeapARPinInfoActorBase> ClassToSpawn;                                      // 0x0308(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
@@ -215,7 +215,7 @@ public:
 	struct FTransform                             ComponentWorldTransform;                           // 0x0040(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FTransform                             PinTransform;                                      // 0x0070(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bShouldPinActor;                                   // 0x00A0(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23FD[0xF];                                     // 0x00A1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A1[0xF];                                       // 0x00A1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

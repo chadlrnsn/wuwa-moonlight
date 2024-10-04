@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "EFightCameraType_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -24,7 +24,7 @@ struct FSCamera_Setting final
 {
 public:
 	EFightCameraType                              Type_88_23ED783447D86D6D38C085B47B77A25A;          // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_317B[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           Tag_92_7ABDCAFE44668F3229C85DA930129F5F;           // 0x0004(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 	float                                         _____45_653D426740D8401BF0A1FF8AEAAB850F;          // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _____H__47_E189C1CC4C8FA9DF000D72BD417C0008;       // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -52,7 +52,7 @@ public:
 	bool                                          FocusCamera_85_4CA16B0D4BC8B5EAD654F695D7DE6D17;   // 0x0073(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	float                                         __Ol______105_45536CE74AE8D0B981087C94B5C16360;    // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _______c_107_B700466E4C6C0A240B5C03AEE8D974BD;     // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_317C[0x7];                                     // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 ______p_114_323F454C4034D22B749586A3CCE1DE3E;      // 0x0080(0x0010)(Edit, BlueprintVisible)
 	float                                         ______p_H__111_B430FA5D47B8DAD09C4B548959F91A9B;   // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ___4O__117_0FEFB431493E9B14417280A1D2BF5C77;       // 0x0094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

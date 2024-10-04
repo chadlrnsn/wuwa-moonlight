@@ -43,11 +43,11 @@ static_assert(offsetof(TsCharacterDebugComponent_C_ReceiveTick, DeltaSeconds) ==
 struct TsCharacterDebugComponent_C_ActivateDebugSpeed final
 {
 public:
-	bool                                          Param_Activate;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Activate_0;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(TsCharacterDebugComponent_C_ActivateDebugSpeed) == 0x000001, "Wrong alignment on TsCharacterDebugComponent_C_ActivateDebugSpeed");
 static_assert(sizeof(TsCharacterDebugComponent_C_ActivateDebugSpeed) == 0x000001, "Wrong size on TsCharacterDebugComponent_C_ActivateDebugSpeed");
-static_assert(offsetof(TsCharacterDebugComponent_C_ActivateDebugSpeed, Param_Activate) == 0x000000, "Member 'TsCharacterDebugComponent_C_ActivateDebugSpeed::Param_Activate' has a wrong offset!");
+static_assert(offsetof(TsCharacterDebugComponent_C_ActivateDebugSpeed, Activate_0) == 0x000000, "Member 'TsCharacterDebugComponent_C_ActivateDebugSpeed::Activate_0' has a wrong offset!");
 
 // Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.SetDebugRiseEnable
 // 0x0001 (0x0001 - 0x0000)

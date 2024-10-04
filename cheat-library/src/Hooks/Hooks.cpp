@@ -32,8 +32,6 @@ HMODULE WINAPI hkLoadLibraryW(LPCWSTR libFileName)
 		{
 #ifdef _DEBUG
 			std::wcout << "Blocked dll: " << dll << std::endl;
-#else
-			printf("Blocked anticheat dll: %s", dll);
 #endif
 			return nullptr;
 		}
@@ -113,11 +111,10 @@ void __fastcall hkProcessEvent(UObject* caller, UFunction* function, void* param
 
 	//printf("%s %s\n", caller->GetFullName().c_str(), function->GetFullName().c_str());
 
-	//if (config::multihit::enabled)
-	multihit.Call(caller, function, params, oProcessEvent);
+	if (config::multihit::enabled) multihit.Call(caller, function, params, oProcessEvent);
+	if (config::godmode::enabled) godmode.Call(caller, function, params, oProcessEvent);
 
-	//if (config::godmode::enabled)
-	godmode.Call(caller, function, params, oProcessEvent);
+	speedhack.Call(caller, function, params, oProcessEvent);
 
 	oProcessEvent(caller, function, params);
 }
@@ -160,9 +157,9 @@ void Hooks::InGame::ProcessEvent()
 void __fastcall hkPostRender(UGameViewportClient* viewport, UCanvas* canvas)
 {
 
-	if (canvas) {
-		//Utils::UE_RenderText(canvas, globals::Engine->SmallFont, L"sigma", { 10, 10 }, { 1,1 }, FLinearColor(1, 0, 0, 1));
-		//ESP(globals::Engine, globals::World, canvas);
+	if (canvas && Engine) {
+		Helper::UE_RenderText(canvas, Engine->SmallFont, L"sigma", { 10, 10 }, { 1,1 }, FLinearColor(1, 1, 1, 1));
+		if (config::esp::enable) esp.Render(canvas);
 	}
 
 	oPostRender(viewport, canvas);

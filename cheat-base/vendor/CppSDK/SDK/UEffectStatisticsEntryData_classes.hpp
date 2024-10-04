@@ -22,11 +22,11 @@ namespace SDK
 class UUEffectStatisticsEntryData_C final : public UObject
 {
 public:
-	class FString                                 Name_UEffectStatisticsEntryData_C;                 // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 Name_0;                                            // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	float                                         ExistingTime;                                      // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         DistanceToCamera;                                  // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Importance;                                        // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3160[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Author;                                            // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	int32                                         TickCount;                                         // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CheckType;                                         // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -46,7 +46,7 @@ public:
 };
 static_assert(alignof(UUEffectStatisticsEntryData_C) == 0x000008, "Wrong alignment on UUEffectStatisticsEntryData_C");
 static_assert(sizeof(UUEffectStatisticsEntryData_C) == 0x000080, "Wrong size on UUEffectStatisticsEntryData_C");
-static_assert(offsetof(UUEffectStatisticsEntryData_C, Name_UEffectStatisticsEntryData_C) == 0x000030, "Member 'UUEffectStatisticsEntryData_C::Name_UEffectStatisticsEntryData_C' has a wrong offset!");
+static_assert(offsetof(UUEffectStatisticsEntryData_C, Name_0) == 0x000030, "Member 'UUEffectStatisticsEntryData_C::Name_0' has a wrong offset!");
 static_assert(offsetof(UUEffectStatisticsEntryData_C, ExistingTime) == 0x000040, "Member 'UUEffectStatisticsEntryData_C::ExistingTime' has a wrong offset!");
 static_assert(offsetof(UUEffectStatisticsEntryData_C, DistanceToCamera) == 0x000044, "Member 'UUEffectStatisticsEntryData_C::DistanceToCamera' has a wrong offset!");
 static_assert(offsetof(UUEffectStatisticsEntryData_C, Importance) == 0x000048, "Member 'UUEffectStatisticsEntryData_C::Importance' has a wrong offset!");

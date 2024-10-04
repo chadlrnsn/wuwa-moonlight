@@ -5776,9 +5776,9 @@ void ULGUIBPLibrary::SetUIAlpha(class AActor* Target, float InAlpha)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ULGUIBPLibrary::SetUIHierarchyIndex(class AActor* Target, int32 Param_Index)
+void ULGUIBPLibrary::SetUIHierarchyIndex(class AActor* Target, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -5788,7 +5788,7 @@ void ULGUIBPLibrary::SetUIHierarchyIndex(class AActor* Target, int32 Param_Index
 	Params::LGUIBPLibrary_SetUIHierarchyIndex Parms{};
 
 	Parms.Target = Target;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10628,10 +10628,10 @@ EUIAnchorVerticalAlign UUIItem::GetAnchorVAlign() const
 // Function LGUI.UIItem.GetAttachUIChild
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UUIItem*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UUIItem* UUIItem::GetAttachUIChild(int32 Param_Index) const
+class UUIItem* UUIItem::GetAttachUIChild(int32 Index_0) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -10640,7 +10640,7 @@ class UUIItem* UUIItem::GetAttachUIChild(int32 Param_Index) const
 
 	Params::UIItem_GetAttachUIChild Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15843,10 +15843,10 @@ class USequencePlayContext* AUIBaseActor::GetSequencePlayContextOfKey(const clas
 // Function LGUI.UIBaseActor.GetSequencePlayerByKey
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ALevelSequenceActor*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ALevelSequenceActor* AUIBaseActor::GetSequencePlayerByKey(const class FString& Param_Name)
+class ALevelSequenceActor* AUIBaseActor::GetSequencePlayerByKey(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15855,7 +15855,7 @@ class ALevelSequenceActor* AUIBaseActor::GetSequencePlayerByKey(const class FStr
 
 	Params::UIBaseActor_GetSequencePlayerByKey Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15898,9 +15898,9 @@ void AUIBaseActor::LoadSequenceAssetAsyncByKey(const class FString& Key, const T
 // Function LGUI.UIBaseActor.PauseSequenceByKey
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AUIBaseActor::PauseSequenceByKey(const class FString& Param_Name)
+void AUIBaseActor::PauseSequenceByKey(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15909,7 +15909,7 @@ void AUIBaseActor::PauseSequenceByKey(const class FString& Param_Name)
 
 	Params::UIBaseActor_PauseSequenceByKey Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15923,9 +15923,9 @@ void AUIBaseActor::PauseSequenceByKey(const class FString& Param_Name)
 // Function LGUI.UIBaseActor.PlayLevelSequenceByKey
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AUIBaseActor::PlayLevelSequenceByKey(const class FString& Param_Name)
+void AUIBaseActor::PlayLevelSequenceByKey(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15934,7 +15934,7 @@ void AUIBaseActor::PlayLevelSequenceByKey(const class FString& Param_Name)
 
 	Params::UIBaseActor_PlayLevelSequenceByKey Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15948,9 +15948,9 @@ void AUIBaseActor::PlayLevelSequenceByKey(const class FString& Param_Name)
 // Function LGUI.UIBaseActor.ReplaySequenceByKey
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AUIBaseActor::ReplaySequenceByKey(const class FString& Param_Name)
+void AUIBaseActor::ReplaySequenceByKey(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15959,7 +15959,7 @@ void AUIBaseActor::ReplaySequenceByKey(const class FString& Param_Name)
 
 	Params::UIBaseActor_ReplaySequenceByKey Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -15973,9 +15973,9 @@ void AUIBaseActor::ReplaySequenceByKey(const class FString& Param_Name)
 // Function LGUI.UIBaseActor.ResumeSequenceByKey
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AUIBaseActor::ResumeSequenceByKey(const class FString& Param_Name)
+void AUIBaseActor::ResumeSequenceByKey(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15984,7 +15984,7 @@ void AUIBaseActor::ResumeSequenceByKey(const class FString& Param_Name)
 
 	Params::UIBaseActor_ResumeSequenceByKey Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16023,10 +16023,10 @@ void AUIBaseActor::SequenceJumpToEnd(const struct FSoftObjectPath& SoftPath)
 // Function LGUI.UIBaseActor.SequenceJumpToSecondByKey
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FFrameTime                       Time                                                   (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AUIBaseActor::SequenceJumpToSecondByKey(const class FString& Param_Name, const struct FFrameTime& Time)
+void AUIBaseActor::SequenceJumpToSecondByKey(const class FString& Name_0, const struct FFrameTime& Time)
 {
 	static class UFunction* Func = nullptr;
 
@@ -16035,7 +16035,7 @@ void AUIBaseActor::SequenceJumpToSecondByKey(const class FString& Param_Name, co
 
 	Params::UIBaseActor_SequenceJumpToSecondByKey Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Time = std::move(Time);
 
 	auto Flgs = Func->FunctionFlags;
@@ -16050,9 +16050,9 @@ void AUIBaseActor::SequenceJumpToSecondByKey(const class FString& Param_Name, co
 // Function LGUI.UIBaseActor.SequencePlayReverseByKey
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AUIBaseActor::SequencePlayReverseByKey(const class FString& Param_Name)
+void AUIBaseActor::SequencePlayReverseByKey(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -16061,7 +16061,7 @@ void AUIBaseActor::SequencePlayReverseByKey(const class FString& Param_Name)
 
 	Params::UIBaseActor_SequencePlayReverseByKey Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16075,9 +16075,9 @@ void AUIBaseActor::SequencePlayReverseByKey(const class FString& Param_Name)
 // Function LGUI.UIBaseActor.StopSequenceByKey
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AUIBaseActor::StopSequenceByKey(const class FString& Param_Name)
+void AUIBaseActor::StopSequenceByKey(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -16086,7 +16086,7 @@ void AUIBaseActor::StopSequenceByKey(const class FString& Param_Name)
 
 	Params::UIBaseActor_StopSequenceByKey Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16577,14 +16577,14 @@ bool ULGUISpriteData_BaseObject::IsIndividual() const
 // Function LGUI.LGUISpriteData.CreateLGUISpriteData
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class UObject*                          Param_Outer                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Outer_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTexture2D*                       InSpriteTexture                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                        InHorizontalBorder                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                        InVerticalBorder                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             InPackingTag                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULGUISpriteData*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ULGUISpriteData* ULGUISpriteData::CreateLGUISpriteData(class UObject* Param_Outer, class UTexture2D* InSpriteTexture, const struct FVector2D& InHorizontalBorder, const struct FVector2D& InVerticalBorder, class FName InPackingTag)
+class ULGUISpriteData* ULGUISpriteData::CreateLGUISpriteData(class UObject* Outer_0, class UTexture2D* InSpriteTexture, const struct FVector2D& InHorizontalBorder, const struct FVector2D& InVerticalBorder, class FName InPackingTag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -16593,7 +16593,7 @@ class ULGUISpriteData* ULGUISpriteData::CreateLGUISpriteData(class UObject* Para
 
 	Params::LGUISpriteData_CreateLGUISpriteData Parms{};
 
-	Parms.Param_Outer = Param_Outer;
+	Parms.Outer_0 = Outer_0;
 	Parms.InSpriteTexture = InSpriteTexture;
 	Parms.InHorizontalBorder = std::move(InHorizontalBorder);
 	Parms.InVerticalBorder = std::move(InVerticalBorder);
@@ -20303,10 +20303,10 @@ float UUIDropdownComponent::GetMaxHeight() const
 // Function LGUI.UIDropdownComponent.GetOption
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FUIDropdownOptionData            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FUIDropdownOptionData UUIDropdownComponent::GetOption(int32 Param_Index) const
+struct FUIDropdownOptionData UUIDropdownComponent::GetOption(int32 Index_0) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -20315,7 +20315,7 @@ struct FUIDropdownOptionData UUIDropdownComponent::GetOption(int32 Param_Index) 
 
 	Params::UIDropdownComponent_GetOption Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23479,10 +23479,10 @@ void UUIEffectTextAnimation::SetProperties(const TArray<class UUIEffectTextAnima
 // Function LGUI.UIEffectTextAnimation.SetProperty
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UUIEffectTextAnimation_Property*  Value                                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUIEffectTextAnimation::SetProperty(int32 Param_Index, class UUIEffectTextAnimation_Property* Value)
+void UUIEffectTextAnimation::SetProperty(int32 Index_0, class UUIEffectTextAnimation_Property* Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -23491,7 +23491,7 @@ void UUIEffectTextAnimation::SetProperty(int32 Param_Index, class UUIEffectTextA
 
 	Params::UIEffectTextAnimation_SetProperty Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.Value = Value;
 
 	auto Flgs = Func->FunctionFlags;
@@ -23581,10 +23581,10 @@ const TArray<class UUIEffectTextAnimation_Property*> UUIEffectTextAnimation::Get
 // Function LGUI.UIEffectTextAnimation.GetProperty
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UUIEffectTextAnimation_Property*  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UUIEffectTextAnimation_Property* UUIEffectTextAnimation::GetProperty(int32 Param_Index) const
+class UUIEffectTextAnimation_Property* UUIEffectTextAnimation::GetProperty(int32 Index_0) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -23593,7 +23593,7 @@ class UUIEffectTextAnimation_Property* UUIEffectTextAnimation::GetProperty(int32
 
 	Params::UIEffectTextAnimation_GetProperty Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -29660,10 +29660,10 @@ struct FVector2D UUIText::GetRealSize()
 // Function LGUI.UIText.GetRenderLineCharNum
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UUIText::GetRenderLineCharNum(int32 Param_Index)
+int32 UUIText::GetRenderLineCharNum(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -29672,7 +29672,7 @@ int32 UUIText::GetRenderLineCharNum(int32 Param_Index)
 
 	Params::UIText_GetRenderLineCharNum Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

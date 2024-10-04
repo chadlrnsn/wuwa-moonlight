@@ -25,7 +25,7 @@ public:
 	struct FSoftObjectPath                        Icon_5_A2C3EB414E77EF5C24971D8A233A8C36;           // 0x0020(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	struct FSoftObjectPath                        IconFull_28_6A2691024E39B23E183A08B1B1E93E1B;      // 0x0040(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	float                                         WarningPercent_39_C6C752C04F7AD4CF53E4FF8974775F02; // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1A87[0x4];                                     // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FColor>                         BgColors_35_9BDBDC0E491DF957C68F0BB2B35C0137;      // 0x0068(0x0010)(Edit, BlueprintVisible)
 	TArray<struct FColor>                         BarColors_36_CB446A534C823A7AA40C44BFE9702B1C;     // 0x0078(0x0010)(Edit, BlueprintVisible)
 	TSoftObjectPtr<class UEffectScreenPlayData_C> SceneEffect_24_85A89F414CB1A4C872F427B995DB02A5;   // 0x0088(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)

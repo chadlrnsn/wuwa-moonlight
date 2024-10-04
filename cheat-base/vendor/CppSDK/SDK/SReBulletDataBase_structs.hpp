@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "EHitActorType_structs.hpp"
-#include "EBulletShape_structs.hpp"
-#include "EBulletSyncType_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "EPositionStandard_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "EBulletBaseSpecificParam_structs.hpp"
+#include "EBulletShape_structs.hpp"
 #include "EHitType_structs.hpp"
+#include "EBulletBaseSpecificParam_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "EPositionStandard_structs.hpp"
+#include "EBulletSyncType_structs.hpp"
 #include "EBulletRelativeDir_structs.hpp"
+#include "EHitActorType_structs.hpp"
 
 
 namespace SDK
@@ -30,11 +30,11 @@ struct FSReBulletDataBase final
 {
 public:
 	EBulletShape                                  P9b__2_79DD8853421793BB64AFC1AF40E367EE;           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3082[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                _____5_20B4BE8C45D99EC9E986E48B5BB303EE;           // 0x0004(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMap<EBulletBaseSpecificParam, class FString> Y__p_123_7453369241137B68A8E673AA37FDFC18;         // 0x0010(0x0050)(Edit, BlueprintVisible)
 	EPositionStandard                             __Mn___8_BD79827C450EFB110B11198C8A8FCAA8;         // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3083[0x7];                                     // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 _____Key__92_237DD84E497DB43FDFFED38BFC4A5D43;     // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	struct FVector                                __MnO__12_7E09FBFA49BE728EEAE1F39AE0851831;        // 0x0078(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Minus_MnO__80_910CA0754D5712F4D7C0B8B83D57BD8B;    // 0x0084(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -45,7 +45,7 @@ public:
 	float                                         _______20_1E72387F468BC7C6C337728C506430A9;        // 0x00B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _______22_D319AB88498C5FCE04E005AFED795227;        // 0x00BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EHitType                                      _Minus_____25_A30D3C954729471E4163ECA75EFB3051;    // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3084[0x7];                                     // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UBulletCampType_C>       _Minus_______100_0284D2914DF1A55CB1EA6D9EE0856AC1; // 0x00C8(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	struct FGameplayTag                           _Minus__Tag_140_77363CB34CB7C6DD5FA88F8182F7339C;  // 0x00F8(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           _b_MinusTag_143_11ABDBB945535F2612AE9189CFEC8E5A;  // 0x0104(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
@@ -55,24 +55,24 @@ public:
 	float                                         _____36_8134E2B14D8D1F8B430258A8E555159E;          // 0x011C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ______StarS_146_A56136064C33F412B3C80DB14392B778;  // 0x0120(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          Q_6P9_p_125_D60BAB26414413F8C857D1B3CF89BC6E;      // 0x0121(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3085[0x2];                                     // 0x0122(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_122[0x2];                                      // 0x0122(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   __H__45_2278D44D41BBF9D30462AAA17F3D3034;          // 0x0124(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   One___H__95_9F2E7F0E46043F5B09ABA990AD3170E9;      // 0x0130(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EBulletRelativeDir                            P9_____55_603F74B64825C94FACF0D4BA7D9C29CB;        // 0x013C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3086[0x3];                                     // 0x013D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13D[0x3];                                      // 0x013D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int64                                         __ID_69_A90E631B445077C5F9ED76B9AB745B60;          // 0x0140(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               P9_____51_2BA10CE54278AA51E4022396A6CD0C8D;        // 0x0148(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ___P9_54_5311975346FDEA78A27AC994D85137AA;         // 0x0154(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3087[0x3];                                     // 0x0155(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_155[0x3];                                      // 0x0155(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  P9A___Tag_68_592578584A71778A7A91D0A565DAC833;     // 0x0158(0x0020)(Edit, BlueprintVisible)
 	struct FGameplayTagContainer                  P9_b__Tag_67_423488F04620BAD806FAF0801B42F5F8;     // 0x0178(0x0020)(Edit, BlueprintVisible)
 	bool                                          ______71_A59F8E5D46062662CCA2E398F8FCAB45;         // 0x0198(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          _40P9_77_432EB70C4B5D2C12EDA71FB70A989C8A;         // 0x0199(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          __Ma__133_C89F1FAE417BB4F10D7691B3747104E2;        // 0x019A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3088[0x1];                                     // 0x019B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19B[0x1];                                      // 0x019B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Four0_K___154_419CD78E470029A2EC9579A6D7D9BFB6;    // 0x019C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EBulletSyncType                               Q__e___129_8DB648D54285ED4BE9E54E9C3ADC5BF3;       // 0x01A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3089[0x3];                                     // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A1[0x3];                                      // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           P9___137_C6EA52AA4721C4CF3F2E1BA1F0D2F726;         // 0x01A4(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 	bool                                          ___P____H_151_142A23A94BEF7AFE2F217FB7416C4334;    // 0x01B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          Debug__P9___156_D4E36872499839BF6138ADAA32496CE1;  // 0x01B1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)

@@ -20,7 +20,7 @@ struct FConditionBulletSceneInteraction final
 {
 public:
 	float                                         RangeMin_5_DB5CA9FF4E8E2786679B738D8443D0DB;       // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_29CD[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UBulletSceneInteraction_C> Config_6_7A09FB394DB367C356B6B4AE8310415C;         // 0x0008(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FConditionBulletSceneInteraction) == 0x000008, "Wrong alignment on FConditionBulletSceneInteraction");

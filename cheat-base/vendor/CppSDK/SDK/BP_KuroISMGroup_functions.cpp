@@ -40,9 +40,9 @@ void ABP_KuroISMGroup_C::ExecuteUbergraph_BP_KuroISMGroup(int32 EntryPoint)
 // Function BP_KuroISMGroup.BP_KuroISMGroup_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   Param_DeltaSeconds                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroISMGroup_C::ReceiveTick(float Param_DeltaSeconds)
+void ABP_KuroISMGroup_C::ReceiveTick(float DeltaSeconds_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -51,7 +51,7 @@ void ABP_KuroISMGroup_C::ReceiveTick(float Param_DeltaSeconds)
 
 	Params::BP_KuroISMGroup_C_ReceiveTick Parms{};
 
-	Parms.Param_DeltaSeconds = Param_DeltaSeconds;
+	Parms.DeltaSeconds_0 = DeltaSeconds_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -88,9 +88,9 @@ void ABP_KuroISMGroup_C::UserConstructionScript()
 // Function BP_KuroISMGroup.BP_KuroISMGroup_C.IsEditor
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_IsEditor                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    IsEditor_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_KuroISMGroup_C::IsEditor(bool* Param_IsEditor)
+void ABP_KuroISMGroup_C::IsEditor(bool* IsEditor_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -101,8 +101,8 @@ void ABP_KuroISMGroup_C::IsEditor(bool* Param_IsEditor)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_IsEditor != nullptr)
-		*Param_IsEditor = Parms.Param_IsEditor;
+	if (IsEditor_0 != nullptr)
+		*IsEditor_0 = Parms.IsEditor_0;
 }
 
 

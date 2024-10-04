@@ -21,7 +21,7 @@ struct FSSkillBehaviorBullet final
 public:
 	class FString                                 bulletRowName_15_E1264B954C05799310C2CA8F2AA41295; // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         bulletCount_17_C760AE4F44AC5EA2E83EE287AC1E2986;   // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D7A[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 BlackboardKey_20_7646422D4796E9134AE08E984D1F68A9; // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSSkillBehaviorBullet) == 0x000008, "Wrong alignment on FSSkillBehaviorBullet");

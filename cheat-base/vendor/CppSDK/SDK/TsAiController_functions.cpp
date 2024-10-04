@@ -270,9 +270,9 @@ void ATsAiController_C::ClearHatred(int32 EntityId)
 // Function TsAiController.TsAiController_C.SetBattleWanderIndex
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ATsAiController_C::SetBattleWanderIndex(int32 Param_Index)
+void ATsAiController_C::SetBattleWanderIndex(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -281,7 +281,7 @@ void ATsAiController_C::SetBattleWanderIndex(int32 Param_Index)
 
 	Params::TsAiController_C_SetBattleWanderIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -497,10 +497,10 @@ void ATsAiController_C::LogReport(int32 LogId)
 // Function TsAiController.TsAiController_C.SetAiSenseEnable
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    Enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 
-void ATsAiController_C::SetAiSenseEnable(int32 Param_Index, bool Enable)
+void ATsAiController_C::SetAiSenseEnable(int32 Index_0, bool Enable)
 {
 	static class UFunction* Func = nullptr;
 
@@ -509,7 +509,7 @@ void ATsAiController_C::SetAiSenseEnable(int32 Param_Index, bool Enable)
 
 	Params::TsAiController_C_SetAiSenseEnable Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.Enable = Enable;
 
 	auto Flgs = Func->FunctionFlags;
@@ -930,7 +930,7 @@ bool ATsAiController_C::_____0()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsAiController_C", ";‘;§");
 
-	Params::TsAiController_C_____ Parms{};
+	Params::TsAiController_C______0 Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -992,9 +992,9 @@ void ATsAiController_C::___6C_()
 // Parameters:
 // ECharacterState                         OldState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // ECharacterState                         NewState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_IsAutonomousProxy                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    IsAutonomousProxy_0                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ATsAiController_C::___b_(ECharacterState OldState, ECharacterState NewState, bool Param_IsAutonomousProxy)
+void ATsAiController_C::___b_(ECharacterState OldState, ECharacterState NewState, bool IsAutonomousProxy_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1005,7 +1005,7 @@ void ATsAiController_C::___b_(ECharacterState OldState, ECharacterState NewState
 
 	Parms.OldState = OldState;
 	Parms.NewState = NewState;
-	Parms.Param_IsAutonomousProxy = Param_IsAutonomousProxy;
+	Parms.IsAutonomousProxy_0 = IsAutonomousProxy_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1114,6 +1114,33 @@ void ATsAiController_C::ChangeDebugDraw()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsAiController.TsAiController_C.AicApplyBuffToTarget
+// (Native, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   TargetId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int64                                   buffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsAiController_C::AicApplyBuffToTarget(int32 TargetId, int64 buffId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAiController_C", "AicApplyBuffToTarget");
+
+	Params::TsAiController_C_AicApplyBuffToTarget Parms{};
+
+	Parms.TargetId = TargetId;
+	Parms.buffId = buffId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

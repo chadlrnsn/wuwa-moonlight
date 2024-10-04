@@ -21,9 +21,9 @@ namespace SDK
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TDelegate<void(int32 Index)>            OnTimeCalibrated                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::CalibrateTime(const TDelegate<void(int32 Index)>& OnTimeCalibrated, int32 Param_Index)
+void UThinkingAnalytics::CalibrateTime(const TDelegate<void(int32 Index)>& OnTimeCalibrated, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -33,7 +33,7 @@ void UThinkingAnalytics::CalibrateTime(const TDelegate<void(int32 Index)>& OnTim
 	Params::ThinkingAnalytics_CalibrateTime Parms{};
 
 	Parms.OnTimeCalibrated = OnTimeCalibrated;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -75,9 +75,9 @@ bool UThinkingAnalytics::CreateSimpleInstance(const struct FCreateInstanceParam&
 // Function TASdkPlugin.ThinkingAnalytics.DestroyAllInstance
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// bool                                    Param_Flush                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Flush_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::DestroyAllInstance(const bool Param_Flush)
+void UThinkingAnalytics::DestroyAllInstance(const bool Flush_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -86,7 +86,7 @@ void UThinkingAnalytics::DestroyAllInstance(const bool Param_Flush)
 
 	Params::ThinkingAnalytics_DestroyAllInstance Parms{};
 
-	Parms.Param_Flush = Param_Flush;
+	Parms.Flush_0 = Flush_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -100,10 +100,10 @@ void UThinkingAnalytics::DestroyAllInstance(const bool Param_Flush)
 // Function TASdkPlugin.ThinkingAnalytics.DestroyInstance
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Param_Flush                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Flush_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::DestroyInstance(const int32 Param_Index, const bool Param_Flush)
+void UThinkingAnalytics::DestroyInstance(const int32 Index_0, const bool Flush_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -112,8 +112,8 @@ void UThinkingAnalytics::DestroyInstance(const int32 Param_Index, const bool Par
 
 	Params::ThinkingAnalytics_DestroyInstance Parms{};
 
-	Parms.Param_Index = Param_Index;
-	Parms.Param_Flush = Param_Flush;
+	Parms.Index_0 = Index_0;
+	Parms.Flush_0 = Flush_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -127,9 +127,9 @@ void UThinkingAnalytics::DestroyInstance(const int32 Param_Index, const bool Par
 // Function TASdkPlugin.ThinkingAnalytics.EnableAutoTrack
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::EnableAutoTrack(int32 Param_Index)
+void UThinkingAnalytics::EnableAutoTrack(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -138,7 +138,7 @@ void UThinkingAnalytics::EnableAutoTrack(int32 Param_Index)
 
 	Params::ThinkingAnalytics_EnableAutoTrack Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -153,9 +153,9 @@ void UThinkingAnalytics::EnableAutoTrack(int32 Param_Index)
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TArray<class FString>                   EventTypeList                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::EnableAutoTrackWithType(const TArray<class FString>& EventTypeList, int32 Param_Index)
+void UThinkingAnalytics::EnableAutoTrackWithType(const TArray<class FString>& EventTypeList, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -165,7 +165,7 @@ void UThinkingAnalytics::EnableAutoTrackWithType(const TArray<class FString>& Ev
 	Params::ThinkingAnalytics_EnableAutoTrackWithType Parms{};
 
 	Parms.EventTypeList = std::move(EventTypeList);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -181,9 +181,9 @@ void UThinkingAnalytics::EnableAutoTrackWithType(const TArray<class FString>& Ev
 // Parameters:
 // TArray<class FString>                   EventTypeList                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::EnableAutoTrackWithTypeAndProperties(const TArray<class FString>& EventTypeList, const class FString& Properties, int32 Param_Index)
+void UThinkingAnalytics::EnableAutoTrackWithTypeAndProperties(const TArray<class FString>& EventTypeList, const class FString& Properties, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -194,7 +194,7 @@ void UThinkingAnalytics::EnableAutoTrackWithTypeAndProperties(const TArray<class
 
 	Parms.EventTypeList = std::move(EventTypeList);
 	Parms.Properties = std::move(Properties);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -209,9 +209,9 @@ void UThinkingAnalytics::EnableAutoTrackWithTypeAndProperties(const TArray<class
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TArray<class FString>                   EventTypeList                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::EnableThirdPartySharing(const TArray<class FString>& EventTypeList, int32 Param_Index)
+void UThinkingAnalytics::EnableThirdPartySharing(const TArray<class FString>& EventTypeList, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -221,7 +221,7 @@ void UThinkingAnalytics::EnableThirdPartySharing(const TArray<class FString>& Ev
 	Params::ThinkingAnalytics_EnableThirdPartySharing Parms{};
 
 	Parms.EventTypeList = std::move(EventTypeList);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -236,9 +236,9 @@ void UThinkingAnalytics::EnableThirdPartySharing(const TArray<class FString>& Ev
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bIsEnable                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::EnableTracking(bool bIsEnable, int32 Param_Index)
+void UThinkingAnalytics::EnableTracking(bool bIsEnable, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -248,7 +248,7 @@ void UThinkingAnalytics::EnableTracking(bool bIsEnable, int32 Param_Index)
 	Params::ThinkingAnalytics_EnableTracking Parms{};
 
 	Parms.bIsEnable = bIsEnable;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -262,9 +262,9 @@ void UThinkingAnalytics::EnableTracking(bool bIsEnable, int32 Param_Index)
 // Function TASdkPlugin.ThinkingAnalytics.Flush
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::Flush(int32 Param_Index)
+void UThinkingAnalytics::Flush(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -273,7 +273,7 @@ void UThinkingAnalytics::Flush(int32 Param_Index)
 
 	Params::ThinkingAnalytics_Flush Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -287,10 +287,10 @@ void UThinkingAnalytics::Flush(int32 Param_Index)
 // Function TASdkPlugin.ThinkingAnalytics.GetAppId
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UThinkingAnalytics::GetAppId(const int32 Param_Index)
+class FString UThinkingAnalytics::GetAppId(const int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -299,7 +299,7 @@ class FString UThinkingAnalytics::GetAppId(const int32 Param_Index)
 
 	Params::ThinkingAnalytics_GetAppId Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -365,10 +365,10 @@ float UThinkingAnalytics::GetCurrentCPUSampledMaxFrequency()
 // Function TASdkPlugin.ThinkingAnalytics.GetDeviceId
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UThinkingAnalytics::GetDeviceId(int32 Param_Index)
+class FString UThinkingAnalytics::GetDeviceId(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -377,7 +377,7 @@ class FString UThinkingAnalytics::GetDeviceId(int32 Param_Index)
 
 	Params::ThinkingAnalytics_GetDeviceId Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -393,10 +393,10 @@ class FString UThinkingAnalytics::GetDeviceId(int32 Param_Index)
 // Function TASdkPlugin.ThinkingAnalytics.GetDistinctId
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UThinkingAnalytics::GetDistinctId(int32 Param_Index)
+class FString UThinkingAnalytics::GetDistinctId(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -405,7 +405,7 @@ class FString UThinkingAnalytics::GetDistinctId(int32 Param_Index)
 
 	Params::ThinkingAnalytics_GetDistinctId Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -446,10 +446,10 @@ class FString UThinkingAnalytics::GetMachineID()
 // Function TASdkPlugin.ThinkingAnalytics.GetPresetProperties
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UThinkingAnalytics::GetPresetProperties(int32 Param_Index)
+class FString UThinkingAnalytics::GetPresetProperties(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -458,7 +458,7 @@ class FString UThinkingAnalytics::GetPresetProperties(int32 Param_Index)
 
 	Params::ThinkingAnalytics_GetPresetProperties Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -474,10 +474,10 @@ class FString UThinkingAnalytics::GetPresetProperties(int32 Param_Index)
 // Function TASdkPlugin.ThinkingAnalytics.GetServerUrl
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UThinkingAnalytics::GetServerUrl(const int32 Param_Index)
+class FString UThinkingAnalytics::GetServerUrl(const int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -486,7 +486,7 @@ class FString UThinkingAnalytics::GetServerUrl(const int32 Param_Index)
 
 	Params::ThinkingAnalytics_GetServerUrl Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -502,10 +502,10 @@ class FString UThinkingAnalytics::GetServerUrl(const int32 Param_Index)
 // Function TASdkPlugin.ThinkingAnalytics.GetSuperProperties
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FString UThinkingAnalytics::GetSuperProperties(int32 Param_Index)
+class FString UThinkingAnalytics::GetSuperProperties(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -514,7 +514,7 @@ class FString UThinkingAnalytics::GetSuperProperties(int32 Param_Index)
 
 	Params::ThinkingAnalytics_GetSuperProperties Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -555,10 +555,10 @@ bool UThinkingAnalytics::HasDefaultInstanceInitialized()
 // Function TASdkPlugin.ThinkingAnalytics.HasInstanceInitialized
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UThinkingAnalytics::HasInstanceInitialized(int32 Param_Index)
+bool UThinkingAnalytics::HasInstanceInitialized(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -567,7 +567,7 @@ bool UThinkingAnalytics::HasInstanceInitialized(int32 Param_Index)
 
 	Params::ThinkingAnalytics_HasInstanceInitialized Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -583,10 +583,10 @@ bool UThinkingAnalytics::HasInstanceInitialized(int32 Param_Index)
 // Function TASdkPlugin.ThinkingAnalytics.HasInstanceTimeCalibrated
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UThinkingAnalytics::HasInstanceTimeCalibrated(int32 Param_Index)
+bool UThinkingAnalytics::HasInstanceTimeCalibrated(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -595,7 +595,7 @@ bool UThinkingAnalytics::HasInstanceTimeCalibrated(int32 Param_Index)
 
 	Params::ThinkingAnalytics_HasInstanceTimeCalibrated Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -612,9 +612,9 @@ bool UThinkingAnalytics::HasInstanceTimeCalibrated(int32 Param_Index)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class FString                           DistinctId                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::Identify(const class FString& DistinctId, int32 Param_Index)
+void UThinkingAnalytics::Identify(const class FString& DistinctId, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -624,7 +624,7 @@ void UThinkingAnalytics::Identify(const class FString& DistinctId, int32 Param_I
 	Params::ThinkingAnalytics_Identify Parms{};
 
 	Parms.DistinctId = std::move(DistinctId);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -749,9 +749,9 @@ void UThinkingAnalytics::InitializeEncryptInstance(const class FString& Appid, c
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class FString                           AccountId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::Login(const class FString& AccountId, int32 Param_Index)
+void UThinkingAnalytics::Login(const class FString& AccountId, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -761,7 +761,7 @@ void UThinkingAnalytics::Login(const class FString& AccountId, int32 Param_Index
 	Params::ThinkingAnalytics_Login Parms{};
 
 	Parms.AccountId = std::move(AccountId);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -775,9 +775,9 @@ void UThinkingAnalytics::Login(const class FString& AccountId, int32 Param_Index
 // Function TASdkPlugin.ThinkingAnalytics.Logout
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::Logout(int32 Param_Index)
+void UThinkingAnalytics::Logout(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -786,7 +786,7 @@ void UThinkingAnalytics::Logout(int32 Param_Index)
 
 	Params::ThinkingAnalytics_Logout Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -800,9 +800,9 @@ void UThinkingAnalytics::Logout(int32 Param_Index)
 // Function TASdkPlugin.ThinkingAnalytics.OptInTracking
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::OptInTracking(int32 Param_Index)
+void UThinkingAnalytics::OptInTracking(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -811,7 +811,7 @@ void UThinkingAnalytics::OptInTracking(int32 Param_Index)
 
 	Params::ThinkingAnalytics_OptInTracking Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -825,9 +825,9 @@ void UThinkingAnalytics::OptInTracking(int32 Param_Index)
 // Function TASdkPlugin.ThinkingAnalytics.OptOutTracking
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::OptOutTracking(int32 Param_Index)
+void UThinkingAnalytics::OptOutTracking(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -836,7 +836,7 @@ void UThinkingAnalytics::OptOutTracking(int32 Param_Index)
 
 	Params::ThinkingAnalytics_OptOutTracking Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -851,9 +851,9 @@ void UThinkingAnalytics::OptOutTracking(int32 Param_Index)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // int32                                   Status                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::SetTrackStatus(const int32 Status, int32 Param_Index)
+void UThinkingAnalytics::SetTrackStatus(const int32 Status, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -863,7 +863,7 @@ void UThinkingAnalytics::SetTrackStatus(const int32 Status, int32 Param_Index)
 	Params::ThinkingAnalytics_SetTrackStatus Parms{};
 
 	Parms.Status = Status;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -878,9 +878,9 @@ void UThinkingAnalytics::SetTrackStatus(const int32 Status, int32 Param_Index)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::TimeEvent(const class FString& EventName, int32 Param_Index)
+void UThinkingAnalytics::TimeEvent(const class FString& EventName, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -890,7 +890,7 @@ void UThinkingAnalytics::TimeEvent(const class FString& EventName, int32 Param_I
 	Params::ThinkingAnalytics_TimeEvent Parms{};
 
 	Parms.EventName = std::move(EventName);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -933,10 +933,10 @@ void UThinkingAnalytics::ToggleSampleCPUFrequency(bool bActive, float SampleInte
 // Parameters:
 // class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UThinkingAnalytics::Track(const class FString& EventName, const class FString& Properties, int32 Param_Index)
+bool UThinkingAnalytics::Track(const class FString& EventName, const class FString& Properties, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -947,7 +947,7 @@ bool UThinkingAnalytics::Track(const class FString& EventName, const class FStri
 
 	Parms.EventName = std::move(EventName);
 	Parms.Properties = std::move(Properties);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -965,10 +965,10 @@ bool UThinkingAnalytics::Track(const class FString& EventName, const class FStri
 // Parameters:
 // class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FArrayBuffer                     Properties                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UThinkingAnalytics::Track_Utf8(const class FString& EventName, const struct FArrayBuffer& Properties, int32 Param_Index)
+bool UThinkingAnalytics::Track_Utf8(const class FString& EventName, const struct FArrayBuffer& Properties, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -979,7 +979,7 @@ bool UThinkingAnalytics::Track_Utf8(const class FString& EventName, const struct
 
 	Parms.EventName = std::move(EventName);
 	Parms.Properties = std::move(Properties);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -997,10 +997,10 @@ bool UThinkingAnalytics::Track_Utf8(const class FString& EventName, const struct
 // Parameters:
 // class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UThinkingAnalytics::TrackFirst(const class FString& EventName, const class FString& Properties, int32 Param_Index)
+bool UThinkingAnalytics::TrackFirst(const class FString& EventName, const class FString& Properties, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1011,7 +1011,7 @@ bool UThinkingAnalytics::TrackFirst(const class FString& EventName, const class 
 
 	Parms.EventName = std::move(EventName);
 	Parms.Properties = std::move(Properties);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1030,10 +1030,10 @@ bool UThinkingAnalytics::TrackFirst(const class FString& EventName, const class 
 // class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           FirstCheckId                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UThinkingAnalytics::TrackFirstWithId(const class FString& EventName, const class FString& Properties, const class FString& FirstCheckId, int32 Param_Index)
+bool UThinkingAnalytics::TrackFirstWithId(const class FString& EventName, const class FString& Properties, const class FString& FirstCheckId, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1045,7 +1045,7 @@ bool UThinkingAnalytics::TrackFirstWithId(const class FString& EventName, const 
 	Parms.EventName = std::move(EventName);
 	Parms.Properties = std::move(Properties);
 	Parms.FirstCheckId = std::move(FirstCheckId);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1064,10 +1064,10 @@ bool UThinkingAnalytics::TrackFirstWithId(const class FString& EventName, const 
 // class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           EventId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UThinkingAnalytics::TrackOverwrite(const class FString& EventName, const class FString& Properties, const class FString& EventId, int32 Param_Index)
+bool UThinkingAnalytics::TrackOverwrite(const class FString& EventName, const class FString& Properties, const class FString& EventId, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1079,7 +1079,7 @@ bool UThinkingAnalytics::TrackOverwrite(const class FString& EventName, const cl
 	Parms.EventName = std::move(EventName);
 	Parms.Properties = std::move(Properties);
 	Parms.EventId = std::move(EventId);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1098,10 +1098,10 @@ bool UThinkingAnalytics::TrackOverwrite(const class FString& EventName, const cl
 // class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           EventId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UThinkingAnalytics::TrackUpdate(const class FString& EventName, const class FString& Properties, const class FString& EventId, int32 Param_Index)
+bool UThinkingAnalytics::TrackUpdate(const class FString& EventName, const class FString& Properties, const class FString& EventId, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1113,7 +1113,7 @@ bool UThinkingAnalytics::TrackUpdate(const class FString& EventName, const class
 	Parms.EventName = std::move(EventName);
 	Parms.Properties = std::move(Properties);
 	Parms.EventId = std::move(EventId);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1131,9 +1131,9 @@ bool UThinkingAnalytics::TrackUpdate(const class FString& EventName, const class
 // Parameters:
 // class FString                           Property                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::UserAdd(const class FString& Property, const float Value, int32 Param_Index)
+void UThinkingAnalytics::UserAdd(const class FString& Property, const float Value, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1144,7 +1144,7 @@ void UThinkingAnalytics::UserAdd(const class FString& Property, const float Valu
 
 	Parms.Property = std::move(Property);
 	Parms.Value = Value;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1159,9 +1159,9 @@ void UThinkingAnalytics::UserAdd(const class FString& Property, const float Valu
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::UserAppend(const class FString& Properties, int32 Param_Index)
+void UThinkingAnalytics::UserAppend(const class FString& Properties, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1171,7 +1171,7 @@ void UThinkingAnalytics::UserAppend(const class FString& Properties, int32 Param
 	Params::ThinkingAnalytics_UserAppend Parms{};
 
 	Parms.Properties = std::move(Properties);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1185,9 +1185,9 @@ void UThinkingAnalytics::UserAppend(const class FString& Properties, int32 Param
 // Function TASdkPlugin.ThinkingAnalytics.UserDelete
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::UserDelete(int32 Param_Index)
+void UThinkingAnalytics::UserDelete(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1196,7 +1196,7 @@ void UThinkingAnalytics::UserDelete(int32 Param_Index)
 
 	Params::ThinkingAnalytics_UserDelete Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1211,9 +1211,9 @@ void UThinkingAnalytics::UserDelete(int32 Param_Index)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::UserSet(const class FString& Properties, int32 Param_Index)
+void UThinkingAnalytics::UserSet(const class FString& Properties, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1223,7 +1223,7 @@ void UThinkingAnalytics::UserSet(const class FString& Properties, int32 Param_In
 	Params::ThinkingAnalytics_UserSet Parms{};
 
 	Parms.Properties = std::move(Properties);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1238,9 +1238,9 @@ void UThinkingAnalytics::UserSet(const class FString& Properties, int32 Param_In
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::UserSetOnce(const class FString& Properties, int32 Param_Index)
+void UThinkingAnalytics::UserSetOnce(const class FString& Properties, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1250,7 +1250,7 @@ void UThinkingAnalytics::UserSetOnce(const class FString& Properties, int32 Para
 	Params::ThinkingAnalytics_UserSetOnce Parms{};
 
 	Parms.Properties = std::move(Properties);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1265,9 +1265,9 @@ void UThinkingAnalytics::UserSetOnce(const class FString& Properties, int32 Para
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::UserUniqueAppend(const class FString& Properties, int32 Param_Index)
+void UThinkingAnalytics::UserUniqueAppend(const class FString& Properties, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1277,7 +1277,7 @@ void UThinkingAnalytics::UserUniqueAppend(const class FString& Properties, int32
 	Params::ThinkingAnalytics_UserUniqueAppend Parms{};
 
 	Parms.Properties = std::move(Properties);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1292,9 +1292,9 @@ void UThinkingAnalytics::UserUniqueAppend(const class FString& Properties, int32
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class FString                           Property                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UThinkingAnalytics::UserUnset(const class FString& Property, int32 Param_Index)
+void UThinkingAnalytics::UserUnset(const class FString& Property, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1304,7 +1304,7 @@ void UThinkingAnalytics::UserUnset(const class FString& Property, int32 Param_In
 	Params::ThinkingAnalytics_UserUnset Parms{};
 
 	Parms.Property = std::move(Property);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

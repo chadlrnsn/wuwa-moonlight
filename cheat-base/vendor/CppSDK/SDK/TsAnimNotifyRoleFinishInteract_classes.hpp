@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ERoleInteractType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "ERoleInteractType_structs.hpp"
 
 
 namespace SDK

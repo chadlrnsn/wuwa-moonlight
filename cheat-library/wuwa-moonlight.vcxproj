@@ -134,7 +134,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(PlatformShortName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>wuwa-base.lib;dxgi.lib</AdditionalDependencies>
+      <AdditionalDependencies>cheat-base.lib;dxgi.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -156,7 +156,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>wuwa-base.lib;dxgi.lib</AdditionalDependencies>
+      <AdditionalDependencies>cheat-base.lib;dxgi.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(PlatformShortName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -179,7 +179,6 @@
     <ClInclude Include="src\Hooks\d3d11hook.h" />
     <ClInclude Include="src\Hooks\Hooks.h" />
     <ClInclude Include="src\includes.h" />
-    <ClInclude Include="src\SDKTools\SDKTools.hpp" />
     <ClInclude Include="vendor\fonts\font.h" />
     <ClInclude Include="vendor\imgui-nav\nav_elements.h" />
     <ClInclude Include="vendor\imgui\backends\imgui_impl_dx11.h" />

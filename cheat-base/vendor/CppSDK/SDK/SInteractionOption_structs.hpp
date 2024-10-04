@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "EInteractOptionType_structs.hpp"
-#include "SQuestRequest_structs.hpp"
-#include "SInteractionLimit_structs.hpp"
 #include "EinteractionIconType_structs.hpp"
+#include "EInteractOptionType_structs.hpp"
+#include "SInteractionLimit_structs.hpp"
+#include "SQuestRequest_structs.hpp"
 
 
 namespace SDK
@@ -26,18 +26,18 @@ struct FSInteractionOption final
 public:
 	class FText                                   _y___6_BB7E47394FEDBDDE16F1F7AE28FA4CF6;           // 0x0000(0x0018)(Edit, BlueprintVisible)
 	EInteractOptionType                           ___7_44C33AC74F5F6E12401F30BCFDE230F5;             // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3175[0x3];                                     // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   __a__ID_24_8123B61940D1E4B372DC938BD076085D;       // 0x001C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSQuestRequest                         ___10_B67D2C9F409F4224633A1DAC284FB7E5;            // 0x0028(0x0028)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   G_ID_15_52A80678441519A44E8BEC8EDA6A6773;          // 0x0050(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3176[0x4];                                     // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UDataTable>              G_D__18_B781004D40F6F6F16FF9FD9A1C61E089;          // 0x0060(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class FString                                 Plot_32_3EE3D4E94D83169599EC2686B8A23708;          // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FName                                   __ID_21_0CAB7D6C47E37E736FF83B9FCBCD5203;          // 0x00A0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _s___Lb_26_EBEED9B44B15AE1DA0B338996A805C3F;       // 0x00AC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3177[0x3];                                     // 0x00AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_AD[0x3];                                       // 0x00AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSInteractionLimit                     ___yP6_29_EE158046445DDFDB8807C689EA8CB4CC;        // 0x00B0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3178[0x4];                                     // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UTexture2D>              _____40_BD39BDD345649A4C97B642B598835ABC;          // 0x00C0(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	EInteractionIconType                          _______39_D22959BD4F2FA789D56E0EA12C7D8551;        // 0x00F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

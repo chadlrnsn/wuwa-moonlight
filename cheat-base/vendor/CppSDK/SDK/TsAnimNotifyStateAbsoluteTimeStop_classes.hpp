@@ -24,6 +24,7 @@ public:
 	bool                                          O____b;                                            // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          _r___6_b;                                          // 0x0049(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          Stari___6_b;                                       // 0x004A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          _____H_;                                           // 0x004B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
@@ -46,6 +47,7 @@ static_assert(sizeof(UTsAnimNotifyStateAbsoluteTimeStop_C) == 0x000050, "Wrong s
 static_assert(offsetof(UTsAnimNotifyStateAbsoluteTimeStop_C, O____b) == 0x000048, "Member 'UTsAnimNotifyStateAbsoluteTimeStop_C::O____b' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateAbsoluteTimeStop_C, _r___6_b) == 0x000049, "Member 'UTsAnimNotifyStateAbsoluteTimeStop_C::_r___6_b' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateAbsoluteTimeStop_C, Stari___6_b) == 0x00004A, "Member 'UTsAnimNotifyStateAbsoluteTimeStop_C::Stari___6_b' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyStateAbsoluteTimeStop_C, _____H_) == 0x00004B, "Member 'UTsAnimNotifyStateAbsoluteTimeStop_C::_____H_' has a wrong offset!");
 
 }
 

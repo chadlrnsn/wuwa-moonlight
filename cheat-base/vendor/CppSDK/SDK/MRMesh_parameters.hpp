@@ -76,8 +76,8 @@ static_assert(offsetof(MockDataMeshTrackerComponent_DisconnectMRMesh, InMRMeshPt
 struct MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25CF[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FVector>                        Vertices;                                          // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	TArray<int32>                                 Triangles;                                         // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	TArray<struct FVector>                        Normals;                                           // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
@@ -85,7 +85,7 @@ public:
 };
 static_assert(alignof(MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature) == 0x000008, "Wrong alignment on MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature");
 static_assert(sizeof(MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature) == 0x000048, "Wrong size on MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature");
-static_assert(offsetof(MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature, Param_Index) == 0x000000, "Member 'MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature::Param_Index' has a wrong offset!");
+static_assert(offsetof(MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature, Index_0) == 0x000000, "Member 'MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature::Index_0' has a wrong offset!");
 static_assert(offsetof(MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature, Vertices) == 0x000008, "Member 'MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature::Vertices' has a wrong offset!");
 static_assert(offsetof(MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature, Triangles) == 0x000018, "Member 'MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature::Triangles' has a wrong offset!");
 static_assert(offsetof(MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature, Normals) == 0x000028, "Member 'MockDataMeshTrackerComponent_OnMockDataMeshTrackerUpdated__DelegateSignature::Normals' has a wrong offset!");

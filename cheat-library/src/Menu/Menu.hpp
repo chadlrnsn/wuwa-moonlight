@@ -68,8 +68,8 @@ public:
 };
 
 
-inline ImFont* regular;
-inline ImFont* medium;
-inline ImFont* bold;
-inline ImFont* title;
-inline ImFont* icons;
+inline ImFont* font_regular;
+inline ImFont* font_medium;
+inline ImFont* font_bold;
+inline ImFont* font_title;
+inline ImFont* font_icons;

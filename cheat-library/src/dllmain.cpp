@@ -1,14 +1,12 @@
 #pragma once
 #include "dllmain.h"
 #include <Hooks/d3d11hook.h>
-#define MenuKey VK_INSERT
-#define QuitKey VK_F9
 
 using namespace SDK;
 using namespace globals;
 
 FILE* dummy;
-std::atomic<bool> g_bRunning = true;
+std::atomic<bool> g_bRunning{ true };
 
 void CreateConsole() {
 	AllocConsole();
@@ -16,64 +14,62 @@ void CreateConsole() {
 	freopen_s(&dummy, "CONOUT$", "w", stderr);
 }
 
-void GlobalsThread() noexcept {
-
-	static bool originals = false;
-	while (g_bRunning) {
-
-		if (!UEngine::GetEngine()) continue;
-		Engine = UEngine::GetEngine();
-
-		if (!UWorld::GetWorld()) continue;
-		World = UWorld::GetWorld();
-		
-		GameInstance = World->OwningGameInstance;
-
-		if (!GameInstance) continue;
-
-		LocalPlayer = World->OwningGameInstance->LocalPlayers[0];
-
-		if (!LocalPlayer) continue;
-
-		PlayerController = LocalPlayer->PlayerController;
-
-		if (!PlayerController) continue;
-
-		AcknowledgedPawn = PlayerController->AcknowledgedPawn;
-
-		if (IsFullyLoaded() && AcknowledgedPawn && !AcknowledgedPawn->IsDefaultObject() && FN_TsAnimNotifyReSkillEvent_C == nullptr) {
-			FN_TsAnimNotifyReSkillEvent_C = World->FindObject<UFunction>("Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify");
-		}
-	}
-	std::cout << "Thread ended" << std::endl;
-}
-
-void FeaturesThread() noexcept
-{
-
-	while (g_bRunning)
-	{
-		fpsUnlock.Run();
-		if (!IsFullyLoaded())
-			continue;
-
-		speedhack.Run();
-		gravityScale.Run();
-		walkFloorZ.Run();
-		walkFloorAngle.Run();
-		fly.Run();
-
-		std::this_thread::sleep_for(std::chrono::milliseconds(10));
-	}
-
-	return;
-}
 
 void IndependentHooks() {
 	Hooks::hkACE_BypassSetup();
 	Hooks::AntiDebug();
 	D3D11Hook::Initialize();
 	Hooks::InGame::Initialize();
+}
+
+void features() noexcept {
+	while (g_bRunning) {
+
+		Engine = UEngine::GetEngine();
+
+		fpsUnlock.Run();
+		
+		if (!Engine) continue;
+
+		World = UWorld::GetWorld();
+
+		if (!World) 
+			continue;
+
+		GameInstance = World->OwningGameInstance;
+		if (!GameInstance)
+			continue;
+
+		LocalPlayer = GameInstance->LocalPlayers[0];
+		if (!LocalPlayer)
+			continue;
+
+		PlayerController = LocalPlayer->PlayerController;
+		if (!PlayerController)
+			continue;
+
+		AcknowledgedPawn = PlayerController->AcknowledgedPawn;
+		if (!AcknowledgedPawn)
+			continue;
+
+		speedhack.Run();
+		//gravityScale.Run();
+
+		//walkFloorZ.Run(PlayerController);
+		//walkFloorAngle.Run();
+		//fly.Run();
+		//esp.Run();
+
+		auto c_viewport = LocalPlayer->ViewportClient;
+
+		//if (!c_viewport) return;
+
+		//if (FN_TsAnimNotifyReSkillEvent_C != c_viewport->FindObject("Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify")) continue
+		//FN_TsAnimNotifyReSkillEvent_C = c_viewport->FindObject("Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify");
+		//FN_TsAnimNotifyStateCounterAttack_C = c_viewport->FindObject("Function TsAnimNotifyStateCounterAttack.TsAnimNotifyStateCounterAttack_C.K2_NotifyBegin");
+
+
+	}
 }
 
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
@@ -86,15 +82,14 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 		printf("MinHook initialized\n");
 
 	std::thread Indpndhk(IndependentHooks);
-	std::thread globals(GlobalsThread);
-	std::thread features(FeaturesThread);
+	std::thread ft(features);
 
-	Indpndhk.detach();
+	Indpndhk.join();
 
 	printf("You can detach this dll from your process with F9\n");
 	while (true) {
 
-		if (GetAsyncKeyState(QuitKey) & 1) {
+		if (GetAsyncKeyState(config::binds::quit_key) & 1) {
 			g_bRunning = false;
 			break;
 		}
@@ -102,9 +97,7 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 
-
-	features.join();
-	globals.join();
+	ft.join();
 	
 	D3D11Hook::Uninitialize();
 	Hooks::RemoveHooks();

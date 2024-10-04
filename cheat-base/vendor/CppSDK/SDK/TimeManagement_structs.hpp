@@ -64,7 +64,7 @@ static_assert(offsetof(FTimedDataInputEvaluationData, DistanceToOldestSampleSeco
 struct alignas(0x08) FTimedDataChannelSampleTime final
 {
 public:
-	uint8                                         Pad_1D20[0x18];                                    // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FTimedDataChannelSampleTime) == 0x000008, "Wrong alignment on FTimedDataChannelSampleTime");
 static_assert(sizeof(FTimedDataChannelSampleTime) == 0x000018, "Wrong size on FTimedDataChannelSampleTime");

@@ -24,7 +24,7 @@ struct FSBulletEffectOnHitConf final
 public:
 	EBulletEffectOnHitType                        ___2_36EA9DFC456FCDA74BA0AEA4661A0EA8;             // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ____5_E3F1C78144E26F8EFA1D638288E2072D;            // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D75[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              _____9_0BEA46E84FDB002A2CCC37B8A4748263;           // 0x0004(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                _____12_2B3D2AB84D22F5BE84973A87FA0CEBF6;          // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

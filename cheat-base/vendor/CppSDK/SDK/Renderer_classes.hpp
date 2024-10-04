@@ -45,9 +45,9 @@ class UDebugViewTexelDensitySettings final : public UObject
 public:
 	TArray<class FString>                         AutoTextureNameRegex;                              // 0x0030(0x0010)(ZeroConstructor, Config, GlobalConfig, NativeAccessSpecifierPublic)
 	float                                         BaseDensity;                                       // 0x0040(0x0004)(ZeroConstructor, Config, GlobalConfig, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25B4[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FLinearColor>                   DensityColors;                                     // 0x0048(0x0010)(ZeroConstructor, Config, GlobalConfig, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25B5[0x10];                                    // 0x0058(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x10];                                      // 0x0058(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

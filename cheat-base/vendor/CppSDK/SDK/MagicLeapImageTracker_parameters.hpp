@@ -32,7 +32,7 @@ struct MagicLeapImageTrackerComponent_SetTargetAsync final
 public:
 	class UTexture2D*                             ImageTarget;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_251F[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapImageTrackerComponent_SetTargetAsync) == 0x000008, "Wrong alignment on MagicLeapImageTrackerComponent_SetTargetAsync");
 static_assert(sizeof(MagicLeapImageTrackerComponent_SetTargetAsync) == 0x000010, "Wrong size on MagicLeapImageTrackerComponent_SetTargetAsync");

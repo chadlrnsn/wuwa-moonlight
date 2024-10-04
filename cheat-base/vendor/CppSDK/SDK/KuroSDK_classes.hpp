@@ -23,7 +23,7 @@ namespace SDK
 class UKuroSDKManager final : public UObject
 {
 public:
-	uint8                                         Pad_2580[0x8];                                     // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             InitDelegate;                                      // 0x0038(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             LoginDelegate;                                     // 0x0048(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             KickDelegate;                                      // 0x0058(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
@@ -36,7 +36,7 @@ public:
 	FMulticastInlineDelegateProperty_             ProtocolCallBack;                                  // 0x00C8(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             GameStateChangeCallBack;                           // 0x00D8(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             RequestPhotoPermissionDelegate;                    // 0x00E8(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2581[0x8];                                     // 0x00F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F8[0x8];                                       // 0x00F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             AnnounceInitDelegate;                              // 0x0100(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             AnnounceOpenDelegate;                              // 0x0110(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             AnnounceRedPointDelegate;                          // 0x0120(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
@@ -50,7 +50,7 @@ public:
 	FMulticastInlineDelegateProperty_             LogDelegate;                                       // 0x01A0(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             WebViewCloseDelegate;                              // 0x01B0(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnActivatedByApplinksDelegate;                     // 0x01C0(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2582[0x58];                                    // 0x01D0(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D0[0x58];                                     // 0x01D0(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void BindAccount();

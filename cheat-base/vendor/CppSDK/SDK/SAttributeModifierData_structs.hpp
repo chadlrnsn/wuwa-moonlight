@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "GameplayAbilities_structs.hpp"
-#include "EAttributeTarget_structs.hpp"
 #include "EAttributeOperation_structs.hpp"
+#include "EAttributeTarget_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 
 
 namespace SDK
@@ -26,7 +26,7 @@ public:
 	struct FGameplayAttribute                     _____3_7BEBF8B74EAF67C7A7D7E3BBE77630E2;           // 0x0000(0x0038)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	EAttributeTarget                              ___a_12_1D2BAF1F4F3839D4A70F51BA6E8DF6A4;          // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EAttributeOperation                           ___9_7EC999A94863F85C096996A3042BBB06;             // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_299A[0x2];                                     // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A[0x2];                                       // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         __8_9D0674CF4B00A4670325D0A7D3905AD3;              // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSAttributeModifierData) == 0x000008, "Wrong alignment on FSAttributeModifierData");

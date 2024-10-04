@@ -14,17 +14,6 @@
 namespace SDK::Params
 {
 
-// Function BPI_EffectInterface.BPI_EffectInterface_C.GetHandle
-// 0x0004 (0x0004 - 0x0000)
-struct BPI_EffectInterface_C_GetHandle final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BPI_EffectInterface_C_GetHandle) == 0x000004, "Wrong alignment on BPI_EffectInterface_C_GetHandle");
-static_assert(sizeof(BPI_EffectInterface_C_GetHandle) == 0x000004, "Wrong size on BPI_EffectInterface_C_GetHandle");
-static_assert(offsetof(BPI_EffectInterface_C_GetHandle, Handle) == 0x000000, "Member 'BPI_EffectInterface_C_GetHandle::Handle' has a wrong offset!");
-
 // Function BPI_EffectInterface.BPI_EffectInterface_C.SetHandle
 // 0x0004 (0x0004 - 0x0000)
 struct BPI_EffectInterface_C_SetHandle final
@@ -35,6 +24,17 @@ public:
 static_assert(alignof(BPI_EffectInterface_C_SetHandle) == 0x000004, "Wrong alignment on BPI_EffectInterface_C_SetHandle");
 static_assert(sizeof(BPI_EffectInterface_C_SetHandle) == 0x000004, "Wrong size on BPI_EffectInterface_C_SetHandle");
 static_assert(offsetof(BPI_EffectInterface_C_SetHandle, Handle) == 0x000000, "Member 'BPI_EffectInterface_C_SetHandle::Handle' has a wrong offset!");
+
+// Function BPI_EffectInterface.BPI_EffectInterface_C.GetHandle
+// 0x0004 (0x0004 - 0x0000)
+struct BPI_EffectInterface_C_GetHandle final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BPI_EffectInterface_C_GetHandle) == 0x000004, "Wrong alignment on BPI_EffectInterface_C_GetHandle");
+static_assert(sizeof(BPI_EffectInterface_C_GetHandle) == 0x000004, "Wrong size on BPI_EffectInterface_C_GetHandle");
+static_assert(offsetof(BPI_EffectInterface_C_GetHandle, Handle) == 0x000000, "Member 'BPI_EffectInterface_C_GetHandle::Handle' has a wrong offset!");
 
 }
 

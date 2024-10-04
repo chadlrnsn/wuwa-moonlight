@@ -12,9 +12,9 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "ECharacterDitherType_structs.hpp"
 #include "ECharacterControllerCaseType_structs.hpp"
 #include "ECharacterBodySpecifiedType_structs.hpp"
-#include "ECharacterDitherType_structs.hpp"
 #include "ECharacterSlotSpecifiedType_structs.hpp"
 #include "ECharacterRenderingType_structs.hpp"
 
@@ -32,7 +32,7 @@ public:
 	class AActor*                                 LogicOwner;                                        // 0x00D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UPDA_DecalShadowConfig_C*               DecalShadowConfig;                                 // 0x00D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsLogicOwnerTsEffectActor;                         // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31D2[0x3];                                     // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E1[0x3];                                       // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         IsUiUpdate;                                        // 0x00E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
@@ -69,8 +69,8 @@ public:
 	float QuickInitAndAddDataGroupWithMeshComponent(class UObject* Data, class UMeshComponent* MeshComponent);
 	void SetDecalShadowEnabled(bool Enable);
 	void DisableAllShadowByDecalShadowComponent();
-	void AddComponentForDecalShadow(const class FString& Param_Name, class UPrimitiveComponent* Comp);
-	void RemoveComponentFromDecalShadow(const class FString& Param_Name);
+	void AddComponentForDecalShadow(const class FString& Name_0, class UPrimitiveComponent* Comp);
+	void RemoveComponentFromDecalShadow(const class FString& Name_0);
 	void ReceiveSeqTick(float DeltaSeconds);
 	void SetLogicOwner(class AActor* Owner);
 	float GetTimeDilation();

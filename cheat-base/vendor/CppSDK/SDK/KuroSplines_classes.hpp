@@ -28,11 +28,11 @@ public:
 	TArray<int32>                                 IsHides;                                           // 0x0620(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
-	int32 GetIgnorePoint(int32 Param_Index);
-	int32 GetIsHide(int32 Param_Index);
-	int32 GetMoveSpeed(int32 Param_Index);
-	int32 GetMoveState(int32 Param_Index);
-	int32 GetStayTime(int32 Param_Index);
+	int32 GetIgnorePoint(int32 Index_0);
+	int32 GetIsHide(int32 Index_0);
+	int32 GetMoveSpeed(int32 Index_0);
+	int32 GetMoveState(int32 Index_0);
+	int32 GetStayTime(int32 Index_0);
 
 public:
 	static class UClass* StaticClass()
@@ -62,9 +62,9 @@ public:
 	TArray<int32>                                 BuffIds;                                           // 0x0600(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
-	int32 GetBuffId(int32 Param_Index);
-	float GetModifiedTime(int32 Param_Index);
-	float GetRadius(int32 Param_Index);
+	int32 GetBuffId(int32 Index_0);
+	float GetModifiedTime(int32 Index_0);
+	float GetRadius(int32 Index_0);
 
 public:
 	static class UClass* StaticClass()

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SCondition_structs.hpp"
 #include "SConDitionGroupType_structs.hpp"
+#include "SCondition_structs.hpp"
 
 
 namespace SDK
@@ -24,7 +24,7 @@ struct FSConditionGroup final
 public:
 	class FName                                   A__ID_5_7FEA7EC64FA5516AD656DF930C9CDDBB;          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ESConditionGroupType                          A__Ve_4_8CCFAF164F63C6BE9C165C8A6C61F344;          // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3153[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSCondition>                    A___9_264A3BB848BBDBA6C74F049A12A72C54;            // 0x0010(0x0010)(Edit, BlueprintVisible)
 	class FText                                   _Star___16_B0DE12EC4956E1787992469B0DAEF245;       // 0x0020(0x0018)(Edit, BlueprintVisible)
 	class FText                                   A_____14_82CC01F24EC03E6A2D2D419277092BE0;         // 0x0038(0x0018)(Edit, BlueprintVisible)

@@ -22,7 +22,7 @@ struct FSMaterialControllerFloatParameter final
 {
 public:
 	class FName                                   ParameterName_7_4E3CB6A64D4786B0B1770AB7227C091E;  // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3132[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSMaterialControllerFloatGroup         ParameterValue_9_DEF54BD34DD123D025B610860838C2B6; // 0x0010(0x01B0)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FSMaterialControllerFloatParameter) == 0x000008, "Wrong alignment on FSMaterialControllerFloatParameter");

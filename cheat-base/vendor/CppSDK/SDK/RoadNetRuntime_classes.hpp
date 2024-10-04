@@ -47,12 +47,12 @@ class URoadNetComponent final : public UPrimitiveComponent
 public:
 	bool                                          bDrawDebug;                                        // 0x04E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHasBeenEdited;                                    // 0x04E9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BAD[0x2];                                     // 0x04EA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4EA[0x2];                                      // 0x04EA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                TileSize;                                          // 0x04EC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<int32, struct FRoadNetNode>              RoadNetNodes;                                      // 0x04F8(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
 	uint32                                        RoadNetID;                                         // 0x0548(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBox                                   DataBoundsBox;                                     // 0x054C(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BAE[0x8];                                     // 0x0568(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_568[0x8];                                      // 0x0568(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	struct FVector GetLeaveTangentAtNode(int32 NodeID, ERoadNetCoordinateSpace CoordinateSpace) const;
@@ -83,7 +83,7 @@ class URoadNetSetting final : public UObject
 {
 public:
 	struct FVector                                NodePlaceOffset;                                   // 0x0030(0x000C)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BB1[0x4];                                     // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

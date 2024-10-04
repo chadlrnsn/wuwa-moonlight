@@ -520,9 +520,9 @@ void UTrackEntry::SetAlpha(float Alpha)
 // Function SpinePlugin.TrackEntry.SetAnimationEnd
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   Param_AnimationEnd                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   AnimationEnd_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTrackEntry::SetAnimationEnd(float Param_AnimationEnd)
+void UTrackEntry::SetAnimationEnd(float AnimationEnd_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -531,7 +531,7 @@ void UTrackEntry::SetAnimationEnd(float Param_AnimationEnd)
 
 	Params::TrackEntry_SetAnimationEnd Parms{};
 
-	Parms.Param_AnimationEnd = Param_AnimationEnd;
+	Parms.AnimationEnd_0 = AnimationEnd_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -570,9 +570,9 @@ void UTrackEntry::SetAnimationLast(float AnimationLast)
 // Function SpinePlugin.TrackEntry.SetAnimationStart
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   Param_AnimationStart                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   AnimationStart_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UTrackEntry::SetAnimationStart(float Param_AnimationStart)
+void UTrackEntry::SetAnimationStart(float AnimationStart_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -581,7 +581,7 @@ void UTrackEntry::SetAnimationStart(float Param_AnimationStart)
 
 	Params::TrackEntry_SetAnimationStart Parms{};
 
-	Parms.Param_AnimationStart = Param_AnimationStart;
+	Parms.AnimationStart_0 = AnimationStart_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

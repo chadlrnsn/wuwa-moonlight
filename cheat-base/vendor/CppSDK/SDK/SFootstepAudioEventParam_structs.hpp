@@ -29,7 +29,7 @@ public:
 	bool                                          __Minus__MinusWalkStop_9_DBF3EE5F405AA8E1A41100873D9C35E5; // 0x0097(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          __Minus__MinusRunStop_12_8863E06E418278BA31BF43960BE38AA8; // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          __Minus__MinusSprintStop_14_C4ADA41D47BB351A7AE6959223AFCD57; // 0x0099(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_311F[0x2];                                     // 0x009A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9A[0x2];                                       // 0x009A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                _X_rMn_18_FCEF290F49F551819AA19FA557516CA8;        // 0x009C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAkAudioEvent*                          WalkAkAudioEvent_28_07AD3B4B4189CB8E3CEE71AB26253EA4; // 0x00A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAkAudioEvent*                          RunAkAudioEvent_29_13ECC6BF4060BEF41DC8B58A898AC123; // 0x00B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

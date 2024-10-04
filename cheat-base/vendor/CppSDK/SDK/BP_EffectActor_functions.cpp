@@ -218,9 +218,9 @@ void ABP_EffectActor_C::CalculateLifeTime()
 // Function BP_EffectActor.BP_EffectActor_C.IsEditor
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Param_IsEditor                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    IsEditor_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_EffectActor_C::IsEditor(bool* Param_IsEditor)
+void ABP_EffectActor_C::IsEditor(bool* IsEditor_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -231,8 +231,8 @@ void ABP_EffectActor_C::IsEditor(bool* Param_IsEditor)
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_IsEditor != nullptr)
-		*Param_IsEditor = Parms.Param_IsEditor;
+	if (IsEditor_0 != nullptr)
+		*IsEditor_0 = Parms.IsEditor_0;
 }
 
 

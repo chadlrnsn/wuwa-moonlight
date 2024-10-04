@@ -68,7 +68,7 @@ struct InAppPurchaseComponent_TryGetItemsDetailsAsync final
 public:
 	TArray<class FString>                         ItemIDs;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_240E[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(InAppPurchaseComponent_TryGetItemsDetailsAsync) == 0x000008, "Wrong alignment on InAppPurchaseComponent_TryGetItemsDetailsAsync");
 static_assert(sizeof(InAppPurchaseComponent_TryGetItemsDetailsAsync) == 0x000018, "Wrong size on InAppPurchaseComponent_TryGetItemsDetailsAsync");
@@ -82,7 +82,7 @@ struct InAppPurchaseComponent_TryGetPurchaseHistoryAsync final
 public:
 	int32                                         InNumPages;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_240F[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(InAppPurchaseComponent_TryGetPurchaseHistoryAsync) == 0x000004, "Wrong alignment on InAppPurchaseComponent_TryGetPurchaseHistoryAsync");
 static_assert(sizeof(InAppPurchaseComponent_TryGetPurchaseHistoryAsync) == 0x000008, "Wrong size on InAppPurchaseComponent_TryGetPurchaseHistoryAsync");
@@ -96,7 +96,7 @@ struct InAppPurchaseComponent_TryPurchaseItemAsync final
 public:
 	struct FPurchaseItemDetails                   ItemDetails;                                       // 0x0000(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2410[0x7];                                     // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(InAppPurchaseComponent_TryPurchaseItemAsync) == 0x000008, "Wrong alignment on InAppPurchaseComponent_TryPurchaseItemAsync");
 static_assert(sizeof(InAppPurchaseComponent_TryPurchaseItemAsync) == 0x000048, "Wrong size on InAppPurchaseComponent_TryPurchaseItemAsync");
@@ -122,7 +122,7 @@ public:
 	struct FMagicLeapRaycastQueryParams           RequestParams;                                     // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	TDelegate<void(const struct FMagicLeapRaycastHitResult& HitResult)> ResultDelegate;                                    // 0x0038(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0060(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2412[0x7];                                     // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapRaycastComponent_RequestRaycast) == 0x000004, "Wrong alignment on MagicLeapRaycastComponent_RequestRaycast");
 static_assert(sizeof(MagicLeapRaycastComponent_RequestRaycast) == 0x000068, "Wrong size on MagicLeapRaycastComponent_RequestRaycast");
@@ -137,7 +137,7 @@ struct MagicLeapHMDFunctionLibrary_GetGraphicsClientPerformanceInfo final
 public:
 	struct FMagicLeapGraphicsClientPerformanceInfo PerformanceInfo;                                   // 0x0000(0x001C)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2414[0x3];                                     // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapHMDFunctionLibrary_GetGraphicsClientPerformanceInfo) == 0x000004, "Wrong alignment on MagicLeapHMDFunctionLibrary_GetGraphicsClientPerformanceInfo");
 static_assert(sizeof(MagicLeapHMDFunctionLibrary_GetGraphicsClientPerformanceInfo) == 0x000020, "Wrong size on MagicLeapHMDFunctionLibrary_GetGraphicsClientPerformanceInfo");
@@ -151,7 +151,7 @@ struct MagicLeapHMDFunctionLibrary_GetHeadTrackingMapEvents final
 public:
 	TSet<EMagicLeapHeadTrackingMapEvent>          MapEvents;                                         // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2415[0x7];                                     // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapHMDFunctionLibrary_GetHeadTrackingMapEvents) == 0x000008, "Wrong alignment on MagicLeapHMDFunctionLibrary_GetHeadTrackingMapEvents");
 static_assert(sizeof(MagicLeapHMDFunctionLibrary_GetHeadTrackingMapEvents) == 0x000058, "Wrong size on MagicLeapHMDFunctionLibrary_GetHeadTrackingMapEvents");
@@ -165,7 +165,7 @@ struct MagicLeapHMDFunctionLibrary_GetHeadTrackingState final
 public:
 	struct FMagicLeapHeadTrackingState            State;                                             // 0x0000(0x0008)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2416[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapHMDFunctionLibrary_GetHeadTrackingState) == 0x000004, "Wrong alignment on MagicLeapHMDFunctionLibrary_GetHeadTrackingState");
 static_assert(sizeof(MagicLeapHMDFunctionLibrary_GetHeadTrackingState) == 0x00000C, "Wrong size on MagicLeapHMDFunctionLibrary_GetHeadTrackingState");
@@ -300,7 +300,7 @@ struct MagicLeapHMDFunctionLibrary_SetFocusActor final
 public:
 	const class AActor*                           InFocusActor;                                      // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSetStabilizationActor;                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2417[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapHMDFunctionLibrary_SetFocusActor) == 0x000008, "Wrong alignment on MagicLeapHMDFunctionLibrary_SetFocusActor");
 static_assert(sizeof(MagicLeapHMDFunctionLibrary_SetFocusActor) == 0x000010, "Wrong size on MagicLeapHMDFunctionLibrary_SetFocusActor");
@@ -314,7 +314,7 @@ struct MagicLeapHMDFunctionLibrary_SetStabilizationDepthActor final
 public:
 	const class AActor*                           InStabilizationDepthActor;                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSetFocusActor;                                    // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2418[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapHMDFunctionLibrary_SetStabilizationDepthActor) == 0x000008, "Wrong alignment on MagicLeapHMDFunctionLibrary_SetStabilizationDepthActor");
 static_assert(sizeof(MagicLeapHMDFunctionLibrary_SetStabilizationDepthActor) == 0x000010, "Wrong size on MagicLeapHMDFunctionLibrary_SetStabilizationDepthActor");
@@ -422,7 +422,7 @@ public:
 	int32                                         Height;                                            // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         HorizontalFovDegrees;                              // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          CollideWithUnobserved;                             // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2420[0x3];                                     // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         UserData;                                          // 0x0034(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMagicLeapRaycastQueryParams           ReturnValue;                                       // 0x0038(0x0038)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };

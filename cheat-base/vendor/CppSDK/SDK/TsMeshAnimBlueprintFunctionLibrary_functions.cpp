@@ -259,12 +259,12 @@ float UTsMeshAnimBlueprintFunctionLibrary_C::GetRandomStandActionIndex(int32 Ent
 // Parameters:
 // int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // bool                                    Hide                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // bool                                    HideEffect                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    UseHighPriority                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsMeshAnimBlueprintFunctionLibrary_C::HideWeapon(int32 EntityId, bool Hide, int32 Param_Index, bool HideEffect, bool UseHighPriority, class UObject* __WorldContext)
+void UTsMeshAnimBlueprintFunctionLibrary_C::HideWeapon(int32 EntityId, bool Hide, int32 Index_0, bool HideEffect, bool UseHighPriority, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -275,7 +275,7 @@ void UTsMeshAnimBlueprintFunctionLibrary_C::HideWeapon(int32 EntityId, bool Hide
 
 	Parms.EntityId = EntityId;
 	Parms.Hide = Hide;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.HideEffect = HideEffect;
 	Parms.UseHighPriority = UseHighPriority;
 	Parms.__WorldContext = __WorldContext;

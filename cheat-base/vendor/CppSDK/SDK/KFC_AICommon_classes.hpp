@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ERelation_structs.hpp"
 #include "ECamp_structs.hpp"
+#include "ERelation_structs.hpp"
 
 
 namespace SDK
@@ -24,9 +24,9 @@ namespace SDK
 class UKFC_AICommon_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void ___________0(class AActor* ___r, class AActor* ___r_0, class UObject* __WorldContext, float* Param_____);
-	static void ______(class AActor* AI_a, class AActor* ___a, class UObject* __WorldContext, float* Zero_____, bool* Param______);
-	static void _____________P_LK____(class ACharacter* As_Base_Character, class UObject* __WorldContext, struct FVector* Param_____, struct FVector* ___, struct FVector* ___e__, bool* _c___, bool* _____e, float* __, float* ___l__, EMovementMode* Param______0);
+	static void ___________0(class AActor* ___r, class AActor* ___r_0, class UObject* __WorldContext, float* _____0);
+	static void ______(class AActor* AI_a, class AActor* ___a, class UObject* __WorldContext, float* Zero_____, bool* Param_______0);
+	static void _____________P_LK____(class ACharacter* As_Base_Character, class UObject* __WorldContext, struct FVector* _____0, struct FVector* ___, struct FVector* ___e__, bool* _c___, bool* _____e, float* __, float* ___l__, EMovementMode* _____1);
 	static void __y__4__(class FName G_ID, class UDataTable* G_D_h, TArray<class AActor*>& _XActorp_, TArray<class FName>& _X__p_, class UObject* __WorldContext);
 	static void Eighta_6l____0(class ATsBaseCharacter_C* BaseCharacter, class UObject* __WorldContext, bool* ______);
 	static void _Star_6l____0(class ATsBaseCharacter_C* __base_a, float _l__, const struct FVector& _StarP_, class UObject* __WorldContext, bool* _Star_6l_Minus);
@@ -34,19 +34,19 @@ public:
 	static void Eighta_6l___(class ATsBaseCharacter_C* __Character, float _l__, class ATsBaseCharacter_C* _h_a, class UObject* __WorldContext, bool* ______);
 	static void _n__Int(class ATsBaseCharacter_C* _r, const class FString& Key, int32 _, class UObject* __WorldContext);
 	static void _____Int(class ATsBaseCharacter_C* _r, const class FString& Key, class UObject* __WorldContext, int32* _);
-	static void ______P___(const struct FVector& __P_, class AActor* ___r, class UObject* __WorldContext, float* Param_____);
-	static void ____sa__(bool _____e_0, class ATsBaseCharacter_C* __Character, class FName ______, class AActor* Param_____, class UObject* __WorldContext);
-	static void __________2D(class AActor* ___r, class AActor* ___r_0, class UObject* __WorldContext, float* Param_____);
+	static void ______P___(const struct FVector& __P_, class AActor* ___r, class UObject* __WorldContext, float* _____0);
+	static void ____sa__(bool _____e_0, class ATsBaseCharacter_C* __Character, class FName ______, class AActor* _____0, class UObject* __WorldContext);
+	static void __________2D(class AActor* ___r, class AActor* ___r_0, class UObject* __WorldContext, float* _____0);
 	static void _e_Z(const struct FVector& InVec, class UObject* __WorldContext, struct FVector* OutVec);
 	static void Five___(ECamp __5_, ECamp __5__0, class UDataTable* Five_s_pn, class UObject* __WorldContext, ERelation* S_, int32* S_tp);
 	static void GetPathToTarget(const struct FVector& InEndPos, const struct FVector& InStartPos, class UObject* __WorldContext, TArray<struct FVector>* OutPathpoint);
-	static void ______0(const struct FVector& __, const struct FVector& ___, const struct FVector& Param_____, class UObject* __WorldContext, bool* Param______);
+	static void ______0(const struct FVector& __, const struct FVector& ___, const struct FVector& _____0, class UObject* __WorldContext, bool* Param_______0);
 	static void Get_Pos_in_Path(TArray<struct FSPointsRow>& InRow, bool bXDir, bool bYDir, class UObject* __WorldContext, TArray<struct FVector>* OutPoints);
 	static void _e__S__(class ATsBaseCharacter_C* ___a1, class ATsBaseCharacter_C* ___a2, class UObject* __WorldContext, float* __);
 	static void Stari__(class UObject* __WorldContext);
-	static void _____(class ATsBaseCharacter_C* Param_____, class ATsBaseCharacter_C* Param______0, class UObject* __WorldContext, float* ___);
+	static void _____(class ATsBaseCharacter_C* _____0, class ATsBaseCharacter_C* _____1, class UObject* __WorldContext, float* ___);
 	static void _Star_6l___(class UObject* __WorldContext, bool* _Star_6l_Minus);
-	static void __Minus_(float Param_____, float Param______0, class UObject* __WorldContext, float* Param___Minus_);
+	static void __Minus_(float _____0, float _____1, class UObject* __WorldContext, float* __Minus__0);
 	static void __Ol_______P_(float __, float _l, float ___0, const struct FVector& ___1, const struct FVector& ___, bool ThreeD_l, class UObject* __WorldContext, struct FVector* P__);
 	static void __P______(const struct FVector& W_P_, const struct FVector& ___P_, class ATsBaseCharacter_C* __, class UObject* __WorldContext, bool* P____, struct FVector* __P_, float* __P_______);
 	static void _n__Long(class ATsBaseCharacter_C* _r, const class FString& Key, int64 _, class UObject* __WorldContext);

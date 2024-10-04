@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SKposeEffect_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SKposeEffect_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "BP_Enum_PlatformSize_structs.hpp"
@@ -34,19 +34,19 @@ public:
 	TArray<struct FKuroRainMaterialFloatParameter> FloatParameterCurves;                              // 0x02F8(0x0010)(Edit, BlueprintVisible)
 	TArray<struct FKuroRainMaterialColorParameter> ColorParameterCurves;                              // 0x0308(0x0010)(Edit, BlueprintVisible)
 	bool                                          IsInEditor;                                        // 0x0318(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D0A[0x3];                                     // 0x0319(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_319[0x3];                                      // 0x0319(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         MaterialPlayTime;                                  // 0x031C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int32>                                 CachedHandles;                                     // 0x0320(0x0010)(Edit, BlueprintVisible, Transient, DisableEditOnInstance)
 	TArray<class UMaterialInstanceDynamic*>       DynamicMaterials;                                  // 0x0330(0x0010)(Edit, BlueprintVisible)
 	float                                         PassTime;                                          // 0x0340(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D0B[0x4];                                     // 0x0344(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_344[0x4];                                      // 0x0344(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, float>                      TempFloatValue;                                    // 0x0348(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<class FName, struct FLinearColor>        TempColorValue;                                    // 0x0398(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	float                                         TimeNormalized;                                    // 0x03E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D0C[0x4];                                     // 0x03EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3EC[0x4];                                      // 0x03EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMesh*                            PlatformStaticMesh;                                // 0x03F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EBP_Enum_PlatformSize                         Size;                                              // 0x03F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D0D[0x7];                                     // 0x03F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3F9[0x7];                                      // 0x03F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 MaterialPrefix1____9_;                             // 0x0400(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         CameraArmLength;                                   // 0x0410(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

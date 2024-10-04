@@ -20,23 +20,24 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsUiNavigationPanelConfig.TsUiNavigationPanelConfig_C
-// 0x0180 (0x0268 - 0x00E8)
+// 0x0188 (0x0288 - 0x0100)
 class UTsUiNavigationPanelConfig_C final : public ULGUIBehaviour
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class FString                                 ViewName;                                          // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
-	bool                                          Independent;                                       // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_30A1[0x7];                                     // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSNavigationGroup>              NormalGroup;                                       // 0x0108(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
-	TArray<struct FSNavigationGroup>              BookmarkGroup;                                     // 0x0118(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
-	struct FSNavigationGroup                      ScrollBarGroup;                                    // 0x0128(0x00C8)(Edit, BlueprintVisible, ContainsInstancedReference, HasGetValueTypeHash)
-	TArray<class AActor*>                         DefaultNavigationActor;                            // 0x01F0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	bool                                          IsChildPanel;                                      // 0x0200(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	bool                                          AllowNavigateInKeyBoard;                           // 0x0201(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_30A2[0x6];                                     // 0x0202(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, struct FSNavigationDynamicListenerConfig> DynamicListenerConfigMap;                          // 0x0208(0x0050)(Edit, BlueprintVisible)
-	class FString                                 InteractiveTag;                                    // 0x0258(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0100(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class FString                                 ViewName;                                          // 0x0108(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+	bool                                          Independent;                                       // 0x0118(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	uint8                                         Pad_119[0x7];                                      // 0x0119(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNavigationGroup>              NormalGroup;                                       // 0x0120(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
+	TArray<struct FSNavigationGroup>              BookmarkGroup;                                     // 0x0130(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
+	struct FSNavigationGroup                      ScrollBarGroup;                                    // 0x0140(0x00C8)(Edit, BlueprintVisible, ContainsInstancedReference, HasGetValueTypeHash)
+	TArray<class AActor*>                         DefaultNavigationActor;                            // 0x0208(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	bool                                          IsChildPanel;                                      // 0x0218(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	bool                                          AllowNavigateInKeyBoard;                           // 0x0219(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21A[0x6];                                      // 0x021A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, struct FSNavigationDynamicListenerConfig> DynamicListenerConfigMap;                          // 0x0220(0x0050)(Edit, BlueprintVisible)
+	class FString                                 InteractiveTag;                                    // 0x0270(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class AActor*                                 GamepadMouseActor;                                 // 0x0280(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_TsUiNavigationPanelConfig(int32 EntryPoint);
@@ -57,18 +58,19 @@ public:
 	}
 };
 static_assert(alignof(UTsUiNavigationPanelConfig_C) == 0x000008, "Wrong alignment on UTsUiNavigationPanelConfig_C");
-static_assert(sizeof(UTsUiNavigationPanelConfig_C) == 0x000268, "Wrong size on UTsUiNavigationPanelConfig_C");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, UberGraphFrame) == 0x0000E8, "Member 'UTsUiNavigationPanelConfig_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, ViewName) == 0x0000F0, "Member 'UTsUiNavigationPanelConfig_C::ViewName' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, Independent) == 0x000100, "Member 'UTsUiNavigationPanelConfig_C::Independent' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, NormalGroup) == 0x000108, "Member 'UTsUiNavigationPanelConfig_C::NormalGroup' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, BookmarkGroup) == 0x000118, "Member 'UTsUiNavigationPanelConfig_C::BookmarkGroup' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, ScrollBarGroup) == 0x000128, "Member 'UTsUiNavigationPanelConfig_C::ScrollBarGroup' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, DefaultNavigationActor) == 0x0001F0, "Member 'UTsUiNavigationPanelConfig_C::DefaultNavigationActor' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, IsChildPanel) == 0x000200, "Member 'UTsUiNavigationPanelConfig_C::IsChildPanel' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, AllowNavigateInKeyBoard) == 0x000201, "Member 'UTsUiNavigationPanelConfig_C::AllowNavigateInKeyBoard' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, DynamicListenerConfigMap) == 0x000208, "Member 'UTsUiNavigationPanelConfig_C::DynamicListenerConfigMap' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationPanelConfig_C, InteractiveTag) == 0x000258, "Member 'UTsUiNavigationPanelConfig_C::InteractiveTag' has a wrong offset!");
+static_assert(sizeof(UTsUiNavigationPanelConfig_C) == 0x000288, "Wrong size on UTsUiNavigationPanelConfig_C");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, UberGraphFrame) == 0x000100, "Member 'UTsUiNavigationPanelConfig_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, ViewName) == 0x000108, "Member 'UTsUiNavigationPanelConfig_C::ViewName' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, Independent) == 0x000118, "Member 'UTsUiNavigationPanelConfig_C::Independent' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, NormalGroup) == 0x000120, "Member 'UTsUiNavigationPanelConfig_C::NormalGroup' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, BookmarkGroup) == 0x000130, "Member 'UTsUiNavigationPanelConfig_C::BookmarkGroup' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, ScrollBarGroup) == 0x000140, "Member 'UTsUiNavigationPanelConfig_C::ScrollBarGroup' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, DefaultNavigationActor) == 0x000208, "Member 'UTsUiNavigationPanelConfig_C::DefaultNavigationActor' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, IsChildPanel) == 0x000218, "Member 'UTsUiNavigationPanelConfig_C::IsChildPanel' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, AllowNavigateInKeyBoard) == 0x000219, "Member 'UTsUiNavigationPanelConfig_C::AllowNavigateInKeyBoard' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, DynamicListenerConfigMap) == 0x000220, "Member 'UTsUiNavigationPanelConfig_C::DynamicListenerConfigMap' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, InteractiveTag) == 0x000270, "Member 'UTsUiNavigationPanelConfig_C::InteractiveTag' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationPanelConfig_C, GamepadMouseActor) == 0x000280, "Member 'UTsUiNavigationPanelConfig_C::GamepadMouseActor' has a wrong offset!");
 
 }
 

@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function TsTaskPlayMontage.TsTaskPlayMontage_C.ExecuteUbergraph_TsTaskPlayMontage
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsTaskPlayMontage_C::ExecuteUbergraph_TsTaskPlayMontage(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskPlayMontage_C", "ExecuteUbergraph_TsTaskPlayMontage");
-
-	Params::TsTaskPlayMontage_C_ExecuteUbergraph_TsTaskPlayMontage Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function TsTaskPlayMontage.TsTaskPlayMontage_C.ReceiveExecuteAI
 // (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -59,6 +34,31 @@ void UTsTaskPlayMontage_C::ReceiveExecuteAI(class AAIController* OwnerController
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskPlayMontage.TsTaskPlayMontage_C.ExecuteUbergraph_TsTaskPlayMontage
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsTaskPlayMontage_C::ExecuteUbergraph_TsTaskPlayMontage(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskPlayMontage_C", "ExecuteUbergraph_TsTaskPlayMontage");
+
+	Params::TsTaskPlayMontage_C_ExecuteUbergraph_TsTaskPlayMontage Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -55,10 +55,10 @@ void UBP_KuroCheatManager_C::ReceiveInitCheatManager()
 ä
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             Param__e__                                             (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// bool                                    Param___                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FKey                             _e___0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// bool                                    ___0                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UBP_KuroCheatManager_C::Func_____(const struct FKey& Param__e__, bool Param___)
+void UBP_KuroCheatManager_C::_____0(const struct FKey& _e___0, bool ___0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -66,10 +66,10 @@ void UBP_KuroCheatManager_C::Func_____(const struct FKey& Param__e__, bool Param
 		Func = Class->GetFunction("BP_KuroCheatManager_C", "\
 ä");
 
-	Params::BP_KuroCheatManager_C_____ Parms{};
+	Params::BP_KuroCheatManager_C______0 Parms{};
 
-	Parms.Param__e__ = std::move(Param__e__);
-	Parms.Param___ = Param___;
+	Parms._e___0 = std::move(_e___0);
+	Parms.___0 = ___0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SHitWhirlpool_structs.hpp"
 #include "EHitAnim_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "EVelocityCurveType_structs.hpp"
+#include "SHitWhirlpool_structs.hpp"
 
 
 namespace SDK
@@ -25,7 +25,7 @@ struct FSHitEffect final
 {
 public:
 	EHitAnim                                      _____2_2C0518244CBDC89ECC3256930A603440;           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3155[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ____ZtOl_67_1DCAF2EE49915FAA45C56AA244F472C3;      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                ZMinus_____21_DF5DD7794535ECE5B1D6BFB49F154466;    // 0x0008(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ZMinus_______73_3E61976A4875E917DE95B9B01D5455CA;  // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -33,7 +33,7 @@ public:
 	struct FVector                                Zerob_____19_7A9C2FDE41BCEB7ACDE408A0D6777C8F;     // 0x001C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Zerob_______72_1C3AEA8C42A269D9C1C7B1AED1C5D637;   // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EVelocityCurveType                            Zerob_______93_2323D2F842EA7D7FB93CDE8EFF804ED8;   // 0x002C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3156[0x3];                                     // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Zerob_______78_BAD1F4754F8C428F44476CAB48D9AABD;   // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Zerob_______80_EBBDF65E4A89BB26D0CE9A8320A23F04;   // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _____25_8328D81F475CE602D7ED4BAF60307905;          // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

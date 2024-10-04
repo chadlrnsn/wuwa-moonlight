@@ -40,11 +40,11 @@ void ABP_KuroDestructibleActor_C::ExecuteUbergraph_BP_KuroDestructibleActor(int3
 // Function BP_KuroDestructibleActor.BP_KuroDestructibleActor_C.PlayDestruction
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Param_HurtOrigin                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Param_Impluse                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          HurtOrigin_0                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Impluse_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsZeroImpluse                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_KuroDestructibleActor_C::PlayDestruction(const struct FVector& Param_HurtOrigin, float Param_Impluse, bool IsZeroImpluse)
+void ABP_KuroDestructibleActor_C::PlayDestruction(const struct FVector& HurtOrigin_0, float Impluse_0, bool IsZeroImpluse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -53,8 +53,8 @@ void ABP_KuroDestructibleActor_C::PlayDestruction(const struct FVector& Param_Hu
 
 	Params::BP_KuroDestructibleActor_C_PlayDestruction Parms{};
 
-	Parms.Param_HurtOrigin = std::move(Param_HurtOrigin);
-	Parms.Param_Impluse = Param_Impluse;
+	Parms.HurtOrigin_0 = std::move(HurtOrigin_0);
+	Parms.Impluse_0 = Impluse_0;
 	Parms.IsZeroImpluse = IsZeroImpluse;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -100,10 +100,10 @@ void ABP_KuroDestructibleActor_C::ReceiveBeginPlay()
 // Function BP_KuroDestructibleActor.BP_KuroDestructibleActor_C.ApplyDamage
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Param_HurtOrigin                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          HurtOrigin_0                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          SpeedDirection                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroDestructibleActor_C::ApplyDamage(const struct FVector& Param_HurtOrigin, const struct FVector& SpeedDirection)
+void ABP_KuroDestructibleActor_C::ApplyDamage(const struct FVector& HurtOrigin_0, const struct FVector& SpeedDirection)
 {
 	static class UFunction* Func = nullptr;
 
@@ -112,7 +112,7 @@ void ABP_KuroDestructibleActor_C::ApplyDamage(const struct FVector& Param_HurtOr
 
 	Params::BP_KuroDestructibleActor_C_ApplyDamage Parms{};
 
-	Parms.Param_HurtOrigin = std::move(Param_HurtOrigin);
+	Parms.HurtOrigin_0 = std::move(HurtOrigin_0);
 	Parms.SpeedDirection = std::move(SpeedDirection);
 
 	UObject::ProcessEvent(Func, &Parms);

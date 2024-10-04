@@ -29,7 +29,7 @@ public:
 	TSoftObjectPtr<class UEffectModelBase>        EffectDataAsset;                                   // 0x02D8(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	struct FCollisionResponseContainer            OnDestoryReponses;                                 // 0x0308(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 	bool                                          IsDebug;                                           // 0x0328(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D2F[0x3];                                     // 0x0329(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_329[0x3];                                      // 0x0329(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Impluse;                                           // 0x032C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ImpluseFactor;                                     // 0x0330(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         DamageRadius;                                      // 0x0334(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -37,15 +37,15 @@ public:
 	struct FVector                                OriginOffset;                                      // 0x0340(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         BaseForce;                                         // 0x034C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IgnoreBullet;                                      // 0x0350(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D30[0x3];                                     // 0x0351(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_351[0x3];                                      // 0x0351(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                HurtOrigin;                                        // 0x0354(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_KuroDestructibleActor(int32 EntryPoint);
-	void PlayDestruction(const struct FVector& Param_HurtOrigin, float Param_Impluse, bool IsZeroImpluse);
+	void PlayDestruction(const struct FVector& HurtOrigin_0, float Impluse_0, bool IsZeroImpluse);
 	void OnFractureEvent(const struct FVector& HitPoint, const struct FVector& HitDirection);
 	void ReceiveBeginPlay();
-	void ApplyDamage(const struct FVector& Param_HurtOrigin, const struct FVector& SpeedDirection);
+	void ApplyDamage(const struct FVector& HurtOrigin_0, const struct FVector& SpeedDirection);
 	void ModifiedCollison();
 	bool IsMobile();
 

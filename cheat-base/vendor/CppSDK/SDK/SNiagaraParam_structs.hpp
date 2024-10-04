@@ -22,7 +22,7 @@ struct FSNiagaraParam final
 {
 public:
 	int32                                         ID_14_C390AD394BEACC3EB69D1DB31A8D685A;            // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3121[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, struct FKuroCurveFloat>     FloatParameters_15_E66693664565A6042A4B9B87C21EC253; // 0x0008(0x0050)(Edit, BlueprintVisible)
 	TMap<class FName, struct FKuroCurveLinearColor> ColorParameters_16_D8A1F94842911439E863AA8E9063FF2D; // 0x0058(0x0050)(Edit, BlueprintVisible)
 	TMap<class FName, struct FKuroCurveVector>    VectorParameters_17_1AE4CDDD44406B3B50443FA52006DD7A; // 0x00A8(0x0050)(Edit, BlueprintVisible)

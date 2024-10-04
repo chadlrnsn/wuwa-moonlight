@@ -23,7 +23,7 @@ struct FSClimbInfo final
 public:
 	struct FVector                                _______2_D9B3D54A4F8A6F202BFA5FA5F1299CE3;         // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ____Minus_12_F50B2F19448F5ED24ABDA48713D38446;     // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_313C[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              ___e___9_E61A76D344EB9FFDE7C7D2AF9EC669C7;         // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _____13_AB45DCEA40C4FAF4521863930901D629;          // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 };

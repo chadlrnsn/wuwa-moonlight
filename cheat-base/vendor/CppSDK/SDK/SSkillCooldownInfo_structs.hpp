@@ -24,7 +24,7 @@ public:
 	float                                         CdTime_17_53AFB6144F31B1FC690BC4B495391CEC;        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CdDelay_18_88077BCA45D7C83C6F9595BE90E19E91;       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsShareAllCdSkill_16_0490446C45E16F9607CA3DA11969A16E; // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_307B[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MaxCount_21_BE52BC1A408FD925BE8848A76E57F08D;      // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ShareGroupId_23_F1F57AFA439C48D1F17446B85631B005;  // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         SectionCount_31_F71122154E43E38C3F673ABA2F018785;  // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -34,7 +34,7 @@ public:
 	float                                         StopTime_35_11B3875946A9CBDFB1443F8B5AC1E367;      // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsReset_38_CA73D145447E07AA5E4619828AF561CD;       // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsResetOnChangeRole_43_4E270B634727E782FF05A2897DEBE424; // 0x0029(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_307C[0x6];                                     // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FGameplayTag>                   CdTags_48_8502F43749E48F6FFD3FA0AD331D0DC2;        // 0x0030(0x0010)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSSkillCooldownInfo) == 0x000008, "Wrong alignment on FSSkillCooldownInfo");

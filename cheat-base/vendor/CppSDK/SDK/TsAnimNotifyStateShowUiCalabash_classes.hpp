@@ -23,7 +23,6 @@ class UTsAnimNotifyStateShowUiCalabash_C final : public UKuroAnimNotifyState
 public:
 	class FName                                   Socket;                                            // 0x0048(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsRotate;                                          // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          NeedDelayTrigger;                                  // 0x0055(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
@@ -45,7 +44,6 @@ static_assert(alignof(UTsAnimNotifyStateShowUiCalabash_C) == 0x000008, "Wrong al
 static_assert(sizeof(UTsAnimNotifyStateShowUiCalabash_C) == 0x000058, "Wrong size on UTsAnimNotifyStateShowUiCalabash_C");
 static_assert(offsetof(UTsAnimNotifyStateShowUiCalabash_C, Socket) == 0x000048, "Member 'UTsAnimNotifyStateShowUiCalabash_C::Socket' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateShowUiCalabash_C, IsRotate) == 0x000054, "Member 'UTsAnimNotifyStateShowUiCalabash_C::IsRotate' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifyStateShowUiCalabash_C, NeedDelayTrigger) == 0x000055, "Member 'UTsAnimNotifyStateShowUiCalabash_C::NeedDelayTrigger' has a wrong offset!");
 
 }
 

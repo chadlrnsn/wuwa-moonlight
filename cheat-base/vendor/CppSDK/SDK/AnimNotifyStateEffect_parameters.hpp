@@ -106,13 +106,13 @@ struct AnimNotifyStateEffect_C_AttachEffectToWeapon final
 {
 public:
 	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 Param_Outer;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Outer_0;                                           // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         EffectHandle;                                      // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(AnimNotifyStateEffect_C_AttachEffectToWeapon) == 0x000008, "Wrong alignment on AnimNotifyStateEffect_C_AttachEffectToWeapon");
 static_assert(sizeof(AnimNotifyStateEffect_C_AttachEffectToWeapon) == 0x000018, "Wrong size on AnimNotifyStateEffect_C_AttachEffectToWeapon");
 static_assert(offsetof(AnimNotifyStateEffect_C_AttachEffectToWeapon, MeshComp) == 0x000000, "Member 'AnimNotifyStateEffect_C_AttachEffectToWeapon::MeshComp' has a wrong offset!");
-static_assert(offsetof(AnimNotifyStateEffect_C_AttachEffectToWeapon, Param_Outer) == 0x000008, "Member 'AnimNotifyStateEffect_C_AttachEffectToWeapon::Param_Outer' has a wrong offset!");
+static_assert(offsetof(AnimNotifyStateEffect_C_AttachEffectToWeapon, Outer_0) == 0x000008, "Member 'AnimNotifyStateEffect_C_AttachEffectToWeapon::Outer_0' has a wrong offset!");
 static_assert(offsetof(AnimNotifyStateEffect_C_AttachEffectToWeapon, EffectHandle) == 0x000010, "Member 'AnimNotifyStateEffect_C_AttachEffectToWeapon::EffectHandle' has a wrong offset!");
 
 // Function AnimNotifyStateEffect.AnimNotifyStateEffect_C.GetNotifyName

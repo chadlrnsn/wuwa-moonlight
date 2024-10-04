@@ -28,7 +28,7 @@ public:
 	float                                         Acceleration_23_F4BEBFA944C355D912F6A0B541BEBC2F;  // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         SwingAcceleration_37_5CFFCCAE4D7DE44C9076CBB1A3DBAB1A; // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         GroundFriction_24_E8BE047248810FD17D14658342499CC5; // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3154[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCurveVector*                           MovementCurve_10_A968BF814DA38118D120B1AC090F43F2; // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UCurveFloat*                            RotationRateCurve_13_D6280A964B6624D84EA7B1A295BDCDDF; // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         NormalSwimSpeed_16_5594DF0C45045A38F17AFDA3DBD9D6B2; // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

@@ -52,7 +52,7 @@ static_assert(sizeof(UKuroHttp) == 0x000030, "Wrong size on UKuroHttp");
 class UKuroHttpServerRequestProxy final : public UObject
 {
 public:
-	uint8                                         Pad_183D[0x80];                                    // 0x0030(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x80];                                      // 0x0030(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool GetHeader(const class FString& Key, TArray<class FString>* OutHeader);
@@ -78,7 +78,7 @@ class UKuroHttpServerRouterProxy final : public UObject
 {
 public:
 	TDelegate<void(const class FString& ModuleName, class UKuroHttpServerRequestProxy* RequestProxy)> HttpRequestDelegate;                               // 0x0030(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1840[0x60];                                    // 0x0058(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x60];                                      // 0x0058(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void BindRoute(const class FString& ModuleName);
@@ -104,7 +104,7 @@ static_assert(offsetof(UKuroHttpServerRouterProxy, HttpRequestDelegate) == 0x000
 class UKuroKcpClient final : public UObject
 {
 public:
-	uint8                                         Pad_1841[0x8];                                     // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnConnectSuccess;                                  // 0x0038(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TDelegate<void(int32 SeqNo, int16 RpdId, uint16 MessageId, const struct FArrayBuffer& MessageBuffer)> OnRecResp;                                         // 0x0048(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TDelegate<void(int32 SeqNo, int16 RpdId, uint32 ErrorCode, const struct FArrayBuffer& StringBuffer)> OnRecException;                                    // 0x0070(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
@@ -113,7 +113,7 @@ public:
 	bool                                          UseNewResolveIp;                                   // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsMultiThreaded;                                   // 0x00E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsTickDrivenOutside;                               // 0x00EA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1842[0x16D];                                   // 0x00EB(0x016D)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_EB[0x16D];                                     // 0x00EB(0x016D)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetEnType(uint8 Type, int16 MsgId);
@@ -152,7 +152,7 @@ class UKuroNetworkChange final : public UObject
 {
 public:
 	FMulticastInlineDelegateProperty_             NetworkChangeDelegate;                             // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1846[0x10];                                    // 0x0040(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x10];                                      // 0x0040(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	uint8 GetNetworkType();
@@ -179,7 +179,7 @@ public:
 	struct FKuroPublicKey                         ServerPublicKey;                                   // 0x0030(0x0020)(Edit, Config, AdvancedDisplay, NativeAccessSpecifierPublic)
 	struct FKuroPrivateKey                        ClientPrivateKey;                                  // 0x0050(0x0030)(Edit, Config, AdvancedDisplay, NativeAccessSpecifierPublic)
 	bool                                          EnableDump;                                        // 0x0080(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1847[0x7];                                     // 0x0081(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_81[0x7];                                       // 0x0081(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

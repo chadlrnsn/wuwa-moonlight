@@ -60,7 +60,7 @@ struct FKuroDynamicReverbParam final
 {
 public:
 	uint8                                         HorizontalHitCount;                                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1763[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         VerticalHitDistance;                               // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FKuroDynamicReverbParam) == 0x000004, "Wrong alignment on FKuroDynamicReverbParam");
@@ -75,7 +75,7 @@ struct FKuroAudioEnvironmentInfo final
 public:
 	class FString                                 StateEvent;                                        // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnableDynamicReverb;                              // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1764[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FKuroAudioEnvironmentInfo) == 0x000008, "Wrong alignment on FKuroAudioEnvironmentInfo");
 static_assert(sizeof(FKuroAudioEnvironmentInfo) == 0x000018, "Wrong size on FKuroAudioEnvironmentInfo");

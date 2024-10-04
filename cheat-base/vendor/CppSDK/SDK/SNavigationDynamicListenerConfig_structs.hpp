@@ -20,7 +20,7 @@ struct FSNavigationDynamicListenerConfig final
 {
 public:
 	int32                                         Index_2_6C2CCA6E4BF8816A4070FCA2202A3D3B;          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2A08[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 LayoutActor_8_C24C923C445F233BC823EFB31AEC43E5;    // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 ScrollActor_10_FC2709614C034C729A392F80FF3C3231;   // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

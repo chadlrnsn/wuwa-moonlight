@@ -23,10 +23,10 @@ namespace SDK
 class UKuroHitResult final : public UObject
 {
 public:
-	uint8                                         Pad_177D[0xA8];                                    // 0x0030(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xA8];                                      // 0x0030(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bBlockingHit;                                      // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bStartPenetrating;                                 // 0x00D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_177E[0x6];                                     // 0x00DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_DA[0x6];                                       // 0x00DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<TWeakObjectPtr<class AActor>>          Actors;                                            // 0x00E0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<TWeakObjectPtr<class UPrimitiveComponent>> Components;                                        // 0x00F0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<TWeakObjectPtr<class UPhysicalMaterial>> PhysMaterials;                                     // 0x0100(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
@@ -49,7 +49,7 @@ public:
 	TArray<float>                                 NormalX_Array;                                     // 0x0210(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<float>                                 NormalY_Array;                                     // 0x0220(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<float>                                 NormalZ_Array;                                     // 0x0230(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_177F[0x8];                                     // 0x0240(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_240[0x8];                                      // 0x0240(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Clear();
@@ -123,7 +123,7 @@ class UTraceBaseElement : public UObject
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1786[0x28];                                    // 0x0038(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x28];                                      // 0x0038(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AActor*>                         ActorsToIgnore;                                    // 0x0060(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	class UKuroHitResult*                         HitResult;                                         // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         StartX;                                            // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -146,7 +146,7 @@ public:
 	bool                                          bIsSingle;                                         // 0x00B6(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsProfile;                                        // 0x00B7(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ProfileName;                                       // 0x00B8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1787[0x4];                                     // 0x00C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddObjectTypeQuery(EObjectTypeQuery ObjectType);
@@ -277,7 +277,7 @@ class UTraceSphereElement final : public UTraceBaseElement
 {
 public:
 	float                                         Radius;                                            // 0x00C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1788[0x4];                                     // 0x00CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

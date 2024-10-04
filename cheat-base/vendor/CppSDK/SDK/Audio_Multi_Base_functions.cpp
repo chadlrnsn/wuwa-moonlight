@@ -202,7 +202,7 @@ void AAudio_Multi_Base_C::__Minus___0(struct FVector* Minus__)
 	if (Func == nullptr)
 		Func = Class->GetFunction("Audio_Multi_Base_C", "·Ö-Ã¹");
 
-	Params::Audio_Multi_Base_C___Minus__ Parms{};
+	Params::Audio_Multi_Base_C___Minus___0 Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

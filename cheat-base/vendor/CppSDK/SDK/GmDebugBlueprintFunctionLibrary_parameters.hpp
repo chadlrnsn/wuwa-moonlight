@@ -76,7 +76,7 @@ struct GmDebugBlueprintFunctionLibrary_C_TsGmShowEntityViewByPbDataId final
 {
 public:
 	int32                                         PbDataId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_28A8[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GmDebugBlueprintFunctionLibrary_C_TsGmShowEntityViewByPbDataId) == 0x000008, "Wrong alignment on GmDebugBlueprintFunctionLibrary_C_TsGmShowEntityViewByPbDataId");
@@ -114,7 +114,7 @@ struct GmDebugBlueprintFunctionLibrary_C_TsGmStartGameCommandService final
 {
 public:
 	int32                                         Port;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_28A9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GmDebugBlueprintFunctionLibrary_C_TsGmStartGameCommandService) == 0x000008, "Wrong alignment on GmDebugBlueprintFunctionLibrary_C_TsGmStartGameCommandService");
@@ -139,7 +139,7 @@ struct GmDebugBlueprintFunctionLibrary_C_TsCheatInputRequest final
 {
 public:
 	int32                                         Type;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_28AA[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GmDebugBlueprintFunctionLibrary_C_TsCheatInputRequest) == 0x000008, "Wrong alignment on GmDebugBlueprintFunctionLibrary_C_TsCheatInputRequest");
@@ -166,7 +166,7 @@ struct GmDebugBlueprintFunctionLibrary_C_TsSetAoeDestroyEnemyActivated final
 {
 public:
 	bool                                          AoeDestroyEnemyActivated;                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_28AB[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GmDebugBlueprintFunctionLibrary_C_TsSetAoeDestroyEnemyActivated) == 0x000008, "Wrong alignment on GmDebugBlueprintFunctionLibrary_C_TsSetAoeDestroyEnemyActivated");
@@ -193,7 +193,7 @@ struct GmDebugBlueprintFunctionLibrary_C_TsSetAoeDestroyEnemyRange final
 {
 public:
 	float                                         AoeDestroyEnemyRange;                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_28AC[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GmDebugBlueprintFunctionLibrary_C_TsSetAoeDestroyEnemyRange) == 0x000008, "Wrong alignment on GmDebugBlueprintFunctionLibrary_C_TsSetAoeDestroyEnemyRange");

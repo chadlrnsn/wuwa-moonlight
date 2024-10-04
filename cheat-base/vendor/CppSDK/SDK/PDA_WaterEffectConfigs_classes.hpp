@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SWaterEffectSubConfig_structs.hpp"
 #include "Engine_classes.hpp"
+#include "SWaterEffectSubConfig_structs.hpp"
 
 
 namespace SDK

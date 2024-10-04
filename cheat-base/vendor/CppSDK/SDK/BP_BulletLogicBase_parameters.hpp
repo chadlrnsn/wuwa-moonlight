@@ -16,6 +16,22 @@
 namespace SDK::Params
 {
 
+// Function BP_BulletLogicBase.BP_BulletLogicBase_C.P9ô…8D
+// 0x0018 (0x0018 - 0x0000)
+struct BP_BulletLogicBase_C_P9___8D final
+{
+public:
+	class UObject*                                P9;                                                // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         EightD__;                                          // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     SM_r;                                              // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_BulletLogicBase_C_P9___8D) == 0x000008, "Wrong alignment on BP_BulletLogicBase_C_P9___8D");
+static_assert(sizeof(BP_BulletLogicBase_C_P9___8D) == 0x000018, "Wrong size on BP_BulletLogicBase_C_P9___8D");
+static_assert(offsetof(BP_BulletLogicBase_C_P9___8D, P9) == 0x000000, "Member 'BP_BulletLogicBase_C_P9___8D::P9' has a wrong offset!");
+static_assert(offsetof(BP_BulletLogicBase_C_P9___8D, EightD__) == 0x000008, "Member 'BP_BulletLogicBase_C_P9___8D::EightD__' has a wrong offset!");
+static_assert(offsetof(BP_BulletLogicBase_C_P9___8D, SM_r) == 0x000010, "Member 'BP_BulletLogicBase_C_P9___8D::SM_r' has a wrong offset!");
+
 // Function BP_BulletLogicBase.BP_BulletLogicBase_C.gL
 // 0x02D8 (0x02D8 - 0x0000)
 struct BP_BulletLogicBase_C_GL final
@@ -32,22 +48,6 @@ static_assert(offsetof(BP_BulletLogicBase_C_GL, ___) == 0x000000, "Member 'BP_Bu
 static_assert(offsetof(BP_BulletLogicBase_C_GL, ____0) == 0x000008, "Member 'BP_BulletLogicBase_C_GL::____0' has a wrong offset!");
 static_assert(offsetof(BP_BulletLogicBase_C_GL, P9pn) == 0x000010, "Member 'BP_BulletLogicBase_C_GL::P9pn' has a wrong offset!");
 static_assert(offsetof(BP_BulletLogicBase_C_GL, P9) == 0x0002D0, "Member 'BP_BulletLogicBase_C_GL::P9' has a wrong offset!");
-
-// Function BP_BulletLogicBase.BP_BulletLogicBase_C.P9ô…8D
-// 0x0018 (0x0018 - 0x0000)
-struct BP_BulletLogicBase_C_P9___8D final
-{
-public:
-	class UObject*                                P9;                                                // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         EightD__;                                          // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3120[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     SM_r;                                              // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_BulletLogicBase_C_P9___8D) == 0x000008, "Wrong alignment on BP_BulletLogicBase_C_P9___8D");
-static_assert(sizeof(BP_BulletLogicBase_C_P9___8D) == 0x000018, "Wrong size on BP_BulletLogicBase_C_P9___8D");
-static_assert(offsetof(BP_BulletLogicBase_C_P9___8D, P9) == 0x000000, "Member 'BP_BulletLogicBase_C_P9___8D::P9' has a wrong offset!");
-static_assert(offsetof(BP_BulletLogicBase_C_P9___8D, EightD__) == 0x000008, "Member 'BP_BulletLogicBase_C_P9___8D::EightD__' has a wrong offset!");
-static_assert(offsetof(BP_BulletLogicBase_C_P9___8D, SM_r) == 0x000010, "Member 'BP_BulletLogicBase_C_P9___8D::SM_r' has a wrong offset!");
 
 }
 

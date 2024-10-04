@@ -10,9 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SCameraConfig_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SNavigationGroup_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SCameraConfig_structs.hpp"
 
 
 namespace SDK
@@ -33,26 +34,33 @@ enum class EV8GCType : uint8
 };
 
 // ScriptStruct JsEnv.PropertyMetaRoot
-// 0x0008 (0x0008 - 0x0000)
+// 0x0010 (0x0010 - 0x0000)
 struct FPropertyMetaRoot final
 {
 public:
-	class USkeletalMesh*                          None;                                              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                None_0;                                            // 0x0000(0x000C)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSCameraConfig                         None_1;                                            // 0x0000(0x0738)(HasGetValueTypeHash)
-	class AActor*                                 None_2;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FIntPoint                              None_3;                                            // 0x0000(0x0008)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         None_4;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGuid                                  None_5;                                            // 0x0000(0x0010)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   None_6;                                            // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UClass*                                 None_7;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAnimationAsset*                        None_8;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FAnimNotifyEvent                       None_9;                                            // 0x0000(0x00C8)(HasGetValueTypeHash)
-	class UAnimSequenceBase*                      None_10;                                           // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 None_11;                                           // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FSNavigationGroup                      None;                                              // 0x0000(0x00C8)(HasGetValueTypeHash)
+	struct FSplinePoint                           None_0;                                            // 0x0000(0x0044)(NoDestructor, HasGetValueTypeHash)
+	class UUIItem*                                None_1;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         None_2;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         None_3;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTransform                             None_4;                                            // 0x0000(0x0030)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UItemMaterialControllerActorData_C*     None_5;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMesh*                          None_6;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                None_7;                                            // 0x0000(0x000C)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCameraConfig                         None_8;                                            // 0x0000(0x0738)(HasGetValueTypeHash)
+	class AActor*                                 None_9;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FIntPoint                              None_10;                                           // 0x0000(0x0008)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         None_11;                                           // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGuid                                  None_12;                                           // 0x0000(0x0010)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   None_13;                                           // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 None_14;                                           // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimationAsset*                        None_15;                                           // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FAnimNotifyEvent                       None_16;                                           // 0x0000(0x00C8)(HasGetValueTypeHash)
+	class UAnimSequenceBase*                      None_17;                                           // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 None_18;                                           // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
-static_assert(alignof(FPropertyMetaRoot) == 0x000008, "Wrong alignment on FPropertyMetaRoot");
-static_assert(sizeof(FPropertyMetaRoot) == 0x000008, "Wrong size on FPropertyMetaRoot");
+static_assert(alignof(FPropertyMetaRoot) == 0x000010, "Wrong alignment on FPropertyMetaRoot");
+static_assert(sizeof(FPropertyMetaRoot) == 0x000010, "Wrong size on FPropertyMetaRoot");
 static_assert(offsetof(FPropertyMetaRoot, None) == 0x000000, "Member 'FPropertyMetaRoot::None' has a wrong offset!");
 static_assert(offsetof(FPropertyMetaRoot, None_0) == 0x000000, "Member 'FPropertyMetaRoot::None_0' has a wrong offset!");
 static_assert(offsetof(FPropertyMetaRoot, None_1) == 0x000000, "Member 'FPropertyMetaRoot::None_1' has a wrong offset!");
@@ -66,13 +74,20 @@ static_assert(offsetof(FPropertyMetaRoot, None_8) == 0x000000, "Member 'FPropert
 static_assert(offsetof(FPropertyMetaRoot, None_9) == 0x000000, "Member 'FPropertyMetaRoot::None_9' has a wrong offset!");
 static_assert(offsetof(FPropertyMetaRoot, None_10) == 0x000000, "Member 'FPropertyMetaRoot::None_10' has a wrong offset!");
 static_assert(offsetof(FPropertyMetaRoot, None_11) == 0x000000, "Member 'FPropertyMetaRoot::None_11' has a wrong offset!");
+static_assert(offsetof(FPropertyMetaRoot, None_12) == 0x000000, "Member 'FPropertyMetaRoot::None_12' has a wrong offset!");
+static_assert(offsetof(FPropertyMetaRoot, None_13) == 0x000000, "Member 'FPropertyMetaRoot::None_13' has a wrong offset!");
+static_assert(offsetof(FPropertyMetaRoot, None_14) == 0x000000, "Member 'FPropertyMetaRoot::None_14' has a wrong offset!");
+static_assert(offsetof(FPropertyMetaRoot, None_15) == 0x000000, "Member 'FPropertyMetaRoot::None_15' has a wrong offset!");
+static_assert(offsetof(FPropertyMetaRoot, None_16) == 0x000000, "Member 'FPropertyMetaRoot::None_16' has a wrong offset!");
+static_assert(offsetof(FPropertyMetaRoot, None_17) == 0x000000, "Member 'FPropertyMetaRoot::None_17' has a wrong offset!");
+static_assert(offsetof(FPropertyMetaRoot, None_18) == 0x000000, "Member 'FPropertyMetaRoot::None_18' has a wrong offset!");
 
 // ScriptStruct JsEnv.ArrayBuffer
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FArrayBuffer final
 {
 public:
-	uint8                                         Pad_1BDB[0x10];                                    // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FArrayBuffer) == 0x000008, "Wrong alignment on FArrayBuffer");
 static_assert(sizeof(FArrayBuffer) == 0x000010, "Wrong size on FArrayBuffer");
@@ -82,7 +97,7 @@ static_assert(sizeof(FArrayBuffer) == 0x000010, "Wrong size on FArrayBuffer");
 struct alignas(0x08) FJsObject final
 {
 public:
-	uint8                                         Pad_1BDC[0x18];                                    // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FJsObject) == 0x000008, "Wrong alignment on FJsObject");
 static_assert(sizeof(FJsObject) == 0x000018, "Wrong size on FJsObject");

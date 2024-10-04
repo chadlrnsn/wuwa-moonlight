@@ -34,7 +34,7 @@ struct ReactWidget_RemoveChild final
 public:
 	class UWidget*                                Content;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2361[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ReactWidget_RemoveChild) == 0x000008, "Wrong alignment on ReactWidget_RemoveChild");
 static_assert(sizeof(ReactWidget_RemoveChild) == 0x000010, "Wrong size on ReactWidget_RemoveChild");
@@ -60,13 +60,13 @@ struct UMGManager_CreateWidget final
 {
 public:
 	class UWorld*                                 World;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                 Param_Class;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                 Class_0;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UUserWidget*                            ReturnValue;                                       // 0x0010(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UMGManager_CreateWidget) == 0x000008, "Wrong alignment on UMGManager_CreateWidget");
 static_assert(sizeof(UMGManager_CreateWidget) == 0x000018, "Wrong size on UMGManager_CreateWidget");
 static_assert(offsetof(UMGManager_CreateWidget, World) == 0x000000, "Member 'UMGManager_CreateWidget::World' has a wrong offset!");
-static_assert(offsetof(UMGManager_CreateWidget, Param_Class) == 0x000008, "Member 'UMGManager_CreateWidget::Param_Class' has a wrong offset!");
+static_assert(offsetof(UMGManager_CreateWidget, Class_0) == 0x000008, "Member 'UMGManager_CreateWidget::Class_0' has a wrong offset!");
 static_assert(offsetof(UMGManager_CreateWidget, ReturnValue) == 0x000010, "Member 'UMGManager_CreateWidget::ReturnValue' has a wrong offset!");
 
 // Function ReactUMG.UMGManager.SynchronizeSlotProperties

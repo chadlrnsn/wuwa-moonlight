@@ -24,6 +24,7 @@ class UTpSafeProxy final : public UBlueprintFunctionLibrary
 public:
 	static void DelAntiData();
 	static struct FArrayBuffer GetAntiData();
+	static struct FArrayBuffer GetAntiData2();
 	static void Logout();
 	static void RecvAntiData(const struct FArrayBuffer& Data);
 	static void SetUserInfo(int32 AccountType, int32 WorldId, const class FString& OpenId, int32 PlayerId);
@@ -47,7 +48,7 @@ class UTpSafeSetting final : public UObject
 {
 public:
 	bool                                          Enable;                                            // 0x0030(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23BF[0x7];                                     // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

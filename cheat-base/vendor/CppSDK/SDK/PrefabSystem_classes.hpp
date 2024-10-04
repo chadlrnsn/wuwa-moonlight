@@ -31,14 +31,14 @@ public:
 	struct FGuid                                  OuterPrefabGuid;                                   // 0x0058(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         OuterPrefabInstanceFileID;                         // 0x0068(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                  OuterPrefabInstanceGuid;                           // 0x006C(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1434[0x4];                                     // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<struct FGuid, int32>                     WithinOuterPrefabActorFileIDMap;                   // 0x0080(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
 	TMap<struct FGuid, int32>                     WithinOuterPrefabComponentFileIDMap;               // 0x00D0(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
 	TSet<class FName>                             ModifiedPropertyFNames;                            // 0x0120(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
 	TMap<struct FGuid, class FString>             OuterPrefabModifedPropertiesMap;                   // 0x0170(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
 	TMap<TWeakObjectPtr<class UObject>, int32>    DeepCopyObjectsFileIDMap;                          // 0x01C0(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
 	bool                                          bIsAnyPrefabInstanceRoot;                          // 0x0210(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1435[0x7];                                     // 0x0211(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_211[0x7];                                      // 0x0211(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -73,7 +73,7 @@ class UPrefabAsset final : public UPrimaryDataAsset
 public:
 	int32                                         NextFileID;                                        // 0x0038(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint16                                        Version;                                           // 0x003C(0x0002)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1436[0x2];                                     // 0x003E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGuid                                  Guid;                                              // 0x0040(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UObject*>                        ReferenceAssets;                                   // 0x0050(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
 	TArray<class FName>                           ReferenceFNames;                                   // 0x0060(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
@@ -117,7 +117,7 @@ static_assert(offsetof(UPrefabAsset, PropertyModificationsSerializeData) == 0x00
 class UPrefabAssetManager final : public UObject
 {
 public:
-	uint8                                         Pad_1437[0xA0];                                    // 0x0030(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xA0];                                      // 0x0030(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

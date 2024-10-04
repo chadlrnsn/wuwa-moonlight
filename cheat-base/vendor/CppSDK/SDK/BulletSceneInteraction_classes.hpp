@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "SKuroInteractionLimbsConfig_structs.hpp"
-#include "SWaterEffectObject_structs.hpp"
 #include "Engine_classes.hpp"
+#include "SWaterEffectObject_structs.hpp"
 
 
 namespace SDK
@@ -24,7 +24,7 @@ class UBulletSceneInteraction_C final : public UPrimaryDataAsset
 {
 public:
 	struct FSKuroInteractionLimbsConfig           WaterInteraction;                                  // 0x0038(0x0040)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	uint8                                         Pad_307E[0x8];                                     // 0x0078(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSWaterEffectObject                    WaterEffect;                                       // 0x0080(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:

@@ -33,7 +33,7 @@ public:
 	float                                         DefaultWorldHeight;                                // 0x0048(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxWalkableError;                                  // 0x004C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                FinderHalfExtent;                                  // 0x0050(0x000C)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B4F[0x4];                                     // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -62,9 +62,9 @@ static_assert(offsetof(UKuroNavigationSetting, FinderHalfExtent) == 0x000050, "M
 class UNavigationPartitionSystem final : public UNavigationPartitionSystemBase
 {
 public:
-	uint8                                         Pad_1B50[0x20];                                    // 0x0030(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x20];                                      // 0x0030(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	class UWorld*                                 OwnerWorld;                                        // 0x0050(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1B51[0x8];                                     // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -85,7 +85,7 @@ static_assert(offsetof(UNavigationPartitionSystem, OwnerWorld) == 0x000050, "Mem
 class UNavigationPartitionPath final : public UNavigationPartitionPathBase
 {
 public:
-	uint8                                         Pad_1B52[0x38];                                    // 0x0030(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x38];                                      // 0x0030(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

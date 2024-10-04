@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsAxisHandle.TsAxisHandle_C.OnInputAxis
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   Value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -33,12 +33,7 @@ void UTsAxisHandle_C::OnInputAxis(float Value)
 
 	Parms.Value = Value;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

@@ -93,7 +93,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	ImGuiIO& io = ImGui::GetIO();
 	io.MouseDrawCursor = menu.IsOpen;
 
-	if (GetAsyncKeyState(VK_INSERT) & 1) menu.IsOpen = !menu.IsOpen;
+	if (GetAsyncKeyState(config::binds::menu_key) & 1) menu.IsOpen = !menu.IsOpen;
 
 	if (!menu.bOnceStyle) {
 		menu.Setup();
@@ -147,10 +147,11 @@ void D3D11Hook::Initialize()
 			printf("kiero binded\n");
 #endif
 			init = true;
+			break;
 		}
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 		counter++;
-	} while ((counter < ampects) || !init);
+	} while (!init || (counter < ampects));
 
 	if (kiero::getRenderType() != kiero::RenderType::D3D11) {
 		printf("kiero initialized with unknown render type\n");
@@ -159,21 +160,6 @@ void D3D11Hook::Initialize()
 	else {
 		printf("kiero initialized with D3D11 if you dont see menu it might be bug or idk\n");
 	}
-
-	//if (kiero::init(kiero::RenderType::Auto) == kiero::Status::Success) {
-	//	printf("kiero initialized with auto statement\n");
-	//	switch (kiero::getRenderType()) {
-	//		case kiero::RenderType::D3D11:
-	//			printf("kiero initialized with D3D11 if you dont see menu it might be bug!\n");
-	//			break;
-	//		case kiero::RenderType::D3D12:
-	//			printf("kiero initialized with D3D12\nbtw i dont maintain D3D12\n");
-	//			break;
-	//		default:
-	//			printf("kiero initialized with unknown render type\n");
-	//			break;
-	//	}
-	//}
 }
 
 void D3D11Hook::Uninitialize() {
@@ -186,5 +172,6 @@ void D3D11Hook::Uninitialize() {
 
 	CleanupRenderTarget();
 
-	window = nullptr;
+	if (window)
+		window = nullptr;
 }

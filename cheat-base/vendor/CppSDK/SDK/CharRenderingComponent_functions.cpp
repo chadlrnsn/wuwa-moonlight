@@ -874,10 +874,10 @@ void UCharRenderingComponent_C::DisableAllShadowByDecalShadowComponent()
 // Function CharRenderingComponent.CharRenderingComponent_C.AddComponentForDecalShadow
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_Name                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UPrimitiveComponent*              Comp                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCharRenderingComponent_C::AddComponentForDecalShadow(const class FString& Param_Name, class UPrimitiveComponent* Comp)
+void UCharRenderingComponent_C::AddComponentForDecalShadow(const class FString& Name_0, class UPrimitiveComponent* Comp)
 {
 	static class UFunction* Func = nullptr;
 
@@ -886,7 +886,7 @@ void UCharRenderingComponent_C::AddComponentForDecalShadow(const class FString& 
 
 	Params::CharRenderingComponent_C_AddComponentForDecalShadow Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Comp = Comp;
 
 	auto Flgs = Func->FunctionFlags;
@@ -901,9 +901,9 @@ void UCharRenderingComponent_C::AddComponentForDecalShadow(const class FString& 
 // Function CharRenderingComponent.CharRenderingComponent_C.RemoveComponentFromDecalShadow
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_Name                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void UCharRenderingComponent_C::RemoveComponentFromDecalShadow(const class FString& Param_Name)
+void UCharRenderingComponent_C::RemoveComponentFromDecalShadow(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -912,7 +912,7 @@ void UCharRenderingComponent_C::RemoveComponentFromDecalShadow(const class FStri
 
 	Params::CharRenderingComponent_C_RemoveComponentFromDecalShadow Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -69,6 +69,8 @@ inline void FpsUnlock::DrawFPS()
 
 inline void FpsUnlock::Run()
 {
+	UEngine* Engine = UEngine::GetEngine();
+
 	if (!Engine) return;
 
 	SDK::UGameUserSettings* Settings = Engine->GameUserSettings;

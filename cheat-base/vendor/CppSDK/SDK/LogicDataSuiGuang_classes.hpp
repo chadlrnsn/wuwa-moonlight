@@ -23,7 +23,7 @@ class ULogicDataSuiGuang_C final : public ULogicDataBase_C
 {
 public:
 	bool                                          IncludeBullet;                                     // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_2946[0x2];                                     // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A[0x2];                                       // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           NeedTag;                                           // 0x003C(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	class FString                                 NewBulletId;                                       // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash)
 

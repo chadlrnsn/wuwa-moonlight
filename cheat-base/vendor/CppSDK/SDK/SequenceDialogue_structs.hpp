@@ -82,7 +82,7 @@ struct FMovieSceneDialogueAudioSectionTemplate final : public FMovieSceneEvalTem
 public:
 	class FString                                 AudioKey;                                          // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         AudioTransitionDuration;                           // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_233D[0x4];                                     // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMovieSceneDialogueAudioSectionTemplate) == 0x000008, "Wrong alignment on FMovieSceneDialogueAudioSectionTemplate");
 static_assert(sizeof(FMovieSceneDialogueAudioSectionTemplate) == 0x000038, "Wrong size on FMovieSceneDialogueAudioSectionTemplate");
@@ -113,7 +113,7 @@ static_assert(sizeof(FMovieSceneDialogueStateTemplate) == 0x000020, "Wrong size 
 struct alignas(0x08) FTranslate final
 {
 public:
-	uint8                                         Pad_233E[0xD0];                                    // 0x0000(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0xD0];                                       // 0x0000(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FTranslate) == 0x000008, "Wrong alignment on FTranslate");
 static_assert(sizeof(FTranslate) == 0x0000D0, "Wrong size on FTranslate");
@@ -137,12 +137,12 @@ public:
 	int32                                         GuardTime;                                         // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         AudioDelay;                                        // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         AudioTransitionDuration;                           // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_233F[0x4];                                     // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FText>                           Options;                                           // 0x0078(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	class FText                                   DialogueKey;                                       // 0x0088(0x0018)(NativeAccessSpecifierPrivate)
 	int32                                         SpeakerID;                                         // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	ELanguageAudio                                LanguageType;                                      // 0x00A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2340[0x3];                                     // 0x00A5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMovieSceneDialogueSectionTemplate) == 0x000008, "Wrong alignment on FMovieSceneDialogueSectionTemplate");
 static_assert(sizeof(FMovieSceneDialogueSectionTemplate) == 0x0000A8, "Wrong size on FMovieSceneDialogueSectionTemplate");
@@ -165,7 +165,7 @@ public:
 	class FName                                   Group;                                             // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   DisplayName;                                       // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ParameterName;                                     // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2341[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMovieSceneFloatChannel                XCurve;                                            // 0x0028(0x00A0)(NativeAccessSpecifierPublic)
 	struct FMovieSceneFloatChannel                YCurve;                                            // 0x00C8(0x00A0)(NativeAccessSpecifierPublic)
 	struct FMovieSceneFloatChannel                ZCurve;                                            // 0x0168(0x00A0)(NativeAccessSpecifierPublic)
@@ -187,7 +187,7 @@ public:
 	class FName                                   Group;                                             // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   DisplayName;                                       // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ParameterName;                                     // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2342[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMovieSceneFloatChannel                ParameterCurve;                                    // 0x0028(0x00A0)(NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FFloatNameAndCurve) == 0x000008, "Wrong alignment on FFloatNameAndCurve");
@@ -221,7 +221,7 @@ public:
 	class FName                                   GizmoBaseBone;                                     // 0x0024(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                GizmoOffset;                                       // 0x0030(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          EnableVirtualBoneRot;                              // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2343[0x3];                                     // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSeqAnimCurveVectorDesc) == 0x000004, "Wrong alignment on FSeqAnimCurveVectorDesc");
 static_assert(sizeof(FSeqAnimCurveVectorDesc) == 0x000040, "Wrong size on FSeqAnimCurveVectorDesc");

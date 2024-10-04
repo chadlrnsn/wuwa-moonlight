@@ -53,7 +53,7 @@ class UKuroDeviceBPLibrary final : public UBlueprintFunctionLibrary
 {
 public:
 	static bool FindAllDeviceVidAndPid(TArray<class FString>* DevicePathList);
-	static class UDeviceHandle* NewDeviceHandle(class UObject* Param_Outer);
+	static class UDeviceHandle* NewDeviceHandle(class UObject* Outer_0);
 
 public:
 	static class UClass* StaticClass()

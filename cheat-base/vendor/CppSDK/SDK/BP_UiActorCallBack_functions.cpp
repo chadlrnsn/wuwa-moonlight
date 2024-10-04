@@ -68,10 +68,10 @@ void ABP_UiActorCallBack_C::UiAnimNotifyStateEffectStop__DelegateSignature(EPerf
 // Function BP_UiActorCallBack.BP_UiActorCallBack_C.UiAnimNotifyEffect__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSUiAnimNotifyEffect             Param_UiAnimNotifyEffect                               (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// struct FSUiAnimNotifyEffect             UiAnimNotifyEffect_0                                   (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class USkeletalMeshComponent*           Mesh                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_UiActorCallBack_C::UiAnimNotifyEffect__DelegateSignature(const struct FSUiAnimNotifyEffect& Param_UiAnimNotifyEffect, class USkeletalMeshComponent* Mesh)
+void ABP_UiActorCallBack_C::UiAnimNotifyEffect__DelegateSignature(const struct FSUiAnimNotifyEffect& UiAnimNotifyEffect_0, class USkeletalMeshComponent* Mesh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -80,7 +80,7 @@ void ABP_UiActorCallBack_C::UiAnimNotifyEffect__DelegateSignature(const struct F
 
 	Params::BP_UiActorCallBack_C_UiAnimNotifyEffect__DelegateSignature Parms{};
 
-	Parms.Param_UiAnimNotifyEffect = std::move(Param_UiAnimNotifyEffect);
+	Parms.UiAnimNotifyEffect_0 = std::move(UiAnimNotifyEffect_0);
 	Parms.Mesh = Mesh;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -90,10 +90,10 @@ void ABP_UiActorCallBack_C::UiAnimNotifyEffect__DelegateSignature(const struct F
 // Function BP_UiActorCallBack.BP_UiActorCallBack_C.UiAnimNotifyModel__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSUiAnimNotifyModel              Param_UiAnimNotifyModel                                (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// struct FSUiAnimNotifyModel              UiAnimNotifyModel_0                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class USkeletalMeshComponent*           Mesh                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_UiActorCallBack_C::UiAnimNotifyModel__DelegateSignature(const struct FSUiAnimNotifyModel& Param_UiAnimNotifyModel, class USkeletalMeshComponent* Mesh)
+void ABP_UiActorCallBack_C::UiAnimNotifyModel__DelegateSignature(const struct FSUiAnimNotifyModel& UiAnimNotifyModel_0, class USkeletalMeshComponent* Mesh)
 {
 	static class UFunction* Func = nullptr;
 
@@ -102,7 +102,7 @@ void ABP_UiActorCallBack_C::UiAnimNotifyModel__DelegateSignature(const struct FS
 
 	Params::BP_UiActorCallBack_C_UiAnimNotifyModel__DelegateSignature Parms{};
 
-	Parms.Param_UiAnimNotifyModel = std::move(Param_UiAnimNotifyModel);
+	Parms.UiAnimNotifyModel_0 = std::move(UiAnimNotifyModel_0);
 	Parms.Mesh = Mesh;
 
 	UObject::ProcessEvent(Func, &Parms);

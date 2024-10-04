@@ -20,10 +20,10 @@ namespace SDK
 // Function HoudiniEngineRuntime.HoudiniAssetBlueprintComponent.HasParameter
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHoudiniAssetBlueprintComponent::HasParameter(const class FString& Param_Name)
+bool UHoudiniAssetBlueprintComponent::HasParameter(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,7 +32,7 @@ bool UHoudiniAssetBlueprintComponent::HasParameter(const class FString& Param_Na
 
 	Params::HoudiniAssetBlueprintComponent_HasParameter Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -48,11 +48,11 @@ bool UHoudiniAssetBlueprintComponent::HasParameter(const class FString& Param_Na
 // Function HoudiniEngineRuntime.HoudiniAssetBlueprintComponent.SetFloatParameter
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniAssetBlueprintComponent::SetFloatParameter(const class FString& Param_Name, float Value, int32 Param_Index)
+void UHoudiniAssetBlueprintComponent::SetFloatParameter(const class FString& Name_0, float Value, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61,9 +61,9 @@ void UHoudiniAssetBlueprintComponent::SetFloatParameter(const class FString& Par
 
 	Params::HoudiniAssetBlueprintComponent_SetFloatParameter Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Value = Value;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -77,11 +77,11 @@ void UHoudiniAssetBlueprintComponent::SetFloatParameter(const class FString& Par
 // Function HoudiniEngineRuntime.HoudiniAssetBlueprintComponent.SetToggleValueAt
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHoudiniAssetBlueprintComponent::SetToggleValueAt(const class FString& Param_Name, bool Value, int32 Param_Index)
+void UHoudiniAssetBlueprintComponent::SetToggleValueAt(const class FString& Name_0, bool Value, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,9 +90,9 @@ void UHoudiniAssetBlueprintComponent::SetToggleValueAt(const class FString& Para
 
 	Params::HoudiniAssetBlueprintComponent_SetToggleValueAt Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 	Parms.Value = Value;
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

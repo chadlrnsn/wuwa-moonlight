@@ -7,27 +7,45 @@ using namespace globals;
 class Fly
 {
 private:
+
+	struct Speed {
+		float Speed;
+		float MinSpeed;
+		float MaxSpeed;
+	};
+
+	struct AltSpeed {
+		float CharMaxSpeed;
+		float Acceleration;
+		float oCharMaxSpeed;
+		float oAcceleration;
+	};
+
+	struct FlyData {
+		bool bFlySwitch = false;
+		bool bNoClip = false;
+	};
+
+	struct KeyDataToggleData {
+		KeyBindToggle kb = KeyBindToggle(KeyBind::KeyCode::V);
+		bool bSettingKey = false;
+		bool bUpKey = false;
+		bool bDownKey = false;
+	};
+
+	AltSpeed altSpeed = { 
+		1000.0f, 
+		9999.0f 
+	};
+
+	Speed speed = { 1, 0.1, 10 }; // Dilation
+	Speed speedVectical = { 700, 0.1, 1000 };
+	FlyData FlyData;
+	KeyDataToggleData KeyDataToggleData;
+	float oldaccel;
+
 	bool Initalized = false;
-	bool bFlySwitch = false;
-	bool bSettingKey = false;
-	bool bUpKey = false;
-	bool bDownKey = false;
-
-public:
 	bool bEnabled = false;
-	float fMaxSpeed = 100.0f;
-	float fMinSpeed = 1.0f;
-	float fSpeed = 10.0f;
-	bool bNoClip = false;
-	float fZSpeed = 500.0f;
-	float fZSpeedMin = 10.0f;
-	float fZSpeedMax = 2000.0f;
-	bool bPreventAnimVelecity = false;
-
-	KeyBindToggle kbToggle = KeyBindToggle(KeyBind::KeyCode::V);
-
-private:
-	float fOldSpeed = 0.0f;
 
 public:
 
@@ -35,7 +53,7 @@ public:
 	// Handle checking for any key/hotkey presses or holds needed for features
 	void HandleKeys() 
 	{
-		if (GetAsyncKeyState(kbToggle.toInt()) & 0x1)
+		if (GetAsyncKeyState(KeyDataToggleData.kb.toInt()) & 0x1)
 			bEnabled = !bEnabled;
 	}
 
@@ -46,6 +64,9 @@ public:
 
 	// This should be run in the feature loop, used to run any acutal feature code like setting a value for godmode
 	void Run();
+
+	// This should be run in ProcessEvent hook
+	void Call(); 
 };
 
 
@@ -54,22 +75,23 @@ inline void Fly::DrawMenuItems()
 {
 	ImGui::Checkbox("FlyHack", &bEnabled);
 	ImGui::SameLine();
-	ImGui::Hotkey("##FlyHack Key", kbToggle, &bSettingKey);
+	ImGui::Hotkey("##FlyHack Key", KeyDataToggleData.kb, &KeyDataToggleData.bSettingKey);
 
 	if (bEnabled)
 	{
-		ImGui::BeginChild(1, ImVec2(0, 150), 1);
+		ImGui::Checkbox("NoClip", &FlyData.bNoClip);
 
-		ImGui::Checkbox("NoClip", &bNoClip);
+		ImGui::Spacing();
+
 		ImGui::Text("Flight Speed Multiplier");
-		ImGui::SliderFloat("## Flight Speed Multiplier", &fSpeed, fMinSpeed, fMaxSpeed);
+		ImGui::SliderFloat("## Flight Speed Multiplier", &speed.Speed, speed.MinSpeed, speed.MaxSpeed);
+
+		ImGui::Spacing();
 
 		ImGui::Text("Flight Z axis speed");
-		ImGui::SliderFloat("## Flight Z axis speed", &fZSpeed, fZSpeedMin, fZSpeedMax);
-		ImGui::Checkbox("Prevent Anim Velecity", &bPreventAnimVelecity);
+		ImGui::SliderFloat("## Flight Z axis speed", &speedVectical.Speed, speedVectical.MinSpeed, speedVectical.MaxSpeed);
 
-
-		ImGui::EndChild();
+		ImGui::Spacing();
 
 		// TODO: Move Up and Down keys
 		//ImGui::Text("Move Up");
@@ -83,42 +105,49 @@ inline void Fly::DrawMenuItems()
 
 inline void Fly::Run()
 {
-
 	HandleKeys();
 
-	SDK::UCharacterMovementComponent* CharacterMovement = static_cast<UCharacterMovementComponent*>(AcknowledgedPawn->GetMovementComponent());
+	if (!PlayerController) return;
+	
+	auto character  = PlayerController->Character;
+	if (!character) return;
 
-	if (bEnabled)
+	SDK:UCharacterMovementComponent* Movement = character->CharacterMovement;
+	//SDK::UMeshComponent* MeshComponent = character->Mesh;
+
+	if (!Movement) return;
+
+	if (bEnabled && !FlyData.bFlySwitch)
 	{
-		CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Flying;
-		fOldSpeed = CharacterMovement->MaxFlySpeed;
-		CharacterMovement->MaxFlySpeed = fOldSpeed * fSpeed;
+		Movement->MovementMode = SDK::EMovementMode::MOVE_Flying;
 
-		if (bNoClip && AcknowledgedPawn->GetActorEnableCollision())
+		if (!oldaccel)
+			oldaccel = Movement->MaxAcceleration;
+
+		Movement->MaxAcceleration = 9999;
+
+		if (FlyData.bNoClip && AcknowledgedPawn && AcknowledgedPawn->GetActorEnableCollision())
 			AcknowledgedPawn->SetActorEnableCollision(false);
 
-
 		if (GetAsyncKeyState(VK_SPACE))
-			CharacterMovement->Velocity.Z += fZSpeed;
+			Movement->Velocity.Z = speed.Speed;
 
 		if (GetAsyncKeyState(VK_LCONTROL))
-			CharacterMovement->Velocity.Z -= fZSpeed;
+			Movement->Velocity.Z = -speed.Speed;
 
 
-		bFlySwitch = true;
+		FlyData.bFlySwitch = true;
 	}
-	else
+
+	if (bEnabled && FlyData.bFlySwitch)
 	{
-		if (bFlySwitch)
-		{
-			CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Walking;
-			CharacterMovement->MaxFlySpeed = fOldSpeed;
+		Movement->MovementMode = SDK::EMovementMode::MOVE_Walking;
+		Movement->MaxAcceleration = oldaccel;
 
-			if (!AcknowledgedPawn->GetActorEnableCollision())
-				AcknowledgedPawn->SetActorEnableCollision(true);
+		if (AcknowledgedPawn && !AcknowledgedPawn->GetActorEnableCollision())
+			AcknowledgedPawn->SetActorEnableCollision(true);
 
-			bFlySwitch = false;
-		}
+		FlyData.bFlySwitch = false;
 	}
 }
 inline Fly fly;

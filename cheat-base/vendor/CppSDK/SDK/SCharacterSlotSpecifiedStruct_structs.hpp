@@ -23,7 +23,7 @@ struct FSCharacterSlotSpecifiedStruct final
 {
 public:
 	ECharacterSlotSpecifiedType                   SlotSpecifiedType_2_BB34682E42A1EB05767F8DB31E8BFD68; // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_29DE[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<ECharacterSlotType>                    SlotTypes_8_FE953FC141D8687F1C54728FEC4EA9FD;      // 0x0008(0x0010)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSCharacterSlotSpecifiedStruct) == 0x000008, "Wrong alignment on FSCharacterSlotSpecifiedStruct");

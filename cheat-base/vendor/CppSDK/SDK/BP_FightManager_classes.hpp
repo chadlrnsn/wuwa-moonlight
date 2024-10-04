@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "BP_ManagerBase_classes.hpp"
 #include "ERelation_structs.hpp"
+#include "BP_ManagerBase_classes.hpp"
 #include "ECamp_structs.hpp"
 
 
@@ -27,7 +27,7 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0048(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UBP_ActorManager_C*                     _r__h;                                             // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _____;                                             // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3194[0x7];                                     // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             ____;                                              // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	FMulticastInlineDelegateProperty_             _____0;                                            // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	FMulticastInlineDelegateProperty_             Four_a__;                                          // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
@@ -37,7 +37,7 @@ public:
 	TMap<int32, class UObject*>                   BPaip_;                                            // 0x00B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<class UObject*>                        Stari4_BPAIp_;                                     // 0x0108(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          _o____;                                            // 0x0118(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3195[0x7];                                     // 0x0119(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_119[0x7];                                      // 0x0119(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FString, class ATsBaseCharacter_C*> Debug__a__;                                        // 0x0120(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	FMulticastInlineDelegateProperty_             __Debug_FightAttribute;                            // 0x0170(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	FMulticastInlineDelegateProperty_             _dDebug_FightAttribute;                            // 0x0180(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
@@ -46,18 +46,18 @@ public:
 	int32                                         __Mp_;                                             // 0x01E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ______DelegateSignature_1(class ATsBaseCharacter_C* Param____);
-	void ______DelegateSignature_0(class ATsBaseCharacter_C* Param____);
-	void ______DelegateSignature(class ATsBaseCharacter_C* Param____);
-	void Four_a____DelegateSignature(class ATsBaseCharacter_C* Param____);
+	void ______DelegateSignature_1(class ATsBaseCharacter_C* Param_____0);
+	void ______DelegateSignature_0(class ATsBaseCharacter_C* Param_____0);
+	void ______DelegateSignature(class ATsBaseCharacter_C* Param_____0);
+	void Four_a____DelegateSignature(class ATsBaseCharacter_C* Param_____0);
 	void ___r______DelegateSignature();
 	void __Debug_FightAttribute__DelegateSignature(const class FString& Option);
 	void _dDebug_FightAttribute__DelegateSignature(const class FString& Option);
 	void ExecuteUbergraph_BP_FightManager(int32 EntryPoint);
 	void S5______();
 	void Tick(float DeltaSeconds);
-	void Func______();
-	void ___(class UBP_MainGameInstance_C* Param_Eight___);
+	void ______0();
+	void ___(class UBP_MainGameInstance_C* Eight____0);
 	void Five___(ECamp __5_, ECamp __5__0, ERelation* S_, int32* S_tp);
 	void ____NPC();
 	void ______Actor();
@@ -65,7 +65,7 @@ public:
 	void __Debug__a(const class ATsBaseCharacter_C*& baseChar);
 	void _dDebug__a(const class ATsBaseCharacter_C*& baseChar);
 	void _M_6(TArray<class UObject*>& Starip_);
-	void ________(int32 ID, struct FSHitMapping* Param_____, bool* __0);
+	void ________(int32 ID, struct FSHitMapping* Param______0, bool* __0);
 
 public:
 	static class UClass* StaticClass()

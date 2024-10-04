@@ -23,7 +23,6 @@ class UTsAnimNotifyStateAddTag_C final : public UKuroAnimNotifyState
 {
 public:
 	struct FGameplayTag                           Tag;                                               // 0x0048(0x000C)(Edit, BlueprintVisible, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	bool                                          NeedDelayTrigger;                                  // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
@@ -44,7 +43,6 @@ public:
 static_assert(alignof(UTsAnimNotifyStateAddTag_C) == 0x000008, "Wrong alignment on UTsAnimNotifyStateAddTag_C");
 static_assert(sizeof(UTsAnimNotifyStateAddTag_C) == 0x000058, "Wrong size on UTsAnimNotifyStateAddTag_C");
 static_assert(offsetof(UTsAnimNotifyStateAddTag_C, Tag) == 0x000048, "Member 'UTsAnimNotifyStateAddTag_C::Tag' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifyStateAddTag_C, NeedDelayTrigger) == 0x000054, "Member 'UTsAnimNotifyStateAddTag_C::NeedDelayTrigger' has a wrong offset!");
 
 }
 

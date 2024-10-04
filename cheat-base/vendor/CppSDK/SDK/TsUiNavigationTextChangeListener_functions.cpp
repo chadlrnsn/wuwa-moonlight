@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsUiNavigationTextChangeListener.TsUiNavigationTextChangeListener_C.ExecuteUbergraph_TsUiNavigationTextChangeListener
-// (Final, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -33,12 +33,17 @@ void UTsUiNavigationTextChangeListener_C::ExecuteUbergraph_TsUiNavigationTextCha
 
 	Parms.EntryPoint = EntryPoint;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsUiNavigationTextChangeListener.TsUiNavigationTextChangeListener_C.StartBP
-// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 
 void UTsUiNavigationTextChangeListener_C::StartBP()
 {
@@ -47,12 +52,17 @@ void UTsUiNavigationTextChangeListener_C::StartBP()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsUiNavigationTextChangeListener_C", "StartBP");
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsUiNavigationTextChangeListener.TsUiNavigationTextChangeListener_C.AwakeBP
-// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 
 void UTsUiNavigationTextChangeListener_C::AwakeBP()
 {
@@ -61,12 +71,17 @@ void UTsUiNavigationTextChangeListener_C::AwakeBP()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsUiNavigationTextChangeListener_C", "AwakeBP");
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsUiNavigationTextChangeListener.TsUiNavigationTextChangeListener_C.OnNotifyTextChangeBP
-// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FString                           NotifyText                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
@@ -81,7 +96,12 @@ void UTsUiNavigationTextChangeListener_C::OnNotifyTextChangeBP(const class FStri
 
 	Parms.NotifyText = std::move(NotifyText);
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

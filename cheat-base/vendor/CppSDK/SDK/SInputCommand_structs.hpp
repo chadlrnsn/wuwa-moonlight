@@ -23,7 +23,7 @@ struct FSInputCommand final
 {
 public:
 	ECommandType                                  CommandType_3_2DB55B5D4B1F6969B7B815BA8B0C09A7;    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D6F[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         IntValue_8_DDD797BB48FE5C3D69A3598C98583BCB;       // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           TagValue_9_9904A5DF4B3961B5B39896AE6EF742EA;       // 0x0008(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 };

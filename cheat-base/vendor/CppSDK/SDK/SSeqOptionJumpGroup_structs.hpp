@@ -22,7 +22,7 @@ struct FSSeqOptionJumpGroup final
 {
 public:
 	class FName                                   SubtitleID_2_751D52924EC54591891BB597195B1594;     // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_307D[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSSeqJumpWithOption>            JumpGroup_6_2AB561364A2FD040E3954193212D6E4A;      // 0x0010(0x0010)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSSeqOptionJumpGroup) == 0x000008, "Wrong alignment on FSSeqOptionJumpGroup");

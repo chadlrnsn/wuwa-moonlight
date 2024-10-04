@@ -24,7 +24,7 @@ class UGameScreenshotTask final : public UObject
 public:
 	FMulticastInlineDelegateProperty_             OnTakeScreenshotCapturedDelegate;                  // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnIOSPhotoLibraryAuthorizationCompletedDelegate;   // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1797[0x28];                                    // 0x0050(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x28];                                      // 0x0050(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnIOSPhotoLibraryAuthorizationCompleted(bool IsGranted);
@@ -56,7 +56,7 @@ public:
 	static void CompressConvertColorsToBitmap(int32 Width, int32 Height, const TArray<struct FColor>& Colors, TArray<uint8>* BitMap);
 	static void ConvertColorsToBitmap(int32 Width, int32 Height, const TArray<struct FColor>& Colors, TArray<uint8>* BitMap);
 	static bool IsPhotoLibraryAuthorized();
-	static class UGameScreenshotTask* PrepareTakeScreenshot(class UObject* Param_Outer, const class FString& InFilename, const struct FVector2D& MinCaptureRegion, const struct FVector2D& MaxCaptureRegion, float ScreenshotResolutionX, float ScreenshotResolutionY, bool SaveFile);
+	static class UGameScreenshotTask* PrepareTakeScreenshot(class UObject* Outer_0, const class FString& InFilename, const struct FVector2D& MinCaptureRegion, const struct FVector2D& MaxCaptureRegion, float ScreenshotResolutionX, float ScreenshotResolutionY, bool SaveFile);
 	static void SaveColorArrayToAndroidAlbum(int32 Width, int32 Height, const TArray<uint8>& BitMap);
 	static void SaveColorArrayToIosAlbum(int32 Width, int32 Height, const TArray<struct FColor>& Colors);
 

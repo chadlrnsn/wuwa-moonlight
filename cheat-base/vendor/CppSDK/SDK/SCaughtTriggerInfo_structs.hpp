@@ -25,7 +25,7 @@ public:
 	int32                                         CaughtMxNumber_5_1DC837F649978634B73047A957CD7F55; // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CaughtLevel_7_C237794B446E59778EF225BFD138AFBF;    // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CaughtAimTarget_15_720EC09744D98AC867143A9CC981E3C0; // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D74[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FGameplayTag>                   CaughtTargetTag_11_90E48EC74BF0B55C6EDE7CBD4B42760C; // 0x0020(0x0010)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSCaughtTriggerInfo) == 0x000008, "Wrong alignment on FSCaughtTriggerInfo");

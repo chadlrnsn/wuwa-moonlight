@@ -63,7 +63,7 @@ public:
 	struct FVector                                Location;                                          // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                               Rotation;                                          // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector                                Scale;                                             // 0x0028(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10D4[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBehaviour_InstantiatePrefabWithTransform) == 0x000008, "Wrong alignment on LGUIBehaviour_InstantiatePrefabWithTransform");
@@ -104,7 +104,7 @@ struct LGUIBehaviour_OnUIChildAcitveInHierarchyBP final
 public:
 	class UUIItem*                                Child;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AtiveOrInactive;                                   // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10D5[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBehaviour_OnUIChildAcitveInHierarchyBP) == 0x000008, "Wrong alignment on LGUIBehaviour_OnUIChildAcitveInHierarchyBP");
 static_assert(sizeof(LGUIBehaviour_OnUIChildAcitveInHierarchyBP) == 0x000010, "Wrong size on LGUIBehaviour_OnUIChildAcitveInHierarchyBP");
@@ -118,7 +118,7 @@ struct LGUIBehaviour_OnUIChildAttachmentChangedBP final
 public:
 	class UUIItem*                                Child;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AttachOrDetach;                                    // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10D6[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBehaviour_OnUIChildAttachmentChangedBP) == 0x000008, "Wrong alignment on LGUIBehaviour_OnUIChildAttachmentChangedBP");
 static_assert(sizeof(LGUIBehaviour_OnUIChildAttachmentChangedBP) == 0x000010, "Wrong size on LGUIBehaviour_OnUIChildAttachmentChangedBP");
@@ -272,7 +272,7 @@ struct LGUIBaseRayEmitter_GetInitialValue final
 public:
 	float                                         OutClickThreshold;                                 // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          OutHoldToDrag;                                     // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10DF[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         OutHoldToDragTime;                                 // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBaseRayEmitter_GetInitialValue) == 0x000004, "Wrong alignment on LGUIBaseRayEmitter_GetInitialValue");
@@ -299,7 +299,7 @@ struct LGUIBaseRayEmitter_SetInitialValue final
 public:
 	float                                         InClickThreshold;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InHoldToDrag;                                      // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10E0[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         InHoldToDragTime;                                  // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBaseRayEmitter_SetInitialValue) == 0x000004, "Wrong alignment on LGUIBaseRayEmitter_SetInitialValue");
@@ -493,7 +493,7 @@ public:
 	class USceneComponent*                        InParent;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bForceUseRuntimeData;                              // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          SetRelativeTransformToIdentity;                    // 0x0011(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10E7[0x6];                                     // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIPrefabV2_LoadPrefab) == 0x000008, "Wrong alignment on LGUIPrefabV2_LoadPrefab");
@@ -512,7 +512,7 @@ public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USceneComponent*                        InParent;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bForceUseRuntimeData;                              // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10E8[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Location;                                          // 0x0014(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                               Rotation;                                          // 0x0020(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector                                Scale;                                             // 0x002C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -568,7 +568,7 @@ struct LGUI_PointerInputModule_GetPointerEventData final
 public:
 	int32                                         PointerId;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          CreateIfNotExist;                                  // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10EE[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULGUIPointerEventData*                  ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUI_PointerInputModule_GetPointerEventData) == 0x000008, "Wrong alignment on LGUI_PointerInputModule_GetPointerEventData");
@@ -608,7 +608,7 @@ struct LGUI_PointerInputModule_IsPointerEventDataLineTrace final
 public:
 	class ULGUIPointerEventData*                  InPointerEventData;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10EF[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUI_PointerInputModule_IsPointerEventDataLineTrace) == 0x000008, "Wrong alignment on LGUI_PointerInputModule_IsPointerEventDataLineTrace");
 static_assert(sizeof(LGUI_PointerInputModule_IsPointerEventDataLineTrace) == 0x000010, "Wrong size on LGUI_PointerInputModule_IsPointerEventDataLineTrace");
@@ -676,7 +676,7 @@ public:
 	struct FVector                                InWorldPosition;                                   // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              OutViewPoint;                                      // 0x0014(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10F1[0x3];                                     // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUI_SceneCapture2DMouseRayEmitter_ProjectWorldToViewPointForSceneCapture2D) == 0x000008, "Wrong alignment on LGUI_SceneCapture2DMouseRayEmitter_ProjectWorldToViewPointForSceneCapture2D");
 static_assert(sizeof(LGUI_SceneCapture2DMouseRayEmitter_ProjectWorldToViewPointForSceneCapture2D) == 0x000020, "Wrong size on LGUI_SceneCapture2DMouseRayEmitter_ProjectWorldToViewPointForSceneCapture2D");
@@ -847,11 +847,11 @@ struct LGUI_StandaloneInputModule_SimulationLineTrace final
 {
 public:
 	int32                                         PointerID;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10F5[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUIItem*                                UIItem;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              ClickPivot;                                        // 0x0010(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10F6[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUI_StandaloneInputModule_SimulationLineTrace) == 0x000008, "Wrong alignment on LGUI_StandaloneInputModule_SimulationLineTrace");
 static_assert(sizeof(LGUI_StandaloneInputModule_SimulationLineTrace) == 0x000020, "Wrong size on LGUI_StandaloneInputModule_SimulationLineTrace");
@@ -866,13 +866,13 @@ struct LGUI_StandaloneInputModule_SimulationPointerDownUp final
 {
 public:
 	int32                                         PointerID;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10F7[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUIItem*                                UIItem;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsPressed;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10F8[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              ClickPivot;                                        // 0x0014(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10F9[0x3];                                     // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUI_StandaloneInputModule_SimulationPointerDownUp) == 0x000008, "Wrong alignment on LGUI_StandaloneInputModule_SimulationPointerDownUp");
 static_assert(sizeof(LGUI_StandaloneInputModule_SimulationPointerDownUp) == 0x000020, "Wrong size on LGUI_StandaloneInputModule_SimulationPointerDownUp");
@@ -889,7 +889,7 @@ struct LGUI_StandaloneInputModule_SimulationPointerTrigger final
 public:
 	int32                                         PointerID;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsPressed;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10FA[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUI_StandaloneInputModule_SimulationPointerTrigger) == 0x000004, "Wrong alignment on LGUI_StandaloneInputModule_SimulationPointerTrigger");
 static_assert(sizeof(LGUI_StandaloneInputModule_SimulationPointerTrigger) == 0x000008, "Wrong size on LGUI_StandaloneInputModule_SimulationPointerTrigger");
@@ -926,7 +926,7 @@ struct LGUI_TouchInputModule_InputTouchTrigger final
 {
 public:
 	bool                                          InTouchPress;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10FB[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         InTouchID;                                         // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                InTouchPointPosition;                              // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -968,7 +968,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1103[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_AlphaFrom) == 0x000008, "Wrong alignment on LGUIBPLibrary_AlphaFrom");
@@ -990,7 +990,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1104[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_AlphaTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_AlphaTo");
@@ -1012,7 +1012,7 @@ public:
 	float                                         Duration;                                          // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1105[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_AnchorOffsetTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_AnchorOffsetTo");
@@ -1034,7 +1034,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1106[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_AnchorOffsetXTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_AnchorOffsetXTo");
@@ -1056,7 +1056,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1107[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_AnchorOffsetYTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_AnchorOffsetYTo");
@@ -1075,7 +1075,7 @@ struct LGUIBPLibrary_BatchDuplicateActors final
 public:
 	class AActor*                                 Src;                                               // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Num;                                               // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1108[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USceneComponent*                        Parent;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class AActor*>                         ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
@@ -1118,7 +1118,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1109[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_ColorFrom) == 0x000008, "Wrong alignment on LGUIBPLibrary_ColorFrom");
@@ -1140,7 +1140,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_110A[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_ColorTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_ColorTo");
@@ -1173,7 +1173,7 @@ public:
 	float                                         Width;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Height;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   InName;                                            // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_110B[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture2D*                             ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_CreateTransientTexture2D) == 0x000008, "Wrong alignment on LGUIBPLibrary_CreateTransientTexture2D");
@@ -1190,7 +1190,7 @@ struct LGUIBPLibrary_DeleteActor final
 public:
 	class AActor*                                 Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          WithHierarchy;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_110C[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_DeleteActor) == 0x000008, "Wrong alignment on LGUIBPLibrary_DeleteActor");
 static_assert(sizeof(LGUIBPLibrary_DeleteActor) == 0x000010, "Wrong size on LGUIBPLibrary_DeleteActor");
@@ -1204,7 +1204,7 @@ struct LGUIBPLibrary_DeleteFile final
 public:
 	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_110D[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_DeleteFile) == 0x000008, "Wrong alignment on LGUIBPLibrary_DeleteFile");
 static_assert(sizeof(LGUIBPLibrary_DeleteFile) == 0x000018, "Wrong size on LGUIBPLibrary_DeleteFile");
@@ -1218,7 +1218,7 @@ struct LGUIBPLibrary_DestroyActorWithHierarchy final
 public:
 	class AActor*                                 Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          WithHierarchy;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_110E[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_DestroyActorWithHierarchy) == 0x000008, "Wrong alignment on LGUIBPLibrary_DestroyActorWithHierarchy");
 static_assert(sizeof(LGUIBPLibrary_DestroyActorWithHierarchy) == 0x000010, "Wrong size on LGUIBPLibrary_DestroyActorWithHierarchy");
@@ -1247,7 +1247,7 @@ struct LGUIBPLibrary_GetAllAttachChildrenOfActor final
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIncludeAllChildren;                               // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_110F[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AActor*>                         ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_GetAllAttachChildrenOfActor) == 0x000008, "Wrong alignment on LGUIBPLibrary_GetAllAttachChildrenOfActor");
@@ -1264,7 +1264,7 @@ public:
 	class AActor*                                 InActor;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UActorComponent>            ComponentClass;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IncludeSelf;                                       // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1110[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UActorComponent*                        ReturnValue;                                       // 0x0018(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_GetComponentInChildren) == 0x000008, "Wrong alignment on LGUIBPLibrary_GetComponentInChildren");
@@ -1282,7 +1282,7 @@ public:
 	class AActor*                                 InActor;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UActorComponent>            ComponentClass;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IncludeSelf;                                       // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1111[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UActorComponent*                        ReturnValue;                                       // 0x0018(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_GetComponentInParent) == 0x000008, "Wrong alignment on LGUIBPLibrary_GetComponentInParent");
@@ -1300,7 +1300,7 @@ public:
 	class AActor*                                 InActor;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UActorComponent>            ComponentClass;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IncludeSelf;                                       // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1112[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UActorComponent*>                ReturnValue;                                       // 0x0018(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_GetComponentsInChildren) == 0x000008, "Wrong alignment on LGUIBPLibrary_GetComponentsInChildren");
@@ -1318,7 +1318,7 @@ public:
 	class AUIBaseActor*                           InActor;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UActorComponent>            ComponentClass;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IncludeSelf;                                       // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1113[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UActorComponent*>                ReturnValue;                                       // 0x0018(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_GetComponentsInChildrenWithHirerarchyIndex) == 0x000008, "Wrong alignment on LGUIBPLibrary_GetComponentsInChildrenWithHirerarchyIndex");
@@ -1337,7 +1337,7 @@ public:
 	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 PathString;                                        // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1114[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_GetFullPathOfActor) == 0x000008, "Wrong alignment on LGUIBPLibrary_GetFullPathOfActor");
 static_assert(sizeof(LGUIBPLibrary_GetFullPathOfActor) == 0x000028, "Wrong size on LGUIBPLibrary_GetFullPathOfActor");
@@ -1465,7 +1465,7 @@ struct LGUIBPLibrary_GetUIItemCornerPositionInViewPort final
 {
 public:
 	EUiItemCornerType                             Corner;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1115[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                WorldContextObject;                                // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UUIItem*                                Item;                                              // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1485,9 +1485,9 @@ public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UUIItem*                                Item;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsScaledByBPI;                                    // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1116[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              ReturnValue;                                       // 0x0014(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1117[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_GetUIItemPositionInViewPort) == 0x000008, "Wrong alignment on LGUIBPLibrary_GetUIItemPositionInViewPort");
 static_assert(sizeof(LGUIBPLibrary_GetUIItemPositionInViewPort) == 0x000020, "Wrong size on LGUIBPLibrary_GetUIItemPositionInViewPort");
@@ -1533,7 +1533,7 @@ struct LGUIBPLibrary_GetWorldUISceneRendering final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1118[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_GetWorldUISceneRendering) == 0x000008, "Wrong alignment on LGUIBPLibrary_GetWorldUISceneRendering");
 static_assert(sizeof(LGUIBPLibrary_GetWorldUISceneRendering) == 0x000010, "Wrong size on LGUIBPLibrary_GetWorldUISceneRendering");
@@ -1550,7 +1550,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1119[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_HeightTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_HeightTo");
@@ -1664,7 +1664,7 @@ struct LGUIBPLibrary_LGUIDrawableEvent_Bool_Execute final
 public:
 	struct FLGUIDrawableEvent_Bool                InEvent;                                           // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          InParameter;                                       // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111A[0x7];                                     // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEvent_Bool_Execute) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEvent_Bool_Execute");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEvent_Bool_Execute) == 0x000038, "Wrong size on LGUIBPLibrary_LGUIDrawableEvent_Bool_Execute");
@@ -1747,7 +1747,7 @@ struct LGUIBPLibrary_LGUIDrawableEvent_Color_Execute final
 public:
 	struct FLGUIDrawableEvent_Color               InEvent;                                           // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FColor                                 InParameter;                                       // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111B[0x4];                                     // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEvent_Color_Execute) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEvent_Color_Execute");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEvent_Color_Execute) == 0x000038, "Wrong size on LGUIBPLibrary_LGUIDrawableEvent_Color_Execute");
@@ -1828,7 +1828,7 @@ struct LGUIBPLibrary_LGUIDrawableEvent_Float_Execute final
 public:
 	struct FLGUIDrawableEvent_Float               InEvent;                                           // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                         InParameter;                                       // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111C[0x4];                                     // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEvent_Float_Execute) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEvent_Float_Execute");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEvent_Float_Execute) == 0x000038, "Wrong size on LGUIBPLibrary_LGUIDrawableEvent_Float_Execute");
@@ -1870,7 +1870,7 @@ struct LGUIBPLibrary_LGUIDrawableEvent_Int32_Execute final
 public:
 	struct FLGUIDrawableEvent_Int32               InEvent;                                           // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                         InParameter;                                       // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111D[0x4];                                     // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEvent_Int32_Execute) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEvent_Int32_Execute");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEvent_Int32_Execute) == 0x000038, "Wrong size on LGUIBPLibrary_LGUIDrawableEvent_Int32_Execute");
@@ -2117,7 +2117,7 @@ struct LGUIBPLibrary_LGUIDrawableEvent_Rotator_Execute final
 public:
 	struct FLGUIDrawableEvent_Rotator             InEvent;                                           // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FRotator                               InParameter;                                       // 0x0030(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111E[0x4];                                     // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEvent_Rotator_Execute) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEvent_Rotator_Execute");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEvent_Rotator_Execute) == 0x000040, "Wrong size on LGUIBPLibrary_LGUIDrawableEvent_Rotator_Execute");
@@ -2200,7 +2200,7 @@ struct LGUIBPLibrary_LGUIDrawableEvent_UInt8_Execute final
 public:
 	struct FLGUIDrawableEvent_UInt8               InEvent;                                           // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	uint8                                         InParameter;                                       // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111F[0x7];                                     // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEvent_UInt8_Execute) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEvent_UInt8_Execute");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEvent_UInt8_Execute) == 0x000038, "Wrong size on LGUIBPLibrary_LGUIDrawableEvent_UInt8_Execute");
@@ -2283,7 +2283,7 @@ struct LGUIBPLibrary_LGUIDrawableEvent_Vector3_Execute final
 public:
 	struct FLGUIDrawableEvent_Vector3             InEvent;                                           // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVector                                InParameter;                                       // 0x0030(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1120[0x4];                                     // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEvent_Vector3_Execute) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEvent_Vector3_Execute");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEvent_Vector3_Execute) == 0x000040, "Wrong size on LGUIBPLibrary_LGUIDrawableEvent_Vector3_Execute");
@@ -2379,7 +2379,7 @@ struct LGUIBPLibrary_LGUIDrawableEventExecuteBool final
 public:
 	struct FLGUIDrawableEvent                     InEvent;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          InParameter;                                       // 0x0018(0x0001)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1121[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEventExecuteBool) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEventExecuteBool");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEventExecuteBool) == 0x000020, "Wrong size on LGUIBPLibrary_LGUIDrawableEventExecuteBool");
@@ -2406,7 +2406,7 @@ struct LGUIBPLibrary_LGUIDrawableEventExecuteColor final
 public:
 	struct FLGUIDrawableEvent                     InEvent;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FColor                                 InParameter;                                       // 0x0018(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1122[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEventExecuteColor) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEventExecuteColor");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEventExecuteColor) == 0x000020, "Wrong size on LGUIBPLibrary_LGUIDrawableEventExecuteColor");
@@ -2431,7 +2431,7 @@ struct LGUIBPLibrary_LGUIDrawableEventExecuteFloat final
 public:
 	struct FLGUIDrawableEvent                     InEvent;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                         InParameter;                                       // 0x0018(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1123[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEventExecuteFloat) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEventExecuteFloat");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEventExecuteFloat) == 0x000020, "Wrong size on LGUIBPLibrary_LGUIDrawableEventExecuteFloat");
@@ -2445,7 +2445,7 @@ struct LGUIBPLibrary_LGUIDrawableEventExecuteInt32 final
 public:
 	struct FLGUIDrawableEvent                     InEvent;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                         InParameter;                                       // 0x0018(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1124[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEventExecuteInt32) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEventExecuteInt32");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEventExecuteInt32) == 0x000020, "Wrong size on LGUIBPLibrary_LGUIDrawableEventExecuteInt32");
@@ -2497,7 +2497,7 @@ struct LGUIBPLibrary_LGUIDrawableEventExecuteQuaternion final
 {
 public:
 	struct FLGUIDrawableEvent                     InEvent;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1125[0x8];                                     // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FQuat                                  InParameter;                                       // 0x0020(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEventExecuteQuaternion) == 0x000010, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEventExecuteQuaternion");
@@ -2512,7 +2512,7 @@ struct LGUIBPLibrary_LGUIDrawableEventExecuteRotator final
 public:
 	struct FLGUIDrawableEvent                     InEvent;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FRotator                               InParameter;                                       // 0x0018(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1126[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEventExecuteRotator) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEventExecuteRotator");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEventExecuteRotator) == 0x000028, "Wrong size on LGUIBPLibrary_LGUIDrawableEventExecuteRotator");
@@ -2539,7 +2539,7 @@ struct LGUIBPLibrary_LGUIDrawableEventExecuteUInt8 final
 public:
 	struct FLGUIDrawableEvent                     InEvent;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	uint8                                         InParameter;                                       // 0x0018(0x0001)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1127[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEventExecuteUInt8) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEventExecuteUInt8");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEventExecuteUInt8) == 0x000020, "Wrong size on LGUIBPLibrary_LGUIDrawableEventExecuteUInt8");
@@ -2566,7 +2566,7 @@ struct LGUIBPLibrary_LGUIDrawableEventExecuteVector3 final
 public:
 	struct FLGUIDrawableEvent                     InEvent;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FVector                                InParameter;                                       // 0x0018(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1128[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEventExecuteVector3) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEventExecuteVector3");
 static_assert(sizeof(LGUIBPLibrary_LGUIDrawableEventExecuteVector3) == 0x000028, "Wrong size on LGUIBPLibrary_LGUIDrawableEventExecuteVector3");
@@ -2579,7 +2579,7 @@ struct LGUIBPLibrary_LGUIDrawableEventExecuteVector4 final
 {
 public:
 	struct FLGUIDrawableEvent                     InEvent;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1129[0x8];                                     // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector4                               InParameter;                                       // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_LGUIDrawableEventExecuteVector4) == 0x000010, "Wrong alignment on LGUIBPLibrary_LGUIDrawableEventExecuteVector4");
@@ -2594,7 +2594,7 @@ struct LGUIBPLibrary_LGUIExecuteControllerInputAction final
 public:
 	struct FKey                                   InputKey;                                          // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          PressOrRelease;                                    // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_112A[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIExecuteControllerInputAction) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIExecuteControllerInputAction");
 static_assert(sizeof(LGUIBPLibrary_LGUIExecuteControllerInputAction) == 0x000028, "Wrong size on LGUIBPLibrary_LGUIExecuteControllerInputAction");
@@ -2608,7 +2608,7 @@ struct LGUIBPLibrary_LGUIExecuteControllerInputAxis final
 public:
 	struct FKey                                   InputKey;                                          // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_112B[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIExecuteControllerInputAxis) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIExecuteControllerInputAxis");
 static_assert(sizeof(LGUIBPLibrary_LGUIExecuteControllerInputAxis) == 0x000028, "Wrong size on LGUIBPLibrary_LGUIExecuteControllerInputAxis");
@@ -2622,7 +2622,7 @@ struct LGUIBPLibrary_LGUIExecuteInputAction final
 public:
 	struct FKey                                   InputKey;                                          // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          PressOrRelease;                                    // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_112C[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIExecuteInputAction) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIExecuteInputAction");
 static_assert(sizeof(LGUIBPLibrary_LGUIExecuteInputAction) == 0x000028, "Wrong size on LGUIBPLibrary_LGUIExecuteInputAction");
@@ -2636,7 +2636,7 @@ struct LGUIBPLibrary_LGUIExecuteInputAxis final
 public:
 	struct FKey                                   InputKey;                                          // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_112D[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_LGUIExecuteInputAxis) == 0x000008, "Wrong alignment on LGUIBPLibrary_LGUIExecuteInputAxis");
 static_assert(sizeof(LGUIBPLibrary_LGUIExecuteInputAxis) == 0x000028, "Wrong size on LGUIBPLibrary_LGUIExecuteInputAxis");
@@ -2683,7 +2683,7 @@ public:
 	float                                         Duration;                                          // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_112E[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_PivotTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_PivotTo");
@@ -2703,7 +2703,7 @@ public:
 	class FString                                 Content;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UUIItem*                                UIItem;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         LogDepth;                                          // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_112F[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_PrintUIItemLog) == 0x000008, "Wrong alignment on LGUIBPLibrary_PrintUIItemLog");
 static_assert(sizeof(LGUIBPLibrary_PrintUIItemLog) == 0x000020, "Wrong size on LGUIBPLibrary_PrintUIItemLog");
@@ -2742,7 +2742,7 @@ struct LGUIBPLibrary_SetIsFullScreenUIRendering final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Value;                                             // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1130[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_SetIsFullScreenUIRendering) == 0x000008, "Wrong alignment on LGUIBPLibrary_SetIsFullScreenUIRendering");
 static_assert(sizeof(LGUIBPLibrary_SetIsFullScreenUIRendering) == 0x000010, "Wrong size on LGUIBPLibrary_SetIsFullScreenUIRendering");
@@ -2756,7 +2756,7 @@ struct LGUIBPLibrary_SetLGUIUISceneRendering final
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsUISceneRendering;                                // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1131[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_SetLGUIUISceneRendering) == 0x000008, "Wrong alignment on LGUIBPLibrary_SetLGUIUISceneRendering");
 static_assert(sizeof(LGUIBPLibrary_SetLGUIUISceneRendering) == 0x000010, "Wrong size on LGUIBPLibrary_SetLGUIUISceneRendering");
@@ -2770,7 +2770,7 @@ struct LGUIBPLibrary_SetUIActive final
 public:
 	class AActor*                                 Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Acitve;                                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1132[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_SetUIActive) == 0x000008, "Wrong alignment on LGUIBPLibrary_SetUIActive");
 static_assert(sizeof(LGUIBPLibrary_SetUIActive) == 0x000010, "Wrong size on LGUIBPLibrary_SetUIActive");
@@ -2784,7 +2784,7 @@ struct LGUIBPLibrary_SetUIAlpha final
 public:
 	class AActor*                                 Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InAlpha;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1133[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_SetUIAlpha) == 0x000008, "Wrong alignment on LGUIBPLibrary_SetUIAlpha");
 static_assert(sizeof(LGUIBPLibrary_SetUIAlpha) == 0x000010, "Wrong size on LGUIBPLibrary_SetUIAlpha");
@@ -2797,13 +2797,13 @@ struct LGUIBPLibrary_SetUIHierarchyIndex final
 {
 public:
 	class AActor*                                 Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1134[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIBPLibrary_SetUIHierarchyIndex) == 0x000008, "Wrong alignment on LGUIBPLibrary_SetUIHierarchyIndex");
 static_assert(sizeof(LGUIBPLibrary_SetUIHierarchyIndex) == 0x000010, "Wrong size on LGUIBPLibrary_SetUIHierarchyIndex");
 static_assert(offsetof(LGUIBPLibrary_SetUIHierarchyIndex, Target) == 0x000000, "Member 'LGUIBPLibrary_SetUIHierarchyIndex::Target' has a wrong offset!");
-static_assert(offsetof(LGUIBPLibrary_SetUIHierarchyIndex, Param_Index) == 0x000008, "Member 'LGUIBPLibrary_SetUIHierarchyIndex::Param_Index' has a wrong offset!");
+static_assert(offsetof(LGUIBPLibrary_SetUIHierarchyIndex, Index_0) == 0x000008, "Member 'LGUIBPLibrary_SetUIHierarchyIndex::Index_0' has a wrong offset!");
 
 // Function LGUI.LGUIBPLibrary.SimulationLineTrace
 // 0x0028 (0x0028 - 0x0000)
@@ -2847,7 +2847,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1135[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_StretchBottomTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_StretchBottomTo");
@@ -2869,7 +2869,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1136[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_StretchLeftTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_StretchLeftTo");
@@ -2891,7 +2891,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1137[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_StretchRightTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_StretchRightTo");
@@ -2913,7 +2913,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1138[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_StretchTopTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_StretchTopTo");
@@ -2935,7 +2935,7 @@ public:
 	float                                         Duration;                                          // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1139[0x3];                                     // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_UILocalPositionTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_UILocalPositionTo");
@@ -2957,7 +2957,7 @@ public:
 	float                                         Duration;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   Ease;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_113A[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUIBPLibrary_WidthTo) == 0x000008, "Wrong alignment on LGUIBPLibrary_WidthTo");
@@ -3163,7 +3163,7 @@ struct LGUICanvas_IsUIVisible final
 public:
 	class UUIItem*                                HitUI;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1146[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUICanvas_IsUIVisible) == 0x000008, "Wrong alignment on LGUICanvas_IsUIVisible");
 static_assert(sizeof(LGUICanvas_IsUIVisible) == 0x000010, "Wrong size on LGUICanvas_IsUIVisible");
@@ -3264,7 +3264,7 @@ struct LGUICanvas_SetProjectionParameters final
 {
 public:
 	ECameraProjectionMode                         InProjectionType;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1147[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         InFovAngle;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InNearClipPlane;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InFarClipPlane;                                    // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3327,7 +3327,7 @@ struct LGUICanvas_SetSortOrder final
 public:
 	int32                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          PropagateToChildrenCanvas;                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1148[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUICanvas_SetSortOrder) == 0x000004, "Wrong alignment on LGUICanvas_SetSortOrder");
 static_assert(sizeof(LGUICanvas_SetSortOrder) == 0x000008, "Wrong size on LGUICanvas_SetSortOrder");
@@ -3687,7 +3687,7 @@ public:
 	struct FVector                                Position3D;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              OutPosition2D;                                     // 0x000C(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_114E[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUICanvasScaler_Project3DToScreen) == 0x000004, "Wrong alignment on LGUICanvasScaler_Project3DToScreen");
 static_assert(sizeof(LGUICanvasScaler_Project3DToScreen) == 0x000018, "Wrong size on LGUICanvasScaler_Project3DToScreen");
@@ -3771,7 +3771,7 @@ struct LGUIEventSystem_Navigate final
 {
 public:
 	ELGUINavigationDirection                      Direction;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1157[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUISelectableComponent*                 Selectable;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USceneComponent*                        ReturnValue;                                       // 0x0010(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -3839,7 +3839,7 @@ public:
 	class USceneComponent*                        InSelectComp;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ULGUIBaseEventData*                     EventData;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELGUIEventFireType                            EventFireType;                                     // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1158[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIEventSystem_SetSelectComponent) == 0x000008, "Wrong alignment on LGUIEventSystem_SetSelectComponent");
 static_assert(sizeof(LGUIEventSystem_SetSelectComponent) == 0x000018, "Wrong size on LGUIEventSystem_SetSelectComponent");
@@ -3908,10 +3908,10 @@ struct UIExtendToggleTextureTransition_SetTargetStateTexture final
 {
 public:
 	EToggleTransitionState                        State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_115C[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               Texture;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ForceNoTriggerOnChange;                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_115D[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIExtendToggleTextureTransition_SetTargetStateTexture) == 0x000008, "Wrong alignment on UIExtendToggleTextureTransition_SetTargetStateTexture");
 static_assert(sizeof(UIExtendToggleTextureTransition_SetTargetStateTexture) == 0x000018, "Wrong size on UIExtendToggleTextureTransition_SetTargetStateTexture");
@@ -4091,7 +4091,7 @@ struct UISelectableTransitionComponent_OnStartCustomTransitionBP final
 public:
 	class FName                                   InTransitionName;                                  // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InImmediateSet;                                    // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1166[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UISelectableTransitionComponent_OnStartCustomTransitionBP) == 0x000004, "Wrong alignment on UISelectableTransitionComponent_OnStartCustomTransitionBP");
 static_assert(sizeof(UISelectableTransitionComponent_OnStartCustomTransitionBP) == 0x000010, "Wrong size on UISelectableTransitionComponent_OnStartCustomTransitionBP");
@@ -4239,7 +4239,7 @@ struct UIItem_GetOverlapWith final
 public:
 	class UUIItem*                                UIItem;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1174[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIItem_GetOverlapWith) == 0x000008, "Wrong alignment on UIItem_GetOverlapWith");
 static_assert(sizeof(UIItem_GetOverlapWith) == 0x000010, "Wrong size on UIItem_GetOverlapWith");
@@ -4263,7 +4263,7 @@ struct UIItem_GetPositionInScreen final
 {
 public:
 	bool                                          bIsScaledByDPI;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1175[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              ReturnValue;                                       // 0x0004(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIItem_GetPositionInScreen) == 0x000004, "Wrong alignment on UIItem_GetPositionInScreen");
@@ -4277,7 +4277,7 @@ struct UIItem_GetPositionInViewPort final
 {
 public:
 	bool                                          bIsScaledByDPI;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1176[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              ReturnValue;                                       // 0x0004(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIItem_GetPositionInViewPort) == 0x000004, "Wrong alignment on UIItem_GetPositionInViewPort");
@@ -4455,7 +4455,7 @@ struct UIItem_SetChangeColor final
 {
 public:
 	bool                                          bUseChangeColor;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1177[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FColor                                 NewColor;                                          // 0x0004(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIItem_SetChangeColor) == 0x000004, "Wrong alignment on UIItem_SetChangeColor");
@@ -4481,7 +4481,7 @@ struct UIItem_SetDepth final
 public:
 	int32                                         Depth;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          PropagateToChildren;                               // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1178[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIItem_SetDepth) == 0x000004, "Wrong alignment on UIItem_SetDepth");
 static_assert(sizeof(UIItem_SetDepth) == 0x000008, "Wrong size on UIItem_SetDepth");
@@ -4572,7 +4572,7 @@ struct UIItem_SetPivot_Raw final
 public:
 	struct FVector2D                              NewPivot;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAdjustLocation;                                   // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1179[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIItem_SetPivot_Raw) == 0x000004, "Wrong alignment on UIItem_SetPivot_Raw");
 static_assert(sizeof(UIItem_SetPivot_Raw) == 0x00000C, "Wrong size on UIItem_SetPivot_Raw");
@@ -4685,7 +4685,7 @@ struct UIItem_SetUIParent final
 public:
 	class UUIItem*                                InParent;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          KeepWorldTransform;                                // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_117A[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIItem_SetUIParent) == 0x000008, "Wrong alignment on UIItem_SetUIParent");
 static_assert(sizeof(UIItem_SetUIParent) == 0x000010, "Wrong size on UIItem_SetUIParent");
@@ -4873,13 +4873,13 @@ static_assert(offsetof(UIItem_GetAnchorVAlign, ReturnValue) == 0x000000, "Member
 struct UIItem_GetAttachUIChild final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_117B[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUIItem*                                ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIItem_GetAttachUIChild) == 0x000008, "Wrong alignment on UIItem_GetAttachUIChild");
 static_assert(sizeof(UIItem_GetAttachUIChild) == 0x000010, "Wrong size on UIItem_GetAttachUIChild");
-static_assert(offsetof(UIItem_GetAttachUIChild, Param_Index) == 0x000000, "Member 'UIItem_GetAttachUIChild::Param_Index' has a wrong offset!");
+static_assert(offsetof(UIItem_GetAttachUIChild, Index_0) == 0x000000, "Member 'UIItem_GetAttachUIChild::Index_0' has a wrong offset!");
 static_assert(offsetof(UIItem_GetAttachUIChild, ReturnValue) == 0x000008, "Member 'UIItem_GetAttachUIChild::ReturnValue' has a wrong offset!");
 
 // Function LGUI.UIItem.GetAttachUIChildren
@@ -5296,7 +5296,7 @@ struct LGUIManagerActor_GetGlobalUiBlurIndex final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1184[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIManagerActor_GetGlobalUiBlurIndex) == 0x000008, "Wrong alignment on LGUIManagerActor_GetGlobalUiBlurIndex");
 static_assert(sizeof(LGUIManagerActor_GetGlobalUiBlurIndex) == 0x000010, "Wrong size on LGUIManagerActor_GetGlobalUiBlurIndex");
@@ -6291,7 +6291,7 @@ struct UIBatchGeometryRenderable_SetCustomMaterialTextureParameter final
 {
 public:
 	class FName                                   ParameterName;                                     // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11AD[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               Value;                                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIBatchGeometryRenderable_SetCustomMaterialTextureParameter) == 0x000008, "Wrong alignment on UIBatchGeometryRenderable_SetCustomMaterialTextureParameter");
@@ -6407,7 +6407,7 @@ struct UISpriteBase_SetSprite final
 public:
 	class ULGUISpriteData_BaseObject*             NewSprite;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          SetSize;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11AF[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UISpriteBase_SetSprite) == 0x000008, "Wrong alignment on UISpriteBase_SetSprite");
 static_assert(sizeof(UISpriteBase_SetSprite) == 0x000010, "Wrong size on UISpriteBase_SetSprite");
@@ -6434,7 +6434,7 @@ public:
 	float                                         Duration;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   EaseType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11B2[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UI2DLineRendererBase_LineWidthTo) == 0x000008, "Wrong alignment on UI2DLineRendererBase_LineWidthTo");
@@ -6520,7 +6520,7 @@ public:
 	float                                         Duration;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   EaseType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11B4[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIPolygonLine_EndAngleTo) == 0x000008, "Wrong alignment on UIPolygonLine_EndAngleTo");
@@ -6584,7 +6584,7 @@ public:
 	float                                         Duration;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   EaseType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11B5[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIPolygonLine_StartAngleTo) == 0x000008, "Wrong alignment on UIPolygonLine_StartAngleTo");
@@ -6646,7 +6646,7 @@ struct LGUIPointerClickInterface_OnPointerClick final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11B6[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerClickInterface_OnPointerClick) == 0x000008, "Wrong alignment on LGUIPointerClickInterface_OnPointerClick");
 static_assert(sizeof(LGUIPointerClickInterface_OnPointerClick) == 0x000010, "Wrong size on LGUIPointerClickInterface_OnPointerClick");
@@ -6660,7 +6660,7 @@ struct LGUIPointerDownUpInterface_OnPointerDown final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11B7[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerDownUpInterface_OnPointerDown) == 0x000008, "Wrong alignment on LGUIPointerDownUpInterface_OnPointerDown");
 static_assert(sizeof(LGUIPointerDownUpInterface_OnPointerDown) == 0x000010, "Wrong size on LGUIPointerDownUpInterface_OnPointerDown");
@@ -6674,7 +6674,7 @@ struct LGUIPointerDownUpInterface_OnPointerUp final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11B8[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerDownUpInterface_OnPointerUp) == 0x000008, "Wrong alignment on LGUIPointerDownUpInterface_OnPointerUp");
 static_assert(sizeof(LGUIPointerDownUpInterface_OnPointerUp) == 0x000010, "Wrong size on LGUIPointerDownUpInterface_OnPointerUp");
@@ -6721,7 +6721,7 @@ struct LGUIPointerDragDropInterface_OnPointerDragDrop final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11BC[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerDragDropInterface_OnPointerDragDrop) == 0x000008, "Wrong alignment on LGUIPointerDragDropInterface_OnPointerDragDrop");
 static_assert(sizeof(LGUIPointerDragDropInterface_OnPointerDragDrop) == 0x000010, "Wrong size on LGUIPointerDragDropInterface_OnPointerDragDrop");
@@ -6735,7 +6735,7 @@ struct LGUIPointerDragEnterExitInterface_OnPointerDragEnter final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11BD[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerDragEnterExitInterface_OnPointerDragEnter) == 0x000008, "Wrong alignment on LGUIPointerDragEnterExitInterface_OnPointerDragEnter");
 static_assert(sizeof(LGUIPointerDragEnterExitInterface_OnPointerDragEnter) == 0x000010, "Wrong size on LGUIPointerDragEnterExitInterface_OnPointerDragEnter");
@@ -6749,7 +6749,7 @@ struct LGUIPointerDragEnterExitInterface_OnPointerDragExit final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11BE[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerDragEnterExitInterface_OnPointerDragExit) == 0x000008, "Wrong alignment on LGUIPointerDragEnterExitInterface_OnPointerDragExit");
 static_assert(sizeof(LGUIPointerDragEnterExitInterface_OnPointerDragExit) == 0x000010, "Wrong size on LGUIPointerDragEnterExitInterface_OnPointerDragExit");
@@ -6763,7 +6763,7 @@ struct LGUIPointerDragInterface_OnPointerBeginDrag final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11C0[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerDragInterface_OnPointerBeginDrag) == 0x000008, "Wrong alignment on LGUIPointerDragInterface_OnPointerBeginDrag");
 static_assert(sizeof(LGUIPointerDragInterface_OnPointerBeginDrag) == 0x000010, "Wrong size on LGUIPointerDragInterface_OnPointerBeginDrag");
@@ -6777,7 +6777,7 @@ struct LGUIPointerDragInterface_OnPointerDrag final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11C1[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerDragInterface_OnPointerDrag) == 0x000008, "Wrong alignment on LGUIPointerDragInterface_OnPointerDrag");
 static_assert(sizeof(LGUIPointerDragInterface_OnPointerDrag) == 0x000010, "Wrong size on LGUIPointerDragInterface_OnPointerDrag");
@@ -6791,7 +6791,7 @@ struct LGUIPointerDragInterface_OnPointerEndDrag final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11C2[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerDragInterface_OnPointerEndDrag) == 0x000008, "Wrong alignment on LGUIPointerDragInterface_OnPointerEndDrag");
 static_assert(sizeof(LGUIPointerDragInterface_OnPointerEndDrag) == 0x000010, "Wrong size on LGUIPointerDragInterface_OnPointerEndDrag");
@@ -6805,7 +6805,7 @@ struct LGUIPointerEnterExitInterface_OnPointerEnter final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11C3[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerEnterExitInterface_OnPointerEnter) == 0x000008, "Wrong alignment on LGUIPointerEnterExitInterface_OnPointerEnter");
 static_assert(sizeof(LGUIPointerEnterExitInterface_OnPointerEnter) == 0x000010, "Wrong size on LGUIPointerEnterExitInterface_OnPointerEnter");
@@ -6819,7 +6819,7 @@ struct LGUIPointerEnterExitInterface_OnPointerExit final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11C4[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerEnterExitInterface_OnPointerExit) == 0x000008, "Wrong alignment on LGUIPointerEnterExitInterface_OnPointerExit");
 static_assert(sizeof(LGUIPointerEnterExitInterface_OnPointerExit) == 0x000010, "Wrong size on LGUIPointerEnterExitInterface_OnPointerExit");
@@ -6899,7 +6899,7 @@ struct LGUIPointerInterruptInterface_NeedInterrupt final
 public:
 	class ULGUIBaseEventData*                     EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11CF[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerInterruptInterface_NeedInterrupt) == 0x000008, "Wrong alignment on LGUIPointerInterruptInterface_NeedInterrupt");
 static_assert(sizeof(LGUIPointerInterruptInterface_NeedInterrupt) == 0x000010, "Wrong size on LGUIPointerInterruptInterface_NeedInterrupt");
@@ -6913,7 +6913,7 @@ struct LGUIPointerScrollInterface_OnPointerScroll final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11D0[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerScrollInterface_OnPointerScroll) == 0x000008, "Wrong alignment on LGUIPointerScrollInterface_OnPointerScroll");
 static_assert(sizeof(LGUIPointerScrollInterface_OnPointerScroll) == 0x000010, "Wrong size on LGUIPointerScrollInterface_OnPointerScroll");
@@ -6927,7 +6927,7 @@ struct LGUIPointerSelectDeselectInterface_OnPointerDeselect final
 public:
 	class ULGUIBaseEventData*                     EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11D1[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerSelectDeselectInterface_OnPointerDeselect) == 0x000008, "Wrong alignment on LGUIPointerSelectDeselectInterface_OnPointerDeselect");
 static_assert(sizeof(LGUIPointerSelectDeselectInterface_OnPointerDeselect) == 0x000010, "Wrong size on LGUIPointerSelectDeselectInterface_OnPointerDeselect");
@@ -6941,7 +6941,7 @@ struct LGUIPointerSelectDeselectInterface_OnPointerSelect final
 public:
 	class ULGUIBaseEventData*                     EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11D2[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(LGUIPointerSelectDeselectInterface_OnPointerSelect) == 0x000008, "Wrong alignment on LGUIPointerSelectDeselectInterface_OnPointerSelect");
 static_assert(sizeof(LGUIPointerSelectDeselectInterface_OnPointerSelect) == 0x000010, "Wrong size on LGUIPointerSelectDeselectInterface_OnPointerSelect");
@@ -7021,7 +7021,7 @@ struct UIBaseActor_GetLoadStateOfSequenceByKey final
 public:
 	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESequenceLoadState                            ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11D8[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIBaseActor_GetLoadStateOfSequenceByKey) == 0x000008, "Wrong alignment on UIBaseActor_GetLoadStateOfSequenceByKey");
 static_assert(sizeof(UIBaseActor_GetLoadStateOfSequenceByKey) == 0x000018, "Wrong size on UIBaseActor_GetLoadStateOfSequenceByKey");
@@ -7059,12 +7059,12 @@ static_assert(offsetof(UIBaseActor_GetSequencePlayContextOfKey, ReturnValue) == 
 struct UIBaseActor_GetSequencePlayerByKey final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ALevelSequenceActor*                    ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIBaseActor_GetSequencePlayerByKey) == 0x000008, "Wrong alignment on UIBaseActor_GetSequencePlayerByKey");
 static_assert(sizeof(UIBaseActor_GetSequencePlayerByKey) == 0x000018, "Wrong size on UIBaseActor_GetSequencePlayerByKey");
-static_assert(offsetof(UIBaseActor_GetSequencePlayerByKey, Param_Name) == 0x000000, "Member 'UIBaseActor_GetSequencePlayerByKey::Param_Name' has a wrong offset!");
+static_assert(offsetof(UIBaseActor_GetSequencePlayerByKey, Name_0) == 0x000000, "Member 'UIBaseActor_GetSequencePlayerByKey::Name_0' has a wrong offset!");
 static_assert(offsetof(UIBaseActor_GetSequencePlayerByKey, ReturnValue) == 0x000010, "Member 'UIBaseActor_GetSequencePlayerByKey::ReturnValue' has a wrong offset!");
 
 // Function LGUI.UIBaseActor.LoadSequenceAssetAsyncByKey
@@ -7085,44 +7085,44 @@ static_assert(offsetof(UIBaseActor_LoadSequenceAssetAsyncByKey, OnLoaded) == 0x0
 struct UIBaseActor_PauseSequenceByKey final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIBaseActor_PauseSequenceByKey) == 0x000008, "Wrong alignment on UIBaseActor_PauseSequenceByKey");
 static_assert(sizeof(UIBaseActor_PauseSequenceByKey) == 0x000010, "Wrong size on UIBaseActor_PauseSequenceByKey");
-static_assert(offsetof(UIBaseActor_PauseSequenceByKey, Param_Name) == 0x000000, "Member 'UIBaseActor_PauseSequenceByKey::Param_Name' has a wrong offset!");
+static_assert(offsetof(UIBaseActor_PauseSequenceByKey, Name_0) == 0x000000, "Member 'UIBaseActor_PauseSequenceByKey::Name_0' has a wrong offset!");
 
 // Function LGUI.UIBaseActor.PlayLevelSequenceByKey
 // 0x0010 (0x0010 - 0x0000)
 struct UIBaseActor_PlayLevelSequenceByKey final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIBaseActor_PlayLevelSequenceByKey) == 0x000008, "Wrong alignment on UIBaseActor_PlayLevelSequenceByKey");
 static_assert(sizeof(UIBaseActor_PlayLevelSequenceByKey) == 0x000010, "Wrong size on UIBaseActor_PlayLevelSequenceByKey");
-static_assert(offsetof(UIBaseActor_PlayLevelSequenceByKey, Param_Name) == 0x000000, "Member 'UIBaseActor_PlayLevelSequenceByKey::Param_Name' has a wrong offset!");
+static_assert(offsetof(UIBaseActor_PlayLevelSequenceByKey, Name_0) == 0x000000, "Member 'UIBaseActor_PlayLevelSequenceByKey::Name_0' has a wrong offset!");
 
 // Function LGUI.UIBaseActor.ReplaySequenceByKey
 // 0x0010 (0x0010 - 0x0000)
 struct UIBaseActor_ReplaySequenceByKey final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIBaseActor_ReplaySequenceByKey) == 0x000008, "Wrong alignment on UIBaseActor_ReplaySequenceByKey");
 static_assert(sizeof(UIBaseActor_ReplaySequenceByKey) == 0x000010, "Wrong size on UIBaseActor_ReplaySequenceByKey");
-static_assert(offsetof(UIBaseActor_ReplaySequenceByKey, Param_Name) == 0x000000, "Member 'UIBaseActor_ReplaySequenceByKey::Param_Name' has a wrong offset!");
+static_assert(offsetof(UIBaseActor_ReplaySequenceByKey, Name_0) == 0x000000, "Member 'UIBaseActor_ReplaySequenceByKey::Name_0' has a wrong offset!");
 
 // Function LGUI.UIBaseActor.ResumeSequenceByKey
 // 0x0010 (0x0010 - 0x0000)
 struct UIBaseActor_ResumeSequenceByKey final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIBaseActor_ResumeSequenceByKey) == 0x000008, "Wrong alignment on UIBaseActor_ResumeSequenceByKey");
 static_assert(sizeof(UIBaseActor_ResumeSequenceByKey) == 0x000010, "Wrong size on UIBaseActor_ResumeSequenceByKey");
-static_assert(offsetof(UIBaseActor_ResumeSequenceByKey, Param_Name) == 0x000000, "Member 'UIBaseActor_ResumeSequenceByKey::Param_Name' has a wrong offset!");
+static_assert(offsetof(UIBaseActor_ResumeSequenceByKey, Name_0) == 0x000000, "Member 'UIBaseActor_ResumeSequenceByKey::Name_0' has a wrong offset!");
 
 // Function LGUI.UIBaseActor.SequenceJumpToEnd
 // 0x0020 (0x0020 - 0x0000)
@@ -7140,12 +7140,12 @@ static_assert(offsetof(UIBaseActor_SequenceJumpToEnd, SoftPath) == 0x000000, "Me
 struct UIBaseActor_SequenceJumpToSecondByKey final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FFrameTime                             Time;                                              // 0x0010(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIBaseActor_SequenceJumpToSecondByKey) == 0x000008, "Wrong alignment on UIBaseActor_SequenceJumpToSecondByKey");
 static_assert(sizeof(UIBaseActor_SequenceJumpToSecondByKey) == 0x000018, "Wrong size on UIBaseActor_SequenceJumpToSecondByKey");
-static_assert(offsetof(UIBaseActor_SequenceJumpToSecondByKey, Param_Name) == 0x000000, "Member 'UIBaseActor_SequenceJumpToSecondByKey::Param_Name' has a wrong offset!");
+static_assert(offsetof(UIBaseActor_SequenceJumpToSecondByKey, Name_0) == 0x000000, "Member 'UIBaseActor_SequenceJumpToSecondByKey::Name_0' has a wrong offset!");
 static_assert(offsetof(UIBaseActor_SequenceJumpToSecondByKey, Time) == 0x000010, "Member 'UIBaseActor_SequenceJumpToSecondByKey::Time' has a wrong offset!");
 
 // Function LGUI.UIBaseActor.SequencePlayReverseByKey
@@ -7153,22 +7153,22 @@ static_assert(offsetof(UIBaseActor_SequenceJumpToSecondByKey, Time) == 0x000010,
 struct UIBaseActor_SequencePlayReverseByKey final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIBaseActor_SequencePlayReverseByKey) == 0x000008, "Wrong alignment on UIBaseActor_SequencePlayReverseByKey");
 static_assert(sizeof(UIBaseActor_SequencePlayReverseByKey) == 0x000010, "Wrong size on UIBaseActor_SequencePlayReverseByKey");
-static_assert(offsetof(UIBaseActor_SequencePlayReverseByKey, Param_Name) == 0x000000, "Member 'UIBaseActor_SequencePlayReverseByKey::Param_Name' has a wrong offset!");
+static_assert(offsetof(UIBaseActor_SequencePlayReverseByKey, Name_0) == 0x000000, "Member 'UIBaseActor_SequencePlayReverseByKey::Name_0' has a wrong offset!");
 
 // Function LGUI.UIBaseActor.StopSequenceByKey
 // 0x0010 (0x0010 - 0x0000)
 struct UIBaseActor_StopSequenceByKey final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIBaseActor_StopSequenceByKey) == 0x000008, "Wrong alignment on UIBaseActor_StopSequenceByKey");
 static_assert(sizeof(UIBaseActor_StopSequenceByKey) == 0x000010, "Wrong size on UIBaseActor_StopSequenceByKey");
-static_assert(offsetof(UIBaseActor_StopSequenceByKey, Param_Name) == 0x000000, "Member 'UIBaseActor_StopSequenceByKey::Param_Name' has a wrong offset!");
+static_assert(offsetof(UIBaseActor_StopSequenceByKey, Name_0) == 0x000000, "Member 'UIBaseActor_StopSequenceByKey::Name_0' has a wrong offset!");
 
 // Function LGUI.UIBaseActor.ExecuteSequencePlayEvent
 // 0x0020 (0x0020 - 0x0000)
@@ -7386,17 +7386,17 @@ static_assert(offsetof(LGUISpriteData_BaseObject_IsIndividual, ReturnValue) == 0
 struct LGUISpriteData_CreateLGUISpriteData final
 {
 public:
-	class UObject*                                Param_Outer;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                Outer_0;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTexture2D*                             InSpriteTexture;                                   // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              InHorizontalBorder;                                // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              InVerticalBorder;                                  // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   InPackingTag;                                      // 0x0020(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11E3[0x4];                                     // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULGUISpriteData*                        ReturnValue;                                       // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LGUISpriteData_CreateLGUISpriteData) == 0x000008, "Wrong alignment on LGUISpriteData_CreateLGUISpriteData");
 static_assert(sizeof(LGUISpriteData_CreateLGUISpriteData) == 0x000038, "Wrong size on LGUISpriteData_CreateLGUISpriteData");
-static_assert(offsetof(LGUISpriteData_CreateLGUISpriteData, Param_Outer) == 0x000000, "Member 'LGUISpriteData_CreateLGUISpriteData::Param_Outer' has a wrong offset!");
+static_assert(offsetof(LGUISpriteData_CreateLGUISpriteData, Outer_0) == 0x000000, "Member 'LGUISpriteData_CreateLGUISpriteData::Outer_0' has a wrong offset!");
 static_assert(offsetof(LGUISpriteData_CreateLGUISpriteData, InSpriteTexture) == 0x000008, "Member 'LGUISpriteData_CreateLGUISpriteData::InSpriteTexture' has a wrong offset!");
 static_assert(offsetof(LGUISpriteData_CreateLGUISpriteData, InHorizontalBorder) == 0x000010, "Member 'LGUISpriteData_CreateLGUISpriteData::InHorizontalBorder' has a wrong offset!");
 static_assert(offsetof(LGUISpriteData_CreateLGUISpriteData, InVerticalBorder) == 0x000018, "Member 'LGUISpriteData_CreateLGUISpriteData::InVerticalBorder' has a wrong offset!");
@@ -7646,7 +7646,7 @@ public:
 	bool                                          InVertexPositionChanged;                           // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InVertexUVChanged;                                 // 0x0011(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InVertexColorChanged;                              // 0x0012(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11ED[0x5];                                     // 0x0013(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UISpriteBase_BP_OnUpdateGeometry_BP) == 0x000008, "Wrong alignment on UISpriteBase_BP_OnUpdateGeometry_BP");
 static_assert(sizeof(UISpriteBase_BP_OnUpdateGeometry_BP) == 0x000018, "Wrong size on UISpriteBase_BP_OnUpdateGeometry_BP");
@@ -7676,7 +7676,7 @@ public:
 	struct FSoftObjectPath                        SequencePath;                                      // 0x0008(0x0020)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class AUIBaseActor*>                   BatchRoots;                                        // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FMovieSceneSequencePlaybackSettings    PlaySetting;                                       // 0x0038(0x0014)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11F3[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ALevelSequenceActor*                    ReturnValue;                                       // 0x0050(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(SequencerManager_BatchPlaySequenceOnActors) == 0x000008, "Wrong alignment on SequencerManager_BatchPlaySequenceOnActors");
@@ -7708,7 +7708,7 @@ public:
 	const class UObject*                          Context;                                           // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSoftObjectPath                        Path;                                              // 0x0008(0x0020)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESequenceLoadState                            ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11F4[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SequencerManager_GetSequenceLoadState) == 0x000008, "Wrong alignment on SequencerManager_GetSequenceLoadState");
 static_assert(sizeof(SequencerManager_GetSequenceLoadState) == 0x000030, "Wrong size on SequencerManager_GetSequenceLoadState");
@@ -7759,7 +7759,7 @@ struct UISpriteTransition_SetStateSprite final
 {
 public:
 	EUISelectableSelectionState                   State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11F5[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULGUISpriteData_BaseObject*             NewSprite;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UISpriteTransition_SetStateSprite) == 0x000008, "Wrong alignment on UISpriteTransition_SetStateSprite");
@@ -7939,7 +7939,7 @@ struct UI2DLineRaw_SetPoints final
 public:
 	TArray<struct FVector2D>                      InPoints;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          bAdjustSize;                                       // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11F9[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UI2DLineRaw_SetPoints) == 0x000008, "Wrong alignment on UI2DLineRaw_SetPoints");
 static_assert(sizeof(UI2DLineRaw_SetPoints) == 0x000018, "Wrong size on UI2DLineRaw_SetPoints");
@@ -8144,7 +8144,7 @@ public:
 	bool                                          InVertexPositionChanged;                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InVertexUVChanged;                                 // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InVertexColorChanged;                              // 0x000A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1201[0x5];                                     // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UITextureBase_BP_OnUpdateGeometry_BP) == 0x000008, "Wrong alignment on UITextureBase_BP_OnUpdateGeometry_BP");
 static_assert(sizeof(UITextureBase_BP_OnUpdateGeometry_BP) == 0x000010, "Wrong size on UITextureBase_BP_OnUpdateGeometry_BP");
@@ -8217,10 +8217,10 @@ struct TextureTransitionUtil_SetTextureSize final
 public:
 	class UUITexture*                             Texture;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsSnapSize;                                       // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1203[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Width;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Height;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1204[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(TextureTransitionUtil_SetTextureSize) == 0x000008, "Wrong alignment on TextureTransitionUtil_SetTextureSize");
 static_assert(sizeof(TextureTransitionUtil_SetTextureSize) == 0x000018, "Wrong size on TextureTransitionUtil_SetTextureSize");
@@ -8502,7 +8502,7 @@ public:
 	bool                                          InVertexPositionChanged;                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InVertexUVChanged;                                 // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InVertexColorChanged;                              // 0x000A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_120D[0x5];                                     // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIBatchGeometryRenderable_BP_OnUpdateGeometry_BP) == 0x000008, "Wrong alignment on UIBatchGeometryRenderable_BP_OnUpdateGeometry_BP");
 static_assert(sizeof(UIBatchGeometryRenderable_BP_OnUpdateGeometry_BP) == 0x000010, "Wrong size on UIBatchGeometryRenderable_BP_OnUpdateGeometry_BP");
@@ -8518,7 +8518,7 @@ struct UIButtonComponent_OnPointerDown_Implementation final
 public:
 	class ULGUIPointerEventData*                  EventData;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1213[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIButtonComponent_OnPointerDown_Implementation) == 0x000008, "Wrong alignment on UIButtonComponent_OnPointerDown_Implementation");
 static_assert(sizeof(UIButtonComponent_OnPointerDown_Implementation) == 0x000010, "Wrong size on UIButtonComponent_OnPointerDown_Implementation");
@@ -8559,7 +8559,7 @@ public:
 	class AUIBaseActor*                           InParentActor;                                     // 0x0038(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         InSelectedItemIndex;                               // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EComboBoxPosition                             InPosition;                                        // 0x0044(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1216[0x3];                                     // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUIComboBox*                            ReturnValue;                                       // 0x0048(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIComboBox_CreateComboBoxFromArray) == 0x000008, "Wrong alignment on UIComboBox_CreateComboBoxFromArray");
@@ -8744,7 +8744,7 @@ struct UIToggleGroupComponent_GetToggleByIndex final
 {
 public:
 	int32                                         InIndex;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_121F[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUIToggleComponent*                     ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIToggleGroupComponent_GetToggleByIndex) == 0x000008, "Wrong alignment on UIToggleGroupComponent_GetToggleByIndex");
@@ -8759,7 +8759,7 @@ struct UIToggleGroupComponent_GetToggleIndex final
 public:
 	const class UUIToggleComponent*               InComp;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1220[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIToggleGroupComponent_GetToggleIndex) == 0x000008, "Wrong alignment on UIToggleGroupComponent_GetToggleIndex");
 static_assert(sizeof(UIToggleGroupComponent_GetToggleIndex) == 0x000010, "Wrong size on UIToggleGroupComponent_GetToggleIndex");
@@ -8830,7 +8830,7 @@ struct UIDropdownComponent_SetValue final
 public:
 	int32                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          FireEvent;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1227[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIDropdownComponent_SetValue) == 0x000004, "Wrong alignment on UIDropdownComponent_SetValue");
 static_assert(sizeof(UIDropdownComponent_SetValue) == 0x000008, "Wrong size on UIDropdownComponent_SetValue");
@@ -8908,13 +8908,13 @@ static_assert(offsetof(UIDropdownComponent_GetMaxHeight, ReturnValue) == 0x00000
 struct UIDropdownComponent_GetOption final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1228[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FUIDropdownOptionData                  ReturnValue;                                       // 0x0008(0x0030)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIDropdownComponent_GetOption) == 0x000008, "Wrong alignment on UIDropdownComponent_GetOption");
 static_assert(sizeof(UIDropdownComponent_GetOption) == 0x000038, "Wrong size on UIDropdownComponent_GetOption");
-static_assert(offsetof(UIDropdownComponent_GetOption, Param_Index) == 0x000000, "Member 'UIDropdownComponent_GetOption::Param_Index' has a wrong offset!");
+static_assert(offsetof(UIDropdownComponent_GetOption, Index_0) == 0x000000, "Member 'UIDropdownComponent_GetOption::Index_0' has a wrong offset!");
 static_assert(offsetof(UIDropdownComponent_GetOption, ReturnValue) == 0x000008, "Member 'UIDropdownComponent_GetOption::ReturnValue' has a wrong offset!");
 
 // Function LGUI.UIDropdownComponent.GetOptions
@@ -9267,7 +9267,7 @@ public:
 	struct FVector                                Direction;                                         // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EUINavigationWrapMode                         Mode;                                              // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHasOtherNode;                                     // 0x0015(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1235[0x2];                                     // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUISelectableComponent*                 ReturnValue;                                       // 0x0018(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIScrollViewWithScrollbarComponent_FindNavigationComponent) == 0x000008, "Wrong alignment on UIScrollViewWithScrollbarComponent_FindNavigationComponent");
@@ -9286,7 +9286,7 @@ public:
 	class UUIItem*                                UIItem;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EOutOfBoundsType                              OutOfTopOrBottomType;                              // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EOutOfBoundsType                              OutOfLeftOrRightType;                              // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1236[0x2];                                     // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ErrorTolerance;                                    // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIScrollViewWithScrollbarComponent_GetOutOfBottomBoundsType) == 0x000008, "Wrong alignment on UIScrollViewWithScrollbarComponent_GetOutOfBottomBoundsType");
@@ -9465,7 +9465,7 @@ struct UIDynScrollViewComponent_GetItemPositionToContent final
 public:
 	class UUIItem*                                TargetItem;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ReturnValue;                                       // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_123C[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIDynScrollViewComponent_GetItemPositionToContent) == 0x000008, "Wrong alignment on UIDynScrollViewComponent_GetItemPositionToContent");
 static_assert(sizeof(UIDynScrollViewComponent_GetItemPositionToContent) == 0x000018, "Wrong size on UIDynScrollViewComponent_GetItemPositionToContent");
@@ -9479,7 +9479,7 @@ struct UIDynScrollViewComponent_GetItemPositionToViewport final
 public:
 	class UUIItem*                                TargetItem;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ReturnValue;                                       // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_123D[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIDynScrollViewComponent_GetItemPositionToViewport) == 0x000008, "Wrong alignment on UIDynScrollViewComponent_GetItemPositionToViewport");
 static_assert(sizeof(UIDynScrollViewComponent_GetItemPositionToViewport) == 0x000018, "Wrong size on UIDynScrollViewComponent_GetItemPositionToViewport");
@@ -9492,7 +9492,7 @@ struct UIDynScrollViewComponent_GetRealUsingItem final
 {
 public:
 	int32                                         ItemIndex;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_123E[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AUIBaseActor*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIDynScrollViewComponent_GetRealUsingItem) == 0x000008, "Wrong alignment on UIDynScrollViewComponent_GetRealUsingItem");
@@ -9508,7 +9508,7 @@ public:
 	class UUIItem*                                UIItem;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bReversed;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EUINavigationWrapMode                         Mode;                                              // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_123F[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIDynScrollViewComponent_NavigateScrollToUIItem) == 0x000008, "Wrong alignment on UIDynScrollViewComponent_NavigateScrollToUIItem");
 static_assert(sizeof(UIDynScrollViewComponent_NavigateScrollToUIItem) == 0x000010, "Wrong size on UIDynScrollViewComponent_NavigateScrollToUIItem");
@@ -9524,7 +9524,7 @@ public:
 	class AUIBaseActor*                           Item;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ItemNum;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          KeepContentPosition;                               // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1240[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIDynScrollViewComponent_RefreshByData) == 0x000008, "Wrong alignment on UIDynScrollViewComponent_RefreshByData");
 static_assert(sizeof(UIDynScrollViewComponent_RefreshByData) == 0x000010, "Wrong size on UIDynScrollViewComponent_RefreshByData");
@@ -9549,7 +9549,7 @@ struct UIDynScrollViewComponent_ScrollToEndItemIndex final
 {
 public:
 	bool                                          bScrollToTop;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1241[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Offset;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIDynScrollViewComponent_ScrollToEndItemIndex) == 0x000004, "Wrong alignment on UIDynScrollViewComponent_ScrollToEndItemIndex");
@@ -9564,7 +9564,7 @@ struct UIDynScrollViewComponent_ScrollToItemIndex final
 public:
 	int32                                         ItemIndex;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bScrollToTop;                                      // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1242[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Offset;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIDynScrollViewComponent_ScrollToItemIndex) == 0x000004, "Wrong alignment on UIDynScrollViewComponent_ScrollToItemIndex");
@@ -9601,7 +9601,7 @@ struct UIDynScrollViewComponent_ScrollToStartItemIndex final
 {
 public:
 	bool                                          bScrollToTop;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1243[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Offset;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIDynScrollViewComponent_ScrollToStartItemIndex) == 0x000004, "Wrong alignment on UIDynScrollViewComponent_ScrollToStartItemIndex");
@@ -9616,7 +9616,7 @@ struct UIDynScrollViewComponent_ScrollToUIItem final
 public:
 	class UUIItem*                                UIItem;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bScrollToTop;                                      // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1244[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIDynScrollViewComponent_ScrollToUIItem) == 0x000008, "Wrong alignment on UIDynScrollViewComponent_ScrollToUIItem");
 static_assert(sizeof(UIDynScrollViewComponent_ScrollToUIItem) == 0x000010, "Wrong size on UIDynScrollViewComponent_ScrollToUIItem");
@@ -9695,7 +9695,7 @@ struct UIDynScrollViewComponent_GetItem final
 {
 public:
 	int32                                         ItemIndex;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1245[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AUIBaseActor*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIDynScrollViewComponent_GetItem) == 0x000008, "Wrong alignment on UIDynScrollViewComponent_GetItem");
@@ -9711,7 +9711,7 @@ public:
 	int32                                         ItemIndex;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         DisplayIndex;                                      // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1246[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIDynScrollViewComponent_GetItemDisplayIndex) == 0x000004, "Wrong alignment on UIDynScrollViewComponent_GetItemDisplayIndex");
 static_assert(sizeof(UIDynScrollViewComponent_GetItemDisplayIndex) == 0x00000C, "Wrong size on UIDynScrollViewComponent_GetItemDisplayIndex");
@@ -9727,7 +9727,7 @@ public:
 	int32                                         DisplayIndex;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ItemIndex;                                         // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1247[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIDynScrollViewComponent_GetItemIndex) == 0x000004, "Wrong alignment on UIDynScrollViewComponent_GetItemIndex");
 static_assert(sizeof(UIDynScrollViewComponent_GetItemIndex) == 0x00000C, "Wrong size on UIDynScrollViewComponent_GetItemIndex");
@@ -9744,7 +9744,7 @@ public:
 	float                                         Duration;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   EaseType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_124A[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIPolygon_EndAngleTo) == 0x000008, "Wrong alignment on UIPolygon_EndAngleTo");
@@ -9819,7 +9819,7 @@ public:
 	float                                         Duration;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   EaseType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_124B[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIPolygon_StartAngleTo) == 0x000008, "Wrong alignment on UIPolygon_StartAngleTo");
@@ -10183,7 +10183,7 @@ public:
 	class FString                                 InEmitterName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 InVariableName;                                    // 0x0010(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InValue;                                           // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_125C[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UINiagara_SetNiagaraEmitterFloatParam) == 0x000008, "Wrong alignment on UINiagara_SetNiagaraEmitterFloatParam");
 static_assert(sizeof(UINiagara_SetNiagaraEmitterFloatParam) == 0x000028, "Wrong size on UINiagara_SetNiagaraEmitterFloatParam");
@@ -10237,7 +10237,7 @@ struct UINiagara_SetNiagaraVarFloat final
 public:
 	class FString                                 VarName;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_125D[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UINiagara_SetNiagaraVarFloat) == 0x000008, "Wrong alignment on UINiagara_SetNiagaraVarFloat");
 static_assert(sizeof(UINiagara_SetNiagaraVarFloat) == 0x000018, "Wrong size on UINiagara_SetNiagaraVarFloat");
@@ -10306,13 +10306,13 @@ static_assert(offsetof(UIEffectTextAnimation_SetProperties, Value) == 0x000000, 
 struct UIEffectTextAnimation_SetProperty final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1260[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUIEffectTextAnimation_Property*        Value;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIEffectTextAnimation_SetProperty) == 0x000008, "Wrong alignment on UIEffectTextAnimation_SetProperty");
 static_assert(sizeof(UIEffectTextAnimation_SetProperty) == 0x000010, "Wrong size on UIEffectTextAnimation_SetProperty");
-static_assert(offsetof(UIEffectTextAnimation_SetProperty, Param_Index) == 0x000000, "Member 'UIEffectTextAnimation_SetProperty::Param_Index' has a wrong offset!");
+static_assert(offsetof(UIEffectTextAnimation_SetProperty, Index_0) == 0x000000, "Member 'UIEffectTextAnimation_SetProperty::Index_0' has a wrong offset!");
 static_assert(offsetof(UIEffectTextAnimation_SetProperty, Value) == 0x000008, "Member 'UIEffectTextAnimation_SetProperty::Value' has a wrong offset!");
 
 // Function LGUI.UIEffectTextAnimation.SetSelector
@@ -10353,13 +10353,13 @@ static_assert(offsetof(UIEffectTextAnimation_GetProperties, ReturnValue) == 0x00
 struct UIEffectTextAnimation_GetProperty final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1261[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUIEffectTextAnimation_Property*        ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIEffectTextAnimation_GetProperty) == 0x000008, "Wrong alignment on UIEffectTextAnimation_GetProperty");
 static_assert(sizeof(UIEffectTextAnimation_GetProperty) == 0x000010, "Wrong size on UIEffectTextAnimation_GetProperty");
-static_assert(offsetof(UIEffectTextAnimation_GetProperty, Param_Index) == 0x000000, "Member 'UIEffectTextAnimation_GetProperty::Param_Index' has a wrong offset!");
+static_assert(offsetof(UIEffectTextAnimation_GetProperty, Index_0) == 0x000000, "Member 'UIEffectTextAnimation_GetProperty::Index_0' has a wrong offset!");
 static_assert(offsetof(UIEffectTextAnimation_GetProperty, ReturnValue) == 0x000008, "Member 'UIEffectTextAnimation_GetProperty::ReturnValue' has a wrong offset!");
 
 // Function LGUI.UIEffectTextAnimation.GetSelector
@@ -11573,10 +11573,10 @@ struct UIExtendToggleSpriteTransition_SetStateSprite final
 {
 public:
 	EToggleTransitionState                        State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1282[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULGUISpriteData_BaseObject*             NewSprite;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ForceNoTriggerOnChange;                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1283[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIExtendToggleSpriteTransition_SetStateSprite) == 0x000008, "Wrong alignment on UIExtendToggleSpriteTransition_SetStateSprite");
 static_assert(sizeof(UIExtendToggleSpriteTransition_SetStateSprite) == 0x000018, "Wrong size on UIExtendToggleSpriteTransition_SetStateSprite");
@@ -11595,7 +11595,7 @@ public:
 	int32                                         InWidth;                                           // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EFlyoutMenuVerticalPosition                   InVerticalPosition;                                // 0x0044(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EFlyoutMenuHorizontalAlignment                InHorizontalAlign;                                 // 0x0045(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1286[0x2];                                     // 0x0046(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_46[0x2];                                       // 0x0046(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class UUIFlyoutMenu*                          ReturnValue;                                       // 0x0048(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIFlyoutMenu_CreateFlyoutMenuFromArray) == 0x000008, "Wrong alignment on UIFlyoutMenu_CreateFlyoutMenuFromArray");
@@ -12078,7 +12078,7 @@ public:
 	class FString                                 NewAnimName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         AssignNum;                                         // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsScrollViewItem;                                 // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1293[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIInturnAnimController_Play) == 0x000008, "Wrong alignment on UIInturnAnimController_Play");
 static_assert(sizeof(UIInturnAnimController_Play) == 0x000018, "Wrong size on UIInturnAnimController_Play");
@@ -12230,7 +12230,7 @@ public:
 	class AUIBaseActor*                           UIItem;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         GridNum;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          KeepContentPosition;                               // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_129D[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UILoopScrollViewComponent_RefreshByData) == 0x000008, "Wrong alignment on UILoopScrollViewComponent_RefreshByData");
 static_assert(sizeof(UILoopScrollViewComponent_RefreshByData) == 0x000010, "Wrong size on UILoopScrollViewComponent_RefreshByData");
@@ -12310,7 +12310,7 @@ struct UILoopScrollViewComponent_GetGrid final
 {
 public:
 	int32                                         GridIndex;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_129E[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AUIBaseActor*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UILoopScrollViewComponent_GetGrid) == 0x000008, "Wrong alignment on UILoopScrollViewComponent_GetGrid");
@@ -12426,7 +12426,7 @@ public:
 	float                                         Duration;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   EaseType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12A1[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIRing_EndAngleTo) == 0x000008, "Wrong alignment on UIRing_EndAngleTo");
@@ -12479,7 +12479,7 @@ public:
 	float                                         Duration;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELTweenEase                                   EaseType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12A2[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIRing_StartAngleTo) == 0x000008, "Wrong alignment on UIRing_StartAngleTo");
@@ -12576,7 +12576,7 @@ struct UIScrollbarComponent_SetValue final
 public:
 	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          FireEvent;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12A9[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIScrollbarComponent_SetValue) == 0x000004, "Wrong alignment on UIScrollbarComponent_SetValue");
 static_assert(sizeof(UIScrollbarComponent_SetValue) == 0x000008, "Wrong size on UIScrollbarComponent_SetValue");
@@ -12591,7 +12591,7 @@ public:
 	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InSize;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          FireEvent;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12AA[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIScrollbarComponent_SetValueAndSize) == 0x000004, "Wrong alignment on UIScrollbarComponent_SetValueAndSize");
 static_assert(sizeof(UIScrollbarComponent_SetValueAndSize) == 0x00000C, "Wrong size on UIScrollbarComponent_SetValueAndSize");
@@ -12664,7 +12664,7 @@ public:
 	float                                         InMaxValue;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          KeepRelativeValue;                                 // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          FireEvent;                                         // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12B1[0x2];                                     // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UISliderComponent_SetMaxValue) == 0x000004, "Wrong alignment on UISliderComponent_SetMaxValue");
 static_assert(sizeof(UISliderComponent_SetMaxValue) == 0x000008, "Wrong size on UISliderComponent_SetMaxValue");
@@ -12680,7 +12680,7 @@ public:
 	float                                         InMinValue;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          KeepRelativeValue;                                 // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          FireEvent;                                         // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12B2[0x2];                                     // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UISliderComponent_SetMinValue) == 0x000004, "Wrong alignment on UISliderComponent_SetMinValue");
 static_assert(sizeof(UISliderComponent_SetMinValue) == 0x000008, "Wrong size on UISliderComponent_SetMinValue");
@@ -12695,7 +12695,7 @@ struct UISliderComponent_SetProgressIncrement final
 public:
 	float                                         IncrementValue;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          NeedRound;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12B3[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UISliderComponent_SetProgressIncrement) == 0x000004, "Wrong alignment on UISliderComponent_SetProgressIncrement");
 static_assert(sizeof(UISliderComponent_SetProgressIncrement) == 0x000008, "Wrong size on UISliderComponent_SetProgressIncrement");
@@ -12709,7 +12709,7 @@ struct UISliderComponent_SetValue final
 public:
 	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          FireEvent;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12B4[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UISliderComponent_SetValue) == 0x000004, "Wrong alignment on UISliderComponent_SetValue");
 static_assert(sizeof(UISliderComponent_SetValue) == 0x000008, "Wrong size on UISliderComponent_SetValue");
@@ -12835,10 +12835,10 @@ struct SpriteTransitionUtil_SetSpriteSize final
 public:
 	class UUISprite*                              Sprite;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSnapSize;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12B7[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Width;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Height;                                            // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12B8[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpriteTransitionUtil_SetSpriteSize) == 0x000008, "Wrong alignment on SpriteTransitionUtil_SetSpriteSize");
 static_assert(sizeof(SpriteTransitionUtil_SetSpriteSize) == 0x000018, "Wrong size on SpriteTransitionUtil_SetSpriteSize");
@@ -12898,7 +12898,7 @@ struct UIText_AddFormatTableInfo final
 public:
 	class FString                                 ConfigTableName;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Key;                                               // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12C3[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIText_AddFormatTableInfo) == 0x000008, "Wrong alignment on UIText_AddFormatTableInfo");
 static_assert(sizeof(UIText_AddFormatTableInfo) == 0x000018, "Wrong size on UIText_AddFormatTableInfo");
@@ -12987,12 +12987,12 @@ static_assert(offsetof(UIText_GetRealSize, ReturnValue) == 0x000000, "Member 'UI
 struct UIText_GetRenderLineCharNum final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIText_GetRenderLineCharNum) == 0x000004, "Wrong alignment on UIText_GetRenderLineCharNum");
 static_assert(sizeof(UIText_GetRenderLineCharNum) == 0x000008, "Wrong size on UIText_GetRenderLineCharNum");
-static_assert(offsetof(UIText_GetRenderLineCharNum, Param_Index) == 0x000000, "Member 'UIText_GetRenderLineCharNum::Param_Index' has a wrong offset!");
+static_assert(offsetof(UIText_GetRenderLineCharNum, Index_0) == 0x000000, "Member 'UIText_GetRenderLineCharNum::Index_0' has a wrong offset!");
 static_assert(offsetof(UIText_GetRenderLineCharNum, ReturnValue) == 0x000004, "Member 'UIText_GetRenderLineCharNum::ReturnValue' has a wrong offset!");
 
 // Function LGUI.UIText.GetRenderLineHeight
@@ -13202,7 +13202,7 @@ struct UIText_SetText final
 public:
 	class FString                                 NewText;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          DisableTranslate;                                  // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12C4[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIText_SetText) == 0x000008, "Wrong alignment on UIText_SetText");
 static_assert(sizeof(UIText_SetText) == 0x000018, "Wrong size on UIText_SetText");
@@ -13216,7 +13216,7 @@ struct UIText_ShowText final
 public:
 	class FString                                 ConfigTableName;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Key;                                               // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12C5[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UIText_ShowText) == 0x000008, "Wrong alignment on UIText_ShowText");
 static_assert(sizeof(UIText_ShowText) == 0x000018, "Wrong size on UIText_ShowText");
@@ -13522,7 +13522,7 @@ struct UITextInputComponent_SetText final
 public:
 	class FString                                 InText;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InFireEvent;                                       // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12D1[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UITextInputComponent_SetText) == 0x000008, "Wrong alignment on UITextInputComponent_SetText");
 static_assert(sizeof(UITextInputComponent_SetText) == 0x000018, "Wrong size on UITextInputComponent_SetText");
@@ -13612,7 +13612,7 @@ struct UITextureTransitionComponent_SetStateTexture final
 {
 public:
 	EUISelectableSelectionState                   State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12D4[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               NewTexture;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UITextureTransitionComponent_SetStateTexture) == 0x000008, "Wrong alignment on UITextureTransitionComponent_SetStateTexture");
@@ -13968,7 +13968,7 @@ public:
 	struct FVector                                InWorldLocation;                                   // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              OutViewPoint;                                      // 0x000C(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12DC[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ViewportUITexture_WorldToViewPoint) == 0x000004, "Wrong alignment on ViewportUITexture_WorldToViewPoint");
 static_assert(sizeof(ViewportUITexture_WorldToViewPoint) == 0x000018, "Wrong size on ViewportUITexture_WorldToViewPoint");

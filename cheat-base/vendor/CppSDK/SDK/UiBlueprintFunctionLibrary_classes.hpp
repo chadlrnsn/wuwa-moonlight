@@ -96,6 +96,9 @@ public:
 	static void PlayBattleCountdownTip(const class FString& TextKey, float Duration, float Countdown, class UObject* __WorldContext);
 	static void PlayBattleNormalTip(const class FString& TextKey, float Duration, class UObject* __WorldContext);
 	static void ShowGenericPrompt(const class FString& Id, class UObject* __WorldContext);
+	static struct FVector TestSceneLoadBornLocation(class UObject* __WorldContext);
+	static class FString GetLocalGameDataPath(class UObject* __WorldContext);
+	static void ActivitySequenceEmitEvent(const class FString& Param, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

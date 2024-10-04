@@ -64,10 +64,10 @@ void UMagicLeapARPinComponent::AttemptPinDataRestorationAsync()
 // Function MagicLeapARPin.MagicLeapARPinComponent.GetPinData
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TSubclassOf<class UMagicLeapARPinSaveGame>Param_PinDataClass                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UMagicLeapARPinSaveGame>PinDataClass_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMagicLeapARPinSaveGame*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UMagicLeapARPinSaveGame* UMagicLeapARPinComponent::GetPinData(TSubclassOf<class UMagicLeapARPinSaveGame> Param_PinDataClass)
+class UMagicLeapARPinSaveGame* UMagicLeapARPinComponent::GetPinData(TSubclassOf<class UMagicLeapARPinSaveGame> PinDataClass_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -76,7 +76,7 @@ class UMagicLeapARPinSaveGame* UMagicLeapARPinComponent::GetPinData(TSubclassOf<
 
 	Params::MagicLeapARPinComponent_GetPinData Parms{};
 
-	Parms.Param_PinDataClass = Param_PinDataClass;
+	Parms.PinDataClass_0 = PinDataClass_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

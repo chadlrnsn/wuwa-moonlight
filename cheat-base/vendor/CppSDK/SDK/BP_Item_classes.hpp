@@ -24,7 +24,7 @@ class UBP_Item_C final : public UActorComponent
 public:
 	int32                                         ___H_;                                             // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EEntityType                                   _S__;                                              // 0x00C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2DBE[0x3];                                     // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C5[0x3];                                       // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FName>                           _______;                                           // 0x00C8(0x0010)(Edit, BlueprintVisible)
 
 public:

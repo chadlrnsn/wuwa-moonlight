@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SEffectStateInfo_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SEffectStateInfo_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EEffectState_structs.hpp"
 

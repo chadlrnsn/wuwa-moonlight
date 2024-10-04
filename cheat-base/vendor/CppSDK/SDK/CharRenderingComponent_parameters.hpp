@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "ECharacterDitherType_structs.hpp"
 #include "ECharacterControllerCaseType_structs.hpp"
 #include "ECharacterBodySpecifiedType_structs.hpp"
-#include "ECharacterDitherType_structs.hpp"
 #include "ECharacterSlotSpecifiedType_structs.hpp"
-#include "ECharacterRenderingType_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ECharacterRenderingType_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -207,10 +207,10 @@ struct CharRenderingComponent_C_SetMaterialPropertyFloat final
 {
 public:
 	ECharacterBodySpecifiedType                   bodyType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_31D3[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         SectionIndex;                                      // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	ECharacterSlotSpecifiedType                   SlotType;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_31D4[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 PropertyName;                                      // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	float                                         Value;                                             // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
@@ -228,10 +228,10 @@ struct CharRenderingComponent_C_SetMaterialPropertyColor final
 {
 public:
 	ECharacterBodySpecifiedType                   bodyType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_31D5[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         SectionIndex;                                      // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	ECharacterSlotSpecifiedType                   SlotType;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_31D6[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 PropertyName;                                      // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	struct FLinearColor                           Value;                                             // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
@@ -299,7 +299,7 @@ struct CharRenderingComponent_C_AddComponentByCase final
 {
 public:
 	ECharacterControllerCaseType                  CaseType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31D7[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMeshComponent*                         SkeletalComp;                                      // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CharRenderingComponent_C_AddComponentByCase) == 0x000008, "Wrong alignment on CharRenderingComponent_C_AddComponentByCase");
@@ -401,12 +401,12 @@ static_assert(offsetof(CharRenderingComponent_C_SetDecalShadowEnabled, Enable) =
 struct CharRenderingComponent_C_AddComponentForDecalShadow final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UPrimitiveComponent*                    Comp;                                              // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CharRenderingComponent_C_AddComponentForDecalShadow) == 0x000008, "Wrong alignment on CharRenderingComponent_C_AddComponentForDecalShadow");
 static_assert(sizeof(CharRenderingComponent_C_AddComponentForDecalShadow) == 0x000018, "Wrong size on CharRenderingComponent_C_AddComponentForDecalShadow");
-static_assert(offsetof(CharRenderingComponent_C_AddComponentForDecalShadow, Param_Name) == 0x000000, "Member 'CharRenderingComponent_C_AddComponentForDecalShadow::Param_Name' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_AddComponentForDecalShadow, Name_0) == 0x000000, "Member 'CharRenderingComponent_C_AddComponentForDecalShadow::Name_0' has a wrong offset!");
 static_assert(offsetof(CharRenderingComponent_C_AddComponentForDecalShadow, Comp) == 0x000010, "Member 'CharRenderingComponent_C_AddComponentForDecalShadow::Comp' has a wrong offset!");
 
 // Function CharRenderingComponent.CharRenderingComponent_C.RemoveComponentFromDecalShadow
@@ -414,11 +414,11 @@ static_assert(offsetof(CharRenderingComponent_C_AddComponentForDecalShadow, Comp
 struct CharRenderingComponent_C_RemoveComponentFromDecalShadow final
 {
 public:
-	class FString                                 Param_Name;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CharRenderingComponent_C_RemoveComponentFromDecalShadow) == 0x000008, "Wrong alignment on CharRenderingComponent_C_RemoveComponentFromDecalShadow");
 static_assert(sizeof(CharRenderingComponent_C_RemoveComponentFromDecalShadow) == 0x000010, "Wrong size on CharRenderingComponent_C_RemoveComponentFromDecalShadow");
-static_assert(offsetof(CharRenderingComponent_C_RemoveComponentFromDecalShadow, Param_Name) == 0x000000, "Member 'CharRenderingComponent_C_RemoveComponentFromDecalShadow::Param_Name' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_RemoveComponentFromDecalShadow, Name_0) == 0x000000, "Member 'CharRenderingComponent_C_RemoveComponentFromDecalShadow::Name_0' has a wrong offset!");
 
 // Function CharRenderingComponent.CharRenderingComponent_C.ReceiveSeqTick
 // 0x0004 (0x0004 - 0x0000)

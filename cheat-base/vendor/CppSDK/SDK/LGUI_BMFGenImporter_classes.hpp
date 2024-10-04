@@ -25,21 +25,21 @@ class ULGUIBitmapFontGeneratorData final : public ULGUIFontData_BaseObject
 public:
 	class FString                                 FntFileSourcePath;                                 // 0x0080(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	ELGUIBitmapFontGeneratorTextureType           ConvertTextureType;                                // 0x0090(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1D19[0x7];                                     // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Name_LGUIBitmapFontGeneratorData;                  // 0x0098(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Name_0;                                            // 0x0098(0x0010)(Edit, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint16                                        Size;                                              // 0x00A8(0x0002)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint16                                        LineHeight;                                        // 0x00AA(0x0002)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint16                                        base;                                              // 0x00AC(0x0002)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint16                                        ScaleW;                                            // 0x00AE(0x0002)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint16                                        ScaleH;                                            // 0x00B0(0x0002)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint16                                        CharCount;                                         // 0x00B2(0x0002)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1D1A[0x4];                                     // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture2D*                             Texture;                                           // 0x00B8(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TMap<uint16, struct FLGUICharData>            CharDataMap;                                       // 0x00C0(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
 	float                                         FixedVerticalOffset;                               // 0x0110(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                         ItalicAngle;                                       // 0x0114(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                         boldRatio;                                         // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1D1B[0x4];                                     // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<TWeakObjectPtr<class UUIText>>         RenderTextArray;                                   // 0x0120(0x0010)(Edit, ExportObject, ZeroConstructor, Transient, EditConst, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 
 public:
@@ -56,7 +56,7 @@ static_assert(alignof(ULGUIBitmapFontGeneratorData) == 0x000008, "Wrong alignmen
 static_assert(sizeof(ULGUIBitmapFontGeneratorData) == 0x000130, "Wrong size on ULGUIBitmapFontGeneratorData");
 static_assert(offsetof(ULGUIBitmapFontGeneratorData, FntFileSourcePath) == 0x000080, "Member 'ULGUIBitmapFontGeneratorData::FntFileSourcePath' has a wrong offset!");
 static_assert(offsetof(ULGUIBitmapFontGeneratorData, ConvertTextureType) == 0x000090, "Member 'ULGUIBitmapFontGeneratorData::ConvertTextureType' has a wrong offset!");
-static_assert(offsetof(ULGUIBitmapFontGeneratorData, Name_LGUIBitmapFontGeneratorData) == 0x000098, "Member 'ULGUIBitmapFontGeneratorData::Name_LGUIBitmapFontGeneratorData' has a wrong offset!");
+static_assert(offsetof(ULGUIBitmapFontGeneratorData, Name_0) == 0x000098, "Member 'ULGUIBitmapFontGeneratorData::Name_0' has a wrong offset!");
 static_assert(offsetof(ULGUIBitmapFontGeneratorData, Size) == 0x0000A8, "Member 'ULGUIBitmapFontGeneratorData::Size' has a wrong offset!");
 static_assert(offsetof(ULGUIBitmapFontGeneratorData, LineHeight) == 0x0000AA, "Member 'ULGUIBitmapFontGeneratorData::LineHeight' has a wrong offset!");
 static_assert(offsetof(ULGUIBitmapFontGeneratorData, base) == 0x0000AC, "Member 'ULGUIBitmapFontGeneratorData::base' has a wrong offset!");

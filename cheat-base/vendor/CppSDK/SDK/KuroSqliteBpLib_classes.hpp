@@ -94,7 +94,7 @@ class UKuroSqliteResultSet final : public UObject
 {
 public:
 	TDelegate<void(bool Success)>                 QueriedCallback;                                   // 0x0030(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1867[0x20];                                    // 0x0058(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x20];                                      // 0x0058(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Release();

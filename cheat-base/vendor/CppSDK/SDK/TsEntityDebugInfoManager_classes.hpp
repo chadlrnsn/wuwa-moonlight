@@ -21,14 +21,14 @@ namespace SDK
 class UTsEntityDebugInfoManager_C final : public UObject
 {
 public:
-	class FString GetInteractionDebugInfos(int32 EntityId1);
-	TArray<class FString> GetDebugEntityNameList();
-	class FString GetDebugEntityName(int32 EntityId);
-	class FString GetEntityCommonTagDebugString(int32 EntityId);
-	int32 GetEntityPbDataId(int32 EntityId);
-	int32 GetSelectedEntityId(const class FString& Label);
-	class FString GetDebugBaseInfo(int32 EntityId);
 	class AActor* GetDebugEntityActor(int32 EntityId);
+	class FString GetDebugBaseInfo(int32 EntityId);
+	int32 GetSelectedEntityId(const class FString& Label);
+	int32 GetEntityPbDataId(int32 EntityId);
+	class FString GetEntityCommonTagDebugString(int32 EntityId);
+	class FString GetDebugEntityName(int32 EntityId);
+	TArray<class FString> GetDebugEntityNameList();
+	class FString GetInteractionDebugInfos(int32 EntityId1);
 
 public:
 	static class UClass* StaticClass()

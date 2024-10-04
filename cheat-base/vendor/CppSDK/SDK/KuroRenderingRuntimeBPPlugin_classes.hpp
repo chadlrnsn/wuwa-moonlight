@@ -34,7 +34,7 @@ class AKuroEffectActor : public AActor
 public:
 	bool                                          bEditorTickBySelected;                             // 0x02A8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSetActorComponentTickEnabledByFocus;              // 0x02A9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18BF[0x6];                                     // 0x02AA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2AA[0x6];                                      // 0x02AA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void DoHiddenInGame(bool bValue);
@@ -69,7 +69,7 @@ public:
 	class UKuroSceneRainEmitterConfig*            RainConfig_Back;                                   // 0x02B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKuroRainComponent*                     RainComponent_Front;                               // 0x02C0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UKuroRainComponent*                     RainComponent_Back;                                // 0x02C8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_18C0[0x1A0];                                   // 0x02D0(0x01A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D0[0x1A0];                                    // 0x02D0(0x01A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetCurrentRain(float InDensity, float InGravity, const struct FVector& InWindSpeed);
@@ -100,7 +100,7 @@ class UKuroChangeMaterialsTextures final : public UPrimaryDataAsset
 public:
 	class FString                                 SkeletalMeshName;                                  // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ParameterName;                                     // 0x0048(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18C1[0x4];                                     // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<TSoftObjectPtr<class UTexture2D>>      Textures;                                          // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 
 public:
@@ -124,7 +124,7 @@ static_assert(offsetof(UKuroChangeMaterialsTextures, Textures) == 0x000058, "Mem
 class AKuroRuntimeTransientActor final : public AActor
 {
 public:
-	uint8                                         Pad_18C2[0x10];                                    // 0x02A8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A8[0x10];                                     // 0x02A8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -147,7 +147,7 @@ public:
 	class UInstancedStaticMeshComponent*          IsmComponent;                                      // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UStaticMeshComponent*                   StaticComponent;                                   // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UInteractiveLeavesConfigData*           Config;                                            // 0x02B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_18C3[0x1C0];                                   // 0x02C0(0x01C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C0[0x1C0];                                    // 0x02C0(0x01C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -170,7 +170,7 @@ static_assert(offsetof(AInteractiveLeaves, Config) == 0x0002B8, "Member 'AIntera
 class UKuroChangeSkeletalMaterialsComponent final : public UActorComponent
 {
 public:
-	uint8                                         Pad_18C4[0x10];                                    // 0x00C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x10];                                      // 0x00C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void CancelChangeMaterials();
@@ -286,7 +286,7 @@ class UKuroAnimNotify : public UAnimNotify
 {
 public:
 	int32                                         ExportIndex;                                       // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18C6[0x4];                                     // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
@@ -313,7 +313,7 @@ class AKuroSceneEffectActor : public AKuroEffectActor
 {
 public:
 	bool                                          bIsSceneEffectHidden;                              // 0x02B0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18C9[0x7];                                     // 0x02B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FNiagaraDiKuroRenderingParameters      NiagaraDiKuroRenderingParameters;                  // 0x02B8(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
@@ -342,7 +342,7 @@ class UKuroAnimNotifyState : public UAnimNotifyState
 {
 public:
 	int32                                         ExportIndex;                                       // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18CA[0x4];                                     // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
@@ -370,7 +370,7 @@ static_assert(offsetof(UKuroAnimNotifyState, ExportIndex) == 0x000040, "Member '
 class UKuroSceneInteractionActorSystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_18CF[0x10];                                    // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<int32, class UKuroSceneInteractionInfo*> AllSceneInteractionInfos;                          // 0x0048(0x0050)(Transient, NativeAccessSpecifierPublic)
 
 public:
@@ -400,7 +400,7 @@ static_assert(offsetof(UKuroSceneInteractionActorSystem, AllSceneInteractionInfo
 class UKuroBezierMeshComponent final : public UProceduralMeshComponent
 {
 public:
-	uint8                                         Pad_18D4[0xB8];                                    // 0x0578(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_578[0xB8];                                     // 0x0578(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddLayer(float Alpha);
@@ -412,7 +412,7 @@ public:
 	TArray<int32> GetMeshTriangles();
 	int32 GetMeshWidth();
 	TArray<struct FVector> GetPointsArray();
-	void SetKeyPoint(int32 Param_Index, float X, float Y, float Z);
+	void SetKeyPoint(int32 Index_0, float X, float Y, float Z);
 	void Setup(int32 Width, float InUnitLength);
 	void UpdateMesh(int32 Section);
 
@@ -476,7 +476,7 @@ public:
 	bool                                          IsUpdateEveryFrame;                                // 0x00C0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EBillboardMode                                OrientAxis;                                        // 0x00C1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsFixSize;                                         // 0x00C2(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18D5[0x1];                                     // 0x00C3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C3[0x1];                                       // 0x00C3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ScaleSize;                                         // 0x00C4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxDistance;                                       // 0x00C8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MinSize;                                           // 0x00CC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -547,8 +547,8 @@ public:
 public:
 	struct FLinearColor GetBaseColorTint(float Factor, int32 Type);
 	struct FLinearColor GetBaseRefine(float Factor, int32 Type);
-	struct FLinearColor GetCustomColorParametersValue(float Factor, int32 Type, int32 Param_Index);
-	float GetCustomFloatParametersValue(float Factor, int32 Type, int32 Param_Index);
+	struct FLinearColor GetCustomColorParametersValue(float Factor, int32 Type, int32 Index_0);
+	float GetCustomFloatParametersValue(float Factor, int32 Type, int32 Index_0);
 	struct FLinearColor GetDissolveColor(float Factor, int32 Type);
 	float GetDissolveColorIntensity(float Factor, int32 Type);
 	float GetDissolveProgress(float Factor, int32 Type);
@@ -661,9 +661,9 @@ class AKuroEditorTickActor : public AActor
 public:
 	bool                                          bEditorTickBySelected;                             // 0x02A8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSetActorComponentTickEnabledByFocus;              // 0x02A9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18D6[0x2];                                     // 0x02AA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2AA[0x2];                                      // 0x02AA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         KuroEditorTickActorId;                             // 0x02AC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18D7[0x8];                                     // 0x02B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B0[0x8];                                      // 0x02B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void EditorFocusIn();
@@ -744,7 +744,7 @@ static_assert(sizeof(AKuroCloudsActor) == 0x0002B8, "Wrong size on AKuroCloudsAc
 class UKuroEditorTickActorSubsystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_18E2[0x28];                                    // 0x0038(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x28];                                      // 0x0038(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -764,13 +764,13 @@ static_assert(sizeof(UKuroEditorTickActorSubsystem) == 0x000060, "Wrong size on 
 class UKuroEffectMakerAN : public UKuroAnimNotify
 {
 public:
-	uint8                                         Pad_18E3[0x4];                                     // 0x0048(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x4];                                       // 0x0048(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Location;                                          // 0x004C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                               Rotation;                                          // 0x0058(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector                                Scale;                                             // 0x0064(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Attached;                                          // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AttachLocationOnly;                                // 0x0071(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18E4[0x2];                                     // 0x0072(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_72[0x2];                                       // 0x0072(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   SocketName;                                        // 0x0074(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
@@ -797,13 +797,13 @@ static_assert(offsetof(UKuroEffectMakerAN, SocketName) == 0x000074, "Member 'UKu
 class UKuroEffectMakerANS : public UKuroAnimNotifyState
 {
 public:
-	uint8                                         Pad_18E5[0x4];                                     // 0x0048(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x4];                                       // 0x0048(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Location;                                          // 0x004C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                               Rotation;                                          // 0x0058(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector                                Scale;                                             // 0x0064(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Attached;                                          // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AttachLocationOnly;                                // 0x0071(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18E6[0x2];                                     // 0x0072(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_72[0x2];                                       // 0x0072(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   SocketName;                                        // 0x0074(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
@@ -827,18 +827,18 @@ static_assert(offsetof(UKuroEffectMakerANS, SocketName) == 0x000074, "Member 'UK
 
 // Class KuroRenderingRuntimeBPPlugin.KuroFloatingStaticMesh
 // 0x0078 (0x0320 - 0x02A8)
-class AKuroFloatingStaticMesh final : public AActor
+class AKuroFloatingStaticMesh : public AActor
 {
 public:
 	class AKuroFloatingStaticMesh*                BindingActor;                                      // 0x02A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18E7[0x20];                                    // 0x02B0(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B0[0x20];                                     // 0x02B0(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Movement;                                          // 0x02D0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Frequency;                                         // 0x02DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                RotateCenter;                                      // 0x02E0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                               Rotation;                                          // 0x02EC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	class UStaticMesh*                            StaticMesh;                                        // 0x02F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TickFactorScale;                                   // 0x0300(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18E8[0x1C];                                    // 0x0304(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_304[0x1C];                                     // 0x0304(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -891,7 +891,7 @@ public:
 	TMap<class FName, struct FVector>             VectorParameters;                                  // 0x00E0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FVector                                Scale;                                             // 0x0130(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bUseWorldPosition : 1;                             // 0x013C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_18E9[0x3];                                     // 0x013D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13D[0x3];                                      // 0x013D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             WorldTransform;                                    // 0x0140(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
@@ -920,13 +920,13 @@ class UKuroWeatherDataAsset final : public UDataAsset
 public:
 	bool                                          UseOnlyOverrideProperty;                           // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          UseFixedTime;                                      // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18EA[0x2];                                     // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A[0x2];                                       // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         FixedTime;                                         // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          UseFixedSunAngle;                                  // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18EB[0x3];                                     // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         FixedSunHorizonAngle;                              // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FixedSunVerticalAngle;                             // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18EC[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroGISetting                         GISetting;                                         // 0x0050(0x0990)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
@@ -999,7 +999,7 @@ class UKuroPPLensflareData final : public UPrimaryDataAsset
 {
 public:
 	class FName                                   ConfigName;                                        // 0x0038(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18ED[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroLensflareSettings                 Settings;                                          // 0x0048(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 
 public:
@@ -1051,16 +1051,16 @@ static_assert(offsetof(UKuroGISettings, LensflareDatasLoaded) == 0x0000A8, "Memb
 class alignas(0x10) UKuroGISystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_18EE[0x218];                                   // 0x0038(0x0218)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x218];                                     // 0x0038(0x0218)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, class UObject*>             WeatherData;                                       // 0x0250(0x0050)(Transient, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18EF[0x138];                                   // 0x02A0(0x0138)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A0[0x138];                                    // 0x02A0(0x0138)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroWorldPartitionPreviewManager*      WorldPartitionPreviewManager;                      // 0x03D8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FKuroPostprocessMaterialManager        PostprocessMaterialManager;                        // 0x03E0(0x0030)(BlueprintVisible, BlueprintReadOnly, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FKuroSceneEffectActorManager           SceneEffectActorManager;                           // 0x0410(0x0028)(NativeAccessSpecifierPublic)
 	class UKuroRenderingPropertyDebugger*         PropertyDebugger;                                  // 0x0438(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18F0[0x50];                                    // 0x0440(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_440[0x50];                                     // 0x0440(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroRainManager*                       RainManager;                                       // 0x0490(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_18F1[0x38];                                    // 0x0498(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_498[0x38];                                     // 0x0498(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UKuroGISystem* GetKuroGISystem(class UWorld* InWorld);
@@ -1121,7 +1121,7 @@ public:
 	class UKuroGlobalColorSplitTextures*          GlobalColorSplitTextures;                          // 0x00C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class UTexture2D>              ColorSplitTexturePlaceHolder;                      // 0x00C8(0x0030)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SizePerCell;                                       // 0x00F8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18F4[0x54];                                    // 0x00FC(0x0054)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_FC[0x54];                                      // 0x00FC(0x0054)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void UpdateColorMap(const class UObject* WorldContextObject, const struct FVector& ViewLocation);
@@ -1150,12 +1150,12 @@ public:
 	bool                                          TickInEditor;                                      // 0x02A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsPersistentLevelGI;                               // 0x02A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPostProcessVolumeChanged;                         // 0x02AA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18F6[0x1];                                     // 0x02AB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2AB[0x1];                                      // 0x02AB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TickDeltaTime;                                     // 0x02AC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ViewLocation;                                      // 0x02B0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SunHorizonAngle;                                   // 0x02BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SunVerticalAngle;                                  // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18F7[0xC];                                     // 0x02C4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C4[0xC];                                      // 0x02C4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroGISetting                         LerpGISetting;                                     // 0x02D0(0x0990)(Edit, BlueprintVisible, Transient, EditConst, NativeAccessSpecifierPublic)
 	struct FKuroGISetting                         TempGISetting;                                     // 0x0C60(0x0990)(Edit, BlueprintVisible, Transient, EditConst, NativeAccessSpecifierPublic)
 	struct FPostProcessSettings                   LerpPostProcessSetting;                            // 0x15F0(0x06D0)(Edit, BlueprintVisible, Transient, EditConst, NativeAccessSpecifierPublic)
@@ -1168,12 +1168,12 @@ public:
 	struct FVector                                WindTextureOffset;                                 // 0x1CE0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsDayTime;                                        // 0x1CEC(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bDayNightEmssiveFactor;                            // 0x1CED(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18F8[0x2];                                     // 0x1CEE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1CEE[0x2];                                     // 0x1CEE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         DayNightEmssiveSmoothFactor;                       // 0x1CF0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TODNightLightLoadingTime;                          // 0x1CF4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TODDayLightLoadingTime;                            // 0x1CF8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         NowGlobalLightIntensity;                           // 0x1CFC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18F9[0x4];                                     // 0x1D00(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D00[0x4];                                     // 0x1D00(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         RainDensityStepSpeed;                              // 0x1D04(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FinalRainDensityValue;                             // 0x1D08(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         RainGravityStepSpeed;                              // 0x1D0C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1189,14 +1189,14 @@ public:
 	int32                                         KuroViewCenterPlayerIndex;                         // 0x1D64(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         KuroViewCenterHeightOffset;                        // 0x1D68(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnableCustomKuroViewCenter;                       // 0x1D6C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18FA[0x3];                                     // 0x1D6D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D6D[0x3];                                     // 0x1D6D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CustomKuroViewCenter;                              // 0x1D70(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                CurrentKuroViewCenter;                             // 0x1D7C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         KuroTrailSystemEnable;                             // 0x1D88(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18FB[0x4];                                     // 0x1D8C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D8C[0x4];                                     // 0x1D8C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture2D*                             KuroTrailNoiseTexutre;                             // 0x1D90(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         UpdatePostProcessDataThreshold;                    // 0x1D98(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18FC[0x4];                                     // 0x1D9C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D9C[0x4];                                     // 0x1D9C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTextureCube*                           KuroSkyLightCubemap1;                              // 0x1DA0(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTextureCube*                           KuroSkyLightCubemap2;                              // 0x1DA8(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTextureCube*                           KuroSkyLightCubemap3;                              // 0x1DB0(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1205,32 +1205,32 @@ public:
 	int32                                         KuroGlobalGIIndex;                                 // 0x1DC0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         GIID;                                              // 0x1DC4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsKuroInit;                                        // 0x1DC8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18FD[0x7];                                     // 0x1DC9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1DC9[0x7];                                     // 0x1DC9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialParameterCollection*           GIMPC;                                             // 0x1DD0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18FE[0x20];                                    // 0x1DD8(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1DD8[0x20];                                    // 0x1DD8(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        FogTime;                                           // 0x1DF8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TMap<class UClusteredStuffDataAsset*, class AKuroRuntimeTransientActor*> ClusteredStuffTransientActors;                     // 0x1E88(0x0050)(Transient, NativeAccessSpecifierPublic)
 	TSet<class UClusteredStuffDataAsset*>         ClusteredStuffActive;                              // 0x1ED8(0x0050)(Transient, NativeAccessSpecifierPublic)
 	TArray<class UClusteredStuffDataAsset*>       AdditionalClusteredStuff;                          // 0x1F28(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 	class UClusteredStuffDataAsset*               DefaultAutoGrassData;                              // 0x1F38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18FF[0x8];                                     // 0x1F40(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F40[0x8];                                     // 0x1F40(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class USunLensFlareConfig*                    DefaultSunLensflareConfig;                         // 0x1F48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInstanceDynamic*               StarsMat;                                          // 0x1F50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInstanceDynamic*               MilkyWayMat;                                       // 0x1F58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInstanceDynamic*               SkyBoxMat;                                         // 0x1F60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPlayerInCave;                                     // 0x1F68(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPlayerInGrass;                                    // 0x1F69(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1900[0x2];                                     // 0x1F6A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F6A[0x2];                                     // 0x1F6A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         FinalRoughnessDensity;                             // 0x1F6C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1901[0x10];                                    // 0x1F70(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F70[0x10];                                    // 0x1F70(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroPointCloudStreamingConfig*         GlobalPointCloudStreamingConfig;                   // 0x1F80(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         GlobalPointCloudStreamingDistance;                 // 0x1F88(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1902[0x4];                                     // 0x1F8C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F8C[0x4];                                     // 0x1F8C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroTODData*                           TODDataAsset;                                      // 0x1F90(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TWeakObjectPtr<class UKuroGISystem>           CachedGISystem;                                    // 0x1F98(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1903[0x18];                                    // 0x1FA0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FA0[0x18];                                    // 0x1FA0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               LightFunctionMap_Texture;                          // 0x1FB8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1904[0xB0];                                    // 0x1FC0(0x00B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FC0[0xB0];                                    // 0x1FC0(0x00B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ApplayShadowTintRampOffset(class USkyLightComponent* SkyLight);
@@ -1367,7 +1367,7 @@ class UKuroHeightMapSettings final : public UPrimaryDataAsset
 public:
 	class UKuroSplitTextureStreamerSettings*      StreamerSettings;                                  // 0x0038(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ShotHeight;                                        // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_190B[0x4];                                     // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1393,7 +1393,7 @@ public:
 	int32                                         LoadNumPerSidePc;                                  // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         LoadNumPerSideMobile;                              // 0x00CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UObject*>                        LoadedTextures;                                    // 0x00D0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	uint8                                         Pad_190C[0x60];                                    // 0x00E0(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E0[0x60];                                      // 0x00E0(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Update();
@@ -1421,7 +1421,7 @@ class AKuroGPUParticleActor final : public AActor
 {
 public:
 	int32                                         KuroIndex;                                         // 0x02A8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_190D[0x4];                                     // 0x02AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2AC[0x4];                                      // 0x02AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroGPUParticleComponent*              GPUParticleComponent;                              // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
@@ -1448,20 +1448,20 @@ public:
 	bool                                          ClickReplay;                                       // 0x0598(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          StopAtFinalFrame;                                  // 0x0599(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AutoUpdate;                                        // 0x059A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_190E[0x1];                                     // 0x059B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_59B[0x1];                                      // 0x059B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         SimulateFramerate;                                 // 0x059C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Loop;                                              // 0x05A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Reverse;                                           // 0x05A1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_190F[0x2];                                     // 0x05A2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5A2[0x2];                                      // 0x05A2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         LoopIntervalTime;                                  // 0x05A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SkipFrameCount;                                    // 0x05A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         StartWaitTime;                                     // 0x05AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          UseCustomTimeScaleCurve;                           // 0x05B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          EnablePingPong;                                    // 0x05B1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1910[0x2];                                     // 0x05B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5B2[0x2];                                      // 0x05B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         PingPongTime;                                      // 0x05B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FKuroCurveFloat                        CustomTimeScaleCurve;                              // 0x05B8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1911[0x38];                                    // 0x0648(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_648[0x38];                                     // 0x0648(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void DoTick(float DeltaTime);
@@ -1508,7 +1508,7 @@ public:
 	float                                         ColorIntensity;                                    // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         VelocityScale;                                     // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         AspectRatio;                                       // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1912[0x4];                                     // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FKuroGPUParticleMeshInfo>       AllParticleInfos;                                  // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
 
 public:
@@ -1537,7 +1537,7 @@ static_assert(offsetof(UKuroGPUParticleDA, AllParticleInfos) == 0x000068, "Membe
 class UKuroGPUParticleSubsystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_1913[0x30];                                    // 0x0038(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x30];                                      // 0x0038(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UKuroGPUParticleSubsystem* GetKuroGPUParticleSystem(class UWorld* InWorld);
@@ -1562,7 +1562,7 @@ class UKuroGrassInteractionSphereComponent final : public USceneComponent
 public:
 	float                                         Radius;                                            // 0x0218(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnabled;                                          // 0x021C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1914[0x3];                                     // 0x021D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21D[0x3];                                      // 0x021D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1584,7 +1584,7 @@ static_assert(offsetof(UKuroGrassInteractionSphereComponent, bEnabled) == 0x0002
 class UKuroGrassInteractionWorldSubsystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_1915[0x8];                                     // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1611,7 +1611,7 @@ public:
 	float                                         HaloMaxDrawFadeRange;                              // 0x05AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         LightRadius;                                       // 0x05B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         BoxExtent;                                         // 0x05B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1916[0x8];                                     // 0x05B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5B8[0x8];                                      // 0x05B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetRadius(float Radius);
@@ -1645,7 +1645,7 @@ class AKuroHighResLandscapeActor final : public AActor
 public:
 	bool                                          bIsEnable;                                         // 0x02A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseProxyEvent;                                    // 0x02A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1917[0x6];                                     // 0x02AA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2AA[0x6];                                      // 0x02AA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool GetLandscapeComponentVisible(class ALandscapeStreamingProxy* Proxy, int32 ComponentIndex);
@@ -1715,7 +1715,7 @@ class AKuroLevelSequenceActor final : public ALevelSequenceActor
 {
 public:
 	class FName                                   Key;                                               // 0x0330(0x000C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_191A[0x4];                                     // 0x033C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33C[0x4];                                      // 0x033C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1738,7 +1738,7 @@ class UKuroLevelSequenceSubsystem final : public UWorldSubsystem
 public:
 	FMulticastInlineDelegateProperty_             OnLevelSequenceRegister;                           // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnLevelSequenceUnRegister;                         // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_191B[0x50];                                    // 0x0058(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x50];                                      // 0x0058(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void GetAllLevelSequences(TArray<class AKuroLevelSequenceActor*>* InAllLevelSequences);
@@ -1766,7 +1766,7 @@ class UKuroMaterialVariationComponent final : public UActorComponent
 public:
 	bool                                          bIsInitSuccess;                                    // 0x00C0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsSkeletalMeshType;                               // 0x00C1(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_191D[0x6];                                     // 0x00C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C2[0x6];                                       // 0x00C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMeshComponent*                   ParentStaticMeshComp;                              // 0x00C8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USkeletalMeshComponent*                 ParentSkeletalMeshComp;                            // 0x00D0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FKuroMaterialVariationRuntimeInfo> AllRuntimeMaterialInfo;                            // 0x00D8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
@@ -1824,7 +1824,7 @@ public:
 	struct FCloudCover                            CloudCover;                                        // 0x00F8(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FPOICloudParameters                    CloudBigShape;                                     // 0x0100(0x0038)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 	struct FMountainParameters                    Mountain;                                          // 0x0138(0x0001)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1928[0x7];                                     // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_139[0x7];                                      // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnomaliesParameters                   CloudAnomalies;                                    // 0x0140(0x0038)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
@@ -1885,10 +1885,10 @@ class UKuroPostProcessComponent final : public UPostProcessComponent
 public:
 	class UKuroWeatherDataAsset*                  WeatherDataAsset;                                  // 0x0908(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKuroTODData*                           PPTODDataAsset;                                    // 0x0910(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_192C[0x8];                                     // 0x0918(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_918[0x8];                                      // 0x0918(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroGISetting                         GISetting;                                         // 0x0920(0x0990)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
 	class AVolume*                                ReferencedVolumeActor;                             // 0x12B0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_192D[0x28];                                    // 0x12B8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12B8[0x28];                                    // 0x12B8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void PostModify();
@@ -1920,9 +1920,9 @@ class AKuroPostProcessVolume final : public APostProcessVolume
 public:
 	class UKuroWeatherDataAsset*                  WeatherDataAsset;                                  // 0x09D8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKuroTODData*                           PPTODDataAsset;                                    // 0x09E0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_192E[0x8];                                     // 0x09E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9E8[0x8];                                      // 0x09E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroGISetting                         GISetting;                                         // 0x09F0(0x0990)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
-	uint8                                         Pad_192F[0x20];                                    // 0x1380(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1380[0x20];                                    // 0x1380(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void PostModify();
@@ -1951,7 +1951,7 @@ class UKuroRainSettings final : public UPrimaryDataAsset
 {
 public:
 	struct FVector                                RainBoxSize;                                       // 0x0038(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1930[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMesh*                            RainMesh;                                          // 0x0048(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FIntVector                             BoxCountPositive;                                  // 0x0050(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FIntVector                             BoxCountNegative;                                  // 0x005C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1960,7 +1960,7 @@ public:
 	struct FKuroCurveFloat                        GravityWeightCurve;                                // 0x0070(0x0090)(Edit, NativeAccessSpecifierPublic)
 	struct FKuroCurveFloat                        WindWeightCurve;                                   // 0x0100(0x0090)(Edit, NativeAccessSpecifierPublic)
 	bool                                          RainDropSizeUseSpeed;                              // 0x0190(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1931[0x7];                                     // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_191[0x7];                                      // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveVector2D                     RaindropSizeCurve;                                 // 0x0198(0x0120)(Edit, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                     Material;                                          // 0x02B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FKuroRainMaterialFloatParameter> MaterialFloatParameters_Density;                   // 0x02C0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
@@ -2007,7 +2007,7 @@ class AKuroRainActor final : public AActor
 public:
 	class UKuroRainSettings*                      Settings;                                          // 0x02A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         BasicGravity;                                      // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1932[0xD4];                                    // 0x02B4(0x00D4)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B4[0xD4];                                     // 0x02B4(0x00D4)(Fixing Size After Last Property [ Dumper-7 ])
 	class UInstancedStaticMeshComponent*          MeshComp;                                          // 0x0388(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMaterialInstanceDynamic*               DynamicMaterial;                                   // 0x0390(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TMap<class FName, float>                      MaterialParameterOverrideFloat;                    // 0x0398(0x0050)(Transient, NativeAccessSpecifierPrivate)
@@ -2017,8 +2017,8 @@ public:
 	class UMaterialInstanceDynamic* GetDynamicMaterial();
 	bool GetIsInit();
 	void SetCurrentRain(float InDensity, float InGravity, float InWindX, float InWindY, float InWindZ);
-	void SetMaterialParameterOverrideColor(class FName Param_Name, const struct FLinearColor& Value);
-	void SetMaterialParameterOverrideFloat(class FName Param_Name, float Value);
+	void SetMaterialParameterOverrideColor(class FName Name_0, const struct FLinearColor& Value);
+	void SetMaterialParameterOverrideFloat(class FName Name_0, float Value);
 	void SetupRainConfig();
 	void Update(float DeltaSeconds);
 
@@ -2043,10 +2043,10 @@ static_assert(offsetof(AKuroRainActor, MaterialParameterOverrideColor) == 0x0003
 
 // Class KuroRenderingRuntimeBPPlugin.KuroRainActorV2
 // 0x0008 (0x02C0 - 0x02B8)
-class AKuroRainActorV2 final : public AKuroEditorTickActor
+class AKuroRainActorV2 : public AKuroEditorTickActor
 {
 public:
-	uint8                                         Pad_1933[0x8];                                     // 0x02B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B8[0x8];                                      // 0x02B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UKuroRainComponent* AddRainComponent(TSubclassOf<class UKuroRainComponent> ClassType);
@@ -2075,15 +2075,15 @@ static_assert(sizeof(AKuroRainActorV2) == 0x0002C0, "Wrong size on AKuroRainActo
 class alignas(0x10) UKuroRainComponent : public USceneComponent
 {
 public:
-	uint8                                         Pad_1934[0x9];                                     // 0x0218(0x0009)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_218[0x9];                                      // 0x0218(0x0009)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bAutoPlay;                                         // 0x0221(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1935[0x6];                                     // 0x0222(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_222[0x6];                                      // 0x0222(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	int32 AddArraySpawner(int32 RenderIndex);
-	int32 AddCustomRandomByNormalizedAgeProcessor(const struct FKuroCurveFloat& Curve, int32 Param_Index);
-	int32 AddCustomRandomByVelocityProcessor(const struct FKuroCurveFloat& Curve, int32 Param_Index);
-	int32 AddCustomRandomSetProcessor(float Value, int32 Param_Index);
+	int32 AddCustomRandomByNormalizedAgeProcessor(const struct FKuroCurveFloat& Curve, int32 Index_0);
+	int32 AddCustomRandomByVelocityProcessor(const struct FKuroCurveFloat& Curve, int32 Index_0);
+	int32 AddCustomRandomSetProcessor(float Value, int32 Index_0);
 	int32 AddCycleBoxProcessor(const struct FVector& Min, const struct FVector& Max, bool bKillOnZ);
 	int32 AddDragProcessor(float DragSize);
 	int32 AddLinearForceProcessor(const struct FVector& Force);
@@ -2101,9 +2101,9 @@ public:
 	void PreSolveRainParticles(float DeltaSeconds);
 	void SetArraySpawnerBasic(int32 SpawnerID, int32 ArraySize, float ArrayLength, float SpawnTimeWiggle, float SpawnPositionWiggle, float LifeTimeMin, float LifeTimeMax, float ScaleMin, float ScaleMax, float BaseMassMin, float BaseMassMax);
 	void SetArraySpawnerRuntime(int32 SpawnerID, const struct FVector& SpawnCenter, float SpawnRate, const struct FVector& VelocityMin, const struct FVector& VelocityMax);
-	void SetCustomRandomByNormalizedAgeProcessor(int32 ProcessorID, const struct FKuroCurveFloat& Curve, int32 Param_Index);
-	void SetCustomRandomByVelocityProcessor(int32 ProcessorID, const struct FKuroCurveFloat& Curve, int32 Param_Index);
-	void SetCustomRandomSetProcessor(int32 ProcessorID, float Value, int32 Param_Index);
+	void SetCustomRandomByNormalizedAgeProcessor(int32 ProcessorID, const struct FKuroCurveFloat& Curve, int32 Index_0);
+	void SetCustomRandomByVelocityProcessor(int32 ProcessorID, const struct FKuroCurveFloat& Curve, int32 Index_0);
+	void SetCustomRandomSetProcessor(int32 ProcessorID, float Value, int32 Index_0);
 	void SetCycleBoxProcessor(int32 ProcessorID, const struct FVector& Min, const struct FVector& Max);
 	void SetDragProcessor(int32 ProcessorID, float DragSize);
 	void SetLifeTimeDilation(float Dilation);
@@ -2139,7 +2139,7 @@ static_assert(offsetof(UKuroRainComponent, bAutoPlay) == 0x000221, "Member 'UKur
 class UKuroRainManager final : public UObject
 {
 public:
-	uint8                                         Pad_193C[0xC0];                                    // 0x0030(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xC0];                                      // 0x0030(0x00C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2159,7 +2159,7 @@ static_assert(sizeof(UKuroRainManager) == 0x0000F0, "Wrong size on UKuroRainMana
 class UKuroRenderingAsyncTaskSystem final : public UEngineSubsystem
 {
 public:
-	uint8                                         Pad_193D[0x58];                                    // 0x0038(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x58];                                      // 0x0038(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2181,7 +2181,7 @@ class UKuroRenderingPropertyDebugger final : public UObject
 public:
 	class UWorld*                                 World;                                             // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TArray<class UObject*>                        ObjectRefs;                                        // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_193E[0x30];                                    // 0x0048(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x30];                                      // 0x0048(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2206,7 +2206,7 @@ public:
 	static void AddAdditionalClusteredStuff(class UObject* WorldContextObject, class UClusteredStuffDataAsset* Asset);
 	static int32 AddPostprocessMaterial(class UObject* WorldContextObject, class UMaterialInterface* Material, float Priority);
 	static bool AddWeatherDataType(class UObject* WorldContextObject, class FName Identifier, class UClass* ClassType);
-	static void ClearObjectFlags(class UObject* Object, int32 Param_Flags);
+	static void ClearObjectFlags(class UObject* Object, int32 Flags_0);
 	static void ClipboardCopy_EditorOnly(const class FString& Str);
 	static void ClipboardPaste_EditorOnly(class FString* Dest);
 	static void CopyKuroCharColorGroupArray(const TArray<struct FKuroCharMaterialControllerColorGroup>& Target, const TArray<struct FKuroCurveLinearColor>& Start, const TArray<struct FKuroCurveLinearColor>& Loop, const TArray<struct FKuroCurveLinearColor>& End);
@@ -2295,8 +2295,8 @@ public:
 	static class AWorldSettings* GetWorldSetting(const class UObject* WorldContextObject);
 	static EBP_EWorldType GetWorldType(const class UObject* WorldContextObject);
 	static void GetWpWorldBound(const class UObject* WorldContextObject, struct FVector* BoundMin, struct FVector* BoundMax);
-	static void HasAllObjectFlags(class UObject* Object, int32 Param_Flags);
-	static void HasAnyObjectFlags(class UObject* Object, int32 Param_Flags);
+	static void HasAllObjectFlags(class UObject* Object, int32 Flags_0);
+	static void HasAnyObjectFlags(class UObject* Object, int32 Flags_0);
 	static bool HasKey(const class UObject* WorldContextObject, const class FString& Key);
 	static struct FLinearColor HSP2RGB(const struct FLinearColor& Hsp);
 	static bool IsCurrentPlatformPC(class AActor* Actor);
@@ -2342,13 +2342,13 @@ public:
 	static bool SetLevelEditorCameraLocation(const class UObject* WorldContextObject, const struct FVector& Position);
 	static void SetNiagaraSkeletalMeshComponentWithoutWarning(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class USkeletalMeshComponent* SkeletalMeshComponent);
 	static void SetNiagaraSplineComponent(class UNiagaraComponent* NiagaraSystem, const class FString& OverrideName, class USplineComponent* SplineComponent);
-	static void SetObjectFlags(class UObject* Object, int32 Param_Flags);
+	static void SetObjectFlags(class UObject* Object, int32 Flags_0);
 	static void SetSceneKuroMainPlayerLocation(const class UObject* WorldContextObject, int32 PlayerIndex);
 	static void SetSceneKuroViewCenter(const class UObject* WorldContextObject, const struct FVector& Location);
 	static void SetSceneRenderingState(class UObject* WorldContextObject, bool bSceneVisible);
 	static void SetString(const class UObject* WorldContextObject, const class FString& Key, const class FString& Value);
 	static void SetSunLensflareEnabled(class UObject* WorldContextObject, bool bEnabled);
-	static void SetTransformLocationInArray(TArray<struct FTransform>* TransformArray, int32 Param_Index, const struct FVector& Location);
+	static void SetTransformLocationInArray(TArray<struct FTransform>* TransformArray, int32 Index_0, const struct FVector& Location);
 	static void SetupVolumeSize(class AVolume* Volume, const struct FBox& Bounds);
 	static void SetUsingInCaveOrIndoorShadow(class UDirectionalLightComponent* LightComp, bool IsUsing, float MobileCSMDistanceOld, float MobileCSMDistanceNew);
 	static void SetVectorParameterValueRef(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, class FName ParameterName, struct FLinearColor* RefLinearColor);
@@ -2357,7 +2357,7 @@ public:
 	static void SetWorldPartitionStreamingEnable(const class UObject* WorldContextObject, bool bStreamingEnable);
 	static void SortStringArray(const TArray<class FString>& InStringArray, const ESearchCase SearchCase, const bool Descending);
 	static class AActor* SpawnActorFromClass(const class UObject* WorldContextObject, const TSubclassOf<class AActor> ActorClass, const struct FTransform& SpawnTransform, ESpawnActorCollisionHandlingMethod CollisionHandlingOverride, class AActor* Owner, class APawn* Instigator, bool bTemporaryEditorActor);
-	static class AActor* SpawnTransientActor(class UObject* WorldContextObject, const class FName& Param_Name, const class FName& FolderPath);
+	static class AActor* SpawnTransientActor(class UObject* WorldContextObject, const class FName& Name_0, const class FName& FolderPath);
 	static void StopSomeWeatherBeforeTeleport(class UObject* WorldContextObject);
 	static void UnFreezeWorldLevelStreaming(const class UObject* WorldContextObject);
 	static struct FLinearColor UnpackVector2DToLinearColorRGB(const struct FVector2D& Vector2D);
@@ -2392,7 +2392,7 @@ static_assert(sizeof(UKuroRenderingRuntimeBPPluginBPLibrary) == 0x000030, "Wrong
 class AKuroRenderQualitySettingVolume final : public AVolume
 {
 public:
-	uint8                                         Pad_19A0[0x28];                                    // 0x02E0(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2E0[0x28];                                     // 0x02E0(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroLocalRenderQualitySetting*         LocalRenderQualitySettingDataAsset;                // 0x0308(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
@@ -2418,9 +2418,9 @@ public:
 	uint8                                         bOverride_MobileLocalRenderSettingIndexLow : 1;    // 0x0038(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_MobileLocalRenderSettingIndexMedium : 1; // 0x0038(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_MobileLocalRenderSettingIndexHigh : 1;   // 0x0038(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19A1[0x3];                                     // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          EnableResetLocalRenderSettingMobile;               // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A2[0x3];                                     // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MobileLocalRenderSettingIndexLowest;               // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MobileLocalRenderSettingIndexLow;                  // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MobileLocalRenderSettingIndexMedium;               // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2429,9 +2429,9 @@ public:
 	uint8                                         bOverride_PCLocalRenderSettingIndexLow : 1;        // 0x0050(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_PCLocalRenderSettingIndexMedium : 1;     // 0x0050(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_PCLocalRenderSettingIndexHigh : 1;       // 0x0050(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19A3[0x3];                                     // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          EnableResetLocalRenderSettingPC;                   // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A4[0x3];                                     // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         PCLocalRenderSettingIndexLowest;                   // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         PCLocalRenderSettingIndexLow;                      // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         PCLocalRenderSettingIndexMedium;                   // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2462,7 +2462,7 @@ static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndex
 
 // Class KuroRenderingRuntimeBPPlugin.KuroSceneInteractionActor
 // 0x0000 (0x02A8 - 0x02A8)
-class AKuroSceneInteractionActor final : public AActor
+class AKuroSceneInteractionActor : public AActor
 {
 public:
 	void OnSetState(EKuroSceneInteractionState TargetState, const bool NeedTransition);
@@ -2491,10 +2491,10 @@ public:
 	int32                                         HandleId;                                          // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroSceneInteractionState                    CurrentState;                                      // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          LoadingLevelComplete;                              // 0x005D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A5[0x2];                                     // 0x005E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5E[0x2];                                       // 0x005E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class AKuroSceneInteractionActor*             InteractionActor;                                  // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ULevelStreamingDynamic*                 LevelStreaming;                                    // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A6[0x8];                                     // 0x0070(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_70[0x8];                                       // 0x0070(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnLevelShown();
@@ -2555,9 +2555,9 @@ public:
 	class USceneComponent*                        SceneComponent;                                    // 0x02A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKuroSplitTextureStreamerSettings*      StreamerSettings;                                  // 0x02B0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         LoadNumPerSide;                                    // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A7[0x4];                                     // 0x02BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UObject*>                        LoadedTextures;                                    // 0x02C0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A8[0x48];                                    // 0x02D0(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D0[0x48];                                     // 0x02D0(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2616,7 +2616,7 @@ public:
 	float                                         MinDistance;                                       // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxDistance;                                       // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MobileDistanceScale;                               // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A9[0x4];                                     // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2637,12 +2637,12 @@ static_assert(offsetof(UKuroSuperFarFogConfig, MobileDistanceScale) == 0x000050,
 
 // Class KuroRenderingRuntimeBPPlugin.KuroSuperFarFog
 // 0x0020 (0x02C8 - 0x02A8)
-class AKuroSuperFarFog final : public AActor
+class AKuroSuperFarFog : public AActor
 {
 public:
 	class UStaticMeshComponent*                   FogMeshComponent;                                  // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UKuroSuperFarFogConfig*                 Config;                                            // 0x02B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19AA[0x10];                                    // 0x02B8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B8[0x10];                                     // 0x02B8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Update(float DeltaSeconds);
@@ -2664,7 +2664,7 @@ static_assert(offsetof(AKuroSuperFarFog, Config) == 0x0002B0, "Member 'AKuroSupe
 
 // Class KuroRenderingRuntimeBPPlugin.KuroTrailDrawerComponent
 // 0x0000 (0x0220 - 0x0220)
-class UKuroTrailDrawerComponent final : public USceneComponent
+class UKuroTrailDrawerComponent : public USceneComponent
 {
 public:
 	int32                                         KuroIndex;                                         // 0x0218(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2697,7 +2697,7 @@ class UKuroTrailSensorComponent final : public USceneComponent
 public:
 	float                                         TickTimeInterval;                                  // 0x0218(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         KuroIndex;                                         // 0x021C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19AB[0x10];                                    // 0x0220(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_220[0x10];                                     // 0x0220(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnSensorBegin();
@@ -2724,9 +2724,9 @@ static_assert(offsetof(UKuroTrailSensorComponent, KuroIndex) == 0x00021C, "Membe
 class UKuroTrailSystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_19AC[0x8];                                     // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	uint8                                         bTickEnabled : 1;                                  // 0x0040(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19AD[0x47];                                    // 0x0041(0x0047)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41[0x47];                                      // 0x0041(0x0047)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UKuroTrailSystem* GetKuroTrailSystem(class UWorld* InWorld);
@@ -2769,13 +2769,13 @@ class UKuroUiSceneInfo final : public UObject
 {
 public:
 	struct FVector                                Location;                                          // 0x0030(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19AE[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 LevelName;                                         // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 OptionalLevelName;                                 // 0x0050(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsLoaded;                                          // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsVisible;                                         // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroUiSceneLoadingState                      CurrentState;                                      // 0x0062(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19AF[0x5];                                     // 0x0063(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_63[0x5];                                       // 0x0063(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class AKuroUiSceneRootActor*                  RootActor;                                         // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ULevelStreamingDynamic*                 LevelStreaming;                                    // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UWorld*                                 World;                                             // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2815,7 +2815,7 @@ static_assert(offsetof(UKuroUiSceneInfo, World) == 0x000078, "Member 'UKuroUiSce
 class UKuroUiSceneSystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_19B1[0x8];                                     // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneLoadComplete;                         // 0x0040(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneUnLoadComplete;                       // 0x0068(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneVisibleComplete;                      // 0x0090(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
@@ -2866,7 +2866,7 @@ class AKuroWorldInfo final : public AInfo
 {
 public:
 	struct FKuroLandscapeInfo                     M_LandscapeInfo;                                   // 0x02A8(0x0058)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_19B7[0x8];                                     // 0x0300(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_300[0x8];                                      // 0x0300(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FKuroStreamingLevelInfo>        M_StreamingLevelInfoList;                          // 0x0308(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
 
 public:
@@ -2896,8 +2896,8 @@ static_assert(offsetof(AKuroWorldInfo, M_StreamingLevelInfoList) == 0x000308, "M
 class UKuroWorldPartitionPreviewManager final : public UObject
 {
 public:
-	void AddPreviewActorType(TSubclassOf<class AActor> Param_Class);
-	void RemovePreviewActorType(TSubclassOf<class AActor> Param_Class);
+	void AddPreviewActorType(TSubclassOf<class AActor> Class_0);
+	void RemovePreviewActorType(TSubclassOf<class AActor> Class_0);
 	void SetPreviewMobile(bool PreviewMobile);
 
 public:
@@ -2941,17 +2941,17 @@ class UKuroWorldRainComponentPhysicsConfig final : public UPrimaryDataAsset
 public:
 	struct FKuroCurveFloat                        SpawnScaleCurve;                                   // 0x0038(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	float                                         BaseWindSize;                                      // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19B9[0x4];                                     // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        WindCurve;                                         // 0x00D0(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FVector                                BaseGravitySize;                                   // 0x0160(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19BA[0x4];                                     // 0x016C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        GravityCurve;                                      // 0x0170(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	float                                         BaseDragSize;                                      // 0x0200(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19BB[0x4];                                     // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        DragCurve;                                         // 0x0208(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class UVectorFieldStatic*                     VectorField;                                       // 0x0298(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         VectorFieldBaseSize;                               // 0x02A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19BC[0x4];                                     // 0x02A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A4[0x4];                                      // 0x02A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        VectorFieldCurve;                                  // 0x02A8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FVector                                VectorFieldScale;                                  // 0x0338(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                VectorFieldMoveDirection;                          // 0x0344(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2960,7 +2960,7 @@ public:
 	float                                         CycleBoxZBias;                                     // 0x03EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FKuroCurveFloat                        TimeDilationCurve;                                 // 0x03F0(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	float                                         LifeTimeDilationOnDeath;                           // 0x0480(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19BD[0x4];                                     // 0x0484(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_484[0x4];                                      // 0x0484(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -3015,25 +3015,25 @@ static_assert(offsetof(UKuroWorldRainComponentCustomDataConfig, CustomRandoms) =
 
 // Class KuroRenderingRuntimeBPPlugin.KuroWorldRainComponent
 // 0x00C0 (0x02F0 - 0x0230)
-class UKuroWorldRainComponent final : public UKuroRainComponent
+class UKuroWorldRainComponent : public UKuroRainComponent
 {
 public:
 	class UKuroWorldRainComponentSpawnConfig*     SpawnConfig;                                       // 0x0228(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKuroWorldRainComponentPhysicsConfig*   PhysicsConfig;                                     // 0x0230(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKuroWorldRainComponentCustomDataConfig* CustomDataConfig;                                  // 0x0238(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bOverridePhysics : 1;                              // 0x0240(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19BE[0x3];                                     // 0x0241(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_241[0x3];                                      // 0x0241(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         WindSizeOverride;                                  // 0x0244(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                GravityOverride;                                   // 0x0248(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DragOverride;                                      // 0x0254(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SpawnScaleOverride;                                // 0x0258(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TimeDilationOverride;                              // 0x025C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PassTime;                                          // 0x0260(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_19BF[0x4];                                     // 0x0264(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_264[0x4];                                      // 0x0264(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         BaseSpawnScale;                                    // 0x0268(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FVector                                GlobalWind;                                        // 0x026C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FVector                                Center;                                            // 0x0278(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_19C0[0x6C];                                    // 0x0284(0x006C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_284[0x6C];                                     // 0x0284(0x006C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void DeactivateRain();
@@ -3080,19 +3080,19 @@ class AKuroWorldRainGlobalOverrider final : public AActor
 public:
 	class USceneComponent*                        SceneComponent;                                    // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bOverrideWindSize : 1;                             // 0x02B0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19C1[0x3];                                     // 0x02B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B1[0x3];                                      // 0x02B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         WindSizeOverride;                                  // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bOverrideGravity : 1;                              // 0x02B8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19C2[0x3];                                     // 0x02B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B9[0x3];                                      // 0x02B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                GravityOverride;                                   // 0x02BC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bOverrideDrag : 1;                                 // 0x02C8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19C3[0x3];                                     // 0x02C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C9[0x3];                                      // 0x02C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         DragOverride;                                      // 0x02CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bOverrideTimeDilation : 1;                         // 0x02D0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19C4[0x3];                                     // 0x02D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D1[0x3];                                      // 0x02D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TimeDilationOverride;                              // 0x02D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Priority;                                          // 0x02D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C5[0x4];                                     // 0x02DC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2DC[0x4];                                      // 0x02DC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -3115,11 +3115,11 @@ static_assert(offsetof(AKuroWorldRainGlobalOverrider, Priority) == 0x0002D8, "Me
 
 // Class KuroRenderingRuntimeBPPlugin.KuroWuYinQuActorBase
 // 0x0010 (0x02B8 - 0x02A8)
-class AKuroWuYinQuActorBase final : public AActor
+class AKuroWuYinQuActorBase : public AActor
 {
 public:
 	class FName                                   Key;                                               // 0x02A8(0x000C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C6[0x4];                                     // 0x02B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B4[0x4];                                      // 0x02B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -3146,15 +3146,15 @@ public:
 	float                                         BrightnessThresholdRange;                          // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USunLensFlareConfig*                    Config;                                            // 0x02B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bOverrideGhost : 1;                                // 0x02C0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19C7[0x7];                                     // 0x02C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C1[0x7];                                      // 0x02C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMesh*                            GhostMeshOverride;                                 // 0x02C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                     GhostMaterialOverride;                             // 0x02D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bOverrideHalo : 1;                                 // 0x02D8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19C8[0x7];                                     // 0x02D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D9[0x7];                                      // 0x02D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMesh*                            HaloMeshOverride;                                  // 0x02E0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                     HaloMaterialOverride;                              // 0x02E8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bOverrideGlare : 1;                                // 0x02F0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_19C9[0x7];                                     // 0x02F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F1[0x7];                                      // 0x02F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMesh*                            GlareMeshOverride;                                 // 0x02F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                     GlareMaterialOverride;                             // 0x0300(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                     FinalGhostMaterial;                                // 0x0308(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3166,7 +3166,7 @@ public:
 	class UStaticMeshComponent*                   LensflareGhostComponent;                           // 0x0330(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UStaticMeshComponent*                   LensflareGlareComponent;                           // 0x0338(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UStaticMeshComponent*                   LensflareHaloComponent;                            // 0x0340(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_19CA[0x8];                                     // 0x0348(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_348[0x8];                                      // 0x0348(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ApplyDynamicMaterialGhost(class UMaterialInstanceDynamic* DynMaterial);
@@ -3212,7 +3212,7 @@ class UNiagaraDataInterfaceKuroRendering final : public UNiagaraDataInterface
 {
 public:
 	class FName                                   NiagaraCollectionName;                             // 0x0040(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_19CB[0x4];                                     // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -3233,19 +3233,19 @@ static_assert(offsetof(UNiagaraDataInterfaceKuroRendering, NiagaraCollectionName
 class UNiagaraKuroParameterSystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_19CC[0xD0];                                    // 0x0038(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0xD0];                                      // 0x0038(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	float GetParameterFloat(class FName Collection, class FName Param_Name, float Default);
-	struct FLinearColor GetParameterLinearColor(class FName Collection, class FName Param_Name, const struct FLinearColor& Default);
-	struct FVector GetParameterVector(class FName Collection, class FName Param_Name, const struct FVector& Default);
+	float GetParameterFloat(class FName Collection, class FName Name_0, float Default);
+	struct FLinearColor GetParameterLinearColor(class FName Collection, class FName Name_0, const struct FLinearColor& Default);
+	struct FVector GetParameterVector(class FName Collection, class FName Name_0, const struct FVector& Default);
 	void RemoveCollection(class FName Collection);
-	void RemoveParameterFloat(class FName Collection, class FName Param_Name);
-	void RemoveParameterLinearColor(class FName Collection, class FName Param_Name);
-	void RemoveParameterVector(class FName Collection, class FName Param_Name);
-	void SetParameterFloat(class FName Collection, class FName Param_Name, float Val);
-	void SetParameterLinearColor(class FName Collection, class FName Param_Name, const struct FLinearColor& Val);
-	void SetParameterVector(class FName Collection, class FName Param_Name, const struct FVector& Val);
+	void RemoveParameterFloat(class FName Collection, class FName Name_0);
+	void RemoveParameterLinearColor(class FName Collection, class FName Name_0);
+	void RemoveParameterVector(class FName Collection, class FName Name_0);
+	void SetParameterFloat(class FName Collection, class FName Name_0, float Val);
+	void SetParameterLinearColor(class FName Collection, class FName Name_0, const struct FLinearColor& Val);
+	void SetParameterVector(class FName Collection, class FName Name_0, const struct FVector& Val);
 
 public:
 	static class UClass* StaticClass()
@@ -3262,11 +3262,11 @@ static_assert(sizeof(UNiagaraKuroParameterSystem) == 0x000108, "Wrong size on UN
 
 // Class KuroRenderingRuntimeBPPlugin.ThunderGenerator
 // 0x0250 (0x04F8 - 0x02A8)
-class AThunderGenerator final : public AActor
+class AThunderGenerator : public AActor
 {
 public:
 	float                                         PointLightHeight;                                  // 0x02A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19CD[0x4];                                     // 0x02AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2AC[0x4];                                      // 0x02AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroWeatherDataAsset*                  WeatherDataAsset;                                  // 0x02B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TraceHeightMin;                                    // 0x02B8(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         TraceHeightMax;                                    // 0x02BC(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -3277,7 +3277,7 @@ public:
 	float                                         ThunderPlayInnerRange;                             // 0x02D0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         ThunderPlayRange;                                  // 0x02D4(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         BaseThunderAttackChance;                           // 0x02D8(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_19CE[0x4];                                     // 0x02DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2DC[0x4];                                      // 0x02DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        PointLightCurve;                                   // 0x02E0(0x0090)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
 	struct FKuroCurveFloat                        PointLightRadiusCurve;                             // 0x0370(0x0090)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
 	struct FKuroCurveFloat                        PostProcessCurve;                                  // 0x0400(0x0090)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
@@ -3291,12 +3291,12 @@ public:
 	float                                         AttackAge;                                         // 0x04C4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bThunderActive;                                    // 0x04C8(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	EKuroThunderType                              CurrentThunderType;                                // 0x04C9(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_19CF[0x2];                                     // 0x04CA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4CA[0x2];                                      // 0x04CA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         FinalThunderGenerateChance;                        // 0x04CC(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         FinalThunderAttackChance;                          // 0x04D0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         ThunderCloudIntensity;                             // 0x04D4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         ThunderPostProcessIntensity;                       // 0x04D8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_19D0[0x1C];                                    // 0x04DC(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4DC[0x1C];                                     // 0x04DC(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void SpawnThunderInWorld(class UObject* WorldContextObject, const struct FVector& Location, bool bAttack);

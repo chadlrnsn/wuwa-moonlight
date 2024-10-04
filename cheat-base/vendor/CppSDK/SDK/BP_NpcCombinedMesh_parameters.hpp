@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "EBodyPartName_structs.hpp"
 #include "SNpcSetupPartInfo_structs.hpp"
+#include "EBodyPartName_structs.hpp"
 #include "SNpcHookPart_structs.hpp"
 
 
@@ -27,7 +27,7 @@ public:
 	class UPD_NpcSetupData_C*                     Data;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bIgnoreSockets;                                    // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsSuc;                                             // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E61[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class USkeletalMeshComponent*>         SkleMain;                                          // 0x0010(0x0010)(Parm, OutParm, ContainsInstancedReference)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -52,7 +52,7 @@ public:
 	int32                                         ___int_Loop_Counter_Variable;                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E62[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class USceneComponent*>                CallFunc_GetChildrenComponents_Children;           // 0x0010(0x0010)(ReferenceParm, ContainsInstancedReference)
 	class USceneComponent*                        CallFunc_Array_Get_Item;                           // 0x0020(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -78,25 +78,25 @@ struct BP_NpcCombinedMesh_C_SetupSkeletalMeshComponents final
 public:
 	bool                                          Suc;                                               // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_SetupSkeletalMeshComponent_Suc;           // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E63[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSkeletalMeshComponent_SkeletalComp;  // 0x0008(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E64[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_SetupSkeletalMeshComponent_Suc_1;         // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E65[0x6];                                     // 0x001A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSkeletalMeshComponent_SkeletalComp_1; // 0x0020(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SetupSkeletalMeshComponent_Suc_2;         // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E66[0x3];                                     // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSkeletalMeshComponent_SkeletalComp_2; // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Add_ReturnValue_2;                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SetupSkeletalMeshComponent_Suc_3;         // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E67[0x3];                                     // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSkeletalMeshComponent_SkeletalComp_3; // 0x0040(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SetupSkeletalMeshComponent_Suc_4;         // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E68[0x7];                                     // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSkeletalMeshComponent_SkeletalComp_4; // 0x0050(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Add_ReturnValue_3;                  // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Add_ReturnValue_4;                  // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -146,52 +146,52 @@ public:
 	int32                                         ___int_Loop_Counter_Variable_4;                    // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Array_Index_Variable_4;                     // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E69[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSNpcHookPart                          CallFunc_Array_Get_Item;                           // 0x0040(0x0040)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FTransform                             CallFunc_GetHeadTransform_OutTransform;            // 0x0080(0x0030)(IsPlainOldData, NoDestructor)
 	struct FSNpcHookPart                          CallFunc_Array_Get_Item_1;                         // 0x00B0(0x0040)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SetupSocket_Suc;                          // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E6A[0x7];                                     // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F1[0x7];                                       // 0x00F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSocket_SkeletalComp;                 // 0x00F8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FTransform                             CallFunc_GetLegTransform_OutTransform;             // 0x0100(0x0030)(IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_SetupSocket_Suc_1;                        // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E6B[0x7];                                     // 0x0131(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_131[0x7];                                      // 0x0131(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSocket_SkeletalComp_1;               // 0x0138(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0140(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0144(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E6C[0x3];                                     // 0x0145(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_145[0x3];                                      // 0x0145(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0148(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Loop_Counter_Variable_5;                    // 0x014C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E6D[0x3];                                     // 0x0151(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_151[0x3];                                      // 0x0151(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue_5;                 // 0x0154(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Array_Index_Variable_5;                     // 0x0158(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E6E[0x4];                                     // 0x015C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15C[0x4];                                      // 0x015C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSNpcHookPart                          CallFunc_Array_Get_Item_2;                         // 0x0160(0x0040)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FTransform                             CallFunc_GetWeaponTransform_OutTransform;          // 0x01A0(0x0030)(IsPlainOldData, NoDestructor)
 	struct FSNpcHookPart                          CallFunc_Array_Get_Item_3;                         // 0x01D0(0x0040)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SetupSocket_Suc_2;                        // 0x0210(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E6F[0x7];                                     // 0x0211(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_211[0x7];                                      // 0x0211(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSocket_SkeletalComp_2;               // 0x0218(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FTransform                             CallFunc_GetBackTransform_OutTransform;            // 0x0220(0x0030)(IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_SetupSocket_Suc_3;                        // 0x0250(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E70[0x7];                                     // 0x0251(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_251[0x7];                                      // 0x0251(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSocket_SkeletalComp_3;               // 0x0258(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0260(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0264(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E71[0x3];                                     // 0x0265(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_265[0x3];                                      // 0x0265(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x0268(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x026C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E72[0x3];                                     // 0x026D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_26D[0x3];                                      // 0x026D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSNpcHookPart                          CallFunc_Array_Get_Item_4;                         // 0x0270(0x0040)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSNpcHookPart                          CallFunc_Array_Get_Item_5;                         // 0x02B0(0x0040)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FTransform                             CallFunc_GetArmTransform_OutTransform;             // 0x02F0(0x0030)(IsPlainOldData, NoDestructor)
 	struct FTransform                             CallFunc_GetWaistTransform_OutTransform;           // 0x0320(0x0030)(IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_SetupSocket_Suc_4;                        // 0x0350(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E73[0x7];                                     // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_351[0x7];                                      // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSocket_SkeletalComp_4;               // 0x0358(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SetupSocket_Suc_5;                        // 0x0360(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E74[0x7];                                     // 0x0361(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_361[0x7];                                      // 0x0361(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_SetupSocket_SkeletalComp_5;               // 0x0368(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x0370(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue_5;               // 0x0374(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -261,22 +261,22 @@ struct BP_NpcCombinedMesh_C_SetupSocket final
 {
 public:
 	class FName                                   SocketName;                                        // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E75[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             Transform;                                         // 0x0010(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 	class USkeletalMesh*                          SkeletalMesh;                                      // 0x0040(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Suc;                                               // 0x0048(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E76[0x7];                                     // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 SkeletalComp;                                      // 0x0050(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 SocketSkelComp;                                    // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0062(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E77[0x5];                                     // 0x0063(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_63[0x5];                                       // 0x0063(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_AddComponentByClass_ReturnValue;          // 0x0068(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0080(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E78[0x7];                                     // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Conv_NameToString_ReturnValue_1;          // 0x0098(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Conv_NameToString_ReturnValue_2;          // 0x00A8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x00B8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
@@ -316,14 +316,14 @@ struct BP_NpcCombinedMesh_C_GetArmTransform final
 {
 public:
 	struct FTransform                             InTransform;                                       // 0x0000(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	int32                                         Param_Index;                                       // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E79[0xC];                                     // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0xC];                                       // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             OutTransform;                                      // 0x0040(0x0030)(Parm, OutParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_NpcCombinedMesh_C_GetArmTransform) == 0x000010, "Wrong alignment on BP_NpcCombinedMesh_C_GetArmTransform");
 static_assert(sizeof(BP_NpcCombinedMesh_C_GetArmTransform) == 0x000070, "Wrong size on BP_NpcCombinedMesh_C_GetArmTransform");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetArmTransform, InTransform) == 0x000000, "Member 'BP_NpcCombinedMesh_C_GetArmTransform::InTransform' has a wrong offset!");
-static_assert(offsetof(BP_NpcCombinedMesh_C_GetArmTransform, Param_Index) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetArmTransform::Param_Index' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetArmTransform, Index_0) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetArmTransform::Index_0' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetArmTransform, OutTransform) == 0x000040, "Member 'BP_NpcCombinedMesh_C_GetArmTransform::OutTransform' has a wrong offset!");
 
 // Function BP_NpcCombinedMesh.BP_NpcCombinedMesh_C.GetWeaponTransform
@@ -332,14 +332,14 @@ struct BP_NpcCombinedMesh_C_GetWeaponTransform final
 {
 public:
 	struct FTransform                             InTransform;                                       // 0x0000(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	int32                                         Param_Index;                                       // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E7A[0xC];                                     // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0xC];                                       // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             OutTransform;                                      // 0x0040(0x0030)(Parm, OutParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_NpcCombinedMesh_C_GetWeaponTransform) == 0x000010, "Wrong alignment on BP_NpcCombinedMesh_C_GetWeaponTransform");
 static_assert(sizeof(BP_NpcCombinedMesh_C_GetWeaponTransform) == 0x000070, "Wrong size on BP_NpcCombinedMesh_C_GetWeaponTransform");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetWeaponTransform, InTransform) == 0x000000, "Member 'BP_NpcCombinedMesh_C_GetWeaponTransform::InTransform' has a wrong offset!");
-static_assert(offsetof(BP_NpcCombinedMesh_C_GetWeaponTransform, Param_Index) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetWeaponTransform::Param_Index' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetWeaponTransform, Index_0) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetWeaponTransform::Index_0' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetWeaponTransform, OutTransform) == 0x000040, "Member 'BP_NpcCombinedMesh_C_GetWeaponTransform::OutTransform' has a wrong offset!");
 
 // Function BP_NpcCombinedMesh.BP_NpcCombinedMesh_C.GetLegTransform
@@ -348,14 +348,14 @@ struct BP_NpcCombinedMesh_C_GetLegTransform final
 {
 public:
 	struct FTransform                             InTransform;                                       // 0x0000(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	int32                                         Param_Index;                                       // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E7B[0xC];                                     // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0xC];                                       // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             OutTransform;                                      // 0x0040(0x0030)(Parm, OutParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_NpcCombinedMesh_C_GetLegTransform) == 0x000010, "Wrong alignment on BP_NpcCombinedMesh_C_GetLegTransform");
 static_assert(sizeof(BP_NpcCombinedMesh_C_GetLegTransform) == 0x000070, "Wrong size on BP_NpcCombinedMesh_C_GetLegTransform");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetLegTransform, InTransform) == 0x000000, "Member 'BP_NpcCombinedMesh_C_GetLegTransform::InTransform' has a wrong offset!");
-static_assert(offsetof(BP_NpcCombinedMesh_C_GetLegTransform, Param_Index) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetLegTransform::Param_Index' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetLegTransform, Index_0) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetLegTransform::Index_0' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetLegTransform, OutTransform) == 0x000040, "Member 'BP_NpcCombinedMesh_C_GetLegTransform::OutTransform' has a wrong offset!");
 
 // Function BP_NpcCombinedMesh.BP_NpcCombinedMesh_C.GetBackTransform
@@ -364,14 +364,14 @@ struct BP_NpcCombinedMesh_C_GetBackTransform final
 {
 public:
 	struct FTransform                             InTransform;                                       // 0x0000(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	int32                                         Param_Index;                                       // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E7C[0xC];                                     // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0xC];                                       // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             OutTransform;                                      // 0x0040(0x0030)(Parm, OutParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_NpcCombinedMesh_C_GetBackTransform) == 0x000010, "Wrong alignment on BP_NpcCombinedMesh_C_GetBackTransform");
 static_assert(sizeof(BP_NpcCombinedMesh_C_GetBackTransform) == 0x000070, "Wrong size on BP_NpcCombinedMesh_C_GetBackTransform");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetBackTransform, InTransform) == 0x000000, "Member 'BP_NpcCombinedMesh_C_GetBackTransform::InTransform' has a wrong offset!");
-static_assert(offsetof(BP_NpcCombinedMesh_C_GetBackTransform, Param_Index) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetBackTransform::Param_Index' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetBackTransform, Index_0) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetBackTransform::Index_0' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetBackTransform, OutTransform) == 0x000040, "Member 'BP_NpcCombinedMesh_C_GetBackTransform::OutTransform' has a wrong offset!");
 
 // Function BP_NpcCombinedMesh.BP_NpcCombinedMesh_C.GetWaistTransform
@@ -380,14 +380,14 @@ struct BP_NpcCombinedMesh_C_GetWaistTransform final
 {
 public:
 	struct FTransform                             InTransform;                                       // 0x0000(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	int32                                         Param_Index;                                       // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E7D[0xC];                                     // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0xC];                                       // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             OutTransform;                                      // 0x0040(0x0030)(Parm, OutParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_NpcCombinedMesh_C_GetWaistTransform) == 0x000010, "Wrong alignment on BP_NpcCombinedMesh_C_GetWaistTransform");
 static_assert(sizeof(BP_NpcCombinedMesh_C_GetWaistTransform) == 0x000070, "Wrong size on BP_NpcCombinedMesh_C_GetWaistTransform");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetWaistTransform, InTransform) == 0x000000, "Member 'BP_NpcCombinedMesh_C_GetWaistTransform::InTransform' has a wrong offset!");
-static_assert(offsetof(BP_NpcCombinedMesh_C_GetWaistTransform, Param_Index) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetWaistTransform::Param_Index' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetWaistTransform, Index_0) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetWaistTransform::Index_0' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetWaistTransform, OutTransform) == 0x000040, "Member 'BP_NpcCombinedMesh_C_GetWaistTransform::OutTransform' has a wrong offset!");
 
 // Function BP_NpcCombinedMesh.BP_NpcCombinedMesh_C.SetupSkeletalMeshComponent
@@ -398,18 +398,18 @@ public:
 	class USkeletalMesh*                          InSkeletalMesh;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EBodyPartName                                 BodyType;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Suc;                                               // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E7E[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 SkeletalComp;                                      // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           NewLocalVar_0;                                     // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E7F[0x2];                                     // 0x002A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A[0x2];                                       // 0x002A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           CallFunc_Conv_ColorToLinearColor_ReturnValue;      // 0x002C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_Conv_ColorToLinearColor_ReturnValue_1;    // 0x003C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_Conv_ColorToLinearColor_ReturnValue_2;    // 0x004C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_Conv_ColorToLinearColor_ReturnValue_3;    // 0x005C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_Conv_ColorToLinearColor_ReturnValue_4;    // 0x006C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E80[0x4];                                     // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x0080(0x0030)(IsPlainOldData, NoDestructor)
 	class USkeletalMeshComponent*                 CallFunc_AddComponentByClass_ReturnValue;          // 0x00B0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -437,21 +437,21 @@ static_assert(offsetof(BP_NpcCombinedMesh_C_SetupSkeletalMeshComponent, CallFunc
 struct BP_NpcCombinedMesh_C_AddSkeletalComponent final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E81[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 SkeletalComp;                                      // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSNpcSetupPartInfo                     ___struct_Variable;                                // 0x0018(0x0010)(ConstParm, ContainsInstancedReference, HasGetValueTypeHash)
 	struct FSNpcSetupPartInfo                     CallFunc_Map_Find_Value;                           // 0x0028(0x0010)(ContainsInstancedReference, HasGetValueTypeHash)
 	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E82[0x7];                                     // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSNpcSetupPartInfo                     CallFunc_Map_Find_Value_1;                         // 0x0040(0x0010)(ContainsInstancedReference, HasGetValueTypeHash)
 	bool                                          CallFunc_Map_Find_ReturnValue_1;                   // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E83[0x3];                                     // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_NpcCombinedMesh_C_AddSkeletalComponent) == 0x000008, "Wrong alignment on BP_NpcCombinedMesh_C_AddSkeletalComponent");
 static_assert(sizeof(BP_NpcCombinedMesh_C_AddSkeletalComponent) == 0x000058, "Wrong size on BP_NpcCombinedMesh_C_AddSkeletalComponent");
-static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, Param_Name) == 0x000000, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::Param_Name' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, Name_0) == 0x000000, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::Name_0' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, SkeletalComp) == 0x000010, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::SkeletalComp' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, ___struct_Variable) == 0x000018, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::___struct_Variable' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, CallFunc_Map_Find_Value) == 0x000028, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::CallFunc_Map_Find_Value' has a wrong offset!");
@@ -477,7 +477,7 @@ struct BP_NpcCombinedMesh_C_GetPartMeshComponent final
 {
 public:
 	class FName                                   Key;                                               // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E84[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class USkeletalMeshComponent*>         Comps;                                             // 0x0010(0x0010)(Parm, OutParm, ContainsInstancedReference)
 	struct FSNpcSetupPartInfo                     CallFunc_Map_Find_Value;                           // 0x0020(0x0010)(ContainsInstancedReference, HasGetValueTypeHash)
 	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -498,25 +498,25 @@ public:
 	class FName                                   ParamName01;                                       // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   ParamName02;                                       // 0x0014(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EBodyPartName                                 BodyType;                                          // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E85[0x3];                                     // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   SkinColorName;                                     // 0x0024(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      MI01;                                              // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   NewLocalVar_1;                                     // 0x0038(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E86[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetPathName_ReturnValue;                  // 0x0048(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Split_LeftS;                              // 0x0060(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Split_RightS;                             // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Split_ReturnValue;                        // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E87[0x7];                                     // 0x0081(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_81[0x7];                                       // 0x0081(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Split_LeftS_1;                            // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Split_RightS_1;                           // 0x0098(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Split_ReturnValue_1;                      // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E88[0x7];                                     // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x00B0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x00C0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E89[0x7];                                     // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x00D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x00E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	TArray<class UMaterialInterface*>             CallFunc_GetMaterials_ReturnValue;                 // 0x00F8(0x0010)(ReferenceParm)
@@ -524,25 +524,25 @@ public:
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x011C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Array_Index_Variable;                       // 0x0128(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E8A[0x4];                                     // 0x012C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12C[0x4];                                      // 0x012C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInterface*                     CallFunc_Array_Get_Item;                           // 0x0130(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_1; // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Loop_Counter_Variable;                      // 0x0140(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E8B[0x4];                                     // 0x0144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_144[0x4];                                      // 0x0144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TScriptInterface<class IAssetRegistry>        CallFunc_GetAssetRegistry_ReturnValue;             // 0x0148(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	class UObject*                                CallFunc_Conv_InterfaceToObject_ReturnValue;       // 0x0158(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0160(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E8C[0x7];                                     // 0x0161(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_161[0x7];                                      // 0x0161(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TScriptInterface<class IAssetRegistry>        K2Node_DynamicCast_As_____;                        // 0x0168(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0178(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E8D[0x7];                                     // 0x0179(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_179[0x7];                                      // 0x0179(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAssetData                             CallFunc_GetAssetByObjectPath_ReturnValue;         // 0x0180(0x0068)(HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x01E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E8E[0x4];                                     // 0x01EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1EC[0x4];                                      // 0x01EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                CallFunc_GetAsset_ReturnValue;                     // 0x01F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      K2Node_DynamicCast_As____;                         // 0x01F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E8F[0x7];                                     // 0x0201(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_201[0x7];                                      // 0x0201(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_2; // 0x0208(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_NpcCombinedMesh_C_SetSkeletonMeshDI) == 0x000008, "Wrong alignment on BP_NpcCombinedMesh_C_SetSkeletonMeshDI");
@@ -593,14 +593,14 @@ struct BP_NpcCombinedMesh_C_GetHeadTransform final
 {
 public:
 	struct FTransform                             InTransform;                                       // 0x0000(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	int32                                         Param_Index;                                       // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2E90[0xC];                                     // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0xC];                                       // 0x0034(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             OutTransform;                                      // 0x0040(0x0030)(Parm, OutParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_NpcCombinedMesh_C_GetHeadTransform) == 0x000010, "Wrong alignment on BP_NpcCombinedMesh_C_GetHeadTransform");
 static_assert(sizeof(BP_NpcCombinedMesh_C_GetHeadTransform) == 0x000070, "Wrong size on BP_NpcCombinedMesh_C_GetHeadTransform");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetHeadTransform, InTransform) == 0x000000, "Member 'BP_NpcCombinedMesh_C_GetHeadTransform::InTransform' has a wrong offset!");
-static_assert(offsetof(BP_NpcCombinedMesh_C_GetHeadTransform, Param_Index) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetHeadTransform::Param_Index' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetHeadTransform, Index_0) == 0x000030, "Member 'BP_NpcCombinedMesh_C_GetHeadTransform::Index_0' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_GetHeadTransform, OutTransform) == 0x000040, "Member 'BP_NpcCombinedMesh_C_GetHeadTransform::OutTransform' has a wrong offset!");
 
 // Function BP_NpcCombinedMesh.BP_NpcCombinedMesh_C.Test

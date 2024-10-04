@@ -9,15 +9,287 @@
 // FORWARD DECLARATIONS
 
 
-namespace Ani_UiItem_AcquireIntro_start { class USequenceDirector_C; }
+namespace KuroSceneInteraction_320 { class ATPrefab_SM_Pro_Box_02_CBT3_C; }
+
+namespace GachaShowSequence_Weapon { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_370 { class ATPrefab_SM_Gat_39A_C; }
+
+namespace TPrefab_SM_ExplosiveRock { class ATPrefab_SM_ExplosiveRock_C; }
+
+namespace KuroSceneInteraction_367 { class ATPrefab_SM_Gat_16A_C; }
+
+namespace TPrefab_SM_Pro_Tow_03A { class ATPrefab_SM_Pro_Tow_03A_C; }
+
+namespace KuroSceneInteraction_238 { class ATPrefab_SM_Gat_34A_C; }
+
+namespace KuroSceneInteraction_387 { class ATPrefab_SM_Pro_Tow_03A_C; }
+
+namespace KuroSceneInteraction_281 { class ATPrefab_SM_Gat_13A_C; }
+
+namespace KuroSceneInteraction_388 { class ATPrefab_SM_Gat_20A_C; }
+
+namespace KuroSceneInteraction_327 { class ATPrefab_SM_MingJing_set_C; }
+
+namespace KuroSceneInteraction_316 { class ATPrefab_SM_Pro_HuanXiangBox_02_CBT3_C; }
+
+namespace Ani_MissionPnlProcess_Start { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_317 { class ATPrefab_SM_WYQ_Middle_Shengxian_C; }
+
+namespace KuroSceneInteraction_333 { class ATPrefab_SM_Pro_EMP_RefreshPoint_C; }
+
+namespace KuroSceneInteraction_290 { class ATPrefab_SM_Pro_Box_08_C; }
 
 namespace GameplayAbilities { struct FServerAbilityRPCBatch; }
 
-namespace Ani_UiItem_AcquireIntro_Move { class USequenceDirector_C; }
+namespace KuroSceneInteraction_251 { class ATPrefab_SM_Gat_39A_C; }
 
-namespace Ani_UiItem_AcquireIntro_Close { class USequenceDirector_C; }
+namespace KuroSceneInteraction_237 { class ATPrefab_SM_Pro_Tow_02A_C; }
 
-namespace Ani_NPCActScroll_Start { class USequenceDirector_C; }
+namespace KuroSceneInteraction_241 { class ATPrefab_SM_Gat_20A_C; }
 
-namespace Ani_NPCActScroll_Close { class USequenceDirector_C; }
+namespace KuroSceneInteraction_379 { class ATPrefab_SM_Pro_Box_01_CBT3_C; }
+
+namespace KuroSceneInteraction_368 { class ATPrefab_SM_Gat_39A_C; }
+
+namespace Ani_NewLevelSequence_Up { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_261 { class ATPrefab_SM_Gat_16A_C; }
+
+namespace TPrefab_SM_Pro_Tow_02A { class ATPrefab_SM_Pro_Tow_02A_C; }
+
+namespace TPrefab_SM_Pro_EMP_RefreshPoint { class ATPrefab_SM_Pro_EMP_RefreshPoint_C; }
+
+namespace KuroSceneInteraction_245 { class ATPrefab_SM_Gat_33A_C; }
+
+namespace KuroSceneInteraction_366 { class ATPrefab_SM_Gat_16A_C; }
+
+namespace KuroSceneInteraction_365 { class ATPrefab_SM_Gat_39A_C; }
+
+namespace KuroSceneInteraction_246 { class ATPrefab_SM_Gat_33A_C; }
+
+namespace TPrefab_SM_WYQ_Middle_Shengxian { class ATPrefab_SM_WYQ_Middle_Shengxian_C; }
+
+namespace KuroSceneInteraction_384 { class ATPrefab_SM_Pro_Box_03_CBT3_C; }
+
+namespace TPrefab_SM_MingJing { class ATPrefab_SM_MingJing_C; }
+
+namespace TPrefab_SM_Gat_11A { class ATPrefab_SM_Gat_11A_C; }
+
+namespace KuroSceneInteraction_330 { class ATPrefab_SM_Gat_42A_C; }
+
+namespace TPrefab_SM_Gat_33A { class ATPrefab_SM_Gat_33A_C; }
+
+namespace KuroSceneInteraction_278 { class ATPrefab_SM_Gat_16A_C; }
+
+namespace Ani_MissionPnlProcess_StartWithChild { class USequenceDirector_C; }
+
+namespace TPrefab_SM_Gat_42A { class ATPrefab_SM_Gat_42A_C; }
+
+namespace KuroSceneInteraction_282 { class ATPrefab_SM_Gat_39A_C; }
+
+namespace KuroSceneInteraction_262 { class ATPrefab_SM_Pro_Mine_1_C; }
+
+namespace TPrefab_SM_Pro_HuanXiangBox_03_CBT3 { class ATPrefab_SM_Pro_HuanXiangBox_03_CBT3_C; }
+
+namespace TPrefab_SM_Pro_Mine_1 { class ATPrefab_SM_Pro_Mine_1_C; }
+
+namespace KuroSceneInteraction_358 { class ATPrefab_SM_Gat_13A_C; }
+
+namespace KuroSceneInteraction_298 { class ATPrefab_SM_Gat_30A_C; }
+
+namespace KuroSceneInteraction_304 { class ATPrefab_SM_Pro_HuanXiangBox_03_CBT3_C; }
+
+namespace KuroSceneInteraction_342 { class ATPrefab_SM_Pro_Box_03_CBT3_C; }
+
+namespace KuroSceneInteraction_247 { class ATPrefab_SM_Gat_33A_C; }
+
+namespace TPrefab_SM_Gat_31A { class ATPrefab_SM_Gat_31A_C; }
+
+namespace KuroSceneInteraction_259 { class ATPrefab_SM_Pro_Mine_1_C; }
+
+namespace TPrefab_SM_Pro_EMP_Item { class ATPrefab_SM_Pro_EMP_Item_C; }
+
+namespace KuroSceneInteraction_244 { class ATPrefab_SM_Gat_41A_C; }
+
+namespace SC_Kakaluo_Burst01 { class USequenceDirector_C; }
+
+namespace TPrefab_SM_Gat_30A { class ATPrefab_SM_Gat_30A_C; }
+
+namespace KuroSceneInteraction_308 { class ATPrefab_SM_Gat_11A_C; }
+
+namespace TPrefab_SM_MingJing_set { class ATPrefab_SM_MingJing_set_C; }
+
+namespace TPrefab_SM_Gat_41A { class ATPrefab_SM_Gat_41A_C; }
+
+namespace Seq_Dajijiguan02_Start { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_369 { class ATPrefab_SM_Pro_Box_01_CBT3_C; }
+
+namespace KuroSceneInteraction_279 { class ATPrefab_SM_Pro_Box_08_C; }
+
+namespace KuroSceneInteraction_338 { class ATPrefab_SM_MingJing_set_C; }
+
+namespace TPrefab_SM_Pro_Box_01_CBT3 { class ATPrefab_SM_Pro_Box_01_CBT3_C; }
+
+namespace TPrefab_SM_Gat_39A { class ATPrefab_SM_Gat_39A_C; }
+
+namespace TPrefab_SM_WYQ_Shengxian { class ATPrefab_SM_WYQ_Shengxian_C; }
+
+namespace TPrefab_SM_Pro_Mine_3 { class ATPrefab_SM_Pro_Mine_3_C; }
+
+namespace KuroSceneInteraction_311 { class ATPrefab_SM_Pro_EMP_Item_C; }
+
+namespace Ani_MissionPnlProcess_Finish { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_326 { class ATPrefab_SM_Pro_HuanXiangBox_02_CBT3_C; }
+
+namespace TPrefab_SM_Gat_20A { class ATPrefab_SM_Gat_20A_C; }
+
+namespace KuroSceneInteraction_356 { class ATPrefab_SM_Gat_13A_C; }
+
+namespace TPrefab_SM_Pro_Box_02_CBT3 { class ATPrefab_SM_Pro_Box_02_CBT3_C; }
+
+namespace KuroSceneInteraction_284 { class ATPrefab_SM_Pro_Mine_4_C; }
+
+namespace KuroSceneInteraction_300 { class ATPrefab_SM_Gat_11A_C; }
+
+namespace KuroSceneInteraction_328 { class ATPrefab_SM_MingJing_C; }
+
+namespace KuroSceneInteraction_337 { class ATPrefab_SM_MingJing_C; }
+
+namespace KuroSceneInteraction_323 { class ATPrefab_SM_Pro_Box_02_CBT3_C; }
+
+namespace TPrefab_SM_Pro_LevitationMagnet_Base_LevelInstance_5 { class ATPrefab_SM_Pro_LevitationMagnet_Base_C; }
+
+namespace KuroSceneInteraction_329 { class ATPrefab_SM_Pro_Box_01_CBT3_C; }
+
+namespace KuroSceneInteraction_341 { class ATPrefab_SM_Pro_Box_01_CBT3_C; }
+
+namespace KuroSceneInteraction_310 { class ATPrefab_SM_Pro_EMP_Item_C; }
+
+namespace KuroSceneInteraction_258 { class ATPrefab_SM_Gat_20A_C; }
+
+namespace KuroSceneInteraction_340 { class ATPrefab_SM_MingJing_set_C; }
+
+namespace KuroSceneInteraction_354 { class ATPrefab_SM_WYQ_Middle_Shengxian_C; }
+
+namespace KuroSceneInteraction_303 { class ATPrefab_SM_Pro_Box_02_CBT3_C; }
+
+namespace Ani_MissionPnlProcess_StartNew { class USequenceDirector_C; }
+
+namespace Ani_MissionPnlProcess_Finish_Close { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_373 { class ATPrefab_SM_Gat_27A_C; }
+
+namespace KuroSceneInteraction_355 { class ATPrefab_SM_Pro_Tow_02A_C; }
+
+namespace KuroSceneInteraction_389 { class ATPrefab_SM_Gat_20A_C; }
+
+namespace SC_Kakaluo_Burst02 { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_256 { class ATPrefab_SM_Pro_Mine_1_C; }
+
+namespace TPrefab_SM_Pro_Gravity_Base { class ATPrefab_SM_Pro_Gravity_Base_C; }
+
+namespace KuroSceneInteraction_277 { class ATPrefab_SM_Gat_13A_C; }
+
+namespace KuroSceneInteraction_359 { class ATPrefab_SM_Pro_Box_02_CBT3_C; }
+
+namespace TPrefab_SM_ExplosiveRock_Base { class ATPrefab_SM_ExplosiveRock_Base_C; }
+
+namespace KuroSceneInteraction_353 { class ATPrefab_SM_Pro_Tow_02A_C; }
+
+namespace KuroSceneInteraction_352 { class ATPrefab_SM_WYQ_Shengxian_C; }
+
+namespace TPrefab_SM_Gat_27A { class ATPrefab_SM_Gat_27A_C; }
+
+namespace KuroSceneInteraction_351 { class ATPrefab_SM_WYQ_Middle_Shengxian_C; }
+
+namespace KuroSceneInteraction_350 { class ATPrefab_SM_Gat_13A_C; }
+
+namespace KuroSceneInteraction_349 { class ATPrefab_SM_Pro_Tow_02A_C; }
+
+namespace KuroSceneInteraction_344 { class ATPrefab_SM_Pro_HuanXiangBox_02_CBT3_C; }
+
+namespace KuroSceneInteraction_239 { class ATPrefab_SM_MingJing_set_C; }
+
+namespace KuroSceneInteraction_339 { class ATPrefab_SM_MingJing_C; }
+
+namespace KuroSceneInteraction_335 { class ATPrefab_SM_Pro_Box_02_CBT3_C; }
+
+namespace KuroSceneInteraction_334 { class ATPrefab_SM_Pro_Box_02_CBT3_C; }
+
+namespace KuroSceneInteraction_332 { class ATPrefab_SM_Pro_Mine_3_C; }
+
+namespace KuroSceneInteraction_322 { class ATPrefab_SM_Pro_Box_01_CBT3_C; }
+
+namespace KuroSceneInteraction_257 { class ATPrefab_SM_Pro_Mine_1_C; }
+
+namespace KuroSceneInteraction_260 { class ATPrefab_SM_Gat_20A_C; }
+
+namespace KuroSceneInteraction_264 { class ATPrefab_SM_Gat_39A_C; }
+
+namespace KuroSceneInteraction_266 { class ATPrefab_SM_Gat_30A_C; }
+
+namespace TPrefab_SM_Pro_EMP_Base_LevelInstance_1 { class ATPrefab_SM_Pro_EMP_Base_C; }
+
+namespace KuroSceneInteraction_371 { class ATPrefab_SM_Gat_16A_C; }
+
+namespace TPrefab_SM_Pro_EMP_Base_LevelInstance_6 { class ATPrefab_SM_Pro_EMP_Base_C; }
+
+namespace KuroSceneInteraction_378 { class ATPrefab_SM_ExplosiveRock_C; }
+
+namespace KuroSceneInteraction_309 { class ATPrefab_SM_Pro_EMP_RefreshPoint_C; }
+
+namespace TPrefab_SM_Gat_16A { class ATPrefab_SM_Gat_16A_C; }
+
+namespace KuroSceneInteraction_307 { class ATPrefab_SM_Pro_Mine_4_C; }
+
+namespace KuroSceneInteraction_299 { class ATPrefab_SM_Gat_11A_C; }
+
+namespace TPrefab_SM_Pro_LevitationMagnet_Base_LevelInstance_4 { class ATPrefab_SM_Pro_LevitationMagnet_Base_C; }
+
+namespace KuroSceneInteraction_383 { class ATPrefab_SM_Pro_Mine_4_C; }
+
+namespace KuroSceneInteraction_374 { class ATPrefab_SM_Gat_13A_C; }
+
+namespace Seq_Dajijiguan02_Init { class USequenceDirector_C; }
+
+namespace Seq_Dajijiguan02_End { class USequenceDirector_C; }
+
+namespace TPrefab_SM_Pro_Box_08 { class ATPrefab_SM_Pro_Box_08_C; }
+
+namespace TPrefab_SM_Gat_13A { class ATPrefab_SM_Gat_13A_C; }
+
+namespace TPrefab_SM_Gat_34A { class ATPrefab_SM_Gat_34A_C; }
+
+namespace TPrefab_SM_Pro_Mine_4 { class ATPrefab_SM_Pro_Mine_4_C; }
+
+namespace TPrefab_SM_Pro_Box_03_CBT3 { class ATPrefab_SM_Pro_Box_03_CBT3_C; }
+
+namespace TPrefab_SM_Pro_HuanXiangBox_02_CBT3 { class ATPrefab_SM_Pro_HuanXiangBox_02_CBT3_C; }
+
+namespace KuroSceneInteraction_240 { class ATPrefab_SM_MingJing_C; }
+
+namespace KuroSceneInteraction_386 { class ATPrefab_SM_Pro_Gravity_Base_C; }
+
+namespace KuroSceneInteraction_377 { class ATPrefab_SM_ExplosiveRock_Base_C; }
+
+namespace KuroSceneInteraction_243 { class ATPrefab_SM_Gat_16A_C; }
+
+namespace KuroSceneInteraction_242 { class ATPrefab_SM_Gat_39A_C; }
+
+namespace KuroSceneInteraction_249 { class ATPrefab_SM_Gat_20A_C; }
+
+namespace KuroSceneInteraction_250 { class ATPrefab_SM_Gat_16A_C; }
+
+namespace KuroSceneInteraction_252 { class ATPrefab_SM_Gat_16A_C; }
+
+namespace KuroSceneInteraction_253 { class ATPrefab_SM_Gat_39A_C; }
+
+namespace KuroSceneInteraction_254 { class ATPrefab_SM_Gat_31A_C; }
+
+namespace KuroSceneInteraction_255 { class ATPrefab_SM_Gat_31A_C; }
 

@@ -25,7 +25,7 @@ public:
 	class FString                                 Stream_9_685F05CF44A399E8DE4B2E8ED9075589;         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          Editor_16_9A8D71F649547E4468D379AF5CFDFA99;        // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          Package_17_30D563B244651B2C7D330F848819F2CF;       // 0x0041(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3152[0x2];                                     // 0x0042(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_42[0x2];                                       // 0x0042(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Order_20_DECB754B45CE78FBECB317B81273ABE0;         // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSServerInfo) == 0x000008, "Wrong alignment on FSServerInfo");

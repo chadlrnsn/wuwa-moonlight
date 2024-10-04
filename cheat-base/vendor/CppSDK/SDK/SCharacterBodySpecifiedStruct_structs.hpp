@@ -23,7 +23,7 @@ struct FSCharacterBodySpecifiedStruct final
 {
 public:
 	ECharacterBodySpecifiedType                   SpecifiedType_8_45A03C894F6228A844022B815431BECA;  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_29DF[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<ECharacterBodyType>                    BodyTypes_12_2E562A9242D605BFC4C04F924E952BAF;     // 0x0008(0x0010)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSCharacterBodySpecifiedStruct) == 0x000008, "Wrong alignment on FSCharacterBodySpecifiedStruct");

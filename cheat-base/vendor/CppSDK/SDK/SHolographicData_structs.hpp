@@ -24,14 +24,14 @@ struct FSHolographicData final
 public:
 	class UMaterialInterface*                     ReplaceMaterial_9_B354D5EA4447D05E67D918A7744632B1; // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          MobileUseDifferentMaterial_31_5905E221465EFC42C78F7D811D5BA6D7; // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2C91[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInterface*                     ReplaceMaterialMobile_33_0AF68EE141764D319C90789212821796; // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseCustomParameters_41_16B38B894072EB353B428E97BB544DB0; // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2C92[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSMaterialControllerFloatParameter> CustomFloats_20_BEFE4A72466DBBF31C7BE88043697CC2;  // 0x0020(0x0010)(Edit, BlueprintVisible)
 	TArray<struct FSMaterialControllerColorParameter> CustomColors_23_D46E551F4EE49A33813738920A17A1A1;  // 0x0030(0x0010)(Edit, BlueprintVisible)
 	bool                                          bActive_27_2CF94B2C45421EB008661E9B70C1D57E;       // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2C93[0x7];                                     // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture2D*                             Tex_39_86E74FFA47C656007301EE82E1891D0D;           // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSHolographicData) == 0x000008, "Wrong alignment on FSHolographicData");

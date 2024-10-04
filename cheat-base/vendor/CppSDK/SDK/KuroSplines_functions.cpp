@@ -20,10 +20,10 @@ namespace SDK
 // Function KuroSplines.KuroMoveSplineComponent.GetIgnorePoint
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UKuroMoveSplineComponent::GetIgnorePoint(int32 Param_Index)
+int32 UKuroMoveSplineComponent::GetIgnorePoint(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,7 +32,7 @@ int32 UKuroMoveSplineComponent::GetIgnorePoint(int32 Param_Index)
 
 	Params::KuroMoveSplineComponent_GetIgnorePoint Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -48,10 +48,10 @@ int32 UKuroMoveSplineComponent::GetIgnorePoint(int32 Param_Index)
 // Function KuroSplines.KuroMoveSplineComponent.GetIsHide
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UKuroMoveSplineComponent::GetIsHide(int32 Param_Index)
+int32 UKuroMoveSplineComponent::GetIsHide(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,7 +60,7 @@ int32 UKuroMoveSplineComponent::GetIsHide(int32 Param_Index)
 
 	Params::KuroMoveSplineComponent_GetIsHide Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -76,10 +76,10 @@ int32 UKuroMoveSplineComponent::GetIsHide(int32 Param_Index)
 // Function KuroSplines.KuroMoveSplineComponent.GetMoveSpeed
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UKuroMoveSplineComponent::GetMoveSpeed(int32 Param_Index)
+int32 UKuroMoveSplineComponent::GetMoveSpeed(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -88,7 +88,7 @@ int32 UKuroMoveSplineComponent::GetMoveSpeed(int32 Param_Index)
 
 	Params::KuroMoveSplineComponent_GetMoveSpeed Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -104,10 +104,10 @@ int32 UKuroMoveSplineComponent::GetMoveSpeed(int32 Param_Index)
 // Function KuroSplines.KuroMoveSplineComponent.GetMoveState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UKuroMoveSplineComponent::GetMoveState(int32 Param_Index)
+int32 UKuroMoveSplineComponent::GetMoveState(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -116,7 +116,7 @@ int32 UKuroMoveSplineComponent::GetMoveState(int32 Param_Index)
 
 	Params::KuroMoveSplineComponent_GetMoveState Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -132,10 +132,10 @@ int32 UKuroMoveSplineComponent::GetMoveState(int32 Param_Index)
 // Function KuroSplines.KuroMoveSplineComponent.GetStayTime
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UKuroMoveSplineComponent::GetStayTime(int32 Param_Index)
+int32 UKuroMoveSplineComponent::GetStayTime(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -144,7 +144,7 @@ int32 UKuroMoveSplineComponent::GetStayTime(int32 Param_Index)
 
 	Params::KuroMoveSplineComponent_GetStayTime Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -160,10 +160,10 @@ int32 UKuroMoveSplineComponent::GetStayTime(int32 Param_Index)
 // Function KuroSplines.KuroParkourSplineComponent.GetBuffId
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UKuroParkourSplineComponent::GetBuffId(int32 Param_Index)
+int32 UKuroParkourSplineComponent::GetBuffId(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -172,7 +172,7 @@ int32 UKuroParkourSplineComponent::GetBuffId(int32 Param_Index)
 
 	Params::KuroParkourSplineComponent_GetBuffId Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -188,10 +188,10 @@ int32 UKuroParkourSplineComponent::GetBuffId(int32 Param_Index)
 // Function KuroSplines.KuroParkourSplineComponent.GetModifiedTime
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKuroParkourSplineComponent::GetModifiedTime(int32 Param_Index)
+float UKuroParkourSplineComponent::GetModifiedTime(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -200,7 +200,7 @@ float UKuroParkourSplineComponent::GetModifiedTime(int32 Param_Index)
 
 	Params::KuroParkourSplineComponent_GetModifiedTime Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -216,10 +216,10 @@ float UKuroParkourSplineComponent::GetModifiedTime(int32 Param_Index)
 // Function KuroSplines.KuroParkourSplineComponent.GetRadius
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKuroParkourSplineComponent::GetRadius(int32 Param_Index)
+float UKuroParkourSplineComponent::GetRadius(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -228,7 +228,7 @@ float UKuroParkourSplineComponent::GetRadius(int32 Param_Index)
 
 	Params::KuroParkourSplineComponent_GetRadius Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

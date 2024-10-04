@@ -26,7 +26,7 @@ class UClothConfigNv final : public UClothConfigCommon
 {
 public:
 	EClothingWindMethodNv                         ClothingWindMethod;                                // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_26F9[0x3];                                     // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FClothConstraintSetupNv                VerticalConstraint;                                // 0x0034(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetupNv                HorizontalConstraint;                              // 0x0044(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetupNv                BendConstraint;                                    // 0x0054(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
@@ -48,14 +48,14 @@ public:
 	float                                         GravityScale;                                      // 0x00DC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                GravityOverride;                                   // 0x00E0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseGravityOverride;                               // 0x00EC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_26FA[0x3];                                     // 0x00ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_ED[0x3];                                       // 0x00ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TetherStiffness;                                   // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TetherLimit;                                       // 0x00F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CollisionThickness;                                // 0x00F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         AnimDriveSpringStiffness;                          // 0x00FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         AnimDriveDamperStiffness;                          // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EClothingWindMethod_Legacy                    WindMethod;                                        // 0x0104(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_26FB[0x3];                                     // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_105[0x3];                                      // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FClothConstraintSetup_Legacy           VerticalConstraintConfig;                          // 0x0108(0x0010)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetup_Legacy           HorizontalConstraintConfig;                        // 0x0118(0x0010)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
 	struct FClothConstraintSetup_Legacy           BendConstraintConfig;                              // 0x0128(0x0010)(Deprecated, NoDestructor, NativeAccessSpecifierPublic)
@@ -128,7 +128,7 @@ static_assert(sizeof(UClothingSimulationFactoryNv) == 0x000030, "Wrong size on U
 class UClothingSimulationInteractorNv final : public UClothingSimulationInteractor
 {
 public:
-	uint8                                         Pad_26FC[0x10];                                    // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetAnimDriveDamperStiffness(float InStiffness);

@@ -22,7 +22,7 @@ public:
 	class ULevelSequence*                         Sequence_2_4A54428F4EE6F46E56DFEC9BC912FB4B;       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsLoop_12_5C6E9166437EDA1704A38297E7AED610;        // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          Reverse_8_7E5B16A946B819B54EB7F8823C3D849B;        // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3114[0x2];                                     // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         PlayRate_11_8986EE394AB78223BBBB46804F8ED126;      // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSSceneInteractionSequence) == 0x000008, "Wrong alignment on FSSceneInteractionSequence");

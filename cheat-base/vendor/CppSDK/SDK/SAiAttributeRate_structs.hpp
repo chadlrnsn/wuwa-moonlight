@@ -24,7 +24,7 @@ struct FSAiAttributeRate final
 public:
 	EAttributeType                                Numerator_2_879CECAC4C2242972A16E48082373253;      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EAttributeType                                Denominator_4_A5C33DA14A9006589C5057B0992CD995;    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31E7[0x2];                                     // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FFloatRange                            Range_7_0B0B5A33484A82C4743B49A6F8BE3937;          // 0x0004(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSAiAttributeRate) == 0x000004, "Wrong alignment on FSAiAttributeRate");

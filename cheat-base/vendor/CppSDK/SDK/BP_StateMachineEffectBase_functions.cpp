@@ -17,69 +17,99 @@
 namespace SDK
 {
 
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.ExecuteUbergraph_BP_StateMachineEffectBase
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Update Transition State
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_StateMachineEffectBase_C::ExecuteUbergraph_BP_StateMachineEffectBase(int32 EntryPoint)
+void ABP_StateMachineEffectBase_C::Update_Transition_State()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "ExecuteUbergraph_BP_StateMachineEffectBase");
-
-	Params::BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_StateMachineEffectBase_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "Update Transition State");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Reset
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_StateMachineEffectBase_C::ReceiveTick(float DeltaSeconds)
+void ABP_StateMachineEffectBase_C::Reset()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "ReceiveTick");
+		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "Reset");
 
-	Params::BP_StateMachineEffectBase_C_ReceiveTick Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.DeltaSeconds = DeltaSeconds;
+
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.PlayEffectState
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UPD_StateMachineEffect_C*         InputData                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEffectState                            TargetState_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StateMachineEffectBase_C::PlayEffectState(class UPD_StateMachineEffect_C* InputData, EEffectState TargetState_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "PlayEffectState");
+
+	Params::BP_StateMachineEffectBase_C_PlayEffectState Parms{};
+
+	Parms.InputData = InputData;
+	Parms.TargetState_0 = TargetState_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.EditorInit
-// (Event, Public, BlueprintEvent)
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Tick
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_StateMachineEffectBase_C::EditorInit()
+void ABP_StateMachineEffectBase_C::Tick()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "EditorInit");
+		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "Tick");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Init
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EEffectState                            TargetState_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StateMachineEffectBase_C::Init(EEffectState TargetState_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "Init");
+
+	Params::BP_StateMachineEffectBase_C_Init Parms{};
+
+	Parms.TargetState_0 = TargetState_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_StateMachineEffectBase_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -105,101 +135,71 @@ void ABP_StateMachineEffectBase_C::EditorTick(float DeltaSeconds)
 }
 
 
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.EditorInit
+// (Event, Public, BlueprintEvent)
 
-void ABP_StateMachineEffectBase_C::UserConstructionScript()
+void ABP_StateMachineEffectBase_C::EditorInit()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "EditorInit");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Init
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// EEffectState                            Param_TargetState                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StateMachineEffectBase_C::Init(EEffectState Param_TargetState)
+void ABP_StateMachineEffectBase_C::ReceiveTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "Init");
+		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "ReceiveTick");
 
-	Params::BP_StateMachineEffectBase_C_Init Parms{};
+	Params::BP_StateMachineEffectBase_C_ReceiveTick Parms{};
 
-	Parms.Param_TargetState = Param_TargetState;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Tick
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_StateMachineEffectBase_C::Tick()
+void ABP_StateMachineEffectBase_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "Tick");
+		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.PlayEffectState
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.ExecuteUbergraph_BP_StateMachineEffectBase
+// (Final, UbergraphFunction)
 // Parameters:
-// class UPD_StateMachineEffect_C*         InputData                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EEffectState                            Param_TargetState                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StateMachineEffectBase_C::PlayEffectState(class UPD_StateMachineEffect_C* InputData, EEffectState Param_TargetState)
+void ABP_StateMachineEffectBase_C::ExecuteUbergraph_BP_StateMachineEffectBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "PlayEffectState");
+		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "ExecuteUbergraph_BP_StateMachineEffectBase");
 
-	Params::BP_StateMachineEffectBase_C_PlayEffectState Parms{};
+	Params::BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase Parms{};
 
-	Parms.InputData = InputData;
-	Parms.Param_TargetState = Param_TargetState;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Reset
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_StateMachineEffectBase_C::Reset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "Reset");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Update Transition State
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_StateMachineEffectBase_C::Update_Transition_State()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StateMachineEffectBase_C", "Update Transition State");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -234,14 +234,14 @@ void ABP_StateMachineEffectBase_C::UpdateLoopState()
 // Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.UpdateParameters
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FName                             Param_Name                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             Name_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsFloat                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // float                                   FloatValue                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsLinearColor                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // struct FLinearColor                     LinearColorValue                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StateMachineEffectBase_C::UpdateParameters(class FName Param_Name, bool IsFloat, float FloatValue, bool IsLinearColor, const struct FLinearColor& LinearColorValue, int32 Param_Index)
+void ABP_StateMachineEffectBase_C::UpdateParameters(class FName Name_0, bool IsFloat, float FloatValue, bool IsLinearColor, const struct FLinearColor& LinearColorValue, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -250,12 +250,12 @@ void ABP_StateMachineEffectBase_C::UpdateParameters(class FName Param_Name, bool
 
 	Params::BP_StateMachineEffectBase_C_UpdateParameters Parms{};
 
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 	Parms.IsFloat = IsFloat;
 	Parms.FloatValue = FloatValue;
 	Parms.IsLinearColor = IsLinearColor;
 	Parms.LinearColorValue = std::move(LinearColorValue);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -264,9 +264,9 @@ void ABP_StateMachineEffectBase_C::UpdateParameters(class FName Param_Name, bool
 // Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.CreateTransitionState
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEffectState                            Param_TargetState                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEffectState                            TargetState_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StateMachineEffectBase_C::CreateTransitionState(EEffectState Param_TargetState)
+void ABP_StateMachineEffectBase_C::CreateTransitionState(EEffectState TargetState_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -275,7 +275,7 @@ void ABP_StateMachineEffectBase_C::CreateTransitionState(EEffectState Param_Targ
 
 	Params::BP_StateMachineEffectBase_C_CreateTransitionState Parms{};
 
-	Parms.Param_TargetState = Param_TargetState;
+	Parms.TargetState_0 = TargetState_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -368,9 +368,9 @@ void ABP_StateMachineEffectBase_C::DEBUG____()
 // Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.SetState
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EEffectState                            Param_TargetState                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEffectState                            TargetState_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_StateMachineEffectBase_C::SetState(EEffectState Param_TargetState)
+void ABP_StateMachineEffectBase_C::SetState(EEffectState TargetState_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -379,7 +379,7 @@ void ABP_StateMachineEffectBase_C::SetState(EEffectState Param_TargetState)
 
 	Params::BP_StateMachineEffectBase_C_SetState Parms{};
 
-	Parms.Param_TargetState = Param_TargetState;
+	Parms.TargetState_0 = TargetState_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

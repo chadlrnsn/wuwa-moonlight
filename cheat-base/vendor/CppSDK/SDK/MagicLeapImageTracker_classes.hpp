@@ -23,18 +23,18 @@ class UMagicLeapImageTrackerComponent final : public USceneComponent
 {
 public:
 	class UTexture2D*                             TargetImageTexture;                                // 0x0218(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name_MagicLeapImageTrackerComponent;               // 0x0220(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0220(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         LongerDimension;                                   // 0x0230(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsStationary;                                     // 0x0234(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseUnreliablePose;                                // 0x0235(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapImageTargetOrientation              AxisOrientation;                                   // 0x0236(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_251D[0x1];                                     // 0x0237(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_237[0x1];                                      // 0x0237(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnSetImageTargetSucceeded;                         // 0x0238(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnSetImageTargetFailed;                            // 0x0248(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnImageTargetFound;                                // 0x0258(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnImageTargetLost;                                 // 0x0268(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnImageTargetUnreliableTracking;                   // 0x0278(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_251E[0x8];                                     // 0x0288(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_288[0x8];                                      // 0x0288(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool RemoveTargetAsync();
@@ -53,7 +53,7 @@ public:
 static_assert(alignof(UMagicLeapImageTrackerComponent) == 0x000010, "Wrong alignment on UMagicLeapImageTrackerComponent");
 static_assert(sizeof(UMagicLeapImageTrackerComponent) == 0x000290, "Wrong size on UMagicLeapImageTrackerComponent");
 static_assert(offsetof(UMagicLeapImageTrackerComponent, TargetImageTexture) == 0x000218, "Member 'UMagicLeapImageTrackerComponent::TargetImageTexture' has a wrong offset!");
-static_assert(offsetof(UMagicLeapImageTrackerComponent, Name_MagicLeapImageTrackerComponent) == 0x000220, "Member 'UMagicLeapImageTrackerComponent::Name_MagicLeapImageTrackerComponent' has a wrong offset!");
+static_assert(offsetof(UMagicLeapImageTrackerComponent, Name_0) == 0x000220, "Member 'UMagicLeapImageTrackerComponent::Name_0' has a wrong offset!");
 static_assert(offsetof(UMagicLeapImageTrackerComponent, LongerDimension) == 0x000230, "Member 'UMagicLeapImageTrackerComponent::LongerDimension' has a wrong offset!");
 static_assert(offsetof(UMagicLeapImageTrackerComponent, bIsStationary) == 0x000234, "Member 'UMagicLeapImageTrackerComponent::bIsStationary' has a wrong offset!");
 static_assert(offsetof(UMagicLeapImageTrackerComponent, bUseUnreliablePose) == 0x000235, "Member 'UMagicLeapImageTrackerComponent::bUseUnreliablePose' has a wrong offset!");

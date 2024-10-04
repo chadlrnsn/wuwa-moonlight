@@ -42,7 +42,7 @@ struct PuertsBlueprintLibrary_StartShareJsEnv final
 {
 public:
 	class FName                                   ModuleName;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BE7[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameInstance*                          GameInstance;                                      // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(PuertsBlueprintLibrary_StartShareJsEnv) == 0x000008, "Wrong alignment on PuertsBlueprintLibrary_StartShareJsEnv");

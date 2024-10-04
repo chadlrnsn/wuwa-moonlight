@@ -202,9 +202,9 @@ void ABP_KuroPortalCapture_C::SetCaptureTextureTarget(class UTextureRenderTarget
 // Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.SetPbDataId
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_PbdataId                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PbdataId_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroPortalCapture_C::SetPbDataId(int32 Param_PbdataId)
+void ABP_KuroPortalCapture_C::SetPbDataId(int32 PbdataId_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -213,7 +213,7 @@ void ABP_KuroPortalCapture_C::SetPbDataId(int32 Param_PbdataId)
 
 	Params::BP_KuroPortalCapture_C_SetPbDataId Parms{};
 
-	Parms.Param_PbdataId = Param_PbdataId;
+	Parms.PbdataId_0 = PbdataId_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

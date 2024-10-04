@@ -45,7 +45,7 @@ public:
 	struct FVector                                OtherAngularVelocity;                              // 0x0058(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Mass;                                              // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         OtherMass;                                         // 0x0068(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2763[0x4];                                     // 0x006C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FChaosPhysicsCollisionInfo) == 0x000008, "Wrong alignment on FChaosPhysicsCollisionInfo");
 static_assert(sizeof(FChaosPhysicsCollisionInfo) == 0x000070, "Wrong size on FChaosPhysicsCollisionInfo");
@@ -85,7 +85,7 @@ static_assert(offsetof(FChaosBreakEvent, Mass) == 0x00002C, "Member 'FChaosBreak
 struct FChaosHandlerSet final
 {
 public:
-	uint8                                         Pad_2764[0x8];                                     // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSet<class UObject*>                          ChaosHandlers;                                     // 0x0008(0x0050)(NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FChaosHandlerSet) == 0x000008, "Wrong alignment on FChaosHandlerSet");
@@ -97,7 +97,7 @@ static_assert(offsetof(FChaosHandlerSet, ChaosHandlers) == 0x000008, "Member 'FC
 struct alignas(0x10) FBreakEventCallbackWrapper final
 {
 public:
-	uint8                                         Pad_2765[0x40];                                    // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FBreakEventCallbackWrapper) == 0x000010, "Wrong alignment on FBreakEventCallbackWrapper");
 static_assert(sizeof(FBreakEventCallbackWrapper) == 0x000040, "Wrong size on FBreakEventCallbackWrapper");

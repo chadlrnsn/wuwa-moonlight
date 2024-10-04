@@ -48,11 +48,11 @@ EGooglePADErrorCode UGooglePADFunctionLibrary::CancelDownload(const TArray<class
 // Function GooglePAD.GooglePADFunctionLibrary.GetAssetPackLocation
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGooglePADErrorCode                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EGooglePADErrorCode UGooglePADFunctionLibrary::GetAssetPackLocation(const class FString& Param_Name, int32* Location)
+EGooglePADErrorCode UGooglePADFunctionLibrary::GetAssetPackLocation(const class FString& Name_0, int32* Location)
 {
 	static class UFunction* Func = nullptr;
 
@@ -61,7 +61,7 @@ EGooglePADErrorCode UGooglePADFunctionLibrary::GetAssetPackLocation(const class 
 
 	Params::GooglePADFunctionLibrary_GetAssetPackLocation Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -136,11 +136,11 @@ int32 UGooglePADFunctionLibrary::GetBytesDownloaded(const int32 State)
 // Function GooglePAD.GooglePADFunctionLibrary.GetDownloadState
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   State                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGooglePADErrorCode                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EGooglePADErrorCode UGooglePADFunctionLibrary::GetDownloadState(const class FString& Param_Name, int32* State)
+EGooglePADErrorCode UGooglePADFunctionLibrary::GetDownloadState(const class FString& Name_0, int32* State)
 {
 	static class UFunction* Func = nullptr;
 
@@ -149,7 +149,7 @@ EGooglePADErrorCode UGooglePADFunctionLibrary::GetDownloadState(const class FStr
 
 	Params::GooglePADFunctionLibrary_GetDownloadState Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -387,10 +387,10 @@ EGooglePADErrorCode UGooglePADFunctionLibrary::RequestInfo(const TArray<class FS
 // Function GooglePAD.GooglePADFunctionLibrary.RequestRemoval
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Param_Name                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGooglePADErrorCode                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EGooglePADErrorCode UGooglePADFunctionLibrary::RequestRemoval(const class FString& Param_Name)
+EGooglePADErrorCode UGooglePADFunctionLibrary::RequestRemoval(const class FString& Name_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -399,7 +399,7 @@ EGooglePADErrorCode UGooglePADFunctionLibrary::RequestRemoval(const class FStrin
 
 	Params::GooglePADFunctionLibrary_RequestRemoval Parms{};
 
-	Parms.Param_Name = std::move(Param_Name);
+	Parms.Name_0 = std::move(Name_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

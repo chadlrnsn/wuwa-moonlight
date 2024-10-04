@@ -22,7 +22,7 @@ struct FSBulletDataScale final
 {
 public:
 	struct FVector                                _____7_06C9B76548AE06E63683EBB72FF80B72;           // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31F5[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCurveVector*                           _______3_4F35AFEE45D6789ED2FD4FA147E399A1;         // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSBulletDataScale) == 0x000008, "Wrong alignment on FSBulletDataScale");

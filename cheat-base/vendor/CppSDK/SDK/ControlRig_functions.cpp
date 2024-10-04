@@ -243,11 +243,11 @@ void UControlRigComponent::ClearMappedElements()
 // Function ControlRig.ControlRigComponent.DoesElementExist
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class FName                             Param_Name                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ERigElementType                         ElementType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UControlRigComponent::DoesElementExist(class FName Param_Name, ERigElementType ElementType)
+bool UControlRigComponent::DoesElementExist(class FName Name_0, ERigElementType ElementType)
 {
 	static class UFunction* Func = nullptr;
 
@@ -256,7 +256,7 @@ bool UControlRigComponent::DoesElementExist(class FName Param_Name, ERigElementT
 
 	Params::ControlRigComponent_DoesElementExist Parms{};
 
-	Parms.Param_Name = Param_Name;
+	Parms.Name_0 = Name_0;
 	Parms.ElementType = ElementType;
 
 	auto Flgs = Func->FunctionFlags;

@@ -27,6 +27,17 @@ static_assert(alignof(TpSafeProxy_GetAntiData) == 0x000008, "Wrong alignment on 
 static_assert(sizeof(TpSafeProxy_GetAntiData) == 0x000010, "Wrong size on TpSafeProxy_GetAntiData");
 static_assert(offsetof(TpSafeProxy_GetAntiData, ReturnValue) == 0x000000, "Member 'TpSafeProxy_GetAntiData::ReturnValue' has a wrong offset!");
 
+// Function TpSafe.TpSafeProxy.GetAntiData2
+// 0x0010 (0x0010 - 0x0000)
+struct TpSafeProxy_GetAntiData2 final
+{
+public:
+	struct FArrayBuffer                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(TpSafeProxy_GetAntiData2) == 0x000008, "Wrong alignment on TpSafeProxy_GetAntiData2");
+static_assert(sizeof(TpSafeProxy_GetAntiData2) == 0x000010, "Wrong size on TpSafeProxy_GetAntiData2");
+static_assert(offsetof(TpSafeProxy_GetAntiData2, ReturnValue) == 0x000000, "Member 'TpSafeProxy_GetAntiData2::ReturnValue' has a wrong offset!");
+
 // Function TpSafe.TpSafeProxy.RecvAntiData
 // 0x0010 (0x0010 - 0x0000)
 struct TpSafeProxy_RecvAntiData final
@@ -47,7 +58,7 @@ public:
 	int32                                         WorldId;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 OpenId;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         PlayerId;                                          // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23BE[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(TpSafeProxy_SetUserInfo) == 0x000008, "Wrong alignment on TpSafeProxy_SetUserInfo");
 static_assert(sizeof(TpSafeProxy_SetUserInfo) == 0x000020, "Wrong size on TpSafeProxy_SetUserInfo");

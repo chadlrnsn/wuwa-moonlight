@@ -77,10 +77,10 @@ void UWBP_UILoading_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTim
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   InProgress                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Param_ClampProgress                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ClampProgress_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    Forece                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWBP_UILoading_C::SetProgress(float InProgress, float Param_ClampProgress, bool Forece)
+void UWBP_UILoading_C::SetProgress(float InProgress, float ClampProgress_0, bool Forece)
 {
 	static class UFunction* Func = nullptr;
 
@@ -90,7 +90,7 @@ void UWBP_UILoading_C::SetProgress(float InProgress, float Param_ClampProgress, 
 	Params::WBP_UILoading_C_SetProgress Parms{};
 
 	Parms.InProgress = InProgress;
-	Parms.Param_ClampProgress = Param_ClampProgress;
+	Parms.ClampProgress_0 = ClampProgress_0;
 	Parms.Forece = Forece;
 
 	UObject::ProcessEvent(Func, &Parms);

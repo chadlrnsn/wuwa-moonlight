@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "EHeadStateViewType_structs.hpp"
-#include "ECamp_structs.hpp"
 #include "EEntityType_structs.hpp"
+#include "ECamp_structs.hpp"
 #include "EBossStateViewType_structs.hpp"
 #include "SHardnessStageInfo_structs.hpp"
+#include "EHeadStateViewType_structs.hpp"
 #include "EGameplayFunctionType_structs.hpp"
 #include "SAiWeaponSocket_structs.hpp"
 
@@ -28,54 +28,54 @@ struct FSEntityConfig final
 {
 public:
 	int32                                         ID_4_6659AE4C423D0F3E6A0386AA4A5604AF;             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3167[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Name_72_B26D5E064DC1AC529CF5F3A55205D23B;          // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	EEntityType                                   EntityType_71_2394C47E42A1F7D7EDD7DEA424F6B1E0;    // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3168[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   Title_73_0EB141DE481709CB40FB83B67A1CC386;         // 0x0020(0x0018)(Edit, BlueprintVisible)
 	int32                                         ModleId_74_95E5A39544CE134984DFE2AAC76F6D1D;       // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsExchangeControl_75_C1594CF548F36E9FB926A3B4F907CB45; // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3169[0x3];                                     // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FName>                           Tag_76_91941A2D47FC03C82C0744A2E91F783B;           // 0x0040(0x0010)(Edit, BlueprintVisible)
 	TArray<class FName>                           InteractionId_77_DCC1F42946F3A514AA16CFA86AF993AF; // 0x0050(0x0010)(Edit, BlueprintVisible)
 	int32                                         AiControllerId_78_99513BDD4F839C2E2F09D8AAEF48FE12; // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         PropertyId_106_E3DC01C74B300E869FE232997AB06C86;   // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   StateType_80_4D4DC5DB4D653E188F578BA8217B6C6E;     // 0x0068(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_316A[0x4];                                     // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UTexture>                MapMarkId_82_0F38650E4AE2F6683B6962AB6CC3DB0D;     // 0x0078(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class UClass*                                 SpEnergyBar_84_33BC2F9B47222701E5B1C0BCE1FFDC42;   // 0x00A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECamp                                         Camp_85_2AF663F14731E7DB860AA8B175177A24;          // 0x00B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_316B[0x7];                                     // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Remarks_86_F9312D464976DB58731BA0889BEBE1A5;       // 0x00B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	TArray<class FName>                           Bones_87_7E17B16543415FBFF7BCFE9B4ED90E54;         // 0x00C8(0x0010)(Edit, BlueprintVisible)
 	int32                                         FocusPriority_88_0CFCEA5742497CF24BA50084ACC8A66C; // 0x00D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_316C[0x4];                                     // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<int32, int32>                            DropConfig_105_2935A7B8441A09A03E55E69BC35B464C;   // 0x00E0(0x0050)(Edit, BlueprintVisible)
 	int32                                         EntityPropertyID_109_051EBD4143DE5BCAA1CB70A0F02072C8; // 0x0130(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         RageModeId_207_E210D112494927E6564041B6ABEAC93A;   // 0x0134(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         HardnessModeId_113_CA4544E14763A50FFDFAEF99EF63BAB7; // 0x0138(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          BeHitIgnoreRotate_116_AE3B72E64818CD67ADD73F90DE88D394; // 0x013C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_316D[0x3];                                     // 0x013D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13D[0x3];                                      // 0x013D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<int32, int32>                            SceneOwnerDropConfig_122_0F64E73342AEFC57D77A0988070042FF; // 0x0140(0x0050)(Edit, BlueprintVisible)
 	EBossStateViewType                            BossStateViewType_127_8DE90F9F417E25B7A5D7C382AAF18749; // 0x0190(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_316E[0x7];                                     // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_191[0x7];                                      // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSHardnessStageInfo>            HardnessPercentStage_142_4D8854DD4ECAB335C33DBC977E98DC61; // 0x0198(0x0010)(Edit, BlueprintVisible)
 	EHeadStateViewType                            HeadStateViewType_128_820D156B4EE79E9195C2E09FC6848983; // 0x01A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_316F[0x3];                                     // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   HeadStateSocketName_145_2E7FF51240460C655503F7A4C808BD8A; // 0x01AC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         HeadStateZOffset_149_BBDFAA274B6CE44BDA98E79A4C9BF071; // 0x01B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         HeadStateForwardOffset_216_C8E215DD4A907B5B3F5F96B38BA7E52E; // 0x01BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EGameplayFunctionType                         SceneItemFunctionType_157_22EB97294BCCDF8406C411BA0692F4A0; // 0x01C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3170[0x3];                                     // 0x01C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C1[0x3];                                      // 0x01C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         SceneItemFunctionID_160_CB6B662D4722FEE78BAAAD858147D950; // 0x01C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSAiWeaponSocket                       AiWeaponSocket_164_90BA03D44705CEA04405C4BC968378C0; // 0x01C8(0x0058)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	int32                                         AiWeaponConfigId_173_C06D5BBB444B6C36468EFE9844069F4E; // 0x0220(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ForceLockOnCoefficient_177_AC6166B748E9BC1155CE83BF0F2DD115; // 0x0224(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         NpcMessageId_182_9E4D7A2B4A7DE3F4524E51AFF1E9CB03; // 0x0228(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3171[0x4];                                     // 0x022C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_22C[0x4];                                      // 0x022C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FString, class FString>            Param_190_2CD6BBD947E1A47E268DB6A8741C18E7;        // 0x0230(0x0050)(Edit, BlueprintVisible)
 	int32                                         AOILOD_204_0D1BF9CD48BEBC443C0D6888F7F4D945;       // 0x0280(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3172[0x4];                                     // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_284[0x4];                                      // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int64>                                 BornBuff_197_E3103F9D4AF6DC5F7B378E88898F8336;     // 0x0288(0x0010)(Edit, BlueprintVisible)
 	float                                         AffectDistance_211_D2775C164C7B583F6350DAB3836D6573; // 0x0298(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

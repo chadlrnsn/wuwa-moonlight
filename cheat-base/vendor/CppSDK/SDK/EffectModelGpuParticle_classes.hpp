@@ -25,7 +25,7 @@ public:
 	class UKuroGPUParticleDA*                     Data;                                              // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Loop;                                              // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          ReversePlay;                                       // 0x0061(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2DB1[0x6];                                     // 0x0062(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_62[0x6];                                       // 0x0062(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveVector                       Location;                                          // 0x0068(0x01A8)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FKuroCurveVector                       Rotation;                                          // 0x0210(0x01A8)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FKuroCurveVector                       Scale;                                             // 0x03B8(0x01A8)(Edit, BlueprintVisible, DisableEditOnInstance)

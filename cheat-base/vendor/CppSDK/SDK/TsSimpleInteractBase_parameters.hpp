@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SSimpleInteractResult_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SSimpleInteractResult_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -25,7 +25,7 @@ struct TsSimpleInteractBase_C_ExecuteUbergraph_TsSimpleInteractBase final
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_36A7[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(TsSimpleInteractBase_C_ExecuteUbergraph_TsSimpleInteractBase) == 0x000004, "Wrong alignment on TsSimpleInteractBase_C_ExecuteUbergraph_TsSimpleInteractBase");

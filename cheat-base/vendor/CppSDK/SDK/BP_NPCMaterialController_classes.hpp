@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SHolographicMaterialsCache_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EHolographicState_structs.hpp"
+#include "SHolographicMaterialsCache_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
@@ -32,7 +32,7 @@ public:
 	float                                         TimeCounter;                                       // 0x00F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EHolographicState                             State;                                             // 0x00F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bCached;                                           // 0x00F5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2C95[0x2];                                     // 0x00F6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F6[0x2];                                       // 0x00F6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class USkeletalMeshComponent*, struct FSHolographicMaterialsCache> ComponentMaterialsCache;                           // 0x00F8(0x0050)(Edit, BlueprintVisible, ContainsInstancedReference)
 	bool                                          EnableBattle;                                      // 0x0148(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
@@ -40,7 +40,7 @@ public:
 	void ExecuteUbergraph_BP_NPCMaterialController(int32 EntryPoint);
 	void CustomTickOnce();
 	void ReceiveTick(float DeltaSeconds);
-	void CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& Floats, TArray<struct FSMaterialControllerColorParameter>& Colors, class UMaterialInstanceDynamic* Material, bool bReplaceMaterial, int32 Param_Index, struct FSMaterialParamCache* Result);
+	void CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& Floats, TArray<struct FSMaterialControllerColorParameter>& Colors, class UMaterialInstanceDynamic* Material, bool bReplaceMaterial, int32 Index_0, struct FSMaterialParamCache* Result);
 	class UMaterialInstanceDynamic* CacheAndReplace(const struct FSHolographicData& SHolographicData, class UPrimitiveComponent* Self2, int32 ElementIndex, class UMaterialInstanceDynamic* Material, struct FSMaterialParamCache* CacheResult);
 	void RevertMaterialParamters(const struct FSMaterialParamCache& MaterialCache, class UMaterialInstanceDynamic** Result);
 	void Clear();

@@ -29,7 +29,7 @@ public:
 	TArray<class UEffectScreenPlayData_C*>        OrderDatas;                                        // 0x0310(0x0010)(Edit, BlueprintVisible)
 	TArray<class UEffectScreenPlayData_C*>        IndependentDatas;                                  // 0x0320(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          bEvaluateOrderEffects;                             // 0x0330(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2F51[0x7];                                     // 0x0331(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_331[0x7];                                      // 0x0331(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AUIContainerActor*                      EditorScreenRoot;                                  // 0x0338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AUIContainerActor*                      ScreenEffectFightRoot;                             // 0x0340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AUIContainerActor*                      ScreenEffectPlotRoot;                              // 0x0348(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -48,10 +48,10 @@ public:
 	void SetVisibilityOfSystem(bool Visibility, bool bOverrideFadeSpeed, float OverrideFadeSpeed);
 	void ClearSystem();
 	void UpdateLGUIMaterialParams();
-	void GetScreenEffectFightRoot(class AUIContainerActor** Param_ScreenEffectFightRoot);
+	void GetScreenEffectFightRoot(class AUIContainerActor** ScreenEffectFightRoot_0);
 	void Init_SEFight_Root();
 	void Init_SEPlotRoot();
-	void GetScreenEffectPlotRoot(class AUIContainerActor** Param_ScreenEffectPlotRoot);
+	void GetScreenEffectPlotRoot(class AUIContainerActor** ScreenEffectPlotRoot_0);
 	void SpawnPlayer(class UEffectScreenPlayData_C* Data, class ABP_ScreenEffectPlayer_C** OutputPlayer);
 	void DestroyScreenEffect(class UEffectScreenPlayData_C* Data);
 	void UpdateSEEnvironmentFactor(class UEffectScreenPlayData_C* Data, float EnvironmentFactor);

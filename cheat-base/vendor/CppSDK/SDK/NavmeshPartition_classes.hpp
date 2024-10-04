@@ -22,7 +22,7 @@ namespace SDK
 class UAudioMaterialComponent final : public USceneComponent
 {
 public:
-	uint8                                         Pad_1B49[0x18];                                    // 0x0218(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_218[0x18];                                     // 0x0218(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -44,7 +44,7 @@ class ANavmeshPartitionBaseActor : public AActor
 public:
 	class UNavmeshPartitionComponent*             NavmeshPartitionComp;                              // 0x02A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ENavPartition                                 Type;                                              // 0x02B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B4A[0x7];                                     // 0x02B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -87,7 +87,7 @@ static_assert(offsetof(ANavmeshPartitionActor, AudioMaterialComp) == 0x0002B8, "
 class UNavmeshPartitionComponent final : public USceneComponent
 {
 public:
-	uint8                                         Pad_1B4B[0x58];                                    // 0x0218(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_218[0x58];                                     // 0x0218(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -107,9 +107,9 @@ static_assert(sizeof(UNavmeshPartitionComponent) == 0x000270, "Wrong size on UNa
 class ANavmeshPartitionGlobalBaseActor : public AActor
 {
 public:
-	uint8                                         Pad_1B4C[0x8];                                     // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	ENavPartition                                 Type;                                              // 0x02B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B4D[0x7];                                     // 0x02B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -147,7 +147,7 @@ static_assert(sizeof(ANavmeshPartitionGlobalActor) == 0x0002B8, "Wrong size on A
 class UNavmeshPartitionGlobalComponent final : public USceneComponent
 {
 public:
-	uint8                                         Pad_1B4E[0xA8];                                    // 0x0218(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_218[0xA8];                                     // 0x0218(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

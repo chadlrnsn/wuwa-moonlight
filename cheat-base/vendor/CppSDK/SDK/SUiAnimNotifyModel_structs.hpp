@@ -26,7 +26,7 @@ public:
 	struct FTransform                             Transform_26_D8334638476F6D24389D87BFADF11D8C;     // 0x0010(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor)
 	TSoftObjectPtr<class USkeletalMesh>           ModelSoft_23_8EF78B9A4A27EC85D11E16B998080DD3;     // 0x0040(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	int32                                         ModelIndex_29_DE6F758A4695D9928A5933B4646F5059;    // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3151[0x4];                                     // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UPD_CharacterControllerData_C> MaterialData_32_EF766BA94613CE5F761D8A865D1BD0B0;  // 0x0078(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class FString                                 MaterialTypeName_36_738FC29143FC65A30DE85AB74009C7A8; // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	EPerformanceRoleState                         AnimState_39_190742AD44B20F9D36FC2BBFF0F6F4E2;     // 0x00B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

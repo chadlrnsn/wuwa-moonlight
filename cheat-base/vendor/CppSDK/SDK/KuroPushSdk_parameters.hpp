@@ -238,7 +238,7 @@ public:
 	class FString                                 Tags;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Sn;                                                // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_239C[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPushSdkStaticLibrary_SetTag) == 0x000008, "Wrong alignment on KuroPushSdkStaticLibrary_SetTag");
 static_assert(sizeof(KuroPushSdkStaticLibrary_SetTag) == 0x000028, "Wrong size on KuroPushSdkStaticLibrary_SetTag");
@@ -269,7 +269,7 @@ public:
 	class FString                                 Alias;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Sn;                                                // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsSelf;                                            // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_239D[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPushSdkStaticLibrary_UnBindAlias) == 0x000008, "Wrong alignment on KuroPushSdkStaticLibrary_UnBindAlias");
 static_assert(sizeof(KuroPushSdkStaticLibrary_UnBindAlias) == 0x000028, "Wrong size on KuroPushSdkStaticLibrary_UnBindAlias");

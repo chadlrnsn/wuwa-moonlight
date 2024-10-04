@@ -22,7 +22,7 @@ struct FSRoleQualityInfo final
 {
 public:
 	class FName                                   _____3_443E186B4B8F47A17F04AD980E3834EC;           // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_28A3[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UTexture2D>              __Icon_10_627054A2425DD9BDC4A9BB88942A681F;        // 0x0010(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TSoftObjectPtr<class UTexture2D>              AL___FIcon_9_3F51DC6446AFA0A9E27839BC8F517AE4;     // 0x0040(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	struct FLinearColor                           ___r_13_5628DC5E4F30B5935F24AD9D78921CD1;          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

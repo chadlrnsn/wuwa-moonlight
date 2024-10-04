@@ -23,7 +23,7 @@ class alignas(0x10) UCommandService final : public UObject
 {
 public:
 	FMulticastInlineDelegateProperty_             OnReceivedCommand;                                 // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1789[0x30];                                    // 0x0040(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x30];                                      // 0x0040(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void EnableRecvLog(bool IsEnable);

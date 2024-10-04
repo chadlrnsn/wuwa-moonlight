@@ -29,7 +29,7 @@ public:
 	static void __Actorh_P__(class AActor* Actor, float _l, float __, float ___0, class UObject* __WorldContext, struct FVector* P__);
 	static bool ___K(class UObject* Context, const struct FVector& Start, const struct FVector& End, ETraceTypeQuery TraceChannel, bool bTraceComplex, EDrawDebugTrace DrawDebugType, bool bIgnoreSelf, const struct FLinearColor& TraceColor, const struct FLinearColor& TraceHitColor, float DrawTime, class UObject* __WorldContext, struct FHitResult* OutHit);
 	static void __l_(float Input, class UObject* __WorldContext, float* Output);
-	static void _____(float Param______, float ___, class UCurveFloat* __, class UObject* __WorldContext, float* ____0);
+	static void _____(float ______0, float ___, class UCurveFloat* __, class UObject* __WorldContext, float* ____0);
 	static void _______(float ______, float ___, class UCurveVector* ____, class UObject* __WorldContext, struct FVector* ____0);
 	static void ____h_P__(const struct FRotator& ___l, const struct FVector& __P_, float _l, float __, float ___0, class UObject* __WorldContext, struct FVector* P__);
 	static void _nP_H_(class ATsBaseCharacter_C* _n_a, class UPD_CharacterControllerData_C* P_Mn, class UObject* __WorldContext, int32* Handle);

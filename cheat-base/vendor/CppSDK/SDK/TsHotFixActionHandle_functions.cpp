@@ -19,15 +19,21 @@ namespace SDK
 
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnPressActionCallback__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FKey                             KeyName                                                (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::OnPressActionCallback__DelegateSignature()
+void UTsHotFixActionHandle_C::OnPressActionCallback__DelegateSignature(const struct FKey& KeyName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsHotFixActionHandle_C", "OnPressActionCallback__DelegateSignature");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature Parms{};
+
+	Parms.KeyName = std::move(KeyName);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -61,39 +67,51 @@ void UTsHotFixActionHandle_C::OnTouchMovedActionCallback__DelegateSignature()
 
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnPressAction
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FKey                             KeyName                                                (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::OnPressAction()
+void UTsHotFixActionHandle_C::OnPressAction(const struct FKey& KeyName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsHotFixActionHandle_C", "OnPressAction");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::TsHotFixActionHandle_C_OnPressAction Parms{};
+
+	Parms.KeyName = std::move(KeyName);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnReleaseAction
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FKey                             KeyName                                                (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::OnReleaseAction()
+void UTsHotFixActionHandle_C::OnReleaseAction(const struct FKey& KeyName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsHotFixActionHandle_C", "OnReleaseAction");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::TsHotFixActionHandle_C_OnReleaseAction Parms{};
+
+	Parms.KeyName = std::move(KeyName);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddPressBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_ActionName                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           ActionName_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class ABasePlayerController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::AddPressBinding(const class FString& Param_ActionName, class ABasePlayerController* Controller)
+void UTsHotFixActionHandle_C::AddPressBinding(const class FString& ActionName_0, class ABasePlayerController* Controller)
 {
 	static class UFunction* Func = nullptr;
 
@@ -102,7 +120,7 @@ void UTsHotFixActionHandle_C::AddPressBinding(const class FString& Param_ActionN
 
 	Params::TsHotFixActionHandle_C_AddPressBinding Parms{};
 
-	Parms.Param_ActionName = std::move(Param_ActionName);
+	Parms.ActionName_0 = std::move(ActionName_0);
 	Parms.Controller = Controller;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -112,10 +130,10 @@ void UTsHotFixActionHandle_C::AddPressBinding(const class FString& Param_ActionN
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddReleaseBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Param_ActionName                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           ActionName_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class ABasePlayerController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::AddReleaseBinding(const class FString& Param_ActionName, class ABasePlayerController* Controller)
+void UTsHotFixActionHandle_C::AddReleaseBinding(const class FString& ActionName_0, class ABasePlayerController* Controller)
 {
 	static class UFunction* Func = nullptr;
 
@@ -124,7 +142,7 @@ void UTsHotFixActionHandle_C::AddReleaseBinding(const class FString& Param_Actio
 
 	Params::TsHotFixActionHandle_C_AddReleaseBinding Parms{};
 
-	Parms.Param_ActionName = std::move(Param_ActionName);
+	Parms.ActionName_0 = std::move(ActionName_0);
 	Parms.Controller = Controller;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -174,10 +192,10 @@ void UTsHotFixActionHandle_C::AddTouchReleaseBinding(class ABasePlayerController
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnTouchPressAction
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ETouchIndex                             Param_TouchIndex                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ETouchIndex                             TouchIndex_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          Position                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::OnTouchPressAction(ETouchIndex Param_TouchIndex, const struct FVector& Position)
+void UTsHotFixActionHandle_C::OnTouchPressAction(ETouchIndex TouchIndex_0, const struct FVector& Position)
 {
 	static class UFunction* Func = nullptr;
 
@@ -186,7 +204,7 @@ void UTsHotFixActionHandle_C::OnTouchPressAction(ETouchIndex Param_TouchIndex, c
 
 	Params::TsHotFixActionHandle_C_OnTouchPressAction Parms{};
 
-	Parms.Param_TouchIndex = Param_TouchIndex;
+	Parms.TouchIndex_0 = TouchIndex_0;
 	Parms.Position = std::move(Position);
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -196,10 +214,10 @@ void UTsHotFixActionHandle_C::OnTouchPressAction(ETouchIndex Param_TouchIndex, c
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnTouchReleaseAction
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// ETouchIndex                             Param_TouchIndex                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ETouchIndex                             TouchIndex_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          Position                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::OnTouchReleaseAction(ETouchIndex Param_TouchIndex, const struct FVector& Position)
+void UTsHotFixActionHandle_C::OnTouchReleaseAction(ETouchIndex TouchIndex_0, const struct FVector& Position)
 {
 	static class UFunction* Func = nullptr;
 
@@ -208,7 +226,7 @@ void UTsHotFixActionHandle_C::OnTouchReleaseAction(ETouchIndex Param_TouchIndex,
 
 	Params::TsHotFixActionHandle_C_OnTouchReleaseAction Parms{};
 
-	Parms.Param_TouchIndex = Param_TouchIndex;
+	Parms.TouchIndex_0 = TouchIndex_0;
 	Parms.Position = std::move(Position);
 
 	UObject::ProcessEvent(Func, &Parms);

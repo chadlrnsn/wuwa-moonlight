@@ -61,6 +61,31 @@ struct FArrayBuffer UTpSafeProxy::GetAntiData()
 }
 
 
+// Function TpSafe.TpSafeProxy.GetAntiData2
+// (Final, Native, Static, Public)
+// Parameters:
+// struct FArrayBuffer                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FArrayBuffer UTpSafeProxy::GetAntiData2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TpSafeProxy", "GetAntiData2");
+
+	Params::TpSafeProxy_GetAntiData2 Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function TpSafe.TpSafeProxy.Logout
 // (Final, Native, Static, Public)
 

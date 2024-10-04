@@ -17,7 +17,7 @@ namespace globals {
 	inline APawn* AcknowledgedPawn;
 
 	inline UObject* FN_TsAnimNotifyReSkillEvent_C; // Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify
-	inline UObject* FN_TsGameplayBlueprintFunctionLibrary_C; // Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.OnHit
+	inline UObject* FN_TsAnimNotifyStateCounterAttack_C; // Function TsAnimNotifyStateCounterAttack.TsAnimNotifyStateCounterAttack_C.K2_NotifyBegin
 
 	inline bool g_ShouldDrawImGui = false;
 	inline bool g_CanDrawPostRender = false;

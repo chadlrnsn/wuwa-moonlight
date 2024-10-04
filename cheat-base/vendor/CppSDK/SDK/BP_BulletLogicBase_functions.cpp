@@ -17,6 +17,28 @@
 namespace SDK
 {
 
+// Function BP_BulletLogicBase.BP_BulletLogicBase_C.P9ô…8D
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          P9                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   EightD__                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_BulletLogicBase_C::P9___8D(class UObject* P9, float EightD__)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BulletLogicBase_C", "P9ô…8D");
+
+	Params::BP_BulletLogicBase_C_P9___8D Parms{};
+
+	Parms.P9 = P9;
+	Parms.EightD__ = EightD__;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_BulletLogicBase.BP_BulletLogicBase_C.gL
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -38,28 +60,6 @@ void UBP_BulletLogicBase_C::GL(class ATsBaseCharacter_C* ___, class ATsBaseChara
 	Parms.____0 = ____0;
 	Parms.P9pn = std::move(P9pn);
 	Parms.P9 = P9;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_BulletLogicBase.BP_BulletLogicBase_C.P9ô…8D
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          P9                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   EightD__                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBP_BulletLogicBase_C::P9___8D(class UObject* P9, float EightD__)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BulletLogicBase_C", "P9ô…8D");
-
-	Params::BP_BulletLogicBase_C_P9___8D Parms{};
-
-	Parms.P9 = P9;
-	Parms.EightD__ = EightD__;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

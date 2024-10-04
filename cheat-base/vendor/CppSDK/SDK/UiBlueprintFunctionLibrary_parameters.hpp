@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EWeaponViewName_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "EWeaponViewName_structs.hpp"
 
 
 namespace SDK::Params
@@ -34,7 +34,7 @@ struct UiBlueprintFunctionLibrary_C_AreaBeginOverlap final
 {
 public:
 	float                                         AreaId;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ABD[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_AreaBeginOverlap) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_AreaBeginOverlap");
@@ -48,7 +48,7 @@ struct UiBlueprintFunctionLibrary_C_AreaEndOverlap final
 {
 public:
 	float                                         AreaId;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ABE[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_AreaEndOverlap) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_AreaEndOverlap");
@@ -75,7 +75,7 @@ struct UiBlueprintFunctionLibrary_C_ChangeRole final
 {
 public:
 	bool                                          bUseGoBattleSkill;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2ABF[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Position;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -93,7 +93,7 @@ public:
 	int32                                         AConfigId;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         bConfigId;                                         // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CConfigId;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AC0[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_InitializeOfflineFormationInstance) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_InitializeOfflineFormationInstance");
@@ -152,7 +152,7 @@ struct UiBlueprintFunctionLibrary_C_CheckTeleport final
 {
 public:
 	int32                                         TeleportId;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AC1[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
@@ -168,7 +168,7 @@ struct UiBlueprintFunctionLibrary_C_UnLockedTeleport final
 {
 public:
 	int32                                         TeleportId;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AC2[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_UnLockedTeleport) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_UnLockedTeleport");
@@ -182,7 +182,7 @@ struct UiBlueprintFunctionLibrary_C_GetItemCountByConfigId final
 {
 public:
 	int32                                         ItemConfigId;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AC3[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -248,7 +248,7 @@ struct UiBlueprintFunctionLibrary_C_SetUiRootActive final
 {
 public:
 	bool                                          Value;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2AC4[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_SetUiRootActive) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_SetUiRootActive");
@@ -262,7 +262,7 @@ struct UiBlueprintFunctionLibrary_C_OpenShop final
 {
 public:
 	float                                         ShopId;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AC5[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_OpenShop) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_OpenShop");
@@ -287,7 +287,7 @@ struct UiBlueprintFunctionLibrary_C_OpenDragonPoolView final
 {
 public:
 	int32                                         DragonPoolId;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AC6[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_OpenDragonPoolView) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_OpenDragonPoolView");
@@ -391,7 +391,7 @@ struct UiBlueprintFunctionLibrary_C_BeginScreenEffect final
 public:
 	class FString                                 EffectPath;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	float                                         Priority;                                          // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AC7[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_BeginScreenEffect) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_BeginScreenEffect");
@@ -419,7 +419,7 @@ struct UiBlueprintFunctionLibrary_C_GetRoleMeshId final
 {
 public:
 	int32                                         RoleInfoId;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AC8[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -435,7 +435,7 @@ struct UiBlueprintFunctionLibrary_C_GetRoleEntityId final
 {
 public:
 	int32                                         RoleInfoId;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AC9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -451,7 +451,7 @@ struct UiBlueprintFunctionLibrary_C_GetRoleBaseAttrList final
 {
 public:
 	int32                                         RoleInfoId;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ACA[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMap<int32, float>                            ReturnValue;                                       // 0x0010(0x0050)(Parm, OutParm, ReturnParm)
 };
@@ -467,7 +467,7 @@ struct UiBlueprintFunctionLibrary_C_GetRoleAddAttrList final
 {
 public:
 	int32                                         RoleInfoId;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ACB[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMap<int32, float>                            ReturnValue;                                       // 0x0010(0x0050)(Parm, OutParm, ReturnParm)
 };
@@ -483,7 +483,7 @@ struct UiBlueprintFunctionLibrary_C_GetRoleCameraConfig final
 {
 public:
 	int32                                         RoleInfoId;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ACC[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
@@ -499,7 +499,7 @@ struct UiBlueprintFunctionLibrary_C_GetRoleProperty final
 {
 public:
 	int32                                         RoleInfoId;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ACD[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -515,7 +515,7 @@ struct UiBlueprintFunctionLibrary_C_GetRoleDamageData final
 {
 public:
 	int32                                         DamageId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ACE[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<int32>                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm)
 };
@@ -564,7 +564,7 @@ struct UiBlueprintFunctionLibrary_C_SetDamageViewVisible final
 {
 public:
 	bool                                          bVisible;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_2ACF[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_SetDamageViewVisible) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_SetDamageViewVisible");
@@ -578,7 +578,7 @@ struct UiBlueprintFunctionLibrary_C_SetHeadStateVisible final
 {
 public:
 	bool                                          bVisible;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_2AD0[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_SetHeadStateVisible) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_SetHeadStateVisible");
@@ -592,7 +592,7 @@ struct UiBlueprintFunctionLibrary_C_SetBossStateVisible final
 {
 public:
 	bool                                          bVisible;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_2AD1[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_SetBossStateVisible) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_SetBossStateVisible");
@@ -632,7 +632,7 @@ struct UiBlueprintFunctionLibrary_C_TestSceneSaveNetMode final
 {
 public:
 	bool                                          Value;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_2AD2[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_TestSceneSaveNetMode) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_TestSceneSaveNetMode");
@@ -672,7 +672,7 @@ struct UiBlueprintFunctionLibrary_C_SetTempLocation final
 {
 public:
 	struct FVector                                CameraLocation;                                    // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2AD3[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_SetTempLocation) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_SetTempLocation");
@@ -697,7 +697,7 @@ struct UiBlueprintFunctionLibrary_C_TestSceneSaveBornMode1 final
 {
 public:
 	bool                                          Mode1;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_2AD4[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_TestSceneSaveBornMode1) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_TestSceneSaveBornMode1");
@@ -724,7 +724,7 @@ struct UiBlueprintFunctionLibrary_C_TestSceneSaveGender final
 {
 public:
 	bool                                          IsMale;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_2AD5[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_TestSceneSaveGender) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_TestSceneSaveGender");
@@ -738,10 +738,10 @@ struct UiBlueprintFunctionLibrary_C_SetPartStateVisible final
 {
 public:
 	float                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AD6[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 boneName;                                          // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          bVisible;                                          // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_2AD7[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_SetPartStateVisible) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_SetPartStateVisible");
@@ -822,7 +822,7 @@ struct UiBlueprintFunctionLibrary_C_SetUiStartSequenceFrame final
 {
 public:
 	float                                         Frame;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AD8[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_SetUiStartSequenceFrame) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_SetUiStartSequenceFrame");
@@ -836,7 +836,7 @@ struct UiBlueprintFunctionLibrary_C_SetUiEndSequenceFrame final
 {
 public:
 	float                                         Frame;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AD9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_SetUiEndSequenceFrame) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_SetUiEndSequenceFrame");
@@ -900,7 +900,7 @@ struct UiBlueprintFunctionLibrary_C_GachaClick final
 {
 public:
 	bool                                          IsPress;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2ADA[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_GachaClick) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_GachaClick");
@@ -925,7 +925,7 @@ struct UiBlueprintFunctionLibrary_C_SetIsSilentLogin final
 {
 public:
 	bool                                          Value;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2ADB[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_SetIsSilentLogin) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_SetIsSilentLogin");
@@ -1009,7 +1009,7 @@ struct UiBlueprintFunctionLibrary_C_PlayBattleNormalTip final
 public:
 	class FString                                 TextKey;                                           // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	float                                         Duration;                                          // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2ADC[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(UiBlueprintFunctionLibrary_C_PlayBattleNormalTip) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_PlayBattleNormalTip");
@@ -1030,6 +1030,45 @@ static_assert(alignof(UiBlueprintFunctionLibrary_C_ShowGenericPrompt) == 0x00000
 static_assert(sizeof(UiBlueprintFunctionLibrary_C_ShowGenericPrompt) == 0x000018, "Wrong size on UiBlueprintFunctionLibrary_C_ShowGenericPrompt");
 static_assert(offsetof(UiBlueprintFunctionLibrary_C_ShowGenericPrompt, Id) == 0x000000, "Member 'UiBlueprintFunctionLibrary_C_ShowGenericPrompt::Id' has a wrong offset!");
 static_assert(offsetof(UiBlueprintFunctionLibrary_C_ShowGenericPrompt, __WorldContext) == 0x000010, "Member 'UiBlueprintFunctionLibrary_C_ShowGenericPrompt::__WorldContext' has a wrong offset!");
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.TestSceneLoadBornLocation
+// 0x0018 (0x0018 - 0x0000)
+struct UiBlueprintFunctionLibrary_C_TestSceneLoadBornLocation final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                ReturnValue;                                       // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(UiBlueprintFunctionLibrary_C_TestSceneLoadBornLocation) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_TestSceneLoadBornLocation");
+static_assert(sizeof(UiBlueprintFunctionLibrary_C_TestSceneLoadBornLocation) == 0x000018, "Wrong size on UiBlueprintFunctionLibrary_C_TestSceneLoadBornLocation");
+static_assert(offsetof(UiBlueprintFunctionLibrary_C_TestSceneLoadBornLocation, __WorldContext) == 0x000000, "Member 'UiBlueprintFunctionLibrary_C_TestSceneLoadBornLocation::__WorldContext' has a wrong offset!");
+static_assert(offsetof(UiBlueprintFunctionLibrary_C_TestSceneLoadBornLocation, ReturnValue) == 0x000008, "Member 'UiBlueprintFunctionLibrary_C_TestSceneLoadBornLocation::ReturnValue' has a wrong offset!");
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.GetLocalGameDataPath
+// 0x0018 (0x0018 - 0x0000)
+struct UiBlueprintFunctionLibrary_C_GetLocalGameDataPath final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+};
+static_assert(alignof(UiBlueprintFunctionLibrary_C_GetLocalGameDataPath) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_GetLocalGameDataPath");
+static_assert(sizeof(UiBlueprintFunctionLibrary_C_GetLocalGameDataPath) == 0x000018, "Wrong size on UiBlueprintFunctionLibrary_C_GetLocalGameDataPath");
+static_assert(offsetof(UiBlueprintFunctionLibrary_C_GetLocalGameDataPath, __WorldContext) == 0x000000, "Member 'UiBlueprintFunctionLibrary_C_GetLocalGameDataPath::__WorldContext' has a wrong offset!");
+static_assert(offsetof(UiBlueprintFunctionLibrary_C_GetLocalGameDataPath, ReturnValue) == 0x000008, "Member 'UiBlueprintFunctionLibrary_C_GetLocalGameDataPath::ReturnValue' has a wrong offset!");
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.ActivitySequenceEmitEvent
+// 0x0018 (0x0018 - 0x0000)
+struct UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent final
+{
+public:
+	class FString                                 Param;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent");
+static_assert(sizeof(UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent) == 0x000018, "Wrong size on UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent");
+static_assert(offsetof(UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent, Param) == 0x000000, "Member 'UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent::Param' has a wrong offset!");
+static_assert(offsetof(UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent, __WorldContext) == 0x000010, "Member 'UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent::__WorldContext' has a wrong offset!");
 
 }
 

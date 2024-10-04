@@ -17,8 +17,10 @@ private:
 		float MinSpeed;
 		float MaxSpeed;
 		float Default = 1.0f;
+		bool bEnable = false;
 	};
 
+	
 	Speed rateSpeed		= { 2, -1, 100 };
 	Speed animSpeed		= { 2, -1, 100 };
 	Speed moveSpeed		= { 5, 1, 30 };
@@ -47,7 +49,7 @@ public:
 
 	// This should be run in the feature loop, used to run any acutal feature code like setting a value for godmode
 	void Run();
-	void Call(UObject*, UFunction*, void*);
+	void Call(UObject*, UFunction*, void*, tProcessEvent);
 };
 
 
@@ -56,25 +58,31 @@ inline void SpeedHack::DrawMenuItems()
 {
 	ImGui::Checkbox("SpeedHack", &bEnable);
 	ImGui::SameLine();
-	ImGui::Hotkey("##SpeedHack Key", kbToggle, &bSettingKey);
+	ImGui::Hotkey("##Global SpeedHack Key", kbToggle, &bSettingKey);
 
 	if (bEnable) {
 		ImGui::Text("Speed Multiplier");
+		ImGui::Checkbox("Character Dillation", &moveSpeed.bEnable);
 		ImGui::SliderFloat("##SpeedMultiplier", &moveSpeed.Speed, moveSpeed.MinSpeed, moveSpeed.MaxSpeed);
+		
 		ImGui::Text("World Speed Multiplier");
+		ImGui::Checkbox("World Dillation", &worldSpeed.bEnable);
 		ImGui::SliderFloat("##WorldSpeed", &worldSpeed.Speed, worldSpeed.MinSpeed, worldSpeed.MaxSpeed);
+
 		ImGui::Text("Rate Speed (sequences)");
+		ImGui::Checkbox("Rate Speed", &rateSpeed.bEnable);
 		ImGui::SliderFloat("##RateSpeed", &rateSpeed.Speed, rateSpeed.MinSpeed, rateSpeed.MaxSpeed);
 	}
 }
 
 inline void SpeedHack::Run()
 {
+	if (!AcknowledgedPawn) return;
 
 	HandleKeys();
 
-	// Character speedhack
-	if (bEnable && AcknowledgedPawn)
+	// Character dilation
+	if (bEnable)
 	{
 		AcknowledgedPawn->CustomTimeDilation = moveSpeed.Speed;
 		bOnce = false;
@@ -86,7 +94,7 @@ inline void SpeedHack::Run()
 		bOnce = true;
 	}
 
-	// World speedhack
+	// World dilation
 	if (bEnable && World && World->PersistentLevel)
 	{
 
@@ -101,23 +109,26 @@ inline void SpeedHack::Run()
 	}
 }
 
-inline void SpeedHack::Call(UObject* Object, UFunction* Function, void* Parms)
+inline void SpeedHack::Call(UObject* Object, UFunction* Function, void* Parms, tProcessEvent oProcessEvent)
 {
-	//if (Function == FN_TsAnimNotifyReSkillEvent_C) {
-	//	
-	//	Params::TsAnimNotifyReSkillEvent_C_K2_Notify* parameters = (Params::TsAnimNotifyReSkillEvent_C_K2_Notify*)Parms;
-	//	bool IsMyMesh = parameters->MeshComp == PlayerController->Character->Mesh;
+	if (Function == FN_TsAnimNotifyReSkillEvent_C) {
+		
+		Params::TsAnimNotifyReSkillEvent_C_K2_Notify* parameters = (Params::TsAnimNotifyReSkillEvent_C_K2_Notify*)Parms;
+		bool IsMyMesh = parameters->MeshComp == PlayerController->Character->Mesh;
 
-	//	if (IsMyMesh) {
-	//		//
-	//		//			billet
-	//		// 
-	//		//if (bEnable)
-	//		//	parameters->Animation->RateScale = rateSpeed.Speed;
-	//		//else
-	//		//	parameters->Animation->RateScale = rateSpeed.Default;
-	//	}
-	//}
+		if (IsMyMesh && rateSpeed.bEnable) {
+			//
+			//			billet
+			// 
+			//if (bEnable)
+				parameters->Animation->RateScale = rateSpeed.Speed;
+			//else
+				//parameters->Animation->RateScale = rateSpeed.Default;
+#ifdef _DEBUG
+				printf("rate speed changed to %.1f\n", parameters->Animation->RateScale);
+#endif
+		}
+	}
 }
 
 inline SpeedHack speedhack;

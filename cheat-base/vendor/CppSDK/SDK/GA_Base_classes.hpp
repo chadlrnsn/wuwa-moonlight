@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "KuroGAS_classes.hpp"
-#include "SSkillInfo_structs.hpp"
 #include "Engine_structs.hpp"
-#include "EPawnChannel_structs.hpp"
 #include "EAimViewState_structs.hpp"
+#include "SSkillInfo_structs.hpp"
+#include "EPawnChannel_structs.hpp"
 
 
 namespace SDK
@@ -35,25 +35,25 @@ public:
 	void K2_OnEndAbility(bool bWasCancelled);
 	void K2_ActivateAbility();
 	void _____(class ATsBaseCharacter_C** ___);
-	void __SM__MnId(class FString* Param_SM__pn_);
-	void __SM__Mn(struct FSSkillInfo* Param_SM__pn);
-	void _______3(int32 Param___, class UAnimMontage** Param____0);
+	void __SM__MnId(class FString* SM__pn__0);
+	void __SM__Mn(struct FSSkillInfo* SM__pn_0);
+	void _______3(int32 ___0, class UAnimMontage** ___1);
 	void _________0(TArray<class UAnimMontage*>* ____p_);
-	void _______2(TArray<struct FGameplayTag>* Param_____);
+	void _______2(TArray<struct FGameplayTag>* Param______0);
 	void __AbilitySystemComponent(class UBaseAbilitySystemComponent** AbilitySystemComponent);
-	void _______1(class ATsBaseCharacter_C* Param___, class AActor** Param_____);
-	void ________(bool Sb2D, float* Param___);
-	void ________0(class ATsBaseCharacter_C* Param___, const struct FGameplayTagContainer& Param____0, bool* _X_);
-	void _n_6__(const struct FVector& Param___);
-	void _n_S_____(class UPrimitiveComponent* Param___, ECollisionChannel Channel, ECollisionResponse NewResponse);
+	void _______1(class ATsBaseCharacter_C* ___0, class AActor** Param______0);
+	void ________(bool Sb2D, float* ___0);
+	void ________0(class ATsBaseCharacter_C* ___0, const struct FGameplayTagContainer& ___1, bool* _X_);
+	void _n_6__(const struct FVector& ___0);
+	void _n_S_____(class UPrimitiveComponent* ___0, ECollisionChannel Channel, ECollisionResponse NewResponse);
 	void __Tag_d__Buff(const struct FGameplayTag& Tag);
 	void ___ID__a__Buff(class ATsBaseCharacter_C* Buff_a, int64 BuffId, int32 BuffBp);
-	void __Base___(class ATsBaseCharacter_C* Param___, int32 __id, float* ___);
-	void __Current___(class ATsBaseCharacter_C* Param___, int32 __id, float* ___);
-	void ___ID_d__Buff(int64 BuffId, int32 _dBp, class ATsBaseCharacter_C* Param___);
+	void __Base___(class ATsBaseCharacter_C* ___0, int32 __id, float* ___);
+	void __Current___(class ATsBaseCharacter_C* ___0, int32 __id, float* ___);
+	void ___ID_d__Buff(int64 BuffId, int32 _dBp, class ATsBaseCharacter_C* ___0);
 	void _nP_H_(class ATsBaseCharacter_C* _n_a, class UPD_CharacterControllerData_C* P_Mn, int32* Handle);
 	void __P9(class ATsBaseCharacter_C* ___, const class FString& P9ID, const struct FTransform& ___b, const struct FVector& ____0, int32* P9);
-	void _____0(class ATsBaseCharacter_C* ___, class FName __ID, class AActor* Param_____, class FName Socket, bool* _____);
+	void _____0(class ATsBaseCharacter_C* ___, class FName __ID, class AActor* Param______0, class FName Socket, bool* _____);
 	void __(int32 MnhID, const struct FTransform& __Mn, bool* ___, class ATsBaseCharacter_C** __i, int32* _SID);
 	void _TQ(bool* TQ);
 	void _____Int(class ATsBaseCharacter_C* _r, const class FString& Key, int32* _);
@@ -64,13 +64,13 @@ public:
 	void Ninen_SID___a(int32 _SID, class ATsBaseCharacter_C** _a, bool* __0_a);
 	void ______Key_sT_a(class ATsBaseCharacter_C* _r, const class FString& Key, class ATsBaseCharacter_C** _a, bool* __0_a);
 	void _n____(class AActor* SkillTarget);
-	void b___(class ATsBaseCharacter_C* __, class AActor* Param_b___);
+	void b___(class ATsBaseCharacter_C* __, class AActor* b____0);
 	void __y_P9(class FName P9_W, bool ___PP9);
 	void ____TagBp(class ATsBaseCharacter_C* __, const struct FGameplayTag& Tag, int32* Bp);
 	void __0bP__(const struct FVector& ___, float __, struct FVector* ZerobP_, bool* _X_);
 	void _nSM__S_I_(int32 S_I_);
 	void ___e__(class UGameplayTask* __, bool* _H);
-	void ____(class AActor* Param_____, const struct FGameplayTag& __Tag);
+	void ____(class AActor* _____0, const struct FGameplayTag& __Tag);
 	float _______0(class AActor* __A, class AActor* __B);
 	int32 __v__yH(const class UObject* DA___, const struct FTransform& Transform, bool AttachToCharacter);
 	void _______(const struct FGameplayTag& Tag);
@@ -83,7 +83,7 @@ public:
 	void ____Vector(class ATsBaseCharacter_C* _r, const class FString& Key, struct FVector* _);
 	void _n__Vector(class ATsBaseCharacter_C* _r, const class FString& Key, const struct FVector& _);
 	void __SM___rActor(class ATsBaseCharacter_C** SM_r);
-	void __SMGA___pn_(class FString* Param_SM__pn_);
+	void __SMGA___pn_(class FString* SM__pn__0);
 	void P9__(const class FString& P9Id, float ____);
 	void _n__String(class ATsBaseCharacter_C* _r, const class FString& Key, const class FString& _);
 	void ____String(class ATsBaseCharacter_C* _r, const class FString& Key, class FString* String);

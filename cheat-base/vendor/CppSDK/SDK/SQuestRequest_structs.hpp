@@ -25,7 +25,7 @@ public:
 	class FName                                   QuestStepID_8_6F9258AF4F872CF33FF3FC9A8671E3ED;    // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UDataTable*                             QuestData_9_A22C6AC242EF8804245B008DF79CF68C;      // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EQuestHandleType                              QuesetHandleType_12_271AFB814CD10276702F1E8E793D477E; // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3079[0x3];                                     // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         QuestDelay_15_D63AEC39436DE8E0F6F5859D67664A84;    // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSQuestRequest) == 0x000008, "Wrong alignment on FSQuestRequest");

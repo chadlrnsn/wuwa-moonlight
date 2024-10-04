@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "StrikeType_structs.hpp"
 #include "ECamp_structs.hpp"
 #include "SrikeElement_structs.hpp"
+#include "StrikeType_structs.hpp"
 
 
 namespace SDK
@@ -24,7 +24,7 @@ struct FSStrikeInfo final
 {
 public:
 	ECamp                                         Striker_11_77EAE28142006D070E2138B652278418;       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3174[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         SrikeDirection_9_1526E71943F0F88E8059FBBF61FD09EC; // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ESrikeElement                                 Element_16_C3DA1AF64CBBBF6C6D3B1096B1DA87A9;       // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EStrikeType                                   SrikeType_19_0599865F496F666FDAED5292E2C2AF54;     // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

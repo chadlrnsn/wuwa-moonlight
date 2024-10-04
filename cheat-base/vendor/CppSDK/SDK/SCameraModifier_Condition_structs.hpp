@@ -24,7 +24,7 @@ struct FSCameraModifier_Condition final
 public:
 	ECameraModifyConditionType                    ConditionType_2_E0F00BA5468BDB9A8C3CF4AE18A8BF08;  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          AnyTag_39_0ACABC6D492EBAE1BCB46F9BD0EBB013;        // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D76[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  TagToCheck_40_3C2B224D4B7C9665BBA904B77C8345A1;    // 0x0008(0x0020)(Edit, BlueprintVisible)
 	float                                         ArmLengthMin_31_3173378D4E6948F072DBC0A9037F6969;  // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ArmLengthMax_32_892FD925435B4AA5D542CBBD2A975F80;  // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -35,7 +35,7 @@ public:
 	float                                         LockTargetDeltaPitchMin_23_979B0A624172114862F88F9C19E7B0BD; // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         LockTargetDeltaPitchMax_25_578EC5914A83D5B66426AA82F2D47B0B; // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Reverse_34_F69E18214C8243456B820E800D538172;       // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D77[0x3];                                     // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         MinLockDistance_46_10CED90B4FEB788CDCFFE08B33AA2C8C; // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         MaxLockDistance_45_75B83DDC40FE14620EAB08A1FFF59168; // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

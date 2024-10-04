@@ -23,7 +23,7 @@ struct FSNavigationGroup final
 public:
 	class FString                                 GroupName_5_4A4352724F4FB7DCAC7B1E99DB409163;      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         GroupType_34_CF445B0640A4DABDD990CDB2BA9ADE72;     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_28A5[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 PrevGroupName_2_C3E8149D474A89D8206FA2B12E32529D;  // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 NextGroupName_6_084CCE4C42A106023371A99997D409D6;  // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 InsideGroupName_55_A0683A7F4A1938CD21B3979FF0F50E22; // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
@@ -34,7 +34,7 @@ public:
 	EUINavigationPriorityMode                     VerticalPriorityMode_24_E268C647431089CCF97AC3BA9E2DB824; // 0x009B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          SelectableMemory_49_B4EED11F416769180DC1539CA5AAC7AC; // 0x009C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          AllowNavigationInSelfDynamic_58_B0CB45D44CCE272844B17F84E032F4B3; // 0x009D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_28A6[0x2];                                     // 0x009E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9E[0x2];                                       // 0x009E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UTsUiNavigationBehaviorListener_C*> ListenerList_45_EAA9FC4F4D58ACE6FB6D34AA29398B77;  // 0x00A0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	class UTsUiNavigationBehaviorListener_C*      LastSelectListener_52_2296EA704FCC240B8822DBA749E6FD16; // 0x00B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UTsUiNavigationBehaviorListener_C*      DefaultListener_61_4BC594C344FB04899405DCADA412E415; // 0x00B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

@@ -26,7 +26,7 @@ public:
 	int32                                         MaxLod;                                            // 0x03E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         LodBias;                                           // 0x03E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IgnoreSockets;                                     // 0x03E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2E91[0x3];                                     // 0x03E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3E9[0x3];                                      // 0x03E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         TalkID;                                            // 0x03EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         TalkID_SP;                                         // 0x03F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 
@@ -37,7 +37,7 @@ public:
 	TArray<class FName> GetSupportGroupNames();
 	bool GetAnimDataVector(TMap<class FName, struct FVector>* VectorCurveData);
 	bool GetAnimDataFloat(TArray<struct FNamedCurveValue>* FloatCurveData);
-	void GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** Param_ABPC_Body_V2);
+	void GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** ABPC_Body_V2_0);
 
 public:
 	static class UClass* StaticClass()

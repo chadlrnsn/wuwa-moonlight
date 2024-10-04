@@ -17,96 +17,18 @@
 namespace SDK::Params
 {
 
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.IsPointerEventDataLineTrace
-// 0x0010 (0x0010 - 0x0000)
-struct TsLguiEventSystemActor_C_IsPointerEventDataLineTrace final
-{
-public:
-	class ULGUIPointerEventData*                  PointerEventData;                                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
-};
-static_assert(alignof(TsLguiEventSystemActor_C_IsPointerEventDataLineTrace) == 0x000008, "Wrong alignment on TsLguiEventSystemActor_C_IsPointerEventDataLineTrace");
-static_assert(sizeof(TsLguiEventSystemActor_C_IsPointerEventDataLineTrace) == 0x000010, "Wrong size on TsLguiEventSystemActor_C_IsPointerEventDataLineTrace");
-static_assert(offsetof(TsLguiEventSystemActor_C_IsPointerEventDataLineTrace, PointerEventData) == 0x000000, "Member 'TsLguiEventSystemActor_C_IsPointerEventDataLineTrace::PointerEventData' has a wrong offset!");
-static_assert(offsetof(TsLguiEventSystemActor_C_IsPointerEventDataLineTrace, ReturnValue) == 0x000008, "Member 'TsLguiEventSystemActor_C_IsPointerEventDataLineTrace::ReturnValue' has a wrong offset!");
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.GetPointerEventData
-// 0x0010 (0x0010 - 0x0000)
-struct TsLguiEventSystemActor_C_GetPointerEventData final
-{
-public:
-	float                                         PointerId;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	bool                                          CreateIfNotExist;                                  // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2981[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULGUIPointerEventData*                  ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-static_assert(alignof(TsLguiEventSystemActor_C_GetPointerEventData) == 0x000008, "Wrong alignment on TsLguiEventSystemActor_C_GetPointerEventData");
-static_assert(sizeof(TsLguiEventSystemActor_C_GetPointerEventData) == 0x000010, "Wrong size on TsLguiEventSystemActor_C_GetPointerEventData");
-static_assert(offsetof(TsLguiEventSystemActor_C_GetPointerEventData, PointerId) == 0x000000, "Member 'TsLguiEventSystemActor_C_GetPointerEventData::PointerId' has a wrong offset!");
-static_assert(offsetof(TsLguiEventSystemActor_C_GetPointerEventData, CreateIfNotExist) == 0x000004, "Member 'TsLguiEventSystemActor_C_GetPointerEventData::CreateIfNotExist' has a wrong offset!");
-static_assert(offsetof(TsLguiEventSystemActor_C_GetPointerEventData, ReturnValue) == 0x000008, "Member 'TsLguiEventSystemActor_C_GetPointerEventData::ReturnValue' has a wrong offset!");
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.GetNowHitComponent
-// 0x0008 (0x0008 - 0x0000)
-struct TsLguiEventSystemActor_C_GetNowHitComponent final
-{
-public:
-	class UUIItem*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-static_assert(alignof(TsLguiEventSystemActor_C_GetNowHitComponent) == 0x000008, "Wrong alignment on TsLguiEventSystemActor_C_GetNowHitComponent");
-static_assert(sizeof(TsLguiEventSystemActor_C_GetNowHitComponent) == 0x000008, "Wrong size on TsLguiEventSystemActor_C_GetNowHitComponent");
-static_assert(offsetof(TsLguiEventSystemActor_C_GetNowHitComponent, ReturnValue) == 0x000000, "Member 'TsLguiEventSystemActor_C_GetNowHitComponent::ReturnValue' has a wrong offset!");
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchMove
-// 0x0010 (0x0010 - 0x0000)
-struct TsLguiEventSystemActor_C_InputTouchMove final
-{
-public:
-	int32                                         TouchId;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                TouchPointPosition;                                // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-static_assert(alignof(TsLguiEventSystemActor_C_InputTouchMove) == 0x000004, "Wrong alignment on TsLguiEventSystemActor_C_InputTouchMove");
-static_assert(sizeof(TsLguiEventSystemActor_C_InputTouchMove) == 0x000010, "Wrong size on TsLguiEventSystemActor_C_InputTouchMove");
-static_assert(offsetof(TsLguiEventSystemActor_C_InputTouchMove, TouchId) == 0x000000, "Member 'TsLguiEventSystemActor_C_InputTouchMove::TouchId' has a wrong offset!");
-static_assert(offsetof(TsLguiEventSystemActor_C_InputTouchMove, TouchPointPosition) == 0x000004, "Member 'TsLguiEventSystemActor_C_InputTouchMove::TouchPointPosition' has a wrong offset!");
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchTrigger
-// 0x0014 (0x0014 - 0x0000)
-struct TsLguiEventSystemActor_C_InputTouchTrigger final
-{
-public:
-	bool                                          TouchPress;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_2982[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         TouchId;                                           // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                TouchPointPosition;                                // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-static_assert(alignof(TsLguiEventSystemActor_C_InputTouchTrigger) == 0x000004, "Wrong alignment on TsLguiEventSystemActor_C_InputTouchTrigger");
-static_assert(sizeof(TsLguiEventSystemActor_C_InputTouchTrigger) == 0x000014, "Wrong size on TsLguiEventSystemActor_C_InputTouchTrigger");
-static_assert(offsetof(TsLguiEventSystemActor_C_InputTouchTrigger, TouchPress) == 0x000000, "Member 'TsLguiEventSystemActor_C_InputTouchTrigger::TouchPress' has a wrong offset!");
-static_assert(offsetof(TsLguiEventSystemActor_C_InputTouchTrigger, TouchId) == 0x000004, "Member 'TsLguiEventSystemActor_C_InputTouchTrigger::TouchId' has a wrong offset!");
-static_assert(offsetof(TsLguiEventSystemActor_C_InputTouchTrigger, TouchPointPosition) == 0x000008, "Member 'TsLguiEventSystemActor_C_InputTouchTrigger::TouchPointPosition' has a wrong offset!");
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputScroll
-// 0x0004 (0x0004 - 0x0000)
-struct TsLguiEventSystemActor_C_InputScroll final
-{
-public:
-	float                                         AxisValue;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsLguiEventSystemActor_C_InputScroll) == 0x000004, "Wrong alignment on TsLguiEventSystemActor_C_InputScroll");
-static_assert(sizeof(TsLguiEventSystemActor_C_InputScroll) == 0x000004, "Wrong size on TsLguiEventSystemActor_C_InputScroll");
-static_assert(offsetof(TsLguiEventSystemActor_C_InputScroll, AxisValue) == 0x000000, "Member 'TsLguiEventSystemActor_C_InputScroll::AxisValue' has a wrong offset!");
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTriggerForNavigation
-// 0x0001 (0x0001 - 0x0000)
-struct TsLguiEventSystemActor_C_InputTriggerForNavigation final
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTrigger
+// 0x0002 (0x0002 - 0x0000)
+struct TsLguiEventSystemActor_C_InputTrigger final
 {
 public:
 	bool                                          TriggerPress;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	EMouseButtonType                              MouseButtonType;                                   // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
-static_assert(alignof(TsLguiEventSystemActor_C_InputTriggerForNavigation) == 0x000001, "Wrong alignment on TsLguiEventSystemActor_C_InputTriggerForNavigation");
-static_assert(sizeof(TsLguiEventSystemActor_C_InputTriggerForNavigation) == 0x000001, "Wrong size on TsLguiEventSystemActor_C_InputTriggerForNavigation");
-static_assert(offsetof(TsLguiEventSystemActor_C_InputTriggerForNavigation, TriggerPress) == 0x000000, "Member 'TsLguiEventSystemActor_C_InputTriggerForNavigation::TriggerPress' has a wrong offset!");
+static_assert(alignof(TsLguiEventSystemActor_C_InputTrigger) == 0x000001, "Wrong alignment on TsLguiEventSystemActor_C_InputTrigger");
+static_assert(sizeof(TsLguiEventSystemActor_C_InputTrigger) == 0x000002, "Wrong size on TsLguiEventSystemActor_C_InputTrigger");
+static_assert(offsetof(TsLguiEventSystemActor_C_InputTrigger, TriggerPress) == 0x000000, "Member 'TsLguiEventSystemActor_C_InputTrigger::TriggerPress' has a wrong offset!");
+static_assert(offsetof(TsLguiEventSystemActor_C_InputTrigger, MouseButtonType) == 0x000001, "Member 'TsLguiEventSystemActor_C_InputTrigger::MouseButtonType' has a wrong offset!");
 
 // Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputNavigation
 // 0x0003 (0x0003 - 0x0000)
@@ -123,18 +45,96 @@ static_assert(offsetof(TsLguiEventSystemActor_C_InputNavigation, Direction) == 0
 static_assert(offsetof(TsLguiEventSystemActor_C_InputNavigation, PressOrRelease) == 0x000001, "Member 'TsLguiEventSystemActor_C_InputNavigation::PressOrRelease' has a wrong offset!");
 static_assert(offsetof(TsLguiEventSystemActor_C_InputNavigation, ForceNavigation) == 0x000002, "Member 'TsLguiEventSystemActor_C_InputNavigation::ForceNavigation' has a wrong offset!");
 
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTrigger
-// 0x0002 (0x0002 - 0x0000)
-struct TsLguiEventSystemActor_C_InputTrigger final
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTriggerForNavigation
+// 0x0001 (0x0001 - 0x0000)
+struct TsLguiEventSystemActor_C_InputTriggerForNavigation final
 {
 public:
 	bool                                          TriggerPress;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	EMouseButtonType                              MouseButtonType;                                   // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
-static_assert(alignof(TsLguiEventSystemActor_C_InputTrigger) == 0x000001, "Wrong alignment on TsLguiEventSystemActor_C_InputTrigger");
-static_assert(sizeof(TsLguiEventSystemActor_C_InputTrigger) == 0x000002, "Wrong size on TsLguiEventSystemActor_C_InputTrigger");
-static_assert(offsetof(TsLguiEventSystemActor_C_InputTrigger, TriggerPress) == 0x000000, "Member 'TsLguiEventSystemActor_C_InputTrigger::TriggerPress' has a wrong offset!");
-static_assert(offsetof(TsLguiEventSystemActor_C_InputTrigger, MouseButtonType) == 0x000001, "Member 'TsLguiEventSystemActor_C_InputTrigger::MouseButtonType' has a wrong offset!");
+static_assert(alignof(TsLguiEventSystemActor_C_InputTriggerForNavigation) == 0x000001, "Wrong alignment on TsLguiEventSystemActor_C_InputTriggerForNavigation");
+static_assert(sizeof(TsLguiEventSystemActor_C_InputTriggerForNavigation) == 0x000001, "Wrong size on TsLguiEventSystemActor_C_InputTriggerForNavigation");
+static_assert(offsetof(TsLguiEventSystemActor_C_InputTriggerForNavigation, TriggerPress) == 0x000000, "Member 'TsLguiEventSystemActor_C_InputTriggerForNavigation::TriggerPress' has a wrong offset!");
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputScroll
+// 0x0004 (0x0004 - 0x0000)
+struct TsLguiEventSystemActor_C_InputScroll final
+{
+public:
+	float                                         AxisValue;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsLguiEventSystemActor_C_InputScroll) == 0x000004, "Wrong alignment on TsLguiEventSystemActor_C_InputScroll");
+static_assert(sizeof(TsLguiEventSystemActor_C_InputScroll) == 0x000004, "Wrong size on TsLguiEventSystemActor_C_InputScroll");
+static_assert(offsetof(TsLguiEventSystemActor_C_InputScroll, AxisValue) == 0x000000, "Member 'TsLguiEventSystemActor_C_InputScroll::AxisValue' has a wrong offset!");
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchTrigger
+// 0x0014 (0x0014 - 0x0000)
+struct TsLguiEventSystemActor_C_InputTouchTrigger final
+{
+public:
+	bool                                          TouchPress;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         TouchId;                                           // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                TouchPointPosition;                                // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+static_assert(alignof(TsLguiEventSystemActor_C_InputTouchTrigger) == 0x000004, "Wrong alignment on TsLguiEventSystemActor_C_InputTouchTrigger");
+static_assert(sizeof(TsLguiEventSystemActor_C_InputTouchTrigger) == 0x000014, "Wrong size on TsLguiEventSystemActor_C_InputTouchTrigger");
+static_assert(offsetof(TsLguiEventSystemActor_C_InputTouchTrigger, TouchPress) == 0x000000, "Member 'TsLguiEventSystemActor_C_InputTouchTrigger::TouchPress' has a wrong offset!");
+static_assert(offsetof(TsLguiEventSystemActor_C_InputTouchTrigger, TouchId) == 0x000004, "Member 'TsLguiEventSystemActor_C_InputTouchTrigger::TouchId' has a wrong offset!");
+static_assert(offsetof(TsLguiEventSystemActor_C_InputTouchTrigger, TouchPointPosition) == 0x000008, "Member 'TsLguiEventSystemActor_C_InputTouchTrigger::TouchPointPosition' has a wrong offset!");
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchMove
+// 0x0010 (0x0010 - 0x0000)
+struct TsLguiEventSystemActor_C_InputTouchMove final
+{
+public:
+	int32                                         TouchId;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                TouchPointPosition;                                // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+static_assert(alignof(TsLguiEventSystemActor_C_InputTouchMove) == 0x000004, "Wrong alignment on TsLguiEventSystemActor_C_InputTouchMove");
+static_assert(sizeof(TsLguiEventSystemActor_C_InputTouchMove) == 0x000010, "Wrong size on TsLguiEventSystemActor_C_InputTouchMove");
+static_assert(offsetof(TsLguiEventSystemActor_C_InputTouchMove, TouchId) == 0x000000, "Member 'TsLguiEventSystemActor_C_InputTouchMove::TouchId' has a wrong offset!");
+static_assert(offsetof(TsLguiEventSystemActor_C_InputTouchMove, TouchPointPosition) == 0x000004, "Member 'TsLguiEventSystemActor_C_InputTouchMove::TouchPointPosition' has a wrong offset!");
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.GetNowHitComponent
+// 0x0008 (0x0008 - 0x0000)
+struct TsLguiEventSystemActor_C_GetNowHitComponent final
+{
+public:
+	class UUIItem*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+static_assert(alignof(TsLguiEventSystemActor_C_GetNowHitComponent) == 0x000008, "Wrong alignment on TsLguiEventSystemActor_C_GetNowHitComponent");
+static_assert(sizeof(TsLguiEventSystemActor_C_GetNowHitComponent) == 0x000008, "Wrong size on TsLguiEventSystemActor_C_GetNowHitComponent");
+static_assert(offsetof(TsLguiEventSystemActor_C_GetNowHitComponent, ReturnValue) == 0x000000, "Member 'TsLguiEventSystemActor_C_GetNowHitComponent::ReturnValue' has a wrong offset!");
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.GetPointerEventData
+// 0x0010 (0x0010 - 0x0000)
+struct TsLguiEventSystemActor_C_GetPointerEventData final
+{
+public:
+	float                                         PointerId;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	bool                                          CreateIfNotExist;                                  // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULGUIPointerEventData*                  ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+static_assert(alignof(TsLguiEventSystemActor_C_GetPointerEventData) == 0x000008, "Wrong alignment on TsLguiEventSystemActor_C_GetPointerEventData");
+static_assert(sizeof(TsLguiEventSystemActor_C_GetPointerEventData) == 0x000010, "Wrong size on TsLguiEventSystemActor_C_GetPointerEventData");
+static_assert(offsetof(TsLguiEventSystemActor_C_GetPointerEventData, PointerId) == 0x000000, "Member 'TsLguiEventSystemActor_C_GetPointerEventData::PointerId' has a wrong offset!");
+static_assert(offsetof(TsLguiEventSystemActor_C_GetPointerEventData, CreateIfNotExist) == 0x000004, "Member 'TsLguiEventSystemActor_C_GetPointerEventData::CreateIfNotExist' has a wrong offset!");
+static_assert(offsetof(TsLguiEventSystemActor_C_GetPointerEventData, ReturnValue) == 0x000008, "Member 'TsLguiEventSystemActor_C_GetPointerEventData::ReturnValue' has a wrong offset!");
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.IsPointerEventDataLineTrace
+// 0x0010 (0x0010 - 0x0000)
+struct TsLguiEventSystemActor_C_IsPointerEventDataLineTrace final
+{
+public:
+	class ULGUIPointerEventData*                  PointerEventData;                                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
+};
+static_assert(alignof(TsLguiEventSystemActor_C_IsPointerEventDataLineTrace) == 0x000008, "Wrong alignment on TsLguiEventSystemActor_C_IsPointerEventDataLineTrace");
+static_assert(sizeof(TsLguiEventSystemActor_C_IsPointerEventDataLineTrace) == 0x000010, "Wrong size on TsLguiEventSystemActor_C_IsPointerEventDataLineTrace");
+static_assert(offsetof(TsLguiEventSystemActor_C_IsPointerEventDataLineTrace, PointerEventData) == 0x000000, "Member 'TsLguiEventSystemActor_C_IsPointerEventDataLineTrace::PointerEventData' has a wrong offset!");
+static_assert(offsetof(TsLguiEventSystemActor_C_IsPointerEventDataLineTrace, ReturnValue) == 0x000008, "Member 'TsLguiEventSystemActor_C_IsPointerEventDataLineTrace::ReturnValue' has a wrong offset!");
 
 }
 

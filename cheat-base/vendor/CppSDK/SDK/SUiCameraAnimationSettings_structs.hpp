@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "EUiCameraAnimationTargetType_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "EUiCameraAnimationLocationType_structs.hpp"
 #include "EUiCameraAnimationRotationType_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -26,30 +26,30 @@ struct FSUiCameraAnimationSettings final
 {
 public:
 	bool                                          IsEmptyState_137_35A3DA104E73C0B4C24623A8E65E6521; // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3145[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReplaceCameraTag_135_97FB1B474D73E1DDCDA796A944C123F9; // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 Description_57_2699C81243FDF267B243358BBA97F4B9;   // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 SocketName_2_AAFC68CF40B7CB79547BDEA3767CBF3F;     // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	EUiCameraAnimationTargetType                  TargetType_63_4B5CEAC5486479B38EDA97AAB776C749;    // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EUiCameraAnimationLocationType                LocationType_5_EF25D2BD4994F34B2C49939A33385649;   // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3146[0x2];                                     // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A[0x2];                                       // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Location_8_F6BD70F5468065051D264E804809BA03;       // 0x003C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EUiCameraAnimationRotationType                RotationType_11_CC30C4DD4FC8D1B8989F31BF5B7DA29F;  // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3147[0x3];                                     // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRotator                               Rotation_14_FFA6184B46A00B877705ACA77144EF83;      // 0x004C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsTrack_102_E962456B45C27131517B3B80A2DD9885;      // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsTrackWorldLocation_101_DF6B22B5403AD1E1AB83248CF218B99E; // 0x0059(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          bOverrideTrackPitch_115_51F73C76494575C5637BD98207C8F671; // 0x005A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3148[0x1];                                     // 0x005B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5B[0x1];                                       // 0x005B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TrackPitchOverride_112_AFC05914412E39792BD3CC85DF76E59B; // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bTargetActorAsCenter_140_246A0ACB4AD5EE115D42AE91FF7BD3A5; // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3149[0x3];                                     // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                TrackLocation_98_D48F83A34EBE64CC4E14ED8D7019CF5E; // 0x0064(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ArmLength_18_7DFFED6740C21E2E0CCE478BC5514EA5;     // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                ArmOffsetLocation_22_4D2D8C614EC242BC4A37F3B033C9DFE5; // 0x0074(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               ArmOffsetRotation_26_6264F5004D7B7158D67B309F23F6CA61; // 0x0080(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ArmCollisionTest_29_4798165641A47EB2504133A22DCF4EA2; // 0x008C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_314A[0x3];                                     // 0x008D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8D[0x3];                                       // 0x008D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CameraFieldOfView_32_18D320494E237D930C76D2AB41F97110; // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         FocalDistance_50_76CE40E64216E8630D1D51BC8F2B1CD3; // 0x0094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Aperture_91_D91368A04312625350B4DCB97728044A;      // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -59,20 +59,20 @@ public:
 	TSoftObjectPtr<class ULevelSequence>          BlendInCameraSequence_118_BCE373AC40C0D79EB09C0AB0F05763B6; // 0x00A8(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	float                                         BlendInCameraSequencePlayRate_129_CFBFCC3F457E2A032A15BAB3C49FACED; // 0x00D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bRevertBlendInCameraSequence_126_EFB33A0C4550DEE59DB784886AA014E1; // 0x00DC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_314B[0x3];                                     // 0x00DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_DD[0x3];                                       // 0x00DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class ULevelSequence>          BlendOutCameraSequence_120_505CFAF7433ED0ED7C1B7281CA4D0934; // 0x00E0(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	float                                         BlendOutCameraSequencePlayRate_130_8B59E93B47D81EC6D36568862F70E966; // 0x0110(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bRevertBlendOutCameraSequence_128_10B9C99141A62215DB23D88E713697E2; // 0x0114(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	EViewTargetBlendFunction                      BlendInFunction_39_30697DD84302198D54BDE19849302655; // 0x0115(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_314C[0x2];                                     // 0x0116(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_116[0x2];                                      // 0x0116(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class ULevelSequence>          BlendInSequence_66_F98E6AF045E2028FDDD3A795C1278A60; // 0x0118(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	bool                                          bBlendInSequenceReverse_71_B2DA07AB4E4B8AF4532DDAA5A24C4A8F; // 0x0148(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_314D[0x3];                                     // 0x0149(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_149[0x3];                                      // 0x0149(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         BlendInPlayRate_86_08C8D85C48D333E2829627B8C8302681; // 0x014C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         BlendOutTime_42_0009F45D41DDA23BC7F10B8AA1499560;  // 0x0150(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         BlendOutExp_44_089F028D4AACA42E06365DB9E4F20C4B;   // 0x0154(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EViewTargetBlendFunction                      BlendOutFunction_47_F95C1D8745DCA7A61EB54D8E130A919A; // 0x0158(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_314E[0x7];                                     // 0x0159(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_159[0x7];                                      // 0x0159(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class ULevelSequence>          BlendOutSequence_78_92B4FF6F45D66BE027C61C816AF83160; // 0x0160(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	float                                         BlendOutPlayRate_88_1359BA3349E592ACE4596C9E4D8AC112; // 0x0190(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bBlendOutSequenceReverse_81_A2612ABC4C193747A4D910BAB97ED30D; // 0x0194(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)

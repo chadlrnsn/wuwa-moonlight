@@ -19,7 +19,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_BaseItem.BP_BaseItem_C
 // 0x0028 (0x02E0 - 0x02B8)
-class ABP_BaseItem_C final : public ATsBaseItem_C
+class ABP_BaseItem_C : public ATsBaseItem_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseItem_C;                      // 0x02B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -30,7 +30,7 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_BaseItem(int32 EntryPoint);
-	void ApplyEntityId(int32 Param_EntityId);
+	void ApplyEntityId(int32 EntityId_0);
 	int32 GetEntityId();
 	void ReceiveBeginPlay();
 

@@ -20,7 +20,7 @@ struct FSWaterEffectItem final
 {
 public:
 	float                                         Speed_2_F583B78840B6993AE0DE088887941E47;          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3130[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UEffectModelBase>        EffectDataRef_13_8B63B05C462B101215CC648DA1BD7DB5; // 0x0008(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TSoftObjectPtr<class UEffectModelBase>        AudioEffectDataRef_14_F30AAB8D42CE04201B859E94E8B688B8; // 0x0038(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };

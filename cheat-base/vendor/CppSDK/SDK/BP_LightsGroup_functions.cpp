@@ -40,9 +40,9 @@ void ABP_LightsGroup_C::ExecuteUbergraph_BP_LightsGroup(int32 EntryPoint)
 // Function BP_LightsGroup.BP_LightsGroup_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   Param_DeltaSeconds                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_LightsGroup_C::ReceiveTick(float Param_DeltaSeconds)
+void ABP_LightsGroup_C::ReceiveTick(float DeltaSeconds_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -51,7 +51,7 @@ void ABP_LightsGroup_C::ReceiveTick(float Param_DeltaSeconds)
 
 	Params::BP_LightsGroup_C_ReceiveTick Parms{};
 
-	Parms.Param_DeltaSeconds = Param_DeltaSeconds;
+	Parms.DeltaSeconds_0 = DeltaSeconds_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -198,10 +198,10 @@ void ABP_LightsGroup_C::ToggleLightsColorChange()
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     Param_ColorOriginal                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     Param_ColorTarget                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor                     ColorOriginal_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor                     ColorTarget_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_LightsGroup_C::LightsColorChange(float ElapsedTime, const struct FLinearColor& Param_ColorOriginal, const struct FLinearColor& Param_ColorTarget)
+void ABP_LightsGroup_C::LightsColorChange(float ElapsedTime, const struct FLinearColor& ColorOriginal_0, const struct FLinearColor& ColorTarget_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -211,8 +211,8 @@ void ABP_LightsGroup_C::LightsColorChange(float ElapsedTime, const struct FLinea
 	Params::BP_LightsGroup_C_LightsColorChange Parms{};
 
 	Parms.ElapsedTime = ElapsedTime;
-	Parms.Param_ColorOriginal = std::move(Param_ColorOriginal);
-	Parms.Param_ColorTarget = std::move(Param_ColorTarget);
+	Parms.ColorOriginal_0 = std::move(ColorOriginal_0);
+	Parms.ColorTarget_0 = std::move(ColorTarget_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

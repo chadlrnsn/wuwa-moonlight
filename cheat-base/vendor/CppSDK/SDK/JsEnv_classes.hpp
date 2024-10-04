@@ -24,7 +24,7 @@ namespace SDK
 class UJSAnimGeneratedClass final : public UAnimBlueprintGeneratedClass
 {
 public:
-	uint8                                         Pad_1BDD[0x20];                                    // 0x05D0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5D0[0x20];                                     // 0x05D0(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -44,7 +44,7 @@ static_assert(sizeof(UJSAnimGeneratedClass) == 0x0005F0, "Wrong size on UJSAnimG
 class UDynamicDelegateProxy final : public UObject
 {
 public:
-	uint8                                         Pad_1BDE[0x78];                                    // 0x0030(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x78];                                      // 0x0030(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Fire1();
@@ -170,7 +170,7 @@ public:
 	class FString                                 RawJsRootPath;                                     // 0x0040(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 V8Flags;                                           // 0x0050(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EV8GCType                                     MemoryWaringBehavior;                              // 0x0060(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BDF[0x3];                                     // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        MaxYoungGenerationSizeInMB;                        // 0x0064(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        EditorMaxOldGenerationSizeInMB;                    // 0x0068(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        MinorGCIdleBudgetInMicroSec;                       // 0x006C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -192,7 +192,7 @@ public:
 	bool                                          EnableV8DeoptimizeTrace;                           // 0x0094(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          EnableV8RuntimeTrace;                              // 0x0095(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          TraceDeoptimizedValue;                             // 0x0096(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BE0[0x1];                                     // 0x0097(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_97[0x1];                                       // 0x0097(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -254,7 +254,7 @@ static_assert(sizeof(UExtensionMethods) == 0x000030, "Wrong size on UExtensionMe
 class UJSGeneratedClass final : public UBlueprintGeneratedClass
 {
 public:
-	uint8                                         Pad_1BE1[0x20];                                    // 0x0338(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_338[0x20];                                     // 0x0338(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -274,7 +274,7 @@ static_assert(sizeof(UJSGeneratedClass) == 0x000358, "Wrong size on UJSGenerated
 class UJSGeneratedFunction final : public UFunction
 {
 public:
-	uint8                                         Pad_1BE2[0x20];                                    // 0x00E8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E8[0x20];                                      // 0x00E8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -294,7 +294,7 @@ static_assert(sizeof(UJSGeneratedFunction) == 0x000108, "Wrong size on UJSGenera
 class UJSWidgetGeneratedClass final : public UWidgetBlueprintGeneratedClass
 {
 public:
-	uint8                                         Pad_1BE3[0x20];                                    // 0x0378(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_378[0x20];                                     // 0x0378(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -352,9 +352,9 @@ static_assert(sizeof(UTypeScriptBlueprint) == 0x0000A8, "Wrong size on UTypeScri
 class UTypeScriptGeneratedClass final : public UBlueprintGeneratedClass
 {
 public:
-	uint8                                         Pad_1BE4[0x69];                                    // 0x0338(0x0069)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_338[0x69];                                     // 0x0338(0x0069)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          HasConstructor;                                    // 0x03A1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BE5[0x6];                                     // 0x03A2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A2[0x6];                                      // 0x03A2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

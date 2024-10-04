@@ -15,9 +15,10 @@
 #include <Helper.h>
 #include <globals.h>
 #include <wuwa-base/util.h>
-#include <SDKTools/SDKTools.hpp>
 #include <SDK.hpp>
 #include <Hooks/Hooks.h>
+#include <mutex>
+#include <shared_mutex>
 
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved);
 BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved);

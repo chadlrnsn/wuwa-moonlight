@@ -21,8 +21,8 @@ namespace SDK
 class UBP_BulletLogicBase_C final : public UObject
 {
 public:
-	void GL(class ATsBaseCharacter_C* ___, class ATsBaseCharacter_C* ____0, const struct FSBulletDataMain& P9pn, class UObject* P9);
 	void P9___8D(class UObject* P9, float EightD__);
+	void GL(class ATsBaseCharacter_C* ___, class ATsBaseCharacter_C* ____0, const struct FSBulletDataMain& P9pn, class UObject* P9);
 
 public:
 	static class UClass* StaticClass()

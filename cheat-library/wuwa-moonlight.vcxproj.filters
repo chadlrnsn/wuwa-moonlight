@@ -37,7 +37,6 @@
     <ClInclude Include="src\globals.h" />
     <ClInclude Include="src\Helper.h" />
     <ClInclude Include="src\Hooks\Hooks.h" />
-    <ClInclude Include="src\SDKTools\SDKTools.hpp" />
     <ClInclude Include="vendor\fonts\font.h" />
     <ClInclude Include="vendor\kiero\kiero.h" />
     <ClInclude Include="src\Menu\Menu.hpp" />

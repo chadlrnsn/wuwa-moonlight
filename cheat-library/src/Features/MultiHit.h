@@ -43,7 +43,7 @@ inline void HitMultiplier::Call(UObject* Object, UFunction* Function, void* Parm
 			for (auto i = 0; i < config::multihit::hits; i++) {
 				oProcessEvent(Object, Function, Parms);
 			}
-		}
+		} 
 		return;
 	}
 }

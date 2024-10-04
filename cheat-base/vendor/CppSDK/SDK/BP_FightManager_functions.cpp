@@ -20,18 +20,18 @@ namespace SDK
 // Function BP_FightManager.BP_FightManager_C.	¢æÑ__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               Param____                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               Param_____0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBP_FightManager_C::______DelegateSignature_1(class ATsBaseCharacter_C* Param____)
+void UBP_FightManager_C::______DelegateSignature_1(class ATsBaseCharacter_C* Param_____0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_FightManager_C", "	¢æÑ__DelegateSignature");
 
-	Params::BP_FightManager_C_______DelegateSignature Parms{};
+	Params::BP_FightManager_C_______DelegateSignature_1 Parms{};
 
-	Parms.Param____ = Param____;
+	Parms.Param_____0 = Param_____0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -40,18 +40,18 @@ void UBP_FightManager_C::______DelegateSignature_1(class ATsBaseCharacter_C* Par
 // Function BP_FightManager.BP_FightManager_C.	ˆæÑ__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               Param____                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               Param_____0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBP_FightManager_C::______DelegateSignature_0(class ATsBaseCharacter_C* Param____)
+void UBP_FightManager_C::______DelegateSignature_0(class ATsBaseCharacter_C* Param_____0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_FightManager_C", "	ˆæÑ__DelegateSignature");
 
-	Params::BP_FightManager_C_______DelegateSignature Parms{};
+	Params::BP_FightManager_C_______DelegateSignature_0 Parms{};
 
-	Parms.Param____ = Param____;
+	Parms.Param_____0 = Param_____0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -60,9 +60,9 @@ void UBP_FightManager_C::______DelegateSignature_0(class ATsBaseCharacter_C* Par
 // Function BP_FightManager.BP_FightManager_C.ûÞæÑ__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               Param____                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               Param_____0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBP_FightManager_C::______DelegateSignature(class ATsBaseCharacter_C* Param____)
+void UBP_FightManager_C::______DelegateSignature(class ATsBaseCharacter_C* Param_____0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -71,7 +71,7 @@ void UBP_FightManager_C::______DelegateSignature(class ATsBaseCharacter_C* Param
 
 	Params::BP_FightManager_C_______DelegateSignature Parms{};
 
-	Parms.Param____ = Param____;
+	Parms.Param_____0 = Param_____0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -80,9 +80,9 @@ void UBP_FightManager_C::______DelegateSignature(class ATsBaseCharacter_C* Param
 // Function BP_FightManager.BP_FightManager_C.4}aæÑ__DelegateSignature
 // (Public, Delegate, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               Param____                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               Param_____0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBP_FightManager_C::Four_a____DelegateSignature(class ATsBaseCharacter_C* Param____)
+void UBP_FightManager_C::Four_a____DelegateSignature(class ATsBaseCharacter_C* Param_____0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -91,7 +91,7 @@ void UBP_FightManager_C::Four_a____DelegateSignature(class ATsBaseCharacter_C* P
 
 	Params::BP_FightManager_C_Four_a____DelegateSignature Parms{};
 
-	Parms.Param____ = Param____;
+	Parms.Param_____0 = Param_____0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -208,7 +208,7 @@ void UBP_FightManager_C::Tick(float DeltaSeconds)
 // Function BP_FightManager.BP_FightManager_C.—Ë
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void UBP_FightManager_C::Func______()
+void UBP_FightManager_C::______0()
 {
 	static class UFunction* Func = nullptr;
 
@@ -222,9 +222,9 @@ void UBP_FightManager_C::Func______()
 // Function BP_FightManager.BP_FightManager_C.Ë
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UBP_MainGameInstance_C*           Param_Eight___                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UBP_MainGameInstance_C*           Eight____0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBP_FightManager_C::___(class UBP_MainGameInstance_C* Param_Eight___)
+void UBP_FightManager_C::___(class UBP_MainGameInstance_C* Eight____0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -233,7 +233,7 @@ void UBP_FightManager_C::___(class UBP_MainGameInstance_C* Param_Eight___)
 
 	Params::BP_FightManager_C____ Parms{};
 
-	Parms.Param_Eight___ = Param_Eight___;
+	Parms.Eight____0 = Eight____0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -383,10 +383,10 @@ void UBP_FightManager_C::_M_6(TArray<class UObject*>& Starip_)
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   ID                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSHitMapping                     Param_____                                             (Parm, OutParm, HasGetValueTypeHash)
+// struct FSHitMapping                     Param______0                                           (Parm, OutParm, HasGetValueTypeHash)
 // bool                                    __0                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UBP_FightManager_C::________(int32 ID, struct FSHitMapping* Param_____, bool* __0)
+void UBP_FightManager_C::________(int32 ID, struct FSHitMapping* Param______0, bool* __0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -399,8 +399,8 @@ void UBP_FightManager_C::________(int32 ID, struct FSHitMapping* Param_____, boo
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_____ != nullptr)
-		*Param_____ = std::move(Parms.Param_____);
+	if (Param______0 != nullptr)
+		*Param______0 = std::move(Parms.Param______0);
 
 	if (__0 != nullptr)
 		*__0 = Parms.__0;

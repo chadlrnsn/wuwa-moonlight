@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "SHitEffect_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "SReBulletDataMain_structs.hpp"
 
 
@@ -30,11 +30,11 @@ public:
 	struct FVector                                __yHMn_17_082ABA0A4774F062BDD0CD85E02D245C;        // 0x00B4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               __yH_l_18_1B99B9D14B3E3AA96D24208CA7EF3AC0;        // 0x00C0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ____19_46F239D24A594AD6CF8C4E8BFE560FFB;           // 0x00CC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3141[0x3];                                     // 0x00CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_CD[0x3];                                       // 0x00CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   ___M_31_22F05A814007A12DB636C28A4A53DC93;          // 0x00D0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                __Mn_34_0BAA9188472BB0AD5BA5E89384D7DD53;          // 0x00DC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         __I__37_EF2705B7409667DBD656E28F30DB8ABD;          // 0x00E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3142[0x4];                                     // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_EC[0x4];                                       // 0x00EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSReBulletDataMain                     __P9pn_42_2A698CA94C88094FBE5335969E4202DF;        // 0x00F0(0x0728)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class UBulletLogicType_C*                     P9_____45_237399E449F92834C865BB8BE2C9B167;        // 0x0818(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 P9hID_51_E036400F47F81D1CF5EE9EB67BEF720E;         // 0x0820(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)

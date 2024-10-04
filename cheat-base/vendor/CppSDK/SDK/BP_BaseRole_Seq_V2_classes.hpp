@@ -32,7 +32,7 @@ public:
 	float                                         HuluFX_Handle;                                     // 0x0340(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CharFX_Group_Handle;                               // 0x0344(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CharFX_Handle;                                     // 0x0348(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D39[0x4];                                     // 0x034C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34C[0x4];                                      // 0x034C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPD_CharacterControllerDataGroup_C*     DataGroup;                                         // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	class UPD_CharacterControllerData_C*          Data;                                              // 0x0358(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	class ABP_Fx_Scanning_C*                      BPScanning;                                        // 0x0360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -58,7 +58,7 @@ public:
 	void BeginSwitchPose_ToBP(class AActor* From, class AActor* To, float SwitchTime, bool ErrorLog);
 	void EndSwitchPose_ToSeq(class AActor* To, bool Log);
 	void EndSwitchPose_ToBP(class AActor* To, bool Log);
-	void GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** Param_ABPC_Body_V2);
+	void GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** ABPC_Body_V2_0);
 	bool SetAnimDataVector(const TMap<class FName, struct FVector>& VectorCurveData);
 	bool SetAnimDataFloat(const TArray<struct FNamedCurveValue>& FloatCurveData);
 	bool GetAnimDataVector(TMap<class FName, struct FVector>* VectorCurveData);

@@ -23,10 +23,10 @@ class UGooglePADFunctionLibrary final : public UBlueprintFunctionLibrary
 {
 public:
 	static EGooglePADErrorCode CancelDownload(const TArray<class FString>& AssetPacks);
-	static EGooglePADErrorCode GetAssetPackLocation(const class FString& Param_Name, int32* Location);
+	static EGooglePADErrorCode GetAssetPackLocation(const class FString& Name_0, int32* Location);
 	static class FString GetAssetsPath(const int32 Location);
 	static int32 GetBytesDownloaded(const int32 State);
-	static EGooglePADErrorCode GetDownloadState(const class FString& Param_Name, int32* State);
+	static EGooglePADErrorCode GetDownloadState(const class FString& Name_0, int32* State);
 	static EGooglePADDownloadStatus GetDownloadStatus(const int32 State);
 	static EGooglePADErrorCode GetShowCellularDataConfirmationStatus(EGooglePADCellularDataConfirmStatus* Status);
 	static EGooglePADStorageMethod GetStorageMethod(const int32 Location);
@@ -35,7 +35,7 @@ public:
 	static void ReleaseDownloadState(const int32 State);
 	static EGooglePADErrorCode RequestDownload(const TArray<class FString>& AssetPacks);
 	static EGooglePADErrorCode RequestInfo(const TArray<class FString>& AssetPacks);
-	static EGooglePADErrorCode RequestRemoval(const class FString& Param_Name);
+	static EGooglePADErrorCode RequestRemoval(const class FString& Name_0);
 	static EGooglePADErrorCode ShowCellularDataConfirmation();
 
 public:

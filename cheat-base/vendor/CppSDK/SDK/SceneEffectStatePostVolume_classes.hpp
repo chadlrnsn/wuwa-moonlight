@@ -24,15 +24,15 @@ public:
 	class UKuroPostProcessComponent*              KuroPostProcess;                                   // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	bool                                          Enabled;                                           // 0x02B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2DA5[0x3];                                     // 0x02B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B9[0x3];                                      // 0x02B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Value;                                             // 0x02BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetAirWall(float Param_Value);
-	void SetToxicFog(float Param_Value);
+	void SetAirWall(float Value_0);
+	void SetToxicFog(float Value_0);
 	void EnableVolume();
 	void DisableVolume();
-	void SetEffect(float Param_Value);
+	void SetEffect(float Value_0);
 	void SetWall_Debug();
 	void SetToxicFog_Debug();
 

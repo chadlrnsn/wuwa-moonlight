@@ -25,16 +25,16 @@ struct KuroEffectLibrary_AddSceneComponent final
 {
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                 Param_Class;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                 Class_0;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USceneComponent*                        Parent;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bDeferredFinish;                                   // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14BF[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USceneComponent*                        ReturnValue;                                       // 0x0020(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroEffectLibrary_AddSceneComponent) == 0x000008, "Wrong alignment on KuroEffectLibrary_AddSceneComponent");
 static_assert(sizeof(KuroEffectLibrary_AddSceneComponent) == 0x000028, "Wrong size on KuroEffectLibrary_AddSceneComponent");
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, Actor) == 0x000000, "Member 'KuroEffectLibrary_AddSceneComponent::Actor' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, Param_Class) == 0x000008, "Member 'KuroEffectLibrary_AddSceneComponent::Param_Class' has a wrong offset!");
+static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, Class_0) == 0x000008, "Member 'KuroEffectLibrary_AddSceneComponent::Class_0' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, Parent) == 0x000010, "Member 'KuroEffectLibrary_AddSceneComponent::Parent' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, bDeferredFinish) == 0x000018, "Member 'KuroEffectLibrary_AddSceneComponent::bDeferredFinish' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponent, ReturnValue) == 0x000020, "Member 'KuroEffectLibrary_AddSceneComponent::ReturnValue' has a wrong offset!");
@@ -45,18 +45,18 @@ struct KuroEffectLibrary_AddSceneComponentWithTransform final
 {
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                 Param_Class;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                 Class_0;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USceneComponent*                        Parent;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bDeferredFinish;                                   // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C0[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             Transform;                                         // 0x0020(0x0030)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	class USceneComponent*                        ReturnValue;                                       // 0x0050(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C1[0x8];                                     // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroEffectLibrary_AddSceneComponentWithTransform) == 0x000010, "Wrong alignment on KuroEffectLibrary_AddSceneComponentWithTransform");
 static_assert(sizeof(KuroEffectLibrary_AddSceneComponentWithTransform) == 0x000060, "Wrong size on KuroEffectLibrary_AddSceneComponentWithTransform");
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Actor) == 0x000000, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::Actor' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Param_Class) == 0x000008, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::Param_Class' has a wrong offset!");
+static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Class_0) == 0x000008, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::Class_0' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Parent) == 0x000010, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::Parent' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, bDeferredFinish) == 0x000018, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::bDeferredFinish' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Transform) == 0x000020, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::Transform' has a wrong offset!");
@@ -70,7 +70,7 @@ public:
 	class UWorld*                                 World;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UWorld*                                 Other;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C2[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroEffectLibrary_EqualWorld) == 0x000008, "Wrong alignment on KuroEffectLibrary_EqualWorld");
 static_assert(sizeof(KuroEffectLibrary_EqualWorld) == 0x000018, "Wrong size on KuroEffectLibrary_EqualWorld");
@@ -97,7 +97,7 @@ struct KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistan
 {
 public:
 	EKuroNiagaraEffectRegularType                 EffectRegularType;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C3[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance) == 0x000004, "Wrong alignment on KuroEffectLibrary_GetNiagaraEffectRegularTypeScalabilitySettingsMaxDistance");
@@ -112,7 +112,7 @@ struct KuroEffectLibrary_GetNiagaraSystemEffectRegularType final
 public:
 	class UNiagaraSystem*                         NiagaraSystem;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroNiagaraEffectRegularType                 ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C4[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroEffectLibrary_GetNiagaraSystemEffectRegularType) == 0x000008, "Wrong alignment on KuroEffectLibrary_GetNiagaraSystemEffectRegularType");
 static_assert(sizeof(KuroEffectLibrary_GetNiagaraSystemEffectRegularType) == 0x000010, "Wrong size on KuroEffectLibrary_GetNiagaraSystemEffectRegularType");
@@ -138,7 +138,7 @@ public:
 	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUIScene;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bReceivesDecals;                                   // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C5[0x2];                                     // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         TranslucencySortPriority;                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroEffectLibrary_InitModelNiagaraSpec) == 0x000008, "Wrong alignment on KuroEffectLibrary_InitModelNiagaraSpec");
@@ -155,7 +155,7 @@ struct KuroEffectLibrary_IsNiagaraComponentHasBound final
 public:
 	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C6[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroEffectLibrary_IsNiagaraComponentHasBound) == 0x000008, "Wrong alignment on KuroEffectLibrary_IsNiagaraComponentHasBound");
 static_assert(sizeof(KuroEffectLibrary_IsNiagaraComponentHasBound) == 0x000010, "Wrong size on KuroEffectLibrary_IsNiagaraComponentHasBound");
@@ -192,7 +192,7 @@ public:
 	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DeltaTime;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C7[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroEffectLibrary_SetNiagaraFrameDeltaTime) == 0x000008, "Wrong alignment on KuroEffectLibrary_SetNiagaraFrameDeltaTime");
 static_assert(sizeof(KuroEffectLibrary_SetNiagaraFrameDeltaTime) == 0x000010, "Wrong size on KuroEffectLibrary_SetNiagaraFrameDeltaTime");
@@ -230,10 +230,10 @@ public:
 	class UEffectModelLight*                      EffectModelLight;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UPointLightComponent*                   LightComponent;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bForceUpdate;                                      // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C8[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Time;                                              // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DefaultMaxLightRadius;                             // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C9[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroEffectLibrary_UpdateEffectModelLightSpec) == 0x000008, "Wrong alignment on KuroEffectLibrary_UpdateEffectModelLightSpec");
 static_assert(sizeof(KuroEffectLibrary_UpdateEffectModelLightSpec) == 0x000020, "Wrong size on KuroEffectLibrary_UpdateEffectModelLightSpec");
@@ -251,10 +251,10 @@ public:
 	class UEffectModelNiagara*                    EffectModelNiagara;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bForceUpdate;                                      // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14CA[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Time;                                              // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ExtraState;                                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14CB[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroEffectLibrary_UpdateEffectModelNiagaraSpec) == 0x000008, "Wrong alignment on KuroEffectLibrary_UpdateEffectModelNiagaraSpec");
 static_assert(sizeof(KuroEffectLibrary_UpdateEffectModelNiagaraSpec) == 0x000020, "Wrong size on KuroEffectLibrary_UpdateEffectModelNiagaraSpec");
@@ -272,7 +272,7 @@ public:
 	class UEffectModelPostProcess*                EffectModelPostProcess;                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInstanceDynamic*               DynMaterial;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bForceUpdate;                                      // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14CC[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Time;                                              // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroEffectLibrary_UpdateEffectModelPostProcessMaterial) == 0x000008, "Wrong alignment on KuroEffectLibrary_UpdateEffectModelPostProcessMaterial");
@@ -290,7 +290,7 @@ public:
 	class UEffectModelPostProcess*                EffectModelPostProcess;                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKuroPostProcessComponent*              PostProcessComponent;                              // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bForceUpdate;                                      // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14CD[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Time;                                              // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class APlayerController*                      Controller;                                        // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ACharacter*                             Character;                                         // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -349,7 +349,7 @@ struct KuroInputEvent_DoTouchCallback final
 {
 public:
 	ETouchIndex                                   TouchIndex;                                        // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14D2[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Position;                                          // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroInputEvent_DoTouchCallback) == 0x000004, "Wrong alignment on KuroInputEvent_DoTouchCallback");
@@ -439,7 +439,7 @@ public:
 	struct FGameBudgetAllocatorGroupConfig        Config;                                            // 0x0000(0x0078)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 	EGameBudgetAllocatorGlobalMode                GlobalMode;                                        // 0x0078(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EGameBudgetAllocatorActorMode                 ActorMode;                                         // 0x0079(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14F2[0x2];                                     // 0x007A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7A[0x2];                                       // 0x007A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        MaxTickInterval;                                   // 0x007C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint16                                        TickReductionStartSize;                            // 0x0080(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint16                                        TickReductionIntervalSize;                         // 0x0082(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -493,7 +493,7 @@ struct KuroLevelPlayLibrary_GetEntityIdByBaseItem final
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14F4[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroLevelPlayLibrary_GetEntityIdByBaseItem) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetEntityIdByBaseItem");
 static_assert(sizeof(KuroLevelPlayLibrary_GetEntityIdByBaseItem) == 0x000010, "Wrong size on KuroLevelPlayLibrary_GetEntityIdByBaseItem");
@@ -563,7 +563,7 @@ struct KuroResourceManager_GetAsset final
 {
 public:
 	int32                                         HandleId;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14F9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroResourceManager_GetAsset) == 0x000008, "Wrong alignment on KuroResourceManager_GetAsset");
@@ -580,7 +580,7 @@ public:
 	int32                                         HandleId;                                          // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Priority;                                          // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14FA[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroResourceManager_LoadAsyncWithId) == 0x000008, "Wrong alignment on KuroResourceManager_LoadAsyncWithId");
 static_assert(sizeof(KuroResourceManager_LoadAsyncWithId) == 0x000020, "Wrong size on KuroResourceManager_LoadAsyncWithId");
@@ -623,7 +623,7 @@ public:
 	int32                                         HandleId;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Timeout;                                           // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14FB[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroResourceManager_WaitComplete) == 0x000004, "Wrong alignment on KuroResourceManager_WaitComplete");
 static_assert(sizeof(KuroResourceManager_WaitComplete) == 0x00000C, "Wrong size on KuroResourceManager_WaitComplete");
@@ -742,7 +742,7 @@ struct KuroSequenceRuntimeFunctionLibrary_GetEndFrame final
 public:
 	class UMovieSceneSection*                     Section;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14FC[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetEndFrame) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetEndFrame");
 static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetEndFrame) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetEndFrame");
@@ -757,7 +757,7 @@ public:
 	class UMovieSceneFadeSection*                 Section;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FFrameTime                             Frame;                                             // 0x0008(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14FD[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt");
 static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt) == 0x000018, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetFadeAmountAt");
@@ -788,10 +788,10 @@ public:
 	class UMovieSceneSequence*                    Sequence;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   Tag;                                               // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         OutsideFrame;                                      // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14FE[0x8];                                     // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             OutTransfom;                                       // 0x0020(0x0030)(Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14FF[0xF];                                     // 0x0051(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0xF];                                       // 0x0051(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag) == 0x000010, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag");
 static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag) == 0x000060, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetFrameTransformByTag");
@@ -834,7 +834,7 @@ struct KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd final
 public:
 	class UMovieSceneSequence*                    Sequence;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1500[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd");
 static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetPlaybackEnd");
@@ -848,7 +848,7 @@ struct KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart final
 public:
 	class UMovieSceneSequence*                    Sequence;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1501[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart");
 static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetPlaybackStart");
@@ -888,7 +888,7 @@ struct KuroSequenceRuntimeFunctionLibrary_GetStartFrame final
 public:
 	class UMovieSceneSection*                     Section;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1502[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_GetStartFrame) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_GetStartFrame");
 static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_GetStartFrame) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_GetStartFrame");
@@ -916,7 +916,7 @@ public:
 	const class ULevelSequence*                   LevelSequences;                                    // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bStartForceStreamIn;                               // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1503[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming");
 static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_HandleSeqTexStreaming");
@@ -932,7 +932,7 @@ public:
 	class UMovieSceneSequence*                    Sequence;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   Tag;                                               // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsMuted;                                          // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1504[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag");
 static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag) == 0x000018, "Wrong size on KuroSequenceRuntimeFunctionLibrary_MuteTrackByTag");
@@ -959,7 +959,7 @@ public:
 	class UMovieSceneSection*                     Section;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FFrameTime                             Frame;                                             // 0x0008(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1505[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_SectionContains) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_SectionContains");
 static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_SectionContains) == 0x000018, "Wrong size on KuroSequenceRuntimeFunctionLibrary_SectionContains");

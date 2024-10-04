@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
+#include "CoreUObject_structs.hpp"
 #include "SMaterialControllerFloatGroup_structs.hpp"
 #include "SMaterialControllerFloatParameter_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "SMaterialControllerColorParameter_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK

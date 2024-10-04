@@ -24,7 +24,7 @@ struct XeSSBlueprintLibrary_GetDefaultXeSSQualityMode final
 public:
 	struct FIntPoint                              ScreenResolution;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EXeSSQualityMode                              ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2560[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(XeSSBlueprintLibrary_GetDefaultXeSSQualityMode) == 0x000004, "Wrong alignment on XeSSBlueprintLibrary_GetDefaultXeSSQualityMode");
 static_assert(sizeof(XeSSBlueprintLibrary_GetDefaultXeSSQualityMode) == 0x00000C, "Wrong size on XeSSBlueprintLibrary_GetDefaultXeSSQualityMode");
@@ -59,10 +59,10 @@ struct XeSSBlueprintLibrary_GetXeSSQualityModeInformation final
 {
 public:
 	EXeSSQualityMode                              QualityMode;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2561[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ScreenPercentage;                                  // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2562[0x3];                                     // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(XeSSBlueprintLibrary_GetXeSSQualityModeInformation) == 0x000004, "Wrong alignment on XeSSBlueprintLibrary_GetXeSSQualityModeInformation");
 static_assert(sizeof(XeSSBlueprintLibrary_GetXeSSQualityModeInformation) == 0x00000C, "Wrong size on XeSSBlueprintLibrary_GetXeSSQualityModeInformation");

@@ -22,7 +22,7 @@ struct FSManipulateConfig final
 {
 public:
 	class FName                                   ConfigName_2_B83FF9884D1C60F4DF6C54A78519CC1A;     // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_28A4[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSManipulatePointInfo>          ManipulatePoints_6_E3F152364E49B089E5A4F78CF74257E0; // 0x0010(0x0010)(Edit, BlueprintVisible)
 	float                                         Duration_12_74DFD9F94817F729CD3B1483D7CF097D;      // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ECaughtResultType_structs.hpp"
 #include "BP_ManagerBase_classes.hpp"
 #include "ECharacterState_structs.hpp"
-#include "ECaughtResultType_structs.hpp"
 
 
 namespace SDK
@@ -56,12 +56,12 @@ public:
 	void ___S__DelegateSignature(int32 _SID, class AActor* Entity);
 	void Sb______DelegateSignature();
 	void P9_MinusM__DelegateSignature(int32 BulletId, int32 EntityId);
-	void _r_M_______DelegateSignature(class ATsBaseCharacter_C* _r, const struct FGameplayTag& _MTag, float __M____, float Param________);
-	void _r_M1_S____DelegateSignature(class ATsBaseCharacter_C* _r, const struct FGameplayTag& _MTag, class ATsBaseCharacter_C* Param____);
-	void AI___07a___DelegateSignature(class ATsBaseCharacter_C* _r, int32 Param_Index);
+	void _r_M_______DelegateSignature(class ATsBaseCharacter_C* _r, const struct FGameplayTag& _MTag, float __M____, float ________0);
+	void _r_M1_S____DelegateSignature(class ATsBaseCharacter_C* _r, const struct FGameplayTag& _MTag, class ATsBaseCharacter_C* ____0);
+	void AI___07a___DelegateSignature(class ATsBaseCharacter_C* _r, int32 Index_0);
 	void __i____DelegateSignature();
 	void CaughtEntity__DelegateSignature(int32 RoleEntityID, int32 CaughtEntityID, const class FString& CaughtID, ECaughtResultType Result);
-	void _r___b___DelegateSignature(class ATsBaseCharacter_C* _r, ECharacterState Param____, ECharacterState Param_____0, bool __);
+	void _r___b___DelegateSignature(class ATsBaseCharacter_C* _r, ECharacterState ____0, ECharacterState ____1, bool __);
 	void S___V_____DelegateSignature(int32 _V__ID, const struct FSHitInformation& __pn);
 	void S__r_____DelegateSignature(class ATsBaseCharacter_C* _r);
 	void ______9____DelegateSignature_0(bool __e__);

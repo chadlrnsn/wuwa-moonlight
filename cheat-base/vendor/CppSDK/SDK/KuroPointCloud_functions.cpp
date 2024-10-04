@@ -262,13 +262,13 @@ int32 UKuroPointCloudInstance::GetQueryPointsNum(const struct FKuroPointCloudIns
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FKuroPointCloudInstanceQueryResultQueryResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          OutPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FQuat                            OutRotation                                            (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // struct FVector                          OutScale                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroPointCloudInstance::GetQueryPointTransform(const struct FKuroPointCloudInstanceQueryResult& QueryResult, int32 Param_Index, struct FVector* OutPosition, struct FQuat* OutRotation, struct FVector* OutScale) const
+bool UKuroPointCloudInstance::GetQueryPointTransform(const struct FKuroPointCloudInstanceQueryResult& QueryResult, int32 Index_0, struct FVector* OutPosition, struct FQuat* OutRotation, struct FVector* OutScale) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -278,7 +278,7 @@ bool UKuroPointCloudInstance::GetQueryPointTransform(const struct FKuroPointClou
 	Params::KuroPointCloudInstance_GetQueryPointTransform Parms{};
 
 	Parms.QueryResult = std::move(QueryResult);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

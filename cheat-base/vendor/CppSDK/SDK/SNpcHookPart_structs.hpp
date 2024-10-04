@@ -22,7 +22,7 @@ struct FSNpcHookPart final
 {
 public:
 	class USkeletalMesh*                          Mesh_5_5771A2684471ED0CB70046B15B01AEB1;           // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1E02[0x8];                                     // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             Transform_4_B8BFEFDC4ADC550DB69D1B8E3C2C84E4;      // 0x0010(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(FSNpcHookPart) == 0x000010, "Wrong alignment on FSNpcHookPart");

@@ -28,14 +28,14 @@ public:
 	bool                                          DetachWhenSkillEnd;                                // 0x0082(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	ESkillEffectType                              WhenSkillEnd;                                      // 0x0083(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          FasterStop;                                        // 0x0084(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29CE[0x3];                                     // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UEffectModelBase>        EffectDataAssetRef;                                // 0x0088(0x0030)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash)
 	float                                         AutoDetachTime;                                    // 0x00B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          PlayOnEnd;                                         // 0x00BC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29CF[0x3];                                     // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_BD[0x3];                                       // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  WithOutTag;                                        // 0x00C0(0x0020)(Edit, BlueprintVisible)
 	bool                                          NeedAnyTag;                                        // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_29D0[0x7];                                     // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<struct FGameplayTag, bool>               PlayNeedTags;                                      // 0x00E8(0x0050)(Edit, BlueprintVisible)
 	bool                                          IsWeaponEffect;                                    // 0x0138(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          RecycleWhenEnd;                                    // 0x0139(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -49,7 +49,7 @@ public:
 	bool K2_PostChangeProperty(const class FName PropertyName);
 	bool K2_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime);
 	void CacheEffectHandle(class USkeletalMeshComponent* MeshComp, float EffectHandle);
-	void AttachEffectToWeapon(class USkeletalMeshComponent* MeshComp, class AActor* Param_Outer, float EffectHandle);
+	void AttachEffectToWeapon(class USkeletalMeshComponent* MeshComp, class AActor* Outer_0, float EffectHandle);
 
 	class FString GetNotifyName() const;
 

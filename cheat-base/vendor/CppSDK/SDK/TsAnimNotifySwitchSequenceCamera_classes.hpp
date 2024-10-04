@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 #include "SSequenceCamera_Settings_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
@@ -20,24 +20,24 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifySwitchSequenceCamera.TsAnimNotifySwitchSequenceCamera_C
-// 0x0078 (0x00C0 - 0x0048)
+// 0x0080 (0x00C8 - 0x0048)
 class UTsAnimNotifySwitchSequenceCamera_C final : public UKuroAnimNotify
 {
 public:
-	struct FSSequenceCamera_Settings              Y__4Mn;                                            // 0x0048(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	struct FRotator                               AdditiveRotation;                                  // 0x0078(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2ECE[0x4];                                     // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CameraAttachSocket;                                // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CameraDetectSocket;                                // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	float                                         ExtraDetectSphereRadius;                           // 0x00A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                ExtraSphereLocation;                               // 0x00AC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsShowExtraSphere;                                 // 0x00B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bResetLockOnCamera;                                // 0x00B9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	ESequenceCameraAnsEffectiveClientType         _H_7_;                                             // 0x00BA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsIgnoreCharacterCollision;                        // 0x00BB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          DisableMovementInput;                              // 0x00BC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          DisableLookAtInput;                                // 0x00BD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          DisableMotionBlur;                                 // 0x00BE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSSequenceCamera_Settings              Y__4Mn;                                            // 0x0048(0x0038)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FRotator                               AdditiveRotation;                                  // 0x0080(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CameraAttachSocket;                                // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CameraDetectSocket;                                // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	float                                         ExtraDetectSphereRadius;                           // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                ExtraSphereLocation;                               // 0x00B4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsShowExtraSphere;                                 // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bResetLockOnCamera;                                // 0x00C1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	ESequenceCameraAnsEffectiveClientType         _H_7_;                                             // 0x00C2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsIgnoreCharacterCollision;                        // 0x00C3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DisableMovementInput;                              // 0x00C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DisableLookAtInput;                                // 0x00C5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DisableMotionBlur;                                 // 0x00C6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
@@ -55,20 +55,20 @@ public:
 	}
 };
 static_assert(alignof(UTsAnimNotifySwitchSequenceCamera_C) == 0x000008, "Wrong alignment on UTsAnimNotifySwitchSequenceCamera_C");
-static_assert(sizeof(UTsAnimNotifySwitchSequenceCamera_C) == 0x0000C0, "Wrong size on UTsAnimNotifySwitchSequenceCamera_C");
+static_assert(sizeof(UTsAnimNotifySwitchSequenceCamera_C) == 0x0000C8, "Wrong size on UTsAnimNotifySwitchSequenceCamera_C");
 static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, Y__4Mn) == 0x000048, "Member 'UTsAnimNotifySwitchSequenceCamera_C::Y__4Mn' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, AdditiveRotation) == 0x000078, "Member 'UTsAnimNotifySwitchSequenceCamera_C::AdditiveRotation' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, CameraAttachSocket) == 0x000088, "Member 'UTsAnimNotifySwitchSequenceCamera_C::CameraAttachSocket' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, CameraDetectSocket) == 0x000098, "Member 'UTsAnimNotifySwitchSequenceCamera_C::CameraDetectSocket' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, ExtraDetectSphereRadius) == 0x0000A8, "Member 'UTsAnimNotifySwitchSequenceCamera_C::ExtraDetectSphereRadius' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, ExtraSphereLocation) == 0x0000AC, "Member 'UTsAnimNotifySwitchSequenceCamera_C::ExtraSphereLocation' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, IsShowExtraSphere) == 0x0000B8, "Member 'UTsAnimNotifySwitchSequenceCamera_C::IsShowExtraSphere' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, bResetLockOnCamera) == 0x0000B9, "Member 'UTsAnimNotifySwitchSequenceCamera_C::bResetLockOnCamera' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, _H_7_) == 0x0000BA, "Member 'UTsAnimNotifySwitchSequenceCamera_C::_H_7_' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, IsIgnoreCharacterCollision) == 0x0000BB, "Member 'UTsAnimNotifySwitchSequenceCamera_C::IsIgnoreCharacterCollision' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, DisableMovementInput) == 0x0000BC, "Member 'UTsAnimNotifySwitchSequenceCamera_C::DisableMovementInput' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, DisableLookAtInput) == 0x0000BD, "Member 'UTsAnimNotifySwitchSequenceCamera_C::DisableLookAtInput' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, DisableMotionBlur) == 0x0000BE, "Member 'UTsAnimNotifySwitchSequenceCamera_C::DisableMotionBlur' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, AdditiveRotation) == 0x000080, "Member 'UTsAnimNotifySwitchSequenceCamera_C::AdditiveRotation' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, CameraAttachSocket) == 0x000090, "Member 'UTsAnimNotifySwitchSequenceCamera_C::CameraAttachSocket' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, CameraDetectSocket) == 0x0000A0, "Member 'UTsAnimNotifySwitchSequenceCamera_C::CameraDetectSocket' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, ExtraDetectSphereRadius) == 0x0000B0, "Member 'UTsAnimNotifySwitchSequenceCamera_C::ExtraDetectSphereRadius' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, ExtraSphereLocation) == 0x0000B4, "Member 'UTsAnimNotifySwitchSequenceCamera_C::ExtraSphereLocation' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, IsShowExtraSphere) == 0x0000C0, "Member 'UTsAnimNotifySwitchSequenceCamera_C::IsShowExtraSphere' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, bResetLockOnCamera) == 0x0000C1, "Member 'UTsAnimNotifySwitchSequenceCamera_C::bResetLockOnCamera' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, _H_7_) == 0x0000C2, "Member 'UTsAnimNotifySwitchSequenceCamera_C::_H_7_' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, IsIgnoreCharacterCollision) == 0x0000C3, "Member 'UTsAnimNotifySwitchSequenceCamera_C::IsIgnoreCharacterCollision' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, DisableMovementInput) == 0x0000C4, "Member 'UTsAnimNotifySwitchSequenceCamera_C::DisableMovementInput' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, DisableLookAtInput) == 0x0000C5, "Member 'UTsAnimNotifySwitchSequenceCamera_C::DisableLookAtInput' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, DisableMotionBlur) == 0x0000C6, "Member 'UTsAnimNotifySwitchSequenceCamera_C::DisableMotionBlur' has a wrong offset!");
 
 }
 

@@ -30,7 +30,7 @@ public:
 	int32                                         PointNumToStopDivide;                              // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         BoxLengthToStopDivide;                             // 0x02BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InstanceScale;                                     // 0x02C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_184F[0x4];                                     // 0x02C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C4[0x4];                                      // 0x02C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroPointKdTree                       KdTree;                                            // 0x02C8(0x0058)(NativeAccessSpecifierPrivate)
 	TArray<float>                                 CustomData;                                        // 0x0320(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 
@@ -106,7 +106,7 @@ public:
 
 	struct FBox GetBound() const;
 	int32 GetQueryPointsNum(const struct FKuroPointCloudInstanceQueryResult& QueryResult) const;
-	bool GetQueryPointTransform(const struct FKuroPointCloudInstanceQueryResult& QueryResult, int32 Param_Index, struct FVector* OutPosition, struct FQuat* OutRotation, struct FVector* OutScale) const;
+	bool GetQueryPointTransform(const struct FKuroPointCloudInstanceQueryResult& QueryResult, int32 Index_0, struct FVector* OutPosition, struct FQuat* OutRotation, struct FVector* OutScale) const;
 	struct FKuroPointCloudInstanceQueryResult SphereQuery(const struct FVector& SphereCenter, float SphereRadius) const;
 
 public:
@@ -132,7 +132,7 @@ class UKuroPointCloudStreamingConfig final : public UPrimaryDataAsset
 public:
 	TArray<struct FKuroPointCloudStreamingCell>   StreamingCells;                                    // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	float                                         CellSize;                                          // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1853[0x4];                                     // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ClearEmptyInstances();
@@ -160,7 +160,7 @@ class AKuroPointCloudStreamingActor final : public AActor
 public:
 	class USceneComponent*                        SceneRoot;                                         // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKuroPointCloudWorldComponent*          PointCloudWorldComponent;                          // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1855[0x18];                                    // 0x02B8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B8[0x18];                                     // 0x02B8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -183,10 +183,10 @@ class UKuroPointCloudStreamer final : public UObject
 {
 public:
 	class UKuroPointCloudStreamingConfig*         Config;                                            // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1856[0x50];                                    // 0x0038(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x50];                                      // 0x0038(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AKuroPointCloudStreamingActor*>  SpawnedActors;                                     // 0x0088(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	TArray<class AKuroPointCloudStreamingActor*>  ActorPool;                                         // 0x0098(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1857[0x18];                                    // 0x00A8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A8[0x18];                                      // 0x00A8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -240,7 +240,7 @@ class UKuroPointCloudWorldComponent final : public UActorComponent
 {
 public:
 	class FName                                   KuroPointCloudCollectionName;                      // 0x00C0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1858[0xC];                                     // 0x00CC(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_CC[0xC];                                       // 0x00CC(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroPointCloudInstance*                PointCloudInstance;                                // 0x00D8(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
@@ -268,11 +268,11 @@ static_assert(offsetof(UKuroPointCloudWorldComponent, PointCloudInstance) == 0x0
 class UKuroPointCloudWorldSystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_185A[0x8];                                     // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroPointCloudStreamer*                Streamer;                                          // 0x0040(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_185B[0x8];                                     // 0x0048(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, struct FKuroPointCloudWorldCollection> Collections;                                       // 0x0050(0x0050)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_185C[0x10];                                    // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetStreamingConfig(class UKuroPointCloudStreamingConfig* Config, float StreamingDistance);
@@ -298,10 +298,10 @@ class UKuroVirtualPointCloud2DQTree final : public UObject
 {
 public:
 	TArray<int32>                                 QTree;                                             // 0x0030(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_185E[0x8];                                     // 0x0040(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x8];                                       // 0x0040(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FIntPoint                              QTreeBoundMin;                                     // 0x0048(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FIntPoint                              QTreeBoundMax;                                     // 0x0050(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_185F[0x8];                                     // 0x0058(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             WorldToPointCloudLocal;                            // 0x0060(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
 	struct FTransform                             PointCloudLocalToWorld;                            // 0x0090(0x0030)(Edit, EditConst, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
 
@@ -339,7 +339,7 @@ class UNiagaraDataInterfaceKuroPointCloud final : public UNiagaraDataInterface
 public:
 	class UKuroPointCloudCache*                   PointCloudCache;                                   // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class FName                                   WorldCollectionName;                               // 0x0048(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1861[0x4];                                     // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

@@ -22,7 +22,7 @@ namespace SDK
 class UMovieSceneGeometryCacheSection final : public UMovieSceneSection
 {
 public:
-	struct FMovieSceneGeometryCacheParams         Params;                                            // 0x00F8(0x0048)(Edit, NativeAccessSpecifierPublic)
+	struct FMovieSceneGeometryCacheParams         Params_0;                                          // 0x00F8(0x0048)(Edit, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -36,14 +36,14 @@ public:
 };
 static_assert(alignof(UMovieSceneGeometryCacheSection) == 0x000008, "Wrong alignment on UMovieSceneGeometryCacheSection");
 static_assert(sizeof(UMovieSceneGeometryCacheSection) == 0x000140, "Wrong size on UMovieSceneGeometryCacheSection");
-static_assert(offsetof(UMovieSceneGeometryCacheSection, Params) == 0x0000F8, "Member 'UMovieSceneGeometryCacheSection::Params' has a wrong offset!");
+static_assert(offsetof(UMovieSceneGeometryCacheSection, Params_0) == 0x0000F8, "Member 'UMovieSceneGeometryCacheSection::Params_0' has a wrong offset!");
 
 // Class GeometryCacheTracks.MovieSceneGeometryCacheTrack
 // 0x0018 (0x0098 - 0x0080)
 class UMovieSceneGeometryCacheTrack final : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                         Pad_223D[0x8];                                     // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             AnimationSections;                                 // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 
 public:

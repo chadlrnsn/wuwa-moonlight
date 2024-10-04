@@ -22,7 +22,7 @@ struct FSCameraDebugTool_CameraModeInfo final
 {
 public:
 	ECustomCameraMode                             CurrentCameraMode_9_FBE5D92649640985526E46A3B7BD3356; // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_294A[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<bool>                                  CameraModeEnabledArray_17_5326FF18411EE5D3DE8DC4972809A7DE; // 0x0008(0x0010)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSCameraDebugTool_CameraModeInfo) == 0x000008, "Wrong alignment on FSCameraDebugTool_CameraModeInfo");

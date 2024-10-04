@@ -24,7 +24,7 @@ public:
 	class FString                                 CameraTag_10_655DDDBD4D7D42B6756F688E4DE82D7B;     // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CameraType_14_45FDB5FE4BA04DD4C2263E9D5D996D9D;    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         CameraPriority_11_E34E002F4A7829DA5F05EB8935B141AF; // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_310A[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSCameraDebugTool_CameraProperty> ModifiedProperties_3_13DBE554430D3185883C8598EDD78DEA; // 0x0028(0x0010)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSCameraDebugTool_SubCameraModification) == 0x000008, "Wrong alignment on FSCameraDebugTool_SubCameraModification");

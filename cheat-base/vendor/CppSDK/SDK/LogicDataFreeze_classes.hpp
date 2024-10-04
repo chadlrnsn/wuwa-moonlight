@@ -23,7 +23,7 @@ namespace SDK
 class ULogicDataFreeze_C final : public ULogicDataBase_C
 {
 public:
-	uint8                                         Pad_2CDD[0x7];                                     // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  Tags;                                              // 0x0040(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance)
 	float                                         FreezeTime;                                        // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EBulletObject                                 Target;                                            // 0x0064(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

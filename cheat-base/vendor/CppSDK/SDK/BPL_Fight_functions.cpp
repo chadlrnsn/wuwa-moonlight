@@ -31,7 +31,7 @@ void UBPL_Fight_C::_____0(class ATsBaseCharacter_C* _r, const struct FGameplayTa
 	if (Func == nullptr)
 		Func = StaticClass()->GetFunction("BPL_Fight_C", "û ~");
 
-	Params::BPL_Fight_C_____ Parms{};
+	Params::BPL_Fight_C______0 Parms{};
 
 	Parms._r = _r;
 	Parms.__ = std::move(__);
@@ -224,13 +224,13 @@ void UBPL_Fight_C::__l_(float Input, class UObject* __WorldContext, float* Outpu
 // Function BPL_Fight.BPL_Fight_C.¡—ò¿<
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// float                                   Param______                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ______0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ___                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UCurveFloat*                      __                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ____0                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPL_Fight_C::_____(float Param______, float ___, class UCurveFloat* __, class UObject* __WorldContext, float* ____0)
+void UBPL_Fight_C::_____(float ______0, float ___, class UCurveFloat* __, class UObject* __WorldContext, float* ____0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -239,7 +239,7 @@ void UBPL_Fight_C::_____(float Param______, float ___, class UCurveFloat* __, cl
 
 	Params::BPL_Fight_C______ Parms{};
 
-	Parms.Param______ = Param______;
+	Parms.______0 = ______0;
 	Parms.___ = ___;
 	Parms.__ = __;
 	Parms.__WorldContext = __WorldContext;

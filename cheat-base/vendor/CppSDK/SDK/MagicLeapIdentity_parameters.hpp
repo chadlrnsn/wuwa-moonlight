@@ -22,7 +22,7 @@ struct MagicLeapIdentity_AvailableIdentityAttributesDelegate__DelegateSignature 
 {
 public:
 	EMagicLeapIdentityError                       ResultCode;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2515[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<EMagicLeapIdentityKey>                 AvailableAttributes;                               // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MagicLeapIdentity_AvailableIdentityAttributesDelegate__DelegateSignature) == 0x000008, "Wrong alignment on MagicLeapIdentity_AvailableIdentityAttributesDelegate__DelegateSignature");
@@ -37,7 +37,7 @@ struct MagicLeapIdentity_GetAllAvailableAttributes final
 public:
 	TArray<EMagicLeapIdentityKey>                 AvailableAttributes;                               // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	EMagicLeapIdentityError                       ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2516[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapIdentity_GetAllAvailableAttributes) == 0x000008, "Wrong alignment on MagicLeapIdentity_GetAllAvailableAttributes");
 static_assert(sizeof(MagicLeapIdentity_GetAllAvailableAttributes) == 0x000018, "Wrong size on MagicLeapIdentity_GetAllAvailableAttributes");
@@ -61,7 +61,7 @@ struct MagicLeapIdentity_ModifyIdentityAttributeValueDelegate__DelegateSignature
 {
 public:
 	EMagicLeapIdentityError                       ResultCode;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2517[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<EMagicLeapIdentityKey>                 AttributesUpdatedSuccessfully;                     // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MagicLeapIdentity_ModifyIdentityAttributeValueDelegate__DelegateSignature) == 0x000008, "Wrong alignment on MagicLeapIdentity_ModifyIdentityAttributeValueDelegate__DelegateSignature");
@@ -77,7 +77,7 @@ public:
 	TArray<EMagicLeapIdentityKey>                 RequestedAttributeList;                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	TArray<struct FMagicLeapIdentityAttribute>    RequestedAttributeValues;                          // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	EMagicLeapIdentityError                       ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2518[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapIdentity_RequestAttributeValue) == 0x000008, "Wrong alignment on MagicLeapIdentity_RequestAttributeValue");
 static_assert(sizeof(MagicLeapIdentity_RequestAttributeValue) == 0x000028, "Wrong size on MagicLeapIdentity_RequestAttributeValue");
@@ -93,7 +93,7 @@ public:
 	TArray<EMagicLeapIdentityKey>                 RequestedAttributeList;                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	TDelegate<void(EMagicLeapIdentityError ResultCode, TArray<struct FMagicLeapIdentityAttribute>& AttributeValue)> ResultDelegate;                                    // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	EMagicLeapIdentityError                       ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2519[0x7];                                     // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapIdentity_RequestAttributeValueAsync) == 0x000008, "Wrong alignment on MagicLeapIdentity_RequestAttributeValueAsync");
 static_assert(sizeof(MagicLeapIdentity_RequestAttributeValueAsync) == 0x000040, "Wrong size on MagicLeapIdentity_RequestAttributeValueAsync");
@@ -107,7 +107,7 @@ struct MagicLeapIdentity_RequestIdentityAttributeValueDelegate__DelegateSignatur
 {
 public:
 	EMagicLeapIdentityError                       ResultCode;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_251A[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FMagicLeapIdentityAttribute>    AttributeValue;                                    // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MagicLeapIdentity_RequestIdentityAttributeValueDelegate__DelegateSignature) == 0x000008, "Wrong alignment on MagicLeapIdentity_RequestIdentityAttributeValueDelegate__DelegateSignature");

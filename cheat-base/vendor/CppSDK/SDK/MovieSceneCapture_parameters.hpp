@@ -257,7 +257,7 @@ public:
 	struct FCapturedPixelsID                      StreamID;                                          // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FFrameMetrics                          FrameMetrics;                                      // 0x0060(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bCopyImageData;                                    // 0x0070(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_26F5[0x7];                                     // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(UserDefinedImageCaptureProtocol_WriteImageToDisk) == 0x000008, "Wrong alignment on UserDefinedImageCaptureProtocol_WriteImageToDisk");
 static_assert(sizeof(UserDefinedImageCaptureProtocol_WriteImageToDisk) == 0x000078, "Wrong size on UserDefinedImageCaptureProtocol_WriteImageToDisk");

@@ -17,24 +17,17 @@
 namespace SDK
 {
 
-// Function BPI_EffectInterface.BPI_EffectInterface_C.GetHandle
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BPI_EffectInterface.BPI_EffectInterface_C.RemoveHandle
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void IBPI_EffectInterface_C::GetHandle(int32* Handle)
+void IBPI_EffectInterface_C::RemoveHandle()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_EffectInterface_C", "GetHandle");
+		Func = Class->GetFunction("BPI_EffectInterface_C", "RemoveHandle");
 
-	Params::BPI_EffectInterface_C_GetHandle Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Handle != nullptr)
-		*Handle = Parms.Handle;
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -58,17 +51,24 @@ void IBPI_EffectInterface_C::SetHandle(int32 Handle)
 }
 
 
-// Function BPI_EffectInterface.BPI_EffectInterface_C.RemoveHandle
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BPI_EffectInterface.BPI_EffectInterface_C.GetHandle
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_EffectInterface_C::RemoveHandle()
+void IBPI_EffectInterface_C::GetHandle(int32* Handle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_EffectInterface_C", "RemoveHandle");
+		Func = Class->GetFunction("BPI_EffectInterface_C", "GetHandle");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BPI_EffectInterface_C_GetHandle Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Handle != nullptr)
+		*Handle = Parms.Handle;
 }
 
 }

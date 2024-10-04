@@ -20,7 +20,7 @@ public:
 
 	void Render();
 
-	void Run();
+	void Run(APlayerController*);
 };
 
 
@@ -33,10 +33,11 @@ inline void WalkableFloorZ::DrawMenuItems()
 	}
 }
 
-inline void WalkableFloorZ::Run()
+inline void WalkableFloorZ::Run(APlayerController* playerController)
 {
-	SDK::UPawnMovementComponent* PawnMovement = AcknowledgedPawn->GetMovementComponent();
-	SDK::UCharacterMovementComponent* Movement = static_cast<SDK::UCharacterMovementComponent*>(PawnMovement);
+	if (!playerController) return;
+
+	SDK::UCharacterMovementComponent* Movement = playerController->Character->CharacterMovement;
 
 	if (bEnable && Movement)
 	{

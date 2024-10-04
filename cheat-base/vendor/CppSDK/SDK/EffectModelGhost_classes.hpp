@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "KuroGameplay_classes.hpp"
 #include "EEffectModelGhostComponent_structs.hpp"
 #include "KuroCurve_structs.hpp"
-#include "KuroGameplay_classes.hpp"
 
 
 namespace SDK

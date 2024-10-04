@@ -48,10 +48,10 @@ void Menu::Setup()
     };
 
     io.Fonts->AddFontDefault();
-    regular = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
-    medium  = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
-    bold    = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
-    title   = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
+    font_regular = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
+    font_medium  = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
+    font_bold    = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
+    font_title   = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
 #ifndef _DEBUG
     icons   = io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icontfont_config, iconRanges);
 #else 
@@ -59,7 +59,7 @@ void Menu::Setup()
 #endif // _DEBUG
 
 
-    io.FontDefault = regular;
+    io.FontDefault = font_regular;
 }
 
 void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors) {
@@ -167,7 +167,7 @@ void Menu::RenderMenu()
             ImVec2 leftTopChildSize = ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y * 0.16f);
             ImGui::BeginChild("LeftSide1", leftTopChildSize, false);
 
-            ImGui::PushFont(title);
+            ImGui::PushFont(font_title);
 
             ImVec2 textSize = ImGui::CalcTextSize("Moonlight");
 
@@ -224,18 +224,17 @@ void Menu::RenderMenu()
             walkFloorZ.DrawMenuItems();
             walkFloorAngle.DrawMenuItems();
             multihit.Draw();
-            godmode.Draw();
+            //godmode.Draw();
 
             break;
 
         case ESP:
-            ImGui::Text("in dev.");
+            esp.DrawMenuItems();
             break;
 
         case MISC:
             fpsUnlock.DrawMenuItems();
-            if (ImGui::Button("Force exit"))
-                ExitProcess(0);
+            if (ImGui::Button("Force exit")) ExitProcess(0);
 
             break;
 

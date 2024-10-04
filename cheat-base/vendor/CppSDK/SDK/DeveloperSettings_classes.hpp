@@ -21,7 +21,7 @@ namespace SDK
 class UDeveloperSettings : public UObject
 {
 public:
-	uint8                                         Pad_14B3[0x18];                                    // 0x0030(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x18];                                      // 0x0030(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

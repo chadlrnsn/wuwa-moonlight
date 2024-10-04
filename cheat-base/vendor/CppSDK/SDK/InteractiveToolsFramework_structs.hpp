@@ -191,7 +191,7 @@ enum class ESceneSnapQueryType : uint8
 struct alignas(0x04) FBrushStampData final
 {
 public:
-	uint8                                         Pad_26FD[0xB4];                                    // 0x0000(0x00B4)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0xB4];                                       // 0x0000(0x00B4)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FBrushStampData) == 0x000004, "Wrong alignment on FBrushStampData");
 static_assert(sizeof(FBrushStampData) == 0x0000B4, "Wrong size on FBrushStampData");
@@ -202,7 +202,7 @@ struct FBehaviorInfo final
 {
 public:
 	class UInputBehavior*                         Behavior;                                          // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_26FE[0x18];                                    // 0x0008(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8[0x18];                                       // 0x0008(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FBehaviorInfo) == 0x000008, "Wrong alignment on FBehaviorInfo");
 static_assert(sizeof(FBehaviorInfo) == 0x000020, "Wrong size on FBehaviorInfo");
@@ -213,7 +213,7 @@ static_assert(offsetof(FBehaviorInfo, Behavior) == 0x000000, "Member 'FBehaviorI
 struct alignas(0x08) FInputRayHit final
 {
 public:
-	uint8                                         Pad_26FF[0x28];                                    // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FInputRayHit) == 0x000008, "Wrong alignment on FInputRayHit");
 static_assert(sizeof(FInputRayHit) == 0x000028, "Wrong size on FInputRayHit");
@@ -223,7 +223,7 @@ static_assert(sizeof(FInputRayHit) == 0x000028, "Wrong size on FInputRayHit");
 struct alignas(0x08) FActiveGizmo final
 {
 public:
-	uint8                                         Pad_2700[0x30];                                    // 0x0000(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x30];                                       // 0x0000(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FActiveGizmo) == 0x000008, "Wrong alignment on FActiveGizmo");
 static_assert(sizeof(FActiveGizmo) == 0x000030, "Wrong size on FActiveGizmo");

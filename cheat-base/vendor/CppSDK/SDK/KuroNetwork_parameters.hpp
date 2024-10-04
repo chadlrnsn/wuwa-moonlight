@@ -25,11 +25,11 @@ public:
 	class FString                                 URL;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class FString, class FString>            HeaderParam;                                       // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	ECompressMethod                               CompressMethod;                                    // 0x0060(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1834[0x7];                                     // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FArrayBuffer                           Buffer;                                            // 0x0068(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	TDelegate<void(bool Successed)>               PostHandle;                                        // 0x0078(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	float                                         InTimeout;                                         // 0x00A0(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1835[0x4];                                     // 0x00A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroHttp_CompressAndPostDataAsync) == 0x000008, "Wrong alignment on KuroHttp_CompressAndPostDataAsync");
 static_assert(sizeof(KuroHttp_CompressAndPostDataAsync) == 0x0000A8, "Wrong size on KuroHttp_CompressAndPostDataAsync");
@@ -47,7 +47,7 @@ struct KuroHttp_CompressDataAsync final
 public:
 	struct FArrayBuffer                           InBuffer;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	ECompressMethod                               CompressMethod;                                    // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1836[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(TArray<uint8>& Data, int32 SizeNeededForDecompress)> OnCompressed;                                      // 0x0018(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroHttp_CompressDataAsync) == 0x000008, "Wrong alignment on KuroHttp_CompressDataAsync");
@@ -63,7 +63,7 @@ struct KuroHttp_CompressStringAsync final
 public:
 	class FString                                 InString;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ECompressMethod                               CompressMethod;                                    // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1837[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(TArray<uint8>& Data, int32 SizeNeededForDecompress)> OnCompressed;                                      // 0x0018(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroHttp_CompressStringAsync) == 0x000008, "Wrong alignment on KuroHttp_CompressStringAsync");
@@ -81,7 +81,7 @@ public:
 	TMap<class FString, class FString>            HeaderParam;                                       // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handle;                                            // 0x0060(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	float                                         InTimeout;                                         // 0x0088(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1838[0x4];                                     // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroHttp_Get) == 0x000008, "Wrong alignment on KuroHttp_Get");
 static_assert(sizeof(KuroHttp_Get) == 0x000090, "Wrong size on KuroHttp_Get");
@@ -111,7 +111,7 @@ public:
 	class FString                                 Content;                                           // 0x0060(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handle;                                            // 0x0070(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	float                                         InTimeout;                                         // 0x0098(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1839[0x4];                                     // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroHttp_Post) == 0x000008, "Wrong alignment on KuroHttp_Post");
 static_assert(sizeof(KuroHttp_Post) == 0x0000A0, "Wrong size on KuroHttp_Post");
@@ -131,7 +131,7 @@ public:
 	TArray<uint8>                                 Content;                                           // 0x0060(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handle;                                            // 0x0070(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	float                                         InTimeout;                                         // 0x0098(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183A[0x4];                                     // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroHttp_PostWithData) == 0x000008, "Wrong alignment on KuroHttp_PostWithData");
 static_assert(sizeof(KuroHttp_PostWithData) == 0x0000A0, "Wrong size on KuroHttp_PostWithData");
@@ -151,7 +151,7 @@ public:
 	class FString                                 FilePath;                                          // 0x0060(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handle;                                            // 0x0070(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	float                                         InTimeout;                                         // 0x0098(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183B[0x4];                                     // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroHttp_PostWithFile) == 0x000008, "Wrong alignment on KuroHttp_PostWithFile");
 static_assert(sizeof(KuroHttp_PostWithFile) == 0x0000A0, "Wrong size on KuroHttp_PostWithFile");
@@ -168,7 +168,7 @@ struct KuroHttp_UnCompressDataToStringAsync final
 public:
 	TArray<uint8>                                 Data;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	ECompressMethod                               CompressMethod;                                    // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183C[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         PresumedUnCompressedSize;                          // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(const class FString& String)>  OnDecompressed;                                    // 0x0018(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
@@ -187,7 +187,7 @@ public:
 	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FString>                         OutHeader;                                         // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183E[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroHttpServerRequestProxy_GetHeader) == 0x000008, "Wrong alignment on KuroHttpServerRequestProxy_GetHeader");
 static_assert(sizeof(KuroHttpServerRequestProxy_GetHeader) == 0x000028, "Wrong size on KuroHttpServerRequestProxy_GetHeader");
@@ -213,7 +213,7 @@ struct KuroHttpServerRequestProxy_Response final
 public:
 	class FString                                 Json;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSuccess;                                          // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183F[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroHttpServerRequestProxy_Response) == 0x000008, "Wrong alignment on KuroHttpServerRequestProxy_Response");
 static_assert(sizeof(KuroHttpServerRequestProxy_Response) == 0x000018, "Wrong size on KuroHttpServerRequestProxy_Response");
@@ -248,7 +248,7 @@ struct KuroKcpClient_SetEnType final
 {
 public:
 	uint8                                         Type;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1843[0x1];                                     // 0x0001(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x1];                                        // 0x0001(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	int16                                         MsgId;                                             // 0x0002(0x0002)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroKcpClient_SetEnType) == 0x000002, "Wrong alignment on KuroKcpClient_SetEnType");
@@ -262,10 +262,10 @@ struct KuroKcpClient_SetK final
 {
 public:
 	uint8                                         Type;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1844[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FArrayBuffer                           KeyBuffer;                                         // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1845[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroKcpClient_SetK) == 0x000008, "Wrong alignment on KuroKcpClient_SetK");
 static_assert(sizeof(KuroKcpClient_SetK) == 0x000020, "Wrong size on KuroKcpClient_SetK");
@@ -365,7 +365,7 @@ struct SendHttpRequest_HttpRequest final
 public:
 	class FString                                 URL;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EHttpMethod                                   Method;                                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1848[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 PostBody;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USendHttpRequest*                       ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -383,7 +383,7 @@ struct SendHttpRequest_HttpRequestEx final
 public:
 	class FString                                 URL;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EHttpMethod                                   Method;                                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1849[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 PostBody;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 HeaderParam;                                       // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USendHttpRequest*                       ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

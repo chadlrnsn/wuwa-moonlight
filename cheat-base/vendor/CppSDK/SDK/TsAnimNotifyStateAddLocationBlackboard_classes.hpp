@@ -24,7 +24,7 @@ class UTsAnimNotifyStateAddLocationBlackboard_C final : public UKuroAnimNotifySt
 public:
 	class UCurveFloat*                            Curve;                                             // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          NeedChangeToFlying;                                // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_30F9[0x7];                                     // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   AddLocationKey;                                    // 0x0058(0x0018)(Edit, BlueprintVisible)
 	EAnsBlackboardType                            ____;                                              // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

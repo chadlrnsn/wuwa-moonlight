@@ -26,7 +26,7 @@ public:
 	bool                                          IsBlockPawn;                                       // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          IsBulletDetect;                                    // 0x0019(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          IsBlockCamera;                                     // 0x001A(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_285C[0x5];                                     // 0x001B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1B[0x5];                                       // 0x001B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CharacterBlueprintFunctionLibrary_C_SetPartCollisionSwitch) == 0x000008, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_SetPartCollisionSwitch");
@@ -44,7 +44,7 @@ struct CharacterBlueprintFunctionLibrary_C_GetCharacterActorByEntityId final
 {
 public:
 	int32                                         Id;                                                // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_285D[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -60,7 +60,7 @@ struct CharacterBlueprintFunctionLibrary_C_CharacterOperationRecord final
 {
 public:
 	bool                                          Open;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_285E[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CharacterBlueprintFunctionLibrary_C_CharacterOperationRecord) == 0x000008, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_CharacterOperationRecord");
@@ -111,7 +111,7 @@ struct CharacterBlueprintFunctionLibrary_C_SetHalfLengthRecord final
 {
 public:
 	float                                         SideLenHalf;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_285F[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CharacterBlueprintFunctionLibrary_C_SetHalfLengthRecord) == 0x000008, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_SetHalfLengthRecord");
@@ -165,13 +165,13 @@ static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_TestLeaveSplineMove, 
 struct CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2860[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker) == 0x000008, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker");
 static_assert(sizeof(CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker) == 0x000010, "Wrong size on CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker");
-static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker, Param_Index) == 0x000000, "Member 'CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker::Param_Index' has a wrong offset!");
+static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker, Index_0) == 0x000000, "Member 'CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker::Index_0' has a wrong offset!");
 static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker, __WorldContext) == 0x000008, "Member 'CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker::__WorldContext' has a wrong offset!");
 
 // Function CharacterBlueprintFunctionLibrary.CharacterBlueprintFunctionLibrary_C.GetItemsReset
@@ -223,7 +223,7 @@ struct CharacterBlueprintFunctionLibrary_C_SetCombatStarted final
 {
 public:
 	bool                                          Started;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2861[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         AttackerIndex1;                                    // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	int32                                         TargetIndex1;                                      // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          IsDamage;                                          // 0x000C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -232,7 +232,7 @@ public:
 	bool                                          IsState;                                           // 0x000F(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsKill;                                            // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsReborn;                                          // 0x0011(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2862[0x6];                                     // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CharacterBlueprintFunctionLibrary_C_SetCombatStarted) == 0x000008, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_SetCombatStarted");
@@ -259,7 +259,7 @@ public:
 	bool                                          IsState;                                           // 0x0003(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsKill;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsReborn;                                          // 0x0005(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2863[0x2];                                     // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CharacterBlueprintFunctionLibrary_C_SetTypeOpen) == 0x000008, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_SetTypeOpen");
@@ -303,13 +303,13 @@ static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_GetAttackerCombatEnti
 struct CharacterBlueprintFunctionLibrary_C_SetCurrentTarget final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_2864[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(CharacterBlueprintFunctionLibrary_C_SetCurrentTarget) == 0x000008, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_SetCurrentTarget");
 static_assert(sizeof(CharacterBlueprintFunctionLibrary_C_SetCurrentTarget) == 0x000010, "Wrong size on CharacterBlueprintFunctionLibrary_C_SetCurrentTarget");
-static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_SetCurrentTarget, Param_Index) == 0x000000, "Member 'CharacterBlueprintFunctionLibrary_C_SetCurrentTarget::Param_Index' has a wrong offset!");
+static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_SetCurrentTarget, Index_0) == 0x000000, "Member 'CharacterBlueprintFunctionLibrary_C_SetCurrentTarget::Index_0' has a wrong offset!");
 static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_SetCurrentTarget, __WorldContext) == 0x000008, "Member 'CharacterBlueprintFunctionLibrary_C_SetCurrentTarget::__WorldContext' has a wrong offset!");
 
 // Function CharacterBlueprintFunctionLibrary.CharacterBlueprintFunctionLibrary_C.OnItemsResetFinished
@@ -329,7 +329,7 @@ struct CharacterBlueprintFunctionLibrary_C_GetBaseCharacterTransform final
 {
 public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2865[0x8];                                     // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             ReturnValue;                                       // 0x0010(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(CharacterBlueprintFunctionLibrary_C_GetBaseCharacterTransform) == 0x000010, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_GetBaseCharacterTransform");
@@ -343,7 +343,7 @@ struct CharacterBlueprintFunctionLibrary_C_SetActorExtraSkeletalMeshComponent fi
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2866[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

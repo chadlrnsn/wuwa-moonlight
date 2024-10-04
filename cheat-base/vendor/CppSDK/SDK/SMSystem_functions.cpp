@@ -802,10 +802,10 @@ class USMStateInstance_Base* USMStateInstance_Base::GetNextStateByName(const cla
 // Function SMSystem.SMStateInstance_Base.GetNextStateByTransitionIndex
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USMStateInstance_Base*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class USMStateInstance_Base* USMStateInstance_Base::GetNextStateByTransitionIndex(int32 Param_Index) const
+class USMStateInstance_Base* USMStateInstance_Base::GetNextStateByTransitionIndex(int32 Index_0) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -814,7 +814,7 @@ class USMStateInstance_Base* USMStateInstance_Base::GetNextStateByTransitionInde
 
 	Params::SMStateInstance_Base_GetNextStateByTransitionIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1020,10 +1020,10 @@ void USMStateInstance_Base::GetStateInfo(struct FSMStateInfo* State) const
 // Function SMSystem.SMStateInstance_Base.GetTransitionByIndex
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USMTransitionInstance*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class USMTransitionInstance* USMStateInstance_Base::GetTransitionByIndex(int32 Param_Index) const
+class USMTransitionInstance* USMStateInstance_Base::GetTransitionByIndex(int32 Index_0) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -1032,7 +1032,7 @@ class USMTransitionInstance* USMStateInstance_Base::GetTransitionByIndex(int32 P
 
 	Params::SMStateInstance_Base_GetTransitionByIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4413,9 +4413,9 @@ void USMStateMachineComponent::SERVER_Update(float DeltaTime)
 // Function SMSystem.SMStateMachineComponent.SetCanInstanceNetworkTick
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    Param_bCanEverTick                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bCanEverTick_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USMStateMachineComponent::SetCanInstanceNetworkTick(bool Param_bCanEverTick)
+void USMStateMachineComponent::SetCanInstanceNetworkTick(bool bCanEverTick_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -4424,7 +4424,7 @@ void USMStateMachineComponent::SetCanInstanceNetworkTick(bool Param_bCanEverTick
 
 	Params::SMStateMachineComponent_SetCanInstanceNetworkTick Parms{};
 
-	Parms.Param_bCanEverTick = Param_bCanEverTick;
+	Parms.bCanEverTick_0 = bCanEverTick_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

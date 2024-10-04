@@ -20,7 +20,7 @@ struct FSSequenceMember final
 {
 public:
 	int32                                         SpeakerId_25_758E8C04400208F71269F08D79A311BE;     // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_312D[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FString, TSoftClassPtr<class UClass>> Bp_26_3C572A3843E1F34388A6A6BE372365D0;            // 0x0008(0x0050)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSSequenceMember) == 0x000008, "Wrong alignment on FSSequenceMember");

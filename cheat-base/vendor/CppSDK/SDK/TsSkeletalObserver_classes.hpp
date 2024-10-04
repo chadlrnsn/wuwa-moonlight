@@ -12,29 +12,22 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ECharacterDitherType_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsSkeletalObserver.TsSkeletalObserver_C
-// 0x0020 (0x02C8 - 0x02A8)
+// 0x0010 (0x02B8 - 0x02A8)
 class ATsSkeletalObserver_C final : public AActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCharRenderingComponent_C*              CharRenderingComponent;                            // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        Root;                                              // 0x02C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_TsSkeletalObserver(int32 EntryPoint);
 	void ReceiveTick(float DeltaSeconds);
-	class USkeletalMeshComponent* GetSkeletalMeshComponent();
-	void SetVisible(bool bVisible);
-	void SetDitherEffect(float DitherRate, ECharacterDitherType DitherType);
-	void SetRotateAxisRotate(const struct FRotator& Rotate);
 
 public:
 	static class UClass* StaticClass()
@@ -47,11 +40,9 @@ public:
 	}
 };
 static_assert(alignof(ATsSkeletalObserver_C) == 0x000008, "Wrong alignment on ATsSkeletalObserver_C");
-static_assert(sizeof(ATsSkeletalObserver_C) == 0x0002C8, "Wrong size on ATsSkeletalObserver_C");
+static_assert(sizeof(ATsSkeletalObserver_C) == 0x0002B8, "Wrong size on ATsSkeletalObserver_C");
 static_assert(offsetof(ATsSkeletalObserver_C, UberGraphFrame) == 0x0002A8, "Member 'ATsSkeletalObserver_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsSkeletalObserver_C, CharRenderingComponent) == 0x0002B0, "Member 'ATsSkeletalObserver_C::CharRenderingComponent' has a wrong offset!");
-static_assert(offsetof(ATsSkeletalObserver_C, SkeletalMeshComponent) == 0x0002B8, "Member 'ATsSkeletalObserver_C::SkeletalMeshComponent' has a wrong offset!");
-static_assert(offsetof(ATsSkeletalObserver_C, Root) == 0x0002C0, "Member 'ATsSkeletalObserver_C::Root' has a wrong offset!");
+static_assert(offsetof(ATsSkeletalObserver_C, DefaultSceneRoot) == 0x0002B0, "Member 'ATsSkeletalObserver_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

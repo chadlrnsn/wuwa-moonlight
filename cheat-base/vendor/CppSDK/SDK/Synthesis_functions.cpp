@@ -245,9 +245,9 @@ void USourceEffectChorusPreset::SetModulationSettings(const struct FSourceEffect
 // Function Synthesis.SourceEffectChorusPreset.SetSettings
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FSourceEffectChorusBaseSettings  Param_Settings                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FSourceEffectChorusBaseSettings  Settings_0                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectChorusPreset::SetSettings(const struct FSourceEffectChorusBaseSettings& Param_Settings)
+void USourceEffectChorusPreset::SetSettings(const struct FSourceEffectChorusBaseSettings& Settings_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -256,7 +256,7 @@ void USourceEffectChorusPreset::SetSettings(const struct FSourceEffectChorusBase
 
 	Params::SourceEffectChorusPreset_SetSettings Parms{};
 
-	Parms.Param_Settings = std::move(Param_Settings);
+	Parms.Settings_0 = std::move(Settings_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2074,9 +2074,9 @@ void USourceEffectBitCrusherPreset::SetSampleRateModulator(const class USoundMod
 // Function Synthesis.SourceEffectBitCrusherPreset.SetSettings
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FSourceEffectBitCrusherBaseSettingsParam_Settings                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FSourceEffectBitCrusherBaseSettingsSettings_0                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void USourceEffectBitCrusherPreset::SetSettings(const struct FSourceEffectBitCrusherBaseSettings& Param_Settings)
+void USourceEffectBitCrusherPreset::SetSettings(const struct FSourceEffectBitCrusherBaseSettings& Settings_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2085,7 +2085,7 @@ void USourceEffectBitCrusherPreset::SetSettings(const struct FSourceEffectBitCru
 
 	Params::SourceEffectBitCrusherPreset_SetSettings Parms{};
 
-	Parms.Param_Settings = std::move(Param_Settings);
+	Parms.Settings_0 = std::move(Settings_0);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3824,9 +3824,9 @@ void USynthComponentMonoWaveTable::RefreshAllWaveTables()
 // Function Synthesis.SynthComponentMonoWaveTable.RefreshWaveTable
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Param_Index                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USynthComponentMonoWaveTable::RefreshWaveTable(int32 Param_Index)
+void USynthComponentMonoWaveTable::RefreshWaveTable(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3835,7 +3835,7 @@ void USynthComponentMonoWaveTable::RefreshWaveTable(int32 Param_Index)
 
 	Params::SynthComponentMonoWaveTable_RefreshWaveTable Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

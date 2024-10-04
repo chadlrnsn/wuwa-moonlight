@@ -19,7 +19,7 @@ namespace SDK
 struct FMagicLeapAudioDummyStruct final
 {
 public:
-	uint8                                         Pad_24C6[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMagicLeapAudioDummyStruct) == 0x000001, "Wrong alignment on FMagicLeapAudioDummyStruct");
 static_assert(sizeof(FMagicLeapAudioDummyStruct) == 0x000001, "Wrong size on FMagicLeapAudioDummyStruct");

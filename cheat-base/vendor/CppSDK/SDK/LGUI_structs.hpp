@@ -1009,9 +1009,9 @@ struct FLGUIAtlasData final
 public:
 	TArray<TWeakObjectPtr<class UUISpriteBase>>   RenderSpriteArray;                                 // 0x0000(0x0010)(Edit, ExportObject, ZeroConstructor, EditConst, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 	class UTexture2D*                             AtlasTexture;                                      // 0x0010(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1091[0x30];                                    // 0x0018(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x30];                                      // 0x0018(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class ULGUISpriteData*>                SpriteDataArray;                                   // 0x0048(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1092[0x18];                                    // 0x0058(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x18];                                      // 0x0058(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIAtlasData) == 0x000008, "Wrong alignment on FLGUIAtlasData");
 static_assert(sizeof(FLGUIAtlasData) == 0x000070, "Wrong size on FLGUIAtlasData");
@@ -1039,7 +1039,7 @@ public:
 	TSubclassOf<class UActorComponent>            TargetComponentClass;                              // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class FName                                   TargetComonentName;                                // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TWeakObjectPtr<class UActorComponent>         ComponentInstance;                                 // 0x001C(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1093[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIComponentReference) == 0x000008, "Wrong alignment on FLGUIComponentReference");
 static_assert(sizeof(FLGUIComponentReference) == 0x000028, "Wrong size on FLGUIComponentReference");
@@ -1053,7 +1053,7 @@ static_assert(offsetof(FLGUIComponentReference, ComponentInstance) == 0x00001C, 
 struct FUIItemInfo final
 {
 public:
-	uint8                                         Pad_1094[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUIItemInfo) == 0x000001, "Wrong alignment on FUIItemInfo");
 static_assert(sizeof(FUIItemInfo) == 0x000001, "Wrong size on FUIItemInfo");
@@ -1066,7 +1066,7 @@ public:
 	class AActor*                                 TargetActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UClass*                                 TargetComponentClass;                              // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ComponentName;                                     // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1095[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRegisterRuntimeData) == 0x000008, "Wrong alignment on FRegisterRuntimeData");
 static_assert(sizeof(FRegisterRuntimeData) == 0x000020, "Wrong size on FRegisterRuntimeData");
@@ -1110,7 +1110,7 @@ public:
 	uint8                                         bIsGray : 1;                                       // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bIsColorRevert : 1;                                // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bUseChangeColor : 1;                               // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1096[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FColor                                 ChangeColor;                                       // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SpriteRotation;                                    // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1127,9 +1127,9 @@ public:
 	class ULGUISpriteData_BaseObject*             Sprite;                                            // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FColor                                 Color;                                             // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bSnapSize : 1;                                     // 0x000C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1097[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRenderableAdditionalInfo              AdditionInfo;                                      // 0x0010(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1098[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FSpriteTransitionOfState) == 0x000008, "Wrong alignment on FSpriteTransitionOfState");
 static_assert(sizeof(FSpriteTransitionOfState) == 0x000020, "Wrong size on FSpriteTransitionOfState");
@@ -1142,7 +1142,7 @@ static_assert(offsetof(FSpriteTransitionOfState, AdditionInfo) == 0x000010, "Mem
 struct alignas(0x08) FLGUIDelegateHandleWrapper final
 {
 public:
-	uint8                                         Pad_1099[0x8];                                     // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDelegateHandleWrapper) == 0x000008, "Wrong alignment on FLGUIDelegateHandleWrapper");
 static_assert(sizeof(FLGUIDelegateHandleWrapper) == 0x000008, "Wrong size on FLGUIDelegateHandleWrapper");
@@ -1157,14 +1157,14 @@ public:
 	class FName                                   ComponentName;                                     // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   FunctionName;                                      // 0x001C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELGUIDrawableEventParameterType               ParamType;                                         // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_109A[0x7];                                     // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<uint8>                                 ParamBuffer;                                       // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	class UObject*                                ReferenceObject;                                   // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                 ReferenceActor;                                    // 0x0048(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UClass*                                 ReferenceClass;                                    // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ReferenceString;                                   // 0x0058(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          UseNativeParameter;                                // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_109B[0x7];                                     // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UFunction*                              CacheFunction;                                     // 0x0070(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UObject*                                CacheTarget;                                       // 0x0078(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
@@ -1191,7 +1191,7 @@ struct FLGUIDrawableEvent
 public:
 	TArray<struct FLGUIDrawableEventData>         EventList;                                         // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	ELGUIDrawableEventParameterType               SupportParameterType;                              // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_109C[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent) == 0x000008, "Wrong alignment on FLGUIDrawableEvent");
 static_assert(sizeof(FLGUIDrawableEvent) == 0x000018, "Wrong size on FLGUIDrawableEvent");
@@ -1203,7 +1203,7 @@ static_assert(offsetof(FLGUIDrawableEvent, SupportParameterType) == 0x000010, "M
 struct FLGUIDrawableEvent_Rotator final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_109D[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Rotator) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Rotator");
 static_assert(sizeof(FLGUIDrawableEvent_Rotator) == 0x000030, "Wrong size on FLGUIDrawableEvent_Rotator");
@@ -1213,7 +1213,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Rotator) == 0x000030, "Wrong size on FLG
 struct FLGUIDrawableEvent_Class final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_109E[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Class) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Class");
 static_assert(sizeof(FLGUIDrawableEvent_Class) == 0x000030, "Wrong size on FLGUIDrawableEvent_Class");
@@ -1223,7 +1223,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Class) == 0x000030, "Wrong size on FLGUI
 struct FLGUIDrawableEvent_PointerEvent final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_109F[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_PointerEvent) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_PointerEvent");
 static_assert(sizeof(FLGUIDrawableEvent_PointerEvent) == 0x000030, "Wrong size on FLGUIDrawableEvent_PointerEvent");
@@ -1233,7 +1233,7 @@ static_assert(sizeof(FLGUIDrawableEvent_PointerEvent) == 0x000030, "Wrong size o
 struct FLGUIDrawableEvent_Actor final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10A0[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Actor) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Actor");
 static_assert(sizeof(FLGUIDrawableEvent_Actor) == 0x000030, "Wrong size on FLGUIDrawableEvent_Actor");
@@ -1243,7 +1243,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Actor) == 0x000030, "Wrong size on FLGUI
 struct FLGUIDrawableEvent_Object final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10A1[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Object) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Object");
 static_assert(sizeof(FLGUIDrawableEvent_Object) == 0x000030, "Wrong size on FLGUIDrawableEvent_Object");
@@ -1257,7 +1257,7 @@ public:
 	bool                                          bUseAsHardRef;                                     // 0x0020(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ChildrenInteractiveDuringPlaying;                  // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          BlockAllEventWhilePlaying;                         // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10A2[0x1];                                     // 0x0023(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_23[0x1];                                       // 0x0023(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMovieSceneSequencePlaybackSettings    PlaySetting;                                       // 0x0024(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSequenceInfo) == 0x000008, "Wrong alignment on FSequenceInfo");
@@ -1276,9 +1276,9 @@ public:
 	struct FSequenceInfo                          Animation;                                         // 0x0000(0x0038)(Edit, NativeAccessSpecifierPublic)
 	float                                         PlayRate;                                          // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPlayReverse;                                      // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10A3[0x3];                                     // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         JumpToFrame;                                       // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10A4[0x4];                                     // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FToggleAnimationPlayInfo) == 0x000008, "Wrong alignment on FToggleAnimationPlayInfo");
 static_assert(sizeof(FToggleAnimationPlayInfo) == 0x000048, "Wrong size on FToggleAnimationPlayInfo");
@@ -1292,7 +1292,7 @@ static_assert(offsetof(FToggleAnimationPlayInfo, JumpToFrame) == 0x000040, "Memb
 struct FLGUIDrawableEvent_String final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10A5[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_String) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_String");
 static_assert(sizeof(FLGUIDrawableEvent_String) == 0x000030, "Wrong size on FLGUIDrawableEvent_String");
@@ -1302,7 +1302,7 @@ static_assert(sizeof(FLGUIDrawableEvent_String) == 0x000030, "Wrong size on FLGU
 struct FLGUIDrawableEvent_Quaternion final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10A6[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Quaternion) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Quaternion");
 static_assert(sizeof(FLGUIDrawableEvent_Quaternion) == 0x000030, "Wrong size on FLGUIDrawableEvent_Quaternion");
@@ -1312,7 +1312,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Quaternion) == 0x000030, "Wrong size on 
 struct FLGUIDrawableEvent_LinearColor final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10A7[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_LinearColor) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_LinearColor");
 static_assert(sizeof(FLGUIDrawableEvent_LinearColor) == 0x000030, "Wrong size on FLGUIDrawableEvent_LinearColor");
@@ -1322,7 +1322,7 @@ static_assert(sizeof(FLGUIDrawableEvent_LinearColor) == 0x000030, "Wrong size on
 struct FLGUIDrawableEvent_Color final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10A8[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Color) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Color");
 static_assert(sizeof(FLGUIDrawableEvent_Color) == 0x000030, "Wrong size on FLGUIDrawableEvent_Color");
@@ -1332,7 +1332,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Color) == 0x000030, "Wrong size on FLGUI
 struct FLGUIDrawableEvent_Vector4 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10A9[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Vector4) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Vector4");
 static_assert(sizeof(FLGUIDrawableEvent_Vector4) == 0x000030, "Wrong size on FLGUIDrawableEvent_Vector4");
@@ -1342,7 +1342,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Vector4) == 0x000030, "Wrong size on FLG
 struct FLGUIDrawableEvent_Vector3 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10AA[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Vector3) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Vector3");
 static_assert(sizeof(FLGUIDrawableEvent_Vector3) == 0x000030, "Wrong size on FLGUIDrawableEvent_Vector3");
@@ -1352,7 +1352,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Vector3) == 0x000030, "Wrong size on FLG
 struct FLGUIDrawableEvent_Vector2 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10AB[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Vector2) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Vector2");
 static_assert(sizeof(FLGUIDrawableEvent_Vector2) == 0x000030, "Wrong size on FLGUIDrawableEvent_Vector2");
@@ -1362,7 +1362,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Vector2) == 0x000030, "Wrong size on FLG
 struct FLGUIDrawableEvent_UInt64 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10AC[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_UInt64) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_UInt64");
 static_assert(sizeof(FLGUIDrawableEvent_UInt64) == 0x000030, "Wrong size on FLGUIDrawableEvent_UInt64");
@@ -1372,7 +1372,7 @@ static_assert(sizeof(FLGUIDrawableEvent_UInt64) == 0x000030, "Wrong size on FLGU
 struct FLGUIDrawableEvent_Int64 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10AD[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Int64) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Int64");
 static_assert(sizeof(FLGUIDrawableEvent_Int64) == 0x000030, "Wrong size on FLGUIDrawableEvent_Int64");
@@ -1382,7 +1382,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Int64) == 0x000030, "Wrong size on FLGUI
 struct FLGUIDrawableEvent_UInt32 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10AE[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_UInt32) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_UInt32");
 static_assert(sizeof(FLGUIDrawableEvent_UInt32) == 0x000030, "Wrong size on FLGUIDrawableEvent_UInt32");
@@ -1392,7 +1392,7 @@ static_assert(sizeof(FLGUIDrawableEvent_UInt32) == 0x000030, "Wrong size on FLGU
 struct FLGUIDrawableEvent_Int32 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10AF[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Int32) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Int32");
 static_assert(sizeof(FLGUIDrawableEvent_Int32) == 0x000030, "Wrong size on FLGUIDrawableEvent_Int32");
@@ -1402,7 +1402,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Int32) == 0x000030, "Wrong size on FLGUI
 struct FLGUIDrawableEvent_UInt16 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10B0[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_UInt16) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_UInt16");
 static_assert(sizeof(FLGUIDrawableEvent_UInt16) == 0x000030, "Wrong size on FLGUIDrawableEvent_UInt16");
@@ -1412,7 +1412,7 @@ static_assert(sizeof(FLGUIDrawableEvent_UInt16) == 0x000030, "Wrong size on FLGU
 struct FLGUIDrawableEvent_Int16 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10B1[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Int16) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Int16");
 static_assert(sizeof(FLGUIDrawableEvent_Int16) == 0x000030, "Wrong size on FLGUIDrawableEvent_Int16");
@@ -1422,7 +1422,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Int16) == 0x000030, "Wrong size on FLGUI
 struct FLGUIDrawableEvent_UInt8 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10B2[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_UInt8) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_UInt8");
 static_assert(sizeof(FLGUIDrawableEvent_UInt8) == 0x000030, "Wrong size on FLGUIDrawableEvent_UInt8");
@@ -1432,7 +1432,7 @@ static_assert(sizeof(FLGUIDrawableEvent_UInt8) == 0x000030, "Wrong size on FLGUI
 struct FLGUIDrawableEvent_Int8 final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10B3[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Int8) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Int8");
 static_assert(sizeof(FLGUIDrawableEvent_Int8) == 0x000030, "Wrong size on FLGUIDrawableEvent_Int8");
@@ -1442,7 +1442,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Int8) == 0x000030, "Wrong size on FLGUID
 struct FLGUIDrawableEvent_Double final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10B4[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Double) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Double");
 static_assert(sizeof(FLGUIDrawableEvent_Double) == 0x000030, "Wrong size on FLGUIDrawableEvent_Double");
@@ -1452,7 +1452,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Double) == 0x000030, "Wrong size on FLGU
 struct FLGUIDrawableEvent_Float final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10B5[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Float) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Float");
 static_assert(sizeof(FLGUIDrawableEvent_Float) == 0x000030, "Wrong size on FLGUIDrawableEvent_Float");
@@ -1462,7 +1462,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Float) == 0x000030, "Wrong size on FLGUI
 struct FLGUIDrawableEvent_Bool final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10B6[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Bool) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Bool");
 static_assert(sizeof(FLGUIDrawableEvent_Bool) == 0x000030, "Wrong size on FLGUIDrawableEvent_Bool");
@@ -1472,7 +1472,7 @@ static_assert(sizeof(FLGUIDrawableEvent_Bool) == 0x000030, "Wrong size on FLGUID
 struct FLGUIDrawableEvent_Empty final : public FLGUIDrawableEvent
 {
 public:
-	uint8                                         Pad_10B7[0x18];                                    // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIDrawableEvent_Empty) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Empty");
 static_assert(sizeof(FLGUIDrawableEvent_Empty) == 0x000030, "Wrong size on FLGUIDrawableEvent_Empty");
@@ -1485,9 +1485,9 @@ public:
 	class UFontFace*                              UnrealFont;                                        // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FInt32Range>                    CharacterRanges;                                   // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	ECulture                                      Cultures;                                          // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10B8[0x3];                                     // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         VerticalOffset;                                    // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10B9[0x10];                                    // 0x0020(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_20[0x10];                                      // 0x0020(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUISubFontData) == 0x000008, "Wrong alignment on FLGUISubFontData");
 static_assert(sizeof(FLGUISubFontData) == 0x000030, "Wrong size on FLGUISubFontData");
@@ -1506,15 +1506,15 @@ public:
 	float                                         Xoffset;                                           // 0x0004(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Yoffset;                                           // 0x0008(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int16                                         Xadvance;                                          // 0x000C(0x0002)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10BA[0x2];                                     // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Uv0X;                                              // 0x0010(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Uv0Y;                                              // 0x0014(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Uv3X;                                              // 0x0018(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Uv3Y;                                              // 0x001C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHasRendered;                                      // 0x0020(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10BB[0x1];                                     // 0x0021(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x1];                                       // 0x0021(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	int16                                         Descender;                                         // 0x0022(0x0002)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10BC[0x1C];                                    // 0x0024(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x1C];                                      // 0x0024(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUICharData) == 0x000008, "Wrong alignment on FLGUICharData");
 static_assert(sizeof(FLGUICharData) == 0x000040, "Wrong size on FLGUICharData");
@@ -1535,7 +1535,7 @@ static_assert(offsetof(FLGUICharData, Descender) == 0x000022, "Member 'FLGUIChar
 struct FLGUIPostTickFunction final : public FTickFunction
 {
 public:
-	uint8                                         Pad_10BD[0x8];                                     // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLGUIPostTickFunction) == 0x000008, "Wrong alignment on FLGUIPostTickFunction");
 static_assert(sizeof(FLGUIPostTickFunction) == 0x000030, "Wrong size on FLGUIPostTickFunction");
@@ -1616,7 +1616,7 @@ static_assert(offsetof(FGuidObjBiMap, AllObjToGuidMap) == 0x000050, "Member 'FGu
 struct alignas(0x08) FActorBindings final
 {
 public:
-	uint8                                         Pad_10BE[0x10];                                    // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FActorBindings) == 0x000008, "Wrong alignment on FActorBindings");
 static_assert(sizeof(FActorBindings) == 0x000010, "Wrong size on FActorBindings");
@@ -1642,7 +1642,7 @@ public:
 	ELGUIAtlasTextureSizeType                     AtlasTextureInitialSize;                           // 0x0000(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AtlasTextureUseSRGB;                               // 0x0001(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ETextureFilter                                AtlasTextureFilter;                                // 0x0002(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10BF[0x1];                                     // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         SpaceBetweenSprites;                               // 0x0004(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FLGUIAtlasSettings) == 0x000004, "Wrong alignment on FLGUIAtlasSettings");
@@ -1690,7 +1690,7 @@ static_assert(sizeof(FToggleTransitionEditSetting) == 0x000001, "Wrong size on F
 struct FExtendToggleSpriteTransitionState final : public FToggleTransitionEditSetting
 {
 public:
-	uint8                                         Pad_10C0[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSpriteTransitionOfState               UnCheckedUnHoverState;                             // 0x0008(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSpriteTransitionOfState               UnCheckedHoverState;                               // 0x0028(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FSpriteTransitionOfState               UnCheckedPressedState;                             // 0x0048(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
@@ -1776,7 +1776,7 @@ struct FLevelSequencerActor final
 public:
 	TArray<class AUIBaseActor*>                   TargetActors;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	class ALevelSequenceActor*                    LvlSequencerActor;                                 // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10C1[0x8];                                     // 0x0018(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FLevelSequencerActor) == 0x000008, "Wrong alignment on FLevelSequencerActor");
 static_assert(sizeof(FLevelSequencerActor) == 0x000020, "Wrong size on FLevelSequencerActor");
@@ -1840,7 +1840,7 @@ public:
 	class FString                                 TextOrConfigTableName;                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ULGUISpriteData_BaseObject*             Sprite;                                            // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         TextId;                                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10C2[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 SecondText;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FUIDropdownOptionData) == 0x000008, "Wrong alignment on FUIDropdownOptionData");
@@ -1856,7 +1856,7 @@ struct FRenderableSlot final
 {
 public:
 	class UUIBatchGeometryRenderable*             Renderable;                                        // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10C3[0x18];                                    // 0x0008(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8[0x18];                                       // 0x0008(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FRenderableSlot) == 0x000008, "Wrong alignment on FRenderableSlot");
 static_assert(sizeof(FRenderableSlot) == 0x000020, "Wrong size on FRenderableSlot");
@@ -1889,7 +1889,7 @@ static_assert(offsetof(FLoadingPathRenderableMap, LoadingPathRenderableMap) == 0
 struct FExtendToggleColorTransition final : public FToggleTransitionEditSetting
 {
 public:
-	uint8                                         Pad_10C4[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FColor                                 UnCheckedUnHoverColor;                             // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FColor                                 UnCheckedHoverColor;                               // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FColor                                 UnCheckedPressedColor;                             // 0x000C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1919,7 +1919,7 @@ struct FToggleStateAnimation final
 public:
 	TMap<EToggleStateInAnimation, struct FToggleAnimationPlayInfo> StateToAnimation;                                  // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
 	bool                                          bDifferSelectedState;                              // 0x0050(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10C5[0x7];                                     // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FToggleAnimationPlayInfo               UniAnimation;                                      // 0x0058(0x0048)(Edit, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FToggleStateAnimation) == 0x000008, "Wrong alignment on FToggleStateAnimation");
@@ -1954,7 +1954,7 @@ static_assert(offsetof(FTextTransitionInfoOfState, bSetFontStyle) == 0x00000B, "
 struct FExtendToggleTextTransitionState final : public FToggleTransitionEditSetting
 {
 public:
-	uint8                                         Pad_10C6[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTextTransitionInfoOfState             UnCheckUnHoverState;                               // 0x0004(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FTextTransitionInfoOfState             UnCheckHoverState;                                 // 0x0010(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FTextTransitionInfoOfState             UnCheckPressedState;                               // 0x001C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
@@ -1983,10 +1983,10 @@ struct FTextureTransitionOfState final
 {
 public:
 	struct FColor                                 Color;                                             // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10C7[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               Texture;                                           // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSnapSize;                                         // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10C8[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRenderableAdditionalInfo              AdditionalInfo;                                    // 0x0014(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FTextureTransitionOfState) == 0x000008, "Wrong alignment on FTextureTransitionOfState");
@@ -2001,7 +2001,7 @@ static_assert(offsetof(FTextureTransitionOfState, AdditionalInfo) == 0x000014, "
 struct FExtendToggleTextureTransitionState final : public FToggleTransitionEditSetting
 {
 public:
-	uint8                                         Pad_10C9[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTextureTransitionOfState              UnCheckUnHoverState;                               // 0x0008(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FTextureTransitionOfState              UnCheckHoverState;                                 // 0x0028(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FTextureTransitionOfState              UnCheckPressedState;                               // 0x0048(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
@@ -2030,7 +2030,7 @@ struct FPredefColor final : public FTableRowBase
 {
 public:
 	struct FColor                                 Color;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10CA[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Comment;                                           // 0x0010(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FPredefColor) == 0x000008, "Wrong alignment on FPredefColor");
@@ -2047,7 +2047,7 @@ public:
 	float                                         ClipTextureHideFeather;                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ClipAngle;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          UseTwoWayClip;                                     // 0x000C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10CB[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FCircleClipParameters) == 0x000004, "Wrong alignment on FCircleClipParameters");
 static_assert(sizeof(FCircleClipParameters) == 0x000010, "Wrong size on FCircleClipParameters");
@@ -2063,10 +2063,10 @@ struct FAnimationPlayInfo final
 public:
 	EAnimationPlayMode                            PlayMode;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EStateTransferType                            ReverseType;                                       // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10CC[0x6];                                     // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSequenceInfo                          Animation;                                         // 0x0008(0x0038)(Edit, NativeAccessSpecifierPublic)
 	float                                         PlayRate;                                          // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10CD[0x4];                                     // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAnimationPlayInfo) == 0x000008, "Wrong alignment on FAnimationPlayInfo");
 static_assert(sizeof(FAnimationPlayInfo) == 0x000048, "Wrong size on FAnimationPlayInfo");
@@ -2136,7 +2136,7 @@ public:
 	struct FVector2D                              Pivot;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EUIAnchorHorizontalAlign                      AnchorHAlign;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EUIAnchorVerticalAlign                        AnchorVAlign;                                      // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10CE[0x2];                                     // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AnchorOffsetX;                                     // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         AnchorOffsetY;                                     // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Width;                                             // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2149,7 +2149,7 @@ public:
 	float                                         AnchorYPercent;                                    // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ShowXPercent;                                      // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ShowYPercent;                                      // 0x003D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10CF[0x2];                                     // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUIWidget) == 0x000004, "Wrong alignment on FUIWidget");
 static_assert(sizeof(FUIWidget) == 0x000040, "Wrong size on FUIWidget");
@@ -2180,7 +2180,7 @@ public:
 	uint8                                         bCustomHighlightedTransition : 1;                  // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bCustomPressedTransition : 1;                      // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bCustomDisabledTransition : 1;                     // 0x0000(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_10D0[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FUIWidget                              NormalTransition;                                  // 0x0004(0x0040)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FUIWidget                              HighlightedTransition;                             // 0x0044(0x0040)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FUIWidget                              PressedTransition;                                 // 0x0084(0x0040)(Edit, NoDestructor, NativeAccessSpecifierPublic)

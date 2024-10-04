@@ -21,7 +21,7 @@ namespace SDK
 class UAssetRegistryImpl final : public UObject
 {
 public:
-	uint8                                         Pad_19D6[0x790];                                   // 0x0030(0x0790)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x790];                                     // 0x0030(0x0790)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

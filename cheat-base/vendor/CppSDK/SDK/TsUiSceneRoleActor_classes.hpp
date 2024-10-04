@@ -11,31 +11,24 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "TsUiSceneActor_classes.hpp"
-#include "ECharacterDitherType_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsUiSceneRoleActor.TsUiSceneRoleActor_C
-// 0x0010 (0x0300 - 0x02F0)
-class ATsUiSceneRoleActor_C final : public ATsUiSceneActor_C
+// 0x0010 (0x02B8 - 0x02A8)
+class ATsUiSceneRoleActor_C final : public AActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCharRenderingComponent_C*              CharRenderingComponent;                            // 0x02F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_TsUiSceneRoleActor(int32 EntryPoint);
 	void ReceiveTick(float DeltaSeconds);
-	void SetDitherEffect(float DitherRate, ECharacterDitherType DitherType);
 	bool IsShowUiWepaonEffect();
-	void InitComponent();
-	void OnRoleIdChange();
-	void OnRoleMeshLoadComplete();
-	bool GetIsRoleMeshLoading();
-	void SetDitherEffectWithWeapon(float DitherRate, ECharacterDitherType DitherType);
 
 public:
 	static class UClass* StaticClass()
@@ -47,10 +40,10 @@ public:
 		return GetDefaultObjImpl<ATsUiSceneRoleActor_C>();
 	}
 };
-static_assert(alignof(ATsUiSceneRoleActor_C) == 0x000010, "Wrong alignment on ATsUiSceneRoleActor_C");
-static_assert(sizeof(ATsUiSceneRoleActor_C) == 0x000300, "Wrong size on ATsUiSceneRoleActor_C");
-static_assert(offsetof(ATsUiSceneRoleActor_C, UberGraphFrame) == 0x0002F0, "Member 'ATsUiSceneRoleActor_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsUiSceneRoleActor_C, CharRenderingComponent) == 0x0002F8, "Member 'ATsUiSceneRoleActor_C::CharRenderingComponent' has a wrong offset!");
+static_assert(alignof(ATsUiSceneRoleActor_C) == 0x000008, "Wrong alignment on ATsUiSceneRoleActor_C");
+static_assert(sizeof(ATsUiSceneRoleActor_C) == 0x0002B8, "Wrong size on ATsUiSceneRoleActor_C");
+static_assert(offsetof(ATsUiSceneRoleActor_C, UberGraphFrame) == 0x0002A8, "Member 'ATsUiSceneRoleActor_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ATsUiSceneRoleActor_C, DefaultSceneRoot) == 0x0002B0, "Member 'ATsUiSceneRoleActor_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

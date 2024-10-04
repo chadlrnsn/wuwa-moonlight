@@ -22,7 +22,7 @@ struct FSimplpNpcStateData final
 {
 public:
 	bool                                          MeetAllConditions_13_1CC3C66C404443C50FE7FEAA6EFD3019; // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3113[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<ESimpleNpcWorldState, int32>             WorldStateMap_14_6CD1D7D8423DB32328875180DFF7D151; // 0x0008(0x0050)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSimplpNpcStateData) == 0x000008, "Wrong alignment on FSimplpNpcStateData");

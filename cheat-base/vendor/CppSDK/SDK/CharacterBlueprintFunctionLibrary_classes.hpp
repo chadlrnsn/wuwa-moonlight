@@ -31,7 +31,7 @@ public:
 	static bool GetStatisticsOpen(class UObject* __WorldContext);
 	static void ResetPartCollisionSwitch(class ATsBaseCharacter_C* Character, const class FString& CompName, class UObject* __WorldContext);
 	static void TestLeaveSplineMove(class ATsBaseCharacter_C* Actor, class UObject* __WorldContext);
-	static void SetCurrentAttacker(int32 Param_Index, class UObject* __WorldContext);
+	static void SetCurrentAttacker(int32 Index_0, class UObject* __WorldContext);
 	static bool GetItemsReset(class UObject* __WorldContext);
 	static TArray<class FString> GetSubItemsListView(int32 StartIndex, int32 Length, class UObject* __WorldContext);
 	static int32 GetItemListViewCount(class UObject* __WorldContext);
@@ -39,7 +39,7 @@ public:
 	static void SetTypeOpen(bool IsDamage, bool IsCure, bool IsSkillUsed, bool IsState, bool IsKill, bool IsReborn, class UObject* __WorldContext);
 	static TArray<class FString> GetTargetCombatEntities(class UObject* __WorldContext);
 	static TArray<class FString> GetAttackerCombatEntities(class UObject* __WorldContext);
-	static void SetCurrentTarget(int32 Param_Index, class UObject* __WorldContext);
+	static void SetCurrentTarget(int32 Index_0, class UObject* __WorldContext);
 	static void OnItemsResetFinished(class UObject* __WorldContext);
 	static struct FTransform GetBaseCharacterTransform(class UObject* __WorldContext);
 	static void SetActorExtraSkeletalMeshComponent(int32 EntityId, class USkeletalMeshComponent* SkeletalMeshComponent, class UObject* __WorldContext);

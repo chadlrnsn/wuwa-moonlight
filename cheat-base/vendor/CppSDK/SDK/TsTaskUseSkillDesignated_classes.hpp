@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "TsTaskAbortImmediatelyBase_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -24,7 +24,7 @@ class UTsTaskUseSkillDesignated_C final : public UTsTaskAbortImmediatelyBase_C
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskUseSkillDesignated_C;         // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	int32                                         SkillInfoId;                                       // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3AFF[0x4];                                     // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 BlackboardKeyTarget;                               // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 
 public:

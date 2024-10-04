@@ -24,13 +24,13 @@ struct MovieSceneDialogueSubsystem_ShowDialogue final
 {
 public:
 	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2351[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   DialogueID;                                        // 0x0008(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                         GuardTime;                                         // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         AudioDelay;                                        // 0x0024(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         AudioTransitionDuration;                           // 0x0028(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELanguageAudio                                LanguageType;                                      // 0x002C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2352[0x3];                                     // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MovieSceneDialogueSubsystem_ShowDialogue) == 0x000008, "Wrong alignment on MovieSceneDialogueSubsystem_ShowDialogue");
 static_assert(sizeof(MovieSceneDialogueSubsystem_ShowDialogue) == 0x000030, "Wrong size on MovieSceneDialogueSubsystem_ShowDialogue");
@@ -47,10 +47,10 @@ struct MovieSceneDialogueSubsystem_ShowDialogueAudio final
 {
 public:
 	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2353[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AudioKey;                                          // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         AudioTransitionDuration;                           // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2354[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MovieSceneDialogueSubsystem_ShowDialogueAudio) == 0x000008, "Wrong alignment on MovieSceneDialogueSubsystem_ShowDialogueAudio");
 static_assert(sizeof(MovieSceneDialogueSubsystem_ShowDialogueAudio) == 0x000020, "Wrong size on MovieSceneDialogueSubsystem_ShowDialogueAudio");
@@ -66,7 +66,7 @@ public:
 	struct FTransform                             OutTrans;                                          // 0x0000(0x0030)(Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	float                                         OffsetTime;                                        // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0034(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2355[0xB];                                     // 0x0035(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35[0xB];                                       // 0x0035(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MovieSceneDialogueSubsystem_TryGetAutoTransformByOffsetTime) == 0x000010, "Wrong alignment on MovieSceneDialogueSubsystem_TryGetAutoTransformByOffsetTime");
 static_assert(sizeof(MovieSceneDialogueSubsystem_TryGetAutoTransformByOffsetTime) == 0x000040, "Wrong size on MovieSceneDialogueSubsystem_TryGetAutoTransformByOffsetTime");
@@ -110,10 +110,10 @@ struct MovieSceneSeqAnimDataSection_GetScalarParameters final
 {
 public:
 	struct FFrameNumber                           InTime;                                            // 0x0000(0x0004)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2356[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, float>                      Floats;                                            // 0x0008(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0058(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2357[0x7];                                     // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MovieSceneSeqAnimDataSection_GetScalarParameters) == 0x000008, "Wrong alignment on MovieSceneSeqAnimDataSection_GetScalarParameters");
 static_assert(sizeof(MovieSceneSeqAnimDataSection_GetScalarParameters) == 0x000060, "Wrong size on MovieSceneSeqAnimDataSection_GetScalarParameters");
@@ -130,7 +130,7 @@ public:
 	struct FFrameNumber                           InTime;                                            // 0x000C(0x0004)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Value;                                             // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2358[0x3];                                     // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MovieSceneSeqAnimDataSection_GetVectorParameter) == 0x000004, "Wrong alignment on MovieSceneSeqAnimDataSection_GetVectorParameter");
 static_assert(sizeof(MovieSceneSeqAnimDataSection_GetVectorParameter) == 0x000020, "Wrong size on MovieSceneSeqAnimDataSection_GetVectorParameter");
@@ -146,7 +146,7 @@ struct MovieSceneSeqAnimDataSection_RemoveCategory final
 public:
 	class FName                                   InParameterName;                                   // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2359[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MovieSceneSeqAnimDataSection_RemoveCategory) == 0x000004, "Wrong alignment on MovieSceneSeqAnimDataSection_RemoveCategory");
 static_assert(sizeof(MovieSceneSeqAnimDataSection_RemoveCategory) == 0x000010, "Wrong size on MovieSceneSeqAnimDataSection_RemoveCategory");
@@ -160,7 +160,7 @@ struct MovieSceneSeqAnimDataSection_RemoveScalarParameter final
 public:
 	class FName                                   InParameterName;                                   // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_235A[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MovieSceneSeqAnimDataSection_RemoveScalarParameter) == 0x000004, "Wrong alignment on MovieSceneSeqAnimDataSection_RemoveScalarParameter");
 static_assert(sizeof(MovieSceneSeqAnimDataSection_RemoveScalarParameter) == 0x000010, "Wrong size on MovieSceneSeqAnimDataSection_RemoveScalarParameter");
@@ -174,7 +174,7 @@ struct SeqAnimDataInterface_GetAnimDataFloat final
 public:
 	TArray<struct FNamedCurveValue>               FloatCurveData;                                    // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_235C[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SeqAnimDataInterface_GetAnimDataFloat) == 0x000008, "Wrong alignment on SeqAnimDataInterface_GetAnimDataFloat");
 static_assert(sizeof(SeqAnimDataInterface_GetAnimDataFloat) == 0x000018, "Wrong size on SeqAnimDataInterface_GetAnimDataFloat");
@@ -188,7 +188,7 @@ struct SeqAnimDataInterface_GetAnimDataVector final
 public:
 	TMap<class FName, struct FVector>             VectorCurveData;                                   // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_235D[0x7];                                     // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SeqAnimDataInterface_GetAnimDataVector) == 0x000008, "Wrong alignment on SeqAnimDataInterface_GetAnimDataVector");
 static_assert(sizeof(SeqAnimDataInterface_GetAnimDataVector) == 0x000058, "Wrong size on SeqAnimDataInterface_GetAnimDataVector");
@@ -213,7 +213,7 @@ struct SeqAnimDataInterface_SetAnimDataFloat final
 public:
 	TArray<struct FNamedCurveValue>               FloatCurveData;                                    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_235E[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SeqAnimDataInterface_SetAnimDataFloat) == 0x000008, "Wrong alignment on SeqAnimDataInterface_SetAnimDataFloat");
 static_assert(sizeof(SeqAnimDataInterface_SetAnimDataFloat) == 0x000018, "Wrong size on SeqAnimDataInterface_SetAnimDataFloat");
@@ -227,7 +227,7 @@ struct SeqAnimDataInterface_SetAnimDataVector final
 public:
 	TMap<class FName, struct FVector>             VectorCurveData;                                   // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_235F[0x7];                                     // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SeqAnimDataInterface_SetAnimDataVector) == 0x000008, "Wrong alignment on SeqAnimDataInterface_SetAnimDataVector");
 static_assert(sizeof(SeqAnimDataInterface_SetAnimDataVector) == 0x000058, "Wrong size on SeqAnimDataInterface_SetAnimDataVector");

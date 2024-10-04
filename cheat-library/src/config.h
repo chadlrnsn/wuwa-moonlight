@@ -11,4 +11,12 @@ namespace config {
 	namespace godmode {
 		inline bool enabled = false;
 	}
+
+	namespace esp {
+		inline bool enable = true;
+	}
+	namespace binds {
+		inline int menu_key = VK_INSERT;
+		inline int quit_key = VK_F9;
+	}
 }

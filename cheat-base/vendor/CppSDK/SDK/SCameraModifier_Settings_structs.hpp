@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SCameraModifier_Lens_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "SFloatCurve_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "SCameraModifier_Lens_structs.hpp"
 
 
 namespace SDK
@@ -25,7 +25,7 @@ struct FSCameraModifier_Settings final
 public:
 	int32                                         Priority_101_E74404724F7BCD1A815B9E8ECCEE64EC;     // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsModifiedArmLength_73_1686AE5842DD198072484BB2D855CAEB; // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31E8[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ArmLength_74_192752C04380D5CAF2EB7E910DC5C9C5;     // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ArmLengthAdditional_75_3ED4AAB647CA6863AC2F9F9C1D48D229; // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsModifiedArmRotation_76_570606324FC53E504274BDA6F59BD5C3; // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -35,7 +35,7 @@ public:
 	struct FRotator                               ArmRotation_77_B66F0D944DE7F4829886B997E0B1B89F;   // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FRotator                               ArmRotationAdditional_78_A62C514641B680F97462AFB1C30145B6; // 0x0020(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsModifyArmRotationBasedOnActorRotation_116_BEFC838C4104D109C6F38D82C10E3603; // 0x002C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31E9[0x3];                                     // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         FocusCameraRelativeYaw_84_A1176B774431A0E9E231989EF65C2767; // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsModifiedCameraOffset_79_43F688EC4B642A9CB92B0A8548187E16; // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsModifiedCameraOffsetX_96_CCEBEC98498BB408B5BA0AB0BD15F414; // 0x0035(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -44,7 +44,7 @@ public:
 	struct FVector                                CameraOffset_80_EB37D424428EBE421F9AAEB064701EAD;  // 0x0038(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CameraOffsetAdditional_81_DABDCE1243662E3E72DB62A0B56CEA53; // 0x0044(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsModifiedCameraFov_53_1A8D869C4A5886B266452BBCB07BA93A; // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31EA[0x3];                                     // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CameraFov_63_A418591F41F5EF0F2D3D19B8F9967FC9;     // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          OverrideCameraInput_59_0083E3164D765950CF70528078BF8218; // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          StopModifyOnMontageEnd_61_E5E58E644EDFAC8B5A53C08F375C0567; // 0x0059(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -52,36 +52,36 @@ public:
 	bool                                          ResetFinalArmLength_72_0D8B0AFC4AA34A5415C9C6AC3D25FE4E; // 0x005B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsLockInput_86_CDDE4FA4418F23E40016969CB0D3623C;   // 0x005C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsLerpArmLocation_111_5A5B00E645FAC54E063E8A93C1764D62; // 0x005D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31EB[0x2];                                     // 0x005E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5E[0x2];                                       // 0x005E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         MaxLookTargetAngle_108_B7453209457235E304455B91D84BDB4E; // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         MaxLookTargetAngleSpeed_110_32C2C0AE4FC4D3A9B189AE84953EB88A; // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsSwitchModifier_113_0BCB940D4AB7A06EB3485D98E853EC0A; // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsUseArmLengthFloatCurve_145_52D03678481BE2CC47BAA09BB214D15F; // 0x0069(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31EC[0x6];                                     // 0x006A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6A[0x6];                                       // 0x006A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSFloatCurve                           ArmLengthFloatCurve_146_2D69FECF4D82AFC253FA71B87883C047; // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsUseArmRotationFloatCurve_147_A8AAAED54FF2147DFE0679962E192D84; // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31ED[0x7];                                     // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSFloatCurve                           ArmRotationFloatCurve_148_68D46B3A4AF5A1E5882134A1981EBD80; // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsUseFovFloatCurve_149_C20764494AB9E116CE38FAA7715D45A5; // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31EE[0x7];                                     // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSFloatCurve                           FovFloatCurve_150_743C892B48A7416DE017A7BB65D2A494; // 0x0090(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsModifiedCameraLens_165_4CA316F7450454A95F4B8BAFC6D2C306; // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsUseLensFloatCurve_160_94D8F5374B9F5984B7E397801C0F5C78; // 0x0099(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31EF[0x6];                                     // 0x009A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSFloatCurve                           LensFloatCurve_162_5C23EC1E47E31D144B2F018C6CF0C2D4; // 0x00A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSCameraModifier_Lens                  CameraLens_168_CC7FDCB54DB07FE211EE92BCF33EE2A0;   // 0x00A8(0x0028)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ResetFinalArmRotationToFocus_172_43F64407465FF68A8BA3B68991CCADAD; // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31F0[0x7];                                     // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Name_175_28D975324D4AEC9BFBFF84B8F8633373;         // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          IsForcePlayModify_177_F5B3348F48031F5374647B85AB011967; // 0x00E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsUseCameraOffsetFloatCurve_189_1E0BCC854199075BE35CB3BB8221E771; // 0x00E9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31F1[0x6];                                     // 0x00EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_EA[0x6];                                       // 0x00EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSFloatCurve                           CameraOffsetFloatCurve_192_2091197E4F52858D248C329837077569; // 0x00F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsModifiedArmOffset_194_AA16D61F4020BFC0214E38B6A798DADB; // 0x00F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31F2[0x3];                                     // 0x00F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F9[0x3];                                       // 0x00F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                ArmOffset_197_5C2BC2D44112F5A70AAB1781177CD71A;    // 0x00FC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsUseArmOffsetFloatCurve_199_6D6CAB2B40AE284A58081AA87EAF3B4C; // 0x0108(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31F3[0x7];                                     // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSFloatCurve                           ArmOffsetFloatCurve_202_DF9302CF4D5A2B2BDB8EC38945D241C7; // 0x0110(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSCameraModifier_Settings) == 0x000008, "Wrong alignment on FSCameraModifier_Settings");

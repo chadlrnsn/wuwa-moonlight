@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "EBulletType_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "EBulletType_structs.hpp"
 
 
 namespace SDK
@@ -27,22 +27,22 @@ public:
 	TArray<class FString>                         ____48_80FA92DC4D8852C13ACCC2926FBC8EE5;           // 0x0010(0x0010)(Edit, BlueprintVisible)
 	bool                                          ______14_CC4E77B84115DD83271460ACB5A1B423;         // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ______17_34AF7E1743045D05F16238BD9A5ED076;         // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3134[0x2];                                     // 0x0022(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_22[0x2];                                       // 0x0022(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           _M___20_42EAC5034D41C8EF242A27978F45A52A;          // 0x0024(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           _M_____41_E6304792471065138EA8FDAD9631A543;        // 0x0030(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 	float                                         ________23_7055EC584C420B5D5A69D4A297BB09BE;       // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _1__28_6C8AACBB4B6D68FF9409CF85EA53D4E2;           // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3135[0x7];                                     // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSet<EBulletType>                             One______38_B44245454F03B67F7B9720AC632C55A8;      // 0x0048(0x0050)(Edit, BlueprintVisible)
 	float                                         One______34_02644BFB40E4F421B0444EBD980BE344;      // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __L_50_C6329D80406FFD88EF6664B040CCC15C;           // 0x009C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3136[0x3];                                     // 0x009D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9D[0x3];                                       // 0x009D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         _______53_E92C679B42F3EC2949407A8BB73649C0;        // 0x00A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ______56_4227F4124093B8725B7F14A9E2F16607;         // 0x00A4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3137[0x3];                                     // 0x00A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   _M__a_____45_C79E7AA94E2ED746B826F28630D76DFD;     // 0x00A8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __________M__a_46_9D882A9A4BEEC5534C7C59A87AB3B2B1; // 0x00B4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3138[0x3];                                     // 0x00B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B5[0x3];                                       // 0x00B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int64>                                 ___gBuff_h_61_37032C9442C4C285A7FF8CAD48EC3719;    // 0x00B8(0x0010)(Edit, BlueprintVisible)
 	class UEffectModelBase*                       K_yH_75_88FDB5514FC905F24EBDB69ACE40B87A;          // 0x00C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSoftObjectPath                        _k___yH_74_22B564E4464F7F409528FDA4534A9A25;       // 0x00D0(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)

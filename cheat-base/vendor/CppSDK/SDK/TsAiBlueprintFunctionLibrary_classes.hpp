@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "EQuestStepState_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK

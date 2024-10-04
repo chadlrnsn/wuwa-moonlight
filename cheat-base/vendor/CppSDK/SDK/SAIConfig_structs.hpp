@@ -23,7 +23,7 @@ struct FSAIConfig final
 public:
 	TSoftClassPtr<class UClass>                   AIController_7_114CE7C14BF6547437BE0AAF22CB7BB5;   // 0x0000(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	EActionPlan                                   _____20_E8C02CCD444132A33DA253AD49C6ACE3;          // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2999[0x3];                                     // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ____7aID_13_4CA5953444638F2541FEA3908EC0CDBF;      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         __7aID_16_0CA4707C4C24CBB8B5A720B2E6404E7D;        // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         PathPointList_23_9441C9544F041EA104C4EA9EB62510E7; // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

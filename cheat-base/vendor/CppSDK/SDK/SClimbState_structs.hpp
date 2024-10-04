@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "EClimbState_structs.hpp"
-#include "EEnterClimb_structs.hpp"
 #include "EExitClimb_structs.hpp"
+#include "EEnterClimb_structs.hpp"
 
 
 namespace SDK

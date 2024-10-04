@@ -31,9 +31,9 @@ public:
 
 inline void WalkableFloorAngle::Run()
 {
+	if (!AcknowledgedPawn) return;
 
-	SDK::UPawnMovementComponent* PawnMovement = AcknowledgedPawn->GetMovementComponent();
-	SDK::UCharacterMovementComponent* Movement = static_cast<SDK::UCharacterMovementComponent*>(PawnMovement);
+	SDK::UCharacterMovementComponent* Movement = PlayerController->Character->CharacterMovement;
 
 	if (bEnable && Movement)
 	{

@@ -26,7 +26,7 @@ public:
 	struct FSoftObjectPath                        MediaInfoTable;                                    // 0x0030(0x0020)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSoftObjectPath                        ExternalSourceDefaultMedia;                        // 0x0050(0x0020)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FDirectoryPath                         ExternalSourceStagingDirectory;                    // 0x0070(0x0010)(Edit, Config, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C8D[0x18];                                    // 0x0080(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x18];                                      // 0x0080(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

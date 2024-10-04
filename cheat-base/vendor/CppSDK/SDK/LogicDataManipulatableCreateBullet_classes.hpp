@@ -23,7 +23,7 @@ namespace SDK
 class ULogicDataManipulatableCreateBullet_C final : public ULogicDataBase_C
 {
 public:
-	uint8                                         Pad_2CD2[0x7];                                     // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  ExistTagsCondition;                                // 0x0040(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, UObjectWrapper)
 	struct FGameplayTagContainer                  UnExistTagsCondition;                              // 0x0060(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, UObjectWrapper)
 	TArray<class FString>                         CreateBulletRowName;                               // 0x0080(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)

@@ -40,10 +40,10 @@ void ABP_Wwise_AudioSpectrum_C::ExecuteUbergraph_BP_Wwise_AudioSpectrum(int32 En
 // Function BP_Wwise_AudioSpectrum.BP_Wwise_AudioSpectrum_C.AkCall
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAkComponent*                     Param_Ak                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAkComponent*                     Ak_0                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAkAudioEvent*                    AkEvent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Wwise_AudioSpectrum_C::AkCall(class UAkComponent* Param_Ak, class UAkAudioEvent* AkEvent)
+void ABP_Wwise_AudioSpectrum_C::AkCall(class UAkComponent* Ak_0, class UAkAudioEvent* AkEvent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -52,7 +52,7 @@ void ABP_Wwise_AudioSpectrum_C::AkCall(class UAkComponent* Param_Ak, class UAkAu
 
 	Params::BP_Wwise_AudioSpectrum_C_AkCall Parms{};
 
-	Parms.Param_Ak = Param_Ak;
+	Parms.Ak_0 = Ak_0;
 	Parms.AkEvent = AkEvent;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -82,10 +82,10 @@ void ABP_Wwise_AudioSpectrum_C::ReceiveTick(float DeltaSeconds)
 // Function BP_Wwise_AudioSpectrum.BP_Wwise_AudioSpectrum_C.NotifyAnalyser
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAkComponent*                     Param_Ak                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAkComponent*                     Ak_0                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAkAudioEvent*                    AkEvent                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Wwise_AudioSpectrum_C::NotifyAnalyser(class UAkComponent* Param_Ak, class UAkAudioEvent* AkEvent)
+void ABP_Wwise_AudioSpectrum_C::NotifyAnalyser(class UAkComponent* Ak_0, class UAkAudioEvent* AkEvent)
 {
 	static class UFunction* Func = nullptr;
 
@@ -94,7 +94,7 @@ void ABP_Wwise_AudioSpectrum_C::NotifyAnalyser(class UAkComponent* Param_Ak, cla
 
 	Params::BP_Wwise_AudioSpectrum_C_NotifyAnalyser Parms{};
 
-	Parms.Param_Ak = Param_Ak;
+	Parms.Ak_0 = Ak_0;
 	Parms.AkEvent = AkEvent;
 
 	UObject::ProcessEvent(Func, &Parms);

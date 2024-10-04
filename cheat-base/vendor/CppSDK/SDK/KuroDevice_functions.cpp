@@ -112,10 +112,10 @@ bool UKuroDeviceBPLibrary::FindAllDeviceVidAndPid(TArray<class FString>* DeviceP
 // Function KuroDevice.KuroDeviceBPLibrary.NewDeviceHandle
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UObject*                          Param_Outer                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Outer_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UDeviceHandle*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UDeviceHandle* UKuroDeviceBPLibrary::NewDeviceHandle(class UObject* Param_Outer)
+class UDeviceHandle* UKuroDeviceBPLibrary::NewDeviceHandle(class UObject* Outer_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -124,7 +124,7 @@ class UDeviceHandle* UKuroDeviceBPLibrary::NewDeviceHandle(class UObject* Param_
 
 	Params::KuroDeviceBPLibrary_NewDeviceHandle Parms{};
 
-	Parms.Param_Outer = Param_Outer;
+	Parms.Outer_0 = Outer_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

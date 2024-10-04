@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "E_BillboardMode_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "E_BillboardMode_structs.hpp"
 
 
 namespace SDK::Params
@@ -48,10 +48,10 @@ struct BP_LevelSequenceHalo_C_UpdateHaloParameter final
 {
 public:
 	bool                                          UpdateComponent;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29A0[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ___float_Variable;                                 // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29A1[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ___float_Variable_1;                               // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetHaloDrawParameters_MinDrawDistance;    // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetHaloDrawParameters_MaxDrawDistance;    // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -66,7 +66,7 @@ public:
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_3;        // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_Multiply_LinearColorFloat_ReturnValue;    // 0x0054(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_BillboardMode                               ___byte_Variable;                                  // 0x0064(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_29A2[0x3];                                     // 0x0065(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         K2Node_Select_Default;                             // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_4;        // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_5;        // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -105,17 +105,17 @@ static_assert(offsetof(BP_LevelSequenceHalo_C_UpdateHaloParameter, K2Node_MakeSt
 struct BP_LevelSequenceHalo_C_GetHaloDrawParameters final
 {
 public:
-	float                                         Param_MinDrawDistance;                             // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Param_MaxDrawDistance;                             // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Param_MinDrawRange;                                // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Param_MaxDrawRange;                                // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         MinDrawDistance_0;                                 // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         MaxDrawDistance_0;                                 // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         MinDrawRange_0;                                    // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         MaxDrawRange_0;                                    // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_LevelSequenceHalo_C_GetHaloDrawParameters) == 0x000004, "Wrong alignment on BP_LevelSequenceHalo_C_GetHaloDrawParameters");
 static_assert(sizeof(BP_LevelSequenceHalo_C_GetHaloDrawParameters) == 0x000010, "Wrong size on BP_LevelSequenceHalo_C_GetHaloDrawParameters");
-static_assert(offsetof(BP_LevelSequenceHalo_C_GetHaloDrawParameters, Param_MinDrawDistance) == 0x000000, "Member 'BP_LevelSequenceHalo_C_GetHaloDrawParameters::Param_MinDrawDistance' has a wrong offset!");
-static_assert(offsetof(BP_LevelSequenceHalo_C_GetHaloDrawParameters, Param_MaxDrawDistance) == 0x000004, "Member 'BP_LevelSequenceHalo_C_GetHaloDrawParameters::Param_MaxDrawDistance' has a wrong offset!");
-static_assert(offsetof(BP_LevelSequenceHalo_C_GetHaloDrawParameters, Param_MinDrawRange) == 0x000008, "Member 'BP_LevelSequenceHalo_C_GetHaloDrawParameters::Param_MinDrawRange' has a wrong offset!");
-static_assert(offsetof(BP_LevelSequenceHalo_C_GetHaloDrawParameters, Param_MaxDrawRange) == 0x00000C, "Member 'BP_LevelSequenceHalo_C_GetHaloDrawParameters::Param_MaxDrawRange' has a wrong offset!");
+static_assert(offsetof(BP_LevelSequenceHalo_C_GetHaloDrawParameters, MinDrawDistance_0) == 0x000000, "Member 'BP_LevelSequenceHalo_C_GetHaloDrawParameters::MinDrawDistance_0' has a wrong offset!");
+static_assert(offsetof(BP_LevelSequenceHalo_C_GetHaloDrawParameters, MaxDrawDistance_0) == 0x000004, "Member 'BP_LevelSequenceHalo_C_GetHaloDrawParameters::MaxDrawDistance_0' has a wrong offset!");
+static_assert(offsetof(BP_LevelSequenceHalo_C_GetHaloDrawParameters, MinDrawRange_0) == 0x000008, "Member 'BP_LevelSequenceHalo_C_GetHaloDrawParameters::MinDrawRange_0' has a wrong offset!");
+static_assert(offsetof(BP_LevelSequenceHalo_C_GetHaloDrawParameters, MaxDrawRange_0) == 0x00000C, "Member 'BP_LevelSequenceHalo_C_GetHaloDrawParameters::MaxDrawRange_0' has a wrong offset!");
 
 // Function BP_LevelSequenceHalo.BP_LevelSequenceHalo_C.Update
 // 0x0020 (0x0020 - 0x0000)
@@ -125,11 +125,11 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29A3[0x1];                                     // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInterface*                     CallFunc_GetMaterial_ReturnValue;                  // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29A4[0x7];                                     // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_LevelSequenceHalo_C_Update) == 0x000008, "Wrong alignment on BP_LevelSequenceHalo_C_Update");

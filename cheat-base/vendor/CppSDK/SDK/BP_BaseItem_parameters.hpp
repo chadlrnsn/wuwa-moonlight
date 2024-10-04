@@ -30,11 +30,11 @@ static_assert(offsetof(BP_BaseItem_C_ExecuteUbergraph_BP_BaseItem, EntryPoint) =
 struct BP_BaseItem_C_ApplyEntityId final
 {
 public:
-	int32                                         Param_EntityId;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         EntityId_0;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_BaseItem_C_ApplyEntityId) == 0x000004, "Wrong alignment on BP_BaseItem_C_ApplyEntityId");
 static_assert(sizeof(BP_BaseItem_C_ApplyEntityId) == 0x000004, "Wrong size on BP_BaseItem_C_ApplyEntityId");
-static_assert(offsetof(BP_BaseItem_C_ApplyEntityId, Param_EntityId) == 0x000000, "Member 'BP_BaseItem_C_ApplyEntityId::Param_EntityId' has a wrong offset!");
+static_assert(offsetof(BP_BaseItem_C_ApplyEntityId, EntityId_0) == 0x000000, "Member 'BP_BaseItem_C_ApplyEntityId::EntityId_0' has a wrong offset!");
 
 // Function BP_BaseItem.BP_BaseItem_C.GetEntityId
 // 0x0004 (0x0004 - 0x0000)

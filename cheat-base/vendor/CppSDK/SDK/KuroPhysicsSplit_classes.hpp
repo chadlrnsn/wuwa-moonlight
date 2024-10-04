@@ -21,10 +21,10 @@ namespace SDK
 class UKuroPhysicsSplitSystem final : public UKuroPhysicsSplitSystemBase
 {
 public:
-	uint8                                         Pad_1BB5[0x8];                                     // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSet<class UActorComponent*>                  NoPhysicsCompSet;                                  // 0x0040(0x0050)(ExportObject, Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	TArray<class UActorComponent*>                ToTickCompList;                                    // 0x0090(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1BB6[0x10];                                    // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool IsTickFinishBP(class UWorld* World);

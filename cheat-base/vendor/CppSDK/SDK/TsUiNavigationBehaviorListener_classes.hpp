@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "EHotKeyNameStateType_structs.hpp"
 #include "SNavigationCursor_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "SNavigationMode_structs.hpp"
+#include "EHotKeyNameStateType_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "LGUI_classes.hpp"
 
 
@@ -22,25 +22,30 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsUiNavigationBehaviorListener.TsUiNavigationBehaviorListener_C
-// 0x0168 (0x0258 - 0x00F0)
+// 0x0180 (0x0288 - 0x0108)
 class UTsUiNavigationBehaviorListener_C final : public UUINavigationBehaviour
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class FString                                 GroupName;                                         // 0x00F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
-	class AActor*                                 LayoutActor;                                       // 0x0108(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	TArray<class FString>                         TagArray;                                          // 0x0110(0x0010)(Edit, BlueprintVisible)
-	TArray<int32>                                 ShieldHotKeyIndexArray;                            // 0x0120(0x0010)(Edit, BlueprintVisible)
-	class AActor*                                 ScrollViewActor;                                   // 0x0130(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	TMap<EHotKeyNameStateType, class FString>     HotKeyTipsTextIdMap;                               // 0x0138(0x0050)(Edit, BlueprintVisible)
-	class AActor*                                 InsideGroupActor;                                  // 0x0188(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	struct FVector2D                              ClickPivot;                                        // 0x0190(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSNavigationMode                       NavigationMode;                                    // 0x0198(0x0040)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSNavigationCursor                     Cursor;                                            // 0x01D8(0x000C)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         ScrollbarIndex;                                    // 0x01E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 InteractiveTag;                                    // 0x01E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 DynamicTag;                                        // 0x01F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	TMap<class FString, class AActor*>            InsideActorMap;                                    // 0x0208(0x0050)(Edit, BlueprintVisible)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0108(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class FString                                 GroupName;                                         // 0x0110(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+	class AActor*                                 LayoutActor;                                       // 0x0120(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	TArray<class FString>                         TagArray;                                          // 0x0128(0x0010)(Edit, BlueprintVisible)
+	TArray<int32>                                 ShieldHotKeyIndexArray;                            // 0x0138(0x0010)(Edit, BlueprintVisible)
+	class AActor*                                 ScrollViewActor;                                   // 0x0148(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	TMap<EHotKeyNameStateType, class FString>     HotKeyTipsTextIdMap;                               // 0x0150(0x0050)(Edit, BlueprintVisible)
+	class AActor*                                 InsideGroupActor;                                  // 0x01A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	struct FVector2D                              ClickPivot;                                        // 0x01A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSNavigationMode                       NavigationMode;                                    // 0x01B0(0x0040)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSNavigationCursor                     Cursor;                                            // 0x01F0(0x000C)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ScrollbarIndex;                                    // 0x01FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 InteractiveTag;                                    // 0x0200(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 DynamicTag;                                        // 0x0210(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	TMap<class FString, class AActor*>            InsideActorMap;                                    // 0x0220(0x0050)(Edit, BlueprintVisible)
+	bool                                          OpenAdsorbed;                                      // 0x0270(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_271[0x3];                                      // 0x0271(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AdsorbedDistance;                                  // 0x0274(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              AdsorbedPivot;                                     // 0x0278(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AUIBaseActor*                           GridBaseActor;                                     // 0x0280(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_TsUiNavigationBehaviorListener(int32 EntryPoint);
@@ -67,22 +72,26 @@ public:
 	}
 };
 static_assert(alignof(UTsUiNavigationBehaviorListener_C) == 0x000008, "Wrong alignment on UTsUiNavigationBehaviorListener_C");
-static_assert(sizeof(UTsUiNavigationBehaviorListener_C) == 0x000258, "Wrong size on UTsUiNavigationBehaviorListener_C");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, UberGraphFrame) == 0x0000F0, "Member 'UTsUiNavigationBehaviorListener_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, GroupName) == 0x0000F8, "Member 'UTsUiNavigationBehaviorListener_C::GroupName' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, LayoutActor) == 0x000108, "Member 'UTsUiNavigationBehaviorListener_C::LayoutActor' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, TagArray) == 0x000110, "Member 'UTsUiNavigationBehaviorListener_C::TagArray' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, ShieldHotKeyIndexArray) == 0x000120, "Member 'UTsUiNavigationBehaviorListener_C::ShieldHotKeyIndexArray' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, ScrollViewActor) == 0x000130, "Member 'UTsUiNavigationBehaviorListener_C::ScrollViewActor' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, HotKeyTipsTextIdMap) == 0x000138, "Member 'UTsUiNavigationBehaviorListener_C::HotKeyTipsTextIdMap' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, InsideGroupActor) == 0x000188, "Member 'UTsUiNavigationBehaviorListener_C::InsideGroupActor' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, ClickPivot) == 0x000190, "Member 'UTsUiNavigationBehaviorListener_C::ClickPivot' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, NavigationMode) == 0x000198, "Member 'UTsUiNavigationBehaviorListener_C::NavigationMode' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, Cursor) == 0x0001D8, "Member 'UTsUiNavigationBehaviorListener_C::Cursor' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, ScrollbarIndex) == 0x0001E4, "Member 'UTsUiNavigationBehaviorListener_C::ScrollbarIndex' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, InteractiveTag) == 0x0001E8, "Member 'UTsUiNavigationBehaviorListener_C::InteractiveTag' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, DynamicTag) == 0x0001F8, "Member 'UTsUiNavigationBehaviorListener_C::DynamicTag' has a wrong offset!");
-static_assert(offsetof(UTsUiNavigationBehaviorListener_C, InsideActorMap) == 0x000208, "Member 'UTsUiNavigationBehaviorListener_C::InsideActorMap' has a wrong offset!");
+static_assert(sizeof(UTsUiNavigationBehaviorListener_C) == 0x000288, "Wrong size on UTsUiNavigationBehaviorListener_C");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, UberGraphFrame) == 0x000108, "Member 'UTsUiNavigationBehaviorListener_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, GroupName) == 0x000110, "Member 'UTsUiNavigationBehaviorListener_C::GroupName' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, LayoutActor) == 0x000120, "Member 'UTsUiNavigationBehaviorListener_C::LayoutActor' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, TagArray) == 0x000128, "Member 'UTsUiNavigationBehaviorListener_C::TagArray' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, ShieldHotKeyIndexArray) == 0x000138, "Member 'UTsUiNavigationBehaviorListener_C::ShieldHotKeyIndexArray' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, ScrollViewActor) == 0x000148, "Member 'UTsUiNavigationBehaviorListener_C::ScrollViewActor' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, HotKeyTipsTextIdMap) == 0x000150, "Member 'UTsUiNavigationBehaviorListener_C::HotKeyTipsTextIdMap' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, InsideGroupActor) == 0x0001A0, "Member 'UTsUiNavigationBehaviorListener_C::InsideGroupActor' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, ClickPivot) == 0x0001A8, "Member 'UTsUiNavigationBehaviorListener_C::ClickPivot' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, NavigationMode) == 0x0001B0, "Member 'UTsUiNavigationBehaviorListener_C::NavigationMode' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, Cursor) == 0x0001F0, "Member 'UTsUiNavigationBehaviorListener_C::Cursor' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, ScrollbarIndex) == 0x0001FC, "Member 'UTsUiNavigationBehaviorListener_C::ScrollbarIndex' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, InteractiveTag) == 0x000200, "Member 'UTsUiNavigationBehaviorListener_C::InteractiveTag' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, DynamicTag) == 0x000210, "Member 'UTsUiNavigationBehaviorListener_C::DynamicTag' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, InsideActorMap) == 0x000220, "Member 'UTsUiNavigationBehaviorListener_C::InsideActorMap' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, OpenAdsorbed) == 0x000270, "Member 'UTsUiNavigationBehaviorListener_C::OpenAdsorbed' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, AdsorbedDistance) == 0x000274, "Member 'UTsUiNavigationBehaviorListener_C::AdsorbedDistance' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, AdsorbedPivot) == 0x000278, "Member 'UTsUiNavigationBehaviorListener_C::AdsorbedPivot' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, GridBaseActor) == 0x000280, "Member 'UTsUiNavigationBehaviorListener_C::GridBaseActor' has a wrong offset!");
 
 }
 

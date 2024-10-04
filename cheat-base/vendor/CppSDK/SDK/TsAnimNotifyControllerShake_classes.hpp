@@ -22,7 +22,7 @@ class UTsAnimNotifyControllerShake_C final : public UKuroAnimNotify
 {
 public:
 	class UKuroForceFeedbackEffect*               Effect;                                            // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class FName                                   Name_TsAnimNotifyControllerShake_C;                // 0x0050(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class FName                                   Name_0;                                            // 0x0050(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          IsLooping;                                         // 0x005C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          IsIgnoreTimeDilation;                              // 0x005D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          IsPlayWhilePaused;                                 // 0x005E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
@@ -45,7 +45,7 @@ public:
 static_assert(alignof(UTsAnimNotifyControllerShake_C) == 0x000008, "Wrong alignment on UTsAnimNotifyControllerShake_C");
 static_assert(sizeof(UTsAnimNotifyControllerShake_C) == 0x000060, "Wrong size on UTsAnimNotifyControllerShake_C");
 static_assert(offsetof(UTsAnimNotifyControllerShake_C, Effect) == 0x000048, "Member 'UTsAnimNotifyControllerShake_C::Effect' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifyControllerShake_C, Name_TsAnimNotifyControllerShake_C) == 0x000050, "Member 'UTsAnimNotifyControllerShake_C::Name_TsAnimNotifyControllerShake_C' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyControllerShake_C, Name_0) == 0x000050, "Member 'UTsAnimNotifyControllerShake_C::Name_0' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyControllerShake_C, IsLooping) == 0x00005C, "Member 'UTsAnimNotifyControllerShake_C::IsLooping' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyControllerShake_C, IsIgnoreTimeDilation) == 0x00005D, "Member 'UTsAnimNotifyControllerShake_C::IsIgnoreTimeDilation' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyControllerShake_C, IsPlayWhilePaused) == 0x00005E, "Member 'UTsAnimNotifyControllerShake_C::IsPlayWhilePaused' has a wrong offset!");

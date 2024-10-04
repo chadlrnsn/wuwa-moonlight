@@ -13,10 +13,10 @@
 #include "SReBulletDataBase_structs.hpp"
 #include "SReBulletDataTime_structs.hpp"
 #include "SReBulletDataLogic_structs.hpp"
+#include "SReBulletDataPerformance_structs.hpp"
 #include "SReBulletDataAimed_structs.hpp"
 #include "SReBulletDataScale_structs.hpp"
 #include "SReBulletDataMove_structs.hpp"
-#include "SReBulletDataPerformance_structs.hpp"
 #include "SReBulletDataExe_structs.hpp"
 #include "SReBulletDataEntity_structs.hpp"
 #include "SReBulletDataChildren_structs.hpp"
@@ -33,11 +33,11 @@ struct FSReBulletDataMain final
 {
 public:
 	class FName                                   P9___7_6540B50A408454F29A76BE82C9E7A7EE;           // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3143[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSReBulletDataBase                     ___n_4_79DD8853421793BB64AFC1AF40E367EE;           // 0x0010(0x01B8)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	struct FSReBulletDataLogic                    ___n_10_E48A858741AECD2050D8DF96A1724561;          // 0x01C8(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	struct FSReBulletDataAimed                    ___n_16_F37949D744675D753BF35E8FFA4039AE;          // 0x01F8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3144[0x4];                                     // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSReBulletDataMove                     ___n_19_85D9FB2247A92EE6810C08BE6A5A39E4;          // 0x0208(0x0128)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	struct FSReBulletDataPerformance              H_H__n_22_5C0DF755416C4F66255121B3C51BB235;        // 0x0330(0x0248)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	struct FSReBulletDataTime                     _____26_9A9A47524D033C87C99AEFAF67E8E658;          // 0x0578(0x0088)(Edit, BlueprintVisible, HasGetValueTypeHash)

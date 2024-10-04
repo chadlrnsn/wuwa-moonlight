@@ -21,11 +21,11 @@ namespace SDK
 class IBPI_SceneBp_C final : public IInterface
 {
 public:
-	void TickOutside();
-	void Start();
-	void Stop();
-	void Pause();
 	void Resume();
+	void Pause();
+	void Stop();
+	void Start();
+	void TickOutside();
 
 	void GetAoiRange(int32* Ret) const;
 

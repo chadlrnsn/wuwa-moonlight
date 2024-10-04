@@ -10,9 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "EWeatherState_structs.hpp"
+#include "EDetachType_structs.hpp"
+#include "EInputState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "EWeatherState_structs.hpp"
+#include "ERelation_structs.hpp"
+#include "EInputAction_structs.hpp"
 #include "EPawnChannel_structs.hpp"
 #include "EWuYinQuState_structs.hpp"
 
@@ -25,8 +29,8 @@ namespace SDK
 class UWorldFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void AddPublicTags(float EntityId1, TArray<class FString>& Tags1, class UObject* __WorldContext);
 	static void RemovePublicTags(float EntityId1, TArray<class FString>& Tags1, class UObject* __WorldContext);
+	static void AddPublicTags(float EntityId1, TArray<class FString>& Tags1, class UObject* __WorldContext);
 	static int32 GetIntValueByEntity(int32 EntityId, const class FString& Key, class UObject* __WorldContext);
 	static int32 GetIntValueByEntityWithCharacter(class ATsBaseCharacter_C* Entity, const class FString& Key, class UObject* __WorldContext);
 	static void SetIntValueByEntity(int32 EntityId, const class FString& Key, int32 Value, class UObject* __WorldContext);
@@ -146,6 +150,22 @@ public:
 	static TArray<class AActor*> GetFormationControlledRoles(class UObject* __WorldContext);
 	static float GetTimeDilation(class UObject* __WorldContext);
 	static int32 GetRoleIdIgnoreTrial(int32 EntityId, class UObject* __WorldContext);
+	static void SetIntValuesByEntity(int32 EntityId, const class FString& Key, TArray<int32>& Values, class UObject* __WorldContext);
+	static void SetLongValuesByEntity(int32 EntityId, const class FString& Key, TArray<int64>& Values, class UObject* __WorldContext);
+	static void SetFloatValuesByEntity(int32 EntityId, const class FString& Key, TArray<float>& Values, class UObject* __WorldContext);
+	static void SetStringValuesByEntity(int32 EntityId, const class FString& Key, TArray<class FString>& Values, class UObject* __WorldContext);
+	static void SetVectorValuesByEntity(int32 EntityId, const class FString& Key, TArray<struct FVector>& Values, class UObject* __WorldContext);
+	static void SetRotatorValuesByEntity(int32 EntityId, const class FString& Key, TArray<struct FRotator>& Values, class UObject* __WorldContext);
+	static TArray<int32> GetEntitiesInRange(int32 Distance, ERelation Relation, class UObject* __WorldContext);
+	static bool AttachToActor(class UObject* CallObject1, class AActor* Actor1, class AActor* ParentActor1, EDetachType DetachType1, const class FString& Reason1, class FName SocketName1, EAttachmentRule LocationRule1, EAttachmentRule RotationRule1, EAttachmentRule ScaleRule1, bool bWeldSimulatedBodies1, bool DoAttach, class UObject* __WorldContext);
+	static int32 GetPlayerFollower(class UObject* __WorldContext);
+	static bool AttachToComponent(class UObject* CallObject, class AActor* Actor, class USceneComponent* ParentComponent, EDetachType DetachType, const class FString& Reason, class FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, bool DoAttach, class UObject* __WorldContext);
+	static bool DetachActor(class UObject* CallObject, class AActor* SrcActor, bool Destroy, const class FString& Reason, EDetachmentRule LocationRule, EDetachmentRule RotationRule, EDetachmentRule ScaleRule, class UObject* __WorldContext);
+	static bool IsPlayerFollowerEnable(class UObject* __WorldContext);
+	static void SetPlayerFollowerEnable(bool Enable, class UObject* __WorldContext);
+	static bool IsPlayerFollowerNeedInput(EInputAction Action, EInputState State, class UObject* __WorldContext);
+	static void RegisterToBpActorController(class FName GroupTag, TScriptInterface<class IBPI_SceneBp_C> SceneBp, class UObject* __WorldContext);
+	static void UnregisterToBpActorController(class FName GroupTag, TScriptInterface<class IBPI_SceneBp_C> SceneBp, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

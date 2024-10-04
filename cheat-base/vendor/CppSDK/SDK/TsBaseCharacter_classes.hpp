@@ -11,11 +11,11 @@
 #include "Basic.hpp"
 
 #include "ECharacterRenderingType_structs.hpp"
-#include "ECamp_structs.hpp"
+#include "KuroGAS_classes.hpp"
 #include "Engine_structs.hpp"
+#include "ECamp_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "ECharacterDitherType_structs.hpp"
-#include "KuroGAS_classes.hpp"
 
 
 namespace SDK
@@ -38,7 +38,7 @@ public:
 	TArray<class FName>                           NormalSockets;                                     // 0x0698(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class UPD_CharacterControllerData_C*          WeaponInEffect;                                    // 0x06A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECharacterRenderingType                       RenderType;                                        // 0x06B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_349D[0x7];                                     // 0x06B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6B1[0x7];                                      // 0x06B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UDataTable*                             DtNewBulletDataMain;                               // 0x06B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UDataTable*                             DtCharacterPart;                                   // 0x06C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSoftClassPath                         InputComponentClass;                               // 0x06C8(0x0020)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
@@ -49,11 +49,11 @@ public:
 	bool                                          PhysicsClothSimulateEnable;                        // 0x0750(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          PhysicsClothSimulateDisableOneFrame;               // 0x0751(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          CachePoseEnableOneFrame;                           // 0x0752(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_349E[0x1];                                     // 0x0753(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_753[0x1];                                      // 0x0753(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CacheTime;                                         // 0x0754(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	class UDataTable*                             DtCameraConfig;                                    // 0x0758(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	int32                                         EntityId;                                          // 0x0760(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_349F[0x4];                                     // 0x0764(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_764[0x4];                                      // 0x0764(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_BasePlatform_C*                     BasePlatform;                                      // 0x0768(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	ECamp                                         Camp;                                              // 0x0770(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsUiNavigationPlatformChangeListener.TsUiNavigationPlatformChangeListener_C
-// 0x0008 (0x00F0 - 0x00E8)
+// 0x0008 (0x0108 - 0x0100)
 class UTsUiNavigationPlatformChangeListener_C final : public ULGUIBehaviour
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0100(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_TsUiNavigationPlatformChangeListener(int32 EntryPoint);
@@ -40,8 +40,8 @@ public:
 	}
 };
 static_assert(alignof(UTsUiNavigationPlatformChangeListener_C) == 0x000008, "Wrong alignment on UTsUiNavigationPlatformChangeListener_C");
-static_assert(sizeof(UTsUiNavigationPlatformChangeListener_C) == 0x0000F0, "Wrong size on UTsUiNavigationPlatformChangeListener_C");
-static_assert(offsetof(UTsUiNavigationPlatformChangeListener_C, UberGraphFrame) == 0x0000E8, "Member 'UTsUiNavigationPlatformChangeListener_C::UberGraphFrame' has a wrong offset!");
+static_assert(sizeof(UTsUiNavigationPlatformChangeListener_C) == 0x000108, "Wrong size on UTsUiNavigationPlatformChangeListener_C");
+static_assert(offsetof(UTsUiNavigationPlatformChangeListener_C, UberGraphFrame) == 0x000100, "Member 'UTsUiNavigationPlatformChangeListener_C::UberGraphFrame' has a wrong offset!");
 
 }
 

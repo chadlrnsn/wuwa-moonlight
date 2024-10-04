@@ -59,12 +59,12 @@ struct WBP_UILoading_C_SetProgress final
 {
 public:
 	float                                         InProgress;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Param_ClampProgress;                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ClampProgress_0;                                   // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Forece;                                            // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_239A[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Multiply_IntFloat_ReturnValue;            // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Round_ReturnValue;                        // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_239B[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0018(0x0040)(HasGetValueTypeHash)
 	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0058(0x0010)(ReferenceParm)
 	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0068(0x0018)()
@@ -72,7 +72,7 @@ public:
 static_assert(alignof(WBP_UILoading_C_SetProgress) == 0x000008, "Wrong alignment on WBP_UILoading_C_SetProgress");
 static_assert(sizeof(WBP_UILoading_C_SetProgress) == 0x000080, "Wrong size on WBP_UILoading_C_SetProgress");
 static_assert(offsetof(WBP_UILoading_C_SetProgress, InProgress) == 0x000000, "Member 'WBP_UILoading_C_SetProgress::InProgress' has a wrong offset!");
-static_assert(offsetof(WBP_UILoading_C_SetProgress, Param_ClampProgress) == 0x000004, "Member 'WBP_UILoading_C_SetProgress::Param_ClampProgress' has a wrong offset!");
+static_assert(offsetof(WBP_UILoading_C_SetProgress, ClampProgress_0) == 0x000004, "Member 'WBP_UILoading_C_SetProgress::ClampProgress_0' has a wrong offset!");
 static_assert(offsetof(WBP_UILoading_C_SetProgress, Forece) == 0x000008, "Member 'WBP_UILoading_C_SetProgress::Forece' has a wrong offset!");
 static_assert(offsetof(WBP_UILoading_C_SetProgress, CallFunc_Multiply_IntFloat_ReturnValue) == 0x00000C, "Member 'WBP_UILoading_C_SetProgress::CallFunc_Multiply_IntFloat_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_UILoading_C_SetProgress, CallFunc_Round_ReturnValue) == 0x000010, "Member 'WBP_UILoading_C_SetProgress::CallFunc_Round_ReturnValue' has a wrong offset!");

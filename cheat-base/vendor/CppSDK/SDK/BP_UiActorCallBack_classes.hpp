@@ -32,8 +32,8 @@ public:
 public:
 	void UiAnimNotifyStateEffectPlay__DelegateSignature(EPerformanceRoleState AnimState, const class FString& SocketName, class USkeletalMeshComponent* Mesh);
 	void UiAnimNotifyStateEffectStop__DelegateSignature(EPerformanceRoleState AnimState, const class FString& SocketName, class USkeletalMeshComponent* Mesh);
-	void UiAnimNotifyEffect__DelegateSignature(const struct FSUiAnimNotifyEffect& Param_UiAnimNotifyEffect, class USkeletalMeshComponent* Mesh);
-	void UiAnimNotifyModel__DelegateSignature(const struct FSUiAnimNotifyModel& Param_UiAnimNotifyModel, class USkeletalMeshComponent* Mesh);
+	void UiAnimNotifyEffect__DelegateSignature(const struct FSUiAnimNotifyEffect& UiAnimNotifyEffect_0, class USkeletalMeshComponent* Mesh);
+	void UiAnimNotifyModel__DelegateSignature(const struct FSUiAnimNotifyModel& UiAnimNotifyModel_0, class USkeletalMeshComponent* Mesh);
 	void UiAnimNotifyEndPoint__DelegateSignature(EPerformanceRoleState RoleState);
 
 public:

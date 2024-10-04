@@ -61,116 +61,6 @@ namespace util
 		return (*c);
 	}
 
-	std::string GetModulePath(HMODULE hModule /*= nullptr*/)
-	{
-		char pathOut[MAX_PATH] = {};
-		GetModuleFileNameA(hModule, pathOut, MAX_PATH);
-
-		return std::filesystem::path(pathOut).parent_path().string();
-	}
-
-	static std::filesystem::path _currentPath;
-	void SetCurrentPath(const std::filesystem::path& current_path)
-	{
-		_currentPath = current_path;
-	}
-
-	std::filesystem::path GetCurrentPath()
-	{
-		return _currentPath;
-	}
-
-	std::optional<std::string> SelectDirectory(const char* title)
-	{
-		auto currPath = std::filesystem::current_path();
-
-		if (!SUCCEEDED(CoInitialize(nullptr)))
-			return {};
-
-		IFileDialog* pfd;
-		if (!SUCCEEDED(CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pfd))))
-			return {};
-
-		const size_t titleSize = strlen(title) + 1;
-		wchar_t* wcTitle = new wchar_t[titleSize];
-		mbstowcs(wcTitle, title, titleSize);
-
-		DWORD dwOptions;
-		IShellItem* psi;
-		if (!SUCCEEDED(pfd->GetOptions(&dwOptions)) ||
-			!SUCCEEDED(pfd->SetOptions(dwOptions | FOS_PICKFOLDERS)) ||
-			!SUCCEEDED(pfd->SetTitle(wcTitle)) ||
-			!SUCCEEDED(pfd->Show(NULL)) ||
-			!SUCCEEDED(pfd->GetResult(&psi)))
-		{
-			pfd->Release();
-			return {};
-		}
-
-		WCHAR* folderName;
-		if (!SUCCEEDED(psi->GetDisplayName(SIGDN_DESKTOPABSOLUTEPARSING, &folderName)))
-		{
-			pfd->Release();
-			psi->Release();
-			return {};
-		}
-
-		pfd->Release();
-		psi->Release();
-
-		std::filesystem::current_path(currPath);
-
-		std::u16string u16(reinterpret_cast<const char16_t*>(folderName));
-		return std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>{}.to_bytes(u16);
-	}
-
-	std::optional<std::string> SelectFile(const char* filter, const char* title)
-	{
-		auto currPath = std::filesystem::current_path();
-
-		// common dialog box structure, setting all fields to 0 is important
-		OPENFILENAME ofn = { 0 };
-		TCHAR szFile[260] = { 0 };
-
-		// Initialize remaining fields of OPENFILENAME structure
-		ofn.lStructSize = sizeof(ofn);
-		ofn.hwndOwner = NULL;
-		ofn.lpstrFile = szFile;
-		ofn.nMaxFile = sizeof(szFile);
-		ofn.lpstrFilter = filter;
-		ofn.lpstrTitle = title;
-		ofn.nFilterIndex = 1;
-		ofn.lpstrFileTitle = NULL;
-		ofn.nMaxFileTitle = 0;
-		ofn.lpstrInitialDir = NULL;
-		ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
-
-		std::optional<std::string> result = {};
-		if (GetOpenFileName(&ofn) == TRUE)
-			result = std::string(szFile);
-
-		std::filesystem::current_path(currPath);
-		return result;
-	}
-
-	std::optional<std::string> GetOrSelectPath(CSimpleIni& ini, const char* section, const char* name, const char* friendName, const char* filter)
-	{
-		auto savedPath = ini.GetValue(section, name);
-		if (savedPath != nullptr)
-			return std::string(savedPath);
-
-		//LOG_DEBUG("%s path not found. Please point to it manually.", friendName);
-		printf("%s path not found. Please point to it manually.\n", friendName);
-
-		auto titleStr = string_format("Select %s", friendName);
-		auto selectedPath = filter == nullptr ? SelectDirectory(titleStr.c_str()) : SelectFile(filter, titleStr.c_str());
-		if (!selectedPath)
-			return {};
-
-		ini.SetValue(section, name, selectedPath->c_str());
-		return selectedPath;
-	}
-
 	int64_t GetCurrentTimeMillisec()
 	{
 		return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
@@ -310,7 +200,7 @@ namespace util
 	{
 		_TIME_ZONE_INFORMATION timezoneInfo{};
 		if (GetTimeZoneInformation(&timezoneInfo) == TIME_ZONE_ID_INVALID)
-			LOG_LAST_ERROR("Failed to get timezone.");
+			printf("Failed to get timezone.\n");
 
 		return static_cast<int64_t>(timezoneInfo.Bias) * 60;
 	}

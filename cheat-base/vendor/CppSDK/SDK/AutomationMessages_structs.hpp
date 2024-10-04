@@ -22,7 +22,7 @@ struct FAutomationWorkerPerformanceDataResponse final
 {
 public:
 	bool                                          bSuccess;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_282D[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ErrorMessage;                                      // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FAutomationWorkerPerformanceDataResponse) == 0x000008, "Wrong alignment on FAutomationWorkerPerformanceDataResponse");
@@ -54,7 +54,7 @@ struct FAutomationWorkerTestDataResponse final
 public:
 	class FString                                 JsonData;                                          // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsNew;                                            // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_282E[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAutomationWorkerTestDataResponse) == 0x000008, "Wrong alignment on FAutomationWorkerTestDataResponse");
 static_assert(sizeof(FAutomationWorkerTestDataResponse) == 0x000018, "Wrong size on FAutomationWorkerTestDataResponse");
@@ -88,7 +88,7 @@ public:
 	struct FGuid                                  UniqueId;                                          // 0x0000(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bNew;                                              // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSimilar;                                          // 0x0011(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_282F[0x6];                                     // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        MaxLocalDifference;                                // 0x0018(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	double                                        GlobalDifference;                                  // 0x0020(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ErrorMessage;                                      // 0x0028(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -119,7 +119,7 @@ public:
 	class FString                                 Platform;                                          // 0x0078(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 FeatureLevel;                                      // 0x0088(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsStereo;                                         // 0x0098(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2830[0x7];                                     // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Vendor;                                            // 0x00A0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 AdapterName;                                       // 0x00B0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 AdapterInternalDriverVersion;                      // 0x00C0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -141,12 +141,12 @@ public:
 	uint8                                         ToleranceAlpha;                                    // 0x0118(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         ToleranceMinBrightness;                            // 0x0119(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         ToleranceMaxBrightness;                            // 0x011A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2831[0x1];                                     // 0x011B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11B[0x1];                                      // 0x011B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         MaximumLocalError;                                 // 0x011C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaximumGlobalError;                                // 0x0120(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIgnoreAntiAliasing;                               // 0x0124(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIgnoreColors;                                     // 0x0125(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2832[0x2];                                     // 0x0126(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_126[0x2];                                      // 0x0126(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAutomationScreenshotMetadata) == 0x000008, "Wrong alignment on FAutomationScreenshotMetadata");
 static_assert(sizeof(FAutomationScreenshotMetadata) == 0x000128, "Wrong size on FAutomationScreenshotMetadata");
@@ -210,7 +210,7 @@ static_assert(offsetof(FAutomationWorkerScreenImage, Metadata) == 0x000030, "Mem
 struct FAutomationWorkerNextNetworkCommandReply final
 {
 public:
-	uint8                                         Pad_2833[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAutomationWorkerNextNetworkCommandReply) == 0x000001, "Wrong alignment on FAutomationWorkerNextNetworkCommandReply");
 static_assert(sizeof(FAutomationWorkerNextNetworkCommandReply) == 0x000001, "Wrong size on FAutomationWorkerNextNetworkCommandReply");
@@ -238,7 +238,7 @@ public:
 	float                                         Duration;                                          // 0x0028(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        ExecutionCount;                                    // 0x002C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Success;                                           // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2834[0x7];                                     // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAutomationWorkerRunTestsReply) == 0x000008, "Wrong alignment on FAutomationWorkerRunTestsReply");
 static_assert(sizeof(FAutomationWorkerRunTestsReply) == 0x000038, "Wrong size on FAutomationWorkerRunTestsReply");
@@ -260,7 +260,7 @@ public:
 	class FString                                 TestName;                                          // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 BeautifiedTestName;                                // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSendAnalytics;                                    // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2835[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAutomationWorkerRunTests) == 0x000008, "Wrong alignment on FAutomationWorkerRunTests");
 static_assert(sizeof(FAutomationWorkerRunTests) == 0x000030, "Wrong size on FAutomationWorkerRunTests");
@@ -281,7 +281,7 @@ public:
 	class FString                                 TestParameter;                                     // 0x0030(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 SourceFile;                                        // 0x0040(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SourceFileLine;                                    // 0x0050(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2836[0x4];                                     // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AssetPath;                                         // 0x0058(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 OpenCommand;                                       // 0x0068(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        TestFlags;                                         // 0x0078(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -317,7 +317,7 @@ struct FAutomationWorkerRequestTests final
 {
 public:
 	bool                                          DeveloperDirectoryIncluded;                        // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2837[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        RequestedTestFlags;                                // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FAutomationWorkerRequestTests) == 0x000004, "Wrong alignment on FAutomationWorkerRequestTests");
@@ -330,7 +330,7 @@ static_assert(offsetof(FAutomationWorkerRequestTests, RequestedTestFlags) == 0x0
 struct FAutomationWorkerPong final
 {
 public:
-	uint8                                         Pad_2838[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAutomationWorkerPong) == 0x000001, "Wrong alignment on FAutomationWorkerPong");
 static_assert(sizeof(FAutomationWorkerPong) == 0x000001, "Wrong size on FAutomationWorkerPong");
@@ -340,7 +340,7 @@ static_assert(sizeof(FAutomationWorkerPong) == 0x000001, "Wrong size on FAutomat
 struct FAutomationWorkerStopTests final
 {
 public:
-	uint8                                         Pad_2839[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAutomationWorkerStopTests) == 0x000001, "Wrong alignment on FAutomationWorkerStopTests");
 static_assert(sizeof(FAutomationWorkerStopTests) == 0x000001, "Wrong size on FAutomationWorkerStopTests");
@@ -350,7 +350,7 @@ static_assert(sizeof(FAutomationWorkerStopTests) == 0x000001, "Wrong size on FAu
 struct FAutomationWorkerResetTests final
 {
 public:
-	uint8                                         Pad_283A[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAutomationWorkerResetTests) == 0x000001, "Wrong alignment on FAutomationWorkerResetTests");
 static_assert(sizeof(FAutomationWorkerResetTests) == 0x000001, "Wrong size on FAutomationWorkerResetTests");
@@ -360,7 +360,7 @@ static_assert(sizeof(FAutomationWorkerResetTests) == 0x000001, "Wrong size on FA
 struct FAutomationWorkerPing final
 {
 public:
-	uint8                                         Pad_283B[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAutomationWorkerPing) == 0x000001, "Wrong alignment on FAutomationWorkerPing");
 static_assert(sizeof(FAutomationWorkerPing) == 0x000001, "Wrong size on FAutomationWorkerPing");
@@ -370,7 +370,7 @@ static_assert(sizeof(FAutomationWorkerPing) == 0x000001, "Wrong size on FAutomat
 struct FAutomationWorkerWorkerOffline final
 {
 public:
-	uint8                                         Pad_283C[0x1];                                     // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FAutomationWorkerWorkerOffline) == 0x000001, "Wrong alignment on FAutomationWorkerWorkerOffline");
 static_assert(sizeof(FAutomationWorkerWorkerOffline) == 0x000001, "Wrong size on FAutomationWorkerWorkerOffline");
@@ -388,7 +388,7 @@ public:
 	class FString                                 GPUName;                                           // 0x0050(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 CPUModelName;                                      // 0x0060(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint32                                        RAMInGB;                                           // 0x0070(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_283D[0x4];                                     // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 RenderModeName;                                    // 0x0078(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                  SessionId;                                         // 0x0088(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -411,7 +411,7 @@ struct FAutomationWorkerFindWorkers final
 {
 public:
 	int32                                         Changelist;                                        // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_283E[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 GameName;                                          // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ProcessName;                                       // 0x0018(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                  SessionId;                                         // 0x0028(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

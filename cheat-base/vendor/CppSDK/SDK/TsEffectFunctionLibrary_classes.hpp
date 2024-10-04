@@ -24,21 +24,25 @@ namespace SDK
 class UTsEffectFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void InitializeWithPreview(bool Refresh, class UObject* __WorldContext);
-	static void EditorTickHandle(int32 Handle, float Delta, class UObject* __WorldContext);
-	static bool PlayEffect(int32 Handle, class UObject* CallObject, const class FString& Reason, class UObject* __WorldContext);
-	static class AActor* GetEffectActor(int32 Handle, class UObject* __WorldContext);
-	static int32 SpawnEffect(class UObject* WorldContext, class UObject* CallObject, const class FString& Path, const struct FTransform& Transform, const class FString& Reason, EEffectPlay PlayType, class UObject* __WorldContext);
-	static int32 SpawnEffectWithActor(class UObject* WorldContext, class UObject* CallObject, class AActor* EffectActor, const class FString& Path, const class FString& Reason, EEffectPlay PlayType, EEffectType EffectType, class UObject* __WorldContext);
-	static bool StopEffect(int32 Handle, class UObject* CallObject, const class FString& Reason, bool Immediately, bool DestroyActor, class UObject* __WorldContext);
-	static bool EffectHandleIsValid(int32 Handle, class UObject* __WorldContext);
-	static void AttachEffectActorToComponent(int32 Handle, class USceneComponent* Parent, class FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, class UObject* __WorldContext);
-	static void SetEffectActorRelativeLocation(int32 Handle, const struct FVector& NewRelativeLocation, bool bSweep, bool bTeleport, class UObject* __WorldContext);
-	static void SetEffectParameterNiagara(int32 Handle, TArray<struct FSEffectFloatParameter>& UserParameterFloat, TArray<struct FSEffectColorParameter>& UserParameterColor, TArray<struct FSEffectVectorParameter>& UserParameterVector, TArray<struct FSEffectFloatParameter>& MaterialParameterFloat, TArray<struct FSEffectColorParameter>& MaterialParameterColor, class UObject* __WorldContext);
-	static void AttachEffectActorToActor(int32 Handle, class AActor* Parent, class FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, class UObject* __WorldContext);
-	static void SetEffectHiddenInGame(int32 Handle1, bool Value1, class UObject* __WorldContext);
-	static int32 SpawnEffectUI(class UObject* WorldContext, class UObject* CallObject, const class FString& Path, const struct FTransform& Transform, const class FString& Reason, class UObject* __WorldContext);
+	static void SetSimulateFromSequence(int32 Handle, class ABP_EffectActor_C* Actor, class UObject* __WorldContext);
+	static void SetPublicToSequence(int32 Handle, class ABP_EffectActor_C* Actor, class UObject* __WorldContext);
+	static void SetEffectStoppingTime(int32 Handle, bool StoppingTime, class UObject* __WorldContext);
+	static void SetGlobalStoppingTime(bool StoppingTime, float PlayTime, class UObject* __WorldContext);
 	static void SetEffectIgnoreVisibilityOptimize(int32 Handle, bool Ignore, class UObject* __WorldContext);
+	static int32 SpawnEffectUI(class UObject* WorldContext, class UObject* CallObject, const class FString& Path, const struct FTransform& Transform, const class FString& Reason, class UObject* __WorldContext);
+	static void SetEffectHiddenInGame(int32 Handle1, bool Value1, class UObject* __WorldContext);
+	static void AttachEffectActorToActor(int32 Handle, class AActor* Parent, class FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, class UObject* __WorldContext);
+	static void SetEffectParameterNiagara(int32 Handle, TArray<struct FSEffectFloatParameter>& UserParameterFloat, TArray<struct FSEffectColorParameter>& UserParameterColor, TArray<struct FSEffectVectorParameter>& UserParameterVector, TArray<struct FSEffectFloatParameter>& MaterialParameterFloat, TArray<struct FSEffectColorParameter>& MaterialParameterColor, class UObject* __WorldContext);
+	static void SetEffectActorRelativeLocation(int32 Handle, const struct FVector& NewRelativeLocation, bool bSweep, bool bTeleport, class UObject* __WorldContext);
+	static void AttachEffectActorToComponent(int32 Handle, class USceneComponent* Parent, class FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies, class UObject* __WorldContext);
+	static bool EffectHandleIsValid(int32 Handle, class UObject* __WorldContext);
+	static bool StopEffect(int32 Handle, class UObject* CallObject, const class FString& Reason, bool Immediately, bool DestroyActor, class UObject* __WorldContext);
+	static int32 SpawnEffectWithActor(class UObject* WorldContext, class UObject* CallObject, class AActor* EffectActor, const class FString& Path, const class FString& Reason, EEffectPlay PlayType, EEffectType EffectType, class UObject* __WorldContext);
+	static int32 SpawnEffect(class UObject* WorldContext, class UObject* CallObject, const class FString& Path, const struct FTransform& Transform, const class FString& Reason, EEffectPlay PlayType, class UObject* __WorldContext);
+	static class AActor* GetEffectActor(int32 Handle, class UObject* __WorldContext);
+	static bool PlayEffect(int32 Handle, class UObject* CallObject, const class FString& Reason, class UObject* __WorldContext);
+	static void EditorTickHandle(int32 Handle, float Delta, class UObject* __WorldContext);
+	static void InitializeWithPreview(bool Refresh, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

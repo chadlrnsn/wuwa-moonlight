@@ -304,10 +304,10 @@ void UCharacterBlueprintFunctionLibrary_C::TestLeaveSplineMove(class ATsBaseChar
 // Function CharacterBlueprintFunctionLibrary.CharacterBlueprintFunctionLibrary_C.SetCurrentAttacker
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCharacterBlueprintFunctionLibrary_C::SetCurrentAttacker(int32 Param_Index, class UObject* __WorldContext)
+void UCharacterBlueprintFunctionLibrary_C::SetCurrentAttacker(int32 Index_0, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -316,7 +316,7 @@ void UCharacterBlueprintFunctionLibrary_C::SetCurrentAttacker(int32 Param_Index,
 
 	Params::CharacterBlueprintFunctionLibrary_C_SetCurrentAttacker Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -555,10 +555,10 @@ TArray<class FString> UCharacterBlueprintFunctionLibrary_C::GetAttackerCombatEnt
 // Function CharacterBlueprintFunctionLibrary.CharacterBlueprintFunctionLibrary_C.SetCurrentTarget
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UCharacterBlueprintFunctionLibrary_C::SetCurrentTarget(int32 Param_Index, class UObject* __WorldContext)
+void UCharacterBlueprintFunctionLibrary_C::SetCurrentTarget(int32 Index_0, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -567,7 +567,7 @@ void UCharacterBlueprintFunctionLibrary_C::SetCurrentTarget(int32 Param_Index, c
 
 	Params::CharacterBlueprintFunctionLibrary_C_SetCurrentTarget Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;

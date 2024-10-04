@@ -7,7 +7,10 @@
 <img alt="GitHub Release" src="https://img.shields.io/github/v/release/chadlrnsn/wuwa-moonlight">
 <a href="https://discord.gg/RJuN8UG4MJ"><img alt="Discord" src="https://img.shields.io/discord/1246834050119893064?logo=discord"></a>
 </div>
+</br></br></br>
 
+# THE PROJECT IS TEMPORARILY FROZEN!
+### updates will only be for fixes or architecture changes, etc.
 
 ## How to use
 - Compile project in Release-x64 or download [latest release](https://github.com/chadlrnsn/wuwa-moonlight/releases)
@@ -15,7 +18,9 @@
 - **See [How to use](HowToUse.md) if you are a beginner**
 
 > [!Note]
-> Latest build available is for version 1.2.0 (global version only)
+> Latest build NOT available is for version 1.3.0 (global version only) 
+> FIX AND COMPILE BY YOURSELF!
+
 
 
 > [!Warning]

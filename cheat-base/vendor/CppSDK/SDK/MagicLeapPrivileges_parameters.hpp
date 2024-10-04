@@ -48,10 +48,10 @@ struct MagicLeapPrivilegesFunctionLibrary_RequestPrivilegeAsync final
 {
 public:
 	EMagicLeapPrivilege                           Privilege;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_252A[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(EMagicLeapPrivilege RequestedPrivilege, bool WasGranted)> ResultDelegate;                                    // 0x0008(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_252B[0x7];                                     // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(MagicLeapPrivilegesFunctionLibrary_RequestPrivilegeAsync) == 0x000004, "Wrong alignment on MagicLeapPrivilegesFunctionLibrary_RequestPrivilegeAsync");
 static_assert(sizeof(MagicLeapPrivilegesFunctionLibrary_RequestPrivilegeAsync) == 0x000038, "Wrong size on MagicLeapPrivilegesFunctionLibrary_RequestPrivilegeAsync");

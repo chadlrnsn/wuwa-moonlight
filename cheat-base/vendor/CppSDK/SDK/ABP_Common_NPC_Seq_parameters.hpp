@@ -24,12 +24,12 @@ public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetCurveValue_ReturnValue;                // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         K2Node_Event_DeltaTimeX;                           // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_29C8[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                CallFunc_GetOuterObject_ReturnValue;               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                CallFunc_GetOuterObject_ReturnValue_1;             // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class IABPC_Seq_Interface_C> K2Node_DynamicCast_AsABPC_Seq_Interface;           // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29C9[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UABPC_Seq_Body_V2_C*                    CallFunc_GetABPC_Body_V2_ABPC_Body_V2;             // 0x0038(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
@@ -62,12 +62,12 @@ struct ABP_Common_NPC_Seq_C_AnimGraph final
 {
 public:
 	struct FPoseLink                              InPose;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-	struct FPoseLink                              Param_AnimGraph;                                   // 0x0010(0x0010)(Parm, OutParm, NoDestructor)
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0010(0x0010)(Parm, OutParm, NoDestructor)
 };
 static_assert(alignof(ABP_Common_NPC_Seq_C_AnimGraph) == 0x000008, "Wrong alignment on ABP_Common_NPC_Seq_C_AnimGraph");
 static_assert(sizeof(ABP_Common_NPC_Seq_C_AnimGraph) == 0x000020, "Wrong size on ABP_Common_NPC_Seq_C_AnimGraph");
 static_assert(offsetof(ABP_Common_NPC_Seq_C_AnimGraph, InPose) == 0x000000, "Member 'ABP_Common_NPC_Seq_C_AnimGraph::InPose' has a wrong offset!");
-static_assert(offsetof(ABP_Common_NPC_Seq_C_AnimGraph, Param_AnimGraph) == 0x000010, "Member 'ABP_Common_NPC_Seq_C_AnimGraph::Param_AnimGraph' has a wrong offset!");
+static_assert(offsetof(ABP_Common_NPC_Seq_C_AnimGraph, AnimGraph_0) == 0x000010, "Member 'ABP_Common_NPC_Seq_C_AnimGraph::AnimGraph_0' has a wrong offset!");
 
 }
 

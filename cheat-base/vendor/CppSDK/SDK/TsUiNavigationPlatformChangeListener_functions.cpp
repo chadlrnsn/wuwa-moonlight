@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsUiNavigationPlatformChangeListener.TsUiNavigationPlatformChangeListener_C.ExecuteUbergraph_TsUiNavigationPlatformChangeListener
-// (Final, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -33,12 +33,17 @@ void UTsUiNavigationPlatformChangeListener_C::ExecuteUbergraph_TsUiNavigationPla
 
 	Parms.EntryPoint = EntryPoint;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsUiNavigationPlatformChangeListener.TsUiNavigationPlatformChangeListener_C.OnDestroyBP
-// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 
 void UTsUiNavigationPlatformChangeListener_C::OnDestroyBP()
 {
@@ -47,12 +52,17 @@ void UTsUiNavigationPlatformChangeListener_C::OnDestroyBP()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsUiNavigationPlatformChangeListener_C", "OnDestroyBP");
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsUiNavigationPlatformChangeListener.TsUiNavigationPlatformChangeListener_C.AwakeBP
-// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 
 void UTsUiNavigationPlatformChangeListener_C::AwakeBP()
 {
@@ -61,7 +71,12 @@ void UTsUiNavigationPlatformChangeListener_C::AwakeBP()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsUiNavigationPlatformChangeListener_C", "AwakeBP");
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

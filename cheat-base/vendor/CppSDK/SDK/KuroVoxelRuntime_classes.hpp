@@ -44,7 +44,7 @@ static_assert(offsetof(AKuroVoxelGlobalActor, KuroVoxelGlobalComp) == 0x0002A8, 
 class UKuroVoxelGlobalComponent final : public USceneComponent
 {
 public:
-	uint8                                         Pad_1B14[0x74];                                    // 0x0218(0x0074)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_218[0x74];                                     // 0x0218(0x0074)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Version;                                           // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
@@ -87,7 +87,7 @@ static_assert(offsetof(AKuroVoxelPartitionActor, KuroVoxelPartitionComp) == 0x00
 class UKuroVoxelPartitionComponent final : public UActorComponent
 {
 public:
-	uint8                                         Pad_1B15[0x10];                                    // 0x00C0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x10];                                      // 0x00C0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Priority;                                          // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         Version;                                           // 0x00D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
@@ -111,10 +111,10 @@ static_assert(offsetof(UKuroVoxelPartitionComponent, Version) == 0x0000D4, "Memb
 class UKuroVoxelSystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_1B16[0x8];                                     // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<struct FIntPoint, class AKuroVoxelPartitionActor*> LoadedPartitionActorsMap;                          // 0x0040(0x0050)(Transient, NativeAccessSpecifierPrivate)
 	TSet<class AKuroVoxelPartitionActor*>         ToAddActorSet;                                     // 0x0090(0x0050)(Transient, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1B17[0x50];                                    // 0x00E0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E0[0x50];                                      // 0x00E0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static uint8 GetMaterialIDAtPos(class UWorld* World, const struct FVector& UEPos);

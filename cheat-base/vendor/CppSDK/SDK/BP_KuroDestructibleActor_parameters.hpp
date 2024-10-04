@@ -25,28 +25,28 @@ public:
 	struct FVector                                K2Node_CustomEvent_HitPoint;                       // 0x0004(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                K2Node_CustomEvent_HitDirection;                   // 0x0010(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_MakeRotFromX_ReturnValue;                 // 0x001C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D31[0x8];                                     // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x0030(0x0030)(IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsValidSoftObjectReference_ReturnValue;   // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D32[0x7];                                     // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_Conv_SoftObjectReferenceToString_ReturnValue; // 0x0068(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	int32                                         CallFunc_SpawnEffect_ReturnValue;                  // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                K2Node_CustomEvent_HurtOrigin;                     // 0x007C(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         K2Node_CustomEvent_Impluse;                        // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_CustomEvent_IsZeroImpluse;                  // 0x008C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x008D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D33[0x2];                                     // 0x008E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8E[0x2];                                       // 0x008E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_QuickInitAndAddDataWithMeshComponent_ReturnValue; // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	class FName                                   CallFunc_GetCollisionProfileName_ReturnValue;      // 0x0094(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UDestructibleMesh*                      CallFunc_GetDestructibleMesh_ReturnValue;          // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void(struct FVector& HitPoint, struct FVector& HitDirection)> K2Node_CreateDelegate_OutputDelegate;              // 0x00A8(0x0028)(ZeroConstructor)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D34[0x3];                                     // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D1[0x3];                                       // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_Add_VectorVector_ReturnValue;             // 0x00D4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x00E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsMobile_ReturnValue;                     // 0x00E4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x00E5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D35[0x2];                                     // 0x00E6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E6[0x2];                                       // 0x00E6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x00E8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_Add_VectorVector_ReturnValue_1;           // 0x00F4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -83,14 +83,14 @@ static_assert(offsetof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestru
 struct BP_KuroDestructibleActor_C_PlayDestruction final
 {
 public:
-	struct FVector                                Param_HurtOrigin;                                  // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Param_Impluse;                                     // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                HurtOrigin_0;                                      // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Impluse_0;                                         // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsZeroImpluse;                                     // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_KuroDestructibleActor_C_PlayDestruction) == 0x000004, "Wrong alignment on BP_KuroDestructibleActor_C_PlayDestruction");
 static_assert(sizeof(BP_KuroDestructibleActor_C_PlayDestruction) == 0x000014, "Wrong size on BP_KuroDestructibleActor_C_PlayDestruction");
-static_assert(offsetof(BP_KuroDestructibleActor_C_PlayDestruction, Param_HurtOrigin) == 0x000000, "Member 'BP_KuroDestructibleActor_C_PlayDestruction::Param_HurtOrigin' has a wrong offset!");
-static_assert(offsetof(BP_KuroDestructibleActor_C_PlayDestruction, Param_Impluse) == 0x00000C, "Member 'BP_KuroDestructibleActor_C_PlayDestruction::Param_Impluse' has a wrong offset!");
+static_assert(offsetof(BP_KuroDestructibleActor_C_PlayDestruction, HurtOrigin_0) == 0x000000, "Member 'BP_KuroDestructibleActor_C_PlayDestruction::HurtOrigin_0' has a wrong offset!");
+static_assert(offsetof(BP_KuroDestructibleActor_C_PlayDestruction, Impluse_0) == 0x00000C, "Member 'BP_KuroDestructibleActor_C_PlayDestruction::Impluse_0' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_PlayDestruction, IsZeroImpluse) == 0x000010, "Member 'BP_KuroDestructibleActor_C_PlayDestruction::IsZeroImpluse' has a wrong offset!");
 
 // Function BP_KuroDestructibleActor.BP_KuroDestructibleActor_C.OnFractureEvent
@@ -111,26 +111,26 @@ static_assert(offsetof(BP_KuroDestructibleActor_C_OnFractureEvent, HitDirection)
 struct BP_KuroDestructibleActor_C_ApplyDamage final
 {
 public:
-	struct FVector                                Param_HurtOrigin;                                  // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                HurtOrigin_0;                                      // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                SpeedDirection;                                    // 0x000C(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Temp;                                              // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Param_Impluse;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Impluse_0;                                         // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Vector_IsNearlyZero_ReturnValue;          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D36[0x3];                                     // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_VSize_ReturnValue;                        // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_NearlyEqual_FloatFloat_ReturnValue;       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x002A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D37[0x1];                                     // 0x002B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B[0x1];                                       // 0x002B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_KuroDestructibleActor_C_ApplyDamage) == 0x000004, "Wrong alignment on BP_KuroDestructibleActor_C_ApplyDamage");
 static_assert(sizeof(BP_KuroDestructibleActor_C_ApplyDamage) == 0x000034, "Wrong size on BP_KuroDestructibleActor_C_ApplyDamage");
-static_assert(offsetof(BP_KuroDestructibleActor_C_ApplyDamage, Param_HurtOrigin) == 0x000000, "Member 'BP_KuroDestructibleActor_C_ApplyDamage::Param_HurtOrigin' has a wrong offset!");
+static_assert(offsetof(BP_KuroDestructibleActor_C_ApplyDamage, HurtOrigin_0) == 0x000000, "Member 'BP_KuroDestructibleActor_C_ApplyDamage::HurtOrigin_0' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_ApplyDamage, SpeedDirection) == 0x00000C, "Member 'BP_KuroDestructibleActor_C_ApplyDamage::SpeedDirection' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_ApplyDamage, Temp) == 0x000018, "Member 'BP_KuroDestructibleActor_C_ApplyDamage::Temp' has a wrong offset!");
-static_assert(offsetof(BP_KuroDestructibleActor_C_ApplyDamage, Param_Impluse) == 0x00001C, "Member 'BP_KuroDestructibleActor_C_ApplyDamage::Param_Impluse' has a wrong offset!");
+static_assert(offsetof(BP_KuroDestructibleActor_C_ApplyDamage, Impluse_0) == 0x00001C, "Member 'BP_KuroDestructibleActor_C_ApplyDamage::Impluse_0' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_ApplyDamage, CallFunc_Vector_IsNearlyZero_ReturnValue) == 0x000020, "Member 'BP_KuroDestructibleActor_C_ApplyDamage::CallFunc_Vector_IsNearlyZero_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_ApplyDamage, CallFunc_VSize_ReturnValue) == 0x000024, "Member 'BP_KuroDestructibleActor_C_ApplyDamage::CallFunc_VSize_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_ApplyDamage, CallFunc_NearlyEqual_FloatFloat_ReturnValue) == 0x000028, "Member 'BP_KuroDestructibleActor_C_ApplyDamage::CallFunc_NearlyEqual_FloatFloat_ReturnValue' has a wrong offset!");
@@ -145,7 +145,7 @@ struct BP_KuroDestructibleActor_C_IsMobile final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D38[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetPlatformName_ReturnValue;              // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue_1;          // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)

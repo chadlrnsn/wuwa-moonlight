@@ -21,7 +21,7 @@ namespace SDK
 struct alignas(0x08) FKuroPointCloudInstanceQueryResult final
 {
 public:
-	uint8                                         Pad_184A[0x20];                                    // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FKuroPointCloudInstanceQueryResult) == 0x000008, "Wrong alignment on FKuroPointCloudInstanceQueryResult");
 static_assert(sizeof(FKuroPointCloudInstanceQueryResult) == 0x000020, "Wrong size on FKuroPointCloudInstanceQueryResult");
@@ -44,10 +44,10 @@ static_assert(offsetof(FPointData, Position) == 0x000004, "Member 'FPointData::P
 struct FKuroPointSpatialTree
 {
 public:
-	uint8                                         Pad_184B[0x8];                                     // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FPointData>                     PointCloudData;                                    // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FBox                                   MaxBound;                                          // 0x0018(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_184C[0x4];                                     // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FKuroPointSpatialTree) == 0x000008, "Wrong alignment on FKuroPointSpatialTree");
 static_assert(sizeof(FKuroPointSpatialTree) == 0x000038, "Wrong size on FKuroPointSpatialTree");
@@ -82,7 +82,7 @@ public:
 	float                                         BoxLengthToStopDivide;                             // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FKuroPointKdTreeNode>           TreeNodes;                                         // 0x0040(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	int32                                         RootNodeId;                                        // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_184D[0x4];                                     // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FKuroPointKdTree) == 0x000008, "Wrong alignment on FKuroPointKdTree");
 static_assert(sizeof(FKuroPointKdTree) == 0x000058, "Wrong size on FKuroPointKdTree");
@@ -97,7 +97,7 @@ struct FKuroPointCloudCollectionInstance final
 {
 public:
 	class FName                                   CollectionName;                                    // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_184E[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSoftObjectPath                        Instance;                                          // 0x0010(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FKuroPointCloudCollectionInstance) == 0x000008, "Wrong alignment on FKuroPointCloudCollectionInstance");

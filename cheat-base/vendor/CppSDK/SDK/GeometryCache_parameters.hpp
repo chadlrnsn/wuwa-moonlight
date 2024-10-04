@@ -34,7 +34,7 @@ struct GeometryCacheComponent_SetGeometryCache final
 public:
 	class UGeometryCache*                         NewGeomCache;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2232[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GeometryCacheComponent_SetGeometryCache) == 0x000008, "Wrong alignment on GeometryCacheComponent_SetGeometryCache");
 static_assert(sizeof(GeometryCacheComponent_SetGeometryCache) == 0x000010, "Wrong size on GeometryCacheComponent_SetGeometryCache");
@@ -83,7 +83,7 @@ public:
 	bool                                          bInIsRunning;                                      // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInBackwards;                                      // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInIsLooping;                                      // 0x0006(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2233[0x1];                                     // 0x0007(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GeometryCacheComponent_TickAtThisTime) == 0x000004, "Wrong alignment on GeometryCacheComponent_TickAtThisTime");
 static_assert(sizeof(GeometryCacheComponent_TickAtThisTime) == 0x000008, "Wrong size on GeometryCacheComponent_TickAtThisTime");
@@ -198,7 +198,7 @@ struct GeometryCacheTrack_FlipbookAnimation_AddMeshSample final
 public:
 	struct FGeometryCacheMeshData                 MeshData;                                          // 0x0000(0x00A8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                         SampleTime;                                        // 0x00A8(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2236[0x4];                                     // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GeometryCacheTrack_FlipbookAnimation_AddMeshSample) == 0x000008, "Wrong alignment on GeometryCacheTrack_FlipbookAnimation_AddMeshSample");
 static_assert(sizeof(GeometryCacheTrack_FlipbookAnimation_AddMeshSample) == 0x0000B0, "Wrong size on GeometryCacheTrack_FlipbookAnimation_AddMeshSample");

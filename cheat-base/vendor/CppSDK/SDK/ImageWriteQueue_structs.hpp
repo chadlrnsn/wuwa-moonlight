@@ -31,12 +31,12 @@ struct alignas(0x10) FImageWriteOptions final
 {
 public:
 	EDesiredImageFormat                           Format;                                            // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25AC[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(bool bSuccess)>                OnComplete;                                        // 0x0008(0x0028)(BlueprintVisible, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	int32                                         CompressionQuality;                                // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bOverwriteFile;                                    // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAsync;                                            // 0x0035(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25AD[0x4A];                                    // 0x0036(0x004A)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_36[0x4A];                                      // 0x0036(0x004A)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FImageWriteOptions) == 0x000010, "Wrong alignment on FImageWriteOptions");
 static_assert(sizeof(FImageWriteOptions) == 0x000080, "Wrong size on FImageWriteOptions");

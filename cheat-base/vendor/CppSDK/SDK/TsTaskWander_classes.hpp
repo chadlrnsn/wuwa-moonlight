@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "TsTaskAbortImmediatelyBase_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "TsTaskAbortImmediatelyBase_classes.hpp"
 
 
 namespace SDK
@@ -31,7 +31,7 @@ public:
 	float                                         BlinkTime;                                         // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Debug;                                             // 0x00D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          UsePatrolPointPriority;                            // 0x00D5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3B95[0x2];                                     // 0x00D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D6[0x2];                                       // 0x00D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSoftObjectPath                        ShowMaterialDa;                                    // 0x00D8(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	struct FSoftObjectPath                        HideMaterialDa;                                    // 0x00F8(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	struct FSoftObjectPath                        HideEffectDa;                                      // 0x0118(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)

@@ -173,7 +173,7 @@ void ABP_BaseNPC_C::__AIC_____0(bool IsImpact)
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_BaseNPC_C", "åAIC²žÓœ");
 
-	Params::BP_BaseNPC_C___AIC____ Parms{};
+	Params::BP_BaseNPC_C___AIC_____0 Parms{};
 
 	Parms.IsImpact = IsImpact;
 
@@ -193,7 +193,7 @@ void ABP_BaseNPC_C::GL_____0(bool* Success)
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_BaseNPC_C", "gL²ž");
 
-	Params::BP_BaseNPC_C_GL____ Parms{};
+	Params::BP_BaseNPC_C_GL_____0 Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

@@ -43,7 +43,7 @@ public:
 	float                                         DamageRadius;                                      // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ImpulseStrength;                                   // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFullDamage;                                       // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2371[0x3];                                     // 0x0019(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(DestructibleComponent_ApplyRadiusDamage) == 0x000004, "Wrong alignment on DestructibleComponent_ApplyRadiusDamage");
 static_assert(sizeof(DestructibleComponent_ApplyRadiusDamage) == 0x00001C, "Wrong size on DestructibleComponent_ApplyRadiusDamage");

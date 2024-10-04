@@ -22,7 +22,7 @@ struct FSBulletDataTime final
 {
 public:
 	bool                                          ____q__11_70214E954FB3BADC741AF48FBE764009;        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3157[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSTimeScale                            _____9_4DD306D7471FB55EBE1CFE9EF7DE479C;           // 0x0008(0x0018)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSTimeScale                            _____10_EA8FC4B84E94603ADE21D487F73FE019;          // 0x0020(0x0018)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };

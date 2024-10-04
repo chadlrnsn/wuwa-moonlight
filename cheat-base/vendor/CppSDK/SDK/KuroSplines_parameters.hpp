@@ -19,12 +19,12 @@ namespace SDK::Params
 struct KuroMoveSplineComponent_GetIgnorePoint final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMoveSplineComponent_GetIgnorePoint) == 0x000004, "Wrong alignment on KuroMoveSplineComponent_GetIgnorePoint");
 static_assert(sizeof(KuroMoveSplineComponent_GetIgnorePoint) == 0x000008, "Wrong size on KuroMoveSplineComponent_GetIgnorePoint");
-static_assert(offsetof(KuroMoveSplineComponent_GetIgnorePoint, Param_Index) == 0x000000, "Member 'KuroMoveSplineComponent_GetIgnorePoint::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroMoveSplineComponent_GetIgnorePoint, Index_0) == 0x000000, "Member 'KuroMoveSplineComponent_GetIgnorePoint::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroMoveSplineComponent_GetIgnorePoint, ReturnValue) == 0x000004, "Member 'KuroMoveSplineComponent_GetIgnorePoint::ReturnValue' has a wrong offset!");
 
 // Function KuroSplines.KuroMoveSplineComponent.GetIsHide
@@ -32,12 +32,12 @@ static_assert(offsetof(KuroMoveSplineComponent_GetIgnorePoint, ReturnValue) == 0
 struct KuroMoveSplineComponent_GetIsHide final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMoveSplineComponent_GetIsHide) == 0x000004, "Wrong alignment on KuroMoveSplineComponent_GetIsHide");
 static_assert(sizeof(KuroMoveSplineComponent_GetIsHide) == 0x000008, "Wrong size on KuroMoveSplineComponent_GetIsHide");
-static_assert(offsetof(KuroMoveSplineComponent_GetIsHide, Param_Index) == 0x000000, "Member 'KuroMoveSplineComponent_GetIsHide::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroMoveSplineComponent_GetIsHide, Index_0) == 0x000000, "Member 'KuroMoveSplineComponent_GetIsHide::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroMoveSplineComponent_GetIsHide, ReturnValue) == 0x000004, "Member 'KuroMoveSplineComponent_GetIsHide::ReturnValue' has a wrong offset!");
 
 // Function KuroSplines.KuroMoveSplineComponent.GetMoveSpeed
@@ -45,12 +45,12 @@ static_assert(offsetof(KuroMoveSplineComponent_GetIsHide, ReturnValue) == 0x0000
 struct KuroMoveSplineComponent_GetMoveSpeed final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMoveSplineComponent_GetMoveSpeed) == 0x000004, "Wrong alignment on KuroMoveSplineComponent_GetMoveSpeed");
 static_assert(sizeof(KuroMoveSplineComponent_GetMoveSpeed) == 0x000008, "Wrong size on KuroMoveSplineComponent_GetMoveSpeed");
-static_assert(offsetof(KuroMoveSplineComponent_GetMoveSpeed, Param_Index) == 0x000000, "Member 'KuroMoveSplineComponent_GetMoveSpeed::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroMoveSplineComponent_GetMoveSpeed, Index_0) == 0x000000, "Member 'KuroMoveSplineComponent_GetMoveSpeed::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroMoveSplineComponent_GetMoveSpeed, ReturnValue) == 0x000004, "Member 'KuroMoveSplineComponent_GetMoveSpeed::ReturnValue' has a wrong offset!");
 
 // Function KuroSplines.KuroMoveSplineComponent.GetMoveState
@@ -58,12 +58,12 @@ static_assert(offsetof(KuroMoveSplineComponent_GetMoveSpeed, ReturnValue) == 0x0
 struct KuroMoveSplineComponent_GetMoveState final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMoveSplineComponent_GetMoveState) == 0x000004, "Wrong alignment on KuroMoveSplineComponent_GetMoveState");
 static_assert(sizeof(KuroMoveSplineComponent_GetMoveState) == 0x000008, "Wrong size on KuroMoveSplineComponent_GetMoveState");
-static_assert(offsetof(KuroMoveSplineComponent_GetMoveState, Param_Index) == 0x000000, "Member 'KuroMoveSplineComponent_GetMoveState::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroMoveSplineComponent_GetMoveState, Index_0) == 0x000000, "Member 'KuroMoveSplineComponent_GetMoveState::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroMoveSplineComponent_GetMoveState, ReturnValue) == 0x000004, "Member 'KuroMoveSplineComponent_GetMoveState::ReturnValue' has a wrong offset!");
 
 // Function KuroSplines.KuroMoveSplineComponent.GetStayTime
@@ -71,12 +71,12 @@ static_assert(offsetof(KuroMoveSplineComponent_GetMoveState, ReturnValue) == 0x0
 struct KuroMoveSplineComponent_GetStayTime final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMoveSplineComponent_GetStayTime) == 0x000004, "Wrong alignment on KuroMoveSplineComponent_GetStayTime");
 static_assert(sizeof(KuroMoveSplineComponent_GetStayTime) == 0x000008, "Wrong size on KuroMoveSplineComponent_GetStayTime");
-static_assert(offsetof(KuroMoveSplineComponent_GetStayTime, Param_Index) == 0x000000, "Member 'KuroMoveSplineComponent_GetStayTime::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroMoveSplineComponent_GetStayTime, Index_0) == 0x000000, "Member 'KuroMoveSplineComponent_GetStayTime::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroMoveSplineComponent_GetStayTime, ReturnValue) == 0x000004, "Member 'KuroMoveSplineComponent_GetStayTime::ReturnValue' has a wrong offset!");
 
 // Function KuroSplines.KuroParkourSplineComponent.GetBuffId
@@ -84,12 +84,12 @@ static_assert(offsetof(KuroMoveSplineComponent_GetStayTime, ReturnValue) == 0x00
 struct KuroParkourSplineComponent_GetBuffId final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroParkourSplineComponent_GetBuffId) == 0x000004, "Wrong alignment on KuroParkourSplineComponent_GetBuffId");
 static_assert(sizeof(KuroParkourSplineComponent_GetBuffId) == 0x000008, "Wrong size on KuroParkourSplineComponent_GetBuffId");
-static_assert(offsetof(KuroParkourSplineComponent_GetBuffId, Param_Index) == 0x000000, "Member 'KuroParkourSplineComponent_GetBuffId::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroParkourSplineComponent_GetBuffId, Index_0) == 0x000000, "Member 'KuroParkourSplineComponent_GetBuffId::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroParkourSplineComponent_GetBuffId, ReturnValue) == 0x000004, "Member 'KuroParkourSplineComponent_GetBuffId::ReturnValue' has a wrong offset!");
 
 // Function KuroSplines.KuroParkourSplineComponent.GetModifiedTime
@@ -97,12 +97,12 @@ static_assert(offsetof(KuroParkourSplineComponent_GetBuffId, ReturnValue) == 0x0
 struct KuroParkourSplineComponent_GetModifiedTime final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroParkourSplineComponent_GetModifiedTime) == 0x000004, "Wrong alignment on KuroParkourSplineComponent_GetModifiedTime");
 static_assert(sizeof(KuroParkourSplineComponent_GetModifiedTime) == 0x000008, "Wrong size on KuroParkourSplineComponent_GetModifiedTime");
-static_assert(offsetof(KuroParkourSplineComponent_GetModifiedTime, Param_Index) == 0x000000, "Member 'KuroParkourSplineComponent_GetModifiedTime::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroParkourSplineComponent_GetModifiedTime, Index_0) == 0x000000, "Member 'KuroParkourSplineComponent_GetModifiedTime::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroParkourSplineComponent_GetModifiedTime, ReturnValue) == 0x000004, "Member 'KuroParkourSplineComponent_GetModifiedTime::ReturnValue' has a wrong offset!");
 
 // Function KuroSplines.KuroParkourSplineComponent.GetRadius
@@ -110,12 +110,12 @@ static_assert(offsetof(KuroParkourSplineComponent_GetModifiedTime, ReturnValue) 
 struct KuroParkourSplineComponent_GetRadius final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroParkourSplineComponent_GetRadius) == 0x000004, "Wrong alignment on KuroParkourSplineComponent_GetRadius");
 static_assert(sizeof(KuroParkourSplineComponent_GetRadius) == 0x000008, "Wrong size on KuroParkourSplineComponent_GetRadius");
-static_assert(offsetof(KuroParkourSplineComponent_GetRadius, Param_Index) == 0x000000, "Member 'KuroParkourSplineComponent_GetRadius::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroParkourSplineComponent_GetRadius, Index_0) == 0x000000, "Member 'KuroParkourSplineComponent_GetRadius::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroParkourSplineComponent_GetRadius, ReturnValue) == 0x000004, "Member 'KuroParkourSplineComponent_GetRadius::ReturnValue' has a wrong offset!");
 
 }

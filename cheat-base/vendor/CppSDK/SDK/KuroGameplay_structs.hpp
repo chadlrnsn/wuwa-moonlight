@@ -120,12 +120,12 @@ struct FGameBudgetAllocatorGroupConfig final
 public:
 	class FName                                   GroupName;                                         // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESignificanceGroup                            SignificanceGroup;                                 // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14B8[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        TickPriority;                                      // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDisableActorTickStrategy                     DisableActorTickStrategy;                          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14B9[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        DisableActorTickDistance;                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14BA[0x5C];                                    // 0x001C(0x005C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x5C];                                      // 0x001C(0x005C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGameBudgetAllocatorGroupConfig) == 0x000004, "Wrong alignment on FGameBudgetAllocatorGroupConfig");
 static_assert(sizeof(FGameBudgetAllocatorGroupConfig) == 0x000078, "Wrong size on FGameBudgetAllocatorGroupConfig");
@@ -155,7 +155,7 @@ static_assert(offsetof(FGameBudgetAllocatorTickDetailConfig, TickReductionInterv
 struct FGameBudgetAllocatorAfterTickFunction final : public FTickFunction
 {
 public:
-	uint8                                         Pad_14BB[0x8];                                     // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGameBudgetAllocatorAfterTickFunction) == 0x000008, "Wrong alignment on FGameBudgetAllocatorAfterTickFunction");
 static_assert(sizeof(FGameBudgetAllocatorAfterTickFunction) == 0x000030, "Wrong size on FGameBudgetAllocatorAfterTickFunction");
@@ -165,7 +165,7 @@ static_assert(sizeof(FGameBudgetAllocatorAfterTickFunction) == 0x000030, "Wrong 
 struct FGameBudgetAllocatorTickFunction final : public FTickFunction
 {
 public:
-	uint8                                         Pad_14BC[0x8];                                     // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGameBudgetAllocatorTickFunction) == 0x000008, "Wrong alignment on FGameBudgetAllocatorTickFunction");
 static_assert(sizeof(FGameBudgetAllocatorTickFunction) == 0x000030, "Wrong size on FGameBudgetAllocatorTickFunction");
@@ -244,7 +244,7 @@ struct FPerformanceStatisticsSectionRecordSerialize final
 {
 public:
 	class FName                                   SectionName;                                       // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14BD[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FPerformanceStatisticsUnitRecord> UnitRecordValues;                                  // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FPerformanceStatisticsSectionRecordSerialize) == 0x000008, "Wrong alignment on FPerformanceStatisticsSectionRecordSerialize");
@@ -273,7 +273,7 @@ public:
 	float                                         TotalTime;                                         // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         AverageTime;                                       // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxTime;                                           // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14BE[0x6C];                                    // 0x001C(0x006C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x6C];                                      // 0x001C(0x006C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FPerformanceStatisticsTagNode) == 0x000008, "Wrong alignment on FPerformanceStatisticsTagNode");
 static_assert(sizeof(FPerformanceStatisticsTagNode) == 0x000088, "Wrong size on FPerformanceStatisticsTagNode");
