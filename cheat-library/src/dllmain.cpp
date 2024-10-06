@@ -25,43 +25,47 @@ void IndependentHooks() {
 void features() noexcept {
 	while (g_bRunning) {
 
-		Engine = UEngine::GetEngine();
+		if (!UEngine::GetEngine()) continue;
+		engine = UEngine::GetEngine();
 
-		if (!Engine) continue;
 		fpsUnlock.Run();
-		
-		if (!Engine) continue;
 
-		World = UWorld::GetWorld();
+		if (!UWorld::GetWorld()) continue;
+		world = UWorld::GetWorld();
 
-		if (!World) 
+		game_instance = world->OwningGameInstance;
+
+		if (!game_instance)
 			continue;
 
-		GameInstance = World->OwningGameInstance;
-		if (!GameInstance)
+		local_player = game_instance->LocalPlayers[0];
+		if (!local_player)
 			continue;
 
-		LocalPlayer = GameInstance->LocalPlayers[0];
-		if (!LocalPlayer)
+		player_controller = local_player->PlayerController;
+		if (!player_controller)
 			continue;
 
-		PlayerController = LocalPlayer->PlayerController;
-		if (!PlayerController)
+		pawn = player_controller->AcknowledgedPawn;
+		if (!pawn)
 			continue;
 
-		AcknowledgedPawn = PlayerController->AcknowledgedPawn;
-		if (!AcknowledgedPawn)
-			continue;
+
+		//inline UWorld* world;
+		//inline UGameInstance* game_instance;
+		//inline ULocalPlayer* local_player;
+		//inline APlayerController* player_controller;
+		//inline APawn* pawn;
 
 		speedhack.Run();
-		//gravityScale.Run();
+		gravityScale.Run();
 
 		//walkFloorZ.Run(PlayerController);
 		//walkFloorAngle.Run();
 		//fly.Run();
 		//esp.Run();
 
-		auto c_viewport = LocalPlayer->ViewportClient;
+		auto c_viewport = local_player->ViewportClient;
 
 		//if (!c_viewport) return;
 

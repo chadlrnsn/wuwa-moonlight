@@ -65,9 +65,9 @@ inline void SpeedHack::DrawMenuItems()
 		ImGui::Checkbox("Character Dillation", &moveSpeed.bEnable);
 		ImGui::SliderFloat("##SpeedMultiplier", &moveSpeed.Speed, moveSpeed.MinSpeed, moveSpeed.MaxSpeed);
 		
-		ImGui::Text("World Speed Multiplier");
-		ImGui::Checkbox("World Dillation", &worldSpeed.bEnable);
-		ImGui::SliderFloat("##WorldSpeed", &worldSpeed.Speed, worldSpeed.MinSpeed, worldSpeed.MaxSpeed);
+		ImGui::Text("world Speed Multiplier");
+		ImGui::Checkbox("world Dillation", &worldSpeed.bEnable);
+		ImGui::SliderFloat("##worldSpeed", &worldSpeed.Speed, worldSpeed.MinSpeed, worldSpeed.MaxSpeed);
 
 		ImGui::Text("Rate Speed (sequences)");
 		ImGui::Checkbox("Rate Speed", &rateSpeed.bEnable);
@@ -77,34 +77,34 @@ inline void SpeedHack::DrawMenuItems()
 
 inline void SpeedHack::Run()
 {
-	if (!AcknowledgedPawn) return;
+	if (!pawn) return;
 
 	HandleKeys();
 
 	// Character dilation
 	if (bEnable)
 	{
-		AcknowledgedPawn->CustomTimeDilation = moveSpeed.Speed;
+		pawn->CustomTimeDilation = moveSpeed.Speed;
 		bOnce = false;
 	}
 
-	if (!bEnable && AcknowledgedPawn && !bOnce)
+	if (!bEnable && pawn && !bOnce)
 	{
-		AcknowledgedPawn->CustomTimeDilation = moveSpeed.Default;
+		pawn->CustomTimeDilation = moveSpeed.Default;
 		bOnce = true;
 	}
 
-	// World dilation
-	if (bEnable && World && World->PersistentLevel)
+	// world dilation
+	if (bEnable && world && world->PersistentLevel)
 	{
 
-		World->PersistentLevel->WorldSettings->TimeDilation = worldSpeed.Speed;
+		world->PersistentLevel->WorldSettings->TimeDilation = worldSpeed.Speed;
 		bOnce = false;
 	}
 
-	if (!bEnable && World->PersistentLevel && !bOnce)
+	if (!bEnable && world->PersistentLevel && !bOnce)
 	{
-		World->PersistentLevel->WorldSettings->TimeDilation = worldSpeed.Default;
+		world->PersistentLevel->WorldSettings->TimeDilation = worldSpeed.Default;
 		bOnce = true;
 	}
 }
@@ -114,7 +114,7 @@ inline void SpeedHack::Call(UObject* Object, UFunction* Function, void* Parms, t
 	if (Function == FN_TsAnimNotifyReSkillEvent_C) {
 		
 		Params::TsAnimNotifyReSkillEvent_C_K2_Notify* parameters = (Params::TsAnimNotifyReSkillEvent_C_K2_Notify*)Parms;
-		bool IsMyMesh = parameters->MeshComp == PlayerController->Character->Mesh;
+		bool IsMyMesh = parameters->MeshComp == player_controller->Character->Mesh;
 
 		if (IsMyMesh && rateSpeed.bEnable) {
 			//

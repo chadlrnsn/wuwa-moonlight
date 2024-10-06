@@ -9,12 +9,13 @@ namespace globals {
 	inline ProcessEvent oProcessEvent;
 	inline PostRender oPostRender;
 
-	inline UEngine* Engine;
-	inline UWorld* World;
-	inline UGameInstance* GameInstance;
-	inline ULocalPlayer* LocalPlayer;
-	inline APlayerController* PlayerController;
-	inline APawn* AcknowledgedPawn;
+	inline UEngine* engine;
+	inline UWorld* world;
+	inline UGameInstance* game_instance;
+	inline ULocalPlayer* local_player;
+	inline APlayerController* player_controller;
+	inline APawn* pawn;
+
 
 	inline UObject* FN_TsAnimNotifyReSkillEvent_C; // Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify
 	inline UObject* FN_TsAnimNotifyStateCounterAttack_C; // Function TsAnimNotifyStateCounterAttack.TsAnimNotifyStateCounterAttack_C.K2_NotifyBegin

@@ -30,14 +30,14 @@ inline void HitMultiplier::Draw() {
 inline void HitMultiplier::Call(UObject* Object, UFunction* Function, void* Parms, tProcessEvent oProcessEvent) {
 
 	if (FN_TsAnimNotifyReSkillEvent_C && (Function == FN_TsAnimNotifyReSkillEvent_C)) {
-		printf("Object [%s] MyPawn [%s] Function [%s]\n", Object->GetName().c_str(), AcknowledgedPawn->GetName().c_str(), Function->GetName().c_str());
+		printf("Object [%s] MyPawn [%s] Function [%s]\n", Object->GetName().c_str(), pawn->GetName().c_str(), Function->GetName().c_str());
 
 		SDK::Params::TsAnimNotifyReSkillEvent_C_K2_Notify* parameters = (SDK::Params::TsAnimNotifyReSkillEvent_C_K2_Notify*)Parms;
 		SDK::USkeletalMeshComponent* meshComp = parameters->MeshComp;
 
 		if (!meshComp) return oProcessEvent(Object, Function, Parms);
 
-		auto is_local_player_mesh = meshComp == PlayerController->Character->Mesh;
+		auto is_local_player_mesh = meshComp == player_controller->Character->Mesh;
 
 		if (is_local_player_mesh) {
 			for (auto i = 0; i < config::multihit::hits; i++) {

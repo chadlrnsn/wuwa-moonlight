@@ -107,9 +107,9 @@ inline void Fly::Run()
 {
 	HandleKeys();
 
-	if (!PlayerController) return;
+	if (!player_controller) return;
 	
-	auto character  = PlayerController->Character;
+	auto character  = player_controller->Character;
 	if (!character) return;
 
 	SDK:UCharacterMovementComponent* Movement = character->CharacterMovement;
@@ -126,8 +126,8 @@ inline void Fly::Run()
 
 		Movement->MaxAcceleration = 9999;
 
-		if (FlyData.bNoClip && AcknowledgedPawn && AcknowledgedPawn->GetActorEnableCollision())
-			AcknowledgedPawn->SetActorEnableCollision(false);
+		if (FlyData.bNoClip && pawn && pawn->GetActorEnableCollision())
+			pawn->SetActorEnableCollision(false);
 
 		if (GetAsyncKeyState(VK_SPACE))
 			Movement->Velocity.Z = speed.Speed;
@@ -144,8 +144,8 @@ inline void Fly::Run()
 		Movement->MovementMode = SDK::EMovementMode::MOVE_Walking;
 		Movement->MaxAcceleration = oldaccel;
 
-		if (AcknowledgedPawn && !AcknowledgedPawn->GetActorEnableCollision())
-			AcknowledgedPawn->SetActorEnableCollision(true);
+		if (pawn && !pawn->GetActorEnableCollision())
+			pawn->SetActorEnableCollision(true);
 
 		FlyData.bFlySwitch = false;
 	}

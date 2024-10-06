@@ -31,9 +31,9 @@ public:
 
 inline void WalkableFloorAngle::Run()
 {
-	if (!AcknowledgedPawn) return;
+	if (!pawn) return;
 
-	SDK::UCharacterMovementComponent* Movement = PlayerController->Character->CharacterMovement;
+	SDK::UCharacterMovementComponent* Movement = player_controller->Character->CharacterMovement;
 
 	if (bEnable && Movement)
 	{

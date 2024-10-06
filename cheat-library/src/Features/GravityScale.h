@@ -41,9 +41,9 @@ inline void GravityScale::DrawMenuItems()
 
 inline void GravityScale::Run()
 {
-	if (!AcknowledgedPawn) return;
-	if (!PlayerController || !PlayerController->Character) return;
-	SDK::UCharacterMovementComponent* Movement = PlayerController->Character->CharacterMovement;
+	if (!pawn) return;
+	if (!player_controller || !player_controller->Character) return;
+	SDK::UCharacterMovementComponent* Movement = player_controller->Character->CharacterMovement;
 
 	if (bEnable && Movement)
 	{

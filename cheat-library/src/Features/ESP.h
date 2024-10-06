@@ -110,20 +110,20 @@ inline void ESP::Render(UCanvas* Canvas)
 {
 	if (!bEnabled) return;
 	if (NearbyActors.empty()) return;
-	if (!PlayerController) return;
-	if (!AcknowledgedPawn) return;
+	if (!player_controller) return;
+	if (!pawn) return;
 
 	for (AActor* Actor : NearbyActors)
 	{
 		FVector2D ScreenLocation;
 
-		if (UGameplayStatics::ProjectWorldToScreen(PlayerController, AcknowledgedPawn->K2_GetActorLocation(), &ScreenLocation, true))
+		if (UGameplayStatics::ProjectWorldToScreen(player_controller, pawn->K2_GetActorLocation(), &ScreenLocation, true))
 		{
 			std::string str = Actor->GetName();
 			std::wstring widestr = std::wstring(str.begin(), str.end());
 
 			if (Actor) {
-				Helper::UE_RenderText(Canvas, Engine->SmallFont, widestr.c_str(), ScreenLocation);
+				Helper::UE_RenderText(Canvas, engine->SmallFont, widestr.c_str(), ScreenLocation);
 			}
 		}
 	}
@@ -134,13 +134,13 @@ inline void ESP::Run()
 	HandleKeys();
 
 	if (!bEnabled) return;
-	if (!AcknowledgedPawn) return;
+	if (!pawn) return;
 
-	FVector MyActorLocation = AcknowledgedPawn->K2_GetActorLocation();
+	FVector MyActorLocation = pawn->K2_GetActorLocation();
 
 	if (!NearbyActors.empty()) NearbyActors.clear();
 
-	auto c_level = AcknowledgedPawn->GetLevel();
+	auto c_level = pawn->GetLevel();
 	if (!c_level) return;
 
 	TArray<AActor*> ActorsInLevel = c_level->Actors;

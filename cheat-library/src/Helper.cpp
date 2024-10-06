@@ -25,28 +25,28 @@ namespace Helper {
 #endif
 	}
 
-	bool IsFullyLoaded(SDK::UWorld* World) noexcept {
-		if (!World) return false;
+	//bool IsFullyLoaded(SDK::UWorld* World) noexcept {
+	//	if (!World) return false;
 
-		SDK::UGameInstance* gInstance = World->OwningGameInstance;
-		if (!gInstance) return false;
-		GameInstance = gInstance;
+	//	SDK::UGameInstance* gInstance = World->OwningGameInstance;
+	//	if (!gInstance) return false;
+	//	GameInstance = gInstance;
 
-		SDK::ULocalPlayer* localPlayer = gInstance->LocalPlayers[0];
-		if (!localPlayer) return false;
-		LocalPlayer = localPlayer;
+	//	SDK::ULocalPlayer* localPlayer = gInstance->LocalPlayers[0];
+	//	if (!localPlayer) return false;
+	//	LocalPlayer = localPlayer;
 
 
-		SDK::APlayerController* playerController = localPlayer->PlayerController;
-		if (!playerController) return false;
-		PlayerController = playerController;
+	//	SDK::APlayerController* playerController = localPlayer->PlayerController;
+	//	if (!playerController) return false;
+	//	PlayerController = playerController;
 
-		SDK::APawn* acknowledgedPawn = playerController->AcknowledgedPawn;
-		if (!acknowledgedPawn) return false;
-		AcknowledgedPawn = acknowledgedPawn;
+	//	SDK::APawn* acknowledgedPawn = playerController->AcknowledgedPawn;
+	//	if (!acknowledgedPawn) return false;
+	//	AcknowledgedPawn = acknowledgedPawn;
 
-		return true;
-	}
+	//	return true;
+	//}
 
 
 	void UE_RenderText(

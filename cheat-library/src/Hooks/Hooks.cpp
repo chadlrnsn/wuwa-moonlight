@@ -157,8 +157,8 @@ void Hooks::InGame::ProcessEvent()
 void __fastcall hkPostRender(UGameViewportClient* viewport, UCanvas* canvas)
 {
 
-	if (canvas && Engine) {
-		Helper::UE_RenderText(canvas, Engine->SmallFont, L"sigma", { 10, 10 }, { 1,1 }, FLinearColor(1, 1, 1, 1));
+	if (canvas && engine) {
+		Helper::UE_RenderText(canvas, engine->SmallFont, L"sigma", { 10, 10 }, { 1,1 }, FLinearColor(1, 1, 1, 1));
 		if (config::esp::enable) esp.Render(canvas);
 	}
 
