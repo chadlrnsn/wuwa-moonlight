@@ -126,7 +126,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>Default</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\fonts;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\imgui\backends;$(ProjectDir)\vendor\kiero;$(ProjectDir)vendor\imgui-nav;$(SolutionDir)cheat-base\vendor\CppSDK;$(SolutionDir)\cheat-base\src;$(SolutionDir)\cheat-base\vendor;$(ProjectDir)\vendor\minhook</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\fonts;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\imgui\backends;$(ProjectDir)\vendor\kiero;$(ProjectDir)vendor\imgui-nav;$(SolutionDir)cheat-base\vendor\CppSDK;$(SolutionDir)cheat-base\src;$(SolutionDir)cheat-base\vendor;$(ProjectDir)vendor\minhook</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <FunctionLevelLinking>true</FunctionLevelLinking>
     </ClCompile>
@@ -147,7 +147,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>Default</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\fonts;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\imgui\backends;$(ProjectDir)\vendor\kiero;$(ProjectDir)vendor\imgui-nav;$(SolutionDir)cheat-base\vendor\CppSDK;$(SolutionDir)\cheat-base\src;$(SolutionDir)\cheat-base\vendor;$(ProjectDir)\vendor\minhook</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\src;$(ProjectDir)\vendor;$(ProjectDir)\vendor\fonts;$(ProjectDir)\vendor\imgui;$(ProjectDir)\vendor\imgui\backends;$(ProjectDir)\vendor\kiero;$(ProjectDir)vendor\imgui-nav;$(SolutionDir)cheat-base\vendor\CppSDK;$(SolutionDir)cheat-base\src;$(SolutionDir)cheat-base\vendor;$(ProjectDir)vendor\minhook</AdditionalIncludeDirectories>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>

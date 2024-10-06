@@ -8,7 +8,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cheat-library", "cheat-libr
 		{0D43EDA3-149F-4726-8707-C657C4511242} = {0D43EDA3-149F-4726-8707-C657C4511242}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cheat-base", "cheat-base\wuwa-base.vcxproj", "{0D43EDA3-149F-4726-8707-C657C4511242}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cheat-base", "cheat-base\cheat-base.vcxproj", "{0D43EDA3-149F-4726-8707-C657C4511242}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

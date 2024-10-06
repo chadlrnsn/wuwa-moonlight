@@ -43,6 +43,6 @@ namespace Helper {
 	);
 }
 
-#define LOG(fmt, ...) HelperNS::devlog("[*] " fmt, ##__VA_ARGS__)
-#define LOG_WARN(fmt, ...) HelperNS::devlog("[WARN] " fmt, ##__VA_ARGS__)
-#define LOG_ERROR(fmt, ...) HelperNS::devlog("[ERROR] " fmt, ##__VA_ARGS__)
+//#define LOG(fmt, ...) HelperNS::devlog("[*] " fmt, ##__VA_ARGS__)
+//#define LOG_WARN(fmt, ...) HelperNS::devlog("[WARN] " fmt, ##__VA_ARGS__)
+//#define LOG_ERROR(fmt, ...) HelperNS::devlog("[ERROR] " fmt, ##__VA_ARGS__)

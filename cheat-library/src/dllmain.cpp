@@ -1,6 +1,9 @@
 #pragma once
+#pragma execution_character_set( "utf-8" )
+
 #include "dllmain.h"
 #include <Hooks/d3d11hook.h>
+#include <logger/logger.h>
 
 using namespace SDK;
 using namespace globals;
@@ -9,9 +12,16 @@ FILE* dummy;
 std::atomic<bool> g_bRunning{ true };
 
 void CreateConsole() {
-	AllocConsole();
-	freopen_s(&dummy, "CONOUT$", "w", stdout);
-	freopen_s(&dummy, "CONOUT$", "w", stderr);
+	if (AllocConsole()) {
+		freopen_s(&dummy, "CONOUT$", "w", stdout);
+		freopen_s(&dummy, "CONOUT$", "w", stderr);
+
+		HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+		DWORD dwMode = 0;
+		GetConsoleMode(hOut, &dwMode);
+		dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+		SetConsoleMode(hOut, dwMode);
+	}
 }
 
 
@@ -25,8 +35,11 @@ void IndependentHooks() {
 void features() noexcept {
 	while (g_bRunning) {
 
-		if (!UEngine::GetEngine()) continue;
 		engine = UEngine::GetEngine();
+		if (!engine) { 
+			LOG_WARN("No engine");
+			continue;
+		}
 
 		fpsUnlock.Run();
 

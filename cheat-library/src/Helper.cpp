@@ -1,6 +1,5 @@
 #include "Helper.h"
 
-
 namespace Helper {
 
 	bool ContainsSubstring(const std::string& str, const std::string& sub)
@@ -11,18 +10,6 @@ namespace Helper {
 			[](char ch1, char ch2) { return std::toupper(ch1) == std::toupper(ch2); }
 		);
 		return (it != str.end());
-	}
-
-	void devlog(const char* fmt, ...)
-	{
-#ifdef _DEBUG
-		va_list args;
-		char buf[1024];
-		va_start(args, fmt);
-		vsnprintf(buf, sizeof(buf), fmt, args);
-		va_end(args);
-		std::cout << buf;
-#endif
 	}
 
 	//bool IsFullyLoaded(SDK::UWorld* World) noexcept {

@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\logger\logger.h" />
     <ClInclude Include="src\wuwa-base\framework\framework.h" />
     <ClInclude Include="src\wuwa-base\framework\pch.h" />
     <ClInclude Include="src\wuwa-base\inject\load-library.h" />
