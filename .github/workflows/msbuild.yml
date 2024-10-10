@@ -2,19 +2,14 @@ name: MSBuild
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, dev ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, dev ]
 
 env:
-  # Path to the solution file relative to the root of the project.
   SOLUTION_FILE_PATH: ./wuwa-moonlight.sln
-
-  # Configuration type to build.
-  # You can convert this to a build matrix if you need coverage of multiple configuration types.
-  # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
-  BUILD_CONFIGURATION: Release
   tag1: V${{ github.run_number }}
+  BUILD_ID: ${{ github.run_id }}  # Уникальный идентификатор для сборки
 
 permissions:
   contents: read
@@ -23,52 +18,52 @@ jobs:
   build:
     runs-on: windows-latest
 
-    steps:
+    strategy:
+      matrix:
+        configuration: [Release, Debug]
+        include:
+          - configuration: Release
+          - configuration: Debug
 
-    - uses: actions/checkout@v1
+    steps:
+    - uses: actions/checkout@v4
       with:
         submodules: recursive
+
     - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v2
 
-
-
-    - name: Restore NuGet packages
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: nuget restore ${{env.SOLUTION_FILE_PATH}}
-      
     - name: Build
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      timeout-minutes: 4
-      continue-on-error: true
-      # Add additional options to the MSBuild command line here (like platform or verbosity level).
-      # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
-    
-    - name: zip
-      run: 7z a bin.zip bin\Release-x64\moonlight.dll # bin\Release-x64\Moonlight.exe
-      
-    - name: upload artifacts
-      uses: actions/upload-artifact@v3
+      working-directory: ${{ env.GITHUB_WORKSPACE }}
+      timeout-minutes: 10  # Увеличиваем время на случай больших сборок
+      run: |
+        msbuild /m /p:Configuration=${{ matrix.configuration }} ${{env.SOLUTION_FILE_PATH}}
+
+    - name: Zip build artifacts
+      run: |
+        7z a bin-${{ matrix.configuration }}.zip ${{ github.workspace }}\**\bin\${{ matrix.configuration }}\*
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
       with:
-        name: my-artifact
-        path: bin.zip
-        
+        name: Artifact-${{ matrix.configuration }}
+        path: bin-${{ matrix.configuration }}.zip
+
+  # Опциональный блок для публикации релиза (закомментирован)
   # release:
   #   needs: build
   #   runs-on: ubuntu-latest
   #   permissions:
   #     contents: write
-
   #   steps:
   #     - name: Download a Build Artifact
-  #       uses: actions/download-artifact@v3.0.0
+  #       uses: actions/download-artifact@v4
   #       with:
   #         name: my-artifact
   #     - name: Release
   #       uses: softprops/action-gh-release@v1
   #       with:
   #         token: ${{ secrets.GITHUB_TOKEN }}
-          
-  #         tag_name: ${{env.tag1}}
-  #         files: bin.zip
+  #         tag_name: ${{ env.tag1 }}
+  #         files: bin-${{ matrix.configuration }}-${{ env.BUILD_ID }}.zip
+  #

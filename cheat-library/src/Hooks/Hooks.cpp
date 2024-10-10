@@ -125,7 +125,7 @@ void Hooks::InGame::ProcessEvent()
 	printf("ProcessEvent address: %llx\n", ProcessEventAddr);
 
 
-	while (true) {
+	while (!globals::g_break) {
 		if ((InSDKUtils::GetImageBase() + SDK::Offsets::ProcessEvent) <= InSDKUtils::GetImageBase()) {
 			printf("Invalid ProcessEvent address\n");
 			break;
@@ -168,7 +168,7 @@ void __fastcall hkPostRender(UGameViewportClient* viewport, UCanvas* canvas)
 
 void Hooks::InGame::PostRender()
 {
-	while (true) {
+	while (!globals::g_break) {
 		UEngine* Engine = UEngine::GetEngine();
 		if (!Engine) {
 			printf("Failed to get Engine instance\n");
