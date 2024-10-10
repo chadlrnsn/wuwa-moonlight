@@ -21,9 +21,7 @@ jobs:
     strategy:
       matrix:
         configuration: [Release, Debug]
-        include:
-          - configuration: Release
-          - configuration: Debug
+        platform: [x64]
 
     steps:
     - uses: actions/checkout@v4
@@ -35,19 +33,18 @@ jobs:
 
     - name: Build
       working-directory: ${{ env.GITHUB_WORKSPACE }}
-      timeout-minutes: 10  # Увеличиваем время на случай больших сборок
       run: |
-        msbuild /m /p:Configuration=${{ matrix.configuration }} ${{env.SOLUTION_FILE_PATH}}
+        msbuild /m /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.platform }} ${{env.SOLUTION_FILE_PATH}}
 
     - name: Zip build artifacts
       run: |
-        7z a bin-${{ matrix.configuration }}.zip ${{ github.workspace }}\**\bin\${{ matrix.configuration }}\*
+        7z a bin-${{ matrix.configuration }}-${{ matrix.platform }}.zip ${{ github.workspace }}\bin\${{ matrix.configuration }}-${{ matrix.platform }}\*
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: Artifact-${{ matrix.configuration }}
-        path: bin-${{ matrix.configuration }}.zip
+        name: Artifact-${{ matrix.configuration }}-${{ matrix.platform }}
+        path: bin-${{ matrix.configuration }}-${{ matrix.platform }}.zip
 
   # Опциональный блок для публикации релиза (закомментирован)
   # release:
