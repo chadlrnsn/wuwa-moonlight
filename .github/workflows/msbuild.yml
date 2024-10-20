@@ -46,7 +46,7 @@ jobs:
         name: Artifact-${{ matrix.configuration }}-${{ matrix.platform }}
         path: bin-${{ matrix.configuration }}-${{ matrix.platform }}.zip
 
-  # Опциональный блок для публикации релиза (закомментирован)
+  # Опционально: публикация релиза
   # release:
   #   needs: build
   #   runs-on: ubuntu-latest
@@ -54,7 +54,7 @@ jobs:
   #     contents: write
   #   steps:
   #     - name: Download a Build Artifact
-  #       uses: actions/download-artifact@v4
+  #       uses: actions/download-artifact@v3.0.0
   #       with:
   #         name: my-artifact
   #     - name: Release
@@ -63,4 +63,3 @@ jobs:
   #         token: ${{ secrets.GITHUB_TOKEN }}
   #         tag_name: ${{ env.tag1 }}
   #         files: bin-${{ matrix.configuration }}-${{ env.BUILD_ID }}.zip
-  #
