@@ -10,6 +10,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cheat-library", "cheat-libr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cheat-base", "cheat-base\cheat-base.vcxproj", "{0D43EDA3-149F-4726-8707-C657C4511242}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "injector", "injector\injector.vcxproj", "{28FEAE8E-D523-4044-8250-068982468C2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -34,6 +36,14 @@ Global
 		{0D43EDA3-149F-4726-8707-C657C4511242}.Release|x64.Build.0 = Release|x64
 		{0D43EDA3-149F-4726-8707-C657C4511242}.Release|x86.ActiveCfg = Release|Win32
 		{0D43EDA3-149F-4726-8707-C657C4511242}.Release|x86.Build.0 = Release|Win32
+		{28FEAE8E-D523-4044-8250-068982468C2B}.Debug|x64.ActiveCfg = Debug|x64
+		{28FEAE8E-D523-4044-8250-068982468C2B}.Debug|x64.Build.0 = Debug|x64
+		{28FEAE8E-D523-4044-8250-068982468C2B}.Debug|x86.ActiveCfg = Debug|Win32
+		{28FEAE8E-D523-4044-8250-068982468C2B}.Debug|x86.Build.0 = Debug|Win32
+		{28FEAE8E-D523-4044-8250-068982468C2B}.Release|x64.ActiveCfg = Release|x64
+		{28FEAE8E-D523-4044-8250-068982468C2B}.Release|x64.Build.0 = Release|x64
+		{28FEAE8E-D523-4044-8250-068982468C2B}.Release|x86.ActiveCfg = Release|Win32
+		{28FEAE8E-D523-4044-8250-068982468C2B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
