@@ -1,5 +1,14 @@
-#include "Menu.hpp"
+#include <stdafx.h>
+
+#ifndef IMGUI_DEFINE_MATH_OPERATORS
+#define IMGUI_DEFINE_MATH_OPERATORS
+#endif // !IMGUI_DEFINE_MATH_OPERATORS
+
+#include <imgui_internal.h>
+#include "Menu.h"
 #include "fonts/font.h"
+
+
 
 void Menu::RealCursorShow() {
     ImGui::GetMouseCursor();
@@ -16,7 +25,8 @@ void Menu::Setup()
     ImVec2 whole_content_size = io.DisplaySize;
     whole_content_size.x = whole_content_size.x * 0.3;
     whole_content_size.y = whole_content_size.y * 0.2;
-    this->SetUpColors(style, colors);
+
+    SetUpColors(style, colors);
 
     ImFontConfig font_config;
     font_config.PixelSnapH = false;
@@ -41,23 +51,11 @@ void Menu::Setup()
         0
     };
 
-    static const ImWchar iconRanges[] =
-    {
-        ICON_MIN_FA, ICON_MAX_16_FA, // awesome font icons
-        0,
-    };
-
     io.Fonts->AddFontDefault();
     font_regular = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
     font_medium  = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
     font_bold    = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
     font_title   = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
-#ifndef _DEBUG
-    //icons   = io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icontfont_config, iconRanges);
-#else 
-    std::cout << "Awesome font will not be loaded due to DEBUG configuration!" << std::endl;
-#endif // _DEBUG
-
 
     io.FontDefault = font_regular;
 }
@@ -219,21 +217,21 @@ void Menu::RenderMenu()
     {
         case PLAYER:
             speedhack.DrawMenuItems();
-            fly.DrawMenuItems();
-            gravityScale.DrawMenuItems();
-            walkFloorZ.DrawMenuItems();
-            walkFloorAngle.DrawMenuItems();
-            multihit.Draw();
+            //fly.DrawMenuItems();
+            //gravityScale.DrawMenuItems();
+            //walkFloorZ.DrawMenuItems();
+            //walkFloorAngle.DrawMenuItems();
+            //multihit.Draw();
             //godmode.Draw();
 
             break;
 
         case ESP:
-            esp.DrawMenuItems();
+            //esp.DrawMenuItems();
             break;
 
         case MISC:
-            fpsUnlock.DrawMenuItems();
+            //fpsUnlock.DrawMenuItems();
             if (ImGui::Button("Force exit")) ExitProcess(0);
 
             break;
@@ -284,26 +282,3 @@ void Menu::RenderWatermark()
     ImGui::Text("Moonlight | github.com/chadlrnsn/wuwa-moonlight");
     ImGui::End();
 }
-
-void Menu::RenderNotify()
-{
-    // Setup style like main window
-
-
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 5.f);
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.f); // Disable borders
-
-    // Notifications color setup
-    //ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10f, 0.10f, 0.10f, 1.00f)); // Background color
-
-    // Main rendering function
-    ImGui::RenderNotifications();
-
-
-    //——————————————————————————————— WARNING ———————————————————————————————
-    // Argument MUST match the amount of ImGui::PushStyleVar() calls 
-    ImGui::PopStyleVar(2);
-    // Argument MUST match the amount of ImGui::PushStyleColor() calls 
-    //ImGui::PopStyleColor(1);
-}
-

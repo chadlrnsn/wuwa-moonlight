@@ -1,6 +1,6 @@
-[submodule "cheat-library/vendor/imgui"]
-	path = cheat-library/vendor/imgui
+[submodule "cheat-base/vendor/imgui"]
+	path = cheat-base/vendor/imgui
 	url = https://github.com/ocornut/imgui.git
-[submodule "cheat-library/vendor/minhook"]
-	path = cheat-library/vendor/minhook
+[submodule "cheat-base/vendor/minhook"]
+	path = cheat-base/vendor/minhook
 	url = https://github.com/TsudaKageyu/minhook.git

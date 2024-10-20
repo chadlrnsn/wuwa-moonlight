@@ -1,5 +1,5 @@
 #pragma once
-#include <includes.h>
+#include "MainDLC.h"
 #include <globals.h>
 #include <SDK/TsAnimNotifyReSkillEvent_parameters.hpp>
 
@@ -8,7 +8,7 @@ using namespace globals;
 using namespace SDK;
 using tProcessEvent = void(__thiscall*)(UObject*, UFunction*, void*);
 
-class SpeedHack
+class SpeedHack : DLC
 {
 private:
 
@@ -26,18 +26,15 @@ private:
 	Speed moveSpeed		= { 5, 1, 30 };
 	Speed worldSpeed	= { 1, 0, 5 };
 
-	bool bOnce = false;
-	bool bEnable = false;
-
 	// Bindings
-	bool bSettingKey = false;
-	KeyBindToggle kbToggle = KeyBindToggle(KeyBind::KeyCode::Z);
+	//bool bSettingKey = false;
+	//KeyBindToggle kbToggle = KeyBindToggle(KeyBind::KeyCode::Z);
 
 
 public:
 	void HandleKeys() {
-		if (GetAsyncKeyState(kbToggle.toInt()) & 0x1) {
-			bEnable = !bEnable;
+		if (GetAsyncKeyState(/*kbToggle.toInt()) & 0x1*/ VK_F6) & 1) {
+			m_bActive = !m_bActive;
 		}
 	}
 
@@ -56,11 +53,11 @@ public:
 
 inline void SpeedHack::DrawMenuItems()
 {
-	ImGui::Checkbox("SpeedHack", &bEnable);
+	ImGui::Checkbox("SpeedHack", &m_bActive);
 	ImGui::SameLine();
-	ImGui::Hotkey("##Global SpeedHack Key", kbToggle, &bSettingKey);
+	//ImGui::Hotkey("##Global SpeedHack Key", kbToggle, &bSettingKey);
 
-	if (bEnable) {
+	if (m_bActive) {
 		ImGui::Text("Speed Multiplier");
 		ImGui::Checkbox("Character Dillation", &moveSpeed.bEnable);
 		ImGui::SliderFloat("##SpeedMultiplier", &moveSpeed.Speed, moveSpeed.MinSpeed, moveSpeed.MaxSpeed);
@@ -82,30 +79,30 @@ inline void SpeedHack::Run()
 	HandleKeys();
 
 	// Character dilation
-	if (bEnable)
+	if (m_bActive)
 	{
 		pawn->CustomTimeDilation = moveSpeed.Speed;
-		bOnce = false;
+		m_bOnce = false;
 	}
 
-	if (!bEnable && pawn && !bOnce)
+	if (!m_bActive && pawn && !m_bOnce)
 	{
 		pawn->CustomTimeDilation = moveSpeed.Default;
-		bOnce = true;
+		m_bOnce = true;
 	}
 
 	// world dilation
-	if (bEnable && world && world->PersistentLevel)
+	if (m_bActive && world && world->PersistentLevel)
 	{
 
 		world->PersistentLevel->WorldSettings->TimeDilation = worldSpeed.Speed;
-		bOnce = false;
+		m_bOnce = false;
 	}
 
-	if (!bEnable && world->PersistentLevel && !bOnce)
+	if (!m_bActive && world->PersistentLevel && !m_bOnce)
 	{
 		world->PersistentLevel->WorldSettings->TimeDilation = worldSpeed.Default;
-		bOnce = true;
+		m_bOnce = true;
 	}
 }
 

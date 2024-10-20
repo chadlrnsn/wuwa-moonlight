@@ -1,25 +1,28 @@
 #pragma once
-#include <Windows.h>  //DWORD, HANDLE
-#include <TlHelp32.h> //CreateToolhelp32Snapshot
-#include <tchar.h>    //_tcscmp
-#include <Psapi.h>    //GetModuleInformation
-#include <vector>
-#include <iostream>
 #include <SDK.hpp>
 #include <globals.h>
-#include <algorithm>
 
-using namespace std;
-using namespace globals;
 using namespace SDK;
 
 
 namespace Helper {
 
 	bool ContainsSubstring(const std::string& str, const std::string& sub);
-	void devlog(const char* fmt, ...);
-	bool IsFullyLoaded(SDK::UWorld* World) noexcept;
 
+	void UpdateGlobals() noexcept;
+	bool IsGameExploitable();
+
+	bool IsAddressReadable(const void* ptr, size_t size);
+
+	template<typename T>
+	bool IsPointerReadable(const T* ptr) {
+		return IsAddressReadable(ptr, sizeof(T));
+	}
+
+}
+
+
+namespace ue4 {
 	void UE_RenderText(
 		UCanvas* canvas,
 		UFont* font,
@@ -42,7 +45,3 @@ namespace Helper {
 		FLinearColor outlineColor = { 0, 0, 0, 1 }
 	);
 }
-
-//#define LOG(fmt, ...) HelperNS::devlog("[*] " fmt, ##__VA_ARGS__)
-//#define LOG_WARN(fmt, ...) HelperNS::devlog("[WARN] " fmt, ##__VA_ARGS__)
-//#define LOG_ERROR(fmt, ...) HelperNS::devlog("[ERROR] " fmt, ##__VA_ARGS__)

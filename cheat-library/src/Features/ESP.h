@@ -1,8 +1,8 @@
 #pragma once
-#include <includes.h>
 #include <globals.h>
-#include <Helper.h>
+#include <Helper/Helper.h>
 #include <unordered_set>
+#include <imgui.h>
 
 using namespace globals;
 
@@ -123,7 +123,7 @@ inline void ESP::Render(UCanvas* Canvas)
 			std::wstring widestr = std::wstring(str.begin(), str.end());
 
 			if (Actor) {
-				Helper::UE_RenderText(Canvas, engine->SmallFont, widestr.c_str(), ScreenLocation);
+				ue4::UE_RenderText(Canvas, UEngine::GetEngine()->SmallFont, widestr.c_str(), ScreenLocation);
 			}
 		}
 	}

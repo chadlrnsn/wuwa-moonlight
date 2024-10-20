@@ -1,17 +1,13 @@
+#include <stdafx.h>
+
 #include "d3d11hook.h"
-
-#ifndef IMGUI_DEFINE_MATH_OPERATORS
-#define IMGUI_DEFINE_MATH_OPERATORS
-#endif // !IMGUI_DEFINE_MATH_OPERATORS
-
-#include <d3d11.h>
-#include <dxgi.h>
 #include <kiero/kiero.h>
 #include <imgui/imgui.h>
 #include <imgui/backends/imgui_impl_dx11.h>
 #include <imgui/backends/imgui_impl_win32.h>
-#include <Menu/Menu.hpp>
+#include <Menu/Menu.h>
 #include <globals.h>
+#include <config.h>
 
 typedef HRESULT(__stdcall* ResizeBuffers)(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
 ResizeBuffers oResizeBuffers = nullptr;
@@ -113,7 +109,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	//menu.PreventMoveOutOfWndBounds("Moonlight");
 
 	if (menu.IsOpen) menu.RenderMenu();
-	fpsUnlock.DrawFPS();
+	//fpsUnlock.DrawFPS();
 
 	ImGui::Render();
 	pContext->OMSetRenderTargets(1, &mainRenderTargetView, NULL);

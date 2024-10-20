@@ -1,12 +1,54 @@
+#include <stdafx.h>
 #include "Hooks.h"
-#include <includes.h>
 #include <globals.h>
 #include <Features/Features.h>
-#include <Helper.h>
-
+#include <Helper/Helper.h>
 
 using namespace globals;
 using namespace SDK;
+
+
+typedef HMODULE(WINAPI* LoadLibraryW_t)(LPCWSTR lpLibFileName);
+typedef BOOL(WINAPI* IsDebuggerPresent_t)();
+typedef NTSTATUS(NTAPI* NtQueryInformationProcess_t)(
+	HANDLE ProcessHandle,
+	PROCESSINFOCLASS ProcessInformationClass,
+	PVOID ProcessInformation,
+	ULONG ProcessInformationLength,
+	PULONG ReturnLength
+	);
+
+
+/* Blocks ACE (special thanks to @rottingexistence) */
+const LPCWSTR blockedDlls[] = {
+	L"ACE-Base64.dll",
+	L"ACE-SSC64.dll",
+	L"ACE-DRV64.dll",
+	L"ACE-DFS64.dll",
+	L"ACE-CSI64.dll",
+	L"ACE-ATS64.dll",
+	L"ACE-IDS64.dll",
+	L"ACE-Trace.dll",
+	L"ACE-Safe.dll",
+	L"ACE-Tips64.dll",
+	L"SGuardAgent64.dll",
+	L"CrashSight64.dll",
+	L"PerfSight.dll",
+};
+
+HMODULE WINAPI hkLoadLibraryW(LPCWSTR libFileName);
+
+// Anti-AntiDebug
+BOOL WINAPI hkIsDebuggerPresent();
+
+NTSTATUS NTAPI hkNtQueryInformationProcess(
+	HANDLE ProcessHandle,
+	PROCESSINFOCLASS ProcessInformationClass,
+	PVOID ProcessInformation,
+	ULONG ProcessInformationLength,
+	PULONG ReturnLength
+);
+
 
 #ifndef ProcessDebugFlags
 #define ProcessDebugFlags ((PROCESSINFOCLASS)31)
@@ -111,8 +153,8 @@ void __fastcall hkProcessEvent(UObject* caller, UFunction* function, void* param
 
 	//printf("%s %s\n", caller->GetFullName().c_str(), function->GetFullName().c_str());
 
-	if (config::multihit::enabled) multihit.Call(caller, function, params, oProcessEvent);
-	if (config::godmode::enabled) godmode.Call(caller, function, params, oProcessEvent);
+	//if (config::multihit::enabled) multihit.Call(caller, function, params, oProcessEvent);
+	//if (config::godmode::enabled) godmode.Call(caller, function, params, oProcessEvent);
 
 	speedhack.Call(caller, function, params, oProcessEvent);
 
@@ -158,8 +200,8 @@ void __fastcall hkPostRender(UGameViewportClient* viewport, UCanvas* canvas)
 {
 
 	if (canvas && engine) {
-		Helper::UE_RenderText(canvas, engine->SmallFont, L"sigma", { 10, 10 }, { 1,1 }, FLinearColor(1, 1, 1, 1));
-		if (config::esp::enable) esp.Render(canvas);
+		ue4::UE_RenderText(canvas, engine->SmallFont, L"sigma", { 10, 10 }, { 1,1 }, FLinearColor(1, 1, 1, 1));
+		//if (config::esp::enable) esp.Render(canvas);
 	}
 
 	oPostRender(viewport, canvas);
