@@ -1,65 +1,31 @@
-name: MSBuild
+name: C++ CI
 
 on:
   push:
-    branches: [ master, dev ]
+    branches: [ main ]
   pull_request:
-    branches: [ master, dev ]
-
-env:
-  SOLUTION_FILE_PATH: ./wuwa-moonlight.sln
-  tag1: V${{ github.run_number }}
-  BUILD_ID: ${{ github.run_id }}  # Уникальный идентификатор для сборки
-
-permissions:
-  contents: read
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: windows-latest
 
-    strategy:
-      matrix:
-        configuration: [Release, Debug]
-        platform: [x64]
-
     steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: recursive
+    - uses: actions/checkout@v3
 
     - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v2
+      uses: microsoft/setup-msbuild@v1.1
 
-    - name: Build
-      working-directory: ${{ env.GITHUB_WORKSPACE }}
-      run: |
-        msbuild /m /p:Configuration=${{ matrix.configuration }} /p:Platform=${{ matrix.platform }} ${{env.SOLUTION_FILE_PATH}}
+    - name: Build solution
+      run: msbuild /m /p:Platform=x64 YourSolution.sln
 
-    - name: Zip build artifacts
-      run: |
-        7z a bin-${{ matrix.configuration }}-${{ matrix.platform }}.zip ${{ github.workspace }}\bin\${{ matrix.configuration }}-${{ matrix.platform }}\*
-
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
       with:
-        name: Artifact-${{ matrix.configuration }}-${{ matrix.platform }}
-        path: bin-${{ matrix.configuration }}-${{ matrix.platform }}.zip
-
-  # Опционально: публикация релиза
-  # release:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   permissions:
-  #     contents: write
-  #   steps:
-  #     - name: Download a Build Artifact
-  #       uses: actions/download-artifact@v3.0.0
-  #       with:
-  #         name: my-artifact
-  #     - name: Release
-  #       uses: softprops/action-gh-release@v1
-  #       with:
-  #         token: ${{ secrets.GITHUB_TOKEN }}
-  #         tag_name: ${{ env.tag1 }}
-  #         files: bin-${{ matrix.configuration }}-${{ env.BUILD_ID }}.zip
+        name: x64-artifacts
+        path: |
+          ${{github.workspace}}\bin\*-x64\**\*.dll
+          ${{github.workspace}}\bin\*-x64\**\*.exe
+          ${{github.workspace}}\bin\*-x64\**\*.lib
+          ${{github.workspace}}\bin\*-x64\obj\**\*
+        if-no-files-found: error
