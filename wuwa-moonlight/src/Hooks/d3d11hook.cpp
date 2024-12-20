@@ -13,21 +13,21 @@
 #include <Menu/Menu.hpp>
 #include <globals.h>
 
-typedef HRESULT(__stdcall* ResizeBuffers)(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
+typedef HRESULT(__stdcall *ResizeBuffers)(IDXGISwapChain *pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
 ResizeBuffers oResizeBuffers = nullptr;
-typedef HRESULT(__stdcall* Present) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
+typedef HRESULT(__stdcall *Present)(IDXGISwapChain *pSwapChain, UINT SyncInterval, UINT Flags);
 Present oPresent;
 
-typedef LRESULT(CALLBACK* WNDPROC)(HWND, UINT, WPARAM, LPARAM);
+typedef LRESULT(CALLBACK *WNDPROC)(HWND, UINT, WPARAM, LPARAM);
 
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 HWND window = NULL;
 WNDPROC oWndProc;
-ID3D11Device* pDevice = NULL;
-ID3D11DeviceContext* pContext = NULL;
-ID3D11RenderTargetView* mainRenderTargetView;
-IDXGISwapChain* pSwapChain;
+ID3D11Device *pDevice = NULL;
+ID3D11DeviceContext *pContext = NULL;
+ID3D11RenderTargetView *mainRenderTargetView;
+IDXGISwapChain *pSwapChain;
 HMODULE hModule;
 Menu menu;
 bool firstnotify = false;
@@ -35,7 +35,7 @@ bool firstnotify = false;
 void InitImGui()
 {
 	ImGui::CreateContext();
-	ImGuiIO& io = ImGui::GetIO();
+	ImGuiIO &io = ImGui::GetIO();
 	io.ConfigFlags = ImGuiConfigFlags_NoMouseCursorChange;
 	ImGui_ImplWin32_Init(window);
 	ImGui_ImplDX11_Init(pDevice, pContext);
@@ -43,26 +43,28 @@ void InitImGui()
 
 void CleanupRenderTarget()
 {
-	if (mainRenderTargetView) {
+	if (mainRenderTargetView)
+	{
 		mainRenderTargetView->Release();
 		mainRenderTargetView = nullptr;
 	}
 }
 
-void CreateRenderTarget(IDXGISwapChain* pSwapChain)
+void CreateRenderTarget(IDXGISwapChain *pSwapChain)
 {
-	ID3D11Texture2D* pBackBuffer = nullptr;
-	pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (LPVOID*)&pBackBuffer);
-	if (pBackBuffer) {
+	ID3D11Texture2D *pBackBuffer = nullptr;
+	pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (LPVOID *)&pBackBuffer);
+	if (pBackBuffer)
+	{
 		pDevice->CreateRenderTargetView(pBackBuffer, NULL, &mainRenderTargetView);
 		pBackBuffer->Release();
 	}
 }
 
-
-LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
+LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-	if (menu.IsOpen) {
+	if (menu.IsOpen)
+	{
 		ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam);
 		return true;
 	}
@@ -70,11 +72,13 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 	return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
 }
 
-HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
+HRESULT __stdcall hkPresent(IDXGISwapChain *pSwapChain, UINT SyncInterval, UINT Flags)
 {
 	static bool init = false;
-	if (!init) {
-		if (SUCCEEDED(pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&pDevice))) {
+	if (!init)
+	{
+		if (SUCCEEDED(pSwapChain->GetDevice(__uuidof(ID3D11Device), (void **)&pDevice)))
+		{
 			pDevice->GetImmediateContext(&pContext);
 			DXGI_SWAP_CHAIN_DESC sd;
 			pSwapChain->GetDesc(&sd);
@@ -90,29 +94,33 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 			return oPresent(pSwapChain, SyncInterval, Flags);
 	}
 
-	ImGuiIO& io = ImGui::GetIO();
+	ImGuiIO &io = ImGui::GetIO();
 	io.MouseDrawCursor = menu.IsOpen;
 
-	if (GetAsyncKeyState(config::binds::menu_key) & 1) menu.IsOpen = !menu.IsOpen;
+	if (GetAsyncKeyState(config::binds::menu_key) & 1)
+		menu.IsOpen = !menu.IsOpen;
 
-	if (!menu.bOnceStyle) {
+	if (!menu.bOnceStyle)
+	{
 		menu.Setup();
 		menu.bOnceStyle = true;
 	}
-
 
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 
 	ImGui::NewFrame();
 
+	const char *wnds[] = {
+		"Moonlight",
+		"FPS",
+	};
 
-	const char* wnds[] = { "Moonlight","FPS", };
+	// for (int i = 0; i < std::size(wnds); i++) menu.PreventMoveOutOfWndBounds(wnds[i]);
+	// menu.PreventMoveOutOfWndBounds("Moonlight");
 
-	//for (int i = 0; i < std::size(wnds); i++) menu.PreventMoveOutOfWndBounds(wnds[i]);
-	//menu.PreventMoveOutOfWndBounds("Moonlight");
-
-	if (menu.IsOpen) menu.RenderMenu();
+	if (menu.IsOpen)
+		menu.RenderMenu();
 	fpsUnlock.DrawFPS();
 
 	ImGui::Render();
@@ -122,7 +130,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	return oPresent(pSwapChain, SyncInterval, Flags);
 }
 
-HRESULT __stdcall hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags)
+HRESULT __stdcall hkResizeBuffers(IDXGISwapChain *pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags)
 {
 	CleanupRenderTarget();
 	HRESULT hr = oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
@@ -133,16 +141,17 @@ HRESULT __stdcall hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, 
 	return hr;
 }
 
-
 void D3D11Hook::Initialize()
 {
 	static bool init = false;
 	static size_t ampects = 25;
 	static size_t counter = 0;
-	do {
-		if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success) {
-			kiero::bind(8, (void**)&oPresent, hkPresent);
-			kiero::bind(13, (void**)&oResizeBuffers, hkResizeBuffers);
+	do
+	{
+		if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
+		{
+			kiero::bind(8, (void **)&oPresent, hkPresent);
+			kiero::bind(13, (void **)&oResizeBuffers, hkResizeBuffers);
 #ifdef _DEBUG
 			printf("kiero binded\n");
 #endif
@@ -153,16 +162,19 @@ void D3D11Hook::Initialize()
 		counter++;
 	} while (!init || (counter < ampects));
 
-	if (kiero::getRenderType() != kiero::RenderType::D3D11) {
+	if (kiero::getRenderType() != kiero::RenderType::D3D11)
+	{
 		printf("kiero initialized with unknown render type\n");
 		MessageBoxA(NULL, "kiero initialized with unknown render type\n", "DirectX Error", MB_OK);
 	}
-	else {
+	else
+	{
 		printf("kiero initialized with D3D11 if you dont see menu it might be bug or idk\n");
 	}
 }
 
-void D3D11Hook::Uninitialize() {
+void D3D11Hook::Uninitialize()
+{
 
 	if (oWndProc)
 	{
