@@ -13,35 +13,49 @@
 
 ## How to use
 
-- Compile project in Release-x64 or download [latest release](https://github.com/chadlrnsn/wuwa-moonlight/releases)
-- Open `Moonlight.exe` in `bin\Release-x64` put there bypass and open
-- **See [How to use](HowToUse.md) if you are a beginner**
+You should use CMake to compile this project.
+Download [CMake](https://cmake.org/download/) and [git](https://git-scm.com/downloads)
+Then open terminal in your desired directory and run:
 
-> [!Note]
-> Latest build NOT available is for version 1.3.0 (global version only) 
-> FIX AND COMPILE BY YOURSELF!
+```bash
+# Clone the repository with submodules
+git clone --recursive https://github.com/chadlrnsn/wuwa-moonlight.git
 
+# Enter project directory
+cd wuwa-moonlight
 
+# Create and configure build directory
+cmake -B build -S . --preset=win-amd64
 
-> [!Warning]
-> This is for educational purposes only!
-> **The safety of your account is entirely your responsibility. If it gets banned by using this, it's your own fault! (You have been warned.)**
+# Build the project
+cmake --build build --config Release
+```
 
+> [!Tip]
+> I suggest you use cmake extension for vscode to compile the project.
+
+The compiled DLL will be in the `wuwa-moonlight.vcxproj -> H:\yourpath\wuwa-moonlight\build\Release\wuwa-moonlight.dll` directory.
 
 ![preview](https://i.imgur.com/OJwrALG.jpeg)
 
-## Working features for now
+## Features
 
-- Speedhack
-- Flight
-- MultiHit
-
-## Coming soon
-
-- ESP
-- GodMode
-- AutoLoot
-- Configs
+- [ ] Speedhack
+    - [ ] World Speedhack
+    - [ ] Player Speedhack
+        - [ ] Player Speedhack acceleration (WIP)
+- [ ] Flight
+    - [ ] Free Flight
+    - [ ] Noclip
+- [ ] Animation speed
+- [ ] MultiHit
+- [ ] ESP
+    - [ ] ESP Items
+    - [ ] ESP Entities
+- [ ] Chest TP
+- [ ] GodMode
+- [ ] Configs
+- [ ] World Speedhack
 
 ## Thanks to
 
