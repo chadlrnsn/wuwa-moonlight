@@ -13,5 +13,5 @@
 
 using namespace SDK;
 
-using ProcessEvent = void(__thiscall*)(UObject*, UFunction*, void*);
-using PostRender = void(__thiscall*)(UGameViewportClient*, UCanvas*);
+using ProcessEvent = void(__thiscall *)(UObject *, UFunction *, void *);
+using PostRender = void(__thiscall *)(UGameViewportClient *, UCanvas *);

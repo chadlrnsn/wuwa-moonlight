@@ -14,7 +14,6 @@
 #include <Menu/Menu.hpp>
 #include <Helper.h>
 #include <globals.h>
-#include <wuwa-base/util.h>
 #include <SDK.hpp>
 #include <Hooks/Hooks.h>
 #include <mutex>

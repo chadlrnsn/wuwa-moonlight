@@ -11,14 +11,11 @@
 
 #include <imgui_internal.h>
 #include <imgui.h>
-#include <imgui-nav/nav_elements.h>
-#include <imgui-notify/backends/IconsFontAwesome6.h>
-#include <imgui-notify/backends/ImGuiNotify.hpp>
 #include <Features/Features.h>
 
 /**
  * @brief Calculates a responsive size based on the input size, width multiplier, and height multiplier.
- * 
+ *
  * @tparam T The type of the multipliers.
  * @param size The original size.
  * @param mulwide The multiplier for the width.
@@ -26,7 +23,8 @@
  * @return The calculated responsive size.
  */
 template <typename T>
-ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall) {
+ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall)
+{
     return ImVec2(size.x * mulwide, size.y * multall);
 }
 
@@ -35,14 +33,15 @@ class Menu
 private:
     bool bWatermark = true;
 
-    enum Headers {
+    enum Headers
+    {
         PLAYER,
         ESP,
         MISC,
         CONFIG,
-//#ifdef _DEBUG
-//        DEBUG,
-//#endif
+        // #ifdef _DEBUG
+        //         DEBUG,
+        // #endif
         HEADERS_COUNT
     };
 
@@ -57,19 +56,18 @@ public:
 public:
     void RealCursorShow();
     void Setup();
-    void SetUpColors(ImGuiStyle& style, ImVec4* colors);
+    void SetUpColors(ImGuiStyle &style, ImVec4 *colors);
 
     // https://github.com/ocornut/imgui/issues/4356#issuecomment-1535547717
-    void PreventMoveOutOfWndBounds(const char* wndName);
+    void PreventMoveOutOfWndBounds(const char *wndName);
 
     void RenderMenu();
     void RenderWatermark();
-    void RenderNotify();
+    // void RenderNotify();
 };
 
-
-inline ImFont* font_regular;
-inline ImFont* font_medium;
-inline ImFont* font_bold;
-inline ImFont* font_title;
-inline ImFont* font_icons;
+inline ImFont *font_regular;
+inline ImFont *font_medium;
+inline ImFont *font_bold;
+inline ImFont *font_title;
+inline ImFont *font_icons;

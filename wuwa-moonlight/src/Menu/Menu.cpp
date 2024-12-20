@@ -1,7 +1,8 @@
 #include "Menu.hpp"
 #include "fonts/font.h"
 
-void Menu::RealCursorShow() {
+void Menu::RealCursorShow()
+{
     ImGui::GetMouseCursor();
     ImGui::SetMouseCursor(ImGuiMouseCursor_Arrow);
     ImGui::GetIO().WantCaptureMouse = IsOpen;
@@ -10,9 +11,10 @@ void Menu::RealCursorShow() {
 
 void Menu::Setup()
 {
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
-    ImGuiStyle& style = ImGui::GetStyle();
-    ImVec4* colors = style.Colors;
+    ImGuiIO &io = ImGui::GetIO();
+    (void)io;
+    ImGuiStyle &style = ImGui::GetStyle();
+    ImVec4 *colors = style.Colors;
     ImVec2 whole_content_size = io.DisplaySize;
     whole_content_size.x = whole_content_size.x * 0.3;
     whole_content_size.y = whole_content_size.y * 0.2;
@@ -24,63 +26,61 @@ void Menu::Setup()
     font_config.OversampleV = 5;
     font_config.RasterizerMultiply = 1.2f;
 
-
     ImFontConfig icontfont_config;
     icontfont_config.MergeMode = true;
     icontfont_config.GlyphMinAdvanceX = iconFontSize;
     icontfont_config.PixelSnapH = true;
 
-
     static const ImWchar ranges[] =
-    {
-        0x0020, 0x00FF, // Basic Latin + Latin Supplement
-        0x0400, 0x052F, // Cyrillic + Cyrillic Supplement
-        0x2DE0, 0x2DFF, // Cyrillic Extended-A
-        0xA640, 0xA69F, // Cyrillic Extended-B
-        0xE000, 0xE226, // icons
-        0
-    };
+        {
+            0x0020, 0x00FF, // Basic Latin + Latin Supplement
+            0x0400, 0x052F, // Cyrillic + Cyrillic Supplement
+            0x2DE0, 0x2DFF, // Cyrillic Extended-A
+            0xA640, 0xA69F, // Cyrillic Extended-B
+            0xE000, 0xE226, // icons
+            0};
 
-    static const ImWchar iconRanges[] =
-    {
-        ICON_MIN_FA, ICON_MAX_16_FA, // awesome font icons
-        0,
-    };
+    // static const ImWchar iconRanges[] =
+    //     {
+    //         ICON_MIN_FA,
+    //         ICON_MAX_16_FA, // awesome font icons
+    //         0,
+    //     };
 
     io.Fonts->AddFontDefault();
     font_regular = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
-    font_medium  = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
-    font_bold    = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
-    font_title   = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
+    font_medium = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
+    font_bold = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
+    font_title = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
 #ifndef _DEBUG
-    //icons   = io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icontfont_config, iconRanges);
-#else 
+    // icons   = io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icontfont_config, iconRanges);
+#else
     std::cout << "Awesome font will not be loaded due to DEBUG configuration!" << std::endl;
 #endif // _DEBUG
-
 
     io.FontDefault = font_regular;
 }
 
-void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors) {
+void Menu::SetUpColors(ImGuiStyle &style, ImVec4 *colors)
+{
 
-    ImColor hovered = { 31, 110, 171 };
-    ImColor Transparented = { 0, 0, 0, 255 };
+    ImColor hovered = {31, 110, 171};
+    ImColor Transparented = {0, 0, 0, 255};
     colors[ImGuiCol_WindowBg] = ImColor(20, 23, 25);
     colors[ImGuiCol_ChildBg] = ImColor(24, 28, 30);
     colors[ImGuiCol_Text] = ImColor(255, 255, 255);
-    
-    //Header
+
+    // Header
     colors[ImGuiCol_Header] = ImColor(30, 138, 200);
     colors[ImGuiCol_HeaderHovered] = hovered;
     colors[ImGuiCol_HeaderActive] = ImColor(30, 116, 215);
-    
-    //buttons
+
+    // buttons
     colors[ImGuiCol_Button] = ImColor(25, 145, 215);
     colors[ImGuiCol_ButtonHovered] = hovered;
     colors[ImGuiCol_ButtonActive] = ImColor(100, 161, 222);
 
-    //checkboxes
+    // checkboxes
     colors[ImGuiCol_CheckMark] = ImColor(0, 0, 0);
     colors[ImGuiCol_FrameBg] = ImColor(25, 158, 215, 200);
     colors[ImGuiCol_FrameBgActive] = ImColor(25, 164, 215);
@@ -94,12 +94,13 @@ void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors) {
     style.GrabRounding = 2.3f;
     style.TabRounding = 2.3f;
 
-    //style.WindowMinSize = { 600,300 };
+    // style.WindowMinSize = { 600,300 };
     style.ChildRounding = 5.0f;
 }
 
-void Menu::PreventMoveOutOfWndBounds(const char* wndName) {
-    ImGuiWindow* existingWindow = ImGui::FindWindowByName(wndName);
+void Menu::PreventMoveOutOfWndBounds(const char *wndName)
+{
+    ImGuiWindow *existingWindow = ImGui::FindWindowByName(wndName);
     if (existingWindow != nullptr)
     {
         bool needsClampToScreen = false;
@@ -135,7 +136,7 @@ void Menu::PreventMoveOutOfWndBounds(const char* wndName) {
 void Menu::RenderMenu()
 {
     static Headers tab = PLAYER;
-    const char* tab_names[] = { "PLAYER", "ESP", "MISC", "CONFIG", /*"DEBUG"*/ };
+    const char *tab_names[] = {"PLAYER", "ESP", "MISC", "CONFIG", /*"DEBUG"*/};
 
     // Get Window Size
     ImVec2 wndSize = ImGui::GetIO().DisplaySize;
@@ -154,7 +155,7 @@ void Menu::RenderMenu()
         ImVec2 wndSize = ImGui::GetWindowSize();
 
         ImGuiStyle style = ImGui::GetStyle();
-        ImDrawList* draw = ImGui::GetWindowDrawList();
+        ImDrawList *draw = ImGui::GetWindowDrawList();
 
         float minWidth = 120;
 
@@ -181,7 +182,6 @@ void Menu::RenderMenu()
             ImGui::PopFont();
             ImGui::EndChild();
 
-
             if (ImGui::BeginChild("LeftSide2", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), 0))
             {
                 for (unsigned int i = 0; i < HEADERS_COUNT; ++i)
@@ -204,47 +204,48 @@ void Menu::RenderMenu()
         }
         ImGui::EndChild();
     }
-    
+
     ImGui::SameLine(0);
 
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(20, 20));
 
     ImGui::BeginChild("RightSide", ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y), 0);
-    
+
     ImGui::Spacing();
     ImGui::Spacing();
     ImGui::Indent(10.0f);
 
     switch (tab)
     {
-        case PLAYER:
-            speedhack.DrawMenuItems();
-            fly.DrawMenuItems();
-            gravityScale.DrawMenuItems();
-            walkFloorZ.DrawMenuItems();
-            walkFloorAngle.DrawMenuItems();
-            multihit.Draw();
-            //godmode.Draw();
+    case PLAYER:
+        speedhack.DrawMenuItems();
+        fly.DrawMenuItems();
+        gravityScale.DrawMenuItems();
+        walkFloorZ.DrawMenuItems();
+        walkFloorAngle.DrawMenuItems();
+        multihit.Draw();
+        // godmode.Draw();
 
-            break;
+        break;
 
-        case ESP:
-            esp.DrawMenuItems();
-            break;
+    case ESP:
+        esp.DrawMenuItems();
+        break;
 
-        case MISC:
-            fpsUnlock.DrawMenuItems();
-            if (ImGui::Button("Force exit")) ExitProcess(0);
+    case MISC:
+        fpsUnlock.DrawMenuItems();
+        if (ImGui::Button("Force exit"))
+            ExitProcess(0);
 
-            break;
+        break;
 
-        case CONFIG: 
-            ImGui::Text("in dev.");
-            break;
-//#ifdef _DEBUG
-//        case DEBUG:
-//            break;
-//#endif
+    case CONFIG:
+        ImGui::Text("in dev.");
+        break;
+        // #ifdef _DEBUG
+        //         case DEBUG:
+        //             break;
+        // #endif
 
     } // Switch
 
@@ -263,47 +264,33 @@ void Menu::RenderWatermark()
     if (!bWatermark)
         return;
 
-
     auto time = std::chrono::system_clock::now();
     std::time_t formatedtime = std::chrono::system_clock::to_time_t(time);
-
 
     ImGui::SetNextWindowPos(ImVec2(15, 15));
     ImGui::SetNextWindowSize({});
 
-    ImGui::Begin("watermark", nullptr, ImGuiWindowFlags_NoDecoration |
-        ImGuiWindowFlags_NoResize |
-        ImGuiWindowFlags_NoTitleBar |
-        ImGuiWindowFlags_NoBackground |
-        ImGuiWindowFlags_NoCollapse |
-        ImGuiWindowFlags_NoScrollbar |
-        ImGuiWindowFlags_NoBringToFrontOnFocus |
-        ImGuiWindowFlags_NoBackground |
-        ImGuiWindowFlags_NoNavFocus |
-        ImGuiWindowFlags_NoNav);
+    ImGui::Begin("watermark", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoNavFocus | ImGuiWindowFlags_NoNav);
     ImGui::Text("Moonlight | github.com/chadlrnsn/wuwa-moonlight");
     ImGui::End();
 }
 
-void Menu::RenderNotify()
-{
-    // Setup style like main window
+// void Menu::RenderNotify()
+// {
+//     // Setup style like main window
 
+//     ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 5.f);
+//     ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.f); // Disable borders
 
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 5.f);
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.f); // Disable borders
+//     // Notifications color setup
+//     //ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10f, 0.10f, 0.10f, 1.00f)); // Background color
 
-    // Notifications color setup
-    //ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.10f, 0.10f, 0.10f, 1.00f)); // Background color
+//     // Main rendering function
+//     ImGui::RenderNotifications();
 
-    // Main rendering function
-    ImGui::RenderNotifications();
-
-
-    //——————————————————————————————— WARNING ———————————————————————————————
-    // Argument MUST match the amount of ImGui::PushStyleVar() calls 
-    ImGui::PopStyleVar(2);
-    // Argument MUST match the amount of ImGui::PushStyleColor() calls 
-    //ImGui::PopStyleColor(1);
-}
-
+//     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ WARNING ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//     // Argument MUST match the amount of ImGui::PushStyleVar() calls
+//     ImGui::PopStyleVar(2);
+//     // Argument MUST match the amount of ImGui::PushStyleColor() calls
+//     //ImGui::PopStyleColor(1);
+// }
