@@ -1,6 +1,6 @@
-[submodule "cheat-library/vendor/imgui"]
-	path = cheat-library/vendor/imgui
-	url = https://github.com/ocornut/imgui.git
-[submodule "cheat-library/vendor/minhook"]
-	path = cheat-library/vendor/minhook
+[submodule "wuwa-moonlight/vendor/minhook"]
+	path = wuwa-moonlight/vendor/minhook
 	url = https://github.com/TsudaKageyu/minhook.git
+[submodule "wuwa-moonlight/vendor/imgui"]
+	path = wuwa-moonlight/vendor/imgui
+	url = https://github.com/ocornut/imgui.git
