@@ -229,7 +229,7 @@ void Menu::RenderMenu()
         break;
 
     case ESP:
-        esp.DrawMenuItems();
+        // esp.DrawMenuItems();
         break;
 
     case MISC:
