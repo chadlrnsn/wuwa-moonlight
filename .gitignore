@@ -415,3 +415,5 @@ wuwa-moonlight/vendor/CppSDK/**
 !wuwa-moonlight/vendor/CppSDK/CMakeLists.txt
 
 build/
+out/
+.vscode/
