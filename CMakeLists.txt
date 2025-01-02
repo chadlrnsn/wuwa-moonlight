@@ -18,6 +18,7 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${CPP_SOURCES})
 file(GLOB_RECURSE CPP_SOURCES 
     "${PROJECT_NAME}/src/*.cpp"
     "${PROJECT_NAME}/utils/*.cpp"
+    "${PROJECT_NAME}/vendor/logger/*.cpp"
 )
 
 file(GLOB IMGUI_SOURCES
