@@ -39,7 +39,7 @@ HMODULE WINAPI hkLoadLibraryW(LPCWSTR libFileName)
 	return originals::oLoadLibraryW(libFileName);
 }
 
-BOOL hkIsDebuggerPresent()
+BOOL __stdcall hkIsDebuggerPresent()
 {
 	return FALSE;
 }
@@ -108,7 +108,7 @@ void Hooks::AntiDebug()
 	MH_EnableHook(&IsDebuggerPresent);
 }
 
-void hkProcessEvent(UObject *caller, UFunction *function, void *params)
+void __fastcall hkProcessEvent(UObject *caller, UFunction *function, void *params)
 {
 
 	// printf("%s %s\n", caller->GetFullName().c_str(), function->GetFullName().c_str());
@@ -160,7 +160,7 @@ void Hooks::InGame::ProcessEvent()
 	}
 }
 
-void hkPostRender(UGameViewportClient *viewport, UCanvas *canvas)
+void __fastcall hkPostRender(UGameViewportClient *viewport, UCanvas *canvas)
 {
 
 	if (canvas && engine)

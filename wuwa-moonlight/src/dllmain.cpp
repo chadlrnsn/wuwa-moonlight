@@ -92,8 +92,8 @@ BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 		CloseHandle(CreateThread(0, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, 0));
 		break;
 	case DLL_PROCESS_DETACH:
-		fclose(dummy);
 		FreeConsole();
+		fclose(dummy);
 		break;
 	}
 
