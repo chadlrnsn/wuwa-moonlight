@@ -1,7 +1,4 @@
-cmake_minimum_required(VERSION 3.5...4.0)
 project(Injector)
-
-set(CMAKE_CXX_STANDARD 17)
 
 file(GLOB_RECURSE SOURCES "*.cpp")
 
