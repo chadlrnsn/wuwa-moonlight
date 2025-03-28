@@ -1,6 +1,15 @@
-[submodule "cheat-base/vendor/imgui"]
-	path = cheat-base/vendor/imgui
-	url = https://github.com/ocornut/imgui.git
-[submodule "cheat-base/vendor/minhook"]
-	path = cheat-base/vendor/minhook
+[submodule "wuwa-moonlight/ext/minhook"]
+	path = wuwa-moonlight/ext/minhook
 	url = https://github.com/TsudaKageyu/minhook.git
+[submodule "wuwa-moonlight/ext/imgui"]
+	path = wuwa-moonlight/ext/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "wuwa-moonlight/ext/magic_enum"]
+	path = wuwa-moonlight/ext/magic_enum
+	url = https://github.com/Neargye/magic_enum.git
+[submodule "wuwa-moonlight/ext/xorstr"]
+	path = wuwa-moonlight/ext/xorstr
+	url = https://github.com/JustasMasiulis/xorstr.git
+[submodule "wuwa-moonlight/ext/json"]
+	path = wuwa-moonlight/ext/json
+	url = https://github.com/nlohmann/json.git

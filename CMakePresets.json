@@ -1,0 +1,59 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "clang-debug",
+            "displayName": "Clang Debug",
+            "description": "Clang compiler",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "clang.exe",
+                "CMAKE_CXX_COMPILER": "clang++.exe",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "clang-release",
+            "displayName": "Clang Release",
+            "description": "Clang compiler",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "clang.exe",
+                "CMAKE_CXX_COMPILER": "clang++.exe",
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "vs2019-base",
+            "displayName": "Visual Studio Build Tools 2019 Release - amd64",
+            "description": "Using compilers for Visual Studio 16 2019 (x64 architecture)",
+            "generator": "Visual Studio 16 2019",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "vs2019-base-debug",
+            "displayName": "Visual Studio Build Tools 2019 Release - amd64 - Debug",
+            "configurePreset": "vs2019-base",
+            "configuration": "Debug"
+        },
+        {
+            "name": "vs2019-base-release",
+            "displayName": "Visual Studio Build Tools 2019 Release - amd64 - Release",
+            "configurePreset": "vs2019-base",
+            "configuration": "Release"
+        }
+    ]
+}
