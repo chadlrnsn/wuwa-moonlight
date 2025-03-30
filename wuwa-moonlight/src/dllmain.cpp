@@ -1,65 +1,49 @@
 #include <dllmain.h>
 #include <d3d11hook.h>
 #include <logger.h>
-#include <Hooks/Hooks.h>
+#include <Hooks.h>
 #include <UpdateVars.h>
 #include <config.h>
 
 using namespace SDK;
 using namespace globals;
 
-FILE* dummy;
-std::atomic<bool> g_bRunning{ true };
 
-
-
-void IndependentHooks()
+DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 {
-	Hooks::hkACE_BypassSetup();
+	Logger::Init("Moonlight");
+
+	if (MH_Initialize() != MH_OK) LOG_ERROR("Failed to init MinHook");
+	else LOG_SUCCESS("MinHook initialized");
+
+	if (!Hooks::hkACE_BypassSetup()) LOG_ERROR("Failed to setup ACE bypass");
+	else LOG_SUCCESS("ACE bypass setup");
+
 	Hooks::AntiDebug();
 	D3D11Hook::Initialize();
 	Hooks::InGame::Initialize();
-}
 
-void features() noexcept
-{
-	while (g_bRunning)
-	{
-		utils::UpdateGlobals();
-		// FN_TsAnimNotifyStateCounterAttack_C = c_viewport->FindObject("Function TsAnimNotifyStateCounterAttack.TsAnimNotifyStateCounterAttack_C.K2_NotifyBegin");
-	}
-}
-
-DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
-{
-	Logger::Init("LetItHappen");
-
-	if (MH_Initialize() != MH_OK)
-	{
-		std::cerr << "Failed to init MinHook" << std::endl;
-	}
-	else
-		printf("MinHook initialized\n");
-
-	std::thread Indpndhk(IndependentHooks);
-	std::thread ft(features);
-
-	Indpndhk.join();
-
-	printf("You can detach this dll from your process with F9\n");
+	LOG_INFO("You can detach this dll from your process with F9\n");
 	while (true)
 	{
-
-		if (GetAsyncKeyState(config::binds::quit_key) & 1)
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		
+		if (GetAsyncKeyState(VK_END) & 0x8000)
 		{
-			g_bRunning = false;
+			LOG_INFO("Detaching dll...");
 			break;
 		}
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		try
+		{
+			utils::UpdateGlobals();
+		}
+		catch (const std::exception& e)
+		{
+			LOG_ERROR("Exception caught in UpdateThread: %s", e.what());
+		}
 	}
 
-	ft.join();
 
 	D3D11Hook::Uninitialize();
 	Hooks::RemoveHooks();
@@ -70,7 +54,7 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	return TRUE;
 }
 
-BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
+BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, [[maybe_unused]] LPVOID lpReserved)
 {
 	switch (dwReason)
 	{

@@ -1,22 +1,22 @@
 #pragma once
 #include <iostream>	
 #include <Windows.h>
-#include <Minhook.h>
+#include <MinHook.h>
 #include <winternl.h>
+#include <xorstr.hpp>
 
-typedef HMODULE(WINAPI* LoadLibraryW_t)(LPCWSTR lpLibFileName);
-typedef BOOL(WINAPI* IsDebuggerPresent_t)();
-typedef NTSTATUS(NTAPI* NtQueryInformationProcess_t)(
+using LoadLibraryW_t = HMODULE(WINAPI*)(LPCWSTR lpLibFileName);
+using IsDebuggerPresent_t = BOOL(WINAPI*)();
+using NtQueryInformationProcess_t = NTSTATUS(NTAPI*)(
 	HANDLE ProcessHandle,
 	PROCESSINFOCLASS ProcessInformationClass,
 	PVOID ProcessInformation,
 	ULONG ProcessInformationLength,
 	PULONG ReturnLength
-	);
-
+);
 
 /* Blocks ACE (special thanks to @rottingexistence) */
-const LPCWSTR blockedDlls[] = {
+constexpr LPCWSTR blockedDlls[] = {
 	L"ACE-Base64.dll",
 	L"ACE-SSC64.dll",
 	L"ACE-DRV64.dll",
@@ -32,10 +32,10 @@ const LPCWSTR blockedDlls[] = {
 	L"PerfSight.dll",
 };
 
-HMODULE WINAPI hkLoadLibraryW(LPCWSTR libFileName);
+HMODULE WINAPI hkLoadLibraryW(LPCWSTR libFileName) noexcept;
 
 // Anti-AntiDebug
-BOOL WINAPI hkIsDebuggerPresent();
+BOOL WINAPI hkIsDebuggerPresent() noexcept;
 
 NTSTATUS NTAPI hkNtQueryInformationProcess(
 	HANDLE ProcessHandle,
@@ -43,17 +43,17 @@ NTSTATUS NTAPI hkNtQueryInformationProcess(
 	PVOID ProcessInformation,
 	ULONG ProcessInformationLength,
 	PULONG ReturnLength
-);
+) noexcept;
 
 namespace Hooks {
-	void hkACE_BypassSetup();
-	void hkACE_BypassCleanup();
-	void AntiDebug();
-	void RemoveHooks();
+	bool hkACE_BypassSetup() noexcept;
+	void hkACE_BypassCleanup() noexcept;
+	void AntiDebug() noexcept;
+	void RemoveHooks() noexcept;
 
 	namespace InGame {
-		void PostRender();
-		void ProcessEvent();
-		void Initialize();
+		void PostRender() noexcept;
+		void ProcessEvent() noexcept;
+		void Initialize() noexcept;
 	}
 }
