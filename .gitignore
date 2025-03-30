@@ -44,3 +44,6 @@ out/
 *.exe
 *.out
 *.app
+
+# IDE
+.cursorrules

@@ -1,49 +1,139 @@
 # Set compiler options for different compilers and build types
 
 # Common options for all compilers
-set(COMMON_CXX_FLAGS "")
+set(COMMON_CXX_FLAGS "-std=c++20")
 set(COMMON_CXX_FLAGS_DEBUG "")
 set(COMMON_CXX_FLAGS_RELEASE "")
 
-# Clang specific options
-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    # Debug options
-    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -Wall -Wextra -Wpedantic -Werror")
-    
-    # Release options
-    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -DNDEBUG -Wall -Wextra")
-    
-    # Enable address sanitizer in debug mode
-    option(ENABLE_ASAN "Enable Address Sanitizer" OFF)
-    if(ENABLE_ASAN AND CMAKE_BUILD_TYPE MATCHES Debug)
-        set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fsanitize=address -fno-omit-frame-pointer")
-    endif()
-endif()
+# Apply common flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMMON_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} ${COMMON_CXX_FLAGS_DEBUG}")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} ${COMMON_CXX_FLAGS_RELEASE}")
 
 # MSVC specific options
 if(MSVC)
-    # Debug options
-    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /Zi /Od /W4")
+    # Enable multiprocessor compilation for MSVC
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /std:c++20")
+    message(STATUS "Enabled multiprocessor compilation for MSVC")
+
+    # Disable warnings for release build only
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /W0")
     
-    # Release options
-    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /O2 /DNDEBUG /W4")
+    # Disable specific MSVC warnings
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4819 /wd4251")
     
-    # Disable specific warnings
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /EHsc /bigobj /wd4309 /wd4369 /wd4324 /wd4458 /wd4459 /wd4100 /wd4189 /wd4102 /wd4244 /wd4456 /wd4701 /wd4703 /wd4063 /wd4477")
+    # Enable intrinsics for XORSTR
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /arch:AVX2")
+
+# Clang specific options
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    # Set modern C++20 standard
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
+    message(STATUS "Using Clang with C++20 standard")
     
-    # Use static runtime
-    option(MSVC_STATIC_RUNTIME "Use static runtime" OFF)
-    if(MSVC_STATIC_RUNTIME)
-        foreach(flag_var
-            CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
-            CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
-            if(${flag_var} MATCHES "/MD")
-                string(REGEX REPLACE "/MD" "/MT" ${flag_var} "${${flag_var}}")
-            endif()
-        endforeach()
-    endif()
+    # Add warnings and optimizations
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wno-unused-parameter")
+    
+    # Optimizations for release build
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+    
+    # Debug info for debug build
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0")
+    
+    # Disable specific warnings that might be too noisy
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-missing-braces -Wno-inconsistent-missing-override")
+    
+    # Enable colored diagnostics
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcolor-diagnostics")
+    
+    # Enable intrinsics for xorstr (AVX/SSE support)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx2 -msse4.2")
+    
+    # Suppress Unreal Engine SDK compilation errors
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-class-conversion -Wno-microsoft-template-shadow -Wno-pragma-once-outside-header")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-mismatched-tags -Wno-invalid-constexpr -Wno-unused-private-field")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-undefined-bool-conversion")
+    
+    # Allow reinterpret_cast in constexpr expressions
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
+    
+    # Support Microsoft ABI features
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-compatibility -fms-compatibility-version=19.29")
+    
+    # Allow incorrect type conversions for compatibility
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
+    
+    # Replace -fasm-blocks with a more compatible option
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fasm")
+    
+    # Additional flags to suppress errors with static_cast between unrelated types
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-microsoft-cast")
+    
+    # Ignore case in file names
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-nonportable-include-path")
+    
+    # Disable strict checks for header files
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=header-guard -Wno-error=pragma-once-outside-header")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=invalid-token-paste -Wno-ignored-attributes")
+    
+    # Disable warnings about Microsoft-specific attributes
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-microsoft-enum-forward-reference -Wno-microsoft-goto")
+    
+    # Disable warnings about narrowing value in enumerations
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c++11-narrowing -Wno-narrowing")
+    
+    # Allow incomplete types and C-style casts
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-incompatible-pointer-types -Wno-incompatible-function-pointer-types")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-cast-function-type -Wno-cast-qual")
+    
+    # Disable errors with bit fields
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-bitfield-constant-conversion")
+    
+    # Disable errors with FSetBitIterator
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DDISABLE_FSETBITITERATOR_DECREMENT")
+    
+    # Use compiler in maximum compatibility mode with MSVC
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Xclang -fdelayed-template-parsing")
+    
+    # Special macros and definitions for UE4 SDK on Clang
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCLANG_WORKAROUNDS")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DSTRUCTURE_SIZE_PARANOIA=0")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS")
+    
+    # Macros to bypass InvalidUseOfTDelegate error
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DDEFINE_INVALIDUSEOFTDELEGATE")
+    
+    # Disable standard Clang checks for C++
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-inconsistent-missing-override -Wno-overloaded-virtual")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-dynamic-class-memaccess -Wno-unused-value")
+    
+    # Ignore errors with type conversions, which are very common in UE4 SDK
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=incompatible-pointer-types")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=reinterpret-base-class")
+    
+    # Ignore most standard Clang errors when compiling UE4 SDK
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error")
+
+# GCC specific options (not tested)
+elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    # Set modern C++20 standard
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
+    message(STATUS "Using GCC with C++20 standard")
+    
+    # Add warnings and optimizations
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wno-unused-parameter")
+    
+    # Optimizations for release build
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+    
+    # Debug info for debug build
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0")
+    
+    # Enable intrinsics for xorstr
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx2 -msse4.2")
 endif()
 
 # Print compiler flags
+message(STATUS "C++ flags: ${CMAKE_CXX_FLAGS}")
 message(STATUS "C++ flags (Debug): ${CMAKE_CXX_FLAGS_DEBUG}")
 message(STATUS "C++ flags (Release): ${CMAKE_CXX_FLAGS_RELEASE}")

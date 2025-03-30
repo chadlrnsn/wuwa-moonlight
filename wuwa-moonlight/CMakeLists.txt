@@ -13,6 +13,7 @@ target_include_directories(WWMoonlight PUBLIC
 
     # External dependencies
     ext/minhook
+    ext/minhook/include
     ext/CppSDK
     ext/CppSDK
     ext/imgui
@@ -20,7 +21,7 @@ target_include_directories(WWMoonlight PUBLIC
     ext/kiero
     ext/nlohmann
     ext/magic_enum/include/magic_enum
-    ext/xorstr
+    ext/xorstr/include
 )
 
 file(GLOB IMGUI_SOURCES 
