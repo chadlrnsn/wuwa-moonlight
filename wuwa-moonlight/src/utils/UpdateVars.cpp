@@ -7,29 +7,21 @@ using namespace SDK;
 
 void utils::UpdateGlobals() noexcept
 {
-    if (!IsAddressReadable(UEngine::GetEngine(), sizeof(UEngine)))
+    UEngine* _engine = UEngine::GetEngine();
+    if (_engine == nullptr)
     {
-        LOG_ERROR("Engine address not readable!");
+        LOG_WARN("No engine");
         return;
     }
-
-    UEngine* engine = UEngine::GetEngine();
-    if (!engine)
-        return;
-
-    if (!IsAddressReadable(UWorld::GetWorld(), sizeof(UWorld)))
+    engine = _engine;
+    
+    UWorld* _world = UWorld::GetWorld();
+    if (_world == nullptr)
     {
-        LOG_ERROR("World address not readable!");
+        LOG_WARN("No world");
         return;
     }
-
-    UWorld* world = UWorld::GetWorld();
-
-    if (!world)
-    {
-        LOG_WARN("no world");
-        return;
-    }
+    world = _world;
 
     if (!IsPointerReadable(&world->OwningGameInstance))
     {
