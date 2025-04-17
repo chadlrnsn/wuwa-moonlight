@@ -9,6 +9,7 @@ using namespace SDK;
 using namespace globals;
 
 
+
 DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 {
 	Logger::Init("Moonlight");
@@ -37,6 +38,7 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 		try
 		{
 			utils::UpdateGlobals();
+			fpsUnlock.Run();
 		}
 		catch (const std::exception& e)
 		{

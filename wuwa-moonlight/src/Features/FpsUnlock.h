@@ -1,7 +1,7 @@
 #pragma once
-#include "..\includes.h"
-#include "SDK.hpp"
-#include "..\globals.h"
+#include <includes.h>
+#include <SDK.hpp>
+#include <globals.h>
 using namespace globals;
 
 class FpsUnlock
@@ -69,18 +69,18 @@ inline void FpsUnlock::DrawFPS()
 
 inline void FpsUnlock::Run()
 {
-	UEngine* Engine = UEngine::GetEngine();
+	if (engine == nullptr) return;
+	SDK::UGameUserSettings* Settings = engine->GameUserSettings;
 
-	if (!Engine) return;
-
-	SDK::UGameUserSettings* Settings = Engine->GameUserSettings;
-
-	if (!Settings) return;
+	if (Settings == nullptr) return;
 
 	if (bEnabled)
 	{
 		if (Settings->GetFrameRateLimit() == fFrameRateLimit)
+		{
+			// LOG_INFO("FrameRate == fFrameRateLimit\nIt will never be setted.");
 			return;
+		}
 
 		Settings->SetFrameRateLimit(fFrameRateLimit);
 		Settings->ApplySettings(false);

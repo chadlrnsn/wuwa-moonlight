@@ -10,6 +10,7 @@
 #include <thread>
 #include <chrono>
 #include <config.h>
+#include <logger.h>
 
 using namespace SDK;
 

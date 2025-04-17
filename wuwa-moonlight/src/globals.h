@@ -1,11 +1,11 @@
 #pragma once
 #include "includes.h"
-//SDK error
+
 namespace globals
 {
 
 	inline const char* BuildInfo;
-	inline const char* ProjectName = "LetItHappen";
+	inline const char* ProjectName = "Moonlight";
 
 	inline ProcessEvent oProcessEvent;
 	inline PostRender oPostRender;
@@ -23,6 +23,6 @@ namespace globals
 	inline UObject* FN_TsAnimNotifyReSkillEvent_C;		 // Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify
 	inline UObject* FN_TsAnimNotifyStateCounterAttack_C; // Function TsAnimNotifyStateCounterAttack.TsAnimNotifyStateCounterAttack_C.K2_NotifyBegin
 
-	inline bool g_ShouldDrawImGui = false;
+	inline bool shutdown = false;
 	inline bool g_CanDrawPostRender = false;
 }
