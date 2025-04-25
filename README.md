@@ -44,7 +44,7 @@
 - Contribute this project 
 
 ## Building
-1. Clone the repository: git clone --recurse-submodules https://github.com/Taiga74164/SLA-Cheeto.
+1. Clone the repository: git clone --recurse-submodules https://github.com/chadlrnsn/wuwa-moonlight.
 2. Build with your preferred IDE.
 3. Output will be in out/build/your-configuration/wuwa-moonlight/Release/WWMoonlight.dll
 
