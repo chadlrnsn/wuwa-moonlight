@@ -1,13 +1,13 @@
 # wuwa-moonlight
-<img alt="GitHub forks" src="https://img.shields.io/github/forks/chadlrnsn/wuwa-moonlight?style=flat-square&logo=github">
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/chadlrnsn/wuwa-moonlight?style=flat-square&logo=github">
-<img alt="GitHub License" src="https://img.shields.io/github/license/chadlrnsn/wuwa-moonlight?style=flat-square">
-<img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/chadlrnsn/wuwa-moonlight/total?style=flat-square">
-<img alt="Discord" src="https://img.shields.io/discord/1246834050119893064?style=flat-square&logo=Discord">
 
+![GitHub forks](https://img.shields.io/github/forks/chadlrnsn/wuwa-moonlight?style=flat-square&logo=github)
+![GitHub Repo stars](https://img.shields.io/github/stars/chadlrnsn/wuwa-moonlight?style=flat-square&logo=github)
+![GitHub License](https://img.shields.io/github/license/chadlrnsn/wuwa-moonlight?style=flat-square)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/chadlrnsn/wuwa-moonlight/total?style=flat-square)
+![Discord](https://img.shields.io/discord/1246834050119893064?style=flat-square&logo=Discord)
 
 > [!IMPORTANT]
-> Educational purposes only
+> Educational purposes only. \
 > I'm not going to support it all the time, nor am I going to do it consistently. It's open source. Anyone who knows about it can compile and play.
 
 ## How to use 📃
