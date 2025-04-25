@@ -11,6 +11,9 @@
 #include <chrono>
 #include <config.h>
 #include <logger.h>
+#include <Features/FeatureFactory.h>
+#include <structs.h>
+#include <gui/components/Tooltip.hpp>
 
 using namespace SDK;
 

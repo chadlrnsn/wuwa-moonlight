@@ -2,9 +2,10 @@
 #include <includes.h>
 #include <SDK.hpp>
 #include <globals.h>
+
 using namespace globals;
 
-class FpsUnlock
+class FpsUnlock : public FeatureFactory
 {
 public:
 	bool bEnabled = false;

@@ -3,7 +3,7 @@
 #include <vector>
 #include <windows.h>
 #include <thread>
-#include "..\globals.h"
+#include <Singleton.hpp>
 
 #ifndef IMGUI_DEFINE_MATH_OPERATORS
 #define IMGUI_DEFINE_MATH_OPERATORS
@@ -11,7 +11,6 @@
 
 #include "imgui_internal.h"
 #include "imgui.h"
-#include "..\Features\Features.h"
 
 /**
  * @brief Calculates a responsive size based on the input size, width multiplier, and height multiplier.
@@ -28,10 +27,33 @@ ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall)
     return ImVec2(size.x * mulwide, size.y * multall);
 }
 
-class Menu
+class IMenu {
+public:
+    virtual void RealCursorShow() = 0;
+    virtual void Setup() = 0;
+    virtual void SetUpColors(ImGuiStyle& style, ImVec4* colors) = 0;
+    virtual bool IsOpen() = 0;
+    virtual void SetIsOpen(bool IsOpen) = 0;
+    virtual void Toggle() = 0;
+    
+    // https://github.com/ocornut/imgui/issues/4356#issuecomment-1535547717
+    virtual void PreventMoveOutOfWndBounds(const char* wndName) = 0;
+    virtual void RenderMenu() = 0;
+    virtual void RenderWatermark() = 0;
+    virtual void RenderNotify() = 0;
+};
+
+class MenuBase : public IMenu
+{
+protected:
+    bool bWatermark = true;
+    bool bIsOpen = false;
+    bool bShowBuild = true;
+};
+
+class Menu : public MenuBase
 {
 private:
-    bool bWatermark = true;
 
     enum Headers
     {
@@ -39,31 +61,27 @@ private:
         ESP,
         MISC,
         CONFIG,
-        // #ifdef _DEBUG
-        //         DEBUG,
-        // #endif
+        //DEBUG
         HEADERS_COUNT
     };
 
-public:
-    bool bShowBuild = true;
-    bool IsOpen = false;
     float baseFontSize = 14.0f;
     float iconFontSize = baseFontSize * 2.0f / 3.0f;
     bool bOnceStyle = false;
     bool bOnceScaledMenu = false;
 
+
 public:
     void RealCursorShow();
     void Setup();
     void SetUpColors(ImGuiStyle& style, ImVec4* colors);
-
-    // https://github.com/ocornut/imgui/issues/4356#issuecomment-1535547717
     void PreventMoveOutOfWndBounds(const char* wndName);
-
     void RenderMenu();
     void RenderWatermark();
-    // void RenderNotify();
+    bool IsOpen();
+    void SetIsOpen(bool isOpen);
+    void Toggle();
+    void RenderNotify() override {};
 };
 
 inline ImFont* font_regular;

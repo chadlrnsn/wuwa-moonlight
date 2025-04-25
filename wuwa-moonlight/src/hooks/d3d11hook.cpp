@@ -12,6 +12,7 @@
 #include "imgui_impl_win32.h"
 #include "gui/Menu.hpp"
 #include "globals.h"
+#include <Features/misc/FpsUnlock.h>
 
 typedef HRESULT(__stdcall* ResizeBuffers)(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
 ResizeBuffers oResizeBuffers = nullptr;
@@ -29,8 +30,7 @@ ID3D11DeviceContext* pContext = NULL;
 ID3D11RenderTargetView* mainRenderTargetView;
 IDXGISwapChain* pSwapChain;
 HMODULE hModule;
-Menu menu;
-bool firstnotify = false;
+std::shared_ptr<Menu> g_menu = std::make_shared<Menu>();
 
 void InitImGui()
 {
@@ -63,7 +63,7 @@ void CreateRenderTarget(IDXGISwapChain* pSwapChain)
 
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-	if (menu.IsOpen)
+	if (g_menu->IsOpen())
 	{
 		ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam);
 		return true;
@@ -95,32 +95,20 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	}
 
 	ImGuiIO& io = ImGui::GetIO();
-	io.MouseDrawCursor = menu.IsOpen;
+	io.MouseDrawCursor = g_menu->IsOpen();
+
+	g_menu->Setup();
 
 	if (GetAsyncKeyState(config::binds::menu_key) & 1)
-		menu.IsOpen = !menu.IsOpen;
-
-	if (!menu.bOnceStyle)
-	{
-		menu.Setup();
-		menu.bOnceStyle = true;
-	}
+		g_menu->Toggle();
 
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 
 	ImGui::NewFrame();
 
-	const char* wnds[] = {
-		"Moonlight",
-		"FPS",
-	};
+	if (g_menu->IsOpen()) g_menu->RenderMenu();
 
-	// for (int i = 0; i < std::size(wnds); i++) menu.PreventMoveOutOfWndBounds(wnds[i]);
-	// menu.PreventMoveOutOfWndBounds("Moonlight");
-
-	if (menu.IsOpen)
-		menu.RenderMenu();
 	fpsUnlock.DrawFPS();
 
 	ImGui::Render();

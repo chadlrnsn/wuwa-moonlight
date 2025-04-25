@@ -2,7 +2,6 @@
 
 #include <includes.h>
 #include <globals.h>
-#include <Features/Features.h>
 #include <UnrealEngineRenderer.h>
 #include <MinHook.h>
 #include <logger.h>
@@ -116,8 +115,8 @@ void Hooks::AntiDebug() noexcept
 
 void __fastcall hkProcessEvent(UObject* caller, UFunction* function, void* params)
 {
-	if (config::multihit::enabled)
-		multihit.Call(caller, function, params, oProcessEvent);
+	// if (config::multihit::enabled)
+	// 	multihit.Call(caller, function, params, oProcessEvent);
 
 	oProcessEvent(caller, function, params);
 }

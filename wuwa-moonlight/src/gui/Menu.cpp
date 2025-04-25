@@ -4,77 +4,74 @@
 #include <chrono>
 #include <iostream>
 #include <imgui_internal.h>
-#include <Features/SpeedHack.h>
-#include <Features/GravityScale.h>
-#include <Features/MultiHit.h>
-#include <Features/FpsUnlock.h>
-#include <Features/WalkableFloorAngle.h>
-#include <Features/WalkableFloorZ.h>
-#include <Features/Fly.h>
+
+#include <Features/combat/MultiHit.h>
+#include <Features/misc/FpsUnlock.h>
+
 
 void Menu::RealCursorShow()
 {
     ImGui::GetMouseCursor();
     ImGui::SetMouseCursor(ImGuiMouseCursor_Arrow);
-    ImGui::GetIO().WantCaptureMouse = IsOpen;
-    ImGui::GetIO().MouseDrawCursor = IsOpen;
+    ImGui::GetIO().WantCaptureMouse = bIsOpen;
+    ImGui::GetIO().MouseDrawCursor = bIsOpen;
 }
 
 void Menu::Setup()
 {
-    ImGuiIO& io = ImGui::GetIO();
-    (void)io;
-    ImGuiStyle& style = ImGui::GetStyle();
-    ImVec4* colors = style.Colors;
-    ImVec2 whole_content_size = io.DisplaySize;
-    whole_content_size.x = whole_content_size.x * 0.3;
-    whole_content_size.y = whole_content_size.y * 0.2;
-    this->SetUpColors(style, colors);
+    if (!bOnceStyle) {
+        ImGuiIO& io = ImGui::GetIO();
+        (void)io;
+        ImGuiStyle& style = ImGui::GetStyle();
+        ImVec4* colors = style.Colors;
+        ImVec2 whole_content_size = io.DisplaySize;
+        whole_content_size.x = whole_content_size.x * 0.3;
+        whole_content_size.y = whole_content_size.y * 0.2;
 
-    ImFontConfig font_config;
-    font_config.PixelSnapH = false;
-    font_config.OversampleH = 5;
-    font_config.OversampleV = 5;
-    font_config.RasterizerMultiply = 1.2f;
+        // Theme initialization
+        SetUpColors(style, colors);
 
-    ImFontConfig icontfont_config;
-    icontfont_config.MergeMode = true;
-    icontfont_config.GlyphMinAdvanceX = iconFontSize;
-    icontfont_config.PixelSnapH = true;
+        ImFontConfig font_config;
+        font_config.PixelSnapH = false;
+        font_config.OversampleH = 5;
+        font_config.OversampleV = 5;
+        font_config.RasterizerMultiply = 1.2f;
 
-    static const ImWchar ranges[] =
-    {
-        0x0020, 0x00FF, // Basic Latin + Latin Supplement
-        0x0400, 0x052F, // Cyrillic + Cyrillic Supplement
-        0x2DE0, 0x2DFF, // Cyrillic Extended-A
-        0xA640, 0xA69F, // Cyrillic Extended-B
-        0xE000, 0xE226, // icons
-        0 };
+        ImFontConfig icontfont_config;
+        icontfont_config.MergeMode = true;
+        icontfont_config.GlyphMinAdvanceX = iconFontSize;
+        icontfont_config.PixelSnapH = true;
 
-    // static const ImWchar iconRanges[] =
-    //     {
-    //         ICON_MIN_FA,
-    //         ICON_MAX_16_FA, // awesome font icons
-    //         0,
-    //     };
+        static const ImWchar ranges[] =
+        {
+            0x0020, 0x00FF, // Basic Latin + Latin Supplement
+            0x0400, 0x052F, // Cyrillic + Cyrillic Supplement
+            0x2DE0, 0x2DFF, // Cyrillic Extended-A
+            0xA640, 0xA69F, // Cyrillic Extended-B
+            0xE000, 0xE226, // icons
+            0 };
 
-    io.Fonts->AddFontDefault();
-    font_regular = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
-    font_medium = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
-    font_bold = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
-    font_title = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
-#ifndef _DEBUG
-    // icons   = io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icontfont_config, iconRanges);
-#else
-    std::cout << "Awesome font will not be loaded due to DEBUG configuration!" << std::endl;
-#endif // _DEBUG
+        //static const ImWchar iconRanges[] =
+        //{
+        //    ICON_MIN_FA,
+        //    ICON_MAX_16_FA, // awesome font icons
+        //    0,
+        //};
 
-    io.FontDefault = font_regular;
+        io.Fonts->AddFontDefault();
+        font_regular = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
+        font_medium = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
+        font_bold = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
+        font_title = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
+        //icons = io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icontfont_config, iconRanges);
+
+        io.FontDefault = font_regular;
+        bOnceStyle = true; // is initialized = true
+    }
 }
 
 void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors)
 {
-
     ImColor hovered = { 31, 110, 171 };
     ImColor Transparented = { 0, 0, 0, 255 };
     colors[ImGuiCol_WindowBg] = ImColor(20, 23, 25);
@@ -149,10 +146,7 @@ void Menu::RenderMenu()
     static Headers tab = PLAYER;
     const char* tab_names[] = { "PLAYER", "ESP", "MISC", "CONFIG", /*"DEBUG"*/ };
 
-    // Get Window Size
     ImVec2 wndSize = ImGui::GetIO().DisplaySize;
-
-    // min and max size for the main window
     ImVec2 minSize(600, 300);
     ImVec2 maxSize(wndSize);
 
@@ -229,11 +223,11 @@ void Menu::RenderMenu()
     switch (tab)
     {
     case PLAYER:
-        speedhack.DrawMenuItems();
-        fly.DrawMenuItems();
-        gravityScale.DrawMenuItems();
-        walkFloorZ.DrawMenuItems();
-        walkFloorAngle.DrawMenuItems();
+        //speedhack.DrawMenuItems();
+        //fly.DrawMenuItems();
+        //gravityScale.DrawMenuItems();
+        //walkFloorZ.DrawMenuItems();
+        //walkFloorAngle.DrawMenuItems();
         multihit.Draw();
         // godmode.Draw();
 
@@ -253,11 +247,6 @@ void Menu::RenderMenu()
     case CONFIG:
         ImGui::Text("in dev.");
         break;
-        // #ifdef _DEBUG
-        //         case DEBUG:
-        //             break;
-        // #endif
-
     } // Switch
 
     ImGui::Unindent();
@@ -284,6 +273,21 @@ void Menu::RenderWatermark()
     ImGui::Begin("watermark", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoNavFocus | ImGuiWindowFlags_NoNav);
     ImGui::Text("Moonlight | github.com/chadlrnsn/wuwa-moonlight");
     ImGui::End();
+}
+
+bool Menu::IsOpen()
+{
+    return this->bIsOpen;
+}
+
+void Menu::SetIsOpen(bool isOpen)
+{
+    this->bIsOpen = isOpen;
+}
+
+void Menu::Toggle()
+{
+    this->bIsOpen = !this->bIsOpen;
 }
 
 // void Menu::RenderNotify()

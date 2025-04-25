@@ -1,9 +1,4 @@
 #pragma once
-#include "GodMode.h"
-#include "Fly.h"
-#include "SpeedHack.h"
-#include "GravityScale.h"
-#include "WalkableFloorZ.h"
-#include "WalkableFloorAngle.h"
-#include "FpsUnlock.h"
-#include "MultiHit.h"
+#include <Features/misc/FpsUnlock.h>
+#include <Features/combat/MultiHit.h>
+#include <Features/visuals/ESP.hpp>

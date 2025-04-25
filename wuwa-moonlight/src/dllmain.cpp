@@ -4,11 +4,10 @@
 #include <Hooks.h>
 #include <UpdateVars.h>
 #include <config.h>
+#include <Features/Features.h>
 
 using namespace SDK;
 using namespace globals;
-
-
 
 DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 {
@@ -24,7 +23,6 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 	D3D11Hook::Initialize();
 	Hooks::InGame::Initialize();
 
-	LOG_INFO("You can detach this dll from your process with F9\n");
 	while (true)
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
@@ -45,7 +43,6 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 			LOG_ERROR("Exception caught in UpdateThread: %s", e.what());
 		}
 	}
-
 
 	D3D11Hook::Uninitialize();
 	Hooks::RemoveHooks();
