@@ -11,6 +11,7 @@ public:
     virtual void Draw() = 0;
     virtual void Run() = 0;
     virtual void CallOrigin() = 0;
+    virtual void RenderDebug() = 0;
     
     // Factory method to create instances
     template<typename T, typename... Args>
@@ -29,6 +30,10 @@ public:
     ~FeatureFactory() override = default;
     
     void Render() override {
+        // Basic implementation
+    }
+
+    void RenderDebug() override {
         // Basic implementation
     }
     

@@ -37,6 +37,7 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 		{
 			utils::UpdateGlobals();
 			fpsUnlock.Run();
+			esp.get()->Run();
 		}
 		catch (const std::exception& e)
 		{

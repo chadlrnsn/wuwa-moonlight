@@ -5,8 +5,8 @@
 #include <iostream>
 #include <imgui_internal.h>
 
-#include <Features/combat/MultiHit.h>
-#include <Features/misc/FpsUnlock.h>
+#include <Features/Features.h>
+
 
 
 void Menu::RealCursorShow()
@@ -235,6 +235,7 @@ void Menu::RenderMenu()
 
     case ESP:
         // esp.DrawMenuItems();
+        esp.get()->Draw();
         break;
 
     case MISC:

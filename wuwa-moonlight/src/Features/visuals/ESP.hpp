@@ -1,70 +1,79 @@
 #pragma once
 #include <includes.h>
+#include <map>
+#include <globals.h>
+#include <utils/UnrealEngineRenderer.h>
+#include <gui/components/ColorConv.hpp>
 
 class ESP : public FeatureFactory
 {
 protected:
-	float fColor[4] = { 1.0, 1.0, 1.0, 1.0 };
+	float fColor[4] = {1,1,1,1};
+	float fOccludedColor[4] = {0.5, 0.5, 0.5, 1};
+
 private:
 	Distance espDistance;
+	bool m_bDebugWindow = false;
+
+private:
+	// ESP Stuff
+
+	std::map<std::string, std::string> Ascension_Materials = {
+		{"Collect003", "Iris"}, 
+		{"Collect004", "Terraspawn Fungus"}, 
+		{"Collect005", "Lanternberry"}, 
+		{"Collect006", "Pecok Flower"}, 
+		{"Collect007", "Belle Poppy"}, 
+		{"Collect008", "Coriolus"}, 
+		{"Collect009", "Wintry Bell"}, 
+		{"Collect010", "Violet Coral"}, 
+		{"Collect_CX508", "Loong's Pearl"}, 
+		{"Collect_CX509", "Loong's Pearl"}, 
+		{"Collect_CX503", "Pavo Plum"}, 
+		{"Collect_CX504", "Pavo Plum"}, 
+		{"Collect_CX505", "Pavo Plum"}, 
+		{"Collect_CX506", "Pavo Plum"}
+	};
+
+	std::map<std::string, std::string> Ore = {
+		{"Collect501", "Scarletthorn"},
+		{"Collect502", "Lampylumen"},
+		{"Collect503", "Indigoite"},
+		{"Collect504", "Floral Amber"},
+		{"Collect505", "Flourite"}
+	};
+
+	std::map<std::string, std::string> Monsters = {
+		{ "Monster012", "Exil-M" },
+		{ "Monster013", "Exil-F" }
+	};
+
+	SDK::TArray<SDK::AActor> any_actor_of_scene;
+	SDK::FName name_to_find;
+	std::string searchClassName;
+
+	struct RenderData
+	{
+		SDK::AActor* Actor;
+		std::string DisplayText;
+		SDK::FVector2D ScreenLocation;
+		bool bIsVisible;
+	};
+
+	struct RenderDataA
+	{
+		SDK::AActor* Actor;
+		SDK::FString DisplayText;
+		SDK::FVector2D ScreenLocation;
+		bool bIsVisible;
+	};
+
+	std::vector<RenderData> renderActors;
+	//std::vector<RenderDataA> renderActors;
 
 public:
 	void Draw();
 	void Render();
 	void Run();
+	void RenderDebug();
 };
-
-//struct ESPObject {
-//	
-//	enum class Box {
-//		Box2D,
-//		Box3D,
-//		Box2DOutlined,
-//		Box3DOutlined,
-//		MAX
-//	};
-//
-//	enum class CorneredBox {
-//		Corner2D,
-//		Corner3D,
-//		Corner2DOutlined,
-//		Corner3DOutlined,
-//		MAX
-//	};
-//
-//	struct Tracer {
-//		float color[4];
-//		float outline_color[4];
-//
-//		Tracer(float color[4], float outline_color[4]) :
-//			color(color[4]),
-//			outline_color(outline_color[4])
-//			{};
-//
-//	};
-//};
-
-
-//class IESPObject
-//{
-//public:
-//	virtual bool IsInScreenView() = 0;
-//	virtual bool SetIsInScreenView() = 0;
-//
-//	virtual void Render() = 0;
-//};
-//
-//class ESPObjectBase : public IESPObject
-//{
-//private:
-//	bool m_bAtScreen{ false };
-//
-//protected:
-//	bool bShouldRender{ true };
-//
-//public:
-//	void Render();
-//	ESPObjectBase Get();
-//	bool IsInScreenView();
-//	bool SetIsInScreenView(const bool &AtScreen);
-//};

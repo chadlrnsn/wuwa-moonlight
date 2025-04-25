@@ -188,39 +188,41 @@ void Hooks::InGame::PostRender() noexcept
 				continue;
 			}
 
-			auto World = UWorld::GetWorld();
-			if (!World)
-			{
-				LOG_INFO("Failed to get World instance");
-				Sleep(1000);
-				continue;
-			}
+			
 
-			auto GameInstance = World->OwningGameInstance;
-			if (!GameInstance)
-			{
-				LOG_INFO("Failed to get GameInstance");
-				Sleep(1000);
-				continue;
-			}
+			//auto World = UWorld::GetWorld();
+			//if (!World)
+			//{
+			//	LOG_INFO("Failed to get World instance");
+			//	Sleep(1000);
+			//	continue;
+			//}
 
-			auto localPlayers = GameInstance->LocalPlayers;
-			if (!localPlayers)
-			{
-				LOG_INFO("Failed to get LocalPlayers");
-				Sleep(1000);
-				continue;
-			}
+			//auto GameInstance = World->OwningGameInstance;
+			//if (!GameInstance)
+			//{
+			//	LOG_INFO("Failed to get GameInstance");
+			//	Sleep(1000);
+			//	continue;
+			//}
 
-			auto EViewPort = Engine->GameViewport;
-			if (!EViewPort)
-			{
-				LOG_INFO("Failed to get EViewPort");
-				Sleep(1000);
-				continue;
-			}
+			//auto localPlayers = GameInstance->LocalPlayers;
+			//if (!localPlayers)
+			//{
+			//	LOG_INFO("Failed to get LocalPlayers");
+			//	Sleep(1000);
+			//	continue;
+			//}
 
-			auto Viewport = localPlayers[0]->ViewportClient;
+			//auto EViewPort = Engine->GameViewport;
+			//if (!EViewPort)
+			//{
+			//	LOG_INFO("Failed to get EViewPort");
+			//	Sleep(1000);
+			//	continue;
+			//}
+
+			auto Viewport = Engine->GameViewport;
 			if (!Viewport)
 			{
 				LOG_INFO("Failed to get Viewport");
@@ -228,7 +230,7 @@ void Hooks::InGame::PostRender() noexcept
 				continue;
 			}
 
-			LOG_INFO("EGameViewPort found: %p", (uintptr_t)EViewPort);
+			//LOG_INFO("EGameViewPort found: %p", (uintptr_t)EViewPort);
 			LOG_INFO("GameViewport found: %p", (uintptr_t)Viewport);
 
 			void** VTable = *reinterpret_cast<void***>(Viewport);
