@@ -11,7 +11,7 @@ namespace js {
 std::uintptr_t NewStringAddress{0};
 NewString_t NewString_Origin{nullptr};
 
-void* hkEvalScript(void* Isolate, const char* data, int type, int length) {
+void hkEvalScript(void* Isolate, const char* data, int type, int length) {
     LOG_INFO("JSDATA: %s", data);
     
     // Example
