@@ -5,6 +5,7 @@
 #include <UpdateVars.h>
 #include <config.h>
 #include <Features/Features.h>
+#include <gui/Menu.hpp>
 
 using namespace SDK;
 using namespace globals;
@@ -25,7 +26,7 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 
 	while (true)
 	{
-		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
 		
 		if (GetAsyncKeyState(VK_END) & 0x8000)
 		{
@@ -33,15 +34,25 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 			break;
 		}
 
+		if (GetAsyncKeyState(config::binds::menu_key) & 1) g_menu->Toggle();
+
 		try
 		{
 			utils::UpdateGlobals();
-			fpsUnlock.Run();
+			fpsUnlock.get()->Run();
 			esp.get()->Run();
 		}
-		catch (const std::exception& e)
+		catch (...)
 		{
-			LOG_ERROR("Exception caught in UpdateThread: %s", e.what());
+			std::exception_ptr ex = std::current_exception();
+			try
+			{
+				std::rethrow_exception(ex);
+			}
+			catch (std::bad_exception const& e)
+			{
+				LOG_ERROR("Exception caught: %s", e.what());
+			}
 		}
 	}
 

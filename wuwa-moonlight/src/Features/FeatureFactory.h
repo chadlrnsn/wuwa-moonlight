@@ -24,6 +24,7 @@ public:
 class FeatureFactory : public IFeatureFactory {
 protected:
     bool bEnable{ false };
+    bool bOnce{ false };
     
 public:
     FeatureFactory() = default;

@@ -143,6 +143,8 @@ void Menu::PreventMoveOutOfWndBounds(const char* wndName)
 
 void Menu::RenderMenu()
 {
+    if (!IsOpen()) return;
+
     static Headers tab = PLAYER;
     const char* tab_names[] = { "PLAYER", "ESP", "MISC", "CONFIG", /*"DEBUG"*/ };
 
@@ -239,7 +241,7 @@ void Menu::RenderMenu()
         break;
 
     case MISC:
-        fpsUnlock.DrawMenuItems();
+        fpsUnlock.get()->Draw();
         if (ImGui::Button("Force exit"))
             ExitProcess(0);
 

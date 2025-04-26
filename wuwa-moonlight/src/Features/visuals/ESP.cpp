@@ -51,11 +51,9 @@ void ESP::Render()
 		ImVec4 Color = Data.bIsVisible ? ImVec4(fColor[0], fColor[1], fColor[2], fColor[3]) :
 			ImVec4(fOccludedColor[0], fOccludedColor[1], fOccludedColor[2], fOccludedColor[3]);
 
-		drawBackList->AddText(ImVec2(Data.ScreenLocation.X, Data.ScreenLocation.Y),
-			ImColor(Color),
-			Data.DisplayText.c_str());
+		drawBackList->AddText(ImVec2(Data.ScreenLocation.X, Data.ScreenLocation.Y), ImColor(Color), Data.DisplayText.c_str());
 
-		//drawBackList->AddLine(io.DisplaySize / 2, ImVec2(Data.ScreenLocation.X, Data.ScreenLocation.Y), ImColor(200, 0, 0, 255));
+		drawBackList->AddLine(ImGui::GetIO().DisplaySize / 2, ImVec2(Data.ScreenLocation.X, Data.ScreenLocation.Y), ImColor(200, 0, 0, 255));
 	}
 
 }
@@ -64,7 +62,7 @@ void ESP::Run() // routine
 {
 	if (!bEnable) return;
 	
-	renderActors.clear();
+	std::vector<RenderData> tempActors;
 
 	if (globals::world == nullptr) return;
 	//LOG_INFO("ESP: World issue");
@@ -80,15 +78,18 @@ void ESP::Run() // routine
 	if (Persisten_Level == nullptr) return;
 	//LOG_INFO("ESP: Persistent level issue");
 
-
 	if (globals::pawn == nullptr) return;
 
 
 	// Получаем позицию камеры
 	auto camera_manager = globals::player_controller->PlayerCameraManager;
 	if (camera_manager == nullptr) return;
-	SDK::FVector CameraLocation = camera_manager->GetCameraLocation();
 
+	renderActors.clear();
+	tempActors.clear();
+
+	SDK::FVector CameraLocation = camera_manager->GetCameraLocation();
+	cameraLocation = CameraLocation;
 
 	for (auto actor : Persisten_Level->Actors) {
 		if (!actor || actor == globals::pawn) continue;
@@ -106,13 +107,16 @@ void ESP::Run() // routine
 		SDK::FVector2D ScreenLocation;
 		if (!globals::player_controller->ProjectWorldLocationToScreen(ActorLocation, &ScreenLocation, false)) continue;
 
+
 		RenderData Data;
 		Data.Actor = actor;
-		Data.DisplayText = DisplayName + "[" + std::to_string(Distance) + "]";
+		Data.DisplayText = DisplayName + "[" + std::to_string(static_cast<int>(Distance)) + "m]";
 		Data.ScreenLocation = ScreenLocation;
 		Data.bIsVisible = bIsVisible;
-		renderActors.push_back(Data);
+		tempActors.push_back(Data);
 	}
+
+	renderActors.swap(tempActors);
 }
 
 void ESP::RenderDebug()

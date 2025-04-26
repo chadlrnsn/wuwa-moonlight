@@ -4,6 +4,7 @@
 #include <globals.h>
 #include <utils/UnrealEngineRenderer.h>
 #include <gui/components/ColorConv.hpp>
+#include <gui/Context.hpp>
 
 class ESP : public FeatureFactory
 {
@@ -12,8 +13,9 @@ protected:
 	float fOccludedColor[4] = {0.5, 0.5, 0.5, 1};
 
 private:
-	Distance espDistance;
+	structs::Distance espDistance;
 	bool m_bDebugWindow = false;
+	FVector cameraLocation;
 
 private:
 	// ESP Stuff

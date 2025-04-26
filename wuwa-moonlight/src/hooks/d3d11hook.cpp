@@ -17,7 +17,6 @@ ID3D11DeviceContext* pContext = NULL;
 ID3D11RenderTargetView* mainRenderTargetView;
 IDXGISwapChain* pSwapChain;
 HMODULE hModule;
-std::shared_ptr<Menu> g_menu = std::make_shared<Menu>();
 
 
 void InitImGui()
@@ -87,17 +86,13 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
 	g_menu->Setup();
 
-	if (GetAsyncKeyState(config::binds::menu_key) & 1)
-		g_menu->Toggle();
-
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 
 	ImGui::NewFrame();
 
-	if (g_menu->IsOpen()) g_menu->RenderMenu();
-
-	fpsUnlock.DrawFPS();
+	g_menu->RenderMenu();
+	fpsUnlock.get()->Render();
 	esp.get()->Render();
 	esp.get()->RenderDebug();
 

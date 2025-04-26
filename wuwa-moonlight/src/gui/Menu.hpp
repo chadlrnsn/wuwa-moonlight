@@ -9,6 +9,7 @@
 #define IMGUI_DEFINE_MATH_OPERATORS
 #endif // !IMGUI_DEFINE_MATH_OPERATORS
 
+#include <gui/Context.hpp>
 #include "imgui_internal.h"
 #include "imgui.h"
 
@@ -89,3 +90,5 @@ inline ImFont* font_medium;
 inline ImFont* font_bold;
 inline ImFont* font_title;
 inline ImFont* font_icons;
+
+inline std::shared_ptr<Menu> g_menu = std::make_shared<Menu>();
