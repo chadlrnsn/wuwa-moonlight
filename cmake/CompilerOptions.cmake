@@ -1,7 +1,7 @@
 # Set compiler options for different compilers and build types
 
 # Common options for all compilers
-set(COMMON_CXX_FLAGS "-std=c++20")
+set(COMMON_CXX_FLAGS "")
 set(COMMON_CXX_FLAGS_DEBUG "")
 set(COMMON_CXX_FLAGS_RELEASE "")
 
@@ -28,7 +28,7 @@ if(MSVC)
 # Clang specific options
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     # Set modern C++20 standard
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
     message(STATUS "Using Clang with C++20 standard")
     
     # Add warnings and optimizations
@@ -117,7 +117,7 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 # GCC specific options (not tested)
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
     # Set modern C++20 standard
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
     message(STATUS "Using GCC with C++20 standard")
     
     # Add warnings and optimizations

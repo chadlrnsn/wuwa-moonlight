@@ -16,4 +16,3 @@ target_include_directories(SDK PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/SDK/
     ${CMAKE_CURRENT_SOURCE_DIR}/
 )
-
