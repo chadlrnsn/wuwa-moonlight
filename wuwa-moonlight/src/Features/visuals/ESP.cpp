@@ -8,8 +8,10 @@ void ESP::Draw()
 	ImGui::SameLine();
 	ImGui::Tooltip("Extra Sensory Perception");
 
-	if (bEnable)
+	ImGui::BeginDisabled(!bEnable);
 	{
+		ImGui::Checkbox("Show occluded", &bOccluded);
+		
 		ImGui::SliderFloat("Distance", &espDistance.Current, espDistance.Min, espDistance.Max, "%.2f");
 		ImGui::ColorEdit4("Occluded color", fOccludedColor);
 		
@@ -21,6 +23,7 @@ void ESP::Draw()
 		ImGui::Tooltip("Color of visible object");
 		
 		ImGui::Checkbox("Tracers", &bTracers);
+		ImGui::Checkbox("Show occluded tracers", &bOccludedTracers);
 		ImGui::SliderFloat("Thickness", &TracerThickness.Current, TracerThickness.Min, TracerThickness.Max);
 		ImGui::ColorEdit4("Tracer color", fTracerColor);
 		ImGui::ColorEdit4("Tracer color occluded", fTracerColorOccluded);
@@ -38,9 +41,10 @@ void ESP::Draw()
 		ImGui::Tooltip("Enter actor class name (e.g., StaticMeshActor, SceneComponent)");
 
 		ImGui::NewLine();
+		ImGui::Checkbox("Debug window", &m_bDebugWindow);
 	}
-
-	ImGui::Checkbox("Debug window", &m_bDebugWindow);
+	ImGui::EndDisabled();
+	
 }
 
 void ESP::Render()
@@ -83,25 +87,26 @@ void ESP::Run() // routine
 	tempRenderData.clear();
 	tempRenderData.reserve(100);
 	
-	if (globals::world == nullptr) return;
-	if (globals::player_controller == nullptr) return;
-
-	auto Game_State = globals::world->GameState;
-	if (Game_State == nullptr) return;
+	if (!globals::world || !globals::player_controller) return;
 
 	auto Persisten_Level = globals::world->PersistentLevel;
 	if (Persisten_Level == nullptr) return;
 
-	if (globals::pawn == nullptr) return;
-
 	auto pcharacter = globals::player_controller->Character;
-	if (pcharacter == nullptr) return;
+	if (pcharacter == nullptr) 
+	{
+		if (renderData.size() > 0) {
+			std::lock_guard<std::mutex> lock(renderMutex);
+			renderData.clear();
+		}
+		return;
+	};
 
 	SDK::FVector pCharacterLocation = pcharacter->K2_GetActorLocation();
 	cameraLocation = pCharacterLocation;
 
 	for (auto actor : Persisten_Level->Actors) {
-		if (!actor || actor == globals::pawn) continue;
+		if (!actor) continue;
 
 		// Skip default UI components
 		// if (actor->IsA(hkEngine)) continue;
@@ -129,6 +134,7 @@ void ESP::Run() // routine
 
 		// Visible check
 		bool bIsVisible = globals::player_controller->LineOfSightTo(actor, pCharacterLocation, false);
+		if (!bIsVisible && !bOccluded) continue;
 
 		SDK::FVector ActorLocation = actor->K2_GetActorLocation();
 

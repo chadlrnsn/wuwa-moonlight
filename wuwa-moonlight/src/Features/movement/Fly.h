@@ -56,13 +56,13 @@ public:
 
 inline void Fly::Draw()
 {
-	ImGui::Checkbox("FlyHack", &bEnable);
-	ImGui::SameLine();
-	ImGui::Hotkey("##FlyHack Key", KeyDataToggleData.kb, &KeyDataToggleData.bSettingKey);
+	// ImGui::Checkbox("FlyHack", &bEnable);
+	// ImGui::SameLine();
+	// ImGui::Hotkey("##FlyHack Key", KeyDataToggleData.kb, &KeyDataToggleData.bSettingKey);
 
-	ImGui::BeginDisabled(!bEnable);
-	{
-		ImGui::Checkbox("NoClip", &m_bEnableCollision);
+	// ImGui::BeginDisabled(!bEnable);
+	// {
+	// 	ImGui::Checkbox("NoClip", &m_bEnableCollision);
 
 		// ImGui::Spacing();
 
@@ -97,8 +97,8 @@ inline void Fly::Draw()
 		//ImGui::Text("Move Down");
 		//ImGui::SameLine();
 		//ImGui::Hotkey("##Move Down", kbDown, &bDownKey);
-	}
-	ImGui::EndDisabled();
+	// }
+	// ImGui::EndDisabled();
 }
 
 inline void Fly::TestFunctionality()
@@ -234,22 +234,22 @@ inline void Fly::HandleFlightControls()
 
 inline void Fly::Run()
 {
-	HandleKeys();
+	// HandleKeys();
 
-	if (!bEnable) return;
+	// if (!bEnable) return;
 
-	if (!player_controller || !player_controller->CheatManager ) return;
+	// if (!player_controller || !player_controller->CheatManager ) return;
 
-	static bool bEnableCheats = false;
-	if (!bEnableCheats) {
-		player_controller->EnableCheats();
-		bEnableCheats = true;
-		LOG_INFO("Cheata has been enabled and should work.");
-	}
+	// static bool bEnableCheats = false;
+	// if (!bEnableCheats) {
+	// 	player_controller->EnableCheats();
+	// 	bEnableCheats = true;
+	// 	LOG_INFO("Cheata has been enabled and should work.");
+	// }
 
-	if (!pawn) return;
+	// if (!pawn) return;
 
-	player_controller->CheatManager->ChangeSize(2);
+	// player_controller->CheatManager->ChangeSize(2);
 	
 
 		// Use CheatManager if available
