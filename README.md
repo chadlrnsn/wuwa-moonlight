@@ -17,14 +17,18 @@
 
 ## Features
 
+- **Visuals**
+    - ESP
 - **Player**
     - Hit multiplier
 - **Misc**
     - FPS Unlock
+- **Movement**
+    - Speedhack
 
 ### WIP
-- Speedhack
-- ESP
+- Configuration
+- ESP filters
 
 ## How to use 📃
 
@@ -44,7 +48,8 @@
 - Contribute this project 
 
 ## Building
-1. Clone the repository: git clone --recurse-submodules https://github.com/chadlrnsn/wuwa-moonlight.
+1. Clone the repository: git clone --recurse-submodules https://github.com/chadlrnsn/wuwa-moonlight
+    - The version in the dev branch can be better/worse and is updated more often!
 2. Build with your preferred IDE.
 3. Output will be in out/build/your-configuration/wuwa-moonlight/Release/WWMoonlight.dll
 
