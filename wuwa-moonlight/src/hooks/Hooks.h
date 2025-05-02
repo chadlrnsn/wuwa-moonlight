@@ -55,5 +55,6 @@ namespace Hooks {
 		void PostRender() noexcept;
 		void ProcessEvent() noexcept;
 		void Initialize() noexcept;
+		void Uninitialize() noexcept;
 	}
 }

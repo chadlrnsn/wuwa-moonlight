@@ -8,6 +8,7 @@ set(SOURCES_SDK
     SDK/Basic.cpp
     SDK/Engine_functions.cpp
     SDK/CoreUObject_functions.cpp
+    SDK/KuroUtility_functions.cpp
 )
 
 add_library(SDK STATIC ${SOURCES_SDK})

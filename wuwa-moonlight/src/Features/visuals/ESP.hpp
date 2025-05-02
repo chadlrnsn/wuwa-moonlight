@@ -5,20 +5,33 @@
 #include <utils/UnrealEngineRenderer.h>
 #include <gui/components/ColorConv.hpp>
 #include <gui/Context.hpp>
+#include <mutex>
+#include <atomic>
 
 class ESP : public FeatureFactory
 {
-protected:
+private:
+	// Boxes
 	float fColor[4] = {1,1,1,1};
 	float fOccludedColor[4] = {0.5, 0.5, 0.5, 1};
+	float fThickness{ 0.5 };
 
-private:
+	// Tracers
+	float fTracerColor[4] = {0, 1, 1, 0.2};
+	float fTracerColorOccluded[4] = {1, 1, 1, 0.2};
+	structs::MinMax TracerThickness = { 0.1, 4, 1.5 };
+
+	FVector cameraLocation;
 	structs::Distance espDistance;
 	bool m_bDebugWindow = false;
-	FVector cameraLocation;
-
-private:
+	bool bTracers{ false };
 	// ESP Stuff
+
+	bool bDefaultFilters{ true };
+	bool bSearchByActorClass{ false };
+	bool bSearchByTag{ false };
+	bool bSearchParentActor{ false };
+	bool bSearchParentComponent{ false };
 
 	std::map<std::string, std::string> Ascension_Materials = {
 		{"Collect003", "Iris"}, 
@@ -58,20 +71,15 @@ private:
 	{
 		SDK::AActor* Actor;
 		std::string DisplayText;
+		std::string DisplayClassName;
 		SDK::FVector2D ScreenLocation;
+		SDK::TArray<SDK::FName> Tags;
 		bool bIsVisible;
 	};
 
-	struct RenderDataA
-	{
-		SDK::AActor* Actor;
-		SDK::FString DisplayText;
-		SDK::FVector2D ScreenLocation;
-		bool bIsVisible;
-	};
-
-	std::vector<RenderData> renderActors;
-	//std::vector<RenderDataA> renderActors;
+    std::vector<RenderData> renderData;
+    std::vector<RenderData> tempRenderData;
+    std::mutex renderMutex;
 
 public:
 	void Draw();

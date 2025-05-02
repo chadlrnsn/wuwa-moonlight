@@ -5,7 +5,7 @@
 using namespace globals;
 using namespace SDK;
 
-void utils::UpdateGlobals() noexcept
+void utils::UpdateGlobals()
 {
     UEngine* _engine = UEngine::GetEngine();
     if (_engine == nullptr)
@@ -74,7 +74,7 @@ void utils::UpdateGlobals() noexcept
 
     if (!local_player)
     {
-        LOG_WARN("no self");
+        LOG_WARN("No localplayer an index 0");
         return;
     }
 
@@ -110,7 +110,7 @@ void utils::UpdateGlobals() noexcept
 
     if (!pawn)
     {
-        LOG_WARN("no pawn");
+        LOG_WARN("No pawn");
         return;
     }
 }
@@ -125,12 +125,23 @@ bool utils::IsGameExploitable()
 
 bool utils::IsAddressReadable(const void* ptr, size_t size)
 {
+    if (!ptr)
+        return false;
+        
     MEMORY_BASIC_INFORMATION mbi;
     if (VirtualQuery(ptr, &mbi, sizeof(mbi)) == 0)
         return false;
-    if (mbi.State != MEM_COMMIT)
+
+    constexpr DWORD readable_flags = PAGE_READONLY | PAGE_READWRITE | PAGE_WRITECOPY | 
+                                    PAGE_EXECUTE | PAGE_EXECUTE_READ | PAGE_EXECUTE_READWRITE | 
+                                    PAGE_EXECUTE_WRITECOPY;
+                                    
+    if (mbi.State != MEM_COMMIT || !(mbi.Protect & readable_flags) || (mbi.Protect & PAGE_GUARD))
         return false;
-    if (mbi.Protect & (PAGE_GUARD | PAGE_NOACCESS))
-        return false;
-    return (reinterpret_cast<uintptr_t>(ptr) + size) <= (reinterpret_cast<uintptr_t>(mbi.BaseAddress) + mbi.RegionSize);
+        
+    const uintptr_t start_address = reinterpret_cast<uintptr_t>(ptr);
+    const uintptr_t end_address = start_address + size;
+    const uintptr_t region_end = reinterpret_cast<uintptr_t>(mbi.BaseAddress) + mbi.RegionSize;
+    
+    return end_address <= region_end;
 }

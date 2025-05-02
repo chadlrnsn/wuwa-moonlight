@@ -12,6 +12,7 @@ public:
     virtual void Run() = 0;
     virtual void CallOrigin() = 0;
     virtual void RenderDebug() = 0;
+    virtual bool IsEnable() = 0;
     
     // Factory method to create instances
     template<typename T, typename... Args>
@@ -48,6 +49,10 @@ public:
     
     void CallOrigin() override {
         // Basic implementation
+    }
+
+    bool IsEnable() override {
+        return bEnable;
     }
 };
 

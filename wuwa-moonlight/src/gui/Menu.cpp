@@ -19,55 +19,63 @@ void Menu::RealCursorShow()
 
 void Menu::Setup()
 {
-    if (!bOnceStyle) {
-        ImGuiIO& io = ImGui::GetIO();
-        (void)io;
-        ImGuiStyle& style = ImGui::GetStyle();
-        ImVec4* colors = style.Colors;
-        ImVec2 whole_content_size = io.DisplaySize;
-        whole_content_size.x = whole_content_size.x * 0.3;
-        whole_content_size.y = whole_content_size.y * 0.2;
+    if (bOnceStyle) return;
 
-        // Theme initialization
-        SetUpColors(style, colors);
+    ImGuiIO& io = ImGui::GetIO();
+    (void)io;
+    ImGuiStyle& style = ImGui::GetStyle();
+    ImVec4* colors = style.Colors;
+    ImVec2 whole_content_size = io.DisplaySize;
+    whole_content_size.x = whole_content_size.x * 0.3f;
+    whole_content_size.y = whole_content_size.y * 0.2f;
 
-        ImFontConfig font_config;
-        font_config.PixelSnapH = false;
-        font_config.OversampleH = 5;
-        font_config.OversampleV = 5;
-        font_config.RasterizerMultiply = 1.2f;
+    // Theme initialization
+    SetUpColors(style, colors);
 
-        ImFontConfig icontfont_config;
-        icontfont_config.MergeMode = true;
-        icontfont_config.GlyphMinAdvanceX = iconFontSize;
-        icontfont_config.PixelSnapH = true;
+    ImFontConfig font_config;
+    font_config.PixelSnapH = false;
+    font_config.OversampleH = 5;
+    font_config.OversampleV = 5;
+    font_config.RasterizerMultiply = 1.2f;
 
-        static const ImWchar ranges[] =
-        {
-            0x0020, 0x00FF, // Basic Latin + Latin Supplement
-            0x0400, 0x052F, // Cyrillic + Cyrillic Supplement
-            0x2DE0, 0x2DFF, // Cyrillic Extended-A
-            0xA640, 0xA69F, // Cyrillic Extended-B
-            0xE000, 0xE226, // icons
-            0 };
+    ImFontConfig icontfont_config;
+    icontfont_config.MergeMode = true;
+    icontfont_config.GlyphMinAdvanceX = iconFontSize;
+    icontfont_config.PixelSnapH = true;
 
-        //static const ImWchar iconRanges[] =
-        //{
-        //    ICON_MIN_FA,
-        //    ICON_MAX_16_FA, // awesome font icons
-        //    0,
-        //};
+    static const ImWchar ranges[] =
+    {
+        0x0020, 0x00FF, // Basic Latin + Latin Supplement
+        0x0400, 0x052F, // Cyrillic + Cyrillic Supplement
+        0x2DE0, 0x2DFF, // Cyrillic Extended-A
+        0xA640, 0xA69F, // Cyrillic Extended-B
+        0xE000, 0xE226, // icons
+        0 };
 
-        io.Fonts->AddFontDefault();
-        font_regular = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
-        font_medium = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
-        font_bold = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
-        font_title = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
-        //icons = io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icontfont_config, iconRanges);
+    //static const ImWchar iconRanges[] =
+    //{
+    //    ICON_MIN_FA,
+    //    ICON_MAX_16_FA, // awesome font icons
+    //    0,
+    //};
 
-        io.FontDefault = font_regular;
-        bOnceStyle = true; // is initialized = true
-    }
+    io.Fonts->AddFontDefault();
+    font_regular = io.Fonts->AddFontFromMemoryTTF(RobotoRegular, sizeof(RobotoRegular), 15.0f, &font_config, ranges);
+    font_medium = io.Fonts->AddFontFromMemoryTTF(RobotoMedium, sizeof(RobotoMedium), 15.0f, &font_config, ranges);
+    font_bold = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 15.0f, &font_config, ranges);
+    font_title = io.Fonts->AddFontFromMemoryTTF(RobotoBold, sizeof(RobotoBold), 25.0f, &font_config, ranges);
+    //icons = io.Fonts->AddFontFromFileTTF(FONT_ICON_FILE_NAME_FAS, iconFontSize, &icontfont_config, iconRanges);
+
+    io.FontDefault = font_regular;
+
+
+    // Register event manager for menu
+
+    this->AddStateChangeCallback([this](bool newState) {
+        this->ShowCursor(newState);
+    });
+
+    bOnceStyle = true; // is initialized = true
 }
 
 void Menu::SetUpColors(ImGuiStyle& style, ImVec4* colors)
@@ -225,23 +233,25 @@ void Menu::RenderMenu()
     switch (tab)
     {
     case PLAYER:
-        //speedhack.DrawMenuItems();
-        //fly.DrawMenuItems();
+        speedhack.get()->Draw();
+        fly.get()->Draw();
         //gravityScale.DrawMenuItems();
         //walkFloorZ.DrawMenuItems();
         //walkFloorAngle.DrawMenuItems();
-        multihit.Draw();
-        // godmode.Draw();
+        multihit.get()->Draw();
 
         break;
 
     case ESP:
-        // esp.DrawMenuItems();
         esp.get()->Draw();
         break;
 
     case MISC:
         fpsUnlock.get()->Draw();
+        ptpsafe.get()->Draw();
+
+        debugComponent.get()->Draw();
+
         if (ImGui::Button("Force exit"))
             ExitProcess(0);
 
@@ -250,7 +260,7 @@ void Menu::RenderMenu()
     case CONFIG:
         ImGui::Text("in dev.");
         break;
-    } // Switch
+    }
 
     ImGui::Unindent();
     ImGui::Spacing();
@@ -259,13 +269,12 @@ void Menu::RenderMenu()
     ImGui::EndChild();
     ImGui::PopStyleVar();
 
-    ImGui::End(); // Render end
+    ImGui::End();
 }
 
 void Menu::RenderWatermark()
 {
-    if (!bWatermark)
-        return;
+    if (!bWatermark) return;
 
     auto time = std::chrono::system_clock::now();
     std::time_t formatedtime = std::chrono::system_clock::to_time_t(time);
@@ -278,9 +287,9 @@ void Menu::RenderWatermark()
     ImGui::End();
 }
 
-bool Menu::IsOpen()
+bool Menu::IsOpen() const
 {
-    return this->bIsOpen;
+    return bIsOpen;
 }
 
 void Menu::SetIsOpen(bool isOpen)
@@ -290,7 +299,38 @@ void Menu::SetIsOpen(bool isOpen)
 
 void Menu::Toggle()
 {
-    this->bIsOpen = !this->bIsOpen;
+    bool oldState = bIsOpen;
+    bIsOpen = !bIsOpen;
+    
+    if (oldState != bIsOpen) {
+        for (const auto& callback : stateChangeCallbacks) {
+            callback(bIsOpen);
+        }
+    }
+}
+
+void Menu::HandleKey()
+{
+    if (GetAsyncKeyState(VK_INSERT) & 1) {
+        Toggle();
+    }
+}
+
+void Menu::AddStateChangeCallback(StateChangeCallback callback)
+{
+    stateChangeCallbacks.push_back(callback);
+}
+
+bool Menu::ShowCursor(bool bToggle)
+{
+    if (player_controller) {
+        player_controller->bShowMouseCursor = bToggle;
+        return true;
+    }
+    // } else {
+    //     ImGui::GetIO().MouseDrawCursor = bToggle;
+    // };
+    return false;
 }
 
 // void Menu::RenderNotify()

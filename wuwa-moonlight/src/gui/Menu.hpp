@@ -33,7 +33,7 @@ public:
     virtual void RealCursorShow() = 0;
     virtual void Setup() = 0;
     virtual void SetUpColors(ImGuiStyle& style, ImVec4* colors) = 0;
-    virtual bool IsOpen() = 0;
+    virtual bool IsOpen() const = 0;
     virtual void SetIsOpen(bool IsOpen) = 0;
     virtual void Toggle() = 0;
     
@@ -70,7 +70,11 @@ private:
     float iconFontSize = baseFontSize * 2.0f / 3.0f;
     bool bOnceStyle = false;
     bool bOnceScaledMenu = false;
+    bool bGameCursorShow{false};
+    bool bGameCursorShowOnce{false};
 
+    using StateChangeCallback = std::function<void(bool newState)>;
+    std::vector<StateChangeCallback> stateChangeCallbacks;
 
 public:
     void RealCursorShow();
@@ -79,10 +83,14 @@ public:
     void PreventMoveOutOfWndBounds(const char* wndName);
     void RenderMenu();
     void RenderWatermark();
-    bool IsOpen();
+    bool IsOpen() const;
     void SetIsOpen(bool isOpen);
     void Toggle();
     void RenderNotify() override {};
+
+    void HandleKey();
+    void AddStateChangeCallback(StateChangeCallback callback);
+    bool ShowCursor(bool bToggle);
 };
 
 inline ImFont* font_regular;

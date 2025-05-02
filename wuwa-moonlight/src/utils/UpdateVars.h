@@ -5,7 +5,7 @@
 
 namespace utils
 {
-	void UpdateGlobals() noexcept;
+	void UpdateGlobals();
 	bool IsGameExploitable();
 
 	bool IsAddressReadable(const void* ptr, size_t size);

@@ -81,9 +81,6 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 			return oPresent(pSwapChain, SyncInterval, Flags);
 	}
 
-	ImGuiIO& io = ImGui::GetIO();
-	io.MouseDrawCursor = g_menu->IsOpen();
-
 	g_menu->Setup();
 
 	ImGui_ImplDX11_NewFrame();
@@ -118,38 +115,31 @@ HRESULT __stdcall hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, 
 void D3D11Hook::Initialize()
 {
 	static bool init = false;
-	static size_t ampects = 25;
-	static size_t counter = 0;
 	do
 	{
 		if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
 		{
 			kiero::bind(8, (void**)&oPresent, hkPresent);
 			kiero::bind(13, (void**)&oResizeBuffers, hkResizeBuffers);
-#ifdef _DEBUG
-			printf("kiero binded\n");
-#endif
 			init = true;
 			break;
 		}
 		std::this_thread::sleep_for(std::chrono::seconds(1));
-		counter++;
-	} while (!init || (counter < ampects));
+	} while (!init);
 
 	if (kiero::getRenderType() != kiero::RenderType::D3D11)
 	{
-		printf("kiero initialized with unknown render type\n");
+		LOG_WARN("kiero initialized with unknown render type");
 		MessageBoxA(NULL, "kiero initialized with unknown render type\n", "DirectX Error", MB_OK);
 	}
 	else
 	{
-		printf("kiero initialized with D3D11 if you dont see menu it might be bug or idk\n");
+		LOG_SUCCESS("DirectX 11 has been successfully initialized");
 	}
 }
 
 void D3D11Hook::Uninitialize()
 {
-
 	if (oWndProc)
 	{
 		SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)oWndProc);
