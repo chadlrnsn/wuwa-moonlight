@@ -299,10 +299,12 @@ void Menu::SetIsOpen(bool isOpen)
 
 void Menu::Toggle()
 {
-    bool oldState = bIsOpen;
+    if (!SDK::UKuroStaticLibrary::IsForegroundWindow()) return;
+
+    bOldState = bIsOpen;
     bIsOpen = !bIsOpen;
-    
-    if (oldState != bIsOpen) {
+
+    if (bOldState != bIsOpen) {
         for (const auto& callback : stateChangeCallbacks) {
             callback(bIsOpen);
         }
@@ -321,15 +323,37 @@ void Menu::AddStateChangeCallback(StateChangeCallback callback)
     stateChangeCallbacks.push_back(callback);
 }
 
-bool Menu::ShowCursor(bool bToggle)
+bool Menu::ShowCursor(bool show)
 {
-    if (player_controller) {
-        player_controller->bShowMouseCursor = bToggle;
-        return true;
+    if (!player_controller) 
+    {
+        LOG_WARN("Due to no pointer to player controller I can't show cursor...");
+        return false;
     }
-    // } else {
-    //     ImGui::GetIO().MouseDrawCursor = bToggle;
-    // };
+
+    bCurrentCursorState = player_controller->bShowMouseCursor;
+    if (bIsOpen) {
+        // When menu is open, show the cursor
+        player_controller->bShowMouseCursor = true;
+        bCurrentCursorState = true;
+        LOG_INFO("Cursor shown because menu is open");
+        return true;
+    } else {
+        // When menu is closed, keep cursor visible if it was previously open
+        if (bOldState) {
+            player_controller->bShowMouseCursor = true;
+            bCurrentCursorState = true;
+            LOG_INFO("Cursor remains visible due to previous menu state");
+            return true;
+        } else {
+            // Otherwise, hide the cursor
+            player_controller->bShowMouseCursor = false;
+            bCurrentCursorState = false;
+            LOG_INFO("Cursor hidden because menu is closed and was not previously open");
+            return false;
+        }
+    }
+
     return false;
 }
 

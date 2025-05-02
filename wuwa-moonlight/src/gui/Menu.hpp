@@ -56,6 +56,7 @@ class Menu : public MenuBase
 {
 private:
 
+
     enum Headers
     {
         PLAYER,
@@ -70,8 +71,10 @@ private:
     float iconFontSize = baseFontSize * 2.0f / 3.0f;
     bool bOnceStyle = false;
     bool bOnceScaledMenu = false;
-    bool bGameCursorShow{false};
-    bool bGameCursorShowOnce{false};
+
+    bool bOldState; 
+    bool bOldCursorState;
+    bool bCurrentCursorState;
 
     using StateChangeCallback = std::function<void(bool newState)>;
     std::vector<StateChangeCallback> stateChangeCallbacks;
@@ -90,7 +93,7 @@ public:
 
     void HandleKey();
     void AddStateChangeCallback(StateChangeCallback callback);
-    bool ShowCursor(bool bToggle);
+    bool ShowCursor(bool);
 };
 
 inline ImFont* font_regular;

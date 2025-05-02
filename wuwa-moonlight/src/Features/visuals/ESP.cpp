@@ -35,7 +35,7 @@ void ESP::Draw()
 			searchClassName = buffer;
 		}
 		ImGui::SameLine();
-		ImGui::Tooltip("Enter actor class name (e.g., Collect003, Monster012)");
+		ImGui::Tooltip("Enter actor class name (e.g., StaticMeshActor, SceneComponent)");
 
 		ImGui::NewLine();
 	}

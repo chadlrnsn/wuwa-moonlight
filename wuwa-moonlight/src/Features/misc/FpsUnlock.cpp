@@ -18,7 +18,7 @@ void FpsUnlock::Render()
 
 	ImVec2 textSize = ImGui::CalcTextSize(fpsText);
 	ImGui::SetNextWindowSize(ImVec2(textSize.x + 15, textSize.y + 15));
-	ImGui::SetNextWindowSize(textSize + ImVec2(10,0));
+	ImGui::SetNextWindowSize(textSize + ImVec2(15,0));
 	ImGui::Begin("FPS", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar);
 	ImGui::Text("%s", fpsText);
 	ImGui::End();
