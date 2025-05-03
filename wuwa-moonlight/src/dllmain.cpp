@@ -66,9 +66,7 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 	if (MH_Initialize() != MH_OK) LOG_ERROR("Failed to init MinHook");
 	else LOG_SUCCESS("MinHook initialized");
 
-	if (!Hooks::hkACE_BypassSetup()) LOG_ERROR("Failed to setup ACE bypass");
-	else LOG_SUCCESS("ACE bypass is set up");
-	Hooks::AntiDebug();
+	Hooks::DebugBypass();
 
 	// MUST BE INITIALIZED ABOVE -> std::vector<std::unique_ptr<std::thread>> threads
 	D3D11Hook::Initialize();
@@ -121,7 +119,7 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 	threads.clear();
 
 	D3D11Hook::Uninitialize();
-	Hooks::RemoveHooks();
+	Hooks::DebugBypassDisable();
 
 	Logger::Shutdown();
 
@@ -138,6 +136,7 @@ BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, [[maybe_unused]] LPVOID lpRe
 		CloseHandle(CreateThread(0, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, 0));
 		break;
 	case DLL_PROCESS_DETACH:
+		globals::g_break = true;
 		break;
 	}
 

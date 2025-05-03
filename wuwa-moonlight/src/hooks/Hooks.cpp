@@ -10,240 +10,6 @@
 using namespace globals;
 using namespace SDK;
 
-#ifndef ProcessDebugFlags
-#define ProcessDebugFlags ((PROCESSINFOCLASS)31)
-#endif
-
-#ifndef ProcessDebugObjectHandle
-#define ProcessDebugObjectHandle ((PROCESSINFOCLASS)30)
-#endif
-
-namespace originals
-{
-	LoadLibraryW_t oLoadLibraryW = nullptr;
-	IsDebuggerPresent_t oIsDebuggerPresent = nullptr;
-	NtQueryInformationProcess_t oNtQueryInformationProcess = nullptr;
-
-	    // Новый указатель для CreateThread
-    typedef HANDLE (WINAPI *CreateThreadFunc)(
-        LPSECURITY_ATTRIBUTES lpThreadAttributes,
-        SIZE_T dwStackSize,
-        LPTHREAD_START_ROUTINE lpStartAddress,
-        LPVOID lpParameter,
-        DWORD dwCreationFlags,
-        LPDWORD lpThreadId
-    );
-    CreateThreadFunc oCreateThread = nullptr;
-
-	    // Для NtCreateThreadEx
-    typedef NTSTATUS (NTAPI *NtCreateThreadExFunc)(
-        OUT PHANDLE ThreadHandle,
-        IN ACCESS_MASK DesiredAccess,
-        IN PVOID ObjectAttributes OPTIONAL,
-        IN HANDLE ProcessHandle,
-        IN PVOID StartRoutine,
-        IN PVOID Argument OPTIONAL,
-        IN ULONG CreateFlags,
-        IN SIZE_T ZeroBits OPTIONAL,
-        IN SIZE_T StackSize OPTIONAL,
-        IN SIZE_T MaximumStackSize OPTIONAL,
-        IN PVOID AttributeList OPTIONAL
-    );
-    NtCreateThreadExFunc oNtCreateThreadEx = nullptr;
-}
-
-HANDLE WINAPI hkCreateThread(
-    LPSECURITY_ATTRIBUTES lpThreadAttributes,
-    SIZE_T dwStackSize,
-    LPTHREAD_START_ROUTINE lpStartAddress,
-    LPVOID lpParameter,
-    DWORD dwCreationFlags,
-    LPDWORD lpThreadId
-) {
-    // Здесь можно добавить логирование или анализ создаваемых потоков
-    // Например, вы можете захотеть проверить адрес начала выполнения (lpStartAddress)
-    // или другие параметры, которые могут указывать на действия отладчика
-
-    // Опционально: добавьте свою логику здесь
-    // Например, вы можете проверить lpStartAddress и решить, блокировать поток или нет
-
-    // Вызов оригинальной функции
-    return originals::oCreateThread(
-        lpThreadAttributes,
-        dwStackSize,
-        lpStartAddress,
-        lpParameter,
-        dwCreationFlags,
-        lpThreadId
-    );
-}
-
-NTSTATUS NTAPI hkNtCreateThreadEx(
-    OUT PHANDLE ThreadHandle,
-    IN ACCESS_MASK DesiredAccess,
-    IN PVOID ObjectAttributes OPTIONAL,
-    IN HANDLE ProcessHandle,
-    IN PVOID StartRoutine,
-    IN PVOID Argument OPTIONAL,
-    IN ULONG CreateFlags,
-    IN SIZE_T ZeroBits OPTIONAL,
-    IN SIZE_T StackSize OPTIONAL,
-    IN SIZE_T MaximumStackSize OPTIONAL,
-    IN PVOID AttributeList OPTIONAL
-) {
-    // Можно добавить логирование или анализ создаваемых потоков
-    // ProcessHandle может помочь определить, создается ли поток в текущем процессе или в другом
-    
-    // Вызов оригинальной функции
-    return originals::oNtCreateThreadEx(
-        ThreadHandle,
-        DesiredAccess,
-        ObjectAttributes,
-        ProcessHandle,
-        StartRoutine,
-        Argument,
-        CreateFlags,
-        ZeroBits,
-        StackSize,
-        MaximumStackSize,
-        AttributeList
-    );
-}
-
-/* Anti-AntiCheat */
-HMODULE WINAPI hkLoadLibraryW(LPCWSTR libFileName) noexcept
-{
-	for (const auto& dll : blockedDlls)
-	{
-		if (wcsstr(libFileName, dll) != nullptr)
-		{
-			LOG_INFO("Blocked dll: %ws", libFileName);
-			return nullptr;
-		}
-	}
-
-	return originals::oLoadLibraryW(libFileName);
-}
-
-BOOL WINAPI hkIsDebuggerPresent() noexcept
-{
-	return FALSE;
-}
-
-NTSTATUS NTAPI hkNtQueryInformationProcess(
-	HANDLE ProcessHandle,
-	PROCESSINFOCLASS ProcessInformationClass,
-	PVOID ProcessInformation,
-	ULONG ProcessInformationLength,
-	PULONG ReturnLength) noexcept
-{
-	NTSTATUS status = originals::oNtQueryInformationProcess(ProcessHandle, ProcessInformationClass, ProcessInformation, ProcessInformationLength, ReturnLength);
-
-	if (NT_SUCCESS(status))
-	{
-		switch (ProcessInformationClass)
-		{
-		case ProcessDebugPort: // 7
-			*static_cast<PHANDLE>(ProcessInformation) = nullptr;
-			break;
-		case ProcessDebugFlags: // 31
-			*static_cast<PULONG>(ProcessInformation) = 1;
-			break;
-		case ProcessDebugObjectHandle: // 30
-			*static_cast<PHANDLE>(ProcessInformation) = nullptr;
-			break;
-		}
-	}
-
-	return status;
-}
-
-bool Hooks::hkACE_BypassSetup() noexcept
-{
-	if (MH_CreateHook(static_cast<LPVOID>(&LoadLibraryW), static_cast<LPVOID>(&hkLoadLibraryW), reinterpret_cast<LPVOID*>(&originals::oLoadLibraryW)) != MH_OK)
-		return false;
-
-	if (MH_EnableHook(static_cast<LPVOID>(&LoadLibraryW)) != MH_OK)
-		return false;
-
-	return true;
-}
-
-void Hooks::hkACE_BypassCleanup() noexcept
-{
-	MH_DisableHook(static_cast<LPVOID>(&LoadLibraryW));
-	MH_Uninitialize();
-}
-
-
-void Hooks::AntiDebug() noexcept
-{
-    HMODULE hNtdll = GetModuleHandleA("ntdll.dll");
-	HMODULE hKernel32 = GetModuleHandleA("kernel32.dll");
-
-	while (!hNtdll || !hKernel32) {
-		std::this_thread::sleep_for(std::chrono::milliseconds(100));
-		hNtdll = GetModuleHandleA("ntdll.dll");
-		hKernel32 = GetModuleHandleA("kernel32.dll");
-	}
-
-	LOG_INFO("Ntdll: 0x%p", hNtdll);
-	LOG_INFO("hKernel32: 0x%p", hKernel32);
-
-
-    if (hNtdll)
-    {
-        // Существующий хук для NtQueryInformationProcess
-        FARPROC pNtQueryInformationProcess = GetProcAddress(hNtdll, "NtQueryInformationProcess");
-        if (pNtQueryInformationProcess)
-        {
-            if (MH_CreateHook(pNtQueryInformationProcess, static_cast<LPVOID>(&hkNtQueryInformationProcess), reinterpret_cast<LPVOID*>(&originals::oNtQueryInformationProcess)) != MH_OK)
-            {
-                return;
-            }
-            if (MH_EnableHook(pNtQueryInformationProcess) != MH_OK)
-            {
-                return;
-            }
-        }
-
-		// Хук для NtCreateThreadEx
-        // FARPROC pNtCreateThreadEx = GetProcAddress(hNtdll, "NtCreateThreadEx");
-        // if (pNtCreateThreadEx)
-        // {
-        //     if (MH_CreateHook(pNtCreateThreadEx, static_cast<LPVOID>(&hkNtCreateThreadEx), reinterpret_cast<LPVOID*>(&originals::oNtCreateThreadEx)) != MH_OK)
-        //     {
-        //         return;
-        //     }
-        //     if (MH_EnableHook(pNtCreateThreadEx) != MH_OK)
-        //     {
-        //         return;
-        //     }
-        // }
-    }
-
-    // if (hKernel32)
-    // {
-    //     // Хук для CreateThread
-    //     FARPROC pCreateThread = GetProcAddress(hKernel32, "CreateThread");
-    //     if (pCreateThread)
-    //     {
-    //         if (MH_CreateHook(pCreateThread, static_cast<LPVOID>(&hkCreateThread), reinterpret_cast<LPVOID*>(&originals::oCreateThread)) != MH_OK)
-    //         {
-	// 			LOG_SUCCESS("Successfully hooked CreateThread");
-    //             return;
-    //         }
-    //         if (MH_EnableHook(pCreateThread) != MH_OK)
-    //         {
-    //             return;
-    //         }
-    //     }
-    // }
-    
-    // Существующий хук для IsDebuggerPresent
-    MH_CreateHook(static_cast<LPVOID>(&IsDebuggerPresent), static_cast<LPVOID>(&hkIsDebuggerPresent), reinterpret_cast<LPVOID*>(&originals::oIsDebuggerPresent));
-    MH_EnableHook(static_cast<LPVOID>(&IsDebuggerPresent));
-}
 
 void __fastcall hkProcessEvent(UObject* caller, UFunction* function, void* params)
 {
@@ -252,13 +18,13 @@ void __fastcall hkProcessEvent(UObject* caller, UFunction* function, void* param
 	oProcessEvent(caller, function, params);
 }
 
-void Hooks::InGame::ProcessEvent() noexcept
+void Hooks::InGame::ProcessEvent()
 {
 	try {
 		void* ProcessEventAddr = reinterpret_cast<void*>(InSDKUtils::GetImageBase() + SDK::Offsets::ProcessEvent);
 		LOG_INFO("ProcessEvent address: %p", ProcessEventAddr);
 
-		while (true)
+		while (!globals::g_break)
 		{
 			if ((InSDKUtils::GetImageBase() + SDK::Offsets::ProcessEvent) <= InSDKUtils::GetImageBase())
 			{
@@ -289,25 +55,23 @@ void Hooks::InGame::ProcessEvent() noexcept
 			break;
 		}
 	}
-	catch (...) {
-		// Обработка ошибок
-	}
+	catch (...) {}
 }
 
 void hkPostRender(UGameViewportClient* viewport, UCanvas* canvas)
 {
-	if (canvas && engine)
+	if (canvas)
 	{
-		ue4::UE_RenderText(canvas, engine->SmallFont, L"Moonlight", { 10, 10 }, { 1, 1 }, FLinearColor(1, 1, 1, 1));
+		ue4::UE_RenderText(canvas, globals::font_roboto, L"Moonlight", { 10, 10 }, { 1, 1 }, FLinearColor(1, 1, 1, 1));
 	}
 
 	oPostRender(viewport, canvas);
 }
 
-void Hooks::InGame::PostRender() noexcept
+void Hooks::InGame::PostRender()
 {
 	try {
-		while (true)
+		while (!globals::g_break)
 		{
 			//auto Engine = UEngine::GetEngine();
 			//if (!Engine)
@@ -389,7 +153,7 @@ void Hooks::InGame::PostRender() noexcept
 	catch (...) {}
 }
 
-void Hooks::InGame::Initialize() noexcept
+void Hooks::InGame::Initialize()
 {
 	try {
 		PostRender();
@@ -400,34 +164,52 @@ void Hooks::InGame::Initialize() noexcept
 	}
 }
 
-void Hooks::InGame::Uninitialize() noexcept
+void Hooks::InGame::Uninitialize()
 {
+	MH_STATUS status;
 	try {
-		MH_STATUS status;
-
 		status = MH_DisableHook(static_cast<LPVOID>(&hkPostRender)); 
 		if (status != MH_OK) {
 			LOG_ERROR("Hooks::InGame::Uninitialize: %s", MH_StatusToString(status));
+			return;
 		}
 
 		status = MH_DisableHook(static_cast<LPVOID>(&hkProcessEvent));
 		if (status != MH_OK) {
 			LOG_ERROR("Hooks::InGame::Uninitialize: %s", MH_StatusToString(status));
+			return;
 		}
 
-		LOG_SUCCESS("Hooks::InGame::Uninitialize: Succesfully disabled InGame hooks.");
+		LOG_SUCCESS("ImGame hooks successfully disabled InGame hooks.");
+
+		status = MH_RemoveHook(static_cast<LPVOID>(&hkPostRender)); 
+		if (status != MH_OK) {
+			LOG_ERROR("Hooks::InGame::Uninitialize: %s", MH_StatusToString(status));
+			return;
+		}
+
+		status = MH_RemoveHook(static_cast<LPVOID>(&hkProcessEvent));
+		if (status != MH_OK) {
+			LOG_ERROR("Hooks::InGame::Uninitialize: %s", MH_StatusToString(status));
+			return;
+		}
+
+		LOG_SUCCESS("InGame hooks successfully removed.");
 	}
 	catch (const std::exception &ex) {
 		LOG_ERROR("Exception caught in Hooks::InGame::Initialize(): %s", ex.what());
 	}
 }
 
-void Hooks::RemoveHooks() noexcept
+void Hooks::Uninitialize()
 {
-	try {
-		MH_DisableHook(MH_ALL_HOOKS);
-		MH_RemoveHook(MH_ALL_HOOKS);
-		MH_Uninitialize();
+	Hooks::InGame::Uninitialize();
+	Hooks::DebugBypassDisable();
+
+	if (MH_Uninitialize() != MH_OK)
+	{
+		LOG_ERROR("Failed to uninitialize MinHook");
 	}
-	catch (...) {}
+
+	LOG_SUCCESS("MinHook uninitialized successfully");
 }
