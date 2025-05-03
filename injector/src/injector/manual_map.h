@@ -6,6 +6,7 @@
 #include <TlHelp32.h>
 #include <stdio.h>
 #include <string>
+#include <logger.h>
 
 using f_LoadLibraryA = HINSTANCE(WINAPI*)(const char* lpLibFilename);
 using f_GetProcAddress = FARPROC(WINAPI*)(HMODULE hModule, LPCSTR lpProcName);
