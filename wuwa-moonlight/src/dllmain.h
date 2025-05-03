@@ -9,15 +9,15 @@
 #include <dxgi.h>
 #include <kiero.h>
 #include <imgui.h>
-#include <backends/imgui_impl_win32.h>
-#include <backends/imgui_impl_dx11.h>
-#include <Menu/Menu.hpp>
+#include <imgui_impl_win32.h>
+#include <imgui_impl_dx11.h>
+#include <gui/Menu.hpp>
 #include <globals.h>
 #include <SDK.hpp>
 #include <Hooks/Hooks.h>
 #include <mutex>
 #include <shared_mutex>
-#include <utils/UpdateVars.h>
+#include <UpdateVars.h>
 
 DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved);
 BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved);

@@ -6,12 +6,16 @@
 #include <imgui.h>
 #include <iostream>
 #include <SDK.hpp>
-#include <minhook/include/MinHook.h>
+#include <Minhook.h>
 #include <thread>
 #include <chrono>
 #include <config.h>
+#include <logger.h>
+#include <Features/FeatureFactory.h>
+#include <structs.h>
+#include <gui/components/Tooltip.hpp>
 
 using namespace SDK;
 
-using ProcessEvent = void(__thiscall *)(UObject *, UFunction *, void *);
-using PostRender = void(__thiscall *)(UGameViewportClient *, UCanvas *);
+using ProcessEvent = void(__thiscall*)(UObject*, UFunction*, void*);
+using PostRender = void(__thiscall*)(UGameViewportClient*, UCanvas*);

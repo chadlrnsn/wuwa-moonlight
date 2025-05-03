@@ -1,99 +1,143 @@
-#pragma once
-#pragma execution_character_set("utf-8")
-
-#include "dllmain.h"
-#include <Hooks/d3d11hook.h>
-#include <logger/logger.h>
+#include <dllmain.h>
+#include <d3d11hook.h>
+#include <logger.h>
+#include <Hooks.h>
+#include <UpdateVars.h>
+#include <config.h>
+#include <Features/Features.h>
+#include <gui/Menu.hpp>
 
 using namespace SDK;
 using namespace globals;
 
-FILE *dummy;
-std::atomic<bool> g_bRunning{true};
-
-void CreateConsole()
+void HandleKey()
 {
-	if (AllocConsole())
-	{
-		freopen_s(&dummy, "CONOUT$", "w", stdout);
-		freopen_s(&dummy, "CONOUT$", "w", stderr);
-
-		HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-		DWORD dwMode = 0;
-		GetConsoleMode(hOut, &dwMode);
-		dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
-		SetConsoleMode(hOut, dwMode);
-	}
-}
-
-void IndependentHooks()
-{
-	Hooks::hkACE_BypassSetup();
-	Hooks::AntiDebug();
-	D3D11Hook::Initialize();
-	Hooks::InGame::Initialize();
-}
-
-void features() noexcept
-{
-	while (g_bRunning)
-	{
-		utils::UpdateGlobals();
-		// FN_TsAnimNotifyStateCounterAttack_C = c_viewport->FindObject("Function TsAnimNotifyStateCounterAttack.TsAnimNotifyStateCounterAttack_C.K2_NotifyBegin");
-	}
-}
-
-DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
-{
-
-	if (MH_Initialize() != MH_OK)
-	{
-		std::cerr << "Failed to init MinHook" << std::endl;
-	}
-	else
-		printf("MinHook initialized\n");
-
-	std::thread Indpndhk(IndependentHooks);
-	std::thread ft(features);
-
-	Indpndhk.join();
-
-	printf("You can detach this dll from your process with F9\n");
-	while (true)
-	{
-
-		if (GetAsyncKeyState(config::binds::quit_key) & 1)
-		{
-			g_bRunning = false;
-			break;
-		}
+	while (!g_break) {
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+		if (GetAsyncKeyState(VK_END) & 0x8000) {
+			LOG_INFO("Uninjecting...");
+			g_break = true;
+		}
+
+		g_menu->HandleKey();
+	}
+}
+
+void updateGlobals() noexcept {
+	while (!g_break) {
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		utils::UpdateGlobals();
+		UGAkStatics = (UAkGameplayStatics*)UAkGameplayStatics::StaticClass();
+		KuroStaticLib = (UKuroStaticLibrary*)UKuroStaticLibrary::StaticClass();
+	}
+}
+
+void handleFunctions()
+{
+	while (!g_break) {
+		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+		if (!world || !world->GameState) {
+			font_roboto = 0;
+			FN_TsAnimNotifyReSkillEvent_C = 0;
+		}
+		else if (!font_roboto) {
+			auto font = viewport->FindObject<UFont>("Font Roboto.Roboto");
+			if (font) {
+				LOG_SUCCESS("Font founded!");
+				font_roboto = font;
+			}
+		} else if (!FN_TsAnimNotifyReSkillEvent_C) {
+			auto reskill = viewport->FindObject<UFunction>("Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify");
+			if (reskill) {
+				LOG_SUCCESS("K2_Notify founded!");
+				FN_TsAnimNotifyReSkillEvent_C = reskill->Index;
+			}
+		}
+	}
+}
+
+DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
+{
+	Logger::Init("Moonlight");
+
+	if (MH_Initialize() != MH_OK) LOG_ERROR("Failed to init MinHook");
+	else LOG_SUCCESS("MinHook initialized");
+
+	if (!Hooks::hkACE_BypassSetup()) LOG_ERROR("Failed to setup ACE bypass");
+	else LOG_SUCCESS("ACE bypass is set up");
+	Hooks::AntiDebug();
+
+	// MUST BE INITIALIZED ABOVE -> std::vector<std::unique_ptr<std::thread>> threads
+	D3D11Hook::Initialize();
+
+	while (!FindWindowA("UnrealWindow", 0)) std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+	std::vector<std::unique_ptr<std::thread>> threads;
+
+	try {
+		threads.emplace_back(std::make_unique<std::thread>(HandleKey));
+	 	threads.emplace_back(std::make_unique<std::thread>(updateGlobals));
+		threads.emplace_back(std::make_unique<std::thread>(handleFunctions));
+
+		for (const auto& thread : threads) {
+			LOG_SUCCESS("Thread created! 0x%llx", thread->get_id());
+			thread->detach();
+		}
+	}
+	catch (const std::exception& e) {
+		LOG_ERROR("Failed to create threads: %s", e.what());
+		throw;
 	}
 
-	ft.join();
+	Hooks::InGame::Initialize();
+
+	LOG_INFO("Enjoy DLC!");
+
+	while (!g_break)
+	{
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
+
+		try
+		{
+			ptpsafe.get()->Run();
+			fpsUnlock.get()->Run();
+			speedhack.get()->Run();
+			fly.get()->Run();
+			esp.get()->Run();
+		}
+		catch (const std::exception& e)
+		{
+			LOG_ERROR("Main thread exception: %s", e.what());
+		}
+		catch (...)
+		{
+			LOG_ERROR("Main thread unknown exception");
+		}
+	}
+
+	threads.clear();
 
 	D3D11Hook::Uninitialize();
 	Hooks::RemoveHooks();
 
-	printf("Now you can close console and re-inject or inject another cheetos!\n");
+	Logger::Shutdown();
 
 	FreeLibraryAndExitThread(hMod, 0);
 	return TRUE;
 }
 
-BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
+BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, [[maybe_unused]] LPVOID lpReserved)
 {
 	switch (dwReason)
 	{
 	case DLL_PROCESS_ATTACH:
 		DisableThreadLibraryCalls(hMod);
-		CreateConsole();
 		CloseHandle(CreateThread(0, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, 0));
 		break;
 	case DLL_PROCESS_DETACH:
-		FreeConsole();
-		fclose(dummy);
 		break;
 	}
 

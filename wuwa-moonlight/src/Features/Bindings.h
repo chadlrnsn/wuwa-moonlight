@@ -3,7 +3,7 @@
 #define IMGUI_DEFINE_MATH_OPERATORS
 #endif // IMGUI_DEFINE_MATH_OPERATORS
 
-#include <imgui_internal.h>
+#include "imgui_internal.h"
 
 #include <algorithm>
 #include <array>
@@ -13,8 +13,8 @@
 class KeyBind
 {
 public:
-    KeyBind() : keybind{""} {};
-    KeyBind(std::string _keybind) : keybind{_keybind} {};
+    KeyBind() : keybind{ "" } {};
+    KeyBind(std::string _keybind) : keybind{ _keybind } {};
     std::string keybind;
 
     enum KeyCode : unsigned char
@@ -128,12 +128,12 @@ public:
 
     // KeyBind() = default;
     explicit KeyBind(KeyCode keyCode) noexcept;
-    explicit KeyBind(const char *keyName) noexcept;
+    explicit KeyBind(const char* keyName) noexcept;
 
     bool operator==(KeyCode keyCode) const noexcept { return this->keyCode == keyCode; }
-    friend bool operator==(const KeyBind &a, const KeyBind &b) noexcept { return a.keyCode == b.keyCode; }
+    friend bool operator==(const KeyBind& a, const KeyBind& b) noexcept { return a.keyCode == b.keyCode; }
 
-    [[nodiscard]] inline const char *toString() const noexcept;
+    [[nodiscard]] inline const char* toString() const noexcept;
     [[nodiscard]] inline const int toInt() const noexcept;
     [[nodiscard]] inline bool isPressed() const noexcept;
     [[nodiscard]] inline bool isDown() const noexcept;
@@ -159,14 +159,14 @@ private:
 
 struct Key
 {
-    constexpr Key(std::string_view name, int code) : name{name}, code{code} {}
+    constexpr Key(std::string_view name, int code) : name{ name }, code{ code } {}
 
     std::string_view name;
     int code;
 };
 
 // indices must match KeyBind::KeyCode enum
-inline static constexpr auto keyMap = std::to_array<Key>({{"'", VK_OEM_7},
+inline static constexpr auto keyMap = std::to_array<Key>({ {"'", VK_OEM_7},
                                                           {",", VK_OEM_COMMA},
                                                           {"-", VK_OEM_MINUS},
                                                           {".", VK_OEM_PERIOD},
@@ -268,14 +268,14 @@ inline static constexpr auto keyMap = std::to_array<Key>({{"'", VK_OEM_7},
                                                           {"[", VK_OEM_4},
                                                           {"\\", VK_OEM_5},
                                                           {"]", VK_OEM_6},
-                                                          {"`", VK_OEM_3}});
+                                                          {"`", VK_OEM_3} });
 
 static_assert(keyMap.size() == KeyBind::MAX);
-static_assert(std::ranges::is_sorted(keyMap, {}, &Key::name));
+static_assert(std::ranges::is_sorted(keyMap, {}, & Key::name));
 
-inline KeyBind::KeyBind(KeyCode keyCode) noexcept : keyCode{static_cast<std::size_t>(keyCode) < keyMap.size() ? keyCode : KeyCode::NONE} {}
+inline KeyBind::KeyBind(KeyCode keyCode) noexcept : keyCode{ static_cast<std::size_t>(keyCode) < keyMap.size() ? keyCode : KeyCode::NONE } {}
 
-inline KeyBind::KeyBind(const char *keyName) noexcept
+inline KeyBind::KeyBind(const char* keyName) noexcept
 {
     if (const auto it = std::ranges::lower_bound(keyMap, keyName, {}, &Key::name); it != keyMap.end() && it->name == keyName)
         keyCode = static_cast<KeyCode>(std::distance(keyMap.begin(), it));
@@ -283,7 +283,7 @@ inline KeyBind::KeyBind(const char *keyName) noexcept
         keyCode = KeyCode::NONE;
 }
 
-inline const char *KeyBind::toString() const noexcept
+inline const char* KeyBind::toString() const noexcept
 {
     return keyMap[static_cast<std::size_t>(keyCode) < keyMap.size() ? keyCode : KeyCode::NONE].name.data();
 }
@@ -411,13 +411,13 @@ namespace ImGui
      * @param setting The boolean pointer indicating if the hotkey is being set.
      * @param size The size of the hotkey button. Default is { 100.0f, 0.0f }.
      */
-    inline void Hotkey(const char *label, KeyBind &key, bool *setting, const ImVec2 &size = {100.0f, 0.0f}) noexcept
+    inline void Hotkey(const char* label, KeyBind& key, bool* setting, const ImVec2& size = { 100.0f, 0.0f }) noexcept
     {
         ImGui::PushID(label);
 
         const auto id = ImGui::GetID(label);
 
-        ImGuiStorage *storage = ImGui::GetStateStorage();
+        ImGuiStorage* storage = ImGui::GetStateStorage();
         bool isSelecting = storage->GetBool(id, false);
 
         // Display the button text as "..." when selecting a new hotkey, otherwise show the current hotkey.

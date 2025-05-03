@@ -1,65 +1,61 @@
 # wuwa-moonlight
 
-**this repo created only for educational purposes**
+![GitHub forks](https://img.shields.io/github/forks/chadlrnsn/wuwa-moonlight?style=flat-square&logo=github)
+![GitHub Repo stars](https://img.shields.io/github/stars/chadlrnsn/wuwa-moonlight?style=flat-square&logo=github)
+![GitHub License](https://img.shields.io/github/license/chadlrnsn/wuwa-moonlight?style=flat-square)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/chadlrnsn/wuwa-moonlight/total?style=flat-square)
+![Discord](https://img.shields.io/discord/1246834050119893064?style=flat-square&logo=Discord)
 
----
+> [!IMPORTANT]
+> Educational purposes only. \
+> I'm not going to support it all the time, nor am I going to do it consistently. It's open source. Anyone who knows about it can compile and play.
 
-<!-- ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/chadlrnsn/wuwa-moonlight/msbuild.yml?branch=master) -->
-![GitHub forks](https://img.shields.io/github/forks/chadlrnsn/wuwa-moonlight)
-![GitHub Repo stars](https://img.shields.io/github/stars/chadlrnsn/wuwa-moonlight)
-![GitHub License](https://img.shields.io/github/license/chadlrnsn/wuwa-moonlight)
-<!-- ![GitHub Release](https://img.shields.io/github/v/release/chadlrnsn/wuwa-moonlight) -->
-[![Discord](https://img.shields.io/discord/1246834050119893064?logo=discord)](https://discord.gg/RJuN8UG4MJ)
 
-## How to use
-
-You should use CMake to compile this project.
-Download [CMake](https://cmake.org/download/) and [git](https://git-scm.com/downloads)
-Then open terminal in your desired directory and run:
-
-```bash
-# Clone the repository with submodules
-git clone --recursive https://github.com/chadlrnsn/wuwa-moonlight.git
-
-# Enter project directory
-cd wuwa-moonlight
-
-# Create and configure build directory
-cmake -B build -S . --preset=win-amd64
-
-# Build the project
-cmake --build build --config Release
-```
-
-> [!Tip]
-> I suggest you use cmake extension for vscode to compile the project.
-
-The compiled DLL will be in the `wuwa-moonlight.vcxproj -> H:\yourpath\wuwa-moonlight\build\Release\wuwa-moonlight.dll` directory.
-
-![preview](https://i.imgur.com/OJwrALG.jpeg)
+## What's this? 🤔
+- This is **free** DLC for Wuthering Waves. (I mean, it's an unofficial addition to the game that simplifies the gameplay)
+- Earlier there were more functions here, but the author wanted to rewrite the project and so the functions will be added as updates are made. 
 
 ## Features
 
-- [ ] Speedhack
-    - [ ] World Speedhack
-    - [ ] Player Speedhack
-        - [ ] Player Speedhack acceleration (WIP)
-- [ ] Flight
-    - [ ] Free Flight
-    - [ ] Noclip
-- [ ] Animation speed
-- [ ] MultiHit
-- [ ] ESP
-    - [ ] ESP Items
-    - [ ] ESP Entities
-- [ ] Chest TP
-- [ ] GodMode
-- [ ] Configs
-- [ ] World Speedhack
+- **Visuals**
+    - ESP
+- **Player**
+    - Hit multiplier
+- **Misc**
+    - FPS Unlock
+- **Movement**
+    - Speedhack
 
-## Thanks to
+### WIP
+- Configuration
+- ESP filters
 
-[kiero hook](https://github.com/rdbo/ImGui-DirectX-11-Kiero-Hook)</br>
-[Dumper-7](https://github.com/Encryqed/Dumper-7)</br>
-[ImGui](https://github.com/ocornut/imgui)
-[minhook](https://github.com/TsudaKageyu/minhook)
+## How to use 📃
+
+### Github
+1. Download latest github artifact.
+2. Unzip it in any place. 
+3. Download any injector that can inject dll on game start
+
+### Discord
+1. Join my discord.
+2. Download the injector I suggested.
+3. Choose this DLC dll and inject as I'll write in instruction. 
+
+## How I can support? 💕
+- You can tip me at [boosty](https://boosty.to/chadlrnsn)
+- Leave a star for this repository ⭐
+- Contribute this project 
+
+## Building
+1. Clone the repository: git clone --recurse-submodules https://github.com/chadlrnsn/wuwa-moonlight
+    - The version in the dev branch can be better/worse and is updated more often!
+2. Build with your preferred IDE.
+3. Output will be in out/build/your-configuration/wuwa-moonlight/Release/WWMoonlight.dll
+
+## Contributing
+1. Fork the repo (https://github.com/chadlrnsn/wuwa-moonlight/fork).
+2. Create your feature branch.
+3. Commit your changes.
+4. Push your changes to the branch.
+5. Create a new pull request.
