@@ -8,7 +8,10 @@ namespace globals
 	inline const char* ProjectName = "Moonlight";
 
 	inline ProcessEvent oProcessEvent;
+	inline void* original_ProcessEvent;
+	
 	inline PostRender oPostRender;
+	inline void* original_PostRender;
 
 	inline SDK::UKuroStaticLibrary* KuroStaticLib = nullptr;
 	inline SDK::UAkGameplayStatics* UGAkStatics = nullptr;

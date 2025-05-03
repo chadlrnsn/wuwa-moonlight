@@ -6,6 +6,7 @@
 #include <MinHook.h>
 #include <logger.h>
 #include <Features/Features.h>
+#include <d3d11hook.h>
 
 using namespace globals;
 using namespace SDK;
@@ -22,6 +23,7 @@ void Hooks::InGame::ProcessEvent()
 {
 	try {
 		void* ProcessEventAddr = reinterpret_cast<void*>(InSDKUtils::GetImageBase() + SDK::Offsets::ProcessEvent);
+		original_ProcessEvent = ProcessEventAddr;
 		LOG_INFO("ProcessEvent address: %p", ProcessEventAddr);
 
 		while (!globals::g_break)
@@ -129,6 +131,7 @@ void Hooks::InGame::PostRender()
 			void** VTable = *reinterpret_cast<void***>(Viewport);
 			const int PostRenderIndex = 0x69;
 			void* PostRenderAddress = VTable[PostRenderIndex];
+			original_PostRender = PostRenderAddress;
 
 			MH_STATUS status = MH_CreateHook(PostRenderAddress, static_cast<LPVOID>(&hkPostRender), reinterpret_cast<LPVOID*>(&oPostRender));
 			if (status != MH_OK)
@@ -168,36 +171,44 @@ void Hooks::InGame::Uninitialize()
 {
 	MH_STATUS status;
 	try {
-		status = MH_DisableHook(static_cast<LPVOID>(&hkPostRender)); 
-		if (status != MH_OK) {
-			LOG_ERROR("Hooks::InGame::Uninitialize: %s", MH_StatusToString(status));
-			return;
+		// Отключаем хук PostRender
+		if (original_PostRender != nullptr) {
+			status = MH_DisableHook(original_PostRender);
+			if (status != MH_OK) {
+				LOG_ERROR("Failed to disable PostRender hook: %s", MH_StatusToString(status));
+			} else {
+				LOG_SUCCESS("PostRender hook disabled successfully");
+			}
+			
+			status = MH_RemoveHook(original_PostRender);
+			if (status != MH_OK) {
+				LOG_ERROR("Failed to remove PostRender hook: %s", MH_StatusToString(status));
+			} else {
+				LOG_SUCCESS("PostRender hook removed successfully");
+			}
 		}
-
-		status = MH_DisableHook(static_cast<LPVOID>(&hkProcessEvent));
-		if (status != MH_OK) {
-			LOG_ERROR("Hooks::InGame::Uninitialize: %s", MH_StatusToString(status));
-			return;
+		
+		// Отключаем хук ProcessEvent
+		if (original_ProcessEvent != nullptr) {
+			status = MH_DisableHook(original_ProcessEvent);
+			if (status != MH_OK) {
+				LOG_ERROR("Failed to disable ProcessEvent hook: %s", MH_StatusToString(status));
+			} else {
+				LOG_SUCCESS("ProcessEvent hook disabled successfully");
+			}
+			
+			status = MH_RemoveHook(original_ProcessEvent);
+			if (status != MH_OK) {
+				LOG_ERROR("Failed to remove ProcessEvent hook: %s", MH_StatusToString(status));
+			} else {
+				LOG_SUCCESS("ProcessEvent hook removed successfully");
+			}
 		}
-
-		LOG_SUCCESS("ImGame hooks successfully disabled InGame hooks.");
-
-		status = MH_RemoveHook(static_cast<LPVOID>(&hkPostRender)); 
-		if (status != MH_OK) {
-			LOG_ERROR("Hooks::InGame::Uninitialize: %s", MH_StatusToString(status));
-			return;
-		}
-
-		status = MH_RemoveHook(static_cast<LPVOID>(&hkProcessEvent));
-		if (status != MH_OK) {
-			LOG_ERROR("Hooks::InGame::Uninitialize: %s", MH_StatusToString(status));
-			return;
-		}
-
+		
 		LOG_SUCCESS("InGame hooks successfully removed.");
 	}
 	catch (const std::exception &ex) {
-		LOG_ERROR("Exception caught in Hooks::InGame::Initialize(): %s", ex.what());
+		LOG_ERROR("Exception caught in Hooks::InGame::Uninitialize(): %s", ex.what());
 	}
 }
 
@@ -205,10 +216,13 @@ void Hooks::Uninitialize()
 {
 	Hooks::InGame::Uninitialize();
 	Hooks::DebugBypassDisable();
+	D3D11Hook::Uninitialize();
 
-	if (MH_Uninitialize() != MH_OK)
+	MH_STATUS status = MH_Uninitialize();
+	if (status != MH_OK)
 	{
-		LOG_ERROR("Failed to uninitialize MinHook");
+		LOG_ERROR("Failed to uninitialize MinHook: %s", MH_StatusToString(status));
+		return;
 	}
 
 	LOG_SUCCESS("MinHook uninitialized successfully");

@@ -117,10 +117,7 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 	}
 
 	threads.clear();
-
-	D3D11Hook::Uninitialize();
-	Hooks::DebugBypassDisable();
-
+	Hooks::Uninitialize();
 	Logger::Shutdown();
 
 	FreeLibraryAndExitThread(hMod, 0);

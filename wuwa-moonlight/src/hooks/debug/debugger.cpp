@@ -232,43 +232,60 @@ void Hooks::DebugBypassDisable()
     // idont care about status 
     MH_STATUS status;
     
-    status = MH_DisableHook(static_cast<LPVOID>(&hkLoadLibraryW));
-    if (status != MH_OK)
+    // Правильный подход - отключать и удалять хуки по адресам оригинальных функций
+    if (originals::oLoadLibraryW != nullptr)
     {
-        LOG_ERROR("LoadLibraryW disable hook error: %s", MH_StatusToString(status));
+        status = MH_DisableHook(static_cast<LPVOID>(&LoadLibraryW));
+        if (status != MH_OK)
+        {
+            LOG_ERROR("LoadLibraryW disable hook error: %s", MH_StatusToString(status));
+        }
+
+        status = MH_RemoveHook(static_cast<LPVOID>(&LoadLibraryW));
+        if (status != MH_OK)
+        {
+            LOG_ERROR("LoadLibraryW remove hook error: %s", MH_StatusToString(status));
+        }
+        originals::oLoadLibraryW = nullptr;
     }
 
-    status = MH_DisableHook(static_cast<LPVOID>(&hkIsDebuggerPresent));
-    if (status != MH_OK) 
+    if (originals::oIsDebuggerPresent != nullptr)
     {
-        LOG_ERROR("IsDebuggerPresent disable hook error: %s", MH_StatusToString(status));
-    }
+        status = MH_DisableHook(static_cast<LPVOID>(&IsDebuggerPresent));
+        if (status != MH_OK) 
+        {
+            LOG_ERROR("IsDebuggerPresent disable hook error: %s", MH_StatusToString(status));
+        }
 
-    status = MH_DisableHook(static_cast<LPVOID>(&hkNtQueryInformationProcess));
-    if (status != MH_OK)
-    {
-        LOG_ERROR("NtQueryInformationProcess disable hook error: %s", MH_StatusToString(status));
+        status = MH_RemoveHook(static_cast<LPVOID>(&IsDebuggerPresent));
+        if (status != MH_OK)
+        {
+            LOG_ERROR("IsDebuggerPresent remove hook error: %s", MH_StatusToString(status));
+        }
+        originals::oIsDebuggerPresent = nullptr;
     }
-    // MH_DisableHook(static_cast<LPVOID>(&hk));
-    // MH_DisableHook(static_cast<LPVOID>(&));
-
-    status = MH_RemoveHook(static_cast<LPVOID>(&hkLoadLibraryW));
-    if (status != MH_OK)
+    
+    if (originals::oNtQueryInformationProcess != nullptr)
     {
-        LOG_ERROR("LoadLibraryW remove hook error: %s", MH_StatusToString(status));
+        HMODULE hNtdll = GetModuleHandleA("ntdll.dll");
+        if (hNtdll)
+        {
+            FARPROC pNtQueryInformationProcess = GetProcAddress(hNtdll, "NtQueryInformationProcess");
+            if (pNtQueryInformationProcess)
+            {
+                status = MH_DisableHook(pNtQueryInformationProcess);
+                if (status != MH_OK)
+                {
+                    LOG_ERROR("NtQueryInformationProcess disable hook error: %s", MH_StatusToString(status));
+                }
+                
+                status = MH_RemoveHook(pNtQueryInformationProcess);
+                if (status != MH_OK)
+                {
+                    LOG_ERROR("NtQueryInformationProcess remove hook error: %s", MH_StatusToString(status));
+                }
+            }
+        }
+        originals::oNtQueryInformationProcess = nullptr;
     }
-
-    status = MH_RemoveHook(static_cast<LPVOID>(&hkIsDebuggerPresent));
-    if (status != MH_OK)
-    {
-        LOG_ERROR("IsDebuggerPresent remove hook error: %s", MH_StatusToString(status));
-    }
-
-    status = MH_RemoveHook(static_cast<LPVOID>(&hkNtQueryInformationProcess));
-    if (status != MH_OK)
-    {
-        LOG_ERROR("NtQueryInformationProcess remove hook error: %s", MH_StatusToString(status));
-    }
-    // MH_RemoveHook(static_cast<LPVOID>(&hk));
-    // MH_RemoveHook(static_cast<LPVOID>(&));
 }
