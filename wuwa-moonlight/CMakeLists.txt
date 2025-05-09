@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.5...4.0)
-
 project(WWMoonlight)
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
@@ -19,7 +18,7 @@ target_include_directories(WWMoonlight PUBLIC
     ext/imgui
     ext/imgui/backends
     ext/kiero
-    ext/nlohmann
+    ext/json/include
     ext/magic_enum/include/magic_enum
     ext/xorstr/include
 )
@@ -39,6 +38,7 @@ target_include_directories(imgui PUBLIC
 add_subdirectory(ext/minhook)
 add_subdirectory(ext/CppSDK)
 add_subdirectory(ext/kiero)
+add_subdirectory(ext/json)
 
 target_link_libraries(WWMoonlight PUBLIC d3d11 dxgi minhook SDK imgui kiero)
 

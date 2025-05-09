@@ -19,11 +19,11 @@ private:
 	// Tracers
 	float fTracerColor[4] = {0, 1, 1, 0.2};
 	float fTracerColorOccluded[4] = {1, 1, 1, 0.2};
-	structs::MinMax TracerThickness = { 0.1, 4, 1.5 };
+	structs::MinMax <float>TracerThickness = { 0.1, 4, 1.5 };
 	bool bOccludedTracers{ true };
 
 	FVector cameraLocation;
-	structs::MinMax espDistance = { 0.0f, 5000.0f, 500.0f };
+	structs::MinMax <float>espDistance = { 0.0f, 5000.0f, 500.0f };
 	bool m_bDebugWindow = false;
 	bool bTracers{ false };
 	// ESP Stuff
@@ -83,8 +83,15 @@ private:
     std::mutex renderMutex;
 
 public:
+	ESP() : FeatureFactory("ESP") {}
+	
 	void Draw();
 	void Render();
 	void Run();
 	void RenderDebug();
+	
+	// Переопределение методов сериализации/десериализации
+	nlohmann::json Serialize() const;
+	
+	void Deserialize(const nlohmann::json& json);
 };

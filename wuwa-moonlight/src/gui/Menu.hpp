@@ -3,13 +3,12 @@
 #include <vector>
 #include <windows.h>
 #include <thread>
-#include <Singleton.hpp>
+#include <functional>
 
 #ifndef IMGUI_DEFINE_MATH_OPERATORS
 #define IMGUI_DEFINE_MATH_OPERATORS
 #endif // !IMGUI_DEFINE_MATH_OPERATORS
 
-#include <gui/Context.hpp>
 #include "imgui_internal.h"
 #include "imgui.h"
 
@@ -30,7 +29,6 @@ ImVec2 ResponsiveSize(ImVec2 size, T mulwide, T multall)
 
 class IMenu {
 public:
-    virtual void RealCursorShow() = 0;
     virtual void Setup() = 0;
     virtual void SetUpColors(ImGuiStyle& style, ImVec4* colors) = 0;
     virtual bool IsOpen() const = 0;
@@ -80,7 +78,6 @@ private:
     std::vector<StateChangeCallback> stateChangeCallbacks;
 
 public:
-    void RealCursorShow();
     void Setup();
     void SetUpColors(ImGuiStyle& style, ImVec4* colors);
     void PreventMoveOutOfWndBounds(const char* wndName);
@@ -93,7 +90,9 @@ public:
 
     void HandleKey();
     void AddStateChangeCallback(StateChangeCallback callback);
-    bool ShowCursor(bool);
+    bool ShowCursor(bool show);
+
+    void RenderConfigTab();
 };
 
 inline ImFont* font_regular;
@@ -102,4 +101,4 @@ inline ImFont* font_bold;
 inline ImFont* font_title;
 inline ImFont* font_icons;
 
-inline std::shared_ptr<Menu> g_menu = std::make_shared<Menu>();
+inline auto g_menu = std::make_shared<Menu>();

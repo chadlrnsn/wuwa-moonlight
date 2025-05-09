@@ -199,3 +199,97 @@ void ESP::RenderDebug()
 		ImGui::End();
 	}
 }
+
+nlohmann::json ESP::Serialize() const
+{
+	nlohmann::json j = FeatureFactory::Serialize();
+	
+	// Сохраняем базовые настройки ESP
+	j["occluded"] = bOccluded;
+	j["debug_window"] = m_bDebugWindow;
+	j["tracers"] = bTracers;
+	j["occluded_tracers"] = bOccludedTracers;
+	j["search_class_name"] = searchClassName;
+	j["default_filters"] = bDefaultFilters;
+	
+	// Сохраняем цвета и толщину линий
+	j["color"] = {fColor[0], fColor[1], fColor[2], fColor[3]};
+	j["occluded_color"] = {fOccludedColor[0], fOccludedColor[1], fOccludedColor[2], fOccludedColor[3]};
+	j["thickness"] = fThickness;
+	
+	// Сохраняем настройки трейсеров
+	j["tracer_color"] = {fTracerColor[0], fTracerColor[1], fTracerColor[2], fTracerColor[3]};
+	j["tracer_color_occluded"] = {fTracerColorOccluded[0], fTracerColorOccluded[1], fTracerColorOccluded[2], fTracerColorOccluded[3]};
+	j["tracer_thickness"] = {
+		{"min", TracerThickness.Min},
+		{"max", TracerThickness.Max},
+		{"current", TracerThickness.Current}
+	};
+	
+	// Сохраняем настройки дистанции
+	j["esp_distance"] = {
+		{"min", espDistance.Min},
+		{"max", espDistance.Max},
+		{"current", espDistance.Current}
+	};
+	
+	return j;
+}
+
+void ESP::Deserialize(const nlohmann::json &json)
+{
+	// Загружаем базовые настройки из родительского класса
+	FeatureFactory::Deserialize(json);
+	
+	// Загружаем базовые настройки ESP
+	if (json.contains("occluded")) bOccluded = json["occluded"].get<bool>();
+	if (json.contains("debug_window")) m_bDebugWindow = json["debug_window"].get<bool>();
+	if (json.contains("tracers")) bTracers = json["tracers"].get<bool>();
+	if (json.contains("occluded_tracers")) bOccludedTracers = json["occluded_tracers"].get<bool>();
+	if (json.contains("search_class_name")) searchClassName = json["search_class_name"].get<std::string>();
+	if (json.contains("default_filters")) bDefaultFilters = json["default_filters"].get<bool>();
+	
+	// Загружаем цвета и толщину линий
+	if (json.contains("color") && json["color"].is_array() && json["color"].size() == 4) {
+		for (int i = 0; i < 4; i++) {
+			fColor[i] = json["color"][i].get<float>();
+		}
+	}
+	
+	if (json.contains("occluded_color") && json["occluded_color"].is_array() && json["occluded_color"].size() == 4) {
+		for (int i = 0; i < 4; i++) {
+			fOccludedColor[i] = json["occluded_color"][i].get<float>();
+		}
+	}
+	
+	if (json.contains("thickness")) fThickness = json["thickness"].get<float>();
+	
+	// Загружаем настройки трейсеров
+	if (json.contains("tracer_color") && json["tracer_color"].is_array() && json["tracer_color"].size() == 4) {
+		for (int i = 0; i < 4; i++) {
+			fTracerColor[i] = json["tracer_color"][i].get<float>();
+		}
+	}
+	
+	if (json.contains("tracer_color_occluded") && json["tracer_color_occluded"].is_array() && json["tracer_color_occluded"].size() == 4) {
+		for (int i = 0; i < 4; i++) {
+			fTracerColorOccluded[i] = json["tracer_color_occluded"][i].get<float>();
+		}
+	}
+	
+	// Загружаем настройки толщины трейсеров
+	if (json.contains("tracer_thickness")) {
+		auto& thickness = json["tracer_thickness"];
+		if (thickness.contains("min")) TracerThickness.Min = thickness["min"].get<float>();
+		if (thickness.contains("max")) TracerThickness.Max = thickness["max"].get<float>();
+		if (thickness.contains("current")) TracerThickness.Current = thickness["current"].get<float>();
+	}
+	
+	// Загружаем настройки дистанции
+	if (json.contains("esp_distance")) {
+		auto& distance = json["esp_distance"];
+		if (distance.contains("min")) espDistance.Min = distance["min"].get<float>();
+		if (distance.contains("max")) espDistance.Max = distance["max"].get<float>();
+		if (distance.contains("current")) espDistance.Current = distance["current"].get<float>();
+	}
+}

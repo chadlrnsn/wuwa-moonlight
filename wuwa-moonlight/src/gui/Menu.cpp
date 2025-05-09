@@ -6,16 +6,7 @@
 #include <imgui_internal.h>
 
 #include <Features/Features.h>
-
-
-
-void Menu::RealCursorShow()
-{
-    ImGui::GetMouseCursor();
-    ImGui::SetMouseCursor(ImGuiMouseCursor_Arrow);
-    ImGui::GetIO().WantCaptureMouse = bIsOpen;
-    ImGui::GetIO().MouseDrawCursor = bIsOpen;
-}
+#include <Config/ConfigManager.h>
 
 void Menu::Setup()
 {
@@ -233,24 +224,24 @@ void Menu::RenderMenu()
     switch (tab)
     {
     case PLAYER:
-        speedhack.get()->Draw();
-        fly.get()->Draw();
+        speedhack->Draw();
+        fly->Draw();
         //gravityScale.DrawMenuItems();
         //walkFloorZ.DrawMenuItems();
         //walkFloorAngle.DrawMenuItems();
-        multihit.get()->Draw();
+        multihit->Draw();
 
         break;
 
     case ESP:
-        esp.get()->Draw();
+        esp->Draw();
         break;
 
     case MISC:
-        fpsUnlock.get()->Draw();
-        ptpsafe.get()->Draw();
+        fpsUnlock->Draw();
+        ptpsafe->Draw();
 
-        debugComponent.get()->Draw();
+        debugComponent->Draw();
 
         if (ImGui::Button("Force exit"))
             ExitProcess(0);
@@ -258,7 +249,7 @@ void Menu::RenderMenu()
         break;
 
     case CONFIG:
-        ImGui::Text("in dev.");
+        RenderConfigTab();
         break;
     }
 
@@ -270,6 +261,213 @@ void Menu::RenderMenu()
     ImGui::PopStyleVar();
 
     ImGui::End();
+}
+
+void Menu::RenderConfigTab()
+{
+    static char configNameBuffer[256] = { 0 };
+    static int selectedConfig = -1;
+    
+    // Получаем список всех доступных конфигов
+    auto& configManager = ConfigManager::GetInstance();
+    std::vector<std::string> availableConfigs = configManager.GetAvailableConfigs();
+    
+    // Текущий активный конфиг
+    std::string currentConfig = configManager.GetCurrentConfig();
+    
+    // Если список конфигов изменился, обновляем выбранный индекс
+    static int lastConfigCount = 0;
+    if (lastConfigCount != availableConfigs.size()) {
+        lastConfigCount = availableConfigs.size();
+        
+        // Находим индекс текущего конфига
+        selectedConfig = -1;
+        for (size_t i = 0; i < availableConfigs.size(); i++) {
+            if (availableConfigs[i] == currentConfig) {
+                selectedConfig = static_cast<int>(i);
+                break;
+            }
+        }
+    }
+    
+    // Секция создания нового конфига
+    ImGui::Text("Create new config");
+    ImGui::InputText("##ConfigName", configNameBuffer, sizeof(configNameBuffer));
+    ImGui::SameLine();
+    
+    if (ImGui::Button("Create and save"))
+    {
+        if (strlen(configNameBuffer) > 0)
+        {
+            // Собираем все features в один вектор
+            std::vector<std::shared_ptr<IFeatureFactory>> features;
+            features.push_back(fpsUnlock);
+            features.push_back(esp);
+            features.push_back(speedhack);
+            features.push_back(multihit);
+            features.push_back(fly);
+            features.push_back(ptpsafe);
+            features.push_back(debugComponent);
+            
+            // Сохраняем конфиг
+            bool success = configManager.SaveConfig(features, configNameBuffer);
+            
+            if (success)
+            {
+                LOG_INFO("Config created: %s", configNameBuffer);
+                memset(configNameBuffer, 0, sizeof(configNameBuffer));
+                // Обновляем список конфигов
+                availableConfigs = configManager.GetAvailableConfigs();
+                lastConfigCount = availableConfigs.size();
+            }
+        }
+    }
+    
+    ImGui::Separator();
+    
+    // Секция управления существующими конфигами
+    ImGui::Text("Config manager");
+    
+    if (availableConfigs.empty())
+    {
+        ImGui::TextColored(ImVec4(1.0f, 0.5f, 0.5f, 1.0f), "No configs");
+    }
+    else
+    {
+        if (ImGui::BeginListBox("##ConfigsList", ImVec2(-FLT_MIN, 200)))
+        {
+            for (int i = 0; i < static_cast<int>(availableConfigs.size()); i++)
+            {
+                const bool isSelected = (selectedConfig == i);
+                
+                // Показываем отметку для текущего активного конфига
+                std::string label = availableConfigs[i];
+                if (availableConfigs[i] == currentConfig)
+                {
+                    label += " (active)";
+                }
+                
+                if (ImGui::Selectable(label.c_str(), isSelected))
+                {
+                    selectedConfig = i;
+                    LOG_INFO("Selected config: %s", availableConfigs[i].c_str());
+                }
+                
+                if (isSelected)
+                {
+                    ImGui::SetItemDefaultFocus();
+                }
+            }
+            ImGui::EndListBox();
+        }
+        
+        // Кнопки действий с выбранным конфигом
+        ImGui::BeginDisabled(selectedConfig == -1);
+        
+        if (ImGui::Button("Load"))
+        {
+            if (selectedConfig >= 0 && selectedConfig < static_cast<int>(availableConfigs.size()))
+            {
+                // Собираем все features в один вектор
+                std::vector<std::shared_ptr<IFeatureFactory>> features;
+                features.push_back(fpsUnlock);
+                features.push_back(esp);
+                features.push_back(speedhack);
+                features.push_back(multihit);
+                features.push_back(fly);
+                features.push_back(ptpsafe);
+                features.push_back(debugComponent);
+                
+                // Загружаем конфиг
+                bool success = configManager.LoadConfig(features, availableConfigs[selectedConfig]);
+                if (success) {
+                    LOG_INFO("Config loaded: %s", availableConfigs[selectedConfig].c_str());
+                } else {
+                    LOG_ERROR("Failed to load config: %s", availableConfigs[selectedConfig].c_str());
+                }
+            }
+        }
+        
+        ImGui::SameLine();
+        
+        if (ImGui::Button("Remove"))
+        {
+            if (selectedConfig >= 0 && selectedConfig < static_cast<int>(availableConfigs.size()))
+            {
+                std::string configToDelete = availableConfigs[selectedConfig];
+                bool success = configManager.DeleteConfig(configToDelete);
+                if (success) {
+                    LOG_INFO("Config deleted: %s", configToDelete.c_str());
+                } else {
+                    LOG_ERROR("Failed to delete config: %s", configToDelete.c_str());
+                }
+                
+                // Обновляем список конфигов
+                availableConfigs = configManager.GetAvailableConfigs();
+                lastConfigCount = availableConfigs.size();
+                
+                // Сбрасываем выбор, если список пуст
+                if (selectedConfig >= static_cast<int>(availableConfigs.size()))
+                {
+                    selectedConfig = availableConfigs.empty() ? -1 : 0;
+                }
+            }
+        }
+        
+        ImGui::SameLine();
+        
+        if (ImGui::Button("Save changes"))
+        {
+            if (selectedConfig >= 0 && selectedConfig < static_cast<int>(availableConfigs.size()))
+            {
+                // Собираем все features в один вектор
+                std::vector<std::shared_ptr<IFeatureFactory>> features;
+                features.push_back(fpsUnlock);
+                features.push_back(esp);
+                features.push_back(speedhack);
+                features.push_back(multihit);
+                features.push_back(fly);
+                features.push_back(ptpsafe);
+                features.push_back(debugComponent);
+                
+                // Сохраняем изменения в выбранный конфиг
+                bool success = configManager.SaveConfig(features, availableConfigs[selectedConfig]);
+                if (success) {
+                    LOG_INFO("Config saved: %s", availableConfigs[selectedConfig].c_str());
+                } else {
+                    LOG_ERROR("Failed to save config: %s", availableConfigs[selectedConfig].c_str());
+                }
+            }
+        }
+        
+        ImGui::EndDisabled();
+    }
+    
+    ImGui::Separator();
+    
+    // Секция информации об активном конфиге
+    ImGui::Text("Active config: %s", currentConfig.c_str());
+    
+    if (ImGui::Button("Save current settings"))
+    {
+        // Собираем все features в один вектор
+        std::vector<std::shared_ptr<IFeatureFactory>> features;
+        features.push_back(fpsUnlock);
+        features.push_back(esp);
+        features.push_back(speedhack);
+        features.push_back(multihit);
+        features.push_back(fly);
+        features.push_back(ptpsafe);
+        features.push_back(debugComponent);
+        
+        // Сохраняем конфиг
+        bool success = configManager.SaveConfig(features);
+        if (success) {
+            LOG_INFO("Current settings saved to: %s", currentConfig.c_str());
+        } else {
+            LOG_ERROR("Failed to save current settings");
+        }
+    }
 }
 
 void Menu::RenderWatermark()

@@ -4,20 +4,52 @@
 #include <globals.h>
 #include "TsAnimNotifyReSkillEvent_parameters.hpp"
 
-class HitMultiplier
+class HitMultiplier : public FeatureFactory
 {
 private:
     bool m_bBlockEnemyHit{ true };
+    structs::MinMax <int>hits = { 1, 100, 10 };
+    
 public:
-    void HandleKeys();
-    void Draw();
+    HitMultiplier() : FeatureFactory("HitMultiplier") {}
+    
     void Call(UObject* Object, UFunction* Function, void* Parms);
+    void Draw();
+    
+    // Сериализация настроек в JSON
+    nlohmann::json Serialize() const override {
+        nlohmann::json j = FeatureFactory::Serialize();
+        
+        j["block_enemy_hit"] = m_bBlockEnemyHit;
+        j["hits"] = hits.Current;
+        j["min_hits"] = hits.Min;
+        j["max_hits"] = hits.Max;
+        
+        return j;
+    }
+    
+    // Десериализация настроек из JSON
+    void Deserialize(const nlohmann::json& json) override {
+        FeatureFactory::Deserialize(json);
+        
+        if (json.contains("block_enemy_hit"))
+            m_bBlockEnemyHit = json["block_enemy_hit"].get<bool>();
+            
+        if (json.contains("hits"))
+            hits.Current = json["hits"].get<int>();
+            
+        if (json.contains("min_hits"))
+            hits.Min = json["min_hits"].get<int>();
+            
+        if (json.contains("max_hits"))
+            hits.Max = json["max_hits"].get<int>();
+    }
 };
 
 
 
 inline void HitMultiplier::Draw() {
-    ImGui::Checkbox("Attack Modifier", &config::multihit::enabled);
+    ImGui::Checkbox("Attack Modifier", &bEnable);
     ImGui::SameLine();
     ImGui::WarningTooltip("is the character's attack modifier (don't set it over 20 otherwise there is a high risk of being banned)");
 
@@ -25,17 +57,17 @@ inline void HitMultiplier::Draw() {
     ImGui::SameLine();
     ImGui::Tooltip("I'm really don't know how it works (not tested)");
 
-    ImGui::BeginDisabled(!config::multihit::enabled);
+    ImGui::BeginDisabled(!bEnable);
     {
         ImGui::Text("Hit multiplier");
-        ImGui::SliderInt("##Hit multiplier", &config::multihit::hits, config::multihit::min_hits, config::multihit::max_hits);
+        ImGui::SliderInt("##Hit multiplier", &hits.Current, hits.Min, hits.Max);
     }
     ImGui::EndDisabled();
 }
 
 inline void HitMultiplier::Call(UObject* Object, UFunction* Function, void* Parms) {
     // Check if the function is enabled
-    if (!config::multihit::enabled) {
+    if (!bEnable) {
         return;
     }
 
@@ -58,16 +90,16 @@ inline void HitMultiplier::Call(UObject* Object, UFunction* Function, void* Parm
     
     // Check if the action belongs to our character or an enemy
     if (owner == globals::pawn) {
-        for (int i = 1; i < config::multihit::hits; ++i) {
+        for (int i = 1; i < hits.Current; ++i) {
             globals::oProcessEvent(Object, Function, Parms);
         }
         
-        LOG_INFO("MultiHit: executed %d additional hits", config::multihit::hits - 1);
+        LOG_INFO("MultiHit: executed %d additional hits", hits.Current - 1);
         return; // Return as hits have already been executed
     }
     else if (m_bBlockEnemyHit && owner != globals::pawn) {
         // If enemy attack blocking is enabled and the attacker is not the player
-        LOG_INFO("Enemy attack blocked");
+        // LOG_INFO("Enemy attack blocked");
         return; // Don't call the original function, blocking the attack
     }
     

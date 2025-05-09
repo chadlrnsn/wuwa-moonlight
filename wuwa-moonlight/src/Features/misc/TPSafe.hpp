@@ -4,9 +4,16 @@
 class CTPSafe : public FeatureFactory
 {
 private:
-    bool m_bTpsafe { true };
+    bool bEnable{ true };
 public:
-    void Draw() override;
-    void Run() override;
-
+    CTPSafe() : FeatureFactory("TPSafe") {}
+    
+    void Draw();
+    void Run();
+    
+    // Сериализация настроек в JSON
+    nlohmann::json Serialize() const;
+    
+    // Десериализация настроек из JSON
+    void Deserialize(const nlohmann::json& json);
 };

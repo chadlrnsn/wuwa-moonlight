@@ -8,7 +8,7 @@ using namespace SDK;
 void utils::UpdateGlobals()
 {
     UEngine* _engine = UEngine::GetEngine();
-    if (_engine == nullptr)
+    if (!IsPointerReadable(_engine))
     {
         LOG_WARN("No engine");
         return;
@@ -16,20 +16,21 @@ void utils::UpdateGlobals()
     engine = _engine;
     
     UWorld* _world = UWorld::GetWorld();
-    if (_world == nullptr)
+    if (!IsPointerReadable(_world))
     {
         LOG_WARN("No world");
         return;
     }
+
     world = _world;
 
-    if (!IsPointerReadable(&world->OwningGameInstance))
+    if (!IsPointerReadable(&_world->OwningGameInstance))
     {
         LOG_ERROR("Pointer on OwningGameInstance not readable!");
         return;
     }
 
-    game_instance = world->OwningGameInstance;
+    game_instance = _world->OwningGameInstance;
 
     if (!game_instance)
     {

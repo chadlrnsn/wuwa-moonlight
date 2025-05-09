@@ -6,9 +6,23 @@
 #include <config.h>
 #include <Features/Features.h>
 #include <gui/Menu.hpp>
+#include <Config/ConfigHelper.h>
 
 using namespace SDK;
 using namespace globals;
+
+template<typename Func>
+void SafeExecute(Func func, const char* featureName) {
+    try {
+        func();
+    }
+    catch (const std::exception& e) {
+        LOG_ERROR("Exception in %s: %s", featureName, e.what());
+    }
+    catch (...) {
+        LOG_ERROR("Unknown exception in %s", featureName);
+    }
+}
 
 void HandleKey()
 {
@@ -25,7 +39,8 @@ void HandleKey()
 	}
 }
 
-void updateGlobals() noexcept {
+void updateGlobals() 
+{
 	while (!g_break) {
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 		utils::UpdateGlobals();
@@ -39,10 +54,10 @@ void handleFunctions()
 	while (!g_break) {
 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-		if (!world || !world->GameState) {
+		if (!player_controller) {
 			font_roboto = 0;
 			FN_TsAnimNotifyReSkillEvent_C = 0;
-		}
+		} 
 		else if (!font_roboto) {
 			auto font = viewport->FindObject<UFont>("Font Roboto.Roboto");
 			if (font) {
@@ -56,10 +71,18 @@ void handleFunctions()
 				FN_TsAnimNotifyReSkillEvent_C = reskill->Index;
 			}
 		}
+
+		if (!FN_KuroSDKEvent) {
+			auto func = UObject::FindObject<UFunction>("Function KuroSDK.KuroSDKManager.KuroSDKEvent", EClassCastFlags::Function);
+			if (func) {
+				FN_KuroSDKEvent = func->Index;
+				LOG_SUCCESS("Function KuroSDKEvent found");
+			}
+		}
 	}
 }
 
-DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
+DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 {
 	Logger::Init("Moonlight");
 
@@ -98,22 +121,11 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(10));
 
-		try
-		{
-			ptpsafe.get()->Run();
-			fpsUnlock.get()->Run();
-			speedhack.get()->Run();
-			fly.get()->Run();
-			esp.get()->Run();
-		}
-		catch (const std::exception& e)
-		{
-			LOG_ERROR("Main thread exception: %s", e.what());
-		}
-		catch (...)
-		{
-			LOG_ERROR("Main thread unknown exception");
-		}
+        SafeExecute([&]() { fpsUnlock->Run(); }, "FpsUnlock");
+        SafeExecute([&]() { ptpsafe->Run(); }, "TPSafe");
+        SafeExecute([&]() { speedhack->Run(); }, "SpeedHack");
+        SafeExecute([&]() { fly->Run(); }, "Fly");
+        SafeExecute([&]() { esp->Run(); }, "ESP");
 	}
 
 	threads.clear();
@@ -124,16 +136,18 @@ DWORD WINAPI MainThread(HMODULE hMod, [[maybe_unused]] LPVOID lpReserved)
 	return TRUE;
 }
 
-BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, [[maybe_unused]] LPVOID lpReserved)
+BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 {
 	switch (dwReason)
 	{
 	case DLL_PROCESS_ATTACH:
 		DisableThreadLibraryCalls(hMod);
 		CloseHandle(CreateThread(0, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, 0));
+		ConfigHelper::Initialize();
 		break;
 	case DLL_PROCESS_DETACH:
 		globals::g_break = true;
+		ConfigHelper::QuickSave();
 		break;
 	}
 

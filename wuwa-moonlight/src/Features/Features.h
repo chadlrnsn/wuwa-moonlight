@@ -9,12 +9,13 @@
 // Debug stuff
 #include <gui/components/Debug.hpp>
 
-inline auto fpsUnlock   = std::make_unique<FpsUnlock>();
-inline auto esp         = std::make_unique<ESP>();
-inline auto speedhack   = std::make_unique<SpeedHack>();
-inline auto multihit    = std::make_unique<HitMultiplier>();
-inline auto fly         = std::make_unique<Fly>();
-inline auto ptpsafe     = std::make_unique<CTPSafe>();
+// Создаем все фичи с использованием общего интерфейса
+inline auto fpsUnlock   = std::make_shared<FpsUnlock>();
+inline auto esp         = std::make_shared<ESP>();
+inline auto speedhack   = std::make_shared<SpeedHack>();
+inline auto multihit    = std::make_shared<HitMultiplier>();
+inline auto fly         = std::make_shared<Fly>();
+inline auto ptpsafe     = std::make_shared<CTPSafe>();
 
 // Debug stuff
-inline auto debugComponent = std::make_unique<CheatDebugComponent>();
+inline auto debugComponent = std::make_shared<CheatDebugComponent>();

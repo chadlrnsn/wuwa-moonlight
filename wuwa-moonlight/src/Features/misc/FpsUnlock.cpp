@@ -14,11 +14,15 @@ void FpsUnlock::Draw()
 
 void FpsUnlock::Render()
 {
-	if (!bShowFps) return;
+	if (!bShowFps || !ImGui::GetCurrentContext()) return;
+
+	int fps = static_cast<int>(ImGui::GetIO().Framerate);
+	char fpsText[32];
+	snprintf(fpsText, sizeof(fpsText), "FPS: %d", fps);
 
 	ImVec2 textSize = ImGui::CalcTextSize(fpsText);
-	ImGui::SetNextWindowSize(ImVec2(textSize.x + 15, textSize.y + 15));
-	ImGui::SetNextWindowSize(textSize + ImVec2(15,0));
+	ImVec2 windowPadding(15, 15);
+	ImGui::SetNextWindowSize(textSize + windowPadding);
 	ImGui::Begin("FPS", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar);
 	ImGui::Text("%s", fpsText);
 	ImGui::End();
@@ -30,12 +34,11 @@ void FpsUnlock::Run()
 	SDK::UGameUserSettings* Settings = engine->GameUserSettings;
 	if (Settings == nullptr) return;
 
-	auto fFPS = ("%.1f", ImGui::GetIO().Framerate);
-	snprintf(fpsText, sizeof(fpsText), "FPS: %.1f", fFPS);
+	int fps = static_cast<int>(ImGui::GetIO().Framerate);
 
 	if (bEnable)
 	{
-		if (Settings->GetFrameRateLimit() == fFPS)
+		if (Settings->GetFrameRateLimit() == fps)
 		{
 			// LOG_INFO("FrameRate == fFrameRateLimit\nIt will never be setted.");
 			return;

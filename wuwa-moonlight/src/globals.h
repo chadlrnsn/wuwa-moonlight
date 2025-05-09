@@ -27,7 +27,8 @@ namespace globals
 
 	inline int32 FN_TsAnimNotifyReSkillEvent_C = 0;		 // Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify
 	inline int32 FN_TsAnimNotifyStateCounterAttack_C = 0; // Function TsAnimNotifyStateCounterAttack.TsAnimNotifyStateCounterAttack_C.K2_NotifyBegin
+	inline int32 FN_KuroSDKEvent = 0; // Function KuroSDK.KuroSDKManager.KuroSDKEvent
 	inline UFont* font_roboto = 0;
 
-	inline bool g_CanDrawPostRender = false;
+
 }

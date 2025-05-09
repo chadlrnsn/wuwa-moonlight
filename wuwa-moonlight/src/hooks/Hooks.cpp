@@ -7,6 +7,7 @@
 #include <logger.h>
 #include <Features/Features.h>
 #include <d3d11hook.h>
+#include <KuroSDK_parameters.hpp>
 
 using namespace globals;
 using namespace SDK;
@@ -14,8 +15,8 @@ using namespace SDK;
 
 void __fastcall hkProcessEvent(UObject* caller, UFunction* function, void* params)
 {
-	multihit.get()->Call(caller, function, params);
-	speedhack.get()->Call(caller, function, params);
+	multihit->Call(caller, function, params);
+	speedhack->Call(caller, function, params);
 	oProcessEvent(caller, function, params);
 }
 
