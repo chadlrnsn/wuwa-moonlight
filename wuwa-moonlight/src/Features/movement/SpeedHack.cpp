@@ -68,9 +68,12 @@ void SpeedHack::Run()
 
 	// World dilation
 	if (bWorldDilation && world) {
-		auto pGameState = world->GameState;
-		if (pGameState) {
-			pGameState->CustomTimeDilation = worldSpeed.Current;
+		auto pPL = world->PersistentLevel;
+		if (pPL) {
+			auto pWS = pPL->WorldSettings;
+			if (pWS) {
+				pWS->TimeDilation = worldSpeed.Current;
+			}
 		}
 	}
 }
