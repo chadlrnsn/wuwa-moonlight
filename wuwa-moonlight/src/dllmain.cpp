@@ -10,6 +10,7 @@
 
 using namespace SDK;
 using namespace globals;
+HANDLE hackthread;
 
 template<typename Func>
 void SafeExecute(Func func, const char* featureName) {
@@ -44,8 +45,6 @@ void updateGlobals()
 	while (!g_break) {
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 		utils::UpdateGlobals();
-		UGAkStatics = (UAkGameplayStatics*)UAkGameplayStatics::StaticClass();
-		KuroStaticLib = (UKuroStaticLibrary*)UKuroStaticLibrary::StaticClass();
 	}
 }
 
@@ -59,24 +58,16 @@ void handleFunctions()
 			FN_TsAnimNotifyReSkillEvent_C = 0;
 		} 
 		else if (!font_roboto) {
-			auto font = viewport->FindObject<UFont>("Font Roboto.Roboto");
+			auto font = UObject::FindObject<UFont>("Font Roboto.Roboto");
 			if (font) {
 				LOG_SUCCESS("Font founded!");
 				font_roboto = font;
 			}
 		} else if (!FN_TsAnimNotifyReSkillEvent_C) {
-			auto reskill = viewport->FindObject<UFunction>("Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify");
+			auto reskill = UObject::FindObject<UFunction>("Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify");
 			if (reskill) {
 				LOG_SUCCESS("K2_Notify founded!");
 				FN_TsAnimNotifyReSkillEvent_C = reskill->Index;
-			}
-		}
-
-		if (!FN_KuroSDKEvent) {
-			auto func = UObject::FindObject<UFunction>("Function KuroSDK.KuroSDKManager.KuroSDKEvent", EClassCastFlags::Function);
-			if (func) {
-				FN_KuroSDKEvent = func->Index;
-				LOG_SUCCESS("Function KuroSDKEvent found");
 			}
 		}
 	}
@@ -132,6 +123,7 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
 	Hooks::Uninitialize();
 	Logger::Shutdown();
 
+	CloseHandle(hackthread);
 	FreeLibraryAndExitThread(hMod, 0);
 	return TRUE;
 }
@@ -142,7 +134,7 @@ BOOL APIENTRY DllMain(HMODULE hMod, DWORD dwReason, LPVOID lpReserved)
 	{
 	case DLL_PROCESS_ATTACH:
 		DisableThreadLibraryCalls(hMod);
-		CloseHandle(CreateThread(0, 0, (LPTHREAD_START_ROUTINE)MainThread, hMod, 0, 0));
+		hackthread = CreateThread(0, 0, reinterpret_cast<LPTHREAD_START_ROUTINE>(MainThread), hMod, 0, 0);
 		ConfigHelper::Initialize();
 		break;
 	case DLL_PROCESS_DETACH:

@@ -10,7 +10,7 @@
 
 void Menu::Setup()
 {
-    if (bOnceStyle) return;
+    if (bOnceStyle && ImGui::GetCurrentContext()) return;
 
     ImGuiIO& io = ImGui::GetIO();
     (void)io;
