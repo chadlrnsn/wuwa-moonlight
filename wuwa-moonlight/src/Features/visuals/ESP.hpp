@@ -26,6 +26,7 @@ private:
 	structs::MinMax <float>espDistance = { 0.0f, 5000.0f, 500.0f };
 	bool m_bDebugWindow = false;
 	bool bTracers{ false };
+
 	// ESP Stuff
 	bool bOccluded{ true };
 	bool bDefaultFilters{ true };
@@ -33,6 +34,8 @@ private:
 	bool bSearchByTag{ false };
 	bool bSearchParentActor{ false };
 	bool bSearchParentComponent{ false };
+	bool bShowFullClassName{ false };
+	bool bShowName{ true };
 
 	std::map<std::string, std::string> Ascension_Materials = {
 		{"Collect003", "Iris"}, 
@@ -64,7 +67,7 @@ private:
 		{ "Monster013", "Exil-F" }
 	};
 
-	SDK::TArray<SDK::AActor> any_actor_of_scene;
+	SDK::TArray<SDK::AActor*> scene_actors;
 	SDK::FName name_to_find;
 	std::string searchClassName;
 
@@ -74,7 +77,6 @@ private:
 		std::string DisplayText;
 		std::string DisplayClassName;
 		SDK::FVector2D ScreenLocation;
-		SDK::TArray<SDK::FName> Tags;
 		bool bIsVisible;
 	};
 
