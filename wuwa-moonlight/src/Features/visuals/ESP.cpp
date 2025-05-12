@@ -16,6 +16,8 @@ void ESP::Draw()
 		ImGui::Checkbox("Class Name", &bShowFullClassName);
 		ImGui::SameLine();
 		ImGui::Tooltip("for devs");
+
+		ImGui::Checkbox("Show distance", &bShowDistance);
 		
 		ImGui::Checkbox("Show occluded", &bOccluded);
 		
@@ -65,23 +67,29 @@ void ESP::Render()
 
 	for (const auto& Data : renderData)
 	{
-		if (!Data.Actor) continue;
+		try {
+			if (!Data.Actor) continue;
 
-		ImVec4 Color = Data.bIsVisible ? ImVec4(fColor[0], fColor[1], fColor[2], fColor[3]) :
-			ImVec4(fOccludedColor[0], fOccludedColor[1], fOccludedColor[2], fOccludedColor[3]);
+			ImVec4 Color = Data.bIsVisible ? ImVec4(fColor[0], fColor[1], fColor[2], fColor[3]) :
+				ImVec4(fOccludedColor[0], fOccludedColor[1], fOccludedColor[2], fOccludedColor[3]);
 
 
-		if (bShowName)
-			drawBackList->AddText(ImVec2(Data.ScreenLocation.X, Data.ScreenLocation.Y), ImColor(Color), Data.DisplayText.c_str());
-		
-		if (bShowFullClassName)
-			drawBackList->AddText(ImVec2(Data.ScreenLocation.X, Data.ScreenLocation.Y - 15), ImColor(Color), Data.DisplayClassName.c_str());
+			if (bShowName && !Data.DisplayText.empty())
+				drawBackList->AddText(ImVec2(Data.ScreenLocation.X, Data.ScreenLocation.Y), ImColor(Color), Data.DisplayText.c_str());
+			
+			if (bShowFullClassName && !Data.DisplayClassName.empty())
+				drawBackList->AddText(ImVec2(Data.ScreenLocation.X, Data.ScreenLocation.Y - 15), ImColor(Color), Data.DisplayClassName.c_str());
 
-		if (bTracers) {
-			ImVec4 TracerColor = Data.bIsVisible ? ImVec4(fTracerColor[0], fTracerColor[1], fTracerColor[2], fTracerColor[3]) :
-				ImVec4(fTracerColorOccluded[0], fTracerColorOccluded[1], fTracerColorOccluded[2], fTracerColorOccluded[3]);
+			if (bTracers) {
+				ImVec4 TracerColor = Data.bIsVisible ? ImVec4(fTracerColor[0], fTracerColor[1], fTracerColor[2], fTracerColor[3]) :
+					ImVec4(fTracerColorOccluded[0], fTracerColorOccluded[1], fTracerColorOccluded[2], fTracerColorOccluded[3]);
 
-			drawBackList->AddLine(ImGui::GetIO().DisplaySize / 2, ImVec2(Data.ScreenLocation.X, Data.ScreenLocation.Y), ImColor(TracerColor), TracerThickness.Current);
+				drawBackList->AddLine(ImGui::GetIO().DisplaySize / 2, ImVec2(Data.ScreenLocation.X, Data.ScreenLocation.Y), ImColor(TracerColor), TracerThickness.Current);
+			}
+		} 
+		catch (const std::exception& ex) 
+		{
+			LOG_ERROR("Exception in render esp %s", ex.what());
 		}
 	}
 }
@@ -124,13 +132,13 @@ void ESP::Run()
 	SDK::FVector pCharacterLocation = pcharacter->K2_GetActorLocation();
 
 	for (auto actor : globals::world->PersistentLevel->Actors) {
-		if (!actor) continue;
+		if (!actor || actor == globals::pawn) continue;
 
 		if (
 			!actor->IsA(ABP_BaseItem_C::StaticClass()) &&
-			// !actor->IsA(ABP_BaseNPC_C::StaticClass()) &&
 			!actor->IsA(ABP_BaseAnimal_C::StaticClass()) &&
-			!actor->IsA(ATsBaseCharacter_C::StaticClass())
+			!actor->IsA(ATsBaseCharacter_C::StaticClass()) && 
+			actor != pcharacter->GetOwner()
 
 			// actor->IsA(SDK::UNiagaraComponent::StaticClass()) || // valid ( btw this is component of some library )
 			// actor->IsA(SDK::ATsEffectActor_C::StaticClass()) || // valid
@@ -152,12 +160,17 @@ void ESP::Run()
 
 
 		auto DisplayName = actor->BlueprintTypeName.ToString();
+		if (DisplayName.empty()) continue;
+
+		DisplayName = getRealName(Ascension_Materials, DisplayName);
 
 		// Visible check
 		bool bIsVisible = globals::player_controller->LineOfSightTo(actor, cameraComp->GetCameraLocation(), false);
 		if (!bIsVisible && !bOccluded) continue;
 
 		SDK::FVector ActorLocation = actor->K2_GetActorLocation();
+		// SDK::FRotator ActorRotation = actor->K2_GetActorRotation();
+		// SDK::FBoxSphereBounds ActorBounds = actor->K2_GetRootComponent()->Bounds;
 
 		float Distance = pCharacterLocation.GetDistanceTo(ActorLocation) / 100.0f;
 		if (Distance > espDistance.Current) continue;
@@ -167,8 +180,8 @@ void ESP::Run()
 
 		RenderData Data;
 		Data.Actor = actor;
-		Data.DisplayText = DisplayName + " [" + std::to_string(static_cast<int>(Distance)) + "m]";
-		Data.DisplayClassName = actor->Class->GetFullName();
+		Data.DisplayText = bShowDistance ? DisplayName + " [" + std::to_string(static_cast<int>(Distance)) + "m]" : DisplayName;
+		Data.DisplayClassName = actor->Class ? actor->Class->GetFullName() : "No class found";
 		Data.ScreenLocation = ScreenLocation;
 		Data.bIsVisible = bIsVisible;
 		tempRenderData.push_back(std::move(Data));
@@ -290,4 +303,13 @@ void ESP::Deserialize(const nlohmann::json &json)
 		if (distance.contains("max")) espDistance.Max = distance["max"].get<float>();
 		if (distance.contains("current")) espDistance.Current = distance["current"].get<float>();
 	}
+}
+
+std::string ESP::getRealName(UMapSS umap, std::string& key) {
+    auto it = umap.find(key.c_str());
+
+	if (it != umap.end())
+		return it->second;
+
+    return key;
 }

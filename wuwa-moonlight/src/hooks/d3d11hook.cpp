@@ -91,7 +91,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 	g_menu->RenderMenu();
 	fpsUnlock.get()->Render();
 	esp.get()->Render();
-	esp.get()->RenderDebug();
+	// esp.get()->RenderDebug();
 
 
 	ImGui::Render();
