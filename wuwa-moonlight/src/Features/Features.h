@@ -3,7 +3,7 @@
 #include <Features/combat/MultiHit.h>
 #include <Features/visuals/ESP.hpp>
 #include <Features/movement/SpeedHack.h>
-#include <Features/movement/Fly.h>
+#include <Features/movement/Fly.hpp>
 #include <Features/misc/TPSafe.hpp>
 
 // Debug stuff
