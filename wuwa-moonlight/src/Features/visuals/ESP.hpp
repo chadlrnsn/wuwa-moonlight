@@ -45,6 +45,7 @@ private:
 
 		// Treasures
 		{"Treasure001", "Basic Supply Chest"}, 
+		{"Treasure007", "Premium Supply Chest"}, 
 		{"Treasure014", "Standart Supply Chest"}, 
 		{"Treasure015", "Advanced Supply Chest"}, 
 		{"Treasure017", "Inspect box???"}, 
@@ -183,6 +184,10 @@ private:
 		{ "Teleport005", "Resonanse beacon" },
 		{ "Teleport006", "Resonanse beacon" },
 		{ "Teleport007", "Resonanse beacon" },
+
+		// SceneObjects
+		{ "SceneObj213", "Virgil's chair" },
+
 	};
 
 	// UMapSS Ore = {
