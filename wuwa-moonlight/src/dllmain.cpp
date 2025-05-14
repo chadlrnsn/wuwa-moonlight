@@ -117,6 +117,7 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lpReserved)
         SafeExecute([&]() { speedhack->Run(); }, "SpeedHack");
         SafeExecute([&]() { fly->Run(); }, "Fly");
         SafeExecute([&]() { esp->Run(); }, "ESP");
+        SafeExecute([&]() { pView->Run(); }, "View");
 	}
 
 	threads.clear();

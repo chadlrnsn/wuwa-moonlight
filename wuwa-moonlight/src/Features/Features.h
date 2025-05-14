@@ -5,7 +5,7 @@
 #include <Features/movement/SpeedHack.h>
 #include <Features/movement/Fly.hpp>
 #include <Features/misc/TPSafe.hpp>
-
+#include <Features/misc/View.hpp>
 // Debug stuff
 #include <gui/components/Debug.hpp>
 
@@ -16,6 +16,7 @@ inline auto speedhack   = std::make_shared<SpeedHack>();
 inline auto multihit    = std::make_shared<HitMultiplier>();
 inline auto fly         = std::make_shared<Fly>();
 inline auto ptpsafe     = std::make_shared<CTPSafe>();
+inline auto pView       = std::make_shared<CView>();
 
 // Debug stuff
 inline auto debugComponent = std::make_shared<CheatDebugComponent>();

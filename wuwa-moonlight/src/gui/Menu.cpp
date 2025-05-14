@@ -242,6 +242,7 @@ void Menu::RenderMenu()
         ptpsafe->Draw();
 
         debugComponent->Draw();
+        pView->Draw();
 
         if (ImGui::Button("Force exit"))
             ExitProcess(0);
