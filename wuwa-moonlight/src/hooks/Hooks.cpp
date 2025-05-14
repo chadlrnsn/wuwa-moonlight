@@ -4,10 +4,8 @@
 #include <globals.h>
 #include <UnrealEngineRenderer.h>
 #include <MinHook.h>
-#include <logger.h>
 #include <Features/Features.h>
 #include <d3d11hook.h>
-#include <KuroSDK_parameters.hpp>
 
 using namespace globals;
 using namespace SDK;
@@ -61,7 +59,7 @@ void Hooks::InGame::ProcessEvent()
 	catch (...) {}
 }
 
-void hkPostRender(UGameViewportClient* viewport, UCanvas* canvas)
+void __fastcall hkPostRender(UGameViewportClient* viewport, UCanvas* canvas)
 {
 	if (canvas)
 	{
@@ -116,12 +114,12 @@ void Hooks::InGame::PostRender()
 			//	Sleep(1000);
 			//	continue;
 			//}
-			if (!engine) return LOG_WARN("No Engine");
+			if (!engine) continue;
 
 			auto Viewport = engine->GameViewport;
 			if (!Viewport)
 			{
-				LOG_INFO("Failed to get Viewport");
+				LOG_ERROR("Failed to get Viewport");
 				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 				continue;
 			}
