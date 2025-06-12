@@ -1,7 +1,7 @@
 ﻿.vs
 .vscode
 /wuwa-moonlight/.vs
-
+bin/
 # First we exclude the contents of the directory, but not the directory itself
 wuwa-moonlight/ext/CppSDK/**
 # Then we return CMakeLists.txt to tracking

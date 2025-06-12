@@ -3,7 +3,7 @@
 ![GitHub forks](https://img.shields.io/github/forks/chadlrnsn/wuwa-moonlight?style=flat-square&logo=github)
 ![GitHub Repo stars](https://img.shields.io/github/stars/chadlrnsn/wuwa-moonlight?style=flat-square&logo=github)
 ![GitHub License](https://img.shields.io/github/license/chadlrnsn/wuwa-moonlight?style=flat-square)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/chadlrnsn/wuwa-moonlight/total?style=flat-square)
+<!-- ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/chadlrnsn/wuwa-moonlight/total?style=flat-square) -->
 ![Discord](https://img.shields.io/discord/1246834050119893064?style=flat-square&logo=Discord)
 
 > [!IMPORTANT]
@@ -13,7 +13,7 @@
 
 ## What's this? 🤔
 - This is **free** DLC for Wuthering Waves. (I mean, it's an unofficial addition to the game that simplifies the gameplay)
-- Earlier there were more functions here, but the author wanted to rewrite the project and so the functions will be added as updates are made. 
+- Earlier there were more functions here, but the author wanted to rewrite the project and so the functions will be added as updates are made.
 
 ## Features
 
@@ -32,15 +32,16 @@
 
 ## How to use 📃
 
-### Github
+<!-- ### Github
 1. Download latest github artifact.
 2. Unzip it in any place. 
-3. Download any injector that can inject dll on game start
+3. Download any injector that can inject dll on game start -->
 
 ### Discord
-1. Join my discord.
-2. Download the injector I suggested.
-3. Choose this DLC dll and inject as I'll write in instruction. 
+1. Join my [discord](https://discord.gg/RJuN8UG4MJ)
+2. Download the injector I suggested
+3. Download DLC
+4. Choose this DLC dll and inject as I'll write in instruction 
 
 ## How I can support? 💕
 - You can tip me at [boosty](https://boosty.to/chadlrnsn)
@@ -54,7 +55,7 @@
 3. Output will be in out/build/your-configuration/wuwa-moonlight/Release/WWMoonlight.dll
 
 ## Contributing
-1. Fork the repo (https://github.com/chadlrnsn/wuwa-moonlight/fork).
+1. Fork the repo (https://github.com/chadlrnsn/wuwa-moonlight/fork)
 2. Create your feature branch.
 3. Commit your changes.
 4. Push your changes to the branch.
